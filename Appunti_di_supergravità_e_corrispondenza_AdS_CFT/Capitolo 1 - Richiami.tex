@@ -284,8 +284,8 @@ Un tensore, o meglio una densità tensoriale, utile è quello di Levi-Civita, ch
 \begin{equation}
     \epsilon_{a_0\cdots a_{D-1}} = 
     \begin{cases}
-        1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
-        -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+        1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,pari} \\
+        -1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,dispari} \\
         0,\quad \rem{altrimenti}
     \end{cases}.
 \end{equation}
@@ -294,8 +294,8 @@ Si può definire poi
     \begin{aligned}
         \epsilon^{b_0\cdots b_{D - 1}} &= \eta^{a_0b_0}\cdots\eta^{a_{D - 1}b_{D - 1}}\epsilon_{a_0\cdots a_{D - 1}} \\
         &= \begin{cases}
-            -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
-            1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+            -1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,pari} \\
+            1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,dispari} \\
             0,\quad \rem{altrimenti}
         \end{cases},
     \end{aligned}
@@ -305,8 +305,8 @@ per cui in maniera simile si definisce
     \begin{aligned}
         \epsilon_{\mu_0\cdots \mu_{D - 1}} &= e^{-1}\epsilon_{a_0\cdots a_{D - 1}}e^{a_0\cdots a_{D - 1}}_{\mu_0\cdots \mu_{D - 1}} \\
         &= \begin{cases}
-            -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
-            1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+            -1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,pari} \\
+            1,\quad a_0\cdots a_{D-1}\,\rem{e'\,una\,permutazione\,dispari} \\
             0,\quad \rem{altrimenti}
         \end{cases}.
     \end{aligned}
@@ -614,12 +614,12 @@ dove $\lambda^{\mu\nu} = -\lambda^{\nu\mu}$ e, dato che $\sigma_{\mu\nu}^\dag = 
 \end{equation}
 Le $L(\lambda)$ e le $\tilde{L}(\lambda)$ consistono in una parametrizzazione delle matrici $A \in \group{SL}{2,\bb{C}}$. Si è così costruita la struttura che si desiderava: due parti che non trasformano simultaneamente associate a $\bm{(1/2,0)}$ per $L(\lambda)$ e a $\bm{(0,1/2)}$ per $\tilde{L}(\lambda)$. Sotto una trasformazione di Lorentz $x^\mu \to \Lambda^\mu_\nu x^\nu$ si hanno
 \begin{equation}
-    \psi(x) \to \psi'(x') \equiv L^{-1}(\lambda)\psi(\Lambda x),
+    \Psi(x) \to \Psi'(x') \equiv L^{-1}(\lambda)\Psi(\Lambda x),
 \end{equation}
 \begin{equation}
     \chi(x) \to \chi'(x') \equiv \tilde{L}^{-1}(\lambda)\chi(\Lambda x).
 \end{equation}
-Gli spinori $\psi$ e $\chi$ sono tipicamente indicati come \emph{spinori left} e \emph{spinori right} rispettivamente, mentre globalmente prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}.
+Gli spinori $\Psi$ e $\chi$ sono tipicamente indicati come \emph{spinori left} e \emph{spinori right} rispettivamente, mentre globalmente prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}.
 
 Si vogliono ora introdurre gli spinori di Dirac. Questi spinori esistono per qualsiasi dimensione dello spaziotempo, e permettono l'imposizione di condizioni di realtà. A tal proposito, in $D = 4$, si introducono matrici di Dirac
 \begin{equation}
@@ -641,7 +641,7 @@ per le quali continua a valere la relazione precedente. Questa particolare relaz
 \begin{equation}
     \acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM_4,
 \end{equation}
-la quale, inoltre, definisce l'algebra di Clifford per uno spaziotempo 4-dimensionale, indicata con $\alg{Cliff}{1,3}$. La definizione è poi estendibile a qualsiasi dimensione $D$ dello spaziotempo. Si definisce quindi la matrice
+la quale, oltretutto, definisce l'algebra di Clifford per uno spaziotempo 4-dimensionale, indicata con $\alg{Cliff}{1,3}$. La definizione è poi estendibile a qualsiasi dimensione $D$ dello spaziotempo. Si definisce quindi la matrice
 \begin{equation}
     \Sigma^{\mu\nu} := \frac{1}{4}\comm{\gamma^\mu}{\gamma^\nu},
 \end{equation}
@@ -684,7 +684,7 @@ andando ad agire su $\Psi(x)$ le due componenti sono indipendenti,
 \begin{equation}
     \Psi(x) = 
     \begin{pmatrix}
-        \psi(x) \\
+        \Psi(x) \\
         \chi(x)
     \end{pmatrix},
 \end{equation}
@@ -863,7 +863,7 @@ Applicando il proiettore ad uno spinore di seleziona la componente corrispondent
 \begin{equation}
     P_L\Psi = 
     \begin{pmatrix}
-        \psi \\
+        \Psi \\
         0
     \end{pmatrix},\quad P_R\Psi = 
     \begin{pmatrix}
@@ -1009,3 +1009,240 @@ oppure
 \begin{equation}
     \Gamma^A \in \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_m}\} \in \alg{Cliff}{2m + 1}.
 \end{equation}
+
+\subsection{Coniugazione di carica}
+Prima di introdurre gli spinori di Majorana è necessario prima definire l'operazione di coniugazione di carica. Sia quindi $\lambda$ uno spinore di Dirac, si definisce la coniugazione di carica come
+\begin{equation}
+    \lambda^c := B^{-1}\lambda^*,
+\end{equation} 
+la quale trasforma secondo Lorentz. Facendone il coniugato di Majorana si ottiene
+\begin{equation}
+    \b{\lambda^c} = (B^{-1}\lambda^*)^TC = \lambda^\dag B^{-T}C.
+\end{equation}
+Si può dimostrare che $B^{-T} = -t_1B^{-1}$, con la quale 
+\begin{equation}
+    \b{\lambda^c} = -t_0t_1\lambda^\dag(i\gamma^0).
+\end{equation}
+Quindi, si vede come il coniugato di Majorana sia legato a quello di Dirac, manifestazione del fatto che $B$ e $C$ sono legate. 
+
+Sia ora $M \in \alg{Cliff}{D}$ e sia $M^c := B^{-1}M^*B$, per una matrice di Dirac $\gamma_\mu$ si ha in particolare che il coniugato di carica è
+\begin{equation}
+    (\gamma_\mu)^c = -t_0t_1\gamma_\mu.
+\end{equation}
+Per la gamma chirale in particolare 
+\begin{equation}
+    \gamma_*^c = (-1)^{(D/2) + 1}\gamma_*.
+\end{equation}
+Si può poi calcolare che 
+\begin{equation}
+    \begin{split}
+        (\b{\chi}M\lambda)^c = (\chi^TCM\lambda)^* &= (\chi_a(CM)_{ab}\lambda_b)^* \\
+        &= \lambda_b^*(CM)^*_{ab}\chi_a^* \\
+        &= \chi_a^*(CM)^*_{ab}\lambda_b^* \\
+        &= -\chi^TC^*M^*\lambda^* \\
+        &= i\chi^\dag\gamma^0 M^c \lambda^c,
+    \end{split}
+\end{equation}
+dove si sono usate la definizione di $M^c$, $C^* = -t_0C^{-1}$ e $B = it_0C\gamma^0$, per cui
+\begin{equation}
+    (\b{\chi}M\lambda)^c = -t_0t_1\b{\chi^c}M^c\lambda^c.
+\end{equation}
+Dunque, l'operazione di coniugazione di carica agisce come il complesso coniugato a meno di un segno. 
+
+\section{Spinori di Majorana}
+Gli spinori di Dirac in generale hanno componenti complesse. Si vuole capire se è possibile imporre delle confizioni affinché le entrate siano invece reali. Una prima condizione che si potrebbe pensare di imporre è
+\begin{equation}
+    f - f^* = 0,
+\end{equation}
+dove $f$ è una qualsiasi funzione, così da avere $\Psi = \Psi^*$. Tuttavia, così facendo lo spinore non soddisfa le trasformazioni di Lorentz. Uno spinore che invece soddisfa la condizione di realtà delle componenti e le trasformazioni di Lorentz è il coniugato di carica
+\begin{equation}
+    \Psi^c = B^{-1}\Psi^*,
+\end{equation}
+con il quale si può imporre che $\Psi = \Psi^c$, equivalente a chiedere $\Psi^* = B\Psi$. Infatti, da $\Psi^* = B\Psi$ si ha 
+\begin{equation}
+    \Psi = B^*\Psi^* = B^*B\Psi,
+\end{equation}
+da cui si deve richiedere che $B^*B = \IM$, ma allora $t_1 = -1$. Possibile solo in alcune dimensioni, $D = 2,3,4 \mod{8}$, dove si ha che il coniugato di Majorana corrisponde all'aggiunto di Dirac, per cui 
+\begin{equation}
+    \b{\Psi^c} = \Psi^\dag A.
+\end{equation}
+\begin{obs}
+    Ci sono rappresentazioni dove le matrici $C$ sono completamente reali (\emph{really-real representations}). Quando non esistono gli spinori di Majorana, si può introdurre una condizione pseudo-majorana. 
+\end{obs}
+Solo in dimensione $D = 2\mod{8}$ esistono gli spinori di Majorana che sono anche spinori di Weyl, detti \emph{spinori di Majorana-Weyl}. Per $D = 4$, non si può avere oggetti di questo tipo, ma si può avere o uno o l'altro caso, sia quindi $\Psi$ uno spinore di Majorana, in tal caso
+\begin{equation}
+    \Psi = (P_L + P_R)\Psi = P_L\Psi + P_R\Psi,
+\end{equation}
+dove $P_L\Psi$ e $P_R\Psi$ sono singolarmente spinori di Weyl, anche se la loro somma è uno spinore di Majorana. Si può vedere in particolare che 
+\begin{equation}
+    (P_L\Psi)^c = P_L^c\Psi^c = P_L^c\Psi = \frac{1}{2}(\IM + \gamma_*^c)\Psi,
+\end{equation}
+dove 
+\begin{equation}
+    \gamma_*^c = B^{-1}\gamma_*^*B = -\gamma_*,
+\end{equation}
+per cui
+\begin{equation}
+    P_L^c = \frac{1}{2}(\IM - \gamma_*) \equiv P_R,
+\end{equation}
+dunque 
+\begin{equation}
+    (P_L\Psi)^c = P_R\Psi,
+\end{equation}
+e ovviamente
+\begin{equation}
+    P_L\Psi = (P_R\Psi)^c.
+\end{equation}
+Quindi, la coniugazione di carica permette di passare da uno spinore all'altro, confermando la natura di spinore di Weyl dei singoli spinori. 
+
+L'azione di Dirac era stata definita come 
+\begin{equation}
+    S_{Dirac} = -\int d^4x\,\b{\Psi}(\sl{\p} - m)\Psi,
+\end{equation}
+ma se $\Psi$ è uno spinore di Majorana la forma dell'azione non cambia dato che coniugato di Majorana corrisponde all'aggiunto di Dirac; quindi semplicemente
+\begin{equation}
+    S_{Majorana} = -\frac{1}{2}\int d^4x\,\b{\Psi}(\sl{\p} - m)\Psi.
+\end{equation}
+Tuttavia, si deve controllare se gli invarianti in $S_{Majorana}$ sono effettivamente tali. Se si suppone che i campi siano commutati, il Majorana flip restituisce che 
+\begin{equation}
+    \b{\Psi}\Psi = -\b{\Psi}\Psi,
+\end{equation}
+rendendo quindi il termine di massa in $S_{Majorana}$ nullo. Anche se questo di per se non sarebbe un problema dato che basterebbe richiedere che $m = 0$, il fatto è che anche il termine cinetico si annulla se i campi sono commutanti; infatti
+\begin{equation}
+    \b{\Psi}\gamma^\mu\p_\mu\Psi = \p_\mu\b{\Psi}\gamma^\mu\Psi\quad\Longrightarrow\quad \b{\Psi}\gamma^\mu\p_\mu\Psi = \frac{1}{2}\p_\mu(\b{\Psi}\gamma\Psi),
+\end{equation}
+che essendo un termine di bordo non contribuisce all'azione. In sintesi, se i campi sono commutanti l'azione è nulla, invece se questi anticommutano, allora l'azione non si annulla e sono presenti sia il termine cinetico che quello di massa. Calcolando la variazione $\delta S$, si ha 
+\begin{equation}
+    \b{\Psi}\delta\Psi = \delta\b{\Psi}\Psi
+\end{equation}
+e una relazione simile con le $\gamma^\mu$ incluse, per cui 
+\begin{equation}
+    \delta S = -\int d^4x\,\delta\b{\Psi}(\gamma^\mu\p_\mu - m)\Psi,
+\end{equation}
+da cui si ricava che lo spinore di Majorana soddisfa l'equazione di Dirac
+\begin{equation}
+    (\sl{\p} - m)\Psi = 0.
+\end{equation}
+Inoltre, si può scrivere l'azione di Majorana in funzione degli spinori di Weyl, 
+\begin{equation}
+    \begin{split}
+        S_{Majorana} &= -\frac{1}{2}\int d^4x\,\b{\Psi}(\sl{\p} - m)(P_L + P_R)\Psi \\
+        &= -\frac{1}{2}\int d^4x\,\Psi^TC(P_L + P_R)(\sl{\p} - m)(P_L + P_R)\Psi \\
+        &= -\frac{1}{2}\int d^4x\,[2\b{\Psi}\Psi\gamma^\mu\p_\mu P_L\Psi - m\b{\Psi}P_L\Psi - m\b{\Psi}P_R\Psi] \\
+        &\equiv S[P_L\Psi,(P_L\Psi)^c].
+    \end{split}
+\end{equation}
+
+\subsection{Simmetrie}
+Sia $\Psi$ uno spinore di Dirac. Non è molto difficile dimostrare che se si applica la trasformazione 
+\begin{equation}
+    \Psi \to \Psi' \equiv e^{i\theta}\Psi,\quad \theta \in \bb{R},
+\end{equation}
+l'azione è invariante. Questa trasformazione è un esempio di simmetria interna globale, in particolare una simmetria del gruppo $U(1)$. Se invece lo spinore $\Psi$ è uno spinore di Majorana, la trasformazione precedente non vede l'azione rimanere invariante, si può però operare la trasformazione
+\begin{equation}
+    \Psi \to \Psi' \equiv e^{i\theta\gamma_*}\Psi,
+\end{equation}
+che conserva la condizione di Majorana,
+\begin{equation}
+    B^{-1}\Psi^* \to B^{-1}e^{-i\theta\gamma_*^*}\Psi^* = B^{-1}e^{-i\theta\gamma_*^*}BB^{-1}\Psi^*,
+\end{equation}
+se $BB^{-1} = \IM$.
+% DA VEDERE
+% da cui, se $BB^{-1} = \IM$, si ha
+% \begin{equation}
+%     B^{-1}e^{-i\theta\gamma_*^*}B = \IM.
+% \end{equation}
+Si vede che 
+\begin{equation}
+    \begin{split}
+        B^{-1}e^{-i\theta\gamma_*^*} &= B^{-1}[\IM - i\theta\gamma_*^* + \frac{1}{2}(-i)^2\theta^2(\gamma_*^*)^2 + \cdots] \\
+        &= e^{i\theta\gamma_*},
+    \end{split}
+\end{equation}
+dove si è usato che $(\gamma_*^*)^2 = \gamma_*^*BB^{-1}\gamma_*^*$ e per ogni scambio di $\theta$ con $\gamma_*$ c'è un segno. Si può far vedere che lo spinore $\b{\Psi}$ invece trasforma come 
+\begin{equation}
+    \b{\Psi} \equiv \Psi^TC \to \Psi^Te^{i\theta\gamma_*^T}C = \Psi^TCC^{-1}e^{i\theta\gamma_*^T}C = \b{\Psi}e^{i\theta\gamma_*}.
+\end{equation}
+Per quanto riguarda $\b{\Psi}\Psi$ invece, si può far vedere che non è invariante sotto tale trasformazione dato che gli esponenziali non si eliminano. Ponendo $m = 0$, il fattore cinetico diventa invece
+\begin{equation}
+    \b{\Psi}\gamma^\mu\p_\mu\Psi \to \b{\Psi}e^{i\theta\gamma_*}\gamma^\mu e^{i\theta\gamma_*}\p_\mu\Psi,
+\end{equation}
+ma se $\acomm{\gamma_*}{\gamma^\mu} = 0$, allora espandendo gli esponenziali e scambiando la $\gamma_*$, si ha 
+\begin{equation}
+    \b{\Psi}\gamma^\mu\p_\mu\Psi \to \b{\Psi}e^{i\theta\gamma_*}e^{-i\theta\gamma_*}\sl{\p}\Psi = \b{\Psi}\sl{\p}\Psi,
+\end{equation}
+che risulta quindi essere invariante. Da qui si giustifica la necessità di porre $m = 0$ nell'azione di Majorana. La corrente conservata è
+\begin{equation}
+    J^\mu_* = \frac{1}{2}\b{\Psi}\gamma^\mu\gamma_*\Psi,
+\end{equation}
+la quale soddisfa 
+\begin{equation}
+    \p_\mu J^\mu_* = -im\b{\Psi}\gamma_*\Psi,
+\end{equation}
+che è nulla appunto se $m = 0$. 
+
+\section{Campo di Rarita-Schwinger}
+Il campo di Rarita-Schwinger è un campo avente un indice spinoriale e un indice di Lorentz, è chiamato per questo \emph{spinore-vettore} ed è denotato con
+\begin{equation}
+    \Psi_{\alpha\mu}(x) \equiv \Psi_\mu(x),
+\end{equation}
+dove si è soppresso l'indice spinoriale per semplicità. In dimensione $D$ arbitraria, il numero di componenti in linea di principio sono $2^{[D/2]}D$, dove con $[D/2]$ se ne intende la parte intera, che in generale sono complesse. L'azione di questo campo deve soddisfare le condizioni già viste per il campo di Dirac:
+\begin{enumerate}
+    \item la lagrangiana deve essere invariante;
+    \item l'azione deve essere reale;
+    \item deve essere di prim'ordine nelle derivate $\p_\mu$;
+\end{enumerate}  
+insieme ad un'altra condizione. Per capire quale, si parte dall'azione del campo vettoriale più semplice, quella di Maxwell
+\begin{equation}
+    S_{Maxwell} = -\frac{1}{4}\int d^Dx\,F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+dove $A_\mu$ è invariante per trasformazioni $A_\mu \to A_\mu + \p_\mu\Lambda$ con $\Lambda$ una funzione scalare. In generale, i gradi di libertà che soddisfano le equazioni del moto sono detti \emph{on-shell}, altrimenti sono detti \emph{off-shell}. Si fissano i gradi di libertà del campo $A_\mu$ tramite il gauge-fixing, in questo caso tramite il gauge di Coulomb $\p^iA_i = 0$. Dall'equazione del moto $\p^\mu F_{\mu\nu} = 0$ si separano 
+\begin{equation}
+    \begin{cases}
+        \p^\mu F_{\mu 0} = 0 \\
+        \p^\mu F_{\mu i} = 0
+    \end{cases},
+\end{equation}
+che esplicitamente diventano
+\begin{equation}
+    \begin{cases}
+        \p^i(\p_i A_0 - \p_0 A_i) = 0 \\
+        \p^0(\p_0 A_i - \p_i A_0) + \p^j(\p_j A_i - \p_i A_j) = 0
+    \end{cases},
+\end{equation}
+dove, considerando il gauge di Coulomb, dalla prima si trova che $\nabla^2 A_0 = 0$ che fissa $A_0 = 0$, con questo risultato dalla seconda si trova 
+\begin{equation}
+    \p^0\p_0 A_i + \p^j\p_j A_i \equiv \square A_i = 0,
+\end{equation}
+che è l'equazione dell'onda piana per il campo $A_i$. Il numero di gradi di libertà effettivo è $D - 2$ dove le due condizioni sono date dal gauge-fixing e dal fatto che $\v{k} \perp \v{A}$, ossai che $\v{k} \cdot \v{A} = 0$. 
+
+Per il campo di Rarita-Schwinger si definsce allora la trasformazione 
+\begin{equation}
+    \psi_\mu \to \psi_\mu + \p_\mu\epsilon(x),
+\end{equation}
+dove $\epsilon$ è un parametro locale spinoriale. La lagrangiana deve essere invariante sotto questa trasformazione e di conseguenza ciò si ripercuote sull'azione, determinando la condizione aggiuntiva prima accennata. Una possibile azione qunidi è
+\begin{equation}
+    S_{R-S} = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
+\end{equation}
+La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha 
+\begin{equation}
+    \begin{split}
+        \delta(\b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho) &= \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho + \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\p_\rho\epsilon \\
+        &= \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho \\
+        &= \p_\mu(\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho),
+    \end{split}
+\end{equation}
+dove si è usata l'antisimmetria di $\gamma^{\mu\nu\rho}$; essendo una derivata totale non contribuisce all'azione. La variazione dell'azione è
+\begin{equation}
+    \begin{split}
+        \delta_{R-S} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
+        &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho -\p_\nu\b{\Psi}_\mu\gamma^{\mu\nu\rho}\delta\Psi_\rho),
+    \end{split}
+\end{equation}
+dove si è integrato per parti in secondo termine per ottenre una derivata totale. Quindi, si ottengono le due equazioni del moto del tutto equivalenti
+\begin{equation}
+    \begin{cases}
+        \gamma^{\mu\nu\rho}\p_\nu\Psi_\rho = 0 \\
+        \p_\nu\b{\Psi}_\rho\gamma^{\mu\nu\rho} = 0
+    \end{cases}.
+\end{equation} 
