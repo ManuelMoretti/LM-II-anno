@@ -1,0 +1,219 @@
+\chapter{Equazioni per l'evoluzione dell'Universo}
+L'obiettivo è ora determinare le equazioni che governano l'evoluzione dell'Universo. Per farlo, si parte dalle evidenza sperimentali raccolte durante il XX secolo. Da queste si possono dedurre due osservazioni importanti:
+\begin{enumerate}
+    \item a grande scala, ossia oltre i $\SI{100}{\mega\parsec}$, l'Universo appare isotropo\footnote{Le misure più recenti tramite osservazioni \emph{deep field} nel visibile da parte del telescopio Hubble e nell'infrarosso da parte del telescopio James Webb lo confermano. Un'altra evidenza importante è chiaramente la CMB.};
+    \item osservando le galassie, si nota che queste generalmente si stanno allontanando tanto più velocemente quanto sono più lontane. 
+\end{enumerate}
+La prima osservazione porta in primis a grandi semplificazioni nei calcoli che si svolgono in Cosmologia; inoltre, se si assume il \emph{principio copernicano}, secondo il quale la Terra non si trova in un luogo privilegiato nell'Universo, la proprietà di isotropia dell'Universo porta alla condizioni di omogeneità dello stesso. In altre parole, l'Universo appare isotropo non solo se osservato dalla Terra, ma appare così se lo si osserva da qualsiasi punto dell'Universo. Questo risultato è riassunto nel \emph{principio cosmologico}.
+\begin{axiom}[principio cosmologico]
+    A grande scala, l'Universo è considerabile isotropo ed omogeneo.
+\end{axiom}
+Si potrebbe sembra che il principio cosmologico sia in netto contrasto con la nozioni di ragnatela cosmologica di cui si è prima discusso. Questo è in parte vero, tuttavia si deve ricordare che con omogeneità non si intende necessariamente che le variabili del sistema siano in ogni punto costanti ed uguali, bensì che la struttura a grande scala possegga le stesse caratteristiche ovunque. In seguito, quando servirà effettivamente richiedere che l'Universo sia in tutti i punti costante, la struttura descritta dalla ragnatela cosmica verrà considerata come una perturbazione al primo ordine. 
+
+Riguardo alla seconda osservazione, poco dopo la scoperta che le galassie fossero oggetti esterni alla Via Lattea, si scoprì che queste avevano un moto rispetto a quest'ultima. Per misurare la natura di questo moto si sfrutta la nozione di \emph{redshift}, ossia della variazione della lunghezza d'onda della luce misurata proveniente dalla galassie verso il rosso. Per ricavare tale variazione si passa per l'effetto Doppler in Relatività speciale. Quindi, sia $O$ il sistema di riferimento dell'osservatore che emette la luce e sia $O'$ il sistema di riferimento dell'osservatore che la riceve. Siano quindi $\lambda_S$ e $\lambda_R$ le lunghezze d'onda misurate rispettivamente dall'osservatore $O$ che riceve e $O'$ che emette. Si assuma inoltre che i sistemi di riferimento $O$ ed $O'$ si stiano allontanando con velocità relativa $v$ e che la luce venga emessa parallelamente a questa. In generale, la velocità $v$ diventa $v_{l.o.s}$, ossia la velocità \emph{lungo la linea di vista}. Invece, il tempo che intercorre tra l'emissione di due fronti d'onda per l'osservatore $O$ è
+\begin{equation}
+    \Delta t_S = \frac{\lambda_S}{c}.
+\end{equation}
+L'osservatore $O$ misura anche che il tempo che intercorre tra la ricezione dei due fronti d'onda da parte di $O'$ sarà maggiore in quanto quest'ultimo si sta allontanando da $O$. In particolare, $O$ osserva
+\begin{equation}
+    \Delta t_R = \Delta t_S + \beta\Delta t_R,
+\end{equation}
+per cui 
+\begin{equation}
+    \Delta t_R = \frac{\Delta t_S}{1 - \beta}.
+\end{equation}
+Il tempo $\Delta t_R$, misurato in un sistema di riferimento dove le ricezioni dei due fronti non avvengono nello stesso punto, è soggetto alla dilatazione temporale rispetto a quello comovente con il ricevitore $O'$; in particolare, $O'$ misura
+\begin{equation}
+    \Delta t_R = \gamma\Delta t_R = \Delta t_S\sqrt{\frac{1 + \beta}{1 - \beta}},
+\end{equation}
+da cui si ricava
+\begin{equation}
+    \lambda_R = c\Delta t_R' = \lambda_S\sqrt{\frac{1 + \beta}{1 - \beta}} \simeq \lambda_S(1 + \beta),\quad \beta \ll 1.
+\end{equation}
+Quindi, se osservando lo spettro di emissione di una galassia si presentano delle traslazioni rispetto ai valori che ci si aspetta, ricavabili da misure di Fisica nucleare, significa che la galassia si sta avvicinando o allontanando. La quantità che codifica tale informazione è appunto il redshift $\fan{Z}$, definito da 
+\begin{equation}
+    \fan{Z} := \frac{\lambda_R - \lambda_S}{\lambda_S}.
+\end{equation}
+Se la sorgente si allontana rispetto all'osservatore lo spettro risulterà traslato verso il rosso, altrimenti lo sarà verso il blu, in quest'ultimo caso si parla quindi di \emph{blueshift}.
+
+Hubble fu il primo a catalogare le galassie in base alla loro distanza dalla Terra e al valore di redshift. Le osservazioni in particolare suggerivano che più una galassia è lontana, più velocemente recede rispetto alla Terra. L'ipotesi di Hubble potrebbe essere considerata azzardata guardando i dati originali in figura +REF +IMMAGINE, tuttavia i dati più recenti confermano l'intuizione di Hubble, come mostrato in figura +REF +IMMAGINE. Il risultato di queste misure converge nella legge di Hubble-Lemaitre.
+\begin{teo}[legge di Hubble-Lemaitre]
+    Esiste una proporzionalità diretta tra la distanza di una galassia $d$ e la sua velocità di recessione $v$ data da
+    \begin{equation}
+        v = H_0d,
+    \end{equation}
+    dove $H_0$ è la costante di Hubble.
+\end{teo}
+Si noti dai dati sempre in figura +REF che la dispersione aumenta al crescere della distanza. Questa è dovuta dai \emph{moti peculiari} delle galassie, i quali si aspettano essere dello stesso ordine di grandezza ovunque. Quindi, più la distanza cresce, e di conseguenza la velocità di recessione, più i moti peculiari diventano trascurabili. Per quanto riguarda il valore della costante di Hubble, il suo valore è stato più volte modificato a causa di errori nella calibrazione delle distanze. La stima iniziale di Hubble era di $H_0 \simeq \SI{500}{\kilo\meter\per\second\per\mega\parsec}$, ad oggi il valore fissato 
+\begin{equation}
+    H_0 \simeq (70 \pm 1\%)\,\unit{\kilo\meter\per\second\per\mega\parsec}.
+\end{equation}
+Tuttavia, c'è una certa tensione in quanto le stime date dalla CMS tendono al valore di $\SI{67}{\kilo\meter\per\second\per\mega\parsec}$, mentre le misure dirette $\SI{71}{\kilo\meter\per\second\per\mega\parsec}$. Questa discrepanza tra i $3\sigma$ e i $5\sigma$ viene detta \emph{tensione della costante di Hubble}. 
+
+\section{Coordinate comoventi}
+La legge di Hubble-Lemaitre permette di pensare che siano le distanze stesse ad aumentare e definire quindi un sistema di coordinate che fattorizzi questa crescita delle distanze e che in generale fattorizzi qualsiasi moto omogeneo degli oggetti nell'Universo. In questo modo non sono gli oggetti a muoversi, bensì sono le coordinate stesse a cambiare. Questo sistema di coordinate prende il nome di \emph{coordinate comoventi}. Si indicano quindi con $\v{x}_p$ le coordinate fisiche, ovvero quelle che vengono effettivamente misurate, e con $\v{x}_c$ le coordinate comoventi. La relazione tra le due coordinate è
+\begin{equation}
+\label{eq: definizione coordinate comoventi}
+    \v{x}_p = a(t)\v{x}_c,
+\end{equation}
+dove $a(t)$ è il \emph{fattore di scala}.
+\begin{obs}
+    In linea di principio, il fattore di scala in equazione \eqref{eq: definizione coordinate comoventi} dovrebbe essere una matrice $3 \times 3$. Tuttavia, se così fosse significherebbe che esistono direzioni privilegiate rispetto ad altre, invalidando le assunzioni del principio cosmologico. Pertanto, il fattore di scala $a(t)$ non è altro che uno scalare, rendendo il sistema di coordinate comoventi molto conveniente nei calcoli.
+\end{obs}
+Ad esempio, la velocità di una particella di un fluido si può scrivere come 
+\begin{equation}
+\label{eq: flusso di Hubble}
+    \v{u} = \frac{d\v{x}_p}{dt} = \dot{a}\v{x}_c + a\dot{\v{x}}_c = \frac{\dot{a}}{a}\v{x}_p + v.
+\end{equation}
+Questa espressione non è nient'altro che una versione più generale della legge di Hubble-Lemaitre. Infatti, questa tiene conto delle \emph{velocità peculiari} $\v{v}$ della particelle rispetto alla griglia comovente ed ammette una proporzionalità tra velocità e distanza variabile nel tempo data dal \emph{tasso di espansione di Hubble}
+\begin{equation}
+    H(t) \equiv \frac{\dot{a}}{a}.
+\end{equation}
+Invece, il termine completo $H(t)\v{x}_p$ viene detto \emph{flusso di Hubble}. Dato che il tasso di espansione varia nel tempo, la legge di Hubble-Lemaitre è valida solo nell'Universo locale, ossia l'Universo che si osserva nel presente, mentre potrebbe avere valori diversi per $H(t)$ in tempo passati, ossia a distanze maggiori. 
+\begin{notz}
+    Nel seguito, si indicano con un pedice $0$ le quantità valutate nel presente.
+\end{notz}
+Inoltre, si può vedere qual è la relazione tra coordinate fisiche e coordinate comoventi per l'operatore di derivazione, in particolare
+\begin{equation}
+    \nabla_p = \frac{\p}{\p\v{x}_p} = \frac{1}{a}\frac{\p}{\p\v{x}_c} = \frac{1}{a}\nabla_c,
+\end{equation}
+di conseguenza, per il laplaciano si ha
+\begin{equation}
+    \nabla_p^2 = \frac{1}{a^2}\nabla_c^2.
+\end{equation}
+Tuttavia, un fatto da notare quando si passa dalle coordinate fisiche a quelle comoventi, è che la derivata temporale non ha la stessa forma. Questo avviene perché il punto in cui quest'ultima viene valutata cambia con il passaggio tra un sistema e l'altro; quello che rimane uguale d'altra parte è la derivata totale rispetto al tempo, che segue il fluido in un qualsiasi sistema di riferimento. Infatti, da
+\begin{equation}
+    \begin{split}
+        \frac{d}{dt} = \frac{\p}{\p t}\bigg|_p + \v{u}\cdot \nabla_p &= \frac{\p}{\p t}\bigg|_p + \frac{1}{a}(\dot{a}\v{x}_c + \v{v})\cdot \nabla_c \\
+        &= \frac{\p}{\p t}\bigg|_c + \v{x}_c \cdot \nabla_c \\
+        &= \frac{\p}{\p t}\bigg|_c + \frac{\v{v}}{a} \cdot \nabla_c,
+    \end{split}
+\end{equation}
+si trova effettivamente che 
+\begin{equation}
+    \frac{\p}{\p t}\bigg|_p = \frac{\p}{\p t}\bigg|_c - H(t)\v{x}_c \cdot \nabla_c \neq \frac{\p}{\p t}\bigg|_c.
+\end{equation}
+
+\section{Equazioni di Friedmann}
+Si possono adesso ricavare le equazioni che descrivono l'evoluzione dell'Universo tramite un'analogia con la fluidodinamica. Infatti, si possono vedere le galassie, ed eventualmente anche le zone dense degli ammassi, come particelle puntiformi di un fluido molto rarefatto e pertanto non interagenti. Questo fluido rispetta l'equazione di continuità e l'equazione di Eulero rispettivamente
+\begin{equation}
+\label{eq: equazioni di continuità e di Eulero}
+    \begin{cases}
+        \dot{\rho} + \rho(\nabla_p \cdot \v{u}) = 0 \\
+        \rho\dot{u} = -\nabla_pp + \rho\v{g}
+    \end{cases},\quad \rho \equiv \rho(\v{x}_p,t),\, p \equiv p(\v{x}_p,t),
+\end{equation}
+dove con $\dot{\rho}$ si intende la derivata materiale
+\begin{equation}
+    \dot{\rho} \equiv \frac{\p \rho}{\p t} + (\v{u} \cdot \nabla_p) \rho
+\end{equation}
+e dove $\v{u}$ è il flusso di Hubble con $\v{v} \simeq 0$ a causa dell'omogeneità, $\v{g}$ è l'accelerazione di gravità e $\b{\b{\sigma}}$ è il tensore degli sforzi. Queste equazioni si posso chiaramente riscrivere in funzione delle coordinate comoventi. 
+
+Considerando per prima l'equazione di continuità, essendo la distribuzione di materia omogenea, la densità di materia $\rho(\v{x}_p,t)$ corrisponde al suo valore medio $\b{\rho}(t)$, funzione solo del tempo a causa del principio cosmologico; quindi
+\begin{equation}
+    \dot{\b{\rho}} = -\b{\rho}(\nabla_p \cdot \v{u}) = -\frac{\b{\rho}}{a}\nabla_c \cdot (\dot{a}\v{x}_c + \v{v}) = -\b{\rho}\bigg[\frac{\dot{a}}{a}(\nabla_c \cdot \v{x}_c) + \frac{1}{a}(\nabla_c \cdot \v{v})\bigg],
+\end{equation}
+la quale, vedendo che $\nabla_c \cdot \v{v} = 0$ e che $\nabla_c \cdot \v{x}_c = 3$, si semplifica a
+\begin{equation}
+\label{eq: equazione di continuità cosmologica}
+    \dot{\b{\rho}} = -3\frac{\dot{a}}{a}\b{\rho} \equiv -3H(t)\b{\rho},
+\end{equation}
+che prende il nome di \emph{equazione di continuità cosmologica}. L'equazione \eqref{eq: equazione di continuità cosmologica} si può integrare sul tempo a partire da un qualsiasi istante del passato fino al tempo presente, per cui
+\begin{equation}
+    \int_{\b{\rho}(t)}^{\b{\rho}_0} d(\ln{\b{\rho}}) = -3\int_{a(t)}^{a_0} d(\ln{a}),
+\end{equation}
+da cui si trova la legge di evoluzione del valor medio della densità di materia
+\begin{equation}
+    \b{\rho}(t) = \b{\rho}_0\bigg(\frac{a(t)}{a_0}\bigg)^{-3}.
+\end{equation}
+Il fatto che $\b{\rho}$ scali con $a(t)^{-3}$ è ragionevole se si ricorda che il fattore di scala è legato alla distanza e di conseguenza $a(t)^3$ è legato al volume; infatti, da $V_p = a(t)^3V_c$, si ha 
+\begin{equation}
+    \frac{dV_p}{dt} = 3a^2\dot{a}V_c\quad\Longrightarrow\quad \frac{d}{dt}(\ln{V_p}) = 3H(t),
+\end{equation}
+ritrovando il coefficiente presente in equazione \eqref{eq: equazione di continuità cosmologica}. 
+
+Si passa adesso all'equazione di Eulero. Il primo termine da discutere è il tensore degli sforzi $\b{\b{\sigma}}$. Questo oggetto in generale possiede due indici ed è legato alla pressione che agisce su ogni faccia di un dato elemento di volume di fluido sia perpendicolarmente che parallelamente a quest'ultimo. Tuttavia, la forma generale di $\b{\b{\sigma}}$ si semplifica in modo estremo per il principio cosmologico, infatti per isotropia la pressione deve essere la stessa su ogni faccia e non può dipendere dalla direzione considerata, quindi i termini fuori dalla diagonale sono nulli mentre quelli sulla diagonale sono tutti uguali, di conseguenza
+\begin{equation}
+\label{eq: evoluzione densità di massa}
+    \b{\b{\sigma}} = p(\v{x}_p,t)\IM_3.
+\end{equation}
+Per l'omogeneità, si può fare lo stesso ragionamento fatto per la densità di materia al caso della pressione, sostituendola quindi con il suo valore medio $\b{p}(t)$ così da avere
+\begin{equation}
+    \b{\b{\sigma}} = \b{p}(t)\IM_3.
+\end{equation}
+Quindi, dato che il tensore degli sforzi diventa proporzionale a $\b{p}(t)$ che non dipende dalle coordinate spaziali, si ha che
+\begin{equation}
+    \nabla_c \cdot \b{p}(t)\IM_3 = \nabla_p \b{p}(t) = 0.
+\end{equation}
+L'altro termine da discutere è l'accelerazione $\v{a}$. Si assume quindi che l'unica forza agente sulle galassie sia la gravità, per cui $\v{a} = \v{g}$, dove $\v{g} = -\nabla\Phi$. Il campo gravitazionale agente sulla $i$-esima galassia è
+\begin{equation}
+    \v{g}_i = -\frac{GM_i}{r_i}\hat{r}_i,
+\end{equation}
+il cui flusso attraverso un volume $V_i$ di bordo $\p V_i$ che racchiude la galassia è
+\begin{equation}
+    \int_{\p V_i}d\Sigma_i\,(\v{g}_i \cdot \h{n}_i) = -4\pi GM_i,
+\end{equation}
+quindi il flusso totale del campo gravitazionale attraverso un volume $V$ di bordo $\p V$ che le contiene tutte è
+\begin{equation}
+    \int_{\p V}d\Sigma\,(\v{g} \cdot \h{n}) = -4\pi GM,\quad M = \nsum_iM_i.
+\end{equation}
+Usando poi la definizione di massa $M = \int_V d^3x_p\,\rho(\v{x}_p,t)$ e il teorema di Stokes si ottiene l'equazione di Gauss per il campo gravitazionale
+\begin{equation}
+    \nabla_p \cdot \v{g} = -4\pi G\rho.
+\end{equation}
+Inoltre, dato che $\v{g} = -\nabla\Phi$, si ha
+\begin{equation}
+\label{eq: equazione di Poisson potenziale gravitazionale}
+    \nabla^2\Phi = 4\pi G\rho.
+\end{equation}
+Quindi, l'equazione di Eulero è diventata semplicemente
+\begin{equation}
+    \dot{u} = \v{g} = -\nabla_p\Phi,
+\end{equation}
+che in coordinate comoventi diventa
+\begin{equation}
+    \frac{d}{dt}(\dot{a}\v{x}_c + \v{v}) = \ddot{a}\v{x}_c = -\frac{1}{a}\nabla_c\Phi.
+\end{equation}
+Prendendo la derivata quest'ultima equazione si ha che
+\begin{equation}
+    \nabla_c \cdot (\ddot{a}\v{x}_c) = -\frac{1}{a}\nabla_c^2\Phi = -a\nabla_p^2\Phi,
+\end{equation}
+da cui, sostituendo la relazione \eqref{eq: equazione di Poisson potenziale gravitazionale} e riarrangiando opportunamente, si ottiene la \emph{seconda equazione di Friedmann}
+\begin{equation}
+\label{eq: seconda equazione di Friedmann}
+    \frac{\ddot{a}}{a} = -\frac{4\pi G}{3}\b{\rho}.
+\end{equation}
+Il termine al membro di sinistra di \eqref{eq: seconda equazione di Friedmann} viene detto \emph{tasso di accelerazione} e si può notare come sia negativo in quanto al membro di destra $\b{\rho} > 0$. Quindi, si deduce che se si considera unicamente la componente di materia, l'Universo è destinato a fermare la sua espansione per poi procedere a contrarsi. Tuttavia, questo è in perfetto disaccordo con le evidenze sperimentali odierne: l'Universo si sta espandendo e il tasso di accelerazione è positivo, ovvero l'accelerazione a cui si espande è in crescita. Usando ora l'identità 
+\begin{equation}
+    \ddot{a} = \frac{d\dot{a}}{dt} = \frac{d\dot{a}}{da}\frac{da}{dt} = \dot{a}\frac{d\dot{a}}{da},
+\end{equation}
+si può combinare l'equazione \eqref{eq: seconda equazione di Friedmann} con l'equazione di continuità cosmologica. Sostituendo quindi l'identità appena scritta insieme alla \eqref{eq: evoluzione densità di massa} in \eqref{eq: seconda equazione di Friedmann} si ha
+\begin{equation}
+    \frac{\dot{a}}{a}\frac{d\dot{a}}{da} = -\frac{4\pi G}{3}\b{\rho}_0\bigg(\frac{a(t)}{a_0}\bigg)^{-3},
+\end{equation}
+la quale integrata sul tempo 
+\begin{equation}
+    \int_{\dot{a}(t)}^{\dot{a}_0}d\dot{a}\,\dot{a} = -\frac{4\pi G}{3}\b{\rho}_0a_0^3\int_{a(t)}^{a_0}\frac{da}{a^2},
+\end{equation}
+restituisce 
+\begin{equation}
+    \frac{\dot{a}_0^2}{2} - \frac{\dot{a}^2}{2} = -\frac{4\pi G}{3}\b{\rho}a^3\bigg(\frac{1}{a} - \frac{1}{a_0}\bigg) = \frac{4\pi G}{3}(\b{\rho}_0a_0^2 - \b{\rho}a^2),\quad \b{\rho}_0a_0^3 = \b{\rho}a^3,
+\end{equation}
+da cui, definendo\footnote{Il significato di $K$ sarà discusso in seguito}
+\begin{equation}
+    K \equiv \frac{1}{c^2}\bigg(\frac{8\pi G}{3}\b{\rho}_0a_0^2 - \dot{a}^2_0\bigg)
+\end{equation}
+e riarragiando, si ottiene la \emph{prima equazione di Friedmann}
+\begin{equation}
+\label{eq: prima equazione di Friedmann}
+    \bigg(\frac{\dot{a}}{a}\bigg)^2 \equiv H(t)^2 = \frac{8\pi G}{3}\b{\rho} - \frac{Kc^2}{a^2}.
+\end{equation}
+Dunque, si sono ottenute le tre equazioni, di cui solo due effettivamente indipendenti, che permettono di descrivere l'Universo omogeneo ed isotropo; si riassumono qui
+\begin{equation}
+    \begin{cases}
+        \dot{\b{\rho}} = -3H(t)\b{\rho} \\[2ex]
+        H(t)^2 = \dfrac{8\pi G}{3}\b{\rho} - \dfrac{Kc^2}{a^2} \\[2ex]
+        \dfrac{\ddot{a}}{a} = -\dfrac{4\pi G}{3}\b{\rho}
+    \end{cases}.
+\end{equation}
+

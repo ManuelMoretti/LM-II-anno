@@ -1,0 +1,1011 @@
+\chapter{Richiami}
+La supergravità e la corrispondenza AdS/CFT costituiscono due importanti sviluppi nello studio della gravità quantistica, della supersimmetria e della teoria delle stringhe.
+
+La relatività generale descrive la gravità come una teoria geometrica dello spaziotempo, mentre la teoria quantistica dei campi fornisce il quadro teorico per la descrizione delle interazioni fondamentali a livello quantistico. La costruzione di una teoria quantistica della gravità presenta tuttavia difficoltà profonde, che motivano la ricerca di strutture teoriche più generali rispetto alla teoria quantistica dei campi ordinaria.
+
+La teoria delle stringhe fornisce una possibile estensione di questo quadro, nella quale le particelle fondamentali sono sostituite da oggetti estesi e la gravità emerge naturalmente dallo spettro della teoria. Nel limite di basse energie, le teorie di stringa sono descritte da teorie efficaci di supergravità, nelle quali la supersimmetria è realizzata localmente e la dinamica gravitazionale è accompagnata da ulteriori gradi di libertà. La supersimmetria introduce una relazione tra bosoni e fermioni e impone forti vincoli sulla struttura delle teorie, sulle loro simmetrie e sulle loro possibili interazioni.
+
+La corrispondenza AdS/CFT propone inoltre una relazione profonda tra una teoria gravitazionale e una teoria quantistica dei campi, mostrando come descrizioni apparentemente diverse possano risultare equivalenti. Questa dualità fornisce un nuovo punto di vista sulla gravità quantistica e sulle teorie fortemente accoppiate, e costituisce uno dei principali strumenti teorici per esplorare la struttura non perturbativa delle teorie fondamentali.
+
+\begin{notz}(unità naturali)
+Nel seguito si opererà sempre in unità naturali, ponendo cioè 
+\begin{equation}
+    c = \hbar = k_B = 1;
+\end{equation}
+tuttavia, non in tutte le circostanze si pone $G = 1$, la scelta dipenderà dal contesto.
+\end{notz}
+\begin{notz}(notazione di Einstein)
+    Nel seguito si adotterà, a meno che non sia specificato diversamente, la notazione di Einstein per la sommatoria.
+\end{notz}
+
+\section{Relatività speciale e teoria dei campi}
+Anche se nel seguito si lavorerà su varietà di natura generale, come primo passo si richiama la varietà associata alla spaziotempo in relatività speciale. Considerando il caso $D$-dimensionale, tale varietà è una varietà Riemanniana in quanto è possibile definire una metrica, in particolare quella data da
+\begin{equation}
+\label{eq: metrica di Minkowski in D dimensioni}
+    \eta_{\mu\nu} = \diag{(-1,\underbrace{\dots}_{D - 1\,\mathrm{volte}},1)},
+\end{equation}
+la cui inversa è definita come $\eta_{\mu\nu}^{-1} \equiv \eta^{\mu\nu}$, la quale coincide con la metrica $\eta_{\mu\nu}$. Tuttavia, per una varietà generica la metrica inversa non coincide necessariamente con la sua controparte. Ad ogni modo, sulla varietà dello spaziotempo si definiscono i vettori $D$-dimensionali come
+\begin{equation}
+    x^\mu = (t,x^i),\quad \mu = 0, \dots, D - 1,\,i = 1, \dots, D - 1.
+\end{equation}
+\begin{notz}(indice di Lorentz)
+    Nel seguito, se non si incorre in ambiguità, si potrà omettere l'indice di Lorentz $\mu$ dei vettori $x^\mu$, permettendo così di alleggerire la notazione ponendo $x^\mu \equiv x$.
+\end{notz}
+Lo spazio che si sta descrivendo in questo modo corrisponde al prodotto $\bb{R} \ot \cdots \ot \bb{R}$ dato che le coordinate dei vettori $x^\mu$ possono variare sull'intervallo $(-\infty,\infty)$. Tramite la metrica \eqref{eq: metrica di Minkowski in D dimensioni} si può definire la norma di un vettore come
+\begin{equation}
+\label{eq: norma su spazio di Minkowski in D dimensioni}
+    ||x^\mu||^2 \equiv x^\mu\eta_{\mu\nu}x^\nu = -t^2 + (x^i)^2 = x^\mu x_\mu.
+\end{equation}
+Si noti che in questo modo è possibile definire il vettore $x_\mu$ con l'indice in basso, in particolare
+\begin{equation}
+    x_\mu \equiv \eta_{\mu\nu}x^\nu;
+\end{equation}
+si noti quindi che questa non è una definizione posta a priori. Una nozione particolarmente importante in Relatività speciale è l'elemento di linea $ds^2$ definito come
+\begin{equation}
+    ds^2 = \eta_{\mu\nu}dx^\mu dx^\nu = -dt^2 + dx_idx^i,
+\end{equation}
+dove formalmente $dx^\mu dx^\nu$ corrisponde al prodotto $dx^\mu \ot dx^\nu$. Lo spazio così definito e avente queste proprietà è detto ``spazio di Minkowski'' in $D$ dimensioni, denotato con $\bb{R}^{1,D - 1}$.Su questo spazio agiscono delle trasformazioni lineari della forma $x^\mu \to x'^\mu \equiv \Lambda^\mu_\nu x^\nu$. Tra tutte queste trasformazioni sono interessanti quelle che lasciano la norma \eqref{eq: norma su spazio di Minkowski in D dimensioni} invariata, cioè tali che $||x^\mu||^2 = ||x'^\mu||^2$. Queste particolari trasformazioni formano un gruppo di Lie indicato con $\rem{O}(1,D - 1)$, dove, in forma matriciale, sono tali da soddisfare la relazione
+\begin{equation}
+    \Lambda^T\eta\Lambda = \eta,\quad \Lambda \in \rem{O}(1,D - 1).
+\end{equation}
+Se si considerano poi tra le trasformazioni $\Lambda$ appartenenti al gruppo $O(1,D - 1)$ quelle che hanno $\det{\Lambda} = 1$, si può dimostrare che queste formano un sottogruppo di Lie indicato con $SO(1,D - 1)$ e detto ``gruppo di Lorentz''. 
+
+Gli oggetti con cui si avrà principalmente a che fare saranno i campi, tipicamente indicati con $\phi(x)$. In particolare, si farà uso della formulazione lagrangiana per una descrizione esplicita delle simmetrie. Il primo esempio di campo è il campo scalare, il quale è definito tramite la trasformazione 
+\begin{equation}
+    \phi(x) \to \phi'(x') \equiv \phi(x') = \phi(\Lambda x).
+\end{equation}
+Un altro esempio è il campo vettoriale, definito invece tramite la trasformazione
+\begin{equation}
+    V^\mu(x) \to V'^\mu(x') \equiv (\Lambda^{-1})^\mu_\nu V^\nu(\Lambda x).
+\end{equation}
+Un terzo esempio, molto importante, è il campo spinoriale, di cui però si tratterà meglio in seguito. 
+
+In generale, l'elemento fondamentale per formulare una teoria è l'azione $S$, L'azione tipicamente può dipendere dai campi $\phi$ e dalle sue derivate $\p_\mu \phi$, contenute nella densità di lagrangiana $\Lag$. La definizione in quattro dimensioni, semplicemente estendibile in $D$ dimensioni, è 
+\begin{equation}
+\label{eq: definizione dell'azione in 4 dimensioni}
+    S = \int d^4x\,\Lag(\phi,\p_\mu \phi).
+\end{equation}
+Se si compie una variazione arbitraria $\phi \to \phi + \delta\phi$, l'azione varia secondo
+\begin{equation}
+    \delta S = \int d^4x\bigg[\frac{\p\Lag}{\p\phi}\delta\phi - \p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\bigg)\delta\phi + \p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\delta\phi\bigg)\bigg].
+\end{equation}
+Imponendo adesso che la variazione dei campi calcolata sul bordo $\p$ della varietà si nulla, ossia che $\delta\phi|_\p = 0$, la variazione dell'azione si riduce a
+\begin{equation}
+    \delta S = \int d^4x\bigg[\frac{\p\Lag}{\p\phi}\delta\phi - \p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\bigg)\delta\phi\bigg].
+\end{equation}
+\begin{obs}
+    Ci si potrebbe domandare cosa si intenda per bordo della varietà se tale varietà è infinita. Tipicamente, si intende il limite per $x \to \infty$ della quantità in questione
+\end{obs}
+Imponendo il principio di minima azione, si trova che $\delta S = 0$ se e solo se $\Lag$ soddisfa le equazioni di Eulero-Lagrange
+\begin{equation}
+\label{eq: equazioni di Eulero-Lagrange}
+    \frac{\p\Lag}{\p\phi} - \p_\mu\bigg(\frac{\p\Lag}{\p(p_\mu\phi)}\bigg) = 0,
+\end{equation}
+ovvero le equazioni del moto.
+\begin{obs}
+    Le equazioni \eqref{eq: equazioni di Eulero-Lagrange} sono corrispondenti a quella che si deriva in Meccanica classica
+    \begin{equation}
+        \frac{\p L}{\p q} - \frac{d}{dt}\bigg(\frac{\p L}{\p \dot{q}}\bigg) = 0,
+    \end{equation}
+    dove $\Lag$ corrisponde ad $L$ e $\phi$ corrisponde a $q$.
+\end{obs}
+
+Per quanto riguarda le simmetrie, queste sono codificate dal teorema di Noether. L'idea è che ad ogni simmetria, ossia ad ogni legge di conservazione, corrisponde una quantità conservata. In generale, una simmetria è una trasformazione che lascia invariata l'azione, ossia tale che 
+\begin{equation}
+    S[\phi] = S[\phi'].
+\end{equation}
+Per definizione dell'azione \eqref{eq: definizione dell'azione in 4 dimensioni}, questa è invariante sotto trasformazioni della lagrangiana tramite una derivata totale, cioè per $\Lag \to \Lag' = \Lag + \epsilon\p_\mu k^\mu$. Per una trasformazione generale $\Lag \to \Lag' = \Lag + \epsilon\Delta\Lag$, si ha che 
+\begin{equation}
+    \begin{split}
+        \epsilon\Delta\Lag &= \epsilon\p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\Delta\phi\bigg) - \epsilon\p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\bigg)\Delta\phi + \epsilon\frac{\p\Lag}{\p\phi}\Delta\phi \\
+        &= \epsilon\p_\mu\bigg(\frac{\p\Lag}{\p(\p_\mu\phi)}\Delta\phi\bigg),
+    \end{split}
+\end{equation}
+dove il campo trasforma come $\phi \to \phi' = \phi + \epsilon\Delta\phi$, la quale non è una trasformazione arbitraria, ma deve essere esplicitata per ogni caso. Ponendo ora che $\Delta\Lag = \p_\mu k^\mu$ e usando le equazione di Eulero-Lagrange \eqref{eq: equazioni di Eulero-Lagrange}, si definisce la corrente di Noether
+\begin{equation}
+    J^\mu := -k^\mu + \frac{\p\Lag}{\p(\p_\mu\phi)}\Delta\phi,
+\end{equation}
+la quale soddisfa la legge di conservazione 
+\begin{equation}
+\label{eq: legge di conservazione di Noether}
+    \p_\mu J^\mu = 0.
+\end{equation}
+Dalla corrente di Noether si definisce la carica di Noether
+\begin{equation}
+    Q := \int d^3x\,J^0,
+\end{equation}
+da cui segue che 
+\begin{equation}
+    \frac{dQ}{dt} = 0.
+\end{equation}
+
+Si considera ora una traslazione nello spaziotempo 4-dimensionale $x^\mu \to x'^\mu = x^\mu + a^\mu$, che è una trasformazione appartenente al gruppo di Poincaré. Sotto questa trasformazione, un campo scalare trasforma come $\phi(x) \to \phi(x + a)$, dove $\phi(x + a)$ può essere espresso tramite uno sviluppo in serie di Taylor
+\begin{equation}
+    \phi(x + a) = \phi(x) + a^\mu\p_\mu\phi(x) + \cdots,
+\end{equation}
+dove si può identificare $\epsilon \equiv a^\mu$ e $\Delta\phi \equiv \p_\mu\phi(x)$. Pertanto, la lagrangiana trasforma come
+\begin{equation}
+    \Lag \to \Lag + a^\mu\p_\mu\Lag + \cdots = \Lag + a^\nu\p_\mu(\delta^\mu_\nu\Lag),
+\end{equation}
+dove si può identificare di nuovo $\epsilon \equiv a^\nu$ e $\p_\mu k^\mu \equiv \p_\mu(\delta^\mu_\nu\Lag)$. La corrente di Noether quindi è un tensore a due indici
+\begin{equation}
+    J^\mu_\nu = \frac{\p\Lag}{\p(\p_\mu\phi)}\p_\nu\phi - \delta^\mu_\nu\Lag,
+\end{equation}
+che, tramite la metrica, si può scrivere nella forma
+\begin{equation}
+    T^{\mu\nu} = J^\mu_\rho \eta^{\rho\nu},
+\end{equation}
+indicata con il nome di ``tensore energia-impulso'', soddisfacente l'equazione di conservazione \eqref{eq: legge di conservazione di Noether}. Le cariche conservate associate sono
+\begin{equation}
+    p^\mu = \int d^3x\,T^{0\mu},
+\end{equation}
+che altro non sono che le componenti del quadrimomento. Si potrebbe fare lo stesso per una trasformazione del gruppo di Lorentz, a cui corrisponde il tensore conservato
+\begin{equation}
+    M^\mu_{\rho\sigma} = -x_\rho T^\mu_\nu + x_\sigma T^\mu_\rho,
+\end{equation}
+e le sei cariche conservate
+\begin{equation}
+    L_{\rho\sigma} = \int d^3x\, M^0_{\rho\sigma}.
+\end{equation}
+L'insieme delle $p^\mu$ e delle $L_{\rho\sigma}$ contiene tutte le cariche conservate nello spaziotempo 4-dimensionale. Tuttavia, le trasformazioni introdotte più sopra non sono tutte le possibili simmetrie, ne esistono altre chiamate ``simmetrie interne''. Ad esempio, se si considera un campo scalare complesso avente lagrangiana
+\begin{equation}
+    \Lag = \p_\mu\phi\p^\mu\phi^* - m^2|\phi|^2,\quad |\phi|^2 \equiv \phi\phi^*,
+\end{equation}
+si vede che questa è invariante sotto trasformazioni di Poincaré, ma anche sotto trasformazioni del tipo $\phi \to \phi' \equiv e^{i\alpha}\phi$, con $\alpha \in \bb{R}$, appartenenti al gruppo $U(1)$. Espandendo ora i campi $\phi'$ in serie di Taylor, scrivendo così le trasformazioni
+\begin{equation}
+    \phi \to \phi + i\alpha\phi + \cdots,\quad \phi^* \to \phi^* - i\alpha\phi^* + \cdots,
+\end{equation}
+si può derivare la forma della corrente come
+\begin{equation}
+    J^\mu = i\phi\p^\mu\phi^* - i\phi^*\p^\mu\phi,
+\end{equation}
+dove si è definito $\p^\mu \equiv \eta^{\mu\nu}\p_\nu$ in maniera simile a quanto fatto per $x_\mu$. Il fatto che questa corrente soddisfi la legge di conservazione \eqref{eq: legge di conservazione di Noether} non è immediatamente ovvio, però, dal calcolo esplicito, si può trovare che $\p_\mu J^\mu = 0$ se e solo se il campo complesso $\phi$ soddisfa le equazioni del moto. 
+
+\section{Geometria differenziale}
+In generale, su una varietà $M$ si possono definire degli aperti $M_i \subseteq M$, dette carte, a cui possono essere associati degli ulteriori aperti $A_i \subseteq \bb{R}^D$, o in $\bb{R}^{1,D - 1}$ nel caso di una metrica minkowskiana, tramite delle mappe $\phi : M \to \bb{R}^D$ tali che $\phi_i(P) = (x^0,\dots,x^{D - 1})$, dove $P \in M_i \subseteq M$. Il punto può appartenere ad una sola carta oppure a più carte che in quel punto, ed eventualmente nel suo intorno, si sovrappongono. Nel caso in cui questo avvenga, è possibile definire, a partire dalle mappe $\phi_i$, delle mappe che legano due diversi aperti $A_i \subseteq \bb{R}^D$ tra di loro; tali mappe prendono il nome di cambi di coordinate. 
+
+Tra gli oggetti che possono essere definiti su una varietà $M$ ci sono i campi vettoriali $V^\mu(x)$. Più precisamente, i campi vettoriali sono definiti come mappe che associano ad ogni punto $p$ della varietà un vettore appartenente allo spazio tangente in quel punto $T_pM$, ossia
+\begin{equation}
+    \forall p \in M,\quad V : M \to T_pM,\quad p \mapsto V(p) \in T_pM.
+\end{equation}
+In maniera simile si può definire la controparte ``covariante'' dei campi vettoriali, che in un linguaggio più moderno prendono il nome di 1-forme differenziali. Una 1-forma differenziale $\omega_\mu$ è una mappa che associa ad ogni punto $p$ della varietà un vettore appartenente allo spazio cotangente in quel punto $T_p^*M$ , ossia
+\begin{equation}
+    \forall p \in M,\quad \omega : M \to T_p^*M,\quad p \mapsto \omega(p) \in T_p^*M.
+\end{equation}
+In modo equivalente, una 1-forma si può definire come una mappa tra lo spazio tangente e un aperto di $\bb{R}$, per cui
+\begin{equation}
+    \forall v \in T_pM,\quad \omega : T_pM \to \bb{R},\quad v \mapsto \omega(v) \in \bb{R}.    
+\end{equation}
+Campi vettoriali e 1-forme differenziali trasformano sotto trasformazioni di coordinate $x^\mu \to x'^\mu$ con lo jacobiano e lo jacobiano inverso rispettivamente, per cui
+\begin{equation}
+    V'^\mu(x') = \frac{\p x'^\mu}{\p x^\nu}V^\nu(x),\quad \omega'_\mu(x') = \frac{\p x_\mu}{\p x'_\nu}\omega_\nu(x).
+\end{equation}
+In generale, esistono infinite basi con cui si posso esprimere campi vettoriali e 1-forme, per ora si è dato per si è sottinteso l'uso della base coordinata $\{\p_\mu\}$ con la quale si può scrivere 
+\begin{equation}
+    V = V^\mu\p_\mu = V'^\mu\p'_\mu.
+\end{equation}
+La base per le 1-forme è definita invece tramite la relazione
+\begin{equation}
+    \mybraket{dx^\mu}{\p_\nu} = \delta^\mu_\nu.
+\end{equation}
+Le 1-forme sono particolarmente importanti perché posso essere viste come campi dinamici sulla varietà. 
+
+A questo punto si possono definire i tensori come oggetti del tipo $T^{(q,r)} \equiv T \in \ot^q T_p^*M \ot^r T_pM$, dove $(q,r)$ è il rango del tensore. In componenti, un tensore ha la forma
+\begin{equation}
+    T = T^{\mu_1\cdots\mu_r}_{\nu_1\cdots\nu_q}\frac{\p}{\p x^{\mu_1}}\cdots\frac{\p}{\p x^{\mu_r}}dx^{\nu_1}\cdots dx^{\nu_q}.
+\end{equation}
+Le forme differenziali sono tensori del tipo $T_{\nu_1\cdots\nu_q} dx^{\nu_1}\cdots dx^{\nu_q}$ che appartengono allo spazio cotangente, dove $T_{\nu_1\cdots\nu_q}$ ha gli indici anti-simmetrizzati, cioè tali che sotto uno scambio $\nu_i \leftrightarrow \nu_j$ si ha un cambio di segno. Più precisamente, si può definire 
+\begin{equation}
+    T_{\nu_1\cdots\nu_q} dx^{\nu_1}\wedge \cdots\wedge dx^{\nu_q},
+\end{equation}
+dove $dx^{\nu}\wedge dx^{\nu} = dx^\mu \ot dx^\nu - dx^\nu \ot dx^\mu$ con $\wedge$ il prodotto esterno. Tramite il prodotto $\wedge$ si può definire una $p$-forma differenziale come
+\begin{equation}
+    \omega = \frac{1}{p!}\omega_{\mu_1\cdots\mu_p}dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_p} \in \Omega^p(M),
+\end{equation}
+dove $\Omega^p(M)$ è lo spazio delle $p$-forme differenziali definite sulla varietà $M$. Supponendo di avere due forme differenziali $\omega^{(p)}$ e $\omega^{(q)}$, di rango $p$ e $q$ rispettivamente, e definendo la derivata esterna $d$ come la mappa
+\begin{equation}
+    d : \Omega^p(M) \to \Omega^{p + 1}(M),\quad \omega^{(p)} \mapsto d\omega^{(p)} \in \Omega^{p + 1}(M),
+\end{equation}
+quindi la derivata esterna di una $p$-forma si può scrivere come
+\begin{equation}
+    d\omega^{(p)} = \frac{1}{p!}\p_\mu\omega_{\mu_1\cdots\mu_p}dx^\mu\wedge dx^{\mu_1}\wedge \cdots \wedge dx^{\mu_p}.
+\end{equation}
+si possono verificare le seguenti proprietà:
+\begin{enumerate}
+    \item il prodotto esterno di $\omega^{(p)}$ e $\omega^{(q)}$ restituisce una $(p + q)$-forma differenziale, ossia $\omega^{(p)}\wedge\omega^{(q)} = \omega^{(p + q)}$;
+    \item la derivata esterna è nilpotente, ossia $dd(\cdots) = 0$;
+    \item la derivata esterna del prodotto di due 1-forme è
+    \begin{equation}
+        d(\omega^{(p)}\wedge\omega^{(q)}) = d\omega^{(p)} \wedge \omega^{(q)} + (-1)^p\omega^{(p)} \wedge d\omega^{(q)} \in \Omega^{(p + q + 1)}(M).
+    \end{equation}
+\end{enumerate}
+Si può definire poi la contrazione, o prodotto interno, $i_V$ come la mappa 
+\begin{equation}
+    i_V : \Omega^p(M) \to \Omega^{p - 1}(M),\quad \omega^{(p)} \mapsto i_V\omega^{(p)} \in \Omega^{p - 1}(M),\, V \in T_pM,
+\end{equation}
+quindi la contrazione di una $p$-forma si può scrivere come
+\begin{equation}
+    i_V\omega^{(p)} = V^\mu\omega_{\mu\mu_1\cdots\mu_{p - 1}}dx^{\mu_1}\wedge \cdots \wedge dx^{\mu_{p - 1}}.
+\end{equation}
+Data una varietà differenziabile, si definisce la derivata di Lie di un campo vettoriale come 
+\begin{equation}
+    \Lie_XY = \comm{X}{Y},\quad X,Y \in T_pM.
+\end{equation}
+Nel caso di una $p$-forma differenziale $\omega \in \Omega^p(M)$, la sua derivata di Lie è data dalla formula magica di Cartan
+\begin{equation}
+\label{eq: formula magica di Cartan}
+    \Lie_V\omega = d(i_V\omega) + i_Vd\omega,\quad V \in T_pM.
+\end{equation}
+
+\subsection{WIP}
+Ritornando adesso al tensore metrico $g = g_{\mu\nu} dx^\mu \ot dx^\nu$, tramite $g_{\mu\nu}$ è possibile passare da elementi dello spazio tangente ad elementi dello spazio cotangente tramite la relazione 
+\begin{equation}
+    g_{\mu\nu}T^\nu = T_\mu,\quad T^\nu \in T_pM,\,T_\mu \in T_p^*M.
+\end{equation}
+Di fatto quindi la metrica costituisce un isomorfismo tra $T_pM$ e $T_p^*M$. 
+
+Si introduce ora il formalismo dei vielbein. In generale in questo formalismo, si sceglie un ricoprimento di aperti della varietà dello spaziotempo $M$ e, per ciascuno di questi aperti, una base locale costituita da un insieme di $n$ campi vettoriali linearmente indipendenti 
+\begin{equation}
+    e_a = e_a^\mu \partial_\mu,\quad a = 1,\ldots,n,
+\end{equation}
+che insieme generano lo spazio tangente $n$-dimensionale in ogni punto dell'insieme. Dualmente, un vielbein determina, ed è determinato da, un co-vielbein, costituito da un insieme di $n$ 1-forme linearmente indipendenti,
+\begin{equation}
+    e^a = e^a_\mu \, dx^\mu,
+\end{equation}
+tali che
+\begin{equation}
+    e^a(e_b) = e^a_\mu e_b^\mu = \delta^a_b.
+\end{equation}
+Un vielbein viene solitamente specificato tramite i suoi coefficienti $e^a_\mu$ rispetto a una base coordinata, nonostante la scelta di un insieme di coordinate locali $x^\mu$ non sia necessaria per la definizione di un vielbein. Per $n = 4$, ossia per uno spaziotempo 4-dimensionale, il tensore metrico può quindi essere espresso come
+\begin{equation}
+    g_{\mu\nu} = e^a_\mu\eta_{ab}e^b_\nu,\quad \eta_{ab} = \diag{(-1,1,1,1)}.
+\end{equation}
+Per quanto riguarda i campi vettoriali, questi si possono scrivere come
+\begin{equation}
+    V = V^\mu\p_\mu = V^ae_a,\quad V^a = e^a_\mu V^\mu.
+\end{equation}
+Le azioni si costruiscono tramite le forme di grado massimo, che per uno spazio $D$-dimensionale sono 
+\begin{equation}
+    \omega^{(D)} = \frac{1}{D!}\omega_{0\cdots D - 1}dx^0\wedge \cdots \wedge dx^{D - 1},
+\end{equation}
+il cui integrale sulla varietà è definito come
+\begin{equation}
+    \int_M\omega^{(D)} = \int_M\omega_{0\cdots D - 1}dx^0 \wedge \cdots \wedge dx^{D - 1}.
+\end{equation}
+La forma volume è 
+\begin{equation}
+    dV = \sqrt{|\det{g}|}dx^0\cdots dx^{D - 1} = e\,dx^0\cdots dx^{D - 1},\quad e = \det{e^a_\mu},
+\end{equation}
+la quale è usata per definire l'azione 
+\begin{equation}
+    S = \int dV\,\Lag = \int d^Dx\,e\Lag.
+\end{equation}
+Un tensore, o meglio una densità tensoriale, utile è quello di Levi-Civita, che in un
+\begin{equation}
+    \epsilon_{a_0\cdots a_{D-1}} = 
+    \begin{cases}
+        1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
+        -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+        0,\quad \rem{altrimenti}
+    \end{cases}.
+\end{equation}
+Si può definire poi
+\begin{equation}
+    \begin{aligned}
+        \epsilon^{b_0\cdots b_{D - 1}} &= \eta^{a_0b_0}\cdots\eta^{a_{D - 1}b_{D - 1}}\epsilon_{a_0\cdots a_{D - 1}} \\
+        &= \begin{cases}
+            -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
+            1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+            0,\quad \rem{altrimenti}
+        \end{cases},
+    \end{aligned}
+\end{equation}
+per cui in maniera simile si definisce
+\begin{equation}
+    \begin{aligned}
+        \epsilon_{\mu_0\cdots \mu_{D - 1}} &= e^{-1}\epsilon_{a_0\cdots a_{D - 1}}e^{a_0\cdots a_{D - 1}}_{\mu_0\cdots \mu_{D - 1}} \\
+        &= \begin{cases}
+            -1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,pari} \\
+            1,\quad a_0\cdots a_{D-1}\,\rem{è\,una\,permutazione\,dispari} \\
+            0,\quad \rem{altrimenti}
+        \end{cases}.
+    \end{aligned}
+\end{equation}
+Si noti che anche se si sta lavorando in $D$ dimensioni si può comunque definire $\epsilon_{a_1a_2}^{\mu_3\mu_4}$. Si può dimostrare che
+\begin{equation}
+    \begin{aligned}
+        e^0 \wedge \cdots \wedge e^{D - 1} &= \frac{1}{D!}\epsilon_{a_0\cdots a_{D - 1}}e^{a_0}\wedge\cdots\wedge e^{a_{D - 1}} \\
+        &= \sqrt{|\det{g}|}d^Dx,
+    \end{aligned}
+\end{equation}
+dove si può usare $e^a = e^a_{\mu_1}dx^{\mu_1}$. 
+
+Su una varietà dotata di una metrica si può definire un'altra operazione. Il duale di Hodge $*$ è definito come la mappa
+\begin{equation}
+    * : \Omega^p(M) \to \Omega^{D - p}(M),
+\end{equation}
+tale che 
+\begin{equation}
+    *e^0 \wedge \cdots \wedge e^{D - 1} = \frac{1}{(D - p)!}\epsilon^{a_1\cdots a_p}_{b_1\cdots b_{D -p}}e^{b_1}\wedge \cdots \wedge e^{b_{D - p}}.
+\end{equation}
+Applicando il duale di Hodge due volte si ottiene la mappa 
+\begin{equation}
+    ** : \Omega^p(M) \to \Omega^p(M),
+\end{equation}
+tale che 
+\begin{equation}
+    **\omega = - (-1)^{p(D - p) + t}\omega,
+\end{equation}
+dove $t = 0$ se la metrica è euclidea, o $t = 1$ se è minkowskiana. 
+
+Si ricorda poi il teorema di Stokes
+\begin{equation}
+    \int_{\Sigma_p}d\omega^{(p - 1)} = \int_{\p\Sigma}\omega^{(p - 1)},
+\end{equation}
+dove $\p\Sigma_p$ è il bordo della varietà. 
+
+Come detto prima, le forme differenziali si possono vedere come campi dinamici, l'esempio principale di ciò è il campo elettromagnetico $F = dA$ con il quale si possono scrivere le equazione di Maxwell. L'azione dell'Elettromagnetismo è
+\begin{equation}
+    S = -\frac{1}{4}\int d^4x F_{\mu\nu}F^{\mu\nu} = -\frac{1}{2}\int *F\wedge F,
+\end{equation}
+dove la seconda espressione è valida non solo in quattro dimensioni, ma in dimensioni generiche. Integrando per parti questa azione e imponendo $\delta S = 0$, si ottengono due delle equazioni di Maxwell nella forma
+\begin{equation}
+    d(* F) = 0.
+\end{equation}
+Le altre due sono derivate dall'identità di bianchi e sono contenute in
+\begin{equation}
+    dF = 0.
+\end{equation}
+L'invarianza di gauge è mantenuta in quanto per $A \to A + \Lambda$ si ha
+\begin{equation}
+    F \to F' \equiv dA + d(d\Lambda) = dA = F.
+\end{equation}
+La teoria di Maxwell può poi essere estesa alle $p$-forme. Sia $F^{(p+1)}$ una $(p + 1)$-forma definita da
+\begin{equation}
+    F^{(p + 1)} = dA^{(p)},
+\end{equation}
+l'azione della teoria è 
+\begin{equation}
+    S = -\frac{1}{2}\int *F^{(p + 1)}\wedge F^{(p + 1)}.
+\end{equation}
+Imponendo $\delta S = 0$ e dalla relazione $ddA^{(p)} = 0$ si trovano rispettivamente
+\begin{equation}
+    d(*F^{(p + 1)}) = 0,\quad dF^{(p + 1)} = 0.
+\end{equation}
+Si può dimostrare che
+\begin{equation}
+    * \omega^{(p)}\wedge\omega^{(p)} = \frac{1}{p!}\omega^{\mu_1\cdots\mu_p}\omega_{\mu_1\cdots\mu_p}\sqrt{|\det{g}}\,d^Dx,
+\end{equation}
+da cui per $p = 0$ si trova la proprietà 
+\begin{equation}
+    * 1 = \sqrt{|\det{g}}\,d^Dx \equiv dV\quad \omega^{(0)} := 1,
+\end{equation}
+permettendo l'uguaglianza
+\begin{equation}
+    \int dV\,f = \int_M*f.
+\end{equation}
+Su una varietà si possono definire delle derivate direzionali
+\begin{align}
+    \nabla_\mu V^\nu &= \p_\mu V^\nu + \Gamma_{\mu\rho}^\nu V^\rho, \\
+    \nabla_\mu\omega_\nu &= \p_\mu\omega_\nu - \Gamma^\rho_{\mu\nu}\omega_\rho.
+\end{align}
+Tale nozione si può generalizzare ai tensori, in particolare per il tensore metrico si impone che 
+\begin{equation}
+    \nabla g_{\mu\nu} = \p_\mu g_{\nu\rho} - \Gamma^\lambda_{\mu\nu}g_{\lambda\rho} - \Gamma^\lambda_{\mu\rho}g_{\nu\lambda} \equiv 0.
+\end{equation}
+Tuttavia, questa imposizione non fissa la connessione; infatti, si deve anche richiedere che $\Gamma^\mu_{\nu\lambda} = \Gamma^\mu_{\lambda\nu}$ per fissare $\nabla$ in modo univoco e avere
+\begin{equation}
+    \Gamma^\rho_{\mu\nu} \equiv \left\{ \begin{matrix} \mu \\ \alpha\ \beta \end{matrix} \right\} = \frac{1}{2}g^{\rho\lambda}(\p_\mu g_{\lambda\nu} + \p_\nu g_{\lambda\mu} - \p_\lambda g_{\mu\nu}).
+\end{equation}
+Nel caso non sia verificata quest'ultima condizione, in generale si ha
+\begin{equation}
+    \Gamma^\rho_{\mu\nu} = \left\{ \begin{matrix} \mu \\ \alpha\ \beta \end{matrix} \right\} - K^\rho_{\mu\nu},
+\end{equation}
+il quale è effettivamente un tensore a differenza dei simboli di Christoffel, dove $K^\rho_{\mu\nu}$ è il tensore di contorsione. Si può poi definire il tensore di torsione come 
+\begin{equation}
+    T^\rho_{\mu\nu} = \Gamma^\rho_{\mu\nu} - \Gamma^\rho_{\nu\mu}.
+\end{equation}
+Si definisce infine il tensore di Riemann $R^\rho_{\mu\nu\sigma}$, con il quale si può definire il tensore di Ricci $R_{\mu\nu} = R^\lambda_{\mu\nu\lambda}$ e lo scalare di Ricci $R = g^{\mu\nu}R_{\mu\nu}$.
+
+Partendo da $e^a$, si può definire una connessione con $\nabla_\mu e^a = -\omega^a_{\mu b}e^b$, o in maniera equivalente
+\begin{equation}
+    \p_\mu e^a_\nu - \Gamma^\rho_{\mu\nu}e^a_\rho = -\omega^a_{\mu b}e^b_\nu,
+\end{equation}
+da cui 
+\begin{equation}
+    \omega^a_{\mu b} = e^a_\nu e^\lambda_b\Gamma^\nu_{\mu\lambda} - e^\lambda_b\p_\mu e^a_\lambda.
+\end{equation}
+Da ciò si vede subito che $\nabla_\mu e^a = 0$ (fieldbein postulate). Si può definire una 1-forma connessione
+\begin{equation}
+    \omega^a_b = \omega^a_{\mu b}dx^\mu,
+\end{equation}
+con la quale si scrive la prima formula di struttura di Cartan 
+\begin{equation}
+\label{eq: prima formula di struttura di Cartan}
+    de^a + \omega^a_b \wedge e^b = T^a,
+\end{equation}
+dove $T^a$ è la 2-forma di torsione. Espandendo $T^a$, si ha
+\begin{equation}
+    \frac{1}{2}T^a_{\mu\nu}dx^\mu \wedge dx^\nu = T^a.
+\end{equation}
+Ora se
+\begin{equation}
+    de^a = \p_{[\mu,e^a_\nu]}dx^\mu \wedge dx^\nu,\quad \p_{[\mu,e^a_\nu]} \equiv \frac{1}{2}(\p_\mu e^a_\nu - \p_\nu e^a_\mu),
+\end{equation}
+allora 
+\begin{equation}
+    T^a_{\mu\nu} = \p_\mu e^a_\nu - \p_\nu e^a_\mu + \omega^a_{\mu\nu} - \omega^a_{\nu\mu},\quad \omega^a_{\mu\nu} = \omega^a_{\mu b}e^b_\nu.
+\end{equation}
+Si può quindi definire 
+\begin{equation}
+    T_{[\mu\nu]\rho} = T^a_{\mu\nu}e_{a\rho},\quad \omega_{\mu[\rho\nu]} = \omega^{ab}_\nu e_{a\rho}e_{b\nu},\quad \Omega_{[\mu\nu]\rho} = (\p_\mu e^a_\nu - \p_\nu e^a_\mu)e_{a\rho}.
+\end{equation}
+Così si ottiene la relazione
+\begin{equation}
+    T_{[\mu\nu]\rho} = \Omega_{[\mu\nu]\rho} + \omega_{\mu[\rho\nu]} - \omega_{\nu[\rho\mu]} + K_{\mu[\nu\rho]},
+\end{equation}
+da cui segue che 
+\begin{equation}
+    K_{\mu[\nu\rho]} = -\frac{1}{2}(T_{[\mu\nu]\rho} - T_{[\nu\rho]\mu} + T_{[\rho\mu]\nu}).
+\end{equation}
+Si può allora definire una derivata covariante lorentziana
+\begin{equation}
+    \begin{aligned}
+        D_\mu V^a &= \p_\mu V^a + \omega^a_{\mu b} V^b, \\
+        D_\mu V_a &= \p_\mu V_a - \omega_{\mu a}^b V_b,
+    \end{aligned}
+\end{equation}
+in particolare per la metrica
+\begin{equation}
+    D_\mu\eta_{ab} = \p_\mu \eta_{ab} - \omega^c_{\mu a}\eta_{cb} - \omega^c_{\mu b}\eta_{ac} = -(\omega_{\mu ba} + \omega\mu ab) = 0,
+\end{equation}
+che conferma il risultato già noto dalla Relatività. 
+
+Si ritorni adesso alla prima formula di Cartan \eqref{eq: prima formula di struttura di Cartan} e  si definisca la 2-forma 
+\begin{equation}
+    \rho^{ab} = \frac{1}{2}R^{ab}_{\mu\nu} dx^\mu \wedge dx^\nu.
+\end{equation}
+Ora dato che 
+\begin{equation}
+    \rho^{ab} = d\omega^a_b + \omega^a_c \wedge \omega^c_b,
+\end{equation}
+si ha
+\begin{equation}
+    R^{ab}_{\mu\nu} = \p_\mu\omega^{ab}_\nu - \p_\nu\omega^{ab}_\mu + \omega^{ac}_\mu\omega^b_{\nu c}- \omega^{ac}_\nu\omega^b_{\mu c},
+\end{equation}
+dove se al posto di $\omega$ si avesse avuto $\Gamma$ l'espressione sarebbe stata quella del tensore di Riemann, il quale comunque può essere definito come
+\begin{equation}
+    R^\rho_{\mu\nu\lambda} = R^{ab}_{\mu\nu}e_a^\rho e_{b\lambda},
+\end{equation}
+per cui 
+\begin{equation}
+    R = e^\mu_ae^\nu_bR_\mu^{ab}.
+\end{equation}
+Quindi, si può scrivere 
+\begin{equation}
+    \int dV\,R = \int d^Dx\,eR,
+\end{equation}
+pensando come campo indipendente il vielbein invece che la metrica. 
+
+Infine, si definisce l'operatore aggiunto della derivata $d^\dag \equiv *d\,*$ come la mappa
+\begin{equation}
+    d^\dag : \Omega^p(M) \to \Omega^{p - 1}(M).
+\end{equation}
+Una proprietà interessante di questa mappa è
+\begin{equation}
+    *d*\omega^{(1)} = (-1)^D\nabla^\mu\omega_\mu,
+\end{equation}
+che per una $p$-forma diventa
+\begin{equation}
+    *d*\omega^{(p)} = (-1)^{t + 1 + (p - 1)(D - p)}\frac{1}{(p - 1)!}\nabla^\nu\omega_{\nu\mu_1\cdots\mu_{p - 1}}dx^{\mu_1}\wedge \cdots \wedge dx^{\mu_{p - 1}}.
+\end{equation}
+Si tenta ora di calcolare l'integrale 
+\begin{equation}
+    \int d^Dx\sqrt{-\det{g}}\nabla^\mu V_\mu.
+\end{equation}
+Per farlo si ricorda che 
+\begin{equation}
+    \nabla^\mu V_\mu = \delta^\mu_\nu\nabla_\mu V^\nu = \p_\mu V^\mu + \Gamma^\mu_{\mu\rho}V_\rho,
+\end{equation}
+dove
+\begin{equation}
+    \Gamma^\mu_{\mu\rho} = \frac{1}{2}g^{\mu\lambda}\p_\rho g_{\mu\lambda} = \frac{1}{\sqrt{-\det{g}}}\p_\rho\sqrt{-\det{g}}.
+\end{equation}
+Usando $\det{M} = \exp{(\tr{(M)})}$ con $M \equiv g_{\mu\nu}$, si ha 
+\begin{equation}
+    \frac{\p_\mu\det{M}}{\det{M}} = \tr{(M^{-1}\p_\mu M)},
+\end{equation}
+da cui
+\begin{equation}
+    \int d^Dx\sqrt{-\det{g}}\nabla^\mu V_\mu = \int d^Dx\bigg[\p_\mu(\sqrt{-\det{g}}V^\mu) - T^\mu_{\mu\nu}V^\nu\bigg],
+\end{equation}
+dove si è usato il fatto che per una qualsiasi connessione si ha $\Gamma^\mu_{\rho\nu} = \left\{ \begin{matrix} \mu \\ \alpha\ \beta \end{matrix} \right\} - K^\mu_{\rho\nu}$. 
+
+\section{Spinori}
+Ci si concentra ora sullo spazio di Minkowski 4-dimensionale e sul gruppo di Lorentz $\group{SO}{1,3}$. Se si guarda l'algebra associata $\alg{so}{1,3}$, si può dimostrare che questa è isomorfa alla somma diretta di due copie dell'algebra $\alg{so}{2}$ associata al gruppo $\group{SO}{2}$, ossia
+\begin{equation}
+    \alg{so}{1,3} \cong \alg{so}{2} \op \alg{so}{2}.
+\end{equation}
+I generatori dell'algebra si indicano tipicamente con $T_i$ e soddisfano la relazione di commutazione 
+\begin{equation}
+    \comm{T_i}{T_j} = if_{ijk}T_k,
+\end{equation}
+dove le $f_{ijk}$ sono le costanti di strutture, che in questo caso coincidono con il simbolo di Levi-Civita $\epsilon_{ijk}$; quindi, più precisamente
+\begin{equation}
+    \comm{T_i}{T_j} = i\epsilon_{ijk}T_k.
+\end{equation}
+Una possibile base dell'algebra di Lorentz si può scrivere tramite le matrici di Pauli $\sigma_i$, con le quali 
+\begin{equation}
+    T_i = \frac{\sigma_i}{2},
+\end{equation}
+dove 
+\begin{equation}
+    \sigma_1 = 
+    \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix},\quad
+    \sigma_2 = 
+    \begin{pmatrix}
+        0 & -i \\
+        i & 0
+    \end{pmatrix},\quad
+    \sigma_3 = 
+    \begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{pmatrix}.
+\end{equation}
+Le rappresentazioni di questo gruppo sono poi etichettate da un numero intero, o eventualmente semi-intero, indicato da $j \in \bb{Z}/2$ con cui si scrive la dimensione della rappresentazione $\rho$ data da
+\begin{equation}
+    \dim{\rho} = 2j + 1.
+\end{equation}
+Tuttavia, dato l'algebra di $\group{SO}{1,3}$ è somma diretta di due algebre, saranno necessari due numeri $j$ e $j'$ per identificare una rappresentazione del gruppo. In particolare, le rappresentazioni di dimensione minore inequivalenti sono due: $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$; entrambe rappresentazioni 2-dimensionali. In generale, una rappresentazione si dice spinoriale se $j + j' \in \bb{Z}/2$. 
+
+Il prossimo passo è notare che esiste un omomorfismo tra $\group{SL}{2,\bb{C}}$ e $\group{SO}{1,3}$. Si definiscono quindi le matrici 
+\begin{equation}
+    \sigma_\mu = (-\IM,\sigma_i),\quad \b{\sigma}_\mu = (\IM,\sigma_i),
+\end{equation}
+che soddisfano le proprietà:
+\begin{enumerate}
+    \item $\sigma_\mu\b{\sigma}_\nu + \b{\sigma}_\mu\sigma_\nu = 2\eta_{\mu\nu}\IM$;
+    \item $\tr{(\sigma^\mu\b{\sigma}_\nu)} = 2\delta^\mu_\nu$.
+\end{enumerate}
+Ad ogni vettore, ad esempio alle coordinate $x^\mu$, si può associare una matrice $X$ definita come
+\begin{equation}
+    x^\mu \mapsto X := \sigma_\mu x^\mu = 
+    \begin{pmatrix}
+        x^0 + x^3 & x^1 - ix^2 \\
+        x^1 + ix^2 & x^0 - x^3
+    \end{pmatrix}.
+\end{equation}
+Si vede poi che il determinante è $\det{X} = -x_\mu x^\mu$ e si può dimostrare che la matrice $X$ è hermitiana, ovvero che  $X = X^\dag$. Usando proprio quest'ultima proprietà, si può dimostrare anche che 
+\begin{equation}
+    x^\mu = \frac{1}{2}\tr{(\sigma^\mu X)}.
+\end{equation}
+Si consideri quindi una matrice $A \in \group{SL}{2,\bb{C}}$, con questa si può definire la trasformazione 
+\begin{equation}
+    X \to X' = AXA^\dag : X'^\dag = X^\dag,\,\det{X} = \det{X'}.
+\end{equation}
+Questa è a tutti gli effetti una trasformazione di Lorentz. Si può quindi arrivare all'espressione dell'omomorfismo tra i gruppi $\group{SL}{2,\bb{C}}$ e $\group{SO}{1,3}$ di cui si parlava inizialmente
+\begin{equation}
+    (\Lambda^{-1})^\mu_\nu(A) = \frac{1}{2}\tr{(\sigma^\mu A\bb{\sigma}_\nu A^\dag)}.
+\end{equation}
+Il fatto che sia un omomorfismo si può codificare con la relazione $\group{SO}{1,3} \cong \group{SL}{2,\bb{C}}/\bb{Z}_2$, con ciò si parla di $\group{SL}{2,\bb{C}}$ come il \emph{doppio ricoprimento} di $\group{SO}{1,3}$. Tipicamente, si indica il gruppo $\group{SO}{1,3}$ tramite la nozione di gruppo di spin, indicandolo con $\group{Spin}{1,3}$. In generale, in $D$ dimensioni $\group{Spin}{1,D}$ è il ricoprimento di $\group{SO}{1,D}$ se la segnatura è quella di Minkowski, mentre $\group{Spin}{D}$ è il ricoprimento di $\group{SO}{D}$ se la segnatura è quella di Euclide. 
+
+Si torni adesso alle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$. Usando le relazioni
+\begin{equation}
+    A\b{\sigma}_\mu A^\dag = (\Lambda^{-1})^\mu_\nu\b{\sigma}_\nu,\quad A^\dag \sigma_\mu A = (\Lambda^{-1})^\nu_\mu\sigma_\nu,
+\end{equation}
+si può dimostrare che i generatori dell'algebra si possono scrivere come 
+\begin{equation}
+    \begin{cases}
+        \sigma_{\mu\nu} = \dfrac{1}{4}(\sigma_\mu\b{\sigma}_\nu - \sigma_\nu\b{\sigma}_\mu) \\[2ex]
+        \b{\sigma}_{\mu\nu} = \dfrac{1}{4}(\b{\sigma}_\mu\sigma_\nu - \b{\sigma}_\nu\sigma_\mu)
+    \end{cases},
+\end{equation}
+con i quali si definiscono
+\begin{equation}
+    L(\lambda) := e^{\lambda^{\mu\nu}\sigma_{\mu\nu}/2},\quad \tilde{L}(\lambda) := e^{\lambda^{\mu\nu}\b{\sigma}_{\mu\nu}/2},
+\end{equation}
+dove $\lambda^{\mu\nu} = -\lambda^{\nu\mu}$ e, dato che $\sigma_{\mu\nu}^\dag = -\b{\sigma}_{\mu\nu}$, sono tali che
+\begin{equation}
+    L(\lambda)^\dag = \tilde{L}(\lambda)^{-1}.
+\end{equation}
+Le $L(\lambda)$ e le $\tilde{L}(\lambda)$ consistono in una parametrizzazione delle matrici $A \in \group{SL}{2,\bb{C}}$. Si è così costruita la struttura che si desiderava: due parti che non trasformano simultaneamente associate a $\bm{(1/2,0)}$ per $L(\lambda)$ e a $\bm{(0,1/2)}$ per $\tilde{L}(\lambda)$. Sotto una trasformazione di Lorentz $x^\mu \to \Lambda^\mu_\nu x^\nu$ si hanno
+\begin{equation}
+    \psi(x) \to \psi'(x') \equiv L^{-1}(\lambda)\psi(\Lambda x),
+\end{equation}
+\begin{equation}
+    \chi(x) \to \chi'(x') \equiv \tilde{L}^{-1}(\lambda)\chi(\Lambda x).
+\end{equation}
+Gli spinori $\psi$ e $\chi$ sono tipicamente indicati come \emph{spinori left} e \emph{spinori right} rispettivamente, mentre globalmente prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}.
+
+Si vogliono ora introdurre gli spinori di Dirac. Questi spinori esistono per qualsiasi dimensione dello spaziotempo, e permettono l'imposizione di condizioni di realtà. A tal proposito, in $D = 4$, si introducono matrici di Dirac
+\begin{equation}
+    \gamma^\mu := 
+    \begin{pmatrix}
+        \OM_2 & \sigma^\mu \\
+        \b{\sigma}^\mu & \OM_2
+    \end{pmatrix},\quad \dim{\gamma^\mu} = 4,
+\end{equation}
+tali che 
+\begin{equation}
+    \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}\IM_4.
+\end{equation}
+Si possono poi definire le matrici 
+\begin{equation}
+    \gamma'^\mu := S^{-1}\gamma^\mu S,\quad S \in \group{GL}{4,\bb{C}},
+\end{equation}
+per le quali continua a valere la relazione precedente. Questa particolare relazione si anti-commutatore e si indica con
+\begin{equation}
+    \acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM_4,
+\end{equation}
+la quale, inoltre, definisce l'algebra di Clifford per uno spaziotempo 4-dimensionale, indicata con $\alg{Cliff}{1,3}$. La definizione è poi estendibile a qualsiasi dimensione $D$ dello spaziotempo. Si definisce quindi la matrice
+\begin{equation}
+    \Sigma^{\mu\nu} := \frac{1}{4}\comm{\gamma^\mu}{\gamma^\nu},
+\end{equation}
+la quale soddisfa l'algebra di Lorentz, per cui
+\begin{equation}
+    L(\lambda) := e^{\lambda^{\mu\nu}\Sigma_{\mu\nu}} \in \group{Spin}{1,D - 1}.
+\end{equation}
+Le matrici $\gamma^\mu$ trasformano come un vettore di Lorentz 
+\begin{equation}
+    \gamma^\mu \to L(\lambda)^{-1}\gamma^\mu L(\lambda) = \Lambda(\lambda)^\mu_\nu \gamma^\nu.
+\end{equation}
+La dimensione delle rappresentazioni dell'algebra di Clifford è $2^{D/2} \times 2^{D/2}$. Dunque, si definisce lo spinore di Dirac 
+\begin{equation}
+    \Psi(x) \in \bb{C}^{2^{D/2}},\quad \Psi(x) \to \Psi'(x') = L(\lambda)^{-1}\Psi(\Lambda x).
+\end{equation}
+\begin{ex}(rotazione di uno spinore)
+    Considerando la particolare trasformazione $\lambda^{12} \equiv \theta \neq 0$, si ha 
+    \begin{equation}
+        L(\lambda) = e^{\theta\Sigma_{12}} = 1 + \theta\Sigma_{12},
+    \end{equation}
+    dove le potenze pari sono proporzionali all'identità; infatti
+    \begin{equation}
+        \Sigma_{12}\Sigma_{12} = \frac{1}{2}(\gamma^1\gamma^2)\frac{1}{2}(\gamma^1\gamma^2) = -\frac{1}{4}\IM_4.
+    \end{equation}
+    Quindi, si ottiene la relazione
+    \begin{equation}
+        \cos{\bigg(\frac{\theta}{2}\bigg)}\IM + 2\sin{\bigg(\frac{\theta}{2}\bigg)}\Sigma_{12},
+    \end{equation}
+    da cui si vede che per $\theta = 2\pi$, si ottiene $-\IM$. 
+\end{ex}
+Si torni in $D = 4$. Qui si ha 
+\begin{equation}
+    \Sigma^{\mu\nu} = 
+    \begin{pmatrix}
+        \sigma_{\mu\nu} & \OM_2 \\
+        \OM_2 & \b{\sigma}_{\mu\nu}
+    \end{pmatrix},
+\end{equation}
+andando ad agire su $\Psi(x)$ le due componenti sono indipendenti,
+\begin{equation}
+    \Psi(x) = 
+    \begin{pmatrix}
+        \psi(x) \\
+        \chi(x)
+    \end{pmatrix},
+\end{equation}
+dove la componente left trasforma con $\sigma_{\mu\nu}$, mentre quella right con $\b{\sigma}_{\mu\nu}$. Tutto cioò è ripetibile in $D$ dimensioni, ottnenendo la relazione
+\begin{equation}
+    \underbrace{2^{D/2}}_{rappr.\,riducibile} = \underbrace{2^{D/2 - 1}}_{irrep} + \underbrace{2^{D/2 - 1}}_{irrep}.
+\end{equation}
+
+Al campo spinoriale si deve poi dare una dinamica. L'equazion del moto è l'equazione di Dirac
+\begin{equation}
+\label{eq: equazione di Dirac}
+    (\sl{\p} - m)\Psi = 0,\quad \sl{\p} \equiv \gamma^\mu\p_\mu.
+\end{equation}
+Per ricavare l'equazione \eqref{eq: equazione di Dirac}, si deve definire un'azione per il campo spinoriale. In realtà, la scelta è molto limitata dalle condizioni:
+\begin{enumerate}
+    \item l'azione deve essere lineare nelle derivate;
+    \item l'azione deve essere reale;
+    \item l'azione deve essere un invariante di Lorentz.
+\end{enumerate}
+Un termine invariante lineare nelle derivate è $\gamma^\mu\p_\mu$, ma si deve introdurre anche il campo $\Psi$. Per farlo, si nota che su $\bb{C}^4$ esiste un prodotto interno naturale dato da
+\begin{equation}
+    \Psi^\dag\Psi \in \bb{R}.
+\end{equation}
+Essendo uno scalare, si potrebbe pensare che sia anche invariante di Lorentz; tuttavia, usando le trasformazioni
+\begin{equation}
+    \begin{cases}
+        \Psi \to \Psi' \equiv L^{-1}(\lambda)\Psi(\Lambda x) \\
+        \Psi^\dag \to \Psi'^\dag \equiv \Psi^\dag(\Lambda x)(L^{-1}(\lambda))^\dag
+    \end{cases},
+\end{equation}
+si trova che $\Psi^\dag\Psi$ non è un invariante di Lorentz. Usando però il fatto che, in generale, $\b{\Psi} \equiv \Psi^\dag\beta$ con $\beta \gamma^\mu \beta^{-1} = -(\gamma^\mu)^\dag$ è un invariante di Lorentz, si può costruire l'invariante 
+\begin{equation}
+    \b{\Psi} = \Psi^\dag i\gamma^0\Psi,
+\end{equation}
+dove si è scelto $\beta \equiv i\gamma^0$. L'azione ha dunque la forma
+\begin{equation}
+    S[\Psi,\b{\Psi}] = \int d^4x\,(m\b{\Psi}\Psi - \b{\Psi}\sl{\p}\Psi).
+\end{equation}
+Dal principio di minima azione applicato alla variazione 
+\begin{equation}
+    \delta S = \int d^4x\,[\delta\b{\Psi}(\sl{\p} - m)\Psi - (\p_\mu\b{\Psi}\gamma^\mu + \b{\Psi}m)\delta\Psi],
+\end{equation}
+si ottengono le due equazioni del moto equivalenti
+\begin{equation}
+    \begin{cases}
+        (\sl{\p} - m)\Psi = 0 \\
+        \b{\Psi}(\overset{\leftarrow}{\sl{\p}} - m) = 0
+    \end{cases},\quad \overset{\leftarrow}{\sl{\p}} \equiv \p_\mu\b{\Psi}\gamma^\mu.
+\end{equation}
+Si può infine dimostrare perché la dimensione della rappresentazione sia $2^{D/2}$. Si parte da $D = 2$, si devono trovare due matrici $\gamma^1$ e $\gamma^2$ tali che $\acomm{\gamma^1}{\gamma^2} = 0$ e che $(\gamma^1)^2 = (\gamma^2)^2 = \IM_4$. Una scelta possibile è
+\begin{equation}
+    \gamma^1 = \sigma_1,\quad \gamma^2 = \sigma_2,
+\end{equation}
+definendo $\alg{Cliff}{2}$. Per $D = 3$ si aggiunge $\gamma^3 = \sigma_3$, definendo $\alg{Cliff}{3}$. Per $D = 4$ però si deve ricorrere al prodotto tensoriale, o di Kronecker, definito da
+\begin{equation}
+    A \ot B = 
+    \begin{pmatrix}
+        A_{11}B & \cdots & A_{1n}B \\
+        \vdots & \ddots & \vdots \\
+        A_{n1}B & \cdots & A_{nn}B
+    \end{pmatrix},\quad \dim{(A \ot B)} = nm \times nm.
+\end{equation}
+Quindi, si scelgono
+\begin{equation}
+    \begin{cases}
+        \gamma^0 = \sigma_1 \ot \IM \\
+        \gamma^1 = \sigma_2 \ot \IM \\
+        \gamma^2 = \sigma_3 \ot \sigma_1 \\
+        \gamma^3 = \sigma_3 \ot \sigma_2
+    \end{cases}.
+\end{equation}
+Se $D = 2m$, allora $m$ corrisponde al numero di matrici che compaiono in ogni prodotto tensoriale, dove per costruire le matrici successive si usa un metodo iterativo che consiste nel costruire il prodotto tensoriale tra $\sigma_3$ e le matrici precedenti, ossia
+\begin{equation}
+    \begin{cases}
+        \gamma^1 = \sigma_1 \ot \IM \ot \cdots \ot \IM \\
+        \gamma^2 = \sigma_2 \ot \IM \ot \cdots \ot \IM \\
+        \gamma^3 = \sigma_3 \ot \sigma_1 \ot \IM \ot \cdots \ot \IM \\
+        \gamma^4 = \sigma_3 \ot \sigma_2 \ot \IM \ot \cdots \ot \IM \\
+        \gamma^5 = \sigma^3 \ot \gamma^3 \\
+        \gamma^6 = \sigma^3 \ot \gamma^4 \\
+        \vdots
+    \end{cases}.
+\end{equation}
+Dunque, la dimensione è $2^m = 2^{D/2}$. L'algebra di Clifford esiste sicuramente ed si costruisce in questo modo in dimensione pari. 
+
+Per costruire le matrici $\gamma^\mu$ in dimensione dispari $D = 2m + 1$; ad esempio, in $D = 7$ si definisce 
+\begin{equation}
+    \gamma^7  = \sigma_3 \ot \sigma_3 \ot \sigma_3.
+\end{equation}
+La dimensione continua ad essere $2^m \times 2^m$. 
+
+Si può passare dalla rappresentazione di Euclide a quella Lorentziana con $\gamma^0 \equiv i\gamma^0$ tale che 
+\begin{equation}
+    (\gamma^0)^2 = -\IM,\quad (\gamma^0)^\dag = -\gamma^0,
+\end{equation}
+oppure più in generale che 
+\begin{equation}
+    (\gamma^\mu)^\dag = \gamma^0\gamma^\mu\gamma^0. 
+\end{equation}
+In dimensioni pari esiste una sola rappresentazione irriducibile, mentre in dimensione dispari ne esistono due ma portano alla stessa algebra. L'algebra contienr $\{\IM,\gamma^\mu,\gamma^\mu\gamma^\nu,\gamma^\mu\gamma^\nu\gamma^\rho\}$, ma in realtà la definzione di algebra di Clifford oermette di restringersi ad un insieme più piccolo; infatti
+\begin{equation}
+    \begin{split}
+        \gamma^\mu\gamma^\nu &= \frac{1}{2}(\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu) + \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu) \\
+        &= \eta^{\mu\nu} + \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu) \\
+        &\equiv \eta^{\mu\nu} + \gamma^{[\mu}\gamma^{\nu]} \\
+        &\equiv \eta^{\mu\nu} + \gamma^{\mu\nu},
+    \end{split}
+\end{equation}
+dove si è definito
+\begin{equation}
+    \gamma^{[\mu}\gamma^{\nu]} \equiv \gamma^{\mu\nu} \equiv \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu).
+\end{equation}
+In generale quindi 
+\begin{equation}
+    \gamma^{\mu_1\cdots\mu_r} = \gamma^{[\mu_1}\gamma^{\mu_2}\cdots\gamma^{\mu_r]}.
+\end{equation}
+Si hanno inoltre 
+\begin{equation}
+    \gamma^\mu\gamma_\mu = D,
+\end{equation}
+\begin{equation}
+    \gamma_\nu\gamma^\mu\gamma^\nu = \gamma_\nu(2\eta^{\mu\nu} - \gamma^\nu\gamma^mu) = (2 - D)\gamma^\mu,
+\end{equation}
+\begin{equation}
+    \gamma^{\mu\nu}\gamma_\nu = ... = (D - 1)\gamma^\mu.
+\end{equation}
+Si definisce la matrice di chiralità
+\begin{equation}
+    \gamma^* := (-i)^{m + 1}\gamma^0\cdots \gamma^{D - 1},
+\end{equation}
+tale che 
+\begin{equation}
+    (\gamma^*)^2 = \IM,\quad \acomm{\gamma^*}{\gamma^\mu} = 0,\quad \tr{(\gamma^*)} = n_+ - n_- = 0,
+\end{equation}
+dove $n_+$ è il numero di autovalori positivi $+1$, mentre $n_-$ è quello di autovalori negativi $-1$, di conseguenza $n_+ = n_- \equiv n$ e
+\begin{equation}
+    n = 2^{m - 1}.
+\end{equation}
+Tramite la matrice di chiralità si può scrivere
+\begin{equation}
+    \gamma_{\mu_0\cdots\mu_D} = (i)^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma^*.
+\end{equation}
+La matrice di chiralità si può rappresentare come 
+\begin{equation}
+    \gamma^* = 
+    \begin{pmatrix}
+        \IM_{2^{m - 1}} & \OM \\
+        \OM & \IM_{2^{m - 1}}
+    \end{pmatrix}.
+\end{equation}
+Si definisce allora
+\begin{equation}
+    \gamma^\mu = 
+    \begin{pmatrix}
+        \alpha^\mu & \sigma^\mu \\
+        \b{\sigma}^\mu & \beta^\mu
+    \end{pmatrix},
+\end{equation}
+dove, per la relazione dell'algebra di Clifford, si ha $\alpha^\mu = \beta^\mu = 0$ e 
+\begin{equation}
+    \sigma^\mu\b{\sigma}^\nu + \sigma^\nu\b{\sigma}^\mu = \acomm{\sigma^\mu}{\b{\sigma}^\nu} = 2\eta^{\mu\nu},
+\end{equation}
+dove si definiscono le matrici 
+\begin{equation}
+    \sigma^\mu = (\IM,\sigma^i),\quad \b{\sigma}^\mu = (-\IM,\sigma^i),
+\end{equation}
+con $\sigma^i$ la generalizzazione delle matrici di Pauli, in quattro dimensioni $\acomm{\sigma^i}{\sigma^j} = \delta^{ij}$. Tutto ciò vale nella base di Weyl. Si definiscono poi i proiettori 
+\begin{equation}
+    P_L = \frac{1}{2}(\IM + \gamma^*),\quad P_R = \frac{1}{2}(\IM - \gamma^*),
+\end{equation}
+tali che 
+\begin{equation}
+    P_L^2 = P_L,\quad P_R^2 = P_R,\quad P_RP_L = P_LP_R = 0.
+\end{equation}
+Applicando il proiettore ad uno spinore di seleziona la componente corrispondente
+\begin{equation}
+    P_L\Psi = 
+    \begin{pmatrix}
+        \psi \\
+        0
+    \end{pmatrix},\quad P_R\Psi = 
+    \begin{pmatrix}
+        0 \\
+        \chi
+    \end{pmatrix},
+\end{equation}
+relazioni che chiaramente non sono vere in ogni base ma solo in quella di Weyl. Si può dimostrare che
+\begin{equation}
+    \gamma^{\mu_1\cdots \mu_D}\gamma^* = -\frac{(-i)^{m + 1}}{(D - r)!}\epsilon^{\mu_r\cdots\mu_1\nu_1\cdots\nu_{D - r}}\gamma_{\nu_1\cdots \nu_{D - r}}.
+\end{equation}
+In $D = 2m + 1$,
+\begin{equation}
+    \gamma^\mu \in \{\gamma^0,\gamma^1,\dots,\gamma^{2m-1},\gamma^{2m} \equiv \gamma^*\}
+\end{equation}
+oppure 
+\begin{equation}
+    \gamma^\mu \in \{\gamma^0,\gamma^1,\dots,\gamma^{2m-1},\gamma^{2m} \equiv -\gamma^*\},
+\end{equation}
+che sono scelte non equivalenti, ma portano ad algebre equivalenti. 
+
+\paragraph{Intertwining operators.} Se $\b{\Psi} = \Psi^\dag\gamma^0$, si definisce $A = i\gamma^0$ tale che 
+\begin{equation}
+    A\gamma^\mu A^{-1} = -(\gamma^\mu)^\dag \quad\Longleftrightarrow\quad A\gamma^\mu = -(\gamma^\mu)^\dag A,
+\end{equation}
+con il quale quindi si passa da $\gamma$ ad $\gamma^\dag$. Si definisce poi $B$ come la mappa che permette di passare da $\gamma$ a $\gamma^*$ e con $C$ quella tra $\gamma$ e $\gamma^T$, come 
+\begin{equation}
+    (\gamma^\mu)^* = -t_0t_1B\gamma^\mu B^{-1},
+\end{equation}
+\begin{equation}
+    (\gamma^\mu)^T = +t_0t_1C\gamma^\mu C^{-1},
+\end{equation}
+dove $t_0 = t_1 = \pm 1$ e con $BB^\dag = CC^\dag = \IM$ e con $C^T = -t_0C$ o $C^* = -t_0C^{-1}$. Si definiscono quindi le $\Gamma^{(\nu)} \in \{\IM,\gamma^\mu,\gamma^{\mu\nu},\dots\}$, tale che 
+\begin{equation}
+    (C\Gamma^{(\nu)})^T = t_r{(C\Gamma^{(r)})},\quad t_r = \pm 1.
+\end{equation}
+Quindi, $t_r$ con $r > 2$, è fissato da $t_0$ e $t_1$. Ad esempio
+\begin{equation}
+    \begin{split}
+        (C\gamma^{\mu\nu})^T &= \frac{1}{2}(C\gamma^\mu\gamma^\nu - C\gamma^\nu\gamma^\mu) \\
+        &= \frac{1}{2}[(\gamma^\nu)^T(\gamma^\mu)^T - (\gamma^\mu)^T(\gamma^\nu)^T]C^T \\
+        &= -\frac{t_0}{2}C(\gamma^\nu\gamma^\mu - \gamma^\mu\gamma^\nu) \\
+        &= t_0C\gamma^{\mu\nu}.
+    \end{split}
+\end{equation}
+Da qui si trova che $t_2 = -t_0$, si può poi trovare che $t_3 = -t_1$, $t_{r + 4} = t_r$ e così via. Si può poi costruire esplicitamente una rappresentazione di $C$ come
+\begin{equation}
+    C_+ = \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \cdots,\quad t_0t_1 = 1,
+\end{equation}
+o
+\begin{equation}
+    C_- = \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \cdots,\quad t_0t_1 = -1,
+\end{equation}
+a differenza di $A = i\gamma^0$ che non dipende dalla segnatura. In modo simile, si ha che 
+\begin{equation}
+    B = it_0C\gamma^0 = t_0CA.
+\end{equation}
+Si dimostra 
+\begin{equation}
+    (\gamma^\mu)^\dag = (\gamma^T)^* = \cdots = -\gamma^0\gamma^\mu\gamma^0 = -A\gamma^\mu A^{-1}.
+\end{equation}
+Si dimostra
+\begin{equation}
+    \begin{split}
+        B^*B &= -it_0C^*\gamma^*it_0C\gamma^0 \\
+        &= -t_0C^{-1}(\gamma^0)^*C\gamma^0 \\
+        &= -t_0C^{-1}B\gamma^0B^{-1}C\gamma^0(-t_0t_1) \\
+        &= t_1(C^{-1}B)\gamma^0(C^{-1}B)^{-1}\gamma^0 \\
+        &= -t_1.
+    \end{split}
+\end{equation}
+In $D = 4$, da $B = \gamma^0\gamma^1\gamma^3$ e $C = i\gamma^3\gamma^1$ so ha $t_0 = 1$, allora $B = B^*$ e $BB^* = B^2 = \cdots = \IM$ e $t_1 = -1$, scegliendo quindi 
+\begin{equation}
+    t_0 = 1,t_1 = -1,t_2 = -1,t_3 = 1,\dots,
+\end{equation}
+invece che
+\begin{equation}
+    t_0 = 1,t_1 = 1,t_2 = -1,t_3 = -1,\dots.
+\end{equation}
+In dimensione $D$ generica, si era definito lo spinore di Dirac $\b{\Psi}$ con il quale si possono costruire gli invarianti di Lorentz. Si definisce in particolare lo \emph{spinore di Majorana}
+\begin{equation}
+    \b{\lambda} := \lambda^TC,
+\end{equation}
+con il quale si possono costruire nuovi invarianti. Quindi, applicando $\b{\lambda}$ a $\chi$ si ha
+\begin{equation}
+    \b{\lambda}\chi = \lambda^TC\chi,
+\end{equation}
+che trasforma come
+\begin{equation}
+    \delta(\b{\lambda}\chi) = (\delta\b{\lambda})\chi + \b{\lambda}\delta(\chi),
+\end{equation}
+dove
+\begin{equation}
+    \delta\lambda^T = -\frac{1}{4}\chi^T(\gamma_{\mu\nu})^T\lambda^{\mu\nu},\quad \delta\chi = -\frac{1}{4}\lambda^{\mu\nu}\gamma_{\mu\nu}\chi,
+\end{equation}
+si ha 
+\begin{equation}
+    \delta(\b{\lambda}\chi) = -\frac{1}{4}\lambda^{\mu\nu}[\lambda^T(\gamma_{\mu\nu})^TC\chi + \lambda^TC\gamma_{\mu\nu}\chi] = 0,
+\end{equation}
+da cui si definiscono gli invarianti $\lambda^T(\gamma_{\mu\nu})^TC\chi$ e $\lambda^TC\gamma_{\mu\nu}\chi$.
+
+\section{Variabili di Grassman}
+Le variabili di Grassman sono definite tramite un prodotto di anticommutazione
+\begin{equation}
+    \theta\eta = -\eta\theta.
+\end{equation}
+Sono nilpotenti $\theta^2 = 0$, per consistenza serve introdurre
+\begin{equation}
+    (\theta\eta)^* = \eta^*\theta^* = -\theta^*\eta^*.
+\end{equation}
+Una funzione $f(\theta)$ è una funzione lineare del tipo $f(\theta) = a + b\theta$, dove per distinguere le variabili di Grassman dai numeri complessi ordinari, si chiamano questi \emph{c-numeri} dove la ``c'' sta per \emph{commutanti}. A meno che non sia specificato, gli spinori avranno sempre come componenti numeri di Grassman. 
+
+Quindi, in $\b{\lambda}\gamma^\mu\chi$, si può scegliere al posto della matrice di Dirac una generica matrice $M \in \alg{Cliff}{1,D - 1}$. Si considera quindi il caso in cui 
+\begin{equation}
+    M = \gamma_{\mu_1\cdots\mu_r},\quad r \le D,
+\end{equation}
+pensandolo come un isomorfismo tra l'algebra di Clifford e i numeri di Grassman. Esiste un'identità
+\begin{equation}
+    \b{\lambda}\gamma_{\mu_1\cdots\nu_r}\chi = t_r\b{\chi}\gamma_{\mu_1\cdots\mu_r}\lambda.
+\end{equation}
+Questa si può verificare ricordando che $s^T = s$ con $S \in \bb{C}$, per cui 
+\begin{equation}
+    \begin{split}
+        (\b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi)^T &= \b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi \\
+        &= -\chi^T(\gamma_{\mu_1\cdots\mu_r})^TC^T\lambda,
+    \end{split}
+\end{equation}
+dove il segno meno nasce dallo scambio effettivo tra $\chi$ e $\lambda$. Quindi, ricordando che $\Gamma(r) = \gamma_{\mu_1\cdots\mu_r}$, si ha 
+\begin{equation}
+    \b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi = t_0\chi^TC\gamma_{\mu_1\cdots\mu_r}\lambda.
+\end{equation}
+Questa identità è detta \emph{Majorana flip}. Se $\lambda = \chi$ e $t_r = -1$, allora la quantità $\b{\lambda}\gamma^{\mu\nu}\lambda$ si annulla in $D = 4$, ma in generale dipende dalla dimensione. 
+
+Per cambiare di posto un numero di spinori maggiore di due sono necessarie delle accortezze. Per quattro spinori ad esempio, il caso più comune, si ha l'identità di Fierz: per $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$, si ha 
+\begin{equation}
+    (\b{\lambda}_1\lambda_2)(\b{\lambda_3}\lambda_4) = \nsum_A\frac{1}{2^m}\b{\lambda_1}\Gamma^A\lambda_4\b{\lambda_3}\Gamma^A\lambda_2,
+\end{equation}
+dove
+\begin{equation}
+    \Gamma^A \in \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_D}\} \in \alg{Cliff}{2m}
+\end{equation}
+oppure 
+\begin{equation}
+    \Gamma^A \in \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_m}\} \in \alg{Cliff}{2m + 1}.
+\end{equation}

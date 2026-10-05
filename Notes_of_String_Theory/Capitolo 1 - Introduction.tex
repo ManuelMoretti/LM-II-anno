@@ -1,0 +1,118 @@
+\chapter{Introduction}
+QFT:
+\begin{itemize}
+    \item EM interaction;
+    \item weak interaction;
+    \item strong interaction;
+    \item Yang-Mills QFT;
+    \item Standard Model on $SU(3) \times SU(2) \times U(1)$
+\end{itemize}
+Describes what is seen in accelerators.
+
+GR:
+\begin{itemize}
+    \item studies the universe;
+    \item has not been quantised.
+\end{itemize}
+
+Dark matter is believed to exist since galaxies rotation does not match the standard predictions without dark matter, and dark energy. However, it has not been yet observed since they interact only through gravity. Regarding dark energy, it's existence is linked to the positive cosmological constant that it is contained in the Hilbert-Einstein action. Its effect is the accelerate expansion of the Universe (de Sitter metric). 
+
+At the end of the day, what we have is not enough. Even a theory that merges QFT and GR describes only the 5\% of the Universe. We start by looking at what we have.
+
+In QFT, the fundamental object is the path integral. The correlator functions are defined as something we can measure 
+\begin{equation}
+    \mybraket{O_1,\dots,O_N} = \int D\phi\,e^{-iS[\phi]/\hbar}O_1(\phi)\cdots O_n(\phi) = \mathrm{power\,series\,in\,\hbar}.
+\end{equation}
+Generally, an action is defined
+\begin{equation}
+    S[\phi] = \int \frac{1}{2}(\phi \times \phi) + V(\phi),
+\end{equation}
+where $(\phi \times \phi)$ is the kinetic term (free theory) and $V(\phi)$ is the interaction (coupling constant). In general,
+\begin{equation}
+    \int_\gamma dz\,e^{f(z)/\hbar}g(z) \overset{z_0 = 0}{\simeq} (\cdots) + \hbar^2(\cdots) + \hbar^4(\cdots) + \cdots.
+\end{equation}
+Asymptotic expression. Zero radius of convergence, why? Because, if one suppose that $f(z_0) = 0$, then 
+\begin{equation}
+    e^{-if(z_0)/\hbar}g(z_0)
+\end{equation}
+gives a non-perturbative contribution -> $\phi_0$ new classical solutions -> $e^{-iS[\phi_0]/\hbar}$ is non-perturbative. We just know the perturbative part. 
+
+The problem with GR, one the other hand, is that its coupling constant grows with energy. The Hilbert-Eistein action is
+\begin{equation}
+    S = \frac{1}{2K^2}\int d^Dx\,\sqrt{-g}R,\quad K \equiv \sqrt{G}.
+\end{equation}
+We want to write this action in some way ad in QFt. The way is to separate the metric into 
+\begin{equation}
+    g_{\mu\nu} = g_{\mu\nu}^* + h_{\mu\nu},
+\end{equation}
+where $g_{\mu\nu}^*$ is the background while the $h_{\mu\nu}$ is the graviton. Thus
+\begin{equation}
+    \delta h_{\mu\nu} = \p_\mu\xi_\nu + \p_\nu\xi_\mu,
+\end{equation}
+\begin{equation}
+    \delta[\eta + h]  =\frac{1}{2K^2}\int d^Dx\,\underbrace{h[k,\eta]}_{propagatore} \hbar + \underbrace{k\hbar^3 + k^2\hbar^4 + \cdots}_{vertices}.
+\end{equation}
+Renormalizations:
+\begin{itemize}
+    \item need a finite n° of counter-terms;
+    \item they appear in the form 
+    \begin{equation}
+        \int d^Dx\,\sum_nk^nO_n + S_0 = S.
+    \end{equation}
+\end{itemize}
+In the QFT there are:
+\begin{enumerate}
+    \item relevant operators $< 0$ $\Delta < 4$;
+    \item ??? $= 0$ $\Delta = 4$;
+    \item irrelevant $> 0$ $\Delta > 4$.
+\end{enumerate}
+Fermi theory. an effective field of theory which is not renormalizable. 
+
+Effective field theory: 
+
+Suppose that we have a theory with $S[\phi,\psi]$ where, in general, there is a hierarchy of particles ($m\psi > m\phi$). There is to remove the massive particles $\psi$ from external legs (?). Integration-out of massive degrees of freedom
+\begin{equation}
+    e^{-S_{self}[\phi]} = \int D\psi\,e^{-S[\phi,\psi]/\hbar},
+\end{equation}
+where we integrate only on the fields that we have to remove:
+\begin{equation}
+    S[\phi,\psi] = S_{self}[\psi] = S_1[\phi] + \rem{extra\,couplings},
+\end{equation}
+they can be ... be irrelevant operators, so they are generated from this integration of higher degrees of freedom. So if Gr is an effective field theory, what is the scale at which it fails?
+
+Planck scale:
+
+The Planck scale is 
+\begin{equation}
+    \begin{aligned}
+    l_P &= \sqrt{\frac{G\hbar}{c^3}} \simeq \SI{e-35}{\meter}, \\
+    m_P &= \sqrt{\frac{\hbar c}{G}} \simeq \SI{e-8}{\kg}, \\
+    t_P &= \sqrt{\frac{G\hbar}{c^5}} \simeq \SI{e-44}{\second}.
+\end{aligned}
+\end{equation}
+The Planck mass is defined as the mass od a particle whose Compton wavelength is proportional to is Schwarzschild radius
+\begin{equation}
+    \lambda_C(m) = \frac{2\pi\hbar}{c}\frac{1}{m},\quad R_S(m) = \frac{2G}{c^2}m.
+\end{equation}
+The Planck mass is therefore defined by
+\begin{equation}
+    R_S(m_P) = \frac{1}{\pi}\lambda_C(m_P).
+\end{equation}
+The existence of black holes put a limit on the particles one can probe. If you continue to zoom you hit a wall, opposite as QFT. There is a natural cut-off: a theory of quantum gravity should be UV finite. 
+
+String theory:
+
+String theory is a relavistic quantum theory with a minimal length, with the only free parameter denoted as $\alpha'$ with $[\alpha'] = L^2$. In particular, $\alpha' \propto l_P^2$. The proportionality will depend on the strong coupling constant. The fundamental object is the string 1-dimensional with a tension
+\begin{equation}
+    T = \frac{1}{2\pi\alpha'}.
+\end{equation}
+The tension is similar to invariant mass for particles: for a boost lorentz the length of the string can change but not its tension. The idea of string theory was born first by studying flux quark tubes in the confinement region. Sometimes gauge thoeries admit string description -> AdS/CFT correspondenza. 
+
+Cloosed string -> $m_Cs_C$, open stirng -> $m_Os_O$. Harmonics -> $m_c^2 \simeq n - 1$ and $s_C \propto 2n$, $m_O^2 \simeq n - 1$ and $s_O \propto n$. Therefore, for $n = 1$
+\begin{equation}
+    m_C^2 \simeq 0,\quad s_C \simeq 2 -> ONLY\,GR,
+\end{equation}
+\begin{equation}
+    m_O^2 \simeq 0,\quad s_O \simeq 1 -> gauge\,bosons\,A_\mu.
+\end{equation}
+Worldline - interaction point. Worldsheet - interaction is not a point.

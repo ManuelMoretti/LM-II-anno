@@ -1,0 +1,139 @@
+\documentclass[openany]{book}
+\usepackage[a4paper,margin=4.72cm]{geometry}
+
+% pacchetti
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{stackengine}
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.1.0}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{underoverlap}
+\usepackage{extarrows}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\usepackage{tipa}
+\usepackage{anyfontsize}
+\usepackage{scalefnt}
+\usepackage{enumitem}
+\usepackage{titling}
+\usepackage[italian]{babel}
+
+\usepackage{natbib}
+\usepackage{appendix}
+\usepackage{hyperref}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{upgreek}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{slashed}
+\usepackage{siunitx}
+\usepackage{mathcomp}
+
+\usepackage{dynkin-diagrams}
+\usepackage{ytableau}
+\usepackage{simpler-wick}
+\usepackage[version = 3]{mhchem}
+
+% librerie
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{calligraphy}
+
+% ambienti
+\newtheorem{axiom}{Assioma}
+\newtheorem{defn}{Definizione}
+\newtheorem{teo}{Teorema}
+\newtheorem{corl}{Corollario}
+\newtheorem{lem}{Lemma}
+\newtheorem{obs}{Osservazione}
+\newtheorem{ex}{Esempio}
+\newtheorem{notz}{Notazione}
+
+% unità di misura
+\DeclareSIUnit\angstrom{\text{Å}}
+\DeclareSIUnit\atm{\text{atm}}
+
+% stili
+\newcommand{\bb}[1]{\mathbb{#1}}
+\renewcommand{\v}[1]{\bm{#1}}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\hT}[1]{\hat{#1}^\dagger}
+\newcommand{\rem}[1]{\mathrm{#1}}
+\newcommand{\fan}[1]{\mathcal{#1}}
+\renewcommand{\b}[1]{\bar{#1}}
+
+% operatori matematici
+\newcommand{\p}{\partial}
+\newcommand{\dg}{\dagger}
+\newcommand{\mybraket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\mybrakett}[3]{\langle #1 | #2 | #3 \rangle}
+\newcommand{\nsum}{\sum\nolimits}
+\newcommand{\sump}{\sideset{}{'}\sum}
+\newcommand{\nsump}[1]{\sideset{}{'_{#1}}\sum\nolimits}
+\newcommand{\nprod}{\prod\nolimits}
+\newcommand{\vmedio}[1]{\langle #1 \rangle}
+\newcommand{\bigvmedio}[1]{\left\langle #1 \right\rangle}
+\newcommand{\comm}[2]{[#1,#2]}
+\newcommand{\acomm}[2]{\{#1,#2\}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ot}{\otimes}
+\newcommand{\op}{\oplus}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Res}{\mathrm{Res}}
+\renewcommand{\sl}[1]{\slashed{#1}}
+\DeclareMathOperator*{\sumint}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+\newcommand{\group}[2]{\mathrm{#1}(#2)}
+\newcommand{\alg}[2]{\mathfrak{#1}(#2)}
+
+% stati quantistici
+\newcommand{\upa}{\uparrow}
+\newcommand{\doa}{\downarrow}
+\newcommand{\ko}{\ket{0}}
+\newcommand{\bo}{\bra{0}}
+\newcommand{\kO}{\ket{\Omega}}
+\newcommand{\bO}{\bra{\Omega}}
+
+% quantità
+\newcommand{\action}{\mathcal{A}}
+\newcommand{\amp}{\mathcal{A}}
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Lie}{\mathcal{L}}
+\newcommand{\IM}{\mathbb{I}}
+\newcommand{\OM}{\mathbb{O}}
+
+\title{\textbf{APPUNTI DI SUPERGRAVITA' E CORRISPONDENZA AdS/CFT}}
+\author{Manuel Gabriele Moretti}
+\date{September 2026}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\include{Capitolo 1 - Richiami}
+
+
+\end{document}

@@ -1,0 +1,243 @@
+% Supplementary references used to check conventions and qualifications:
+% J. F. Donoghue, arXiv:1209.3511 and arXiv:gr-qc/9405057.
+% D. Tong, arXiv:0908.0333.
+% Planck Collaboration, arXiv:1807.06209, for the illustrative LCDM fractions.
+
+\chapter{Introduction}
+Our present understanding of fundamental physics rests on two theoretical frameworks: Quantum Field Theory (QFT) and General Relativity (GR). Quantum field theory combines quantum mechanics with special relativity and provides the language in which we describe elementary particles and their interactions. General Relativity describes gravity in terms of the geometry of spacetime. Together, these theories account for an extraordinary range of phenomena, from particle collisions to the evolution of the Universe. Nevertheless, there are both observational and theoretical reasons to expect that they do not constitute the final description of Nature.
+
+The electromagnetic, weak and strong interactions are described by the Standard Model of particle physics, a quantum gauge theory based on the group
+\begin{equation}
+    G_{\rem{SM}} = \group{SU}{3}_{\rem{c}} \times \group{SU}{2}_{\rem{L}} \times \group{U}{1}_{\rem{Y}}.
+\end{equation}
+Its non-Abelian gauge sectors are Yang--Mills theories. The $\group{SU}{3}_{\rem{c}}$ factor describes the strong interaction, while $\group{SU}{2}_{\rem{L}} \times \group{U}{1}_{\rem{Y}}$ describes the electroweak interaction before spontaneous symmetry breaking. At low energies, the unbroken electromagnetic gauge group is $\group{U}{1}_{\rem{em}}$. The predictions of the Standard Model have been tested with remarkable precision, especially in accelerator experiments.
+
+Astrophysics and cosmology, however, indicate that the particles familiar from ordinary matter account for only a small fraction of the cosmic energy budget. In the standard cosmological model with Cold Dark Matter (CDM) and a cosmological constant, usually called $\Lambda$CDM, representative rounded fractions are about $5\%$ ordinary matter, $27\%$ dark matter and $68\%$ dark energy.
+
+Dark matter is inferred from several gravitational observations, including galactic rotation curves, gravitational lensing and the formation of large-scale structure. It does not interact appreciably with light, but this does not imply that gravity must be its only interaction. Its particle content and possible non-gravitational interactions are questions that a more complete theory should address.
+
+Dark energy is the name given to the component responsible for the accelerated expansion of the Universe. Its simplest description is a positive cosmological constant in Einstein's equations. A universe containing only a positive cosmological constant admits de Sitter spacetime as a solution; in a spatially flat slicing, its scale factor grows exponentially. The difficulty is not introducing such a term into the classical equations, but understanding its magnitude and its relation to vacuum energy in Quantum Field Theory.
+
+Black holes provide another reason to investigate the relation between gravity and Quantum Mechanics. Their gravitational behaviour is successfully described by General Relativity, while quantum fields on a black hole background lead to the prediction of Hawking radiation. Understanding the microscopic origin of black hole entropy and the quantum description of evaporation requires more than classical geometry alone.
+
+These questions motivate the search for a more complete framework. A particularly direct theoretical problem is the behaviour of gravity at very short distances. To explain why string theory is a candidate for addressing this problem, we first review what perturbative Quantum Field Theory can achieve, why gravity challenges this description, and how effective field theory helps us interpret the difficulty. \begin{notz}
+    Unless otherwise specified, we use natural units $c = \hbar = 1$ and metric signature $(-,+,\ldots,+)$; factors of $\hbar$ will be displayed when discussing the semi-classical expansion.
+\end{notz}
+
+\section{Quantum field theory}
+A central object in quantum field theory is the path integral. Schematically, vacuum correlation functions of time-ordered local operators can be written as
+\begin{equation}
+    \vmedio{T\{\fan{O}_1(x_1)\cdots\fan{O}_n(x_n)\}} = \frac{1}{Z[0]}\int D\phi\,e^{iS[\phi]/\hbar}\,\fan{O}_1(x_1)\cdots\fan{O}_n(x_n),
+\end{equation}
+where
+\begin{equation}
+    Z[0] = \int D\phi\,e^{iS[\phi]/\hbar}.
+\end{equation}
+Here $\phi$ collectively denotes the fields of the theory. Correlation functions encode physical information, although they are not all directly observable. In particular, suitable correlation functions determine scattering amplitudes, from which cross sections and decay rates can be calculated. For a real scalar field, a familiar action is
+\begin{equation}
+    S[\phi] = \int d^D x\,
+    \bigg[-\frac{1}{2}\p_\mu\phi\,\p^\mu\phi
+    -\frac{1}{2}m^2\phi^2-V_{\rem{int}}(\phi)\bigg].
+\end{equation}
+After integration by parts, its quadratic part can be written as $\phi\fan{K}\phi$, with $\fan{K} \equiv \square - m^2$. The inverse of this kinetic operator, with the appropriate boundary prescription, defines the propagator. The remaining terms contain the interaction vertices and their coupling constants.
+
+In a lot of interacting theories the path integral cannot be evaluated exactly. One therefore expands around a classical configuration $\phi_{\rem{c}}$ satisfying
+\begin{equation}
+    \frac{\delta S}{\delta\phi(x)}\bigg|_{\phi = \phi_{\rem{c}}} = 0,
+    \quad \phi = \phi_{\rem{c}} + \eta.
+\end{equation}
+The action is then expanded in powers of the fluctuation $\eta$. The quadratic term gives a Gaussian integral, while higher powers generate the perturbative interactions. For scattering about a suitable vacuum, the leading semi-classical contributions are tree diagrams and quantum corrections are organised by the number of loops. This loop counting is particularly transparent in the effective action,
+\begin{equation}
+    \Gamma[\varphi] = S[\varphi] + \hbar\Gamma_1[\varphi] + \hbar^2\Gamma_2[\varphi] + \cdots.
+\end{equation}
+The loop expansion and an expansion in interaction strengths are closely related, but they are not identical: tree diagrams themselves may contain different powers of the couplings.
+
+The mathematical origin of this approximation can be illustrated by an ordinary integral. Suppose that $f(z)$ has a non-degenerate minimum at $z_0$, with $f'(z_0) = 0$ and $f''(z_0) > 0$. Under the usual assumptions of the saddle-point approximation, its contribution to the integral has the form
+\begin{equation}
+    \oint_\gamma dz\,e^{-f(z)/\hbar}g(z)
+    \simeq e^{-f(z_0)/\hbar}
+    \sqrt{\frac{2\pi\hbar}{f''(z_0)}}
+    \bigg[g(z_0) + a_1\hbar + a_2\hbar^2 + \cdots\bigg].
+\end{equation}
+The contour is assumed to pass through the relevant saddle along a direction of steepest descent. There is no general restriction to even powers of $\hbar$ inside the brackets. The field-theory analogue is the expansion of the Euclidean path integral around a classical solution.
+
+In many interacting quantum field theories, perturbative coefficients grow factorially at high order. The resulting series has zero radius of convergence and is an asymptotic expansion rather than a convergent representation of the exact answer. This does not make perturbation theory useless: at sufficiently weak coupling, a suitable finite truncation can be extremely accurate. Nor is divergence an automatic property of every saddle-point expansion; a purely Gaussian integral, for example, is evaluated exactly by its leading contribution.
+
+The full path integral can also receive contributions from other classical configurations. If a Euclidean saddle has action larger than that of the perturbative vacuum by $\Delta S_E > 0$, its relative weight contains
+\begin{equation}
+    \exp\bigg(-\frac{\Delta S_E}{\hbar}\bigg),\quad \lim_{\hbar\to0^+}\frac{e^{-\Delta S_E/\hbar}}{\hbar^n} = 0,\quad \forall n\ge0.
+\end{equation}
+Such a term is smaller than every power of $\hbar$ and is therefore invisible to the ordinary power series about that vacuum. Instantons provide a standard example of this type of non-perturbative contribution. Their existence is not explained by setting the saddle-point action to zero, instead, the relevant feature is the exponential dependence on the inverse expansion parameter. Moreover, not every non-perturbative effect can be reduced to a single instanton contribution.
+
+Loop calculations generally contain ultraviolet divergences. In a perturbatively renormalizable theory, they can be absorbed into a finite set of field and parameter redefinitions, or equivalently into a finite set of independent counter-terms. Renormalizability is a statement about ultraviolet structure, not a guarantee that the theory is easy to solve. Quantum Chromodynamics (QCD) illustrates the distinction: asymptotic freedom makes perturbation theory useful at high energies, whereas confinement and much of low-energy hadron physics require non-perturbative methods. Lattice field theory provides one way of studying this regime. Thus, weak-coupling perturbation theory is a powerful tool within QFT, but it is not the whole theory.
+
+\section{General relativity}
+General relativity describes the gravitational field through the spacetime metric $g_{\mu\nu}$. Its leading action is the Einstein--Hilbert action,
+\begin{equation}
+    S_{\rem{EH}}[g] = \frac{2}{\kappa^2}\int d^D x\,\sqrt{-g}\,(R-2\Lambda),\quad \kappa^2 = 32\pi G_D,
+\end{equation}
+where $G_D$ is Newton's constant in $D$ dimensions and $\Lambda$ is the cosmological constant. In four dimensions we write $G_4 \equiv G$. With $\Lambda > 0$ and no matter, the spatially flat de Sitter solution obeys
+\begin{equation}
+    a(t) = a_0e^{Ht},\quad H^2 = \frac{\Lambda}{3}.
+\end{equation}
+For the discussion of perturbative graviton scattering, we instead set $\Lambda = 0$ and expand about Minkowski spacetime.
+
+To make contact with ordinary quantum field theory, we separate a background metric from its fluctuations,
+\begin{equation}
+    g_{\mu\nu} = g^{(0)}_{\mu\nu} + \kappa h_{\mu\nu}.
+\end{equation}
+The factor of $\kappa$ gives $h_{\mu\nu}$ its conventional canonical normalization. The quanta of the physical fluctuations are gravitons. About a flat background, infinitesimal diffeomorphisms induce the linearized gauge symmetry
+\begin{equation}
+    \delta h_{\mu\nu} = \p_\mu\xi_\nu + \p_\nu\xi_\mu,
+\end{equation}
+where the infinitesimal coordinate displacement has been normalized to absorb a factor of $\kappa$. This gauge redundancy removes unphysical components of the symmetric tensor field and leaves the polarizations of a massless spin-two particle.
+
+Expanding the Einstein--Hilbert action about flat space gives schematically
+\begin{equation}
+    S_{\rem{EH}}[\eta+\kappa h] = \int d^D x\, \bigg[\frac{1}{2}h^{\mu\nu}\fan{K}_{\mu\nu,\rho\sigma}h^{\rho\sigma} + \kappa\fan{L}_3(h)+\kappa^2\fan{L}_4(h)+\cdots\bigg].
+\end{equation}
+After gauge fixing, the inverse of the quadratic operator gives the graviton propagator. The interaction terms have the schematic structure $\fan{L}_n\simeq h^{n-2}(\p h)^2$ and define vertices involving arbitrarily many gravitons. The powers of the field $h_{\mu\nu}$ in this expansion should not be confused with powers of Planck's constant $\hbar$.
+
+Gravity can therefore be quantized perturbatively. The difficulty is the ultraviolet behaviour of the resulting theory. Since the action is dimensionless in natural units, the mass dimensions of its parameters are
+\begin{equation}
+    [G_D] = 2 - D,\quad [\kappa] = \frac{2-D}{2}.
+\end{equation}
+In four dimensions, $[\kappa] = -1$. The dimensionless strength associated with gravitational scattering at characteristic energy $E$ consequently grows as
+\begin{equation}
+    \alpha_G(E)\simeq GE^2 = \bigg(\frac{E}{m_{\rem{P}}}\bigg)^2,\quad m_{\rem{P}} = G^{-1/2}.
+\end{equation}
+This is an energy dependence of the dimensionless interaction strength; it does not require us to assume that Newton's constant itself has this dependence on energy.
+
+The significance of a coupling with negative mass dimension can be understood by recalling the classification of local operators. If a term in the action is $\int d^D x\,g_i\fan{O}_i$ and the operator has canonical mass dimension $\Delta_i$, then $[g_i] = D - \Delta_i$. Near the Gaussian fixed point, power counting gives that an operator is:
+\begin{enumerate}
+    \item relevant if $\Delta_i < D$ and $[g_i] > 0$;
+    \item marginal if $\Delta_i = D$ and $[g_i] = 0$;
+    \item irrelevant if $\Delta_i > D$ and $[g_i] < 0$.
+\end{enumerate}
+The term ``irrelevant'' refers to suppression at low energies, not to an absence of physical consequences. Marginal interactions may become marginally relevant or marginally irrelevant through quantum corrections. For the usual four-dimensional classification, the comparison is with $D=4$.
+
+In perturbative gravity, divergences require generally covariant counter-terms containing increasingly many derivatives. The action must allow curvature invariants, other than the Einstein--Hilbert term, such as
+\begin{equation}
+    \Delta S = \int d^4x\,\sqrt{-g}\bigg(c_1R^2 + c_2R_{\mu\nu}R^{\mu\nu} + c_3R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} + d_1\kappa^2\fan{R}_3 + \cdots\bigg),
+\end{equation}
+where $\fan{R}_3$ denotes a scalar contraction of three curvature tensors. This list is schematic since identities, total derivatives and field redefinitions can reduce the number of independent operators. Pure Einstein gravity in four dimensions with a vanishing cosmological constant has a special cancellation of its on-shell ultraviolet divergence at one loop, but a non-vanishing divergence appears at two loops. Matter couplings generally introduce divergences already at one loop.
+
+The need for higher-derivative counter-terms continues at higher orders, so the Einstein--Hilbert action is not perturbatively renormalizable with a finite set of parameters. This prevents its unrestricted use as a fundamental perturbative theory at arbitrarily high energies. It does not, however, prevent controlled quantum predictions at low energies. To understand this distinction, we need the language of effective field theory.
+
+\subsection{Effective field theory}
+An effective field theory describes the degrees of freedom relevant at a specified range of energies without resolving all shorter-distance physics. Suppose a microscopic theory contains light fields $\phi$ and a heavy field $\psi$ with mass $M$, and we study processes at energies $E\ll M$. The heavy particle cannot be produced on shell in these processes, but virtual exchange of that particle can still influence the dynamics of the light fields.
+
+These virtual effects are retained by integrating out $\psi$. Formally, the effective action is defined, up to a field-independent normalization, by
+\begin{equation}
+    e^{iS_{\rem{eff}}[\phi]/\hbar}
+    =\int D\psi\,e^{iS[\phi,\psi]/\hbar}.
+\end{equation}
+Only the heavy field is integrated over at this stage. Correlation functions of the light fields are subsequently obtained by integrating over $\phi$ with the effective action. Integrating out a field therefore means more than removing its external legs: its virtual effects are encoded in new interactions among the remaining fields.
+
+The exact effective action need not be local, but at momenta much smaller than $M$ its heavy-field contributions admit a local derivative expansion. A simple illustration is the expansion of a massive Euclidean propagator,
+\begin{equation}
+    \frac{1}{p_E^2+M^2}
+    =\frac{1}{M^2}\bigg[1-\frac{p_E^2}{M^2}
+    +\frac{p_E^4}{M^4}-\cdots\bigg],
+    \qquad p_E^2\ll M^2.
+\end{equation}
+In four dimensions, the effective Lagrangian can thus be organised as
+\begin{equation}
+    \fan{L}_{\rem{eff}}
+    =\fan{L}_{\Delta\leq4}
+    +\sum_{\Delta_i>4}\frac{c_i}{M^{\Delta_i-4}}\fan{O}_i.
+\end{equation}
+The first term contains relevant and marginal operators, whose coefficients can also be shifted by the heavy fields. The remaining terms are higher-dimensional operators, with dimensionless coefficients $c_i$, often called \emph{Wilson coefficients}. Their effects are organised in powers of $E/M$.
+
+Fermi's theory of weak interactions is a familiar example. At energies well below the $W$-boson mass, exchange of a $W$ boson is approximated by a local four-fermion interaction. With conventional weak-current normalization, its coefficient satisfies the tree-level relation
+\begin{equation}
+    \frac{G_F}{\sqrt{2}} = \frac{g_2^2}{8m_W^2},\quad [G_F] = -2,
+\end{equation}
+where $g_2$ is the $\group{SU}{2}_{\rem{L}}$ gauge coupling. The four-fermion operator has dimension six, so Fermi theory is not renormalizable by ordinary power counting. Nevertheless, it is a predictive approximation to the electroweak theory within its domain of validity.
+
+The same reasoning applies to gravity. The metric remains a low-energy degree of freedom, and the Einstein--Hilbert action is the leading term in an expansion containing higher-curvature operators. Although infinitely many operators are allowed in principle, only finitely many independent terms contribute at any specified order in the low-energy expansion. Their coefficients can be measured or determined by matching to a more fundamental theory. Gravitational effective field theory therefore remains predictive for sufficiently small energies and curvatures.
+
+The question is consequently not whether quantum mechanics and general relativity can ever be used together: they can, within this effective description. The question is what replaces that description when its expansion fails. In four-dimensional Einstein gravity, the Planck scale provides the characteristic estimate for where quantum gravitational effects become strong, although new degrees of freedom may appear below it.
+
+\subsection{The Planck scale}
+Restoring $G$, $\hbar$ and $c$, dimensional analysis defines the Planck length, mass and time as
+\begin{equation}
+    \begin{aligned}
+        \ell_{\rem{P}} &= \sqrt{\frac{G\hbar}{c^3}} \simeq 1.62\times10^{-35}\,\rem{m}, \\
+        m_{\rem{P}} &= \sqrt{\frac{\hbar c}{G}} \simeq 2.18\times10^{-8}\,\rem{kg}, \\
+        t_{\rem{P}} &= \sqrt{\frac{G\hbar}{c^5}}\simeq 5.39\times10^{-44}\,\rem{s}.
+    \end{aligned}
+\end{equation}
+The associated energy is
+\begin{equation}
+    E_{\rem{P}} = m_{\rem{P}}c^2 \simeq \SI{1.22e19}{\GeV}.
+\end{equation}
+These are the unreduced Planck units; factors of $8\pi$ are absorbed into the definition in the alternative reduced convention.
+
+The physical significance of these scales can be illustrated by comparing the Compton wavelength of a particle with the Schwarzschild radius associated with the same mass. Using the unreduced Compton wavelength,
+\begin{equation}
+    \lambda_C(m) = \frac{2\pi\hbar}{mc},\quad R_S(m) = \frac{2Gm}{c^2}.
+\end{equation}
+At the Planck mass, the two lengths are of the same order; with these precise conventions,
+\begin{equation}
+    R_S(m_{\rem{P}}) = \frac{1}{\pi}\lambda_C(m_{\rem{P}}) = 2\ell_{\rem{P}}.
+\end{equation}
+Numerical factors depend on whether one uses the Compton wavelength or the reduced Compton wavelength, but the underlying scale is the same.
+
+To resolve a distance $\Delta x$ in an ordinary quantum-mechanical experiment, one needs momenta of order $\hbar/\Delta x$. For an ultra-relativistic probe, the corresponding energy is approximately $E\simeq\hbar c/\Delta x$. Gravity associates a Schwarzschild radius with that energy,
+\begin{equation}
+    R_S(E) = \frac{2GE}{c^4}\simeq\frac{2G\hbar}{c^3\Delta x} = \frac{2\ell_{\rem{P}}^2}{\Delta x}.
+\end{equation}
+If one tries to concentrate enough energy within a sufficiently small region, its gravitational radius becomes comparable to the region being probed. Increasing the energy can then lead to gravitational collapse instead of improved spatial resolution.
+
+This is a heuristic argument: classical black-hole geometry is itself being extrapolated towards a regime where quantum gravitational effects matter. It therefore motivates, rather than proves, a fundamental limitation on localization near the Planck length. Nevertheless, it suggests that the point-particle picture and the operational meaning of arbitrarily short distances should be reconsidered. A satisfactory ultraviolet completion must control this regime. The argument alone does not prove that quantum gravity is equivalent to imposing a hard momentum cut-off, or that all amplitudes must automatically be finite.
+
+\section{String theory: a first look}
+
+String theory changes the microscopic starting point by replacing point-like elementary particles with one-dimensional extended objects: relativistic strings. A string can move through spacetime and vibrate in different ways. Upon quantization, these vibrational states appear as particles with different masses, spins and other quantum numbers. The central idea is therefore that many apparently different particles may arise as different excitations of the same type of fundamental object. The characteristic string length is set by the parameter $\alpha'$, with
+\begin{equation}
+    [\alpha'] = L^2,\quad \ell_s = \sqrt{\alpha'},\quad M_s = \frac{1}{\sqrt{\alpha'}}.
+\end{equation}
+Here and below we return to natural units. The quantity $\ell_s$ is a characteristic scale, not a fixed physical length shared by every string configuration. A relativistic string cannot be specified by assigning it a rigid length in every reference frame. Instead, its intrinsic parameter is its tension,
+\begin{equation}
+    T=\frac{1}{2\pi\alpha'}.
+\end{equation}
+The tension has the dimensions of energy per unit length and is an invariant parameter of the theory. In ordinary units the relation is $T=\hbar c/(2\pi\alpha')$. For a straight static segment, its energy is proportional to its length, $E=TL$. Thus a fundamental relativistic string differs from an ordinary elastic band, whose energy is approximately quadratic in its displacement from an equilibrium configuration.
+
+The string scale is often associated with the scale of quantum gravity, but it need not equal the Planck scale. Their relation depends on the dimensionless string coupling $g_s$ and, after compactification, on the geometry and volume of the extra dimensions. The string coupling controls splitting and joining interactions and must not be confused with the strong-interaction coupling of QCD. In perturbative string theory it is determined by the background value of a scalar field called the dilaton. Consequently, $\alpha'$ supplies the intrinsic string scale, while a particular physical background also involves coupling and geometric data.
+
+Historically, string models were introduced to describe features of the strong interaction. This idea remains physically suggestive because, in the confining regime of a gauge theory, the chromoelectric field between suitable colour sources forms a flux tube. Over the range in which this tube does not break, its energy grows approximately linearly with its length. Such behaviour admits an effective string description. A much deeper connection is provided by gauge/gravity duality, most famously the AdS/CFT correspondence, in which certain gauge theories have an equivalent description involving strings and gravity in a higher-dimensional spacetime. A strongly coupled gauge theory can, in suitable limits, admit a more tractable description on the gravitational side.
+
+Strings come in two basic types. A closed string forms a loop and has no endpoints. An open string has two endpoints, whose motion must satisfy boundary conditions. These endpoints can be constrained to lie on extended dynamical objects called D-branes. A D$p$-brane has $p$ spatial dimensions and a $(p+1)$-dimensional worldvolume. Its allowed directions can include all spatial directions, so a brane need not be a lower-dimensional surface inside the ambient spacetime.
+
+The two endpoints of an open string may lie on the same brane or on different branes. Open-string states describe excitations associated with the branes, including gauge fields propagating on their worldvolumes and modes describing transverse fluctuations. Closed strings propagate in the ambient spacetime and interact with the branes. In particular, D-branes carry energy and therefore source the gravitational field. They can emit and absorb closed strings, and are essential dynamical ingredients of the theory.
+
+To see how particles emerge, consider the quantized vibrations of a free string in flat spacetime. The centre-of-mass motion describes the propagation of a particle, while the oscillator excitations determine its mass and spacetime polarization. Let us illustrate the spectrum using the critical bosonic string. For an open string with no additional stretching contribution, the mass formula is
+\begin{equation}
+    \alpha' m_{\rem{open}}^2 = N - 1,\quad N \in \bb{N}_0.
+\end{equation}
+The level $N$ is the total oscillator excitation number, weighted by the mode frequencies. A closed string has independent bigg-moving and bigg-moving oscillators. In the absence of compactification momentum and winding, its physical states obey
+\begin{equation}
+    \alpha' m_{\rem{closed}}^2 = 4(N - 1) = 4(\widetilde N - 1),\quad N = \widetilde N.
+\end{equation}
+The equality of the two levels is the level-matching condition. The constant shift comes from the quantum zero-point energy, and its value is fixed by consistency. These specific intercepts refer to the bosonic string; the sectors of a superstring have a modified spectrum.
+
+At a given excitation level there are generally many states with different polarizations and spins. The schematic relations between spin and level refer to the states of highest spin. For the leading trajectories of the bosonic string,
+\begin{equation}
+    J_{\rem{max}}^{\rem{open}} = N,\quad J_{\rem{max}}^{\rem{closed}} = 2N,
+\end{equation}
+where $N$ is the common bigg-moving and bigg-moving level in the closed-string expression.
+
+At the first excited level, $N = 1$, the open string contains a massless vector state. Its low-energy spacetime description is a gauge field $A_\mu$. With appropriate endpoint labels, open strings generate non-Abelian gauge theories; on suitable stacks of D-branes, these are Yang--Mills theories on the brane worldvolume.
+
+At $N = \widetilde N=1$, the closed string contains a massless rank-two tensor state. Its physical polarizations decompose into a symmetric traceless tensor, an antisymmetric tensor and a scalar. These correspond to the graviton, an antisymmetric field $B_{\mu\nu}$ and the dilaton, respectively. Thus the massless closed-string sector contains gravity, but is not restricted to gravity alone.
+
+The appearance of a massless spin-two state is decisive. Under the usual assumptions of Lorentz invariance, unitarity and a local low-energy description, consistent interactions of such a state require a gravitational gauge symmetry and universal coupling to energy and momentum. The leading two-derivative dynamics reproduce general relativity. The graviton is therefore interpreted as the fluctuation $h_{\mu\nu}$ in the expansion $g_{\mu\nu}=g^{(0)}_{\mu\nu}+\kappa h_{\mu\nu}$. Gravity is not inserted afterwards as an unrelated interaction: it is already present in the closed-string spectrum.
+
+The bosonic ground state, $N=0$, has negative mass squared and is called a tachyon. This signals an instability of the perturbative vacuum, not an ordinary stable particle propagating faster than light. The bosonic string is consequently a useful starting point for learning the formalism, rather than a realistic stable model of Nature. Suitable superstring constructions remove this tachyonic instability and include spacetime fermions, while retaining the essential emergence of gravitational degrees of freedom.
+
+The extended nature of strings also changes the organisation of interactions. A point particle traces a one-dimensional worldline, and a Feynman diagram represents interactions by vertices at which particle lines meet. A propagating string traces a two-dimensional worldsheet, described by an embedding $X^\mu(\tau,\sigma)$. Splitting and joining processes are represented by connected worldsheets, and quantum amplitudes involve sums over their geometries and topologies. A point interaction of particle trajectories is thus replaced by a geometrical process involving an extended object.
+
+This reorganisation softens the short-distance behaviour responsible for the ultraviolet problems of point-particle gravity. However, ultraviolet consistency is not a consequence of extension alone: the worldsheet symmetries, the full string spectrum and the consistency of the background are essential. In suitable consistent superstring backgrounds, perturbative amplitudes avoid the usual ultraviolet divergences of point-particle gravity, although infrared effects and background instabilities still require separate treatment.
+
+At energies $E\ll M_s$, the massive oscillator modes cannot be produced and can be integrated out. Their effects appear as higher-derivative interactions among the light fields, organised in powers of $\alpha' E^2$. The resulting effective description contains general relativity coupled to the other light closed-string fields and, when open strings and D-branes are present, gauge theories and additional matter. String theory thereby connects the two frameworks from which we started within a common quantum description. The task of the course is to derive these statements from the dynamics and quantization of the relativistic string.
