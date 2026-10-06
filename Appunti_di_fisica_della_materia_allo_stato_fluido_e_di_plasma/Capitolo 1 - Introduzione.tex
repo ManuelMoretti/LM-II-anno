@@ -5,7 +5,7 @@ Si richiamano brevemente alcuni concetti sugli operatori differenziali che risul
 \end{equation}
 Questo operatore compare nelle definizioni delle operazioni di gradiente, divergenza e rotore. 
 
-Il gradiente è l'applicazione dell'operatore $\nabla$ ad una funzione $f \equiv f(x,y,z)$ che eventualmente può dipendere da tutte le coordinate cartesiane, per cui 
+Il gradiente è l'applicazione dell'operatore $\nabla$ ad una funzione $f(x,y,z)$, per cui 
 \begin{equation}
     \rem{grad}(f) \equiv \nabla f = (\p_xf)\h{i} + (\p_yf)\h{j} + (\p_zf)\h{k} \equiv 
     \begin{pmatrix}
@@ -578,6 +578,124 @@ Tuttavia, la formula più generale è
     \v{v}_d = -\frac{cW_\perp(\v{B}_0 \times \nabla)(\v{B}_0)}{e_0B_0^2}.
 \end{equation}
 
+\section{Invarianza adiabatica}
+Con \emph{invarianza adiabatica} si intende la situazione in cui una certa quantità rimane pressocché costante su un certo intervallo o in un certo regime. La quantità di cui si interessa studiare l'invarianza adiabatica è il momento magnetico $\v{\mu}$. Per far farlo, si considera un regime dove $R_L \ll |\v{B}/\nabla \v{B}|$, ossia dove il raggio di Larmor è molto più piccolo della scala di variazione del campo magnetico. Il campo magnetico è prevalentemente orientato lungo l'asse $z$, ma può avere una piccola componente lungo $x$ e $y$, per cui, considerando un sistema di coordinate cilindriche, $\v{B} = (B_r,0,B_z)$, con $B_r \ll B_z$. Si assume anche che non ci sia dipendenza dall'angolo $\phi$. La divergenza del campo magnetico in coordinate cilindriche è
+\begin{equation}
+    \nabla \cdot \v{B} = \frac{1}{r}\p_r(rB_r) + \p_zB_z = 0,
+\end{equation}
+che se moltiplicata per $r$ ed integrata sul raggio $r$ restituisce
+\begin{equation}
+    \begin{split}
+        \int_0^r\,dr\,\p_r(rB_r) &= -\int_0^r\,dz\,r\p_zB_z \\
+        rB_r &\simeq -\frac{r^2}{2}\bigvmedio{\frac{\p B_z}{\p z}},
+    \end{split}
+\end{equation}
+dove il valor medio è definito come 
+\begin{equation}
+    \vmedio{f} = \frac{\int_0^rdr\,rf}{\int_0^rdr\,r},
+\end{equation}
+da cui quindi si ricava
+\begin{equation}
+\label{eq: componente radiale di B}
+    B_r \simeq -\frac{r}{2}\bigvmedio{\frac{\p B}{\p z}}.
+\end{equation}
+Tenendo quest'ultima equazione a mente, si scrive l'equazione del moto
+\begin{equation}
+    m\frac{d\v{v}}{dt} = \frac{e_0}{c}(\v{v} \times \v{B}),
+\end{equation}
+e se ne considera la componente parallela, cioè lungo l'asse $z$,
+\begin{equation}
+    m\frac{dv_\parallel}{dt} = -\frac{e_0}{c}(\v{v} \times \v{B})_z = -\frac{e_0}{c}v_\phi B_r.
+\end{equation}
+Usando ora il fatto che $v_\phi = -(e_0/|e_0|)v_\perp$ e la relazione precedente \eqref{eq: componente radiale di B} per $B_r$, si ha che 
+\begin{equation}
+    m\frac{dv_\parallel}{dt} = -\frac{e_0}{c}\bigg(-\frac{e_0}{|e_0|}v_\perp\bigg)\bigg(-\frac{r}{2}\frac{\p B}{\p z}\bigg),
+\end{equation}
+dove si è approssimato il valore medio del campo con il campo stesso, in quanto il valore medio viene calcolato su un intervallo dove il campo è praticamente costante. Questa espressione si può riscrivere in termini del raggio di Larmor come 
+\begin{equation}
+    m\frac{dv_\parallel}{dt} = -\bigg(\frac{|e_0|}{c}R_L|\Omega|\frac{R_L}{2}\bigg)\frac{\p B_z}{\p z} = -\frac{|e_0|\pi R_L^2}{cP}\frac{\p B_z}{\p z},
+\end{equation}
+dove $P$ è il periodo di rotazione. Considerando una particella carica che segue un'orbita circolare, si può definire la corrente come $I =|a|/P|$; per la legge di Amperé però questa situazione è equivalente ad una spira di superficie $S$ percorsa dalla medesima corrente $I$ e con momento magnetico
+\begin{equation}
+    \mu = \frac{IS}{c} = \frac{|e_0|\pi}{cP}R_L^2 = \frac{mv_\perp^2}{2B} \equiv \frac{W_\perp}{B},
+\end{equation}
+dove $W_\perp \equiv mv_\perp^2/2$ è il la componente perpendicolare al campo dell'energia cinetica. Di conseguenza 
+\begin{equation}
+    m\frac{dv_\parallel}{dt} = -\mu\frac{\p B_z}{\p z}.
+\end{equation}
+\begin{obs}
+    In Fluidodinamica, ma non solo, tipicamente la derivata totale rispetto al tempo $d/dt$, detta \emph{derivata lagrangiana}, e la derivata parziale rispetto al tempo $\p/\p t$, detta \emph{derivata euleriana}, sono legate dalla relazione
+    \begin{equation}
+        \frac{d}{dt} = \frac{\p}{\p t} + \v{v} \cdot \nabla.
+    \end{equation}
+    In questa particolare discussione, $\p_t\v{B} = 0$, ma si deve fare attenzione che le particelle si muovono e quindi $B$ varia effettivamente nel tempo anche se tale variazione non è data dal campo stesso, in altre parole $d\v{B}/dt \neq 0$. Sempre in questo caso particolare, la relazione tra derivate permette di passare da $d/dt$ a $\p_z$.
+\end{obs}
+Si intede calcolare ora la derivata di $\v{\mu}$ rispetto al tempo in modo da poterne determinare l'andamento; in particolare, usando che 
+\begin{equation}
+    \frac{dW_\parallel}{dt} = -\frac{W_\perp}{B}\frac{dB}{dt} = -\frac{dW_\perp}{dt},
+\end{equation}
+si trova
+\begin{equation}
+    \begin{split}
+        \frac{d\mu}{dt} = \frac{d}{dt}\bigg(\frac{W_\perp}{B}\bigg) &= \frac{1}{B}\frac{dW_\perp}{dt} - \frac{W_\perp}{B^2}\frac{dB}{dt} \\
+        &= \frac{W_\perp}{B^2}\frac{dB}{dt} - \frac{W_\perp}{B^2}\frac{dB}{dt} \\
+        &= 0,
+    \end{split}
+\end{equation}
+ovvero che $\mu$ è costante. In realtà, il momento magnetico non è proprio costante, semplicemente la sua variazione non è significativa nel regime che si è considerato all'inizio della derivazione con la condizione $R_L \ll |\v{B}/\nabla \v{B}|$. Dunque, $\mu$ è un esempio di invarianza adiabatica. 
+
+Questa invarianza si può osservare anche per il campo magnetico $\v{B} \equiv B(t)\h{k} \equiv B_z$. Tramite la legge di Faraday valutata per la componente $z$,
+\begin{equation}
+    \bigg[\frac{\p\v{B}}{\p t} + \nabla \times (c\v{E})\bigg]\bigg|_z = 0,
+\end{equation}
+dove il rotore in coordinate cilindriche risulta essere\footnote{Nell'espressione del rotore, i termini in $p_\phi$ sono nulli dato che $\v{B}$ non dipende da $\phi$, i termini in $\p_z$ sono nulli dato che il campo elettrico è costante su tutto lo spazio, mentre il termine $\p_rE_z$ è nullo perché anche $E_z$ è costante ovunque se lo è anche $B(t)\h{k}$.}
+\begin{equation}
+    \begin{split}
+        \nabla \times \v{E} &= \bigg(\frac{1}{r}\p_\phi(E_z) - \p_zE_\phi\bigg)\h{r} + (\p_zE_r - \p_rE_z)\h{\phi} \\
+        &+ \bigg(\frac{1}{r}\p_r(rE_\phi) - \frac{1}{r}\p_\phi E_r\bigg)\h{z} \\
+        &= \frac{1}{r}\p_r(rE_\phi)\h{z},
+    \end{split}
+\end{equation}
+si ha 
+\begin{equation}
+\label{eq: evoluzione temporale di Bz}
+    \frac{\p B_z}{\p t} = -\frac{c}{r}\p_r\bigg[\frac{r^2}{2}\alpha(t)\bigg] \equiv c\alpha(t),\quad \v{E} \equiv \frac{r^2}{2}\alpha(t),
+\end{equation}
+dove la parametrizzazione di $\v{E}$ è scelta in modo da rimuovere la dipendenza da $r$ a secondo membro, dato che il primo non dipende da tale quantità.
+\begin{obs}
+    La relazione \eqref{eq: evoluzione temporale di Bz} è valida così com'è solo se non si considera l'equazione di Amperé, nel caso lo si facesse, allora $\alpha$ dovrebbe essere una costante.
+\end{obs}
+Quindi, da 
+\begin{equation}
+    m\frac{d\v{v}}{dt} = e_0\bigg(\v{E} + \frac{\v{v}}{c}\times \v{B}\bigg),
+\end{equation}
+considerandone il prodotto scalare con $\v{v}_\perp$, si ottiene
+\begin{equation}
+    m\v{v}_\perp\frac{d\v{v}_\perp}{dt} = \frac{m}{2}\frac{d^2\v{v}}{dt^2} = e_0(\v{E} \cdot \v{v}_\perp),
+\end{equation}
+la quale integrata su un periodo restituisce
+\begin{equation}
+    \begin{split}
+        \int_0^Pdt\,\frac{dW_\perp}{dt} &= \int_0^Pdt\,e_0(\v{E} \cdot \v{v}_\perp) \\
+        \Delta W_\perp &= \oint e_0\v{E} \cdot \h{r}_\perp \\
+        &= e_0\int (\nabla \times \v{E})\cdot d\v{\Sigma} \\
+        &= -\frac{e_0}{c}\int \frac{\p\v{B}}{\p t}\cdot d\v{\Sigma} \\
+        &\simeq \frac{|e_0|\pi R_L^2}{c}\frac{\p\v{B}}{\p t} \\
+        &= \frac{2\pi W_\perp}{|\Omega|}\frac{\dot{B}}{B},
+    \end{split}
+\end{equation}
+dove si è usato il teorema di Stokes e si è considerato il modulo della carica $e_0$ dato che il risultato non dipende dal segno di questa: essenzialmente, se la carica è positiva il versore della superficie è anti-parallelo al campo magnetico e si deve aggiungere un segno meno, mentre quando è negativa, versore è parallelo al campo e non si modifica il segno. Questa procedura è equivalente a considerare $|e_0|$ invece che $e_0$. Riassumendo, si è trovato che 
+\begin{equation}
+    \Delta W_\perp = \frac{2\pi W_\perp}{|\Omega|}\frac{\dot{B}}{B} = \frac{W_\perp}{B}(P\dot{B}) = \frac{W_\perp}{B}\Delta B,
+\end{equation}
+da cui si ritrova l'invarianza adiabatica del momento magnetico,
+\begin{equation}
+\label{eq: Delta mu = Delta W_perp/Delta B}
+    \frac{\Delta W_\perp}{\Delta B} \equiv \Delta\bigg(\frac{\Delta W_\perp}{\Delta B}\bigg) = \Delta \mu = 0.
+\end{equation}
+Da quest'ultima relazione, si capisce meglio come il momento magnetico sia costante non in generale, ma su un periodo. 
+
+Guardando l'equazione \eqref{eq: Delta mu = Delta W_perp/Delta B}, si vede come se $\mu$ è costante, allora all'aumentare di $B$, anche $W_\perp$ deve crescere in modo da mantere costante il momento magnetico. Tuttavia, il fatto che $W_\perp$ implica che $W_\parallel$ diminuisca, ma tale descrescita non può essere senza limite in quanto superato un certo valore $W = W_\perp + W_\parallel$ risulterà negativa, ma cioò non può succedere dato che $W > 0$. Pertanto, esiste un limite superiore per $W_\perp$ e di conseguenza un limite per $B$. Considerando un campo magnetico le cui linee di campo si stringono con $z$, come mostrato in figura +REF +IMMAGINE, si ha un esempio di come $W_\perp$ aumenti al diminuire di $R_L$ in funzione di $z$, fino ad arrivare al valore massimo $W_{max}$. In questo punto, dove $W_\parallel = 0$ e $B = B_r$, la particella è costretta a invertire il proprio moto, evitando così che $W < 0$. 
 
 
 
