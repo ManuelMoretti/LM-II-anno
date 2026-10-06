@@ -1,4 +1,4 @@
-\chapter{Equazioni per l'evoluzione dell'Universo}
+\chapter{Equazioni di evoluzione dell'Universo}
 L'obiettivo è ora determinare le equazioni che governano l'evoluzione dell'Universo. Per farlo, si parte dalle evidenza sperimentali raccolte durante il XX secolo. Da queste si possono dedurre due osservazioni importanti:
 \begin{enumerate}
     \item a grande scala, ossia oltre i $\SI{100}{\mega\parsec}$, l'Universo appare isotropo\footnote{Le misure più recenti tramite osservazioni \emph{deep field} nel visibile da parte del telescopio Hubble e nell'infrarosso da parte del telescopio James Webb lo confermano. Un'altra evidenza importante è chiaramente la CMB.};
@@ -216,4 +216,85 @@ Dunque, si sono ottenute le tre equazioni, di cui solo due effettivamente indipe
         \dfrac{\ddot{a}}{a} = -\dfrac{4\pi G}{3}\b{\rho}
     \end{cases}.
 \end{equation}
+
+\subsection{Soluzioni}
+Si considera prima di tutto la prima equazione di Friedmann \eqref{eq: prima equazione di Friedmann} e la si riscrive nella forma 
+\begin{equation}
+    \frac{da}{dt} = \sqrt{\frac{8\pi G}{3}\frac{\b{\rho}_0}{a} - Kc^2} \equiv \sqrt{\frac{A}{a} + B},
+\end{equation}
+dove $A > 0$ mentre $B$ può avere qualsiasi segno. Il caso più semplice è quando $B = 0$, per il quale 
+\begin{equation}
+    \frac{da}{dt} = \sqrt{\frac{A}{a}},
+\end{equation}
+la quale integrata rispetto al tempo ed invertita restituisce l'evoluzione temporale del fattore di scala
+\begin{equation}
+\label{eq: fattore di scala per B = 0}
+    a(t) = \bigg(\frac{3t}{2}\bigg)^{2/3}A^{1/3}.
+\end{equation}
+Dall'equazione \eqref{eq: fattore di scala per B = 0}, essendo $a(t) \propto t^{2/3}$, si osserva che $a(t)$ cresce in maniera relativamente lenta. 
+
+Se invece $B$ ha lo stesso segno di $A$, ossia $B > 0$, allora l'equazione diventa
+\begin{equation}
+    \frac{da}{dt} = \sqrt{\frac{A}{a} + B} = \sqrt{\frac{A + aB}{a}} \equiv \frac{y}{\sqrt{a}},\quad y^2 = A + aB.
+\end{equation}
+Da qui, il differenziale $dt$ si può riscrivere come 
+\begin{equation}
+    dt = \frac{\sqrt{da}}{\sqrt{A + aB}}da = \frac{\sqrt{a}}{y}\frac{2y}{3}dy = \frac{2\sqrt{y^2 - A}}{B\sqrt{B}}dy = \frac{2\sqrt{A}}{B^{3/2}}\sqrt{\frac{y^2}{A} - 1},
+\end{equation}
+per poi effettuare una cambio di variabili tramite le funzioni iperboliche,
+\begin{equation}
+    \cosh^2{\theta} = \frac{y^2}{A},\quad 2\sinh{\theta}\cosh{\theta}\,d\theta = \frac{2y}{A}\,dy,
+\end{equation}
+ed integrare rispetto al tempo il primo membro e rispetto a $\theta$ il secondo, quest'ultimo in particolare è
+\begin{equation}
+    \begin{split}
+        \int d\theta\, \frac{\sinh{\theta}\cosh{\theta}}{\sqrt{a}\cosh{\theta}}\sinh{\theta} &= \frac{2A}{B^{3/2}}\int d\theta\,\sinh^2{\theta} \\
+        &= \frac{2A}{B^{3/2}}\int d\theta\,\bigg(\frac{e^{\theta} - e^{-\theta}}{2}\bigg)^2 \\
+        &= \frac{2A}{B^{3/2}}\int d\theta\,\frac{1}{4}(e^{2\theta} + e^{-2\theta} - 2) \\
+        &= \frac{2A}{B^{3/2}}\int d\theta\,\frac{1}{2}[\cosh{(2\theta)} - 1] \\
+        &= \frac{A}{2B^{3/2}}[\sinh{(2\theta)} - 2\theta].
+    \end{split} 
+\end{equation}
+Quindi, integrando anche il membro di sinistra in modo banale, si ha
+\begin{equation}
+    t(\theta) = \frac{A}{2B^{3/2}}[\sinh{(2\theta)} - 2\theta],
+\end{equation}
+la quale invertita, operazione possibile in quanto il membro di destra è una funzione monotona crescente, restituisce finalmente il fattore di scala
+\begin{equation}
+\label{eq: fattore di scala per B > 0}
+    a(\theta) = \frac{y^2 - A}{B} = \frac{A}{B}\bigg(\frac{y^2}{A} - 1) = \frac{A}{B}\sinh^2{\theta}.
+\end{equation}
+Dall'equazione \eqref{eq: fattore di scala per B > 0} si osserva come $a(\theta)$ cresca ancora nel tempo.
+
+L'ultimo caso da trattare è quello in cui $B$ ha segno opposto di $A$, ovvero quando $B < 0$.  In tal caso si riscrive la prima equazione di Friedmann come 
+\begin{equation}
+    \frac{da}{dt} = \sqrt{\frac{A}{a} - |B|} = \frac{\sqrt{A - a|B|}}{\sqrt{a}}.
+\end{equation}
+Operando poi il cambio di variabili $y = \sqrt{A - a|B|}$ con $2y\,dy = -|B|\,da$, si può allora definire $\cos^2{\theta} = y^2/A$ e arrivare ad un'espressione simile a quella trovata per il caso $B > 0$ ma questa volta senza le funzioni iperboliche, in particolare si hanno
+\begin{equation}
+    \begin{cases}
+        t(\theta) = \dfrac{A}{2B^{3/2}}[2\theta - \sin{2\theta}] \\[2ex]
+        a(\theta) = \dfrac{A}{2B}(1 - \cos{2\theta})
+    \end{cases},
+\end{equation}
+che insieme definiscono una cicloide. Tuttavia, anche se $t(\theta)$ è una funzione crescente monotona, non si può dire lo stesso per $a(\theta)$. 
+
+Se $a \ll A$, allora si può approssimare
+\begin{equation}
+    \frac{da}{dt} =\sqrt{\frac{A}{a} + B} \simeq \sqrt{\frac{A}{a}},
+\end{equation}
+per cui all'inizio dei tempi si osserva che $a \propto t^{2/3}$ per ogni valore di $B$. Poi, se $B > 0$ e $B \gg A$, allora per $a \to 1$ si ha $\dot{a} \propto \sqrt{B}$, da cui si ha che $a \propto t$. Se invece $B < 0$, allora si deve imporre la condizione $A/a > B$ in modo che la radice quadrata sia ben definita, di conseguenza $a \le A/B$ implica che $\dot{a}^2 \ge 0$, ossia che l'espansione si ferma quando $a$ raggiunge il valore massimo $a = A/B$; da quel momento in avanti, seguendo la cicloide, l'Universo si contrarrà in modo simmetrico a come si è espanso, in analogia con il fatto che la cicloide è una funzione simmetrica. L'andamento di $a(t)$ per i valori possibili di $B$ è mostrato nel grafico in unità arbitrarie in figura +REF +IMMAGINE. 
+
+Considerando di nuovo la prima equazione di Friedmann, $A$ e $B$ devono rispettare un vincolo
+\begin{equation}
+    H(t)^2 = \frac{8\pi G}{3}\b{\rho} - \frac{8\pi G}{3}\b{\rho}_0 + H_0^2 = \frac{8\pi G}{3}\b{\rho} - Kc^2.
+\end{equation}
+Dato che $H_0$ è una quantità misurata e dato che lavorare in funzione della densità $\b{\rho}$ può risultare poco conveniente, si prova a rimuovere questa dipendenza e scrivere tutto in fuzione di $\b{\rho}_0$. Si definisce quindi la \emph{densità critica} $\rho_c$ come il valore di densità per cui la costante $K$ si annulla, quindi 
+\begin{equation}
+\label{eq: densità critica}
+    \rho_c := \frac{3H_0^2}{8\pi G}.
+\end{equation}
+\begin{obs}
+    Sostituendo i valori numerici \eqref{eq: densità critica}, si ottiene un valore pari a $\rho_c \simeq \SI{e-24}{\kilogram\per\meter\cubed}$, il quale risulta molto simile a quello della massa del protone. Quindi, la densità per la quale l'Universo va incontro al \emph{Big Crunch} è maggiore di quella pari a qualche protone per metro cubo.
+\end{obs}
 

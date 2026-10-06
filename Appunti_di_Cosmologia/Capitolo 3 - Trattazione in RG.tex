@@ -1,0 +1,32 @@
+\chapter{Trattazione in Relatività Generale}
+La Relatività Generale è la teoria attuale che meglio descrive il fenomeno della gravità. L'intuizione fondamentale su cui si basa è che il campo gravitazionale non è altro che la manifestazione della curvatura dello spaziotempo. Il linguaggio matematico con il quale si lavora in Relatività Generale è quello della geometria differenziale, in particolare tutte le equazioni dovranno essere scritte in modo da essere in forma \emph{manifestamente covariante}.
+
+In Geometria Differenziale, l'attenzione è rivolta verso la trasformazione degli oggetti sotto cambi di coordinate. In generale, dati due sistemi di coordinate $x^\mu$ e $x^{\prime\mu}$, una mappa che lega i due sistemi è $x^\mu = x^\mu(x^{\prime\nu})$. Gli oggetti con cui si ha a che fare sono principalmente i \emph{tensori}. I tensori hanno un rango $(n,m)$ dove $n$ è il numero di indici \emph{covarianti}, mentre $m$ quello degli indici \emph{controvarianti}. I tensori di rango $(0,1)$ o $(1,0)$ vengono tipicamente chiamati vettori. Con la loro definizione si può anche fare chiarezza sulle nozioni di covariante e controvariante. 
+\begin{defn}[tensore covariante]
+    Un tensore ha un indice covariante se le sue componenti trasformano trasforma con lo jacobiano del cambio di coordinate
+    \begin{equation}
+        U_\mu^\prime = \frac{\p x^\nu}{\p x^{\prime\mu}}U_\nu
+    \end{equation}
+\end{defn}
+\begin{defn}[tensore controvariante]
+    Un tensore ha un indice controvariante se le sue componenti trasformano con lo jacobiano inverso del cambio di coordinate
+    \begin{equation}
+        V^{\prime\mu} = \frac{\p x^{\prime\mu}}{\p x^{\nu}}V^\nu
+    \end{equation}
+\end{defn}
+Un generico tensore di rango $(n,m)$ quindi è un oggetto le cui componenti trasformano con $n$ trasformazioni controvarianti e $m$ covarianti, ossia 
+\begin{equation}
+    T^{\prime\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} = \frac{\p x^{\prime\mu_1}}{\p x^{\rho_1}}\cdots\frac{\p x^{\prime\mu_n}}{\p x^{\rho_n}}\frac{\p x^{\sigma_1}}{\p x^{\prime\nu_1}}\cdots \frac{\p x^{\sigma_m}}{\p x^{\prime\nu_m}}T^{\rho_1\cdots\rho_n}_{\sigma_1\cdots\sigma_m}
+\end{equation}
+Il tensore più semplice è quello di rango $(0,0)$, che tipicamente prende il nome di \emph{scalare}. Essendo privo di indici, uno scalare $\phi$ ha la proprietà di rimanere invariato sotto un qualsiasi cambiamento di coordinate, ovvero che 
+\begin{equation}
+    \phi(x^\mu) = \phi(x^{\prime\mu}).
+\end{equation}
+Un tensore fondamentale in Geometria Differenziale è il \emph{tensore metrico} $g_{\mu\nu}$, spesso chiamato semplicemente la \emph{metrica}. La metrica è un tensore simmetrico che permette di definire la nozione di distanza su una varietà tramite
+\begin{equation}
+    ds^2 = g_{\mu\nu}dx^\mu dx^\nu.
+\end{equation}
+Con la metrica si può anche passare dalla descrizione covariante di un oggetto a quella controvariante tramite la \emph{contrazione} degli indici, ad esempio nel caso dei vettori
+\begin{equation}
+    T_\mu = g_{\mu\nu}T^\nu,\quad T^\mu = g^{\mu\nu}T_\nu.
+\end{equation}
