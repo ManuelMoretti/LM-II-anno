@@ -1,19 +1,21 @@
 \chapter{Trattazione in Relatività Generale}
-La Relatività Generale è la teoria attuale che meglio descrive il fenomeno della gravità. L'intuizione fondamentale su cui si basa è che il campo gravitazionale non è altro che la manifestazione della curvatura dello spaziotempo. Il linguaggio matematico con il quale si lavora in Relatività Generale è quello della geometria differenziale, in particolare tutte le equazioni dovranno essere scritte in modo da essere in forma \emph{manifestamente covariante}.
+La Relatività Generale è la teoria attuale che meglio descrive il fenomeno della gravità. L'intuizione fondamentale su cui si basa è che il campo gravitazionale non è altro che la manifestazione della curvatura dello spaziotempo. Il linguaggio matematico con il quale si lavora in Relatività Generale è quello della Geometria Differenziale, in particolare tutte le equazioni dovranno essere scritte in modo da essere in forma \emph{manifestamente covariante}.
 
 In Geometria Differenziale, l'attenzione è rivolta verso la trasformazione degli oggetti sotto cambi di coordinate. In generale, dati due sistemi di coordinate $x^\mu$ e $x^{\prime\mu}$, una mappa che lega i due sistemi è $x^\mu = x^\mu(x^{\prime\nu})$. Gli oggetti con cui si ha a che fare sono principalmente i \emph{tensori}. I tensori hanno un rango $(n,m)$ dove $n$ è il numero di indici \emph{covarianti}, mentre $m$ quello degli indici \emph{controvarianti}. I tensori di rango $(0,1)$ o $(1,0)$ vengono tipicamente chiamati vettori. Con la loro definizione si può anche fare chiarezza sulle nozioni di covariante e controvariante. 
-\begin{defn}[tensore covariante]
-    Un tensore ha un indice covariante se le sue componenti trasformano trasforma con lo jacobiano del cambio di coordinate
+\begin{defn}[vettore covariante]
+    Un tensore ha un indice covariante se le sue componenti trasformano trasformano con lo jacobiano del cambio di coordinate,
     \begin{equation}
         U_\mu^\prime = \frac{\p x^\nu}{\p x^{\prime\mu}}U_\nu
     \end{equation}
 \end{defn}
-\begin{defn}[tensore controvariante]
-    Un tensore ha un indice controvariante se le sue componenti trasformano con lo jacobiano inverso del cambio di coordinate
+\begin{defn}[vettore controvariante]
+    Un tensore ha un indice controvariante se le sue componenti trasformano con lo jacobiano inverso del cambio di coordinate,
     \begin{equation}
         V^{\prime\mu} = \frac{\p x^{\prime\mu}}{\p x^{\nu}}V^\nu
     \end{equation}
 \end{defn}
+In particolare, i vettori covarianti, o \emph{covettori}, sono spesso chiamati con il nome, più generale e proprio della Geometria Differenziale, di \emph{1-forme differenziali}; per un tensore di rango $(p,0)$ quindi si parla di una $p$-forma differenziale. Invece, i vettori controvarianti sono spesso chiamati \emph{campi vettoriali}.
+
 Un generico tensore di rango $(n,m)$ quindi è un oggetto le cui componenti trasformano con $n$ trasformazioni controvarianti e $m$ covarianti, ossia 
 \begin{equation}
     T^{\prime\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} = \frac{\p x^{\prime\mu_1}}{\p x^{\rho_1}}\cdots\frac{\p x^{\prime\mu_n}}{\p x^{\rho_n}}\frac{\p x^{\sigma_1}}{\p x^{\prime\nu_1}}\cdots \frac{\p x^{\sigma_m}}{\p x^{\prime\nu_m}}T^{\rho_1\cdots\rho_n}_{\sigma_1\cdots\sigma_m}
@@ -22,7 +24,7 @@ Il tensore più semplice è quello di rango $(0,0)$, che tipicamente prende il n
 \begin{equation}
     \phi(x^\mu) = \phi(x^{\prime\mu}).
 \end{equation}
-Un tensore fondamentale in Geometria Differenziale è il \emph{tensore metrico} $g_{\mu\nu}$, spesso chiamato semplicemente la \emph{metrica}. La metrica è un tensore simmetrico che permette di definire la nozione di distanza su una varietà tramite
+Un tensore fondamentale in Geometria Differenziale è il \emph{tensore metrico} $g_{\mu\nu}$, spesso chiamato semplicemente \emph{metrica}. La metrica è un tensore simmetrico che permette di definire la nozione di distanza su una varietà tramite
 \begin{equation}
     ds^2 = g_{\mu\nu}dx^\mu dx^\nu.
 \end{equation}
@@ -30,3 +32,152 @@ Con la metrica si può anche passare dalla descrizione covariante di un oggetto 
 \begin{equation}
     T_\mu = g_{\mu\nu}T^\nu,\quad T^\mu = g^{\mu\nu}T_\nu.
 \end{equation}
+Su una \emph{varietà riemanniana}, ossia dotata di una metrica che permetta di definire un prodotto scalare definito positivo sullo spazio tangente in ogni punto della varietà, è anche possibile definire la nozione di derivata; tuttavia è necessario tenere conto della geometria della varietà in questione. Ad esempio, sullo spaziotempo di Minkowski $\bb{M}^4$, essendo una varietà priva di curvatura, la nozione di derivata corrisponde a quella usuale indicata con $\p_\mu$ usata in Relatività Speciale. Passando ad una varietà curva, ossia con una metrica che non è costante come quella dello spazio di Minkowski $\eta_{\mu\nu} = \diag{(-1,1,1,1)}$, la derivata $\p_\mu$ intesa come definita su $\bb{M}^4$ non è sufficiente, in quanto non soddisfa la covarianza sotto trasformazioni di Lorentz. Pertanto, si deve introdurre una nozione di derivata che tenga conto della curvatura della varietà e che si riduca alla derivata usuale nel caso di curvatura nulla; si definisce allora la \emph{derivata covariante} $\nabla_\mu$, nel caso dei campi vettoriali e delle 1-forme differenziali, come 
+\begin{align}
+    \nabla_\mu V^\nu &:= \p_\mu V^\nu + \Gamma^\nu_{\mu\sigma}V^\sigma, \\
+    \nabla_\mu U_\nu &:= \p_\mu U_\nu - \Gamma^\sigma_{\mu\nu}U_\sigma.
+\end{align} 
+In generale, la derivata covariante di un tensore di rango $(n,m)$ è data da
+\begin{multline}
+    \nabla_k T^{i_1\cdots i_n}_{j_1\cdots j_m} = \\
+    = \p_k T^{i_1\cdots i_n}_{j_1\cdots j_m} + \sum_{\alpha=1}^{n}\Gamma^{i_\alpha}_{kp}T^{i_1\cdots i_{\alpha - 1}pi_{\alpha + 1}\cdots i_n}_{j_1\cdots j_m} - \sum_{\alpha=1}^{m}\Gamma^{p}_{kj_\alpha}T^{i_1\cdots i_n}_{j_1\cdots j_{\alpha - 1}pj_{\alpha + 1}\cdots j_m},
+\end{multline}
+che di fatto consiste nel sommare alla derivata normale tanti fattori $\Gamma$ per ogni indice controvariante e sottrarne altrettanti quanti sono gli indici covarianti. Più in generale, la derivata covariante è l'oggetto differenziale che viene introdotto per definire una \emph{connessione} su una varietà differenziabile; di fatto, concettualmente, derivata covariante e connessione sono essenzialmente la stessa cosa. 
+\begin{obs}
+    Il nome connessione è legato al fatto che questa permette di ``connettere'' spazi tangenti definiti in punti diversi della varietà. Detto in maniera più pittorica, permette di ``far scivolare'' lungo una curva sulla varietà lo spazio tangente definito in un dato punto verso un qualsiasi altro punto della varietà.
+\end{obs}
+Invece, l'oggetto a tre indici $\Gamma^{\rho}_{\mu\nu}$ è necessario affinché la derivata covariante sia ben definita tensorialmente, ma si deve fare attenzione che la connessione non è un tensore. In linea di principio, per definire la connessione non sono necessarie altre condizioni, però nel caso di una varietà riemanniana si è soliti definire una connessione che sia \emph{metric-compatible}, ovvero che soddisfi $\nabla_\rho g_{\mu\nu} = 0$, e che sia \emph{torsion-free}, cioè tale che $\Gamma^{\rho}_{\mu\nu} = \Gamma^{\rho}_{\nu\mu}$. L'unica connessione con queste due proprietà definibile su una varietà riemanniana è la connessione di Levi-Civita, dove gli oggetti $\Gamma^{\rho}_{\mu\nu}$ prendono il nome di \emph{simboli di Christoffel} e sono definiti a partire dalla metrica tramite
+\begin{equation}
+    \Gamma^{\mu}_{\nu\rho} = \frac{1}{2}g^{\mu\sigma}(\p_\nu g_{\rho\sigma} + \p_\rho g_{\sigma\nu} - \p_\sigma g_{\nu\rho}).
+\end{equation}
+Avendo definito la derivata covariante, si può introdurre il concetto di \emph{trasporto parallelo} su una varietà. Con questo si intende la sitauzione in cui la derivata covariante di un tensore di rango generico lungo una curva è nulla, ovvero che 
+\begin{equation}
+    \frac{D}{D\lambda}T^{\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} \equiv \frac{dx^\sigma}{d\lambda}\nabla_\sigma T^{\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} = 0,
+\end{equation} 
+dove $\lambda$ è un \emph{parametro affine} per parametrizzare la curva sulla varietà. Quando ciò accade si dice che il tensore è \emph{trasportato parallelamente} lungo la curva. La derivata $D/D\lambda$ è definita come una derivata covariante \emph{direzionale}, ossia lungo una curva, da 
+\begin{equation}
+    \frac{D}{D\lambda} := \frac{dx^\sigma}{d\lambda}\nabla_\sigma \equiv u^\sigma(\lambda)\nabla_\sigma \equiv \nabla_u.
+\end{equation}
+Questa proprietà è centrale nella definizione di \emph{geodetica}; infatti, una geodetica è definita come una curva che trasporta parallelamente un vettore tangente $u^\mu(\lambda)$, ovvero tale che 
+\begin{equation}
+\label{eq: equazione della geodetica}
+    \frac{D}{D\lambda}\bigg(\frac{dx^\mu}{d\lambda}\bigg) = \frac{d^2x^\mu}{d\lambda^2} + \Gamma^{\mu}_{\nu\sigma}\frac{dx^\nu}{d\lambda}\frac{dx^\sigma}{d\lambda} = 0.
+\end{equation}
+Per capire se uno spazio è curvo si può verificare se ogni curva chiusa soddisfa il trasporto parallelo, questo equivale a richiedere che $\nabla_\mu\nabla_\nu V^\alpha = \nabla_\nu\nabla_\mu V^\alpha$, ovvero che 
+\begin{equation}
+    \comm{\nabla_\mu}{\nabla_\nu}V^\alpha = 0,
+\end{equation}
+dove $\comm{\nabla_\mu}{\nabla_\nu} \equiv \nabla_\mu\nabla_\nu - \nabla_\nu\nabla_\mu$ è il \emph{commutatore}. In generale, per uno spazio curvo si ha che 
+\begin{equation}
+    \comm{\nabla_\mu}{\nabla_\nu}V^\alpha = R^\alpha_{\beta\mu\nu}V^\beta,
+\end{equation}
+dove $R^\alpha_{\beta\mu\nu}$ sono le componenti del tensore di Riemann. 
+
+\section{Equazione di campo di Einstein}
+La legge di gravitazione di Newton può essere riformulata secondo la formulazione di Gauss, la quale stabilisce che il flusso del campo gravitazionale attraverso una qualsiasi superficie chiusa è proporzionale alla massa racchiusa, come visto precedentemente in equazione \eqref{eq: equazione di Gauss del campo gravitazionale}. Considerando poi che la gravità è una forza conservativa, si arriva all'equazione di Poisson \eqref{eq: equazione di Poisson potenziale gravitazionale}. Tale equazione riassume la gravità newtoniana: essa relaziona il potenziale gravitazionale, attraverso il suo laplaciano, alla sua sorgente, la densità di massa.
+
+Ci si concentri ora sul lato gravitazionale dell'equazione. Tecnicamente, il laplaciano del potenziale gravitazionale $\Phi$ è la traccia del cosiddetto \emph{tensore di marea} (\emph{tidal tensor} in inglese) $\p_i \p_j \Phi$, poiché $\nabla^2 = \p_i \p^i$. Il tensore di marea appare nell'equazione della deviazione geodetica, che descrive l'accelerazione relativa di due oggetti, messi in moto lungo due traiettorie inizialmente parallele, a causa della presenza della gravità. Per una particella in caduta libera in un potenziale gravitazionale newtoniano $\Phi$, l'accelerazione è semplicemente $\ddot{\v{x}} = -\v{\nabla}\Phi$. Ora, si considerino due particelle vicine in $\v{x}$ e $\v{x}'$. La loro accelerazione relativa è
+\begin{equation}
+    \ddot{\v{x}}' - \ddot{\v{x}} = -\v{\nabla}\Phi(\v{x}') + \v{\nabla}\Phi(\v{x}).
+\end{equation}
+Scritta in termini della loro separazione $\v{\xi} \equiv \v{x}' - \v{x}$, ed espandendola al primo ordine rispetto ad essa, si legge
+\begin{equation}
+\label{eq: accelerazione relativa di due particelle (newtoniana)}
+    \ddot{\xi}^i = -\p^i \Phi(\v{x}+\v{\xi}) + \p^i \Phi(\v{x}) \simeq \cancel{-\p^i \Phi(\v{x})} - \xi^j \p_j \p^i \Phi(\v{x}) + \cancel{\p^i \Phi(\v{x})}.
+\end{equation}
+Quindi, nella gravità newtoniana, l'hessiano\footnote{Si ricordi che in Meccanica newtoniana lo spazio è euclideo, per cui la metrica è costante definita positiva e quindi la distinzione tra indici covarianti e controvarianti non è significativa.} $\p_i \p_j \Phi$ misura l'accelerazione relativa di particelle vicine in caduta libera.
+
+L'obiettivo è ora determinare l'equivalente di ciò in Relatività Generale. Si consideri una famiglia di particelle vicine in caduta libera e si lasci che le loro traiettorie siano descritte da $x^\alpha = x^\alpha(\lambda, s)$, dove $\lambda$ parametrizza ciascuna traiettoria e $s$ etichetta traiettorie diverse. Si può così definire il vettore tangente lungo le geodetiche e il vettore di separazione tra geodetiche vicine rispettivamente come
+\begin{equation}
+    u^\alpha := \frac{\p x^\alpha}{\p \lambda},\quad \xi^\alpha := \frac{\p x^\alpha}{\p s}.
+\end{equation}
+L'accelerazione relativa di due particelle vicine in caduta libera è quindi $D^2 \xi^\alpha / D \lambda^2 = u^\mu \nabla_\mu u^\nu \nabla_\nu \xi^\alpha$. Tuttavia, poiché la famiglia di traiettorie è descritta da una funzione regolare $x^\alpha(\lambda, s)$, la differenziazione rispetto ai due parametri commuta; in altre parole,
+\begin{equation}
+    \frac{\p u^\alpha}{\p s} = \frac{\p}{\p s} \frac{\p x^\alpha}{\p \lambda} \equiv \frac{\p}{\p \lambda} \frac{\p x^\alpha}{\p s} = \frac{\p \xi^\alpha}{\p \lambda}.
+\end{equation}
+Inoltre, grazie al fatto che la connessione di Levi-Civita è torsion-free, il risultato precedente implica $D\xi^\alpha / D\lambda = Du^\alpha / Ds$; o, equivalentemente, $u^\mu \nabla_\mu \xi^\alpha = \xi^\mu \nabla_\mu u^\alpha$. Pertanto, l'accelerazione relativa è
+\begin{equation}
+    \begin{split}
+        \frac{D^2 \xi^\alpha}{D\lambda^2} = u^\mu \nabla_\mu u^\nu \nabla_\nu \xi^\alpha &= u^\mu \nabla_\mu \xi^\nu \nabla_\nu u^\alpha \\
+        &= \xi^\mu \nabla_\mu u^\nu \nabla_\nu u^\alpha + \comm{u^\mu\nabla_\mu}{\xi^\nu\nabla_\nu} u^\alpha \\
+        &= \xi^\mu \frac{Du^\alpha}{D\lambda} + u^\beta u^\mu R^{\alpha}_{\beta\mu\nu} \xi^\nu.
+    \end{split}
+\end{equation}
+Usando quindi l'equazione della geodetica \eqref{eq: equazione della geodetica} si arriva all'\emph{equazione della deviazione geodetica}
+\begin{equation}
+\label{eq: equazione della deviazione geodetica}
+    \frac{D^2 \xi^\alpha}{D\lambda^2} = u^\beta u^\mu R^{\alpha}_{\beta\mu\nu} \xi^\nu.
+\end{equation}
+Quest'ultima mostra che un singolo osservatore in caduta libera può sempre eliminare gli effetti della gravità localmente scegliendo un opportuno sistema di riferimento inerziale, ma due osservatori vicini in caduta libera possono comunque avvertire un'accelerazione relativa. Queste accelerazioni relative sono gli effetti di marea.
+
+Quindi, in Relatività Generale, la curvatura dello spaziotempo è direttamente associata alla gravità di marea. Questo si collega alla gravità newtoniana in modo molto diretto. Confrontando l'equazione \eqref{eq: accelerazione relativa di due particelle (newtoniana)} con l'equazione della deviazione geodetica \eqref{eq: equazione della deviazione geodetica} si nota che l'oggetto relativistico corrispondente è il tensore di curvatura di Riemann, per cui si può considerare la relazione 
+\begin{equation}
+    \p_i \p^j \Phi \longleftrightarrow R^{\alpha}_{\beta\mu\nu},
+\end{equation}
+dove si noti lo scambio degli ultimi due indici nel tensore di Riemann per tenere conto del segno meno che appare in equazione \eqref{eq: accelerazione relativa di due particelle (newtoniana)}. Quindi, se il tensore di marea è l'analogo del tensore di Riemann, il ruolo del laplaciano del potenziale gravitazionale in equazione \eqref{eq: equazione di Poisson potenziale gravitazionale} sarà svolto da una delle tracce del tensore di Riemann. A causa delle sue simmetrie interne, esiste una sola traccia possibile dei suoi indici che non svanisce, ed è il tensore di Ricci $R_{\alpha\beta}$, definito appunto da
+\begin{equation}
+    R_{\alpha\beta} := {R^\lambda}_{\alpha\lambda\beta}.
+\end{equation}
+Usare il tensore di Ricci al posto di $\nabla^2 \Phi$ fu in realtà la prima intuizione di Einstein, ma si scopre che questa scelta non è adatta, come notò Hilbert per primo. Questo perché, come nel caso della gravità newtoniana, la sorgente del potenziale gravitazionale è una quantità conservata. Al contrario, il tensore di Ricci non è conservato, poiché si può mostrare che
+\begin{equation}
+    \nabla^\alpha R_{\alpha\beta} =  \frac{1}{2}\p_\beta R,
+\end{equation}
+dove $R = g^{\mu\nu} R_{\mu\nu}$ è lo scalare di Ricci (o di curvatura). Partendo da ciò, si può dedurre che il tensore cercato, cioè tale da soddisfare la conservazione della sorgente del potenziale, è il tensore di Einstein
+\begin{equation}
+    G_{\alpha\beta} \equiv R_{\alpha\beta} - \frac{1}{2} g_{\alpha\beta} R.
+\end{equation}
+L'equazione di campo in Relatività Generale però ha bisogno ancora di un termine analogo a quello a secondo membro di \eqref{eq: equazione di Poisson potenziale gravitazionale}, ma che sia un tensore a due indici e che abbia derivata covariante nulla, ossia che sia conservato. 
+
+Si parte dal fatto che la densità è legata alla massa, e quest'ultima può essere ricavata dal quadrimomento $q^\mu = m u^\mu = \gamma (m, mv^i)$ con la condizione di normalizzazione $g_{\mu\nu}q^\mu q^\nu = -m^2$. In senso classico, la densità è una massa distribuita su un volume e segue la relazione
+\begin{equation}
+    m = \int dV \rho
+\end{equation}
+Tuttavia, in Relatività parlare di volumi non è banale, in quanto essi rappresentano ipersuperfici tridimensionali dello spaziotempo valutate a tempo costante. Per generalizzare questo concetto a ipersuperfici tridimensionali generiche (non necessariamente a tempo costante), si può definire il flusso di una quantità $S^{\alpha\beta}$ attraverso l'elemento di volume ipersuperficiale covariante $d\Sigma_\mu$. In analogia con il caso tridimensionale, dove l'elemento d'area orientato è espresso tramite il prodotto esterno $\wedge$ come
+\begin{equation}
+    dS_i = \frac{1}{2} \varepsilon_{ijk}\,dx^j \wedge dx^k
+\end{equation}
+l'estensione a quattro dimensioni definisce l'elemento di volume ipersuperficiale a tre dimensioni $d\Sigma_\mu$ come
+\begin{equation}
+    d\Sigma_\mu = \frac{1}{3!} \varepsilon_{mu\nu\rho\sigma}\,dx^\nu \wedge dx^\rho \wedge dx^\sigma
+\end{equation}
+dove $\varepsilon_{\mu\nu\rho\sigma}$ è il tensore completamente antisimmetrico di Levi-Civita. Imponendo che l'integrale sia uguale al quadrimomento, si ottiene la relazione generale
+\begin{equation}
+\label{eq: quadrimomento in forma integrale}
+    q^\alpha = \frac{1}{3!} \int dx^\lambda dx^\mu dx^\nu \varepsilon_{\lambda\mu\nu\beta} S^{\alpha\beta} = \int d\Sigma_\beta\,S^{\alpha\beta}. 
+\end{equation}
+Il fattore combinatorio $1/3!$ compensa le permutazioni dei differenziali.
+\begin{obs}
+    Geometricamente, l'inclusione del fattore combinatorio corrisponde ad effettuare il duale di Hodge per ottenere un oggetto ad un indice da contrarre con un indice di $S^{\alpha\beta}$
+\end{obs}
+Si studi ora il significato fisico delle singole componenti di $S^{\alpha\beta}$ analizzando il quadrimomento $q^\mu$ in coordinate $x^\mu = \{ct, x^1, x^2, x^3\}$. La componente temporale è
+\begin{equation}
+    \begin{split}
+        q^0 &= \int dx^1 dx^2 dx^3 S^{00} + \int dx^0 dx^2 dx^3 S^{01} \\
+        &+ \int dx^0 dx^1 dx^3 S^{02} + \int dx^0 dx^1 dx^2 S^{03}.
+    \end{split}
+\end{equation}
+Il primo integrale è esteso su un volume tridimensionale e restituisce l'energia complessiva divisa per $c$, pertanto il termine $S^{00}$ rappresenta una densità di energia. Gli altri tre integrali sono estesi su un'area e sul tempo; di conseguenza, $S^{0i}$ rappresenta una densità di corrente di energia, in analogia con la densità di corrente $\v{j}$ dell'Elettromagnetismo. Passando alle componenti spaziali di $q^\mu$ si ha
+\begin{equation}
+    \begin{split}
+        q^i &= \int dx^1 dx^2 dx^3 S^{i0} + \int dx^0 dx^2 dx^3 S^{i1} \\
+        &+ \int dx^0 dx^1 dx^3 S^{i2} + \int dx^0 dx^1 dx^2 S^{i3}.
+    \end{split}
+\end{equation}
+Il primo integrale restituisce una componente del momento lineare, quindi $S^{i0}$ è una densità di momento. Gli altri termini $S^{ij}$ integrati sullo spaziotempo rappresentano un flusso di momento, ossia una generalizzazione della pressione: una forza applicata su una superficie integrata nel tempo fornisce infatti un impulso. In Meccanica calssica, $S^{ij}$ è tensore degli sforzi.
+\begin{obs}
+    Questa definizione euristica del tensore $S^{\alpha\beta}$ è stata ricavata da considerazioni in relatività speciale, dove è sempre possibile definire ipersuperfici arbitrariamente grandi con una coordinata costante. In relatività generale la struttura geometrica globale non è così semplice e richiede maggiore cautela. Tuttavia, per i nostri scopi, faremo bastare l'intuizione fisica fin qui sviluppata.
+\end{obs}
+Si può quindi definire formalmente il \emph{tensore energia-impulso} $T^{\alpha\beta}$ introducendo esplicitamente la costante $c$, di fatto per ragioni dimensionali e di consistenza con la formulazione in equazione \eqref{eq: quadrimomento in forma integrale}, come
+\begin{equation}
+    T^{\alpha\beta} := cS^{\alpha\beta}
+\end{equation}
+Quest'ultima rispetta la legge di conservazione
+\begin{equation}
+    \nabla_\beta T^{\alpha\beta} = 0.
+\end{equation}
+Sebbene in linea di principio la densità di momento e la corrente di energia siano quantità concettualmente distinte, a posteriori, l'equazione di Einstein impone che $T_{\alpha\beta}$ sia proporzionale al tensore di Einstein $G_{\alpha\beta}$, il quale è intrinsecamente simmetrico. Di conseguenza, si sarà interessati unicamente la parte simmetrica di $T_{\alpha\beta}$. Dunque, si può così scrivere l'equazione di campo di Einstein
+\begin{equation}
+\label{eq: equazione di campo di Einstein}
+    R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
+\end{equation}
+la quale descrive come l'energia e la materia generano la curvatura dello spaziotempo e dove il coefficiente di proporzionalità deriva da considerazioni dimensionali ($[\nabla^2 \Phi] = \rem{T}^{-2}$, $[G_{\mu\nu}] = \rem{L}^0$, $[\rho] = \rem{M}\rem{L}^{-3}$, $[T_{\mu\nu}] = \rem{M}\rem{L}^{-1}\rem{T}^{-2}$) e imponendo che l'equazione di Einstein si riduca a quella di Poisson nell'approssimazione di campo debole e basse velocità.
