@@ -181,3 +181,194 @@ Sebbene in linea di principio la densità di momento e la corrente di energia si
     R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
 \end{equation}
 la quale descrive come l'energia e la materia generano la curvatura dello spaziotempo e dove il coefficiente di proporzionalità deriva da considerazioni dimensionali ($[\nabla^2 \Phi] = \rem{T}^{-2}$, $[G_{\mu\nu}] = \rem{L}^0$, $[\rho] = \rem{M}\rem{L}^{-3}$, $[T_{\mu\nu}] = \rem{M}\rem{L}^{-1}\rem{T}^{-2}$) e imponendo che l'equazione di Einstein si riduca a quella di Poisson nell'approssimazione di campo debole e basse velocità.
+
+\section{Metrica FLRW}
+L'obiettivo ora è scrivere l'equazione di Einstein \eqref{eq: equazione di campo di Einstein} per un Universo omogeneo ed isotropo. Questo equivale a determinare la forma del tensore di Einstein $G_{\mu\nu}$, ossia di determinare un tensore metrico. Affinché la metrica soddisfi le condizioni di omogeneità ed isotropia imposte dal principio cosmologico, questa deve avere la forma generica
+\begin{equation}
+    ds^2 = -c^2\,dt^2 + a^2(t)\,dl^2,
+\end{equation}
+dove $dl^2$ rappresenta la distanza sull'iper-superficie spaziale e $a(t)$ è il fattore di scala già introdotto in precedenza. Talvolta, si usa ridefinire il tempo con $dt = a\,d\tau$ in modo da avere il fattore di scala fattorizzato, cioè 
+\begin{equation}
+    ds^2 = a^2(\tau)(-c^2\,d\tau^2 + dl^2),
+\end{equation}
+dove $\tau$ viene chiamato \emph{tempo conforme}. Rimane comunque da determinare $dl^2$, ma sicuramente, per le condizioni imposte, dovrà essere massimalmente simmetrico, cioè esprimibile tramite scalari di curvatura costanti ovunque. Si dà il caso che ci siano solo tre possibili scelte per $dl^2$ che descrivano spazi massimalmente simmetrici:
+\begin{enumerate}
+    \item per uno spazio piatto, cioè con curvatura nulla (come lo spazio euclideo $\bb{R}^3$), la metrica è
+    \begin{equation}
+        dl^2 = \delta_{ij}\,dx^idx^j;
+    \end{equation}
+    \item per uno spazio sferico, cioè con curvatura positiva (come lo spazio $\bb{S}^3$), la metrica può essere costruita tramite un'immersione in $\bb{R}^4$ con
+    \begin{equation}
+        \begin{cases}
+            dl^2 = \delta_{ij}\,dx^idx^j + dw^2 \\
+            x^ix_i + w^2 = R^2
+        \end{cases};
+    \end{equation}
+    \item per uno spazio iperbolico, cioè con curvatura negativa (come lo spazio $\bb{H}^3$), la metrica non si può costruire tramite un'immersione in $\bb{R}^4$ ma lo si può fare in $\bb{R}^{1,3}$ con
+    \begin{equation}
+        \begin{cases}
+            dl^2 = \delta_{ij}\,dx^idx^j - dw^2 \\
+            x^ix_i - w^2 = -R^2
+        \end{cases}.
+    \end{equation}
+\end{enumerate}
+Tutti e tre i casi possono essere riassunti in un'unica metrica avente forma 
+\begin{equation}
+\label{eq: forma generale metrica omogenea ed isotropa}
+    \begin{cases}
+        dl^2 = \delta_{ij}\,dx^idx^j + \kappa\,dw^2 \\
+        \kappa \delta_{ij}x^ix^j + w^2 = R^2
+    \end{cases},\quad \kappa = 
+    \begin{cases}
+        +1,\quad \rem{spazio\,sferico} \\
+        0,\quad \rem{spazio\,piatto} \\
+        -1,\quad \rem{spazio\,iperbolico}   
+    \end{cases}.
+\end{equation}
+Differenziando la seconda equazione del sistema in \eqref{eq: forma generale metrica omogenea ed isotropa} si ha 
+\begin{equation}
+    dw = \frac{\kappa\delta_{ij}x^jdx^i}{w},
+\end{equation}
+sapendo poi che $w = \pm\sqrt{R^2 - k\delta_{ij}x^ix^j}$, si può riscrivere la prima equazione in \eqref{eq: forma generale metrica omogenea ed isotropa} come 
+\begin{equation}
+    dl^2 = \delta_{ij}dx^idx^j + \kappa\frac{\kappa^2(\delta_{ij}x^jdx^i)^2}{R^2 - \delta_{ij}x^ix^j} = dx^idx_i + \frac{\kappa(x^idx_i)^2}{R^2 - x^ix_i},
+\end{equation}
+dove si è usato il fatto che $\kappa^3 = \kappa$ per sua definizione. Passando poi in coordiante sferiche $\{x,y,x\} \mapsto \{r,\theta,\phi\}$, si ottengono le relazioni
+\begin{equation}
+    \begin{cases}
+        x^ix_i = r^2 \\
+        x^idx_i = r\,dr \\
+        dx^idx_i = dr^2 + r^2d\Omega^2
+    \end{cases},\quad d\Omega^2 \equiv \,d\theta^2 + \sin^2{(\theta)}\,d\phi^2,
+\end{equation}
+con le quali si trova che
+\begin{equation}
+    dl^2 = dr^2 + r^2d\Omega^2 + \frac{\kappa r^2}{R^2}\frac{dr^2}{1 - \kappa r^2/R^2} = \frac{dr^2}{1 - \kappa r^2/R^2} + r^2d\Omega^2.
+\end{equation}
+Dunque, ponendo $K \equiv \kappa/R^2$, si ottiene la metrica di Friedmann-Lemaitre-Robertson-Walker (FLRW)
+\begin{equation}
+\label{eq: metrica FLRW}
+    ds^2 = -c\,dt^2 + a^2(t)\bigg(\frac{dr^2}{1 - Kr^2} + r^2\,d\Omega^2\bigg).
+\end{equation}
+Adesso alcune considerazioni sulla metrica trovata in \eqref{eq: metrica FLRW}. Prima di tutto, si nota che questa è invariante sotto un riscalamento del tipo
+\begin{equation}
+    \begin{cases}
+        a \to a\lambda \\
+        r \to r/\lambda \\
+        K \to K\lambda^2
+    \end{cases},\quad \forall \lambda \in \bb{R},
+\end{equation}
+dove il riscalamento di $K$ corrisponde a riscalare $R \to R/\lambda$. Questa invarianza permette di fissare il valore del fattore di scala odierno a $a_0 \equiv a(t_0) = 1$, implicando quindi che fino ad oggi il fattore di scala è rimasto nell'intervallo $(0,1]$. D'altra parte, la coordinata $r$ è una coordinata comovente e non un'osservabile fisica, infatti la coordinata fisica è $r_p = a(t)r$. In linea di principio si potrebbe scrivere la metrica in questo sistema di coordinate fisiche, ma facendo così la trattazione risulterebbe più complicata. Per la trattazione teorica, si prediligono quindi le coordinate comoventi. Tuttavia, talvolta può essere conveniente operare il cambio di coordinate $\{t,r,\theta,\phi\} \mapsto \{t,\chi,\theta,\phi\}$, ridefinendo cioè la coordinata radiale tramite 
+\begin{equation}
+    d\chi^2 := \frac{dr^2}{1 - Kr^2},
+\end{equation}
+in modo da avere 
+\begin{equation}
+    \chi = \int d\chi = 
+    \begin{cases}
+        \dfrac{1}{\sqrt{K}}\sin^{-1}{(r\sqrt{K})}, &K > 0 \\[2ex]
+        r, &K = 0 \\[2ex]
+        \dfrac{1}{\sqrt{|K|}}\sinh^{-1}{(r\sqrt{|K|})}, &K < 0
+    \end{cases},
+\end{equation}
+o in maniera equivalente 
+\begin{equation}
+    \begin{split}
+        r(\chi) \equiv S_K(\chi) &= 
+        \begin{cases}
+            \dfrac{1}{\sqrt{K}}\sin{(\chi\sqrt{K})}, &K > 0 \\[2ex]
+            \chi, &K = 0 \\[2ex]
+            \dfrac{1}{\sqrt{|K|}}\sinh{(\chi\sqrt{|K|})}, &K < 0
+        \end{cases} \\
+        &= 
+        \begin{cases}
+            R\sin{\dfrac{\chi}{R}}, &\kappa = 1 \\[2ex]
+            \chi, &\kappa = 0 \\[2ex]
+            R\sinh{\dfrac{\chi}{R}}, &\kappa = -1
+        \end{cases}.
+    \end{split}
+\end{equation}
+In questo sistema di coordinate, la metrica FLRW in \eqref{eq: metrica FLRW} diventa
+\begin{equation}
+    ds^2 = -c\,dt^2 + a(t)^2[d\chi^2 + S_K^2(\chi)\,d\Omega^2],
+\end{equation}
+che in funzione del tempo conforme si riscrive come 
+\begin{equation}
+    ds^2  = a(\tau)^2[-c\,d\tau^2 + d\chi^2 + S_K^2(\chi)\,d\Omega^2].
+\end{equation}
+
+\paragraph{Distanza comovente radiale.} La coordinata $\chi$ prende il nome di \emph{distanza comovente radiale} o \emph{distanza propria}. Nel caso di un fotone, $ds^2 = 0$ per cui $c^2\,d\tau^2 = d\chi^2$ e quindi $d\chi = \pm c\,d\tau$, dove tipicamente si sceglie la soluzione con il segno meno dato che il fotone è stato emesso nel passato. Infatti, considerando in particolare un fotone che viene verso l'osservatore, si ha $\chi(\tau) = (\tau_0 - \tau)c$, che in funzione del tempo $t$ diventa
+\begin{equation}
+    \chi(t) = c\int_{t}^{t_0}\frac{dt}{a(t)} = c\int_{a}^{a_0}\frac{da}{\dot{a}a} = c\int_0^{\fan{Z}}\frac{\fan{Z}}{H(\fan{Z})}.
+\end{equation}
+\paragraph{Distanza comovente angolare.} La coordinata $r(\chi)$ prende il nome di \emph{distanza comovente angolare}, di \emph{distanza comovente trasversale} o di \emph{distanza metrica}. Per uno spazio piatto, la distanza angolare e radiale coincidono, mentre per spazi curvi questo non accade, dove infatti per ``appiattire'' una delle due coordinate si deve ``deformare' l'altra, come mostrato in figura \ref{fig: parametrizzazioni spazi curvi e piatti}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Immagini - Capitolo 3/parametrizzazioni spazi curvi e piatti.png}
+    \caption{parametrizzazioni di uno spazio positivamente curvo.}
+    \label{fig: parametrizzazioni spazi curvi e piatti}
+\end{figure}
+
+\paragraph{Angular diameter distance.} Si chiama \emph{angular diameter distance} $d_A$ la distanza ottenuta confrontando la dimensione angolare di un oggetto con la sua reale dimensione fisica. Questo è chiaramente possibile solo per oggetti di cui è nota la dimensione reale, detti \emph{righelli standard}. Un esempio di righello standard sono le \emph{Barionic Acoustic Oscillations}. Ad ogni modo, l'angular diameter distance è definita, considerando l'approssimazione per angoli piccoli, come
+\begin{equation}
+    d_A \simeq \frac{L}{\delta\theta},
+\end{equation}
+dove $L$ è la dimensione reale dell'oggetto valutata al tempo dei fotoni osservabili oggi, mentre $\delta\theta$ è la dimensione angolare dell'oggetto. Per legare $d_A$ ad una delle distanze comoventi si può porre $dt = d\chi = 0$ e sapendo che $L$ corrisponde alla distanza $ds$ data da
+\begin{equation}
+    L = ds = a(t)d\Omega \simeq a(t)\delta\theta,
+\end{equation}
+dove $t$ è il tempo a cui è avvenuta l'emissione (ed effettivamente per i righelli standard è nota la dimensione a quel tempo), si ha 
+\begin{equation}
+\label{eq: angular diameter distance}
+    d_A = S_K(\chi)a(t) = \frac{S_K(\chi)}{1 + \fan{Z}}.
+\end{equation}
+
+\paragraph{Luminosity distance.} Si chiama \emph{luminosity distance} $d_L$ la distanza ottenuta confrontando il flusso $F$ osservato con la luminosità reale di un oggetto. In analogia con i righelli standard, gli oggetti di cui la luminosità reale è nota vengono detti \emph{candele standard}. Un esempio di candela standard sono le supernove di tipo Ia. Operativamente, la luminosity distance è definita tramite
+\begin{equation}
+\label{eq: flusso in funzione di L alla sorgente}
+    F = \frac{L_e}{4\pi d_L^2},    
+\end{equation}
+dove $L_e$ è la luminosità alla sorgente, ciò quella fornita da considerazioni teoriche. Questa luminosità deve però essere riscalata per tenere conto di quello che accade alla luce emessa durante il percorso tra la sorgente e la Terra. Questa luminosità riscalata, indicato con $L_o$, rispetta la relazione con il flusso
+\begin{equation}
+\label{eq: flusso in funzione di L osservata}
+    F = \frac{L_o}{4\pi S_K(\chi)^2}.
+\end{equation}
+Per determinare la relazione tra $L_o$ ed $L_e$, si considera che 
+\begin{equation}
+    L = \frac{E_\gamma}{\Delta t},\quad E_\gamma = \hbar\nu,
+\end{equation}
+dove $\Delta t$ è la distanza temporale tra un fotone e l'altro. Tuttavia, la lunghezza d'onda dei fotoni viene anch'essa riscalata con $\lambda_e = a(t)\lambda_o$, perdendo di conseguenza energia
+\begin{equation}
+    E_e = \frac{E_o}{a(t)}.
+\end{equation}
+Di conseguenza, anche la distanza temporale di arrivo riscala con 
+\begin{equation}
+    \Delta t_e = a(t)\Delta t_o.
+\end{equation}
+Quindi, la relazione tra la luminosità osservata e quella alla sorgente è
+\begin{equation}
+\label{eq: relazione tra L osservata e L alla sorgente}
+    L_o = a(t)^2L_e.
+\end{equation}
+Dunque, sostituendo \eqref{eq: relazione tra L osservata e L alla sorgente} in \eqref{eq: flusso in funzione di L osservata} si ha
+\begin{equation}
+    F = \frac{a(t)^2L_e}{4\pi S_K(\chi)^2},
+\end{equation}
+che confrontata con \eqref{eq: flusso in funzione di L alla sorgente} implica che 
+\begin{equation}
+\label{eq: luminosity distance}
+    d_L = \frac{S_K(\chi)}{a(t)} = (1 + \fan{Z})S_K(\chi).
+\end{equation}
+Combinando le espressioni \eqref{eq: angular diameter distance} e \eqref{eq: luminosity distance} si ottiene la \emph{relazione di Etherington sulla dualità delle distanze}
+\begin{equation}
+\label{eq: relazione di Etherington}
+    d_L(\fan{Z}) = (1 + \fan{Z})^2d_A(\fan{Z}).
+\end{equation}
+
+\subsection{Tensore di Eistein}
+...
+
+
+
+
+
