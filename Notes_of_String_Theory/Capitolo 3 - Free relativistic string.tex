@@ -261,8 +261,13 @@ and the same for $\t{L}_n$. This is indeed the correct way to impose such constr
     \begin{cases}
         L_n\ket{\rem{phys}} = 0 \\
         \t{L}_n\ket{\rem{phys}} = 0
+    \end{cases},
+    \begin{cases}
+        \bra{\rem{phys}}L_{-n} = 0 \\
+        \bra{\rem{phys}}\t{L}_{-n} = 0
     \end{cases},\quad \forall n > 0.
 \end{equation}
+where we recalled that $L_n^\dag = L_{-n}$.
 
 \subsection{Physical spectrum of the closed string}
 To continue without yet introducing BRST quantization, we at least need to assume maybe the most important result coming from it, that is $a = 1$. There is also another important result which is $D = 26$, but for now it is not necessary to consider it. The most general state can be written as 
@@ -273,13 +278,93 @@ and this is a physical state if and only if:
 \begin{enumerate}
     \item the level-matching condition $\LO = \t{\LO}$ is satisfied;
     \item the mass-shell is given by $\alpha'm^2 = 4(\LO - 1)$;
-    \item the Virasoro constraints $L_n\ket{\rem{phys}} = 0$ and $\t{\LO}\ket{\rem{phys}} = 0$, $\forall n > 0$ are satisfied.
+    \item the Virasoro constraints $L_n\ket{\rem{phys}} = 0$ and $\t{L}_n\ket{\rem{phys}} = 0$, $\forall n > 0$, are satisfied.
 \end{enumerate}
 We can now analyze the first levels. 
 
 \subsubsection{Level \texorpdfstring{$\LO = 0$}{N = 0}}
-...
+The fundamental level is for $\LO = 0$, where we have the constraints 
+\begin{equation}
+    L_0\ket{0,P} = \frac{\alpha'P^2}{4}\ket{0,P} = a\ket{0,P},
+\end{equation}
+\begin{equation}
+    L_n\ket{0,P} = 0,\quad \forall n > 0.
+\end{equation}
+From the first constraint and using the mass-shell condition $p^2 = -m^2$ we get 
+\begin{equation}
+    m^2 = -\frac{-4}{\alpha'},
+\end{equation}
+where we have used that $a = 1$. This result is really concerning since it implies the existence of a tachyon in the spectrum, or equivalently means that we are quantizing the theory around an unstable vacuum.
+\begin{obs}
+    The question whether is there a new stable vacuum in the tachyon potential (just like the stable symmetry-breaking vacuum of the Higgs field of the Standard Model) is as of today an open question. The strategy in the sequel will be to ignore this tachyon problem and use this model to learn as much as we can in this simple bosonic setting. Later on we will perform a similar analysis for the \emph{super-string model} where the tachyon will not be there and where genuine space-time fermions will arise in the spectrum.
+\end{obs}
 
 \subsubsection{Level \texorpdfstring{$\LO = 1$}{N = 1}}
-...
-
+The first excited level is for $\LO = 1$ and the only possible state is $\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P}$ whose mass is $m^2 = 0$, since $a = 1$. This state has two Lorentz indices of undefined symmetru, therefore it is a reducible representation of the Lorentz group. If we saturate them with a spacetime polarization we get
+\begin{equation}
+    G_{\mu\nu}(P)\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P}.
+\end{equation}
+The tensor $G_{\mu\nu}$ can be split into three Lorentz irreducible representations 
+\begin{equation}
+    G_{\mu\nu} = h_{\mu\nu} + B_{\mu\nu} + \Phi\eta_{\mu\nu},
+\end{equation}
+where:
+\begin{enumerate}
+    \item $h_{\mu\nu}$ is a symmetric traceless tensor defined as 
+    \begin{equation}
+        h_{\mu\nu} = G_{(\mu\nu)} - F^{-1}\eta^{\mu\nu}G^\rho_\rho;
+    \end{equation}
+    \item $B_\mu\nu$ is an anti-symmetric tensor defined as $B_{\mu\nu} = G_{[\mu\nu]}$;
+    \item $\Phi$ is a scalar defined as $\Phi = D^{-1}G^\rho_\rho$.
+\end{enumerate}
+The most generic state can be written integrating over the momentum 
+\begin{eqnarray}
+    \ket{\Psi} = \int d^DP\,G_{\mu\nu}(P)\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P}.
+\end{eqnarray}
+If we now consider the $n \neq 0$ Virasoro constraints in \eqref{eq: Virasoro constraints}, we have that only $L_1$ gives a non-trivial contribution, while $L_{n\ge2}\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P} = 0$. We find indeed that 
+\begin{equation}
+    L_1G_{\mu\nu}(P)\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P} = \frac{1}{2}G_{\mu\nu}(P)\sum_{k\in\bb{Z}}(\alpha_{1 - k}\cdot\alpha_{k})\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P},
+\end{equation}
+where the only contributions are for $k = \{0,1\}$, therefore 
+\begin{equation}
+    \begin{split}
+        L_1G_{\mu\nu}(P)\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P} &= \frac{1}{2}G_{\mu\nu}(P)\sum_{k\in\bb{Z}}(\alpha_{1 - k}\cdot\alpha_{k})\alpha^\mu_{-1}\t{\alpha}^\nu_{-1}\ket{0,P} \\
+        &= G_{\mu\nu}(P)\eta_{\rho\sigma}\alpha^\rho_0\alpha^\sigma_1\alpha^\mu_0\t{\alpha}^\nu_{-1}\ket{0,P} \\
+        &= G_{\mu\nu}(P)P^\rho\t{\alpha}^\nu_{-1}\ket{0,P}.
+    \end{split}
+\end{equation}
+Thus, $L_1$ and $\t{L}_1$ impose respectively 
+\begin{equation}
+\label{eq: transversality conditions}
+    \begin{cases}
+        P_\mu G^{\mu\nu} = 0 \\
+        G^{\mu\nu}P_\nu = 0
+    \end{cases},
+\end{equation}
+which are called the \emph{transversality conditions}. Hence, the general state $\ket{\Psi}$ is physical if and only if the mass-shell is $P^2 = 0$ and the transversality conditions \eqref{eq: transversality conditions} are satisfied. In this case we find the following states:
+\begin{enumerate}
+    \item the graviton $h_{\mu\nu}$ with its physical conditions
+    \begin{equation}
+        \begin{cases}
+            P^2h_{\mu\nu} = 0 \\
+            P_\mu h^{\mu\nu} = 0 \\
+            h^\mu_\mu = 0
+        \end{cases},
+    \end{equation}
+    which imply (and in fact are equivalent to) the linearized Einstein equations in momentum space 
+    \begin{equation}
+        P^2h_{\mu\nu} - P^\rho P_{(\mu}h_{\nu)\rho} - P_\mu P_\nu h^\rho_\rho = 0.
+    \end{equation}
+    \item The \emph{Kalb-Ramond field} $B_{\mu\nu}$ which is a 2-form $B = B_{\mu\nu}dx^\mu \wedge dx^\nu$ and has physical conditions 
+    \begin{equation}
+        \begin{cases}
+            P^2B_{\mu\nu} = 0 \\
+            P_\mu B^{\mu\nu} = 0
+        \end{cases},
+    \end{equation}
+    which are equivalent to the EOMs of a 2-form.
+    \item The \emph{dilaton} $\Phi$ which is a scalar field that should obey the physical state condition
+    \begin{equation}
+        P^2\Phi(P) = 0.
+    \end{equation}
+\end{enumerate}
