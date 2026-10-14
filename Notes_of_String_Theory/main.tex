@@ -24,7 +24,7 @@
 \usepackage{scalefnt}
 \usepackage{enumitem}
 \usepackage{titling}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 
 \usepackage{natbib}
 \usepackage{appendix}
@@ -54,14 +54,14 @@
 \usetikzlibrary{calligraphy}
 
 % ambienti
-\newtheorem{axiom}{Assioma}
-\newtheorem{defn}{Definizione}
-\newtheorem{teo}{Teorema}
-\newtheorem{corl}{Corollario}
+\newtheorem{axiom}{Axiom}
+\newtheorem{defn}{Definition}
+\newtheorem{teo}{Theorem}
+\newtheorem{corl}{Corollary}
 \newtheorem{lem}{Lemma}
-\newtheorem{obs}{Osservazione}
-\newtheorem{ex}{Esempio}
-\newtheorem{notz}{Notazione}
+\newtheorem{obs}{Observation}
+\newtheorem{ex}{Example}
+\newtheorem{notz}{Notation}
 
 % unità di misura
 \DeclareSIUnit\angstrom{\text{Å}}
@@ -75,6 +75,7 @@
 \newcommand{\rem}[1]{\mathrm{#1}}
 \newcommand{\fan}[1]{\mathcal{#1}}
 \renewcommand{\b}[1]{\bar{#1}}
+\renewcommand{\t}[1]{\tilde{#1}}
 
 % operatori matematici
 \newcommand{\p}{\partial}
@@ -104,6 +105,8 @@
 }
 \newcommand{\group}[2]{\mathrm{#1}(#2)}
 \newcommand{\alg}[2]{\mathfrak{#1}(#2)}
+\newcommand{\NO}[1]{{:}#1{:}}
+\newcommand{\TO}[1]{\fan{T}[#1]}
 
 % stati quantistici
 \newcommand{\upa}{\uparrow}
@@ -121,6 +124,9 @@
 \newcommand{\IM}{\mathbb{I}}
 \newcommand{\OM}{\mathbb{O}}
 
+% comandi specifici
+\newcommand{\LO}{\fan{N}}
+
 \title{\textbf{NOTES OF STRING THEORY}}
 \author{Manuel Gabriele Moretti}
 \date{September 2026}
@@ -134,6 +140,8 @@
 
 \pagenumbering{arabic}
 % \include{Capitolo 1 - Introduction}
-\include{introduction_string_theory}
+\include{Capitolo 1 - Introduction (new)}
+\include{Capitolo 2 - Free relativistic particle}
+\include{Capitolo 3 - Free relativistic string}
  
 \end{document}
