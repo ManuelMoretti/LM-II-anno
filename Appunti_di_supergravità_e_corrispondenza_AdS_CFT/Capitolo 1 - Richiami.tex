@@ -1246,3 +1246,138 @@ dove si è integrato per parti in secondo termine per ottenre una derivata total
         \p_\nu\b{\Psi}_\rho\gamma^{\mu\nu\rho} = 0
     \end{cases}.
 \end{equation} 
+
+
+... 
+
+Il termine $D_{\mu}\delta\omega_{\mu ab} - D_\nu\delta\omega_{\mu ab}$ non contribuisce alla variazione dell'azione se la torsione è nulla. Altrimenti, lo stesso termine si può riscrivere in questo modo 
+\begin{equation}
+    D_{\mu}\delta\omega_{ab} - D_\nu\delta\omega_{ab} = \nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab} + T^\rho_{\mu\nu}\delta\omega_{\rho ab}. 
+\end{equation}
+Quindi, adesso la variazione è 
+\begin{equation}
+    \begin{split}
+        \delta_\omega S &= \frac{1}{2k^2}\int d^Dx\,(2T^\rho_{\rho\mu}e^{a\mu}e^{b\nu}\delta\omega_{\nu ab} + T^\rho_{\mu\nu}e^{a\mu}e^{b\nu}\delta\omega_{\rho ab}) \\
+        &= \frac{1}{2k^2}\int d^Dx\,e\delta\omega^{ab}_\nu(T^\rho_{\rho a}e^\nu_b - T^\rho_{\rho b}e^\nu_a + T^\nu_{ab}),
+    \end{split}
+\end{equation}
+con cui si ricavano le equazioni del moto 
+\begin{equation}
+    \bigg(-\frac{1}{4}\b{\psi}\gamma^\mu_{ab}\psi\delta\omega_{\mu ab}\bigg)(T^\rho_{\rho a}e^\nu_b - T^\rho_{\rho b}e^\nu_a + T^\nu_{ab}) = 0.
+\end{equation}
+Di questa se ne considera la traccia rispetto, ad esempio, all'indice $\mu$ moltiplicando per $e^a_\nu$, ottenendo 
+\begin{equation}
+    T^\rho_{\rho b} - DT^\rho_{\rho b} + T^\rho_{\rho b} = 0,
+\end{equation}
+da cui si deduce che $T^\rho_{\rho b} = 0$ assumendo che $D \neq 2$. Quindi, si ha 
+\begin{equation}
+    T_{ab}^\nu = \frac{k^2}{2}\b{\psi}\gamma_{ab}^\nu\psi = -2K^\nu_{ab},
+\end{equation}
+da cui si trova 
+\begin{equation}
+    \omega_\mu^{ab} = \omega_\mu^{ab}(e) - \frac{k^2}{4}\b{\psi}\gamma^{ab}_\mu\psi,
+\end{equation}
+che va sostituita in tutte le equazioni dove compare $\omega_\mu^{ab}$ ottenendo alla fine equazioni diverse da quelle che si otterebbero espandendo al secondo ordine nei campi. 
+
+\section{Pure supersymmetry}
+La \emph{supergravità pura} è la teoria di supergravità più semplice, talvolta chiamata anche \emph{supergravità minimale}, dato che, almeno in $D = 4$, gli unici due campi sono la metrica, cioè il vielbein $e_\mu^a$, e il gravitino, cioè il campo di Rarita-Schwinger $\psi_\mu$. Esistono anche altre teorie che estendono al teoria minimale, dette appunto \emph{supergravità estese}, che includono le seguenti aggiunte:
+\begin{enumerate}
+    \item l'introduzione della costante cosmologica $\Lambda$;
+    \item l'estensione a dimensioni $D > 4$;
+    \item l'inclusione di più copie del gravitino $\psi_\mu^I$, $I = \{1,\dots,\fan{N}\}$.
+\end{enumerate}
+Per ogni dimensione esiste ovviamente un numero minimo per $\fan{N}$, il fatto meno ovvio è che esiste anche un numero massimo $\fan{N}_{max}$. Ad esempio, per $D = 4$ si ha $\fan{N}_{max} = 8$. Le teorie di supergravità con $\fan{N} = \fan{N}_{max}$ sono dette \emph{supergravità massimali}. 
+\begin{obs}
+    Un esempio importante di supergravità massimale è per $D = 11$ dove esistono gli spinori di Majorana e la teoria minimale coincide con quella massimale, implicando che esiste un'unica teoria di supergravità in $D = 11$. Un altro esempio importante è per $D = 10$ dove esistono gli spinori di Majorana-Weyl permettendo due possibili teorie di supergravità: le \emph{teorie di tipo I} con $\fan{N} = 1$ e le \emph{teorie di tipo II} con $\fan{N} = 2$; queste sono particolarmente importanti dato il loro legame con la Teoria delle Stringhe. 
+\end{obs}
+
+Ci si concentra ora sulla teoria minimale in $D = 4$ e $\fan{N} = 1$. L'azione da cui si parte è $S = S_{HE} + S_{RS}$, dove
+\begin{equation}
+    S_{HE} = \frac{1}{2k^2}\int d^Dx\,ee^{a\mu}e^{b\nu}R_{\mu\nu},    
+\end{equation}
+\begin{equation}
+    S_{RS} = -\frac{1}{2k^2}\int d^Dx\,e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho.
+\end{equation}
+Le variazioni, che ora non sono arbitrarie, sono 
+\begin{equation}
+    \delta e_\mu^a = \frac{1}{2}\b{\epsilon}\gamma^a\psi_\mu,\quad \delta\psi_\mu = \nabla_\mu\epsilon,
+\end{equation}
+dove $\epsilon = \epsilon(x)$ è uno spinore di Majorana anticommutante. Inoltre, usando la proprietà $\det{M} = \exp{\tr{(\log{M})}}$ dove $M$ è tale che $MM^{-1} = \IM$, si hanno 
+\begin{equation}
+    \delta e^{b\rho} = -\frac{1}{2}\b{\epsilon}\psi^b,\quad \delta e = \frac{e}{2}\gamma^\rho\psi_\rho.
+\end{equation}
+Quindi, la variazione dell'azione di Hilbert-Einstein è
+\begin{equation}
+    \begin{split}
+        \delta S_{HE} &= -\frac{1}{2k^2}\int d^Dx\,e(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\bigg(-\frac{1}{2}\b{\epsilon}\gamma^\mu\psi^a\bigg) \\
+        &= -\frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^\mu\psi^\nu,
+    \end{split} 
+\end{equation}
+dove nell'ultimo passaggio si è fatto in modo da rendere manifesto il tensore di Einstein $G_{\mu\nu}$. 
+
+Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato piuttosto veloce, non si può dire lo stesso per quella di Rarita-Schwinger. Il punto di partenza è 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,(\delta e\b{\psi}_\mu \gamma^{\mu\nu\rho}D_\nu\psi_\rho + e\delta\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
+        &+ e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho + (???)\delta e^{a\mu}) \\
+        &\simeq -\frac{1}{2k^2}\int d^Dx\,e(\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho) \\
+        &= \int d^Dx\,e[\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho - (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho],
+    \end{split}
+\end{equation}
+dove si è prima considerato solo il primo ordine e infine si è integrato per parti. Il secondo termine si può riscrivere tramite un Majorana flip come 
+\begin{equation}
+    \begin{split}
+        (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho = -t_3\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\mu &= -\delta\b{\psi}_\mu\gamma^{\rho\nu\mu}D_\nu\psi_\rho \\
+        &= \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_rho,
+    \end{split}
+\end{equation}
+risultando quindi identico al primo. Pertanto, la variazione diventa 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,2e\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}\nabla_\mu\nabla_\nu\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}D_{[\mu}D_{\nu]}\psi_\rho.
+    \end{split}
+\end{equation}
+Quello che si deve adesso calcolare ora è $\comm{D_\mu}{D_\nu}\psi_\rho$, per farlo si può però passare da $\comm{\nabla_\mu}{\nabla_\nu}\chi$ dove $\chi$ è uno spinore di Dirac, senza quindi considerare l'indice di Lorentz. Quindi, si parte da 
+\begin{equation}
+    \begin{split}
+        D_\mu D_\nu \chi &= \p_\mu\p_\nu \chi + \frac{1}{4}(\omega_\mu^{ab}\gamma_{ab}\p_\nu\chi + \omega_\nu^{ab}\gamma_{ab}\p_\mu\chi) \\
+        &+ \frac{1}{4}\p_\mu\omega_\nu^{ab}\gamma_{ab}\chi + \frac{1}{16}\omega_\mu^{cd}\omega_\nu^{ab}\gamma_{cd}\gamma_{ab}\chi,
+    \end{split}
+\end{equation}
+con cui si può calcolare 
+\begin{equation}
+    \begin{split}
+        (D_\mu D_\nu - D_\nu D_\mu)\chi &= \frac{1}{4}(\p_\mu\omega_\nu^{ab} - \p_\nu\omega^{ab})\gamma_{ab}\chi \\
+        &= \frac{1}{8}\bigg[\omega_{[\mu}^{cd}\omega_{\nu]}^{ab}\frac{1}{2}\bigg(\gamma_{cd}\gamma_{ab} - \gamma_{ab}\gamma_{cd}\bigg)\bigg],
+    \end{split}
+\end{equation}
+dove si può sostituire 
+\begin{equation}
+    \comm{\gamma_{cd}}{\gamma^{ab}} = -8\delta_{[c}^{[a}\gamma^{b]}_{d]} = \frac{1}{4}(\omega_{\mu ab}\omega^c_{\nu b} - \omega_{\nu av}\omega^c_{\mu b}),
+\end{equation}
+così da ottenere
+\begin{equation}
+    \comm{D_\mu}{D_\nu}\chi = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\chi,
+\end{equation}
+e di conseguenza 
+\begin{equation}
+    \comm{D_\mu}{D_\nu}\psi_\rho = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\psi_\rho.
+\end{equation}
+Quindi, usando questo risultato nell'espressione precedente di $\delta S_{RS}$ si ottiene 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= \frac{1}{k^2}\int d^Dx\, \frac{e}{8}\b{\epsilon}\gamma^{\mu\nu\rho}\gamma_{\sigma\tau}R_{\mu\nu}^{\sigma\tau}\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,\frac{e}{8}\b{\epsilon}(4\gamma^\mu R_\mu^\rho - 2\gamma^\rho R)\psi_\rho,
+    \end{split}
+\end{equation}
+dove si è usato che 
+\begin{equation}
+    \gamma^{\mu\nu\rho}\gamma_{\sigma\tau} = \gamma^{\mu\nu\rho}_{\sigma\tau} + 6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} + 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]},
+\end{equation}
+dove $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 0$ per l'identità di Bianchi. Quindi, finalmente si ottiene che la variazione dell'azione di Rarita-Schwinger è
+\begin{equation}
+    \delta S_{RS} = \frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^{\mu}\psi^\nu \equiv -\delta S_{HE}.
+\end{equation}
+Dunque, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$.
