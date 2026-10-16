@@ -1247,8 +1247,31 @@ dove si è integrato per parti in secondo termine per ottenre una derivata total
     \end{cases}.
 \end{equation} 
 
+\section{+LEZIONE 8.10}
+...
 
-... 
+Si riconsideri l'azione di Hilbert-Einstein
+\begin{equation}
+    S_{HE} = \frac{1}{2k_D^2}\int d^Dx\,\sqrt{-\det{g}}R,\quad k_D^2 \equiv 8\pi G_D,
+\end{equation}
+e si consideri il suo accoppiamento con un'azione di materia data da 
+\begin{equation}
+    S_M = \int d^Dx\,\sqrt{-\det{g}}\Lag,
+\end{equation}
+dove, ad esempio, per il campo scalare la lagrangiana è
+\begin{equation}
+    \Lag = -\frac{1}{2}\nabla_\mu\phi\nabla^\mu\phi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+Applicando il principio di minima azione all'azione risultante $S \equiv S_{HE} + S_M$, si trovano le equazioni di Maxwell e l'equazione di Einstein 
+\begin{equation}
+    \begin{cases}
+        \square\phi = 0 \\
+        \nabla^\mu F_{\mu\nu} = 0 \\
+        R_{\mu\nu} - \dfrac{1}{2}g_{\mu\nu}R = k_D^2T_{\mu\nu}
+    \end{cases},
+\end{equation}
+con $T_{\mu\nu} = \p_\mu\phi\p_\nu\phi - g_{\mu\nu}\Lag$, il quale soddisfa l'equazione di conservazione $\nabla^\mu T_{\mu\nu} = 0$ generalizzando il teorema di Noether.
+
 
 Il termine $D_{\mu}\delta\omega_{\mu ab} - D_\nu\delta\omega_{\mu ab}$ non contribuisce alla variazione dell'azione se la torsione è nulla. Altrimenti, lo stesso termine si può riscrivere in questo modo 
 \begin{equation}
