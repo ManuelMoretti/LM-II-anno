@@ -1272,7 +1272,151 @@ Applicando il principio di minima azione all'azione risultante $S \equiv S_{HE} 
 \end{equation}
 con $T_{\mu\nu} = \p_\mu\phi\p_\nu\phi - g_{\mu\nu}\Lag$, il quale soddisfa l'equazione di conservazione $\nabla^\mu T_{\mu\nu} = 0$ generalizzando il teorema di Noether.
 
+Si considerino ora i campi spinoriali, partendo dal suo caso più semplice, cioè il campo spinoriale di Dirac, avente azione
+\begin{equation}
+    S_D = -\int d^Dx\,\b{\psi}\sl{\p}\psi,
+\end{equation}
+dove $\b{\psi}$ indica l'operazione di coniugato di Majorana. Si definiscono ora le matrici $\gamma^\mu(x^\mu) \mapsto e_a^\mu(x^\mu)\gamma^a$, dove le $\gamma^a$ sono le matrici che definiscono $\alg{Cliff}{D}$. Di conseguenza
+\begin{equation}
+    \p_\mu \mapsto \nabla_\mu\psi = \p_\mu\psi + \frac{1}{4}\omega_\mu^{ab}\gamma_{ab}\psi,
+\end{equation}
+quindi, moltiplicando a destra per $C$ la seguente equazione,
+\begin{equation}
+    \nabla_\mu\psi^T = \p_\mu\psi^T + \frac{1}{4}\omega_\mu^{ab}\psi^T(\gamma_{ab})^T,
+\end{equation}
+si ottiene 
+\begin{equation}
+    \begin{split}
+        \nabla\b{\psi} &= \p_\mu\b{\psi} + \frac{1}{4}\omega_\mu^{ab}\b{\psi}C^{-1}(\gamma_{ab})^TC \\
+        &= \p_\mu\b{\psi} - \frac{1}{4}\omega_\mu^{ab}\b{\psi}\gamma_{ab} \\
+        &\equiv \b{\psi}\leftcd_\mu.
+    \end{split}
+\end{equation}
+Nel caso di $\b{\psi}\psi$, uno scalare, si ha che 
+\begin{equation}
+    \p_\mu(\b{\psi}\psi) = \nabla_\mu(\b{\psi}\psi) = (\nabla\b{\psi})\psi + \b{\psi}(\nabla\psi).
+\end{equation}
+Le matrici $\gamma^\mu_{rs}$ trasformano come un bilneare $\beta_{rs} = \b{\psi}_r\psi_s$ ($\beta = \psi \ot \b{\psi}$) e la sua derivata è 
+\begin{equation}
+    \nabla_\mu\beta = (\nabla_\mu\psi)\b{\psi} + \psi\nabla_\mu\b{\psi} = \p_\mu\beta + \frac{1}{4}\omega_\mu^{ab}\comm{\gamma_{ab}}{\beta}.
+\end{equation}
+Nel caso in cui $\beta_{rs} \equiv \gamma^\mu_{rs}$ si ha 
+\begin{equation}
+    \nabla_\mu\gamma_\nu = \p_\mu\gamma_\nu + \frac{1}{4}\comm{\gamma_{ab}}{\gamma_\nu}\omega_\mu^{ab} - \Gamma_{\mu\nu}^\rho\gamma_\rho,
+\end{equation}
+dove posso sotituire $\gamma_\nu = e_{a\nu}\gamma^a$ con $e_{a\nu} = \eta_{ab}e^a_\nu$, per cui 
+\begin{equation}
+    \frac{1}{2}\comm{\gamma_{ab}}{\gamma_c} = \gamma_a\eta_{bc} - \gamma_b\eta_{ac},
+\end{equation}
+quindi 
+\begin{equation}
+    \nabla_\mu\gamma_\nu = \gamma^a(\p_\mu e_{a\nu} + \omega_\mu^{ab}e_{b\nu} - \Gamma^\rho_{\mu\nu}e_{a\rho}),
+\end{equation}
+dunque 
+\begin{equation}
+    \nabla_\mu\gamma_\nu = 0,
+\end{equation}
+o più in generale 
+\begin{equation}
+    \nabla_\mu\gamma_{\mu_1\cdots\mu_r} = 0.
+\end{equation}
 
+Invece dello scalare $\b{\psi}\psi$, si può avere in generale un bilineare $\b{\psi}\gamma_{\mu_1\cdots\mu_r}\psi$, che sono le componenti di una $r$-forma differenziale (eventualmente anche con spinori diversi), per il quale
+\begin{equation}
+    \nabla_\mu(\b{\psi}\gamma_{\mu_1\cdots\mu_r}\chi) = (\nabla_\mu\b{\psi})\gamma_{\mu_1\cdots\mu_r}\chi + \b{\psi}\gamma_{\mu_1\cdots\mu_r}\nabla_\mu\chi. 
+\end{equation}
+Si consideri ora l'accoppiamento tra un vielbein $e_a^\mu$ e un campo di Dirac $\psi$, e si trovino le equazioni del moto. L'azione è data da 
+\begin{equation}
+    S = S_{HE} + S_D = \int d^Dx\,e\bigg(\frac{1}{2k^2}e_a^{\mu}e_b^{\nu}R_{\mu\nu}^{ab} - \frac{1}{2}\b{\psi}\sl{\nabla}\psi + \frac{1}{2}\b{\psi}\leftcd\psi\bigg)
+\end{equation}
+e si consideri il caso massless per cui $\sl{\nabla}\psi = 0$, mentre la variazione rispetto al vielbein è 
+\begin{equation}
+    \delta_e S = -ee_a^\mu\delta e^{a\mu},
+\end{equation}
+per cui 
+\begin{equation}
+    \delta S_{HE} = \frac{1}{2k^2}\int d^Dx\,e[(2e^{b\nu}R_{\mu\nu ab})\delta e^{a\mu} + e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab}].
+\end{equation}
+dove si deve calcolare la variazione del tensore di Riemann 
+\begin{equation}
+    R_{\mu\nu ab} = \p_\mu\omega_{\nu ab} - \p_\nu \omega_{\mu ab} + \omega_{\mu ac}\omega^c_{\nu b} - \omega_{\nu ac}\omega^c_{\mu b}.
+\end{equation}
+Quindi, da
+\begin{equation}
+    e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(D_\mu\delta_{\nu ab} - D_{\mu}\delta\omega_{\mu ab}) = e^{a\mu}e^{b\nu}(2D_{[\mu}\omega_{\nu]ab}), 
+\end{equation}
+usando il fatto che la torsione è nulla, e quindi $\Gamma^\rho_{\mu\nu} = \Gamma^{\rho}_{\nu\mu}$, si può sostituire $D_\mu \to \nabla_\mu$, ottenendo 
+\begin{equation}
+    e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(\nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab}),
+\end{equation}
+ossia che questo è una derivata totale e pertanto non contribuisce alla variazione dell'azione. Si deve fare attenzione che in generale questo non è vero perché la torsione può non essere nulla. Quindi, si ha 
+\begin{equation}
+    \delta S_{HE} = \frac{1}{2k^2}\int d^Dx\,(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\delta e^{a\mu}.
+\end{equation}
+Si espliciti adesso 
+\begin{equation}
+    \begin{split}
+        S_D &= \frac{1}{2}\int d^Dx\,e\bigg(-\b{\psi}\gamma_a\p_\mu\psi e^{a\mu} + \p_\mu\b{\psi}\gamma_a\psi e^{a\mu} \\
+        &-\frac{1}{4}\b{\psi}\gamma_a\gamma_{bc}\omega_\mu^{ab}e^{a\mu} - \frac{1}{4}\b{\psi}\gamma_a\gamma_{bc}\psi\omega_\mu^{ab}e^{a\mu}\bigg)
+    \end{split},
+\end{equation}
+considerandone la variazione si considera il termine 
+\begin{equation}
+    e\bigg(-\frac{1}{4}\b{\psi}\acomm{\gamma^\mu}{\gamma^{ab}}\psi\delta\omega_{\mu ab}) = e\bigg(-\frac{1}{4}\b{\psi}2\gamma^{\mu ab}\psi\delta\omega_{[\mu ab]}).
+\end{equation}
+Usando la formula di Cartan, si ha 
+\begin{equation}
+    \delta(de^a + \omega_b^a \wedge e^b) = 0,\quad e^a = e^a_\mu dx^\mu,\,\omega^a_b = \omega^a_{\mu b}dx^\mu,
+\end{equation}
+da cui 
+\begin{equation}
+    D_{[\mu}\delta e^a_{\nu]} + \delta\omega^{ab}_{[\mu}e_{\nu]b} = 0,
+\end{equation}
+e antisimmetrizzando su tutti e tre gli indici 
+\begin{equation}
+    D_{[\mu}\delta e_{a\nu]} = -\delta\omega_{\mu a\nu},
+\end{equation}
+per cui 
+\begin{eqnarray}
+    -e\bigg(-\frac{1}{4}\acomm{\gamma^\mu}{\gamma^\nu}\psi D_\mu\delta_{a\nu}\bigg) = \nabla_\mu\delta_{a\nu},
+\end{eqnarray}
+integrando per parti 
+\begin{equation}
+    2\frac{e}{4}\nabla_\mu(\b{\psi}\gamma^{\mu a\nu}\psi)\delta e_{a\nu},
+\end{equation}
+si deve ora usare che $e_{a\mu}e^{a\nu} = \delta^\mu_\nu$, per cui
+\begin{equation}
+    \delta(e_{a\mu}e^{a\nu}) = \delta(\delta^\nu_\mu) = 0 \quad\Rightarrow\quad \delta e_{a\nu} \propto -\delta e^{a\nu},
+\end{equation}
+quindi 
+\begin{equation}
+    \frac{e}{2}\nabla_\mu(\b{\psi}\gamma^{\mu a \nu}\psi)(-e_{a\mu}e_{b\nu}\delta e^{a\nu}).
+\end{equation}
+Usando la regola di Leibniz e che $\gamma_\mu\gamma^{a\nu} = \gamma^{a\nu}_\mu + 2\delta_\mu^{[a}\gamma^{\nu]}$, si vuole scrivere 
+\begin{equation}
+    (\nabla^\mu\b{\psi})\gamma_{\mu}^{a\nu} + \b{\psi}\gamma_\mu^{a\nu}\nabla_\mu\psi
+\end{equation}
+in modo da ritrovare le equazioni di Dirac e avere $\sl{\nabla}\psi = 0$, avendo solo i contributi dei vielbein, cioè il contributo è
+\begin{equation}
+    \frac{1}{2}\int d^Dx\,(-\nabla_{[\rho}\b{\psi}\gamma_{b]}\psi + \b{\psi}\gamma_{[b}\nabla_{\rho]}\psi)\delta e^{b\rho}-
+\end{equation}
+Il risultato dunque è 
+\begin{equation}
+    \begin{split}
+        \delta S &= \int d^Dx\,e\bigg[\frac{1}{k^2}\bigg(e^{b\nu}R_{\mu\nu ab} - \frac{1}{2}e_{a\mu}R\bigg) \\
+        &- \frac{1}{2}(\b{\psi}\gamma_{[a}\nabla_{\mu]})\psi - \nabla_{[\mu}\b{\psi}\gamma_{a]}\psi\bigg]\delta e^{a\mu},
+    \end{split}
+\end{equation}
+dove le equazioni del moto sono contenute nelle parentesi quadre. 
+
+Nel caso con torsione diversa da zero, il punto di partenza è il medesimo $S = S_{HE} + S_D$, ma ora i campi indipendenti sono $e^a_\mu$, $\omega_\mu^{ab}$ e $\psi$. Come prima, nel formalismo del primo ordine, anche $\delta_eS = 0$. La logica è simile ma ora c'è anche $\delta_\omega S$, per cui 
+\begin{equation}
+    \delta_\omega S = \int d^Dx\,e\bigg[\frac{1}{2k^2}e^{a\mu}e^{b\nu}(D_\mu\delta_{\nu ab} - D_\nu\delta\omega_{\mu ab}) - \frac{1}{4}\b{\psi}\gamma^{\mu ab}\psi\delta\omega_{\mu ab}\bigg],
+\end{equation}
+dove 
+\begin{equation}
+    D_\mu\delta_{\nu ab} - D_\nu\delta\omega_{\mu ab} = \nabla_\mu\delta\omega_{\nu ab} + \Gamma^\rho_{\mu\nu}\omega_{\rho ab} - \Gamma^\rho_{\nu\mu}\omega_{\rho ab} = 2\nabla_{[\mu}\omega_{\nu]ab} + T^\rho_{\mu\nu}\delta_{\rho ab}.
+\end{equation}
 Il termine $D_{\mu}\delta\omega_{\mu ab} - D_\nu\delta\omega_{\mu ab}$ non contribuisce alla variazione dell'azione se la torsione è nulla. Altrimenti, lo stesso termine si può riscrivere in questo modo 
 \begin{equation}
     D_{\mu}\delta\omega_{ab} - D_\nu\delta\omega_{ab} = \nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab} + T^\rho_{\mu\nu}\delta\omega_{\rho ab}. 
