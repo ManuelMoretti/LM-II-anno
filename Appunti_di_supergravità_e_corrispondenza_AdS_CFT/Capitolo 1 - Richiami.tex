@@ -1222,7 +1222,7 @@ Per il campo di Rarita-Schwinger si definsce allora la trasformazione
 \end{equation}
 dove $\epsilon$ è un parametro locale spinoriale. La lagrangiana deve essere invariante sotto questa trasformazione e di conseguenza ciò si ripercuote sull'azione, determinando la condizione aggiuntiva prima accennata. Una possibile azione qunidi è
 \begin{equation}
-    S_{R-S} = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
+    S_{RS} = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
 \end{equation}
 La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha 
 \begin{equation}
@@ -1235,7 +1235,7 @@ La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha
 dove si è usata l'antisimmetria di $\gamma^{\mu\nu\rho}$; essendo una derivata totale non contribuisce all'azione. La variazione dell'azione è
 \begin{equation}
     \begin{split}
-        \delta_{R-S} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
+        \delta_{RS} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
         &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho -\p_\nu\b{\Psi}_\mu\gamma^{\mu\nu\rho}\delta\Psi_\rho),
     \end{split}
 \end{equation}
@@ -1246,8 +1246,120 @@ dove si è integrato per parti in secondo termine per ottenre una derivata total
         \p_\nu\b{\Psi}_\rho\gamma^{\mu\nu\rho} = 0
     \end{cases}.
 \end{equation} 
+Le equazioni del moto possono essere riscritte in maniera equivalente come 
+\begin{equation}
+    \gamma^\mu(\p_\mu\psi_\nu - \p_\nu\psi_\mu) = 0.
+\end{equation}
+Per vederelo, servono alcune identità delle matrici $\gamma$, cioè 
+\begin{equation}
+    \gamma_\mu g^{\mu\nu\rho}\p_\nu\psi_\rho = 0,\quad \gamma^{\mu\nu\rho} = \gamma^{\mu}\gamma^{\nu\rho} - \eta^{\mu\nu}\gamma^\rho + \eta^{\mu\rho}\gamma^\nu.
+\end{equation}
+Si dimostra ora l'inverso... +CONTO D.O.F.
 
-\section{+LEZIONE 8.10}
+\subsection{Elicità}
+L'elicità permette di classificare i campi mass-less:
+\begin{enumerate}
+    \item per $h = \pm 3/2$ si ha il campo di Rarita-Schwinger, ossia il \emph{gravitino};
+    \item per $h = \pm1$ si ha il campo di Maxwell, ossia il fotone;
+    \item per $h = \pm 1/2$ si ha il fermione di Weyl;
+    \item per $h = \pm 2$ si ha il campo metrico, ossia il \emph{gravitone}.
+\end{enumerate}
+\begin{obs}
+    In Fisica delle particelle quando si parla di spin si ha di fatto a che fare con le rappresentazioni massless del gruppo di Poincaré.
+\end{obs}
+\begin{obs}
+    Questi conteggi sono fatti assumendo come metrica $\eta_{\mu\nu}$, ma andrebbero rifatti per uno spazio non piatto. 
+\end{obs}
+All'azione di Rarita-Schwinger è possibile aggiungere un termine di massa 
+\begin{equation}
+    S_{RS} = -\int d^Dx\,\b{\psi}_\mu(\gamma^{\mu\nu\rho}\p_\nu - m\gamma^{\mu\rho})\psi_\rho,
+\end{equation}
+il quale rompe l'invarianza di gauge, come accade con l'equazione di Proca per il campo $A_\mu$ massivo, e il numero di gradi di libertà on-shell diventano in $D = 4$ pari a 
+\begin{equation}
+    N_{\rem{d.o.f}} = \frac{1}{2}(D - 2)2^{[D/2]} = 4,
+\end{equation}
+dove quattro sono in generale numeri complessi, ma sono reali per gli spinori di Majorana.
+
+\section{Supersimmetria}
+La supersimmetria può essere sia globale che locale. Trasforma bosoni in fermioni, e viceversa. Un'idea è quella di estendere un'algebra di Lie ad una \emph{superalgebra}. Un altro punto di vista è dato dalla trattazione lagrangiana e il teorema di Noether. 
+
+La più semplice teoria supersimmetrica è quella che comprende una campo scalare complesso $Z$ e uno spinore di Majorana $\chi$. I due campi possono essere uniti in multipletti $(Z,\chi)$. Risulta conveniente anche introdurre un \emph{campo ausiliario} scalare e complesso $F$ che non ha dinamica, ossia le cui derivate non compaiono nella lagrangiana. Si considerano quindi multipletti $(Z,\chi,F)$, che si può vedere in componenti come $(Z,P_L\chi,F)$ e $(\b{Z},P_R\chi,\b{F})$. L'azione per una lagrangiana libera è 
+\begin{equation}
+    S_K = -\int d^4x\,(\p^\mu\b{Z}\p_\mu Z + \b{\chi}\sl{\p}P_L\chi - \b{F}F).
+\end{equation}
+Le trasformazioni di supersimmetria sono 
+\begin{equation}
+    \begin{cases}
+        \delta Z = \dfrac{1}{\sqrt{2}}\b{\epsilon}P_L\chi \\[2ex]
+        \delta P_L\chi = \dfrac{1}{\sqrt{2}}P_L(\sl{\p}Z + F)\epsilon \\[2ex]
+        \delta F = \dfrac{1}{\sqrt{2}}\b{\epsilon}\sl{\p}P_L\chi
+    \end{cases},
+\end{equation}
+dove $\epsilon$ è un parametro spinoriale di Majorana anticommutante,che è costante dato che la simmetria è globale. Per la parte destra si hanno invece 
+\begin{equation}
+    \begin{cases}
+        \delta \b{Z} = \dfrac{1}{\sqrt{2}}\b{\epsilon}P_R\chi \\[2ex]
+        \delta P_R\chi = \dfrac{1}{\sqrt{2}}P_R(\sl{\p}\b{Z} + \b{F})\epsilon \\[2ex]
+        \delta \b{F} = \dfrac{1}{\sqrt{2}}\b{\epsilon}\sl{\p}P_R\chi
+    \end{cases}.
+\end{equation}
+\begin{notz}
+    $\b{Z}$ e $\b{F}$ sono complessi coniugati, mentre $\b{\epsilon}$ è un coniugato di Majorana.
+\end{notz}
+Si deve adesso derivare quanto vale $\delta\b{\chi}P_R \equiv \delta \chi^TCP_R$. Si parte da
+\begin{equation}
+    (\delta P_R\chi)^TC = \delta \chi^TP_R^TC = \delta \chi^TCC^{-1}P_R^TC,
+\end{equation} 
+da cui si trova 
+\begin{equation}
+    \delta \b{\chi}P_R = \frac{1}{\sqrt{2}}\b{\epsilon}(-\p\b{Z} + \b{F})P_R.
+\end{equation}
+La variazione totale dell'azione $S_K$ la si può scrivere come 
+\begin{equation}
+    \begin{split}
+        \sqrt{2}\delta S_K &= \sqrt{2}\delta_{P_L\epsilon} S_K + \sqrt{2}\delta_{P_R\epsilon} S_K \\
+        &= \int d^4x\,[-\p^\mu \b{Z}\p_\mu(\epsilon P_L\chi) + \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}P_L\chi \\
+        &- \b{\chi}P_R\sl{\p}(P_LF\epsilon) + F\b{\epsilon}P_L\sl{\p}\chi].
+    \end{split} 
+\end{equation}
+Adesso, dato che 
+\begin{equation}
+    \b{\epsilon}P_L\sl{\p}\chi = \epsilon^TCP_L\gamma^\mu\p_\mu\chi = \overline{P_L\epsilon}\gamma^\mu\p_\mu\chi = -\p_\mu\b{\chi}\gamma^\mu P_L\epsilon
+\end{equation}
+e che combinandolo con $\b{\chi}P_R\sl{\p}(P_LF\epsilon)$ si ottiene una derivata totale
+\begin{equation}
+    -\p_\mu(\b{\chi}\gamma^\mu P_LF\epsilon),
+\end{equation}
+si ha 
+\begin{equation}
+    \delta S_K = \int d^4x\,(\p_\mu \b{\epsilon}P_L\chi + \b{\epsilon}P_L\p_\mu\chi) + \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}P_L\chi).
+\end{equation}
+Sfruttando ora l'identità
+\begin{equation}
+    \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}\chi = \b{\epsilon}P_L\gamma^\mu\gamma^\nu\p_\nu\chi\p_\mu\b{Z} = \b{\epsilon}P_L\p^\mu + \b{\epsilon}P_L\gamma^{\mu\nu}\p_\nu(\p_\mu \b{Z}\chi),
+\end{equation}
+dove si è tenuto conto che $\gamma^{\mu\nu}\p_\mu\p_\nu Z = 0$ per simmetria, si ha 
+\begin{equation}
+    \delta S_K = \int d^4x\,[-\p^\mu\b{Z}(\p_\mu\b{\epsilon}P_L\chi) + \b{\epsilon}P_L\gamma^{\mu\nu}\p_\nu(\p_\mu\chi)].
+\end{equation}
+Integrando adesso per parti il secondo termine 
+\begin{equation}
+    \begin{split}
+        \delta S_K &= \int d^4x\,[-\p_\mu\b{Z}(\p_\mu\b{\epsilon}P_L\chi) - (\p_\nu\b{\epsilon})P_L\gamma^{\mu\nu}\p_\mu\b{Z}\chi] \\
+        &= \int d^4x\, [\p_\nu\b{\epsilon}P_L\gamma^\nu\gamma^\mu\chi\p_\mu\b{Z}], 
+    \end{split}
+\end{equation}
+che effettivamente soddisfa $\delta S_K = 0$ in quanto $\epsilon$ è costante. Per determinare la corrente conservata si deve temporaneamente supporre che il parametro $\epsilon$ non sia costante, in questo modo, dopo la variazione, si trova che 
+\begin{equation}
+    j^\mu_K = \frac{1}{\sqrt{2}}(P_L\sl{\p}\b{Z}\gamma^\mu\chi + P_R\sl{\p}Z\gamma^\mu\chi),
+\end{equation}
+dove 
+\begin{equation}
+    (\p_\mu\b{\epsilon}P_L\sl{\p}\b{Z}\gamma^\mu\chi)^* = (\p_\mu\b{\epsilon})^cP_L^c\sl{\p}^cZ\gamma^{\mu c}\chi.
+\end{equation}
+Si noti che la corrente $j^\mu_K$ ha anche struttura di spinore data da $\chi$, quindi è uno \emph{spinore-vettore}. Dalla legge di conservazione si trova che la carica conservata, detta \emph{supercarica}, $Q_K$ è uno spinore in quanto si è fissato un indice vettoriale di Lorentz. 
+
+\subsection{Termini di interazione supersimmetrici}
 ...
 
 Si riconsideri l'azione di Hilbert-Einstein
