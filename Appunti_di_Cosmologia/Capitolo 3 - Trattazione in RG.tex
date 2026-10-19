@@ -365,10 +365,70 @@ Combinando le espressioni \eqref{eq: angular diameter distance} e \eqref{eq: lum
     d_L(\fan{Z}) = (1 + \fan{Z})^2d_A(\fan{Z}).
 \end{equation}
 
-\subsection{Tensore di Eistein}
-...
-
-
-
-
-
+\subsection{Tensore di Einstein}
+Ottenuta la metrica FLRW in equazione \eqref{eq: metrica FLRW}, si può procedere con il calcolo del tensore di Einstein per un Universo omogeneo ed isotropo. Per semplificare i calcoli, si continua ad usare le coordinate $x^\mu = (ct,\chi,\theta,\phi)$. La metrica per lo spaziotempo curvo è
+\begin{equation}
+    g_{\mu\nu} = \diag{(-1,a^2,a^2S_K^2,a^2S_K^2\sin^2{\theta})},
+\end{equation}
+mentre la sua inversa è 
+\begin{equation}
+    g^{\mu\nu} = \diag{\bigg(-1,\frac{1}{a^2},\frac{1}{a^2S_K^2},\frac{1}{a^2S_K^2\sin^2{\theta}}\bigg)}.
+\end{equation}
+La metrica spaziale, che non dipende dal tempo, viene invece indicata con $\gamma_{ij}$. Si ricorda l'espressione dei simboli di Christoffel 
+\begin{equation}
+    \Gamma^\mu_{\nu\rho} = \frac{1}{2}g^{\mu\sigma}(\p_\nu g_{\rho\sigma} + \p_\rho g_{\sigma\nu} - \p_\sigma g_{\nu\rho}).
+\end{equation}
+Oltre alle componenti $\Gamma^0_{00} = \Gamma^i_{00} = \Gamma^0_{0i} = \Gamma^0_{i0} = 0$, che appunto sono nulle, quelle che resituiscono un risultato non banale sono 
+\begin{equation}
+    \Gamma^0_{ij} = \frac{g^{0\sigma}}{2}(\p_i g_{j\sigma} + \p_j g_{\sigma i} - \p_\sigma g_{ij}) = \frac{g^{00}}{2}(\cancel{\p_i g_{j0}} + \cancel{\p_j g_{0i}} - \p_0 g_{ij}) = \frac{\dot{a}}{ca}g_{ij},
+\end{equation}
+\begin{equation}
+    \Gamma^i_{j0} = \frac{g^{i\sigma}}{2}(\p_j g_{0\sigma} + \p_0g_{\sigma j} - \cancel{\p\sigma g_{j0}}) = \frac{g^{ii}}{2}(\cancel{\p_j g_{0i}} + \p_0g_{ij}) = \frac{\dot{a}}{ca}\delta^i_j,
+\end{equation}
+\begin{equation}
+    \Gamma^i_{jk} = \frac{g^{i\sigma}}{2}(\p_j g_{k\sigma} + \p_k g_{\sigma j} - \p_\sigma g_{jk}) = \frac{\gamma^{im}}{2}(\p_j \gamma_{km} + \p_k\gamma_{mj} - \p_m\gamma_{jk}).
+\end{equation}
+Svolgendo i calcoli per le componenti spaziali, quelle non banali sono 
+\begin{align}
+    \Gamma^1_{22} = -S_KS_K',\quad \Gamma^1_{33} = -S_KS_K'\sin^2{\theta},\quad \Gamma^2_{21} = \frac{S_K'}{S_K},\\
+    \Gamma^2_{33} = -\sin{(\theta)}\cos{(\theta)},\quad \Gamma^3_{31} = \frac{S_K'}{S_K},\quad \Gamma^3_{32} = \frac{\cos{\theta}}{\sin{\theta}}.
+\end{align}
+A questo punto si può calcolare il tensore di Ricci, di cui se ne ricorda l'espressione
+\begin{equation}
+    R_{\mu\nu} = R^\sigma_{\mu\sigma\nu} = \p_\sigma \Gamma^\sigma_{\mu\nu} - \p_\nu\Gamma^\sigma_{\mu\sigma} + \Gamma^\lambda_{\mu\nu}\Gamma^\sigma_{\lambda\sigma} - \Gamma^\lambda_{\mu\sigma}\Gamma^\sigma_{\lambda\nu}.
+\end{equation}
+Svolgendo in maniera esplicita i calcoli, si può vedere come il tensore di Ricci sia anch'esso diagonale; a questo però si può anche arrivare pensando che se l'Universo è omogeneo ed isotropo, il tensore di Ricci deve essere diagonale, in quanto se non lo fosse implicherebbe l'esistenza di direzioni privilegiate. Quindi, le componenti non banali sono 
+\begin{equation}
+    R_{00} = -\frac{3\ddot{a}}{c^2a},
+\end{equation}
+\begin{equation}
+    R_{11} = \frac{a\ddot{a}}{c^2} + \frac{2\dot{a}^2}{c^2} - \frac{2S_K''}{S_K} = \frac{a^2}{c^2}\bigg[\frac{\ddot{a}}{a} + 2\bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{2Kc^2}{a^2}\bigg],
+\end{equation}
+\begin{equation}
+    \begin{split}
+        R_{22} &= \frac{a\ddot{a}S_K^2}{c^2} + \frac{2\dot{a}^2S_K^2}{c^2} - S_KS_K'' + 1 - (S_K')^2  \\
+        &= \frac{a^2S_K^2}{c^2}\bigg[\frac{\ddot{a}}{a} + 2\bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{2Kc^2}{a^2}\bigg],
+    \end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        R_{33} &= \sin^2{(\theta)}\bigg[\frac{a\ddot{a}S_K^2}{c^2} + \frac{2\dot{a}^2S_K^2}{c^2} - S_KS_K'' + 1 - (S_K')^2\bigg] \\
+        &= \frac{a^2S_K^2}{c^2}\sin^2{(\theta)}\bigg[\frac{\ddot{a}}{a} + 2\bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{2Kc^2}{a^2}\bigg],
+    \end{split}
+\end{equation}
+o in maniera più compatta 
+\begin{equation}
+    R_{00} = -\frac{3\ddot{a}}{c^2a},\quad R_{ij} = \frac{1}{c^2}\bigg[\frac{\ddot{a}}{a} + 2\bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{2Kc^2}{a^2}\bigg]g_{ij}.
+\end{equation}
+Noto il tensore di Ricci, si può calcolare lo scalare di Ricci $R$, il quale risulta essere
+\begin{equation}
+    R = g^{\mu\nu}R_{\mu\nu} = -R_{00} + g^{ij}R_{ij} = \frac{6}{c^2}\bigg[\frac{\ddot{a}}{a} + \bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{Kc^2}{a^2}\bigg].
+\end{equation}
+A questo punto si hanno tutti gli elementi per determinare il tensore di Einstein
+\begin{equation}
+    G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R,
+\end{equation}
+le cui componenti sono 
+\begin{equation}
+    G_{00} = \frac{3\dot{a}^2}{c^2a^2} + \frac{2K}{a^2},\quad G_{ij} = -\frac{1}{c^2}\bigg[\frac{2\ddot{a}}{a} + \bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{Kc^2}{a^2}\bigg]g_{ij}.
+\end{equation}
