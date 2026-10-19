@@ -1359,9 +1359,37 @@ dove
 \end{equation}
 Si noti che la corrente $j^\mu_K$ ha anche struttura di spinore data da $\chi$, quindi è uno \emph{spinore-vettore}. Dalla legge di conservazione si trova che la carica conservata, detta \emph{supercarica}, $Q_K$ è uno spinore in quanto si è fissato un indice vettoriale di Lorentz. 
 
-\subsection{Termini di interazione supersimmetrici}
-...
+\subsection{Termini di interazione supersimmetrici (WIP)}
+Questi termini sono sufficientemente liberi: $S = S_K + S_F + S_{\b{F}}$, dove 
+\begin{equation}
+    S_F = \int d^4x\,FW'(z) - \frac{1}{2}\b{\chi}P_L\chi W''(z)
+\end{equation},
+con $W(z)$ una funzione olomorfa che rappresenta un \emph{superpotenziale} al momento arbitrario. Le variazioni sono 
+\begin{equation}
+    \delta \b{\chi}P_L = \frac{\b{\epsilon}}{\sqrt{2}}(-\sl{\p} z + F)P_L,\quad \delta W' = W''\delta z,\quad \delta W'' = W'''\delta z.
+\end{equation}
+Facendo la variazione tutti i termini in $F$ si cancellano, rimane 
+\begin{equation}
+    S = \int d^4x\,[\b{\epsilon}\sl{\p}P_L\chi W'(z) - \frac{1}{2}W'''(z)\b{\chi}P_L\b{\epsilon}P_L\chi + \frac{1}{2}W''(z)(\b{\epsilon}P_R\sl{\p}z\chi - \b{\chi}P_L\sl{\p}z\epsilon)],
+\end{equation}
+dove il secondo termine si annulla dato che contiene tre spinori $\chi$, si avrà sempre il quadrato delle componenti (alemno) e i numeri di Grassman, quindi è nullo in $D = 4$. Facendo un Majorana flip si ha 
+\begin{equation}
+    -\b{\chi}P_L\sl{\p}z\epsilon = \b{\epsilon}P_R\sl{\p}z\chi.
+\end{equation}
+Si calcola ora 
+\begin{equation}
+    \p_\mu(\b{\epsilon}\gamma^\mu W'P_L\chi) = \p_\mu(\b{\epsilon})\gamma^\mu W'P_L\chi + \b{\epsilon}\sl{\p} zW''P_L\chi + \b{\epsilon}\gamma^\mu W'P_L\p_\mu(\chi),
+\end{equation}
+quindi dato che 
+\begin{equation}
+    -\int d^4x\,\p_\mu(\b{\epsilon})\gamma^\mu W'P_L\chi = 0,
+\end{equation}
+si può trovare 
+\begin{equation}
+    j^\mu = j^\mu_K + [\gamma^\mu W'P_L\chi + (\gamma^\mu W'P_L\chi)^*].
+\end{equation}
 
+\section{Nuova roba}
 Si riconsideri l'azione di Hilbert-Einstein
 \begin{equation}
     S_{HE} = \frac{1}{2k_D^2}\int d^Dx\,\sqrt{-\det{g}}R,\quad k_D^2 \equiv 8\pi G_D,
