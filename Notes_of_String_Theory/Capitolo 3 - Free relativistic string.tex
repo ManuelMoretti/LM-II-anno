@@ -581,7 +581,40 @@ and the complete solution reads as
 \begin{equation}
     X_{DD}^i(\tau,\sigma) = x^i + i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^i}{n}(e^{-in\sigma^+} - e^{-in\sigma^-}).
 \end{equation}
-Notice that the term $\alpha'P^\mu\tau$, containing the momentum of the center of mass, is absent since $\tau$ would violate the anti-symmetric property of the solution $X^i(\tau,\sigma)$ under $\sigma \to -\sigma$. Therefore, when the open string's endpoints are fixed, the center of mass does not move. 
+Notice that the term $\alpha'P^\mu\tau$, containing the momentum of the center of mass, is absent since $\tau$ would violate the anti-symmetric property of the solution $X^i(\tau,\sigma)$ under $\sigma \to -\sigma$. Therefore, when the open string's endpoints are fixed, the center of mass does not move. In the more general case where $X^i(\sigma = \pi) = y^i$, the solution is 
+\begin{equation}
+    X_{DD}^i(\tau,\sigma) = x^i + \frac{\Delta x^i\sigma}{\pi} + i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^i}{n}(e^{-in\sigma^+} - e^{-in\sigma^-}),\quad \Delta x^i \equiv x^i - y^i.
+\end{equation}
 
 \subsection{N-D and D-N strings}
-...
+Let us finally consider an open strings having Neumann boundary condition on one endpoint and Dirichlet boundary condition on the other one, along a certain direction $\mu$, namely 
+\begin{equation}
+    \begin{cases}
+        \p_\sigma X^\mu|_{\sigma = 0} = 0 \\
+        X^\mu(\tau,\sigma)|_{\sigma = \pi} = x^\mu
+    \end{cases}.
+\end{equation}
+The solution can be written using half-integer moded oscillators as 
+\begin{equation}
+    X^\mu_{ND}(\tau,\sigma) = x^\mu + i\sqrt{\frac{\alpha'}{2}}\sum_{r \in \bb{Z}/2}\frac{\alpha^\mu_r}{r}(e^{-ir\sigma^+} + e^{-ir\sigma^-}).
+\end{equation}
+It has no momentum $P^\mu$ since one endpoint is fixed by the Dirichlet condition and hence the center of mass cannot have definite momentum. Analogously, if we exchange the Neumann and Dirichlet conditions for $\sigma = 0$ and $\sigma = \pi$, we find 
+\begin{equation}
+    X_{DN}^\mu(\tau,\sigma) = X_0^\mu + i\sqrt{\frac{\alpha'}{2}}\sum_{r\in\bb{Z}/2}\frac{\alpha^\mu}{r}(e^{-ir\sigma^+} - e^{-ir\sigma^-}).
+\end{equation}
+Therefore, the exchange of the boundary conditions translates into a change of sign of the anti-holomorphic sector, namely the right-moving part. We can then define 
+\begin{equation}
+    L_n = \frac{1}{2}\sum_{r\in\bb{Z}/2}\NO{\alpha_{n - r}\cdot\alpha_r}
+\end{equation}
+together with the commutators 
+\begin{equation}
+    \begin{cases}
+        \comm{\alpha^\mu_r}{\alpha^\nu_s} = r\eta^{\mu\nu}\delta_{r + s,0} \\[2ex]
+        \comm{L_n}{L_m} = (n - m)L_{n + m} + \dfrac{n}{12}(n^2 - 1)\delta_{n + m,0}
+    \end{cases}.
+\end{equation}
+These operators will act on the vacuum $\ket{0}_{ND}$ as 
+\begin{equation}
+    \alpha_r\ket{0}_{ND} = 0,\quad \forall r \in \bb{Z}/2,\, r \ge \frac{1}{2}.
+\end{equation}
+
