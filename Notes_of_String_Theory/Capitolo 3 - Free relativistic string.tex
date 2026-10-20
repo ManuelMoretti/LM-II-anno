@@ -496,10 +496,92 @@ Since there are two types of boundary conditions, the two endpoints of the open 
 \end{enumerate}
 
 \subsection{N-N string}
-...
+Let us first consider an open string having Neumann boundary conditions on both of its endpoints along a certain direction $\mu$. We may write the solution (in the Neumann direction $\mu$) as we did for the closed string, namely by splitting it into left and right-moving parts, using lightcone coordinates 
+\begin{equation}
+    X^\mu(\sigma^+,\sigma^-) = X^\mu_L(\sigma^+) + X_R(\sigma^-).
+\end{equation}
+We then define the auxiliary quantity
+\begin{equation}
+    \h{X}^\mu(\tau,\sigma) = 
+    \begin{cases}
+        X^\mu(\tau,\sigma), &\sigma \in (0,\pi) \\
+        X^\mu(\tau,2\pi - \sigma), &\sigma \in (\pi,2\pi)
+    \end{cases},
+\end{equation}
+and naturally extend it by $2\pi$-periodicity with
+\begin{equation}
+    \h{X}^\mu(\tau,2\pi + \sigma) = \h{X}^\mu(\tau,\sigma).    
+\end{equation}
+In addition, by construction, $\h{X}$ also satisfies 
+\begin{equation}
+    \h{X}(\tau,\sigma) = \h{X}(\tau,-\sigma).
+\end{equation}
+Notice that $\h{X}^\mu$ is analogous to the closed string solution. However, the additional invariance $\sigma \to -\sigma$ implies that this time we have only a set of oscillators, hence
+\begin{equation}
+    \alpha_n^\mu = \t{\alpha}_n^\mu,
+\end{equation}
+and the full solution reads 
+\begin{equation}
+    X_{NN}^\mu(\sigma^+,\sigma^-) = X_0^\mu + \alpha'P^\mu\tau + i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^\mu}{n}(e^{-in\sigma^+} + e^{-in\sigma^-}).
+\end{equation}
+This time the Hilbert space will be acted on a single set of oscillators 
+\begin{equation}
+    \acomm{\alpha^\mu}{\alpha^\nu_m} = n\eta^{\mu\nu}\delta_{n + m, 0},
+\end{equation}
+in addition with the center of mass Heisenberg algebra 
+\begin{equation}
+    \comm{X_0^\mu}{P^\nu} = i\eta^{\mu\nu}.
+\end{equation}
+The generic state will thus be 
+\begin{equation}
+    \alpha^{\mu_1}_{-n_1}\cdots\alpha^{\mu_k}_{-n_k}\ket{0,P}.
+\end{equation}
+In analogy with the closed string, the physical open string states can be defined by implementing the Virasoro constraints, using the quantum operators
+\begin{equation}
+    L_{n \neq 0} = \frac{1}{2}\sum_{k \in \bb{Z}}\alpha_{n - k}\cdot\alpha_k,
+\end{equation}
+\begin{equation}
+    L_0 = \frac{1}{2}(\alpha_0)^2 + \LO = \alpha'P^2 + \LO,
+\end{equation}
+where in this case, for the N-N open string, we define the zero-mode oscillator as 
+\begin{equation}
+    \alpha_0^\mu = \sqrt{2\alpha'}P^\mu.
+\end{equation}
 
 \subsection{D-D string}
-...
+Let us now consider an onper string having Dirichlet boundary conditions on both its endpoints along a certain direction $i$. Since $\delta X_i|_{\sigma = 0,\pi}$, we can fix 
+\begin{equation}
+    X^i(\sigma = 0) = x^i,\quad X^i(\sigma = \pi) = x^i.
+\end{equation}
+Therefore, the solution (in the Dirichlet direction $i$) can be written as 
+\begin{equation}
+    X^i(\tau,\sigma) = x^i + Y^i(\tau,\sigma),
+\end{equation}
+where $Y^i(\tau,\sigma)$ is the oscillatory part and obeys 
+\begin{equation}
+    Y^i(\tau,\sigma)|_{\sigma = 0,\pi} = 0,
+\end{equation}
+so that $\delta Y_i|_{\sigma = 0,\pi} = 0$. We define 
+\begin{equation}
+    \h{Y}^i(\tau,\sigma) = 
+    \begin{cases}
+        Y^i(\tau,\sigma), &\sigma \in (0,\pi) \\
+        -Y^i(\tau,2\pi - \sigma), &\sigma \in (\pi,2\pi)
+    \end{cases}
+\end{equation}
+and extend it by $2\pi$-periodicity. This time $\h{Y}$ is odd under the $\sigma \to -\sigma$ transformation
+\begin{equation}
+    \h{Y}^i(\tau,-\sigma) = \h{Y}^i(\tau,2\pi - \sigma) = -\h{Y}^i(\tau,\sigma). 
+\end{equation}
+Therefore, the solution for the oscillatory part can be written as a closed string with $\alpha_n = -\t{\alpha}_n$, namely
+\begin{equation}
+    Y^i(\sigma^+,\sigma^-) = i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^i}{n}(e^{-in\sigma^+} - e^{-in\sigma^-}),    
+\end{equation}
+and the complete solution reads as 
+\begin{equation}
+    X_{DD}^i(\tau,\sigma) = x^i + i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^i}{n}(e^{-in\sigma^+} - e^{-in\sigma^-}).
+\end{equation}
+Notice that the term $\alpha'P^\mu\tau$, containing the momentum of the center of mass, is absent since $\tau$ would violate the anti-symmetric property of the solution $X^i(\tau,\sigma)$ under $\sigma \to -\sigma$. Therefore, when the open string's endpoints are fixed, the center of mass does not move. 
 
 \subsection{N-D and D-N strings}
 ...
