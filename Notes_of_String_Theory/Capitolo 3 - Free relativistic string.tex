@@ -142,7 +142,7 @@ Therefore, again because of the level-matching condition, the mass-shell of the 
     \alpha'm^2 = 4(\LO - a).
 \end{equation}
 \begin{obs}
-    From this we can see how crucial it is to know the value of $a$; however, the canonical quantization method can not give a value for this unknown constant. Only by following the BRST quantization, the value for $a$ is naturally derived and not imposed. 
+    From this we can see how crucial it is to know the value of $a$; however, the canonical quantization method cannot give a value for this unknown constant. Only by following the BRST quantization, the value for $a$ is naturally derived and not imposed. 
 \end{obs}
 The question now consist in determining if it is possibile to define the constraint $L_n\ket{\rem{phys}} = 0$, $\forall n \in \bb{Z}$. The short answer is no, but to justify it we need to study the $L_n$ operator algebra. We start by observing that 
 \begin{equation}
@@ -409,6 +409,7 @@ However, there are two other types of states.
 \end{defn}
 This suggests to define an equivalence relation inside the space of physical states, stating the fact thtat the inner product between physical states does not change if we add null states to the physical states, namely
 \begin{equation}
+\label{eq: equivalence relation physical/null states}
     \ket{\rem{phys}} \simeq \ket{\rem{phys}} + \ket{\rem{null}}.
 \end{equation}
 The freedom of adding null states to physical states will be perceived in the target space as an on-shell \emph{spacetime gauge invariance}. 
@@ -617,4 +618,100 @@ These operators will act on the vacuum $\ket{0}_{ND}$ as
 \begin{equation}
     \alpha_r\ket{0}_{ND} = 0,\quad \forall r \in \bb{Z}/2,\, r \ge \frac{1}{2}.
 \end{equation}
+\paragraph{Mixed boundary conditions.} Let us now consider an open string whose endpoints have Neumann boundary conditions along $\mu = 0,\dots,p$ and also Dirichlet boundary conditions along $i = p + 1,\dots, D - 1$.These endpoints can therefore move only in the $p + 1$ Neumann directions, since they are fixed by the $D - p - 1$ Dirichlet directions. This means that we have a sub-manifold $\bb{R}^{1,p}$ of the spacetime $\bb{R}^{1,D - 1}$ where the endpoints can move around. Such a sub-manifold is called a \emph{Dirichlet brane}, more precisely a \emph{D$p$-brane}. Notice in particular that if the open string has N-N endpoints in every direction, the D$p$-brane is identified with the whole spacetime. The existence of a D$p$-brane breaks the invariance of the closed string theory under translations. As in spontaneously breaking vacuum we then expect \emph{Goldston bosons} arise, describing the displacemente of the brane along the directions where the translational invariance is broken. As the D$p$-brane moves in spacetime, it spans a $(p + 1)$-dimensional surface, called the \emph{worldvolume}. 
+\begin{figure}[h]
+    \centering 
+    \includegraphics[width=0.5\linewidth]{Immagini - Capitolo 3/Dp-brane embedding.png}
+    \caption{a D$p$-brane embedded in the target space $\bb{R}^{1,D - 1}$.}
+    \label{fig: Dp-brane embedding}
+\end{figure}
+\begin{figure}[h]
+    \centering 
+    \includegraphics[width=0.5\linewidth]{Immagini - Capitolo 3/Dp-brane trajectory.png}
+    \caption{the trajectory of the D$p$-brane in the spacetime spans the worldvolume: the $p$-dimensional momentum $P^\mu$ lies on the D$p$-brane, since along the Dirichlet directions there is no momentum.}
+    \label{fig: Dp-brane trajectory}
+\end{figure}
 
+\section{Single D\texorpdfstring{$p$}{p}-brane spectrum}
+Let us consider a generic state made up of Neumann oscillators $\alpha^\mu_n$ and Dirichlet oscillators $\alpha^i_n$ acting on the vacuum $\ket{0,P}$, where, as said in figure \ref{fig: Dp-brane trajectory}, the spacetime momentum $P^\mu$ lies on the D$0p$-brane, since along Dirichlet directions there is no momentum. The zero-mode Virasoro operator is in this case 
+\begin{equation}
+    L_0 = \alpha'P^2 + \LO^{(NN)} + \LO^{(DD)} = \alpha'P^2 + \LO^{(tot)}.
+\end{equation}
+This turn into the mass formula 
+\begin{equation}
+    \alpha'P^2 = \LO^{(tot)} - 1.
+\end{equation}
+We can now start to analyze the first energy levels of the spectrum. 
+
+\subsubsection{Level \texorpdfstring{$\LO = 0$}{N = 0}}
+Starting from the level $\LO = 0$, we have the state $t(P)\ket{0,P}$, where $t(P)$ is the spacetime polarization of the state. Its mass is given by 
+\begin{equation}
+    m^2 = -\frac{1}{\alpha'}.
+\end{equation}
+Thus, this state correspond to a tachyon, whose polarization is $t(P)$, which is alto four times higher than the tachyon found for the closed string. Moreover, this tachyon has a really different meaning than the closed string one's since it only implies that the D$p$-brane is unstable. Through a process called \emph{tachyon condensation} one can determine the true vacuum where there are no D$p$-branes because they ``evaporate'' forming closed string, thus going from a perturbative open string theory to an non-perturbative string theory. 
+
+\subsubsection{Level \texorpdfstring{$\LO = 1$}{N = 1}}
+At level $\LO = 1$ we have to take one oscillator $\alpha_{-1}$ that can excite the vacuum along a Neumann or a Dirichlet direction. If we saturate the free indices with a spacetime polarization, we have 
+\begin{equation}
+    [A_\mu(P)\alpha_{-1}^\mu + \phi_i(P)\alpha^i_{-1}]\ket{0,P},
+\end{equation}
+where $A_\mu(P)$ is a $(p + 1)$-dimensional vector representation of $\group{SO}{1,p}$ and $\phi_i(P)$ are $D - p - 1$ scalars, assembled in the vector representation of $\group{SO}{D - p - 1}$, which appears to be a global internal symmetry if we are sitting on the D$p$-brane. Therefore, the existence of the D$p$-brane breaks spacetime Lorentz symmetry as follows
+\begin{equation}
+    \group{SO}{1, D - 1} \longrightarrow \underbrace{\group{SO}{1,p}}_{\substack{\rem{Lorentz\,on\,the} \\ \rem{D}p\rem{-brane}}} \ot \underbrace{\group{SO}{D - p - 1}}_{\substack{\rem{rotations\,in\,the} \\ \rem{Dirichlet\,directions}}}.
+\end{equation}
+If we then consider the mass, we have that the Virasoro constraint $L_0 - 1 = 0$ implies $m^2 = 0$. Therefore, we found a massless gauge vector $A_\mu$ and $D - p - 1$ massless scalars $\phi_i$. These scalars are the Goldston bosons in the directions where translational symmetry has been broken by the D$p$-brane. By Goldston's theorem they should be massless, thus the temporarily unjustified choice $a = 1$ is in this case necessary. These $\phi_i$ can be seen as the coordinates describing the motion of the D$p$-brane in the transverse directions, where it is embedded. Collectively, they can be seen as a map $\{\phi_i\} : \bb{R}^{1,p} \to \bb{R}^{D - p - 1}$ taking a point $x$ in the worldvolume of the D$p$-brane and saying where it lays in the transverse space, namely in the Dirichlet directions. When $\phi_i = 0$, so if the scalar fields have zero vacuum expected energy (VEV), the D$p$-brane is not deformed. 
+
+If we now consider the Virasoro constraints $L_1 = 0$ and $L_0 = 1$, we find the EOMs for the massless gauge field and for the massless scalars, so the Maxwell's equations and the Klein-Gordon equation respectively
+\begin{equation}
+    \begin{cases}
+        P_\mu A^\mu(P) = 0 \\
+        P^2A^\mu(P) = 0
+    \end{cases},\quad P^2\phi^i(P) = 0.
+\end{equation}
+The equivalence relation \eqref{eq: equivalence relation physical/null states} for the gauge field $A_\mu$ reads as the gauge invariance
+\begin{equation}
+    A_\mu(P) \simeq A_\mu(P) + \lambda(P)P_\mu \longrightarrow A_\mu(x) \simeq A_\mu(x) + i\p_\mu\lambda(x),
+\end{equation}
+where $\lambda(P)P_\mu\ket{0,P} \simeq L_{-1}\ket{0,P}$ is a null state, since $P^2 = 0$. 
+
+\section{Multiple D\texorpdfstring{$p$}{p}-branes spectrum}
+Let us now consider a D$p$-brane system made up of two D$p$-branes denoted as D$p_1$ and D$p_2$, like reported in figure \ref{fig: Two Dp-branes system}, parallel along a commmon Dirichlet direction $y$. They are both characterized by their Dirichlet moduli $y^i$, which are the precise values of teh Dirichlet boundary conditions for the open strings attached to the D$p_i$-brane. 
+\begin{figure}[h]
+    \centering 
+    \includegraphics[width=0.7\linewidth]{Immagini - Capitolo 3/Two Dp-branes system.png}
+    \caption{a two D$p$-branes system where the D$p$-branes are parallel along a common Dirichlet direction $y$.}
+    \label{fig: Two Dp-branes system}
+\end{figure}
+As already discussed for the single D$p$-brane spectrum, the spectrum at the $\LO = \{0,1\}$ energy levels on the two branes separately contains one tachyon having $m^2 = -1/\alpha'$, one massless gauge field and $D - p - 1$ massless scalars. These are the states produced by strings that start and end on the same D$p$-brane. On the other hand, the strings that are stretched between the two D$p$-branes generate different states. They have the same boundary conditions along all the Dirichlet directions except for $y$, where the Dirichlet modulus changes at the two endpoints. 
+
+Let us focus on the string that starts on the D$p_1$-brane and ends on the D$p_2$-brane. Recalling the relation $X^i(\tau,\sigma) = x^i + Y^i(\tau,\sigma)$, we can write the solution as $Y^{(12)}(\tau,\sigma)$, defined by 
+\begin{equation}
+    \begin{cases}
+        \p_+\p_-Y^{(12)}(\tau,\sigma) = 0 \\
+        Y^{(12)}(\tau,\sigma = 0) = y_1 \\
+        Y^{(12)}(\tau,\sigma = \pi) = y_2
+    \end{cases},
+\end{equation}
+therefore 
+\begin{equation}
+    Y^{(12)}(\sigma^+,\sigma^-) = \bigg(1 - \frac{\sigma}{\pi}\bigg)y_1 + \frac{\sigma}{\pi}y_2 + i\sqrt{\frac{\alpha'}{2}}\sum_{n \neq 0}\frac{\alpha_n^{(12)}}{n}(e^{-in\sigma^+} - e^{-in\sigma^-}).
+\end{equation}
+It is also useful to write
+\begin{equation}
+    \bigg(1 - \frac{\sigma}{\pi}\bigg)y_1 + \frac{\sigma}{\pi}y_2 = y_1 + \frac{\Delta y}{2\pi}(\sigma^+ - \sigma^-),
+\end{equation}
+where $\Delta y \equiv y_2 - y_1$ being the distance between the two D$p$-branes. Moreover, the zero-mode is defined as 
+\begin{equation}
+    \alpha_0^{(12)} = \frac{\Delta y}{2\pi}\sqrt{\frac{2}{\alpha'}}.
+\end{equation}
+We are now ready to study the spectrum of these stretched strings. The mass formula is 
+\begin{equation}
+    \alpha'm^2 = - 1 + \LO^{(tot)} + \bigg(\frac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2.
+\end{equation}
+As $\Delta y$ increases, $m^2$ grows. Therefore, the energy of the stretched string increases with the separation of the two D$p$-branes. 
+
+\subsubsection{Level \texorpdfstring{$\LO = 0$}{N = 0}}
+... 
+
+\subsubsection{Level \texorpdfstring{$\LO = 1$}{N = 1}}
+... 
