@@ -1688,3 +1688,160 @@ dove $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\t
     \delta S_{RS} = \frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^{\mu}\psi^\nu \equiv -\delta S_{HE}.
 \end{equation}
 Dunque, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$.
+
+\section{Lezione 19.10}
++PRIMA PARTE.
+
+Il tensore $T_{ab}^\nu = (1/2)\b{\psi}_a\gamma^\nu\psi_b$ determina la torsione, e quindi $\omega_{ab}^\nu$, mentre la contorsione è
+\begin{equation}
+    K_{\mu\nu\rho} = \frac{1}{4}\b{\psi}_\mu\gamma_\rho\psi_\nu - \psi_\nu\gamma_\mu\psi_\rho + \b{\psi}_\rho\gamma_\nu\psi_\mu.
+\end{equation}
+Ora si sa che $\omega_\mu^{ab}(e^a_\mu,\psi_\mu) = \omega_\mu^{ab}(e) + K_\mu^{ab}(e_\mu^a,\psi_\mu)$, per cui l'azione è diversa da quella già vista
+\begin{multline}
+    S_{HE}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) + S_{RS}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) = \\ = S + \frac{1}{2k^2}\int d^4x\,e[R(e) - \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \Lag_{quartic}],
+\end{multline}
+dove il termine $\Lag_{quartic}$ contiene tutti i termini quartici nei campi $\psi_\mu$. La variazione di $\psi_\mu$ è $\delta\psi_\mu = \p_\mu\epsilon + (1/4)\omega_\mu^{ab}\gamma_{abc}$, per cui 
+\begin{equation}
+    \delta S = \int d^4x\,\bigg(\frac{\delta S}{\delta e}\delta_e S + \frac{\delta S}{\delta \psi}\delta_\psi S + \frac{\delta S}{\delta \omega}\delta_\omega S\bigg),
+\end{equation}
+dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. Si calcola, sapendo che $\gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d$, che 
+\begin{equation}
+    e\gamma^{\mu\nu\rho} = -i\epsilon^{\mu\nu\rho\sigma}\gamma_*\gamma_\sigma,
+\end{equation}
+cosicché 
+\begin{equation}
+    S_{RS} = \int d^4x\,\frac{i}{2k^2}\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_\nu\psi_\rho.
+\end{equation}
+Si devono calcolare le variazioni che compaiono in 
+\begin{equation}
+    \delta S = \delta_e S_{EH} + \delta_e S_{RS} + \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS},
+\end{equation}
+dove si è già trovato 
+\begin{equation}
+    \delta_e S_{HE} = \frac{1}{2k^2}\int d^4x\, eG_{\mu\nu}\b{\epsilon}\gamma^\mu\cdots(???),
+\end{equation}
+\begin{equation}
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_a D_\nu\psi_\rho\b{\epsilon}\gamma^a\psi_\sigma.
+\end{equation}
+Adesso 
+\begin{equation}
+    \delta_\psi S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_{[\nu}D_{\rho]}\epsilon,
+\end{equation}
+mentre 
+\begin{equation}
+    \delta_{\b{\psi}} S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}D_\nu\b{\psi}_\rho\gamma_*\gamma_\sigma\delta\psi_\mu,
+\end{equation}
+dove si è effettuato un Majorana flip con $t_3 = 1$ e $\delta \psi_\mu = D_\mu\epsilon$. Per integrare parti si considera che 
+\begin{equation}
+    \begin{split}
+        D_\nu(\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon) &= (D_\nu\b{\psi}_\rho)\gamma_*\gamma_\sigma D_\mu\epsilon + \b{\psi}_\rho\gamma_*(D_\nu \gamma_\sigma)D_\mu\epsilon \\
+        &+ \b{\psi}_\rho\gamma_*\gamma_\sigma D_\nu D_\mu\epsilon.
+    \end{split}
+\end{equation}
+che moltiplicata per $\epsilon^{\mu\nu\rho\sigma}$ resituisce 
+\begin{equation}
+    \epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon \equiv V^\nu,
+\end{equation}
+per cui $D_\nu V^\nu = \p_\nu V^\nu$. Quindi, sapendo che $\nabla_\mu\gamma_\rho = 0$ e che 
+\begin{equation}
+    \nabla_\nu\gamma_\rho = D_\nu\gamma_\rho - \Gamma^\sigma_{\nu\rho}\psi_\sigma,
+\end{equation}
+si ha 
+\begin{equation}
+    D_{[\nu}\gamma_{\sigma]} = \Gamma^\rho_{[\nu\sigma]}\gamma_\rho.
+\end{equation}
+Dunque, si ha 
+\begin{equation}
+    \begin{split}
+        \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(\frac{1}{4}\b{\psi}_\rho\gamma_*\gamma^{ab}\epsilon R_{\mu\nu ab} - \frac{1}{2}\psi_\rho\gamma_*\gamma_a D_\mu\epsilon T^a_{\mu\sigma}\bigg).
+    \end{split}
+\end{equation}
+Si vuole ora riscrivere questo come la somma di due contributi usando che 
+\begin{equation}
+    \gamma_\sigma \gamma^{ab} = \frac{1}{2}\underbrace{\comm{\gamma_\sigma}{\gamma^{ab}}}_{=2\delta_\sigma^{[a}\gamma^{b]}\,(2)} + \frac{1}{2}\underbrace{\acomm{\gamma_\sigma}{\gamma^{ab}}}_{=ie^d_\sigma\epsilon^{ab}_{cd}\gamma_*\gamma^c\,(1)}.
+\end{equation}
+sostituendo si trovano due integrali 
+\begin{equation}
+    \begin{split}
+        (1) &= -\frac{1}{8k^2}\epsilon^{\mu\nu\rho\sigma}\epsilon_{abcd}e^d_\sigma R^{ab}_{\mu\nu}\b{\psi}_\rho\gamma^c\epsilon \\
+        &= -\frac{e}{2k^2}G_{\mu\nu}\b{\psi}^\nu\gamma^\mu\epsilon \\
+        &= - \delta S_{HE},
+    \end{split}
+\end{equation}
+per cui 
+\begin{equation}
+    \delta S = \delta_e S_{HE} + (\delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS})\_{\rem{without\,(1)}},
+\end{equation}
+quindi 
+\begin{equation}
+    (2) = -\frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}R_{\mu\nu\sigma b}\b{\psi}_\rho\gamma_*\gamma^b\epsilon.
+\end{equation}
+La prima e la seconda equazione di struttura di Cartan sono 
+\begin{equation}
+    de^a + \omega_b^a \wedge e^b = T^a,
+\end{equation}
+\begin{equation}
+    d\omega^{ab} + \omega^a_c \wedge \omega^{cb} = \rho^{ab}.
+\end{equation}
+Se la torsione è nulla, allora si trova la prima identità di Bianchi 
+\begin{equation}
+    \rho^a_b \wedge e^b = 0.
+\end{equation}
+Invece, se la torsione non è nulla, si ha 
+\begin{equation}
+    d\omega^a_b \wedge e^b - \omega^a_b \wedge de^b = dT^a,
+\end{equation}
+e usando le due formule di struttura di Cartan, si ha 
+\begin{equation}
+    \rho^a_b \wedge e^b = dT^a + \omega^a_b \wedge T^a,
+\end{equation}
+da cui 
+\begin{equation}
+    \rho^a_b = \frac{1}{2}R^a_{b\mu\nu}dx^\mu \wedge dx^\nu,
+\end{equation}
+qunidi 
+\begin{equation}
+    R^a_{[\mu\nu\rho]} = -D_{[\mu}T^a_{\nu\rho]}.
+\end{equation}
+Dunque, si può scrivere 
+\begin{equation}
+    \begin{split}
+        \delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS} &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(D_\mu T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_b\epsilon \\
+        &+ T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu\epsilon) \\
+        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu(T^b_{\nu\sigma}\epsilon)
+    \end{split}
+\end{equation}
+e 
+\begin{equation}
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_aD_\nu\psi\b{\epsilon}\gamma^a\psi_\sigma.
+\end{equation}
+Ricordando che $T^b_{\nu\sigma} = (1/2)\b{\psi}_\nu\gamma^b\psi_\sigma$, per avere la forma del primo uguale a quella del secondo, o viceversa, si deve usare una delle identità di Fierz
+\begin{equation}
+    \lambda_4\gamma_\mu \lambda_{[1}\b{\lambda}_2\gamma^\mu\lambda_{3]} = 0,
+\end{equation}
+dove $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ sono spinori. In questo caso 
+\begin{equation}
+    \lambda_1 = \psi_\sigma,\quad \lambda_2 = \psi_\mu,\quad \lambda_3 = \gamma_*D_\nu\psi_\rho,\quad \lambda_4 = \b{\epsilon}.
+\end{equation}
+Usando poi che $D_\nu\b{\psi}_\rho\gamma_*\gamma^\lambda\psi_\sigma = \b{\psi}_\sigma\gamma_*\gamma^\lambda D_\nu\psi_\rho$ tramite Majorana flip, l'identità di Fierz è
+\begin{equation}
+    \b{\epsilon}(\gamma_\lambda\gamma_* D_\nu\psi_\rho)(\b{\psi}_{[\sigma}\gamma^\lambda\psi_{\mu]}) = -2\b{\epsilon}(\gamma^\lambda\psi_{[\sigma})(\b{\psi}_{\mu]}\gamma^\lambda\gamma_* D_\nu\psi_\rho).
+\end{equation}
+Quindi 
+\begin{equation}
+    \begin{split}
+        \delta S &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + \b{\epsilon}\gamma_a\gamma_*\p_\nu\psi_\rho T^a_{\sigma\mu}] \\
+        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + D_\nu\b{\psi}_\rho\gamma_a\gamma_*\b{\epsilon}T^a_{\sigma\mu}],
+    \end{split}
+\end{equation}
+dove si p effetuato un Majorana flip nel secondo termine con $t_3 = 1$. Dunque, sapendo che $D_\mu\gamma_a = 0$, si ha 
+\begin{equation}
+    \begin{split}
+        \delta S &= \frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}D_\nu(\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &= \frac{i}{4k^2}D_\nu(\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &= \frac{i}{4k^2}\int d^4x\,D_\nu V^\nu \\
+        &= \frac{i}{4k^2}\int d^4x\,\p_\nu V^\nu \\
+        &= 0.
+    \end{split}
+\end{equation}
+Dunque, si è dimostrato che $\delta S_{RS} + \delta S_{HE} = 0$. 
