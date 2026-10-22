@@ -711,7 +711,62 @@ We are now ready to study the spectrum of these stretched strings. The mass form
 As $\Delta y$ increases, $m^2$ grows. Therefore, the energy of the stretched string increases with the separation of the two D$p$-branes. 
 
 \subsubsection{Level \texorpdfstring{$\LO = 0$}{N = 0}}
-... 
+At the level $\LO = 0$ we have a scalar particle $t^{(12)}(P)\ket{0,P}$, whose mass is given by
+\begin{equation}
+    \alpha'm^2 = -1 + \bigg(\frac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2.
+\end{equation}
+Therefore, if the two D$p$-branes are at a distance $\Delta y$ such that 
+\begin{equation}
+    -1 + \bigg(\frac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2 \ge 0,
+\end{equation}
+the tachyon is not a tachyon anymore. 
 
 \subsubsection{Level \texorpdfstring{$\LO = 1$}{N = 1}}
-... 
+At the level $\LO = 1$ we have 
+\begin{equation}
+    [W_\mu^{(12)}(P)\alpha^\mu_{-1} + \phi_i^{(12)}\alpha_{-1}^i]\ket{0,P},
+\end{equation}
+whose mass is given by 
+\begin{equation}
+\label{eq: mass open string 2-Dp-branes system N = 1}
+    \alpha'm^2 = \bigg(\frac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2.
+\end{equation}
+Therefore, we have a massive vector $W_\mu^{(12)}$ and $D - p - 1$ massive scalar $\phi_i^{(12)}$. If we now consider the Virasoro constraints $L_0 = 1$ and $L_1 = 0$, we find the EOMs for the massive vector field, so the Proca's equation, and for the massive scalars, so the Klein-Gordon equations, which are 
+\begin{equation}
+    \begin{cases}
+        P^\mu W^{(12)}_\mu(P) = 0 \\[2ex]
+        \bigg[\alpha'P^2 + \bigg(\dfrac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2\bigg]W^{(12)}_\mu(P) = 0
+    \end{cases},
+\end{equation}
+\begin{equation}
+    \bigg[\alpha'P^2 + \bigg(\dfrac{\Delta y}{2\pi\sqrt{\alpha'}}\bigg)^2\bigg]\phi^{(12)}_i(P) = 0.
+\end{equation}
+The $L_1$ constraint is subtle for $i = y$. It is not difficult to see that 
+\begin{equation}
+    L_1\phi_y^{(12)}(P)\alpha^\mu_{-1}\ket{0,P} = \phi_y^{(12)}(P)(\alpha^y_0\alpha^y_1)\alpha^y_{-1}\ket{0,P} \simeq (\Delta y)\phi_y^{(12)}(P)\ket{0,P}.
+\end{equation}
+Therefore, if $\Delta y \neq 0$ the field $\phi_y^{(12)}(P)$ is not the physical and thus disappears from the spectrum. Everything we said so far for the $(12)$ string holds in the same way for the $(21)$ string, which stretches from the D$p_2$-brane to the D$p_1$-brane. 
+
+The generic field in such a two D$p$-branes system can be represented as a $2 \times 2$ matrix: on the diagonal we insert the strings having tehir endpoints both on the same D$p$-brane, namely the $(11)$ and $(22)$ strings, while off the diagonal we locate the strings stretched between the two branes, namely the $(12)$ and $(21)$ strings. The scalar fields' matrix is 
+\begin{equation}
+    \begin{pmatrix}
+        \phi_{i \neq y}^{(11)} & \phi_{i \neq y}^{(12)} \\[1.5ex]
+        \phi_{i \neq y}^{(21)} & \phi_{i \neq y}^{(22)}
+    \end{pmatrix},\quad 
+    \begin{pmatrix}
+        \phi_{y}^{(11)} & 0 \\
+        0 & \phi_{y}^{(22)}
+    \end{pmatrix},\quad \Delta y \neq 0,
+\end{equation}
+Notice that there are not $\phi_y^{(12)}$ and $\phi_y^{(21)}$ fluctuations as they cannot be physical when $\Delta y \neq 0$. The vector field's matrix is
+\begin{equation}
+    \begin{pmatrix}
+        A_\mu^{(11)} & W_\mu^{(12)} \\
+        W_\mu^{(21)} & A_\mu^{(22)}
+    \end{pmatrix}.
+\end{equation}
+The matrices are called \emph{Chan-Paton matrices}. Foucsing on the latter, we can recall equation \eqref{eq: mass open string 2-Dp-branes system N = 1} and notice that, when the two D$p$-branes are coincident, namely when $\Delta y = 0$, all the vector field are massless. This means that 
+\begin{equation}
+    \underbrace{\group{U}{1} \ot \group{U}{1}}_{\substack{A_\mu\,\rem{massless} \\ W_\mu\,\rem{massive}}} \xlongrightarrow{\Delta y = 0} \underbrace{\group{U}{2}}_{\substack{A_\mu\,\rem{massless} \\ W_\mu\,\rem{massless}}}
+\end{equation}
+Notice that in the $\Delta \to 0$ limit the number of degrees of freedom in conserved: at finite separation we have two massive vector fields, which correspond to $D - 1$ degrees of freedom, that when the separation vanishes become two massless vector fields, which correspond to $D -2$ degress of freedom. However, in the same limit the two scalars $\phi_y^{(12)}$ and $\phi_y^{(21)}$ become physical as the $L_1$ constraint is now identically satisfied. Therefore a Higgs-like mechanism takes place by separating the two D$p$-branes: the gauge symmetry $\group{U}{2}$ is broken into $\group{U}{1} \ot \group{U}{1}$ and two Goldstone modes, that are $\phi_y^{(12)}$ and $\phi_y^{(21)}$, are ``eaten'' by the broken gauge fileds that acquire mass. More in general, if we have $M$ coincident D$p$-branes, then we get $M^2$ massless gauge bosons giving rise to a non-Abelian $\group{U}{M}$ gauge theory.  This is not fully justified from the spectrum, but we will verify later that these massless vectors will indeed interact precisely as in a non-Abelian Yang-Mills theory.
