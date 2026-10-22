@@ -430,5 +430,53 @@ A questo punto si hanno tutti gli elementi per determinare il tensore di Einstei
 \end{equation}
 le cui componenti sono 
 \begin{equation}
+\label{eq: Einstein tensor components homogeneous and isotropic Universe}
     G_{00} = \frac{3\dot{a}^2}{c^2a^2} + \frac{2K}{a^2},\quad G_{ij} = -\frac{1}{c^2}\bigg[\frac{2\ddot{a}}{a} + \bigg(\frac{\dot{a}}{a}\bigg)^2 + \frac{Kc^2}{a^2}\bigg]g_{ij}.
 \end{equation}
+
+\subsection{Stress-energy tensor}
+Having obtained the components of the Einstein tensor in equation \eqref{eq: Einstein tensor components homogeneous and isotropic Universe} for the FLRW matric, it is time to move to the stress-energy tensor for a homogeneous and isotropic Universe. The fluid dynamic approach is still valid but we need to contextualise it within General Relativity. In Classical Mechanics, we can write the number of particles of the cosmic medium that occupy an infinitesimal volume element of phase space at any given time $t$ as 
+\begin{equation}
+    dN_t = f(\v{x},\v{q};t)\,d^3x\,d^3q,
+\end{equation}
+where $f(\v{x},\v{q};t)$ is the \emph{distribution function}. This represents the number of particles whose positions, at a time $t$, are comprised within the infinitesimal confifguration-space volume $d^3x$ around $\v{x}$, and whose momenta lie within $d^3q$ around $\v{q}$. q. Once we integrate over momentum, we get the local number density; integration also over a spatial region gives the number of particles contained in that region, at that give time. The distribution function is therefore a scalar function living in a 7-dimensional space: the 6-dimensional phase-space at any instant of time.
+
+Obviously, in General Relativity there in no observer-independent notion of ``space at a given time'' since the fundamental concept is spacetime itself. This means that we need to make the substitution $\v{x} \to x^\mu$, and consequently $\v{q} \to q^\mu$. However, replacing na\"ively $f(\v{x},\v{q};t)\,d^3x\,d^3q$ with $f(x^\mu,q^\mu)\,d^4x\,d^4q$ is not the correct way to proceed. Instead, we first have to define a spatial hypersurface $\Sigma$ within which we count the particles; the counting then corresponds to how many worldlines cross it. In practice, we take an oriented hypersurface element $d\Sigma_\mu$ and contract it with the four-momentum of a given particle, namely $q^\mu d\Sigma_\mu$. This is the covariant object that reproduces the ordinary phase-space counting on an equal-time slice.
+
+Secondly, we must remember that the components of the four-momentum are not independent, since they satisfy the mass-shell constraint $q_\mu q^\mu = -m^2c^4$. This constraint has to be folded in the momentum-space volume element. So, instead of simply considering $d^4q$, we should take a mass-shell volume element, which we denote as $d\Pi$. Pratically, an integral over the 3-dimensional mass shell can be represented as an integral over the full 4-dimensional momentum space by enforcing the mass-shell constraint with a Dirac delta, namely with $d^4q\,\delta(q_\mu q^\mu + m^2c^4)$. Note, however, that $d^4q$ is constructed from Cartesian coordinate components of the momentum and, as such, is not itself covariant. To make it so, we have to include the absolute value of teh Jacobian of the change of coordinates. Since the
+metric is a tensor, when changing coordinates from Cartesian $X^A$ to general $x^\mu$, its components
+transform as 
+\begin{equation}
+    g_{\mu\nu} = J^A_\mu J^B_\nu \eta_{AB}.
+\end{equation}
+The determinant of the Jacobian can then be easily obtained from $\det{g} = (\det{J})^2\det{\eta}$, since $\det{\eta} = -1$, as $|\det{J}| = \sqrt{-\det{g}}$. 
+
+Finally, consider that there are two roots of the mass-shell $q^0_\pm$, since the constraint is quadratic
+in $q^0$. We need to select the positive-energy branch and this can ben done by adding a $\Theta(q^0)$ term.
+Now, we can recast the Dirac delta in terms of $q^0$ as
+\begin{equation}
+    \begin{split}
+        \delta(q_\mu q^\mu + m^2c^4) &= \sum_{r = \{q^0_+,q^0_-\}}\frac{\delta(q^0 - r)}{\bigg|\dfrac{\p}{\p q^0}(q_\mu q^\mu + m^2c^4)\bigg|_{q^0 = r}} \\
+        &= \sum_{r = \{q^0_+,q^0_-\}}\frac{\delta(q^0 - r)}{|g_{0\nu}q^\nu|_{q^0 = r}}.
+    \end{split} 
+\end{equation}
+Thus, we eventually get 
+\begin{equation}
+    d\Pi = \frac{\sqrt{-\det{g}}}{2|q_0|}d^3q.
+\end{equation}
+Hence, the relativistic version of $dN_t$ is 
+\begin{equation}
+    dN_\Sigma = f(x^\alpha,q^i)q^\mu d\Sigma_\mu\,d\Pi.
+\end{equation}
+The interesting fact is that the distribution function is still a scalar function living in a 7-dimensional space, but this time, instead of being simply the direct product of configuration-space, momentum-space, and the time axis, we have spacetime combined with the furutre mass shell. 
+
+From this fundamental quantity $dN_\Sigma$, it is then possible to construct all the elements of the stress-energy tensor. We already know that the stress-energy tensor represents the flux of the components of the four-momentum along the four coordinate spacetime directions. That is, once we integrate it over a three-dimensional spacetime hypersurface, we obtain the total four-momentum contained in that region. Instead, it is easy to see that the total four-momentum contained in a region $\Sigma$ is the integral over that volume of the number of particle contained within  each weighted by the four-momentum it carries, over all possible momenta configuration. In other words, we have 
+\begin{equation}
+\label{eq: total 4-momentum in Sigma}
+    Q^\alpha = \int_\Sigma d\Sigma_\mu \int d\Pi\,q^\alpha f(x^\mu,q^i) q^\mu.
+\end{equation}
+Thus, comparing equations \eqref{eq: quadrimomento in forma integrale} and \eqref{eq: total 4-momentum in Sigma}, we can identify 
+\begin{equation}
+    T^{\mu\nu} = c \int d^3q\sqrt{-\det{g}}\,\frac{q^\mu q^\nu}{|q_0|}f(x^\mu,q^i),
+\end{equation}
+which also confirms the previous statement about the symmetry of $T^{\mu\nu}$, namely that $T^{\mu\nu} = T^{\nu\mu}$. 
