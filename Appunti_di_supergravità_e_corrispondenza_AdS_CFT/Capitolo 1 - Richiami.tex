@@ -1845,3 +1845,190 @@ dove si p effetuato un Majorana flip nel secondo termine con $t_3 = 1$. Dunque, 
     \end{split}
 \end{equation}
 Dunque, si è dimostrato che $\delta S_{RS} + \delta S_{HE} = 0$. 
+
+\section{Supersymmetry solutions (lezione 22.10)}
+Si considerano $e^a_\mu + (\rem{bosonic\,fields})$ e $\psi_\mu + (\rem{fermionic\,fields})$. Le variazioni generali sono
+\begin{equation}
+    \begin{cases}
+        \delta_\epsilon(\rem{bosonic\,field}) = \epsilon(\rem{fermionic\,field}) \\
+        \delta_\epsilon(\rem{fermionic\,field}) = \epsilon(\rem{bosonic\,field})
+    \end{cases}.
+\end{equation}
+Si suppone di avere una soluzione delle equazioni del moto $\{e^a_\mu,\psi_\mu\}$ e si introduce un $\c{\epsilon}$ e richiedere che 
+\begin{equation}
+    \begin{cases}
+        \delta_{\c{\epsilon}}\c{e}^\mu_a = 0 \\
+        \delta_{\c{\epsilon}}\c{\psi}_\mu = 0
+    \end{cases}.
+\end{equation}
+L'insieme $\{\c{e}_a^\mu,\c{\psi}_\mu,\c{\epsilon}\}$ è soluzione \emph{supersimmetrica} o \emph{BPS}. Queste BPS sono molto utili per geometria, AdS/CFT, compattification. Solitamente si assume che per i fermioni siano uguali a zero, la soluzione si può pensare quindi come un background classico dove studiare le fluttuazioni quantistiche (non si ha analogo classico dei fermioni), inoltre averli diversi da zero porta ad equazioni troppo complesse. Soluzioni bosoniche $e^\mu_a \neq 0$ e $\psi_\mu = 0$, dove 
+\begin{equation}
+    \begin{cases}
+        \delta_\epsilon\psi_\mu = \p_\mu\epsilon + \dfrac{1}{4}\omega_\mu^{ab}\gamma_{ab}\epsilon = 0 \\
+        \delta_\epsilon e^a_\mu = 0
+    \end{cases},
+\end{equation}
+dove la prima equazione restituisce equazioni per campi bosonici. 
+\begin{obs}
+    Siccome le equazioni sono lineari in $\epsilon$ è inutile se questo commuta od anti-commuta; per comodità si risolvono le equazioni pensandolo come commutante.
+\end{obs}
+Pernsare $\epsilon$ come commutante influisce sui bilineari (forme differenziali)
+\begin{equation}
+    \epsilon'\gamma^{\mu_1\cdots \mu_r}\epsilon.
+\end{equation}
+Gli spinori commutanti sono detti \emph{spinori di Killing} e sono la controparte fermionica dei \emph{vettori di Killing}, trasformazioni infinitesime che lasciano invariata la metrica:
+\begin{equation}
+    \Lie_X g = 0.
+\end{equation}
+se si hanno soluzioni più complicate, si richiede che $X$ sia simmetrico (???) per ogni campo della soluzione: $\Lie_X F = 0$, e così via. Si parte da 
+\begin{equation}
+    \nabla_\mu \epsilon = 0.
+\end{equation}
+Se ci si trovasse nello spazio di Minkowski si avrebbe $g_{\mu\nu} \equiv \eta_{\mu\nu}$, quindi $\omega$ nulla e $\nabla_\mu \epsilon = \p_\mu \epsilon = 0$ per cui $\epsilon = \rem{costante}$ è soluzione. Gli spinori hanno $2^{[D/2]}$ dimensioni, se sono di Majorana hanno quattro dimensioni reali. 
+\begin{equation}
+    \rem{fraction\,of\,SUSY\,preserved} = \frac{\rem{4-indipendent\,solutions}}{\rem{4-dimensional\,space}} = 1,
+\end{equation}
+si ha \emph{supersimmetria massima}. Quindi, se si risolvono le equazioni supersimmetriche si risolvono anche le equazioni del moto. Non è sempre così, ma il contrario vale sempre. Questa è la \emph{condizione di integrabilità}. 
+\begin{equation}
+    \comm{D_\mu}{D_\nu} = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\epsilon,
+\end{equation} 
+se $D_\mu \epsilon = 0$, allora $R_{\mu\nu ab}\gamma^{ab}\epsilon = 0$ è la condizione di integrabilità. Questo consiste nel passare da eqiazioni differenziali ad equazioni algebriche che separa i vincoli per il tensore di Riemann. Si possono riscrivere alcune cose 
+\begin{equation}
+    \gamma^\nu\gamma_{ab} = \gamma^\nu_{ab} + 2\delta^\nu_{[a}\gamma_{b]},
+\end{equation} 
+con $\gamma^\nu_{ab} = 0$ perchè si usa l'identità di Bianchi con $T = 0$, e fare
+\begin{equation}
+    \gamma^\nu R_{\mu\nu ab}\gamma^{ab}\epsilon = 0 \Longrightarrow R_{\mu\sigma}\gamma^\sigma \epsilon = 0 \Longrightarrow \gamma^\rho R_{\mu\sigma} \gamma^\sigma \epsilon = 0.
+\end{equation}
+Si suppone di avere $\epsilon'$ che obbesice alla stessa equazione 
+\begin{equation}
+    \begin{cases}
+        \gamma^\rho \gamma^\sigma \epsilon R_{\mu\sigma} = 0 \\
+        \gamma^\rho \gamma^\sigma \epsilon' R_{\mu\sigma} = 0
+    \end{cases},
+\end{equation}
+allora 
+\begin{equation}
+    \begin{cases}
+        \b{\epsilon}'\gamma^\rho \gamma^\sigma \epsilon R_{\mu\sigma} = 0 \\
+        \b{\epsilon}\gamma^\rho \gamma^\sigma \epsilon' R_{\mu\sigma} = 0
+    \end{cases},
+\end{equation}
+dove la seconda si può riscrivere tramite un Majorana flip come 
+\begin{equation}
+    \b{\epsilon}'\gamma^\sigma\gamma^\rho \epsilon R_{\mu\sigma} = 0.
+\end{equation}
+Si può sommare adesso le due equazioni 
+\begin{equation}
+    g^{\rho\sigma}R_{\mu\sigma}\b{\epsilon}'\epsilon = 0 \Longrightarrow R^\rho_\sigma \b{\epsilon}'\epsilon = 0,
+\end{equation}
+se $\b{\epsilon}'\epsilon \neq 0$, allora $R^\rho_\sigma = 0$ che è l'equazione del moto. Se $R_{\mu\nu} = 0$, allora la metrica $g_{\mu\nu}$ è detta \emph{metrica Ricci-flat}. Se si suppone di essere in segnatura euclidea si ha $\b{\epsilon}'\epsilon > 0$, allora ho il teorema 
+\begin{equation}
+    \p_\mu \epsilon = 0 \Longrightarrow R_{\mu\nu} = 0,\quad \rem{condizione\,necessaria}.
+\end{equation}
+\begin{obs}
+    Questa è la condizione che descrive le (???).
+\end{obs}
+Se si ha invece segnatura lorentziana, allora $\b{\epsilon}'\epsilon \ngtr 0$ quindi il fatto di prima non è più vero.
+\begin{ex}
+    In $D = 4$, si ha che $ds^2 = 2M(u,x,y)\,du^2 + 2\,du\,dv + dx^2 + dy^2$, dove $\p_v$ è un vettori di Killing ma con $||\p_v|| = 0$:
+    \begin{enumerate}
+        \item $\exists \epsilon^{1,2} : \nabla_\mu\epsilon = 0,\, \forall \mu$, $g_{\mu\nu}$ sarebbe $1/2- BPS$;
+        \item $R_{\mu\nu} \neq 0$, allora $\b{\epsilon}'\epsilon = 0$ perch* valga $R^\rho_\sigma \b{\epsilon}'\epsilon = 0$, portando a soluzioni ad onde piane parallele (PP-warped);
+        \item le equazioni del moto dissato $H$ (obbedisce ad ODE), quindi $R_{\mu\nu} = 0$ e si ottengono le equazioni armoniche nello spazio trasverso per $H$.
+    \end{enumerate}
+\end{ex}
+
+\section{Spazio di anti-deSitter}
+Si modificano adesso le equazioni di supersimmetria. Si passa da $\delta_\epsilon\psi_\mu = D_\mu\epsilon$ a 
+\begin{equation}
+    \h{D}_\mu\epsilon := D_\mu\epsilon - \frac{1}{2L}\gamma_\mu\epsilon
+\end{equation}
+con $L$ costante arbitraria. Si suppone di voler studiare $\h{D}_\mu\epsilon = 0$. Si calcola prima 
+\begin{equation}
+    \begin{split}
+        \comm{\h{D}_\mu}{\h{D}_\nu}\epsilon &= \comm{D_\mu}{D_\nu}\epsilon - \frac{1}{2L}(D_\mu\gamma_\nu - D_\nu\gamma_\mu)\epsilon + (0)\epsilon + \frac{1}{4L^2}\comm{\gamma_\mu}{\gamma_\nu}\epsilon \\
+        &= \frac{1}{4}R_{\mu\nu ab}^{(\omega)}\gamma^{ab}\epsilon - \frac{1}{2L}T^a_{\mu\nu}\gamma_a\epsilon + \frac{1}{2L^2}\gamma_{\mu\nu}\epsilon \\
+        &= 0.
+    \end{split}
+\end{equation}
+Si ricorda che i $\gamma_{\mu\nu}$ sono i generatori del gruppo di spin. 
+
+Come prima si vogliono trarre conclusioni eliminando $\epsilon$, si semplifica la trattazione considerando soluzioni bosoniche: $\psi_\mu = 0$ implica $T_{\mu\nu}^a = 0$.
+\begin{equation}
+    [R^{ab}_{\mu\nu} + \frac{1}{L^2}(e^a_\mu e^b_\nu - e^b_\mu e^a_\nu)]\gamma_{ab}\epsilon = 0.
+\end{equation}
+Ora si può ripetere il conto precedente e ottenere alla fine 
+\begin{equation}
+    \bigg(R_{\mu\nu} + \frac{D - 1}{L^2}g_{\mu\nu}\bigg)\b{\epsilon}'\epsilon = 0.
+\end{equation}
+Il risultato di integrabilità è dato dall'\emph{equazione spinoriale di Killing}
+\begin{equation}
+    D_\mu \epsilon = \frac{1}{2L}\gamma_\mu\epsilon,
+\end{equation}
+e se $\b{\epsilon}'\epsilon \neq 0$ allora si ha 
+\begin{equation}
+\label{eq: equazione di Einstein nel vuoto con costante cosmologica}
+    R_{\mu\nu} + \frac{D - 1}{L^2}g_{\mu\nu} = 0,
+\end{equation}
+che è l'equazione di Einstein nel vuoto con costante cosmologica. Si può trovare una lagrangiana la cui \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica} sia un'equazione del moto. Quindi, si va a definire lo spazio di anti-deSitter in modo che risolva \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica}.
+\begin{equation}
+    S_{HE} = \frac{1}{2k^2}\int d^Dx\,e(R - \Lambda).
+\end{equation}
+\begin{obs}
+    Solitamente c'è $2\Lambda$, in ogni caso è una costante che si può ridefinire. 
+\end{obs}
+Dalle variazioni si trova 
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = -\frac{1}{2}\Lambda g_{\mu\nu},
+\end{equation}
+di cui se se ne considera la traccia si trova 
+\begin{equation}
+    R = \frac{D}{D - 2}\Lambda,
+\end{equation}
+sostituendo si trova 
+\begin{equation}
+    R_{\mu\nu} = \frac{\Lambda}{D - 2}g_{\mu\nu}.
+\end{equation}
+Se si fa il confronto con \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica} si trova che 
+\begin{equation}
+    \Lambda < 0,\quad D \neq \{1,2\}.
+\end{equation}
+\begin{obs}
+    Il caso $\Lambda > 0$ (spazio deSitter) è incompatibile con la supersimmetria. 
+\end{obs}
+Si tenta un'ipotesi di una lagrangian per una  supergravità nello spazio di anti-deSitter 
+\begin{equation}
+    \S_{N = 1} = \frac{1}{2k^2}\int d^Dx\,e[(R - \b{\psi}_\mu \gamma^{\mu\nu\rho}\h{D}_\nu\psi_\rho) - \Lambda],
+\end{equation}
+dove si è messo $\h{D}_\nu$ poiché $\delta_\epsilon\psi_\mu = \h{D}_\mu\epsilon$. Si deve controllare che questa azione sia ancora invariante per supersimmetria (primo ordine = lineare). 
+\begin{equation}
+    \begin{split}
+        -\b{\psi}\gamma^{\mu\nu\rho}\h{D}_\nu\psi_\rho &= -\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \frac{1}{2L}\b{\psi}_\mu\gamma^{\mu\nu\rho}\gamma_\nu\psi_\rho \\
+        &= (\rem{number}) - \frac{D - 2}{2L}\b{\psi}_\mu\gamma^{\mu\nu\rho}\psi_\rho.
+    \end{split}
+\end{equation}
+Quindi alla fine si ha 
+\begin{equation}
+    \rem{HE} + \rem{RS} + \rem{gravitino\,mass\,term} + \rem{cosmological constant}.
+\end{equation}
+\begin{obs}
+    $m_\psi \propto L^{-1}$, mentre $\Lambda \propto L^{-2}$, le due non sono indipendenti.
+\end{obs}
+Dunque 
+\begin{equation}
+    S_{N = 1,\rem{AdS}} = \underbrace{S_{HE} + S_{RS}}_{vecchi\,contributi} + \underbrace{S_{m_\psi} + S_{\Lambda}}_{nuovi\,contributi}.
+\end{equation}
+\begin{equation}
+    \delta\psi_\mu = D_\mu\epsilon - \frac{1}{2L}\gamma_\mu \epsilon \equiv \delta\psi^{(old)} + \delta\psi^{(new)}.
+\end{equation}
+Si inizia a calcolare, la connessione è sempre il bilineare nei graviti solito:
+\begin{align}
+    \delta_e S &= \delta_e S_{HE} + \delta_e S_{RS} + \delta_e S_{m_\psi} + \delta_e S_\Lambda, \\
+    \delta_\psi S &= \delta_\psi S_{HE} + \delta_\psi S_{RS} + \delta_\psi S_{m_\psi} + \delta_\psi S_\Lambda, \\
+    \delta_{\b{\psi}} S &= \delta_{\b{\psi}} S_{HE} + \delta_{\b{\psi}} S_{RS} + \delta_{\b{\psi}} S_{m_\psi} + \delta_{\b{\psi}} S_\Lambda.
+\end{align}
+Si organizzano i calcoli in termini di potenze di $L$ ($L^0$, $L^{_1}$, $L^{-2}$) che è arbitrario, cioè ogni termine dell'espansione si deve annullare da se. Al leading order ($L^0$):
+\begin{equation}
+    \delta_e S_{HE} + \delta_e S_{RS} + \delta_\psi^{(odd)} S_{HE} + \delta_\psi^{(odd)} S_{RS} + \delta_{\b{\psi}}^{(odd)} S_{HE} + \delta_{\b{\psi}}^{(odd)} S_{RS} = 0.
+\end{equation}
