@@ -435,8 +435,9 @@ le cui componenti sono
 \end{equation}
 
 \subsection{Stress-energy tensor}
-Having obtained the components of the Einstein tensor in equation \eqref{eq: Einstein tensor components homogeneous and isotropic Universe} for the FLRW matric, it is time to move to the stress-energy tensor for a homogeneous and isotropic Universe. The fluid dynamic approach is still valid but we need to contextualise it within General Relativity. In Classical Mechanics, we can write the number of particles of the cosmic medium that occupy an infinitesimal volume element of phase space at any given time $t$ as 
+Having obtained the components of the Einstein tensor in equation \eqref{eq: Einstein tensor components homogeneous and isotropic Universe} for the FLRW matric, it is time to move to the stress-energy tensor for a homogeneous and isotropic Universe. The fluid dynamic approach is still valid but we need to contextualise it within General Relativity. In Classical Mechanics, we can write the number of particles of the cosmic medium that occupy an infinitesimal volume element of phase-space at any given time $t$ as 
 \begin{equation}
+\label{eq: fundamental phase-space volume element in CM}
     dN_t = f(\v{x},\v{q};t)\,d^3x\,d^3q,
 \end{equation}
 where $f(\v{x},\v{q};t)$ is the \emph{distribution function}. This represents the number of particles whose positions, at a time $t$, are comprised within the infinitesimal confifguration-space volume $d^3x$ around $\v{x}$, and whose momenta lie within $d^3q$ around $\v{q}$. q. Once we integrate over momentum, we get the local number density; integration also over a spatial region gives the number of particles contained in that region, at that give time. The distribution function is therefore a scalar function living in a 7-dimensional space: the 6-dimensional phase-space at any instant of time.
@@ -466,6 +467,7 @@ Thus, we eventually get
 \end{equation}
 Hence, the relativistic version of $dN_t$ is 
 \begin{equation}
+\label{eq: fundamental phase-space volume element in GR}
     dN_\Sigma = f(x^\alpha,q^i)q^\mu d\Sigma_\mu\,d\Pi.
 \end{equation}
 The interesting fact is that the distribution function is still a scalar function living in a 7-dimensional space, but this time, instead of being simply the direct product of configuration-space, momentum-space, and the time axis, we have spacetime combined with the furutre mass shell. 
@@ -477,6 +479,80 @@ From this fundamental quantity $dN_\Sigma$, it is then possible to construct all
 \end{equation}
 Thus, comparing equations \eqref{eq: quadrimomento in forma integrale} and \eqref{eq: total 4-momentum in Sigma}, we can identify 
 \begin{equation}
+\label{eq: stress-energy tensor in GR}
     T^{\mu\nu} = c \int d^3q\sqrt{-\det{g}}\,\frac{q^\mu q^\nu}{|q_0|}f(x^\mu,q^i),
 \end{equation}
-which also confirms the previous statement about the symmetry of $T^{\mu\nu}$, namely that $T^{\mu\nu} = T^{\nu\mu}$. 
+which also confirms the previous statement about the symmetry of $T^{\mu\nu}$, namely that $T^{\mu\nu} = T^{\nu\mu}$.  We already know that in local inertial frame:
+\begin{enumerate}
+    \item $T^{00}$ is the energy density, denoted as $\epsilon$;
+    \item $cT^{0i}$ is the energy flux along $x^i$;
+    \item $T^{i0}/c$ is the density of the $i$th componenth of the total momentum, namely $Q^i$;
+    \item $T^{ij}$ is the flux of $Q^i$ along $x^j$, and it can correspond to a normal stress when $i = j$ and to shear stresses when $i \neq j$. 
+\end{enumerate}
+Moreover, in a local inertial frame the metric tensor is $\eta_{\mu\nu}$ with $\sqrt{-\det{\eta}} = 1$ since we are in $\bb{M}^4$. This means that $q^0 = \eta_{0\nu}q^\nu = -q_0$, but we have selected the future mass shell, namely the positive root $q^0_+$, which means that $q^0 > 0$. Therefore, in equation \eqref{eq: stress-energy tensor in GR} we simply have $|q^0| = q^0 = E/c$. Now, a spatial oriented hypersurface is just $d\Sigma_\mu = (d^3x,0,0,0)$, implying that $q^\mu d\Sigma_\mu = q^0d^3x$. Hence, the phase-space volume element is $q^\mu d\Sigma_\mu d\Pi = d^3x\,d^3q$ and equation \eqref{eq: fundamental phase-space volume element in GR} reduces to equation \eqref{eq: fundamental phase-space volume element in CM}. Moreover, the components of the stress-energy tensor are: 
+\begin{equation}
+    T^{00} = c\int d^3q\,q^0f(x^\mu,q^i) = \int d^3q\,E(q)f(x^\mu,q^i) \equiv \epsilon;
+\end{equation}
+\begin{equation}
+    T^{i0} = c\int d^3q\,q^if(x^\mu,q^i);
+\end{equation}
+\begin{equation}
+    T^{0i} = c \int d^3q\,\frac{E(q)v^i(q)}{c}f(x^\mu,q^i),
+\end{equation}
+where we have first expressed, for a massive particle, the four-momentum $q^\mu = m u^\mu$ with $u^\mu = \gamma(c,v^i)$ the four-velocity, and then got the spatial velocity as $cu^i/u^0 = v^i$, since $T^{0i}$ represents the energy carried by fluid particles that move in the $i$th coordinate direction; 
+\begin{equation}
+    T^{ij} = \int d^3q\,q^iv^j(q)f(x^\mu,q^i),
+\end{equation}
+that is precisely $q^i$ carried along $v^j$. 
+
+\subsubsection{The multi-component Universe}
+The cosmological medium is, of course, not made of a single type of objects. In the beginning, we just considered galaxies, but we can now widen our perspective and include in the same picture stars and planets and gas—baryons, in general, as well as photons and neutrinos. The advantage of this kinetic-theory description is that, on the scales that we are considering, you can regard even a galaxy as an effective particle and write a phase-space distribution function for it. The derivation applies to any constituent that can be idealised as a localised object carrying a well-defined four-momentum and invariant mass. A galaxy, as an isolated composite object, still obeys the mass-shell constraint, where in this case the four-momentum is the sum of the four-momenta of all its microscopic constituents and the invariant mass of the whole galaxy includes its internal kinetic energy, binding energy, thermal energy, and so on and so forth. Each species $s$ of constituents of the universe is thus described by its own distribution function $f_s$, defined on the corresponding future mass shell $q^\mu q_\mu = -m^2c^4$. Geometrically, the full phase-space can be regarded as the disjoint union of the mass shells associated with the different species. Since the total four-momentum carried by the cosmic medium is the sum of the four-momenta carried by its different constituents (the four-momentum is a spacetime vector and thus is additive), their stress-energy contributions add linearly, thus 
+\begin{eqnarray}
+    T^{\mu\nu} = \nsum_s T^{\mu\nu}_{(s)} = c\nsum_s \int d\Pi_s\,q^\mu q^\nu f_s.
+\end{eqnarray}
+Consequently, although the different constituents of the Universe may have very different microscopic properties, gravity just responds to their combined stress-energy tensor.
+
+The next step is to enforce the translational and rotational symmetries encoded in the cosmological principle. One could argue that, due to homogeneity and isotropy, we expect $T^{\mu\nu}$ to have certain properties. However, it is more fundamental to consider the distribution function directly. The cosmological principle allows for a natural foliation of spacetime, with $t$ the cosmic time such that at each instant, space is homogeneous and isotropic. Homogeneity then dictates that all positions are equivalent, so $f(x^\mu,q^i)$ cannot depend on $\v{x}$. Isotropy ensures that all directions are equally valid, so the dependence upon momentum can only happen through its norm, $q = |\v{q}|$. Therefore, $f(x^\mu,q^i) \equiv f(q;t)$, which simplifies the situation enormously.
+
+Consider now the stress-energy tensor expression in equation \eqref{eq: stress-energy tensor in GR}. FOr the mixed time-space components, the integrand is $q^if(q)$, which is an odd function of $q^i$. Therefore, teh integral vanishes identically. The space-space components instead require somo other considerations. The quantity $q^iq^j$ is the product of two vectors, which is a matrix. Therefore, we can always decompose a matrix into its trace and a trace-free part. In a non-flat geometry, this corresponds to 
+\begin{equation}
+    q^iq^j = g^{ij}\frac{q^2}{3} + (q^iq^j - g^{ij}\frac{q^2}{3}),
+\end{equation}
+where we emphasised that $q^2 \equiv |q|^2 = g_{ij}q^iq^j$ with $g^{ij}$ the inverse spatial metric induced by $g_{\mu\nu}$ since the metric is block diagonal. Integrating over $d^3q$, the latter term vanishes because it is odd and trasverse in the $i$th and $j$th directions. The remaining term is 
+\begin{equation}
+    T^{ij} = g^{ij}\int \sqrt{-\det{g}}d^3q\,\frac{c^2q^2}{3E(q)}f(q;t),
+\end{equation}
+which is precisely the isotropic pressure $\b{p}$. In the homogeneous and isotropic scenario, every constituent of the Universe separately contributes an isotropic energy density and pressure, namely
+\begin{equation}
+\label{eq: energy density in GR}
+    \b{\epsilon}_s(t) = \int d^3q\sqrt{-\det{g}}\,E_s(q)f_s(q;t),
+\end{equation}
+\begin{equation}
+\label{eq: isotropic pressure in GR}
+    \b{p}_s(t) = \int d^3q\sqrt{-\det{g}}\,\frac{q^2}{E_s(q)}f_s(q;t).
+\end{equation}
+In the case of very massive objects, like galaxies, we have $m \gg q/c$, therefore $E \simeq mc^2$ filters out the integral in equation \eqref{eq: energy density in GR} and we obtain 
+\begin{eqnarray}
+    \b{\epsilon}_{galaxies} \simeq \b{\rho}c^2.
+\end{eqnarray}
+For the other integral \eqref{eq: isotropic pressure in GR}, we have the opposite case, namely $qc \ll mc^2$, and so
+\begin{equation}
+    \b{p}_{galaxies} \simeq 0.
+\end{equation}
+
+On the opposite side of the spectrum we have photons, which are massless. Hence, $E = qc$ and $c^2q^2/qc = E$, so that equation \eqref{eq: isotropic pressure in GR} returns
+\begin{eqnarray}
+    \b{p}_{photons} \simeq \frac{\b{\epsilon}}{3}.
+\end{eqnarray}
+Henceforth, we shall therefore broadly categorise the species constituing the content of the Universe as ``matter'' and ``radiation'', labelled respectively as $s = \{m,r\}$, where the former group includes all species whose invariant mass $m$ is much larger than its momentum, and the latter all relativistic particles. Finally, the total stress-energy tensor is simply 
+\begin{equation}
+    T^{\mu\nu} = 
+    \begin{pmatrix}
+        \b{\epsilon} & \v{0}^T \\
+        \v{0} & \b{p}g^{ij}    
+    \end{pmatrix},
+\end{equation}
+with the total energy density and isotropic pressure being 
+\begin{equation}
+    \b{\epsilon} = \nsum_s \b{\epsilon}_s,\quad \b{p} = \nsum_s \b{p}_s.
+\end{equation}
