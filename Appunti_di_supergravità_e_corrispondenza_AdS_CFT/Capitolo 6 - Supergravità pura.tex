@@ -1,0 +1,446 @@
+\chapter{Supergravità pura}
+La \emph{supergravità pura} è la teoria di supergravità più semplice, talvolta chiamata anche \emph{supergravità minimale}, dato che, almeno in $D = 4$, gli unici due campi sono la metrica, cioè il vielbein $e_\mu^a$, e il gravitino, cioè il campo di Rarita-Schwinger $\psi_\mu$. Esistono anche altre teorie che estendono la teoria minimale, dette appunto \emph{supergravità estese}, che includono le seguenti aggiunte:
+\begin{enumerate}
+    \item l'introduzione della costante cosmologica $\Lambda$;
+    \item l'estensione a dimensioni $D > 4$;
+    \item l'inclusione di più copie del gravitino $\psi_\mu^I$, $I = \{1,\dots,\fan{N}\}$.
+\end{enumerate}
+Per ogni dimensione esiste ovviamente un numero minimo per $\fan{N}$, il fatto meno ovvio è che esiste anche un numero massimo $\fan{N}_{max}$. Ad esempio, per $D = 4$ si ha $\fan{N}_{max} = 8$. Le teorie di supergravità con $\fan{N} = \fan{N}_{max}$ sono dette \emph{supergravità massimali}. 
+\begin{obs}
+    Un esempio importante di supergravità massimale è per $D = 11$ dove esistono gli spinori di Majorana e la teoria minimale coincide con quella massimale, implicando che esiste un'unica teoria di supergravità in $D = 11$. Un altro esempio importante è per $D = 10$ dove esistono gli spinori di Majorana-Weyl permettendo due possibili teorie di supergravità: le \emph{teorie di tipo I} con $\fan{N} = 1$ e le \emph{teorie di tipo II} con $\fan{N} = 2$; queste sono particolarmente importanti dato il loro legame con la Teoria delle Stringhe. 
+\end{obs}
+
+Ci si concentra ora sulla teoria minimale in $D = 4$ e $\fan{N} = 1$. L'azione da cui si parte è $S = S_{HE} + S_{RS}$, dove
+\begin{equation}
+    S_{HE} = \frac{1}{2k^2}\int d^Dx\,ee^{a\mu}e^{b\nu}R_{\mu\nu},    
+\end{equation}
+\begin{equation}
+    S_{RS} = -\frac{1}{2k^2}\int d^Dx\,e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho.
+\end{equation}
+Le variazioni, che ora non sono arbitrarie, sono 
+\begin{equation}
+    \delta e_\mu^a = \frac{1}{2}\b{\epsilon}\gamma^a\psi_\mu,\quad \delta\psi_\mu = \nabla_\mu\epsilon,
+\end{equation}
+dove $\epsilon = \epsilon(x)$ è uno spinore di Majorana anti-commutante. Inoltre, usando la proprietà $\det{M} = \exp{\tr{(\log{M})}}$ dove $M$ è tale che $MM^{-1} = \IM$, si hanno 
+\begin{equation}
+    \delta e^{b\rho} = -\frac{1}{2}\b{\epsilon}\psi^b,\quad \delta e = \frac{e}{2}\gamma^\rho\psi_\rho.
+\end{equation}
+Quindi, la variazione dell'azione di Hilbert-Einstein è
+\begin{equation}
+    \begin{split}
+        \delta S_{HE} &= -\frac{1}{2k^2}\int d^Dx\,e(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\bigg(-\frac{1}{2}\b{\epsilon}\gamma^\mu\psi^a\bigg) \\
+        &= -\frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^\mu\psi^\nu,
+    \end{split} 
+\end{equation}
+dove nell'ultimo passaggio si è fatto in modo da rendere manifesto il tensore di Einstein $G_{\mu\nu}$. 
+
+Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato piuttosto veloce, non si può dire lo stesso per quella di Rarita-Schwinger. Il punto di partenza è 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,(\delta e\b{\psi}_\mu \gamma^{\mu\nu\rho}D_\nu\psi_\rho + e\delta\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
+        &+ e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho + (???)\delta e^{a\mu}) \\
+        &\simeq -\frac{1}{2k^2}\int d^Dx\,e(\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho) \\
+        &= \int d^Dx\,e[\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho - (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho],
+    \end{split}
+\end{equation}
+dove si è prima considerato solo il primo ordine e infine si è integrato per parti. Il secondo termine si può riscrivere tramite un Majorana flip come 
+\begin{equation}
+    \begin{split}
+        (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho = -t_3\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\mu &= -\delta\b{\psi}_\mu\gamma^{\rho\nu\mu}D_\nu\psi_\rho \\
+        &= \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_rho,
+    \end{split}
+\end{equation}
+risultando quindi identico al primo. Pertanto, la variazione diventa 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,2e\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}\nabla_\mu\nabla_\nu\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}D_{[\mu}D_{\nu]}\psi_\rho.
+    \end{split}
+\end{equation}
+Quello che si deve adesso calcolare ora è $\comm{D_\mu}{D_\nu}\psi_\rho$, per farlo si può però passare da $\comm{\nabla_\mu}{\nabla_\nu}\chi$ dove $\chi$ è uno spinore di Dirac, senza quindi considerare l'indice di Lorentz. Quindi, si parte da 
+\begin{equation}
+    \begin{split}
+        D_\mu D_\nu \chi &= \p_\mu\p_\nu \chi + \frac{1}{4}(\omega_\mu^{ab}\gamma_{ab}\p_\nu\chi + \omega_\nu^{ab}\gamma_{ab}\p_\mu\chi) \\
+        &+ \frac{1}{4}\p_\mu\omega_\nu^{ab}\gamma_{ab}\chi + \frac{1}{16}\omega_\mu^{cd}\omega_\nu^{ab}\gamma_{cd}\gamma_{ab}\chi,
+    \end{split}
+\end{equation}
+con cui si può calcolare 
+\begin{equation}
+    \begin{split}
+        (D_\mu D_\nu - D_\nu D_\mu)\chi &= \frac{1}{4}(\p_\mu\omega_\nu^{ab} - \p_\nu\omega^{ab})\gamma_{ab}\chi \\
+        &= \frac{1}{8}\bigg[\omega_{[\mu}^{cd}\omega_{\nu]}^{ab}\frac{1}{2}\bigg(\gamma_{cd}\gamma_{ab} - \gamma_{ab}\gamma_{cd}\bigg)\bigg],
+    \end{split}
+\end{equation}
+dove si può sostituire 
+\begin{equation}
+    \comm{\gamma_{cd}}{\gamma^{ab}} = -8\delta_{[c}^{[a}\gamma^{b]}_{d]} = \frac{1}{4}(\omega_{\mu ab}\omega^c_{\nu b} - \omega_{\nu av}\omega^c_{\mu b}),
+\end{equation}
+così da ottenere
+\begin{equation}
+    \comm{D_\mu}{D_\nu}\chi = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\chi,
+\end{equation}
+e di conseguenza 
+\begin{equation}
+    \comm{D_\mu}{D_\nu}\psi_\rho = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\psi_\rho.
+\end{equation}
+Quindi, usando questo risultato nell'espressione precedente di $\delta S_{RS}$ si ottiene 
+\begin{equation}
+    \begin{split}
+        \delta S_{RS} &= \frac{1}{k^2}\int d^Dx\, \frac{e}{8}\b{\epsilon}\gamma^{\mu\nu\rho}\gamma_{\sigma\tau}R_{\mu\nu}^{\sigma\tau}\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,\frac{e}{8}\b{\epsilon}(4\gamma^\mu R_\mu^\rho - 2\gamma^\rho R)\psi_\rho,
+    \end{split}
+\end{equation}
+dove si è usato che 
+\begin{equation}
+    \gamma^{\mu\nu\rho}\gamma_{\sigma\tau} = \gamma^{\mu\nu\rho}_{\sigma\tau} + 6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} + 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]},
+\end{equation}
+dove $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 0$ per l'identità di Bianchi. Quindi, finalmente si ottiene che la variazione dell'azione di Rarita-Schwinger è
+\begin{equation}
+    \delta S_{RS} = \frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^{\mu}\psi^\nu \equiv -\delta S_{HE}.
+\end{equation}
+Dunque, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$.
+
+\section{Lezione 19.10}
++PRIMA PARTE.
+
+Il tensore $T_{ab}^\nu = (1/2)\b{\psi}_a\gamma^\nu\psi_b$ determina la torsione, e quindi $\omega_{ab}^\nu$, mentre la contorsione è
+\begin{equation}
+    K_{\mu\nu\rho} = \frac{1}{4}\b{\psi}_\mu\gamma_\rho\psi_\nu - \psi_\nu\gamma_\mu\psi_\rho + \b{\psi}_\rho\gamma_\nu\psi_\mu.
+\end{equation}
+Ora si sa che $\omega_\mu^{ab}(e^a_\mu,\psi_\mu) = \omega_\mu^{ab}(e) + K_\mu^{ab}(e_\mu^a,\psi_\mu)$, per cui l'azione è diversa da quella già vista
+\begin{multline}
+    S_{HE}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) + S_{RS}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) = \\ = S + \frac{1}{2k^2}\int d^4x\,e[R(e) - \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \Lag_{quartic}],
+\end{multline}
+dove il termine $\Lag_{quartic}$ contiene tutti i termini quartici nei campi $\psi_\mu$. La variazione di $\psi_\mu$ è $\delta\psi_\mu = \p_\mu\epsilon + (1/4)\omega_\mu^{ab}\gamma_{abc}$, per cui 
+\begin{equation}
+    \delta S = \int d^4x\,\bigg(\frac{\delta S}{\delta e}\delta_e S + \frac{\delta S}{\delta \psi}\delta_\psi S + \frac{\delta S}{\delta \omega}\delta_\omega S\bigg),
+\end{equation}
+dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. Si calcola, sapendo che $\gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d$, che 
+\begin{equation}
+    e\gamma^{\mu\nu\rho} = -i\epsilon^{\mu\nu\rho\sigma}\gamma_*\gamma_\sigma,
+\end{equation}
+cosicché 
+\begin{equation}
+    S_{RS} = \int d^4x\,\frac{i}{2k^2}\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_\nu\psi_\rho.
+\end{equation}
+Si devono calcolare le variazioni che compaiono in 
+\begin{equation}
+    \delta S = \delta_e S_{EH} + \delta_e S_{RS} + \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS},
+\end{equation}
+dove si è già trovato 
+\begin{equation}
+    \delta_e S_{HE} = \frac{1}{2k^2}\int d^4x\, eG_{\mu\nu}\b{\epsilon}\gamma^\mu\cdots(???),
+\end{equation}
+\begin{equation}
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_a D_\nu\psi_\rho\b{\epsilon}\gamma^a\psi_\sigma.
+\end{equation}
+Adesso 
+\begin{equation}
+    \delta_\psi S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_{[\nu}D_{\rho]}\epsilon,
+\end{equation}
+mentre 
+\begin{equation}
+    \delta_{\b{\psi}} S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}D_\nu\b{\psi}_\rho\gamma_*\gamma_\sigma\delta\psi_\mu,
+\end{equation}
+dove si è effettuato un Majorana flip con $t_3 = 1$ e $\delta \psi_\mu = D_\mu\epsilon$. Per integrare parti si considera che 
+\begin{equation}
+    \begin{split}
+        D_\nu(\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon) &= (D_\nu\b{\psi}_\rho)\gamma_*\gamma_\sigma D_\mu\epsilon + \b{\psi}_\rho\gamma_*(D_\nu \gamma_\sigma)D_\mu\epsilon \\
+        &+ \b{\psi}_\rho\gamma_*\gamma_\sigma D_\nu D_\mu\epsilon,
+    \end{split}
+\end{equation}
+che moltiplicata per $\epsilon^{\mu\nu\rho\sigma}$ restituisce 
+\begin{equation}
+    \epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon \equiv V^\nu,
+\end{equation}
+per cui $D_\nu V^\nu = \p_\nu V^\nu$. Quindi, sapendo che $\nabla_\mu\gamma_\rho = 0$ e che 
+\begin{equation}
+    \nabla_\nu\gamma_\rho = D_\nu\gamma_\rho - \Gamma^\sigma_{\nu\rho}\psi_\sigma,
+\end{equation}
+si ha 
+\begin{equation}
+    D_{[\nu}\gamma_{\sigma]} = \Gamma^\rho_{[\nu\sigma]}\gamma_\rho.
+\end{equation}
+Dunque, si ha 
+\begin{equation}
+    \begin{split}
+        \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(\frac{1}{4}\b{\psi}_\rho\gamma_*\gamma^{ab}\epsilon R_{\mu\nu ab} - \frac{1}{2}\psi_\rho\gamma_*\gamma_a D_\mu\epsilon T^a_{\mu\sigma}\bigg).
+    \end{split}
+\end{equation}
+Si vuole ora riscrivere questo come la somma di due contributi usando che 
+\begin{equation}
+    \gamma_\sigma \gamma^{ab} = \frac{1}{2}\underbrace{\comm{\gamma_\sigma}{\gamma^{ab}}}_{=2\delta_\sigma^{[a}\gamma^{b]}\,(2)} + \frac{1}{2}\underbrace{\acomm{\gamma_\sigma}{\gamma^{ab}}}_{=ie^d_\sigma\epsilon^{ab}_{cd}\gamma_*\gamma^c\,(1)},
+\end{equation}
+sostituendo si trovano due integrali 
+\begin{equation}
+    \begin{split}
+        (1) &= -\frac{1}{8k^2}\epsilon^{\mu\nu\rho\sigma}\epsilon_{abcd}e^d_\sigma R^{ab}_{\mu\nu}\b{\psi}_\rho\gamma^c\epsilon \\
+        &= -\frac{e}{2k^2}G_{\mu\nu}\b{\psi}^\nu\gamma^\mu\epsilon \\
+        &= - \delta S_{HE},
+    \end{split}
+\end{equation}
+per cui 
+\begin{equation}
+    \delta S = \delta_e S_{HE} + (\delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS})\_{\rem{without\,(1)}},
+\end{equation}
+quindi 
+\begin{equation}
+    (2) = -\frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}R_{\mu\nu\sigma b}\b{\psi}_\rho\gamma_*\gamma^b\epsilon.
+\end{equation}
+La prima e la seconda equazione di struttura di Cartan sono 
+\begin{equation}
+    de^a + \omega_b^a \wedge e^b = T^a,
+\end{equation}
+\begin{equation}
+    d\omega^{ab} + \omega^a_c \wedge \omega^{cb} = \rho^{ab}.
+\end{equation}
+Se la torsione è nulla, allora si trova la prima identità di Bianchi 
+\begin{equation}
+    \rho^a_b \wedge e^b = 0.
+\end{equation}
+Invece, se la torsione non è nulla, si ha 
+\begin{equation}
+    d\omega^a_b \wedge e^b - \omega^a_b \wedge de^b = dT^a,
+\end{equation}
+e usando le due formule di struttura di Cartan, si ha 
+\begin{equation}
+    \rho^a_b \wedge e^b = dT^a + \omega^a_b \wedge T^a,
+\end{equation}
+da cui 
+\begin{equation}
+    \rho^a_b = \frac{1}{2}R^a_{b\mu\nu}dx^\mu \wedge dx^\nu,
+\end{equation}
+quindi 
+\begin{equation}
+    R^a_{[\mu\nu\rho]} = -D_{[\mu}T^a_{\nu\rho]}.
+\end{equation}
+Dunque, si può scrivere 
+\begin{equation}
+    \begin{split}
+        \delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS} &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(D_\mu T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_b\epsilon \\
+        &+ T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu\epsilon) \\
+        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu(T^b_{\nu\sigma}\epsilon)
+    \end{split}
+\end{equation}
+e 
+\begin{equation}
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_aD_\nu\psi\b{\epsilon}\gamma^a\psi_\sigma.
+\end{equation}
+Ricordando che $T^b_{\nu\sigma} = (1/2)\b{\psi}_\nu\gamma^b\psi_\sigma$, per avere la forma del primo uguale a quella del secondo, o viceversa, si deve usare una delle identità di Fierz
+\begin{equation}
+    \lambda_4\gamma_\mu \lambda_{[1}\b{\lambda}_2\gamma^\mu\lambda_{3]} = 0,
+\end{equation}
+dove $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ sono spinori. In questo caso 
+\begin{equation}
+    \lambda_1 = \psi_\sigma,\quad \lambda_2 = \psi_\mu,\quad \lambda_3 = \gamma_*D_\nu\psi_\rho,\quad \lambda_4 = \b{\epsilon}.
+\end{equation}
+Usando poi che $D_\nu\b{\psi}_\rho\gamma_*\gamma^\lambda\psi_\sigma = \b{\psi}_\sigma\gamma_*\gamma^\lambda D_\nu\psi_\rho$ tramite Majorana flip, l'identità di Fierz è
+\begin{equation}
+    \b{\epsilon}(\gamma_\lambda\gamma_* D_\nu\psi_\rho)(\b{\psi}_{[\sigma}\gamma^\lambda\psi_{\mu]}) = -2\b{\epsilon}(\gamma^\lambda\psi_{[\sigma})(\b{\psi}_{\mu]}\gamma^\lambda\gamma_* D_\nu\psi_\rho).
+\end{equation}
+Quindi 
+\begin{equation}
+    \begin{split}
+        \delta S &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + \b{\epsilon}\gamma_a\gamma_*\p_\nu\psi_\rho T^a_{\sigma\mu}] \\
+        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + D_\nu\b{\psi}_\rho\gamma_a\gamma_*\b{\epsilon}T^a_{\sigma\mu}],
+    \end{split}
+\end{equation}
+dove si è effettuato un Majorana flip nel secondo termine con $t_3 = 1$. Dunque, sapendo che $D_\mu\gamma_a = 0$, si ha 
+\begin{equation}
+    \begin{split}
+        \delta S &= \frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}D_\nu(\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &= \frac{i}{4k^2}D_\nu(\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &= \frac{i}{4k^2}\int d^4x\,D_\nu V^\nu \\
+        &= \frac{i}{4k^2}\int d^4x\,\p_\nu V^\nu \\
+        &= 0.
+    \end{split}
+\end{equation}
+Dunque, si è dimostrato che $\delta S_{RS} + \delta S_{HE} = 0$. 
+
+\section{Soluzioni supersimmetriche (22.10)}
+Si considerano $e^a_\mu + (\rem{bosonic\,fields})$ e $\psi_\mu + (\rem{fermionic\,fields})$. Le variazioni generali sono
+\begin{equation}
+    \begin{cases}
+        \delta_\epsilon(\rem{bosonic\,field}) = \epsilon(\rem{fermionic\,field}) \\
+        \delta_\epsilon(\rem{fermionic\,field}) = \epsilon(\rem{bosonic\,field})
+    \end{cases}.
+\end{equation}
+Si suppone di avere una soluzione delle equazioni del moto $\{e^a_\mu,\psi_\mu\}$ e si introduce un $\c{\epsilon}$ e richiedere che 
+\begin{equation}
+    \begin{cases}
+        \delta_{\c{\epsilon}}\c{e}^\mu_a = 0 \\
+        \delta_{\c{\epsilon}}\c{\psi}_\mu = 0
+    \end{cases}.
+\end{equation}
+L'insieme $\{\c{e}_a^\mu,\c{\psi}_\mu,\c{\epsilon}\}$ è soluzione \emph{supersimmetrica} o \emph{BPS}. Queste BPS sono molto utili per geometria, AdS/CFT, compattification. Solitamente si assume che per i fermioni siano uguali a zero, la soluzione si può pensare quindi come un background classico dove studiare le fluttuazioni quantistiche (non si ha analogo classico dei fermioni), inoltre averli diversi da zero porta ad equazioni troppo complesse. Soluzioni bosoniche $e^\mu_a \neq 0$ e $\psi_\mu = 0$, dove 
+\begin{equation}
+    \begin{cases}
+        \delta_\epsilon\psi_\mu = \p_\mu\epsilon + \dfrac{1}{4}\omega_\mu^{ab}\gamma_{ab}\epsilon = 0 \\
+        \delta_\epsilon e^a_\mu = 0
+    \end{cases},
+\end{equation}
+dove la prima equazione restituisce equazioni per campi bosonici. 
+\begin{obs}
+    Siccome le equazioni sono lineari in $\epsilon$ è inutile se questo commuta od anti-commuta; per comodità si risolvono le equazioni pensandolo come commutante.
+\end{obs}
+Pensare $\epsilon$ come commutante influisce sui bilineari (forme differenziali)
+\begin{equation}
+    \epsilon'\gamma^{\mu_1\cdots \mu_r}\epsilon.
+\end{equation}
+Gli spinori commutanti sono detti \emph{spinori di Killing} e sono la controparte fermionica dei \emph{vettori di Killing}, trasformazioni infinitesime che lasciano invariata la metrica:
+\begin{equation}
+    \Lie_X g = 0.
+\end{equation}
+Se si hanno soluzioni più complicate, si richiede che $X$ sia simmetrico (???), per ogni campo della soluzione: $\Lie_X F = 0$, e così via. Si parte da 
+\begin{equation}
+    \nabla_\mu \epsilon = 0.
+\end{equation}
+Se ci si trovasse nello spazio di Minkowski si avrebbe $g_{\mu\nu} \equiv \eta_{\mu\nu}$, quindi $\omega$ nulla e $\nabla_\mu \epsilon = \p_\mu \epsilon = 0$ per cui $\epsilon = \rem{costante}$ è soluzione. Gli spinori hanno $2^{[D/2]}$ dimensioni, se sono di Majorana hanno quattro dimensioni reali. 
+\begin{equation}
+    \rem{fraction\,of\,SUSY\,preserved} = \frac{\rem{4-indipendent\,solutions}}{\rem{4-dimensional\,space}} = 1,
+\end{equation}
+si ha \emph{supersimmetria massima}. Quindi, se si risolvono le equazioni supersimmetriche si risolvono anche le equazioni del moto. Non è sempre così, ma il contrario vale sempre. Questa è la \emph{condizione di integrabilità}. 
+\begin{equation}
+    \comm{D_\mu}{D_\nu} = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\epsilon,
+\end{equation} 
+se $D_\mu \epsilon = 0$, allora $R_{\mu\nu ab}\gamma^{ab}\epsilon = 0$ è la condizione di integrabilità. Questo consiste nel passare da equazioni differenziali ad equazioni algebriche che separa i vincoli per il tensore di Riemann. Si possono riscrivere alcune cose 
+\begin{equation}
+    \gamma^\nu\gamma_{ab} = \gamma^\nu_{ab} + 2\delta^\nu_{[a}\gamma_{b]},
+\end{equation} 
+con $\gamma^\nu_{ab} = 0$ perché si usa l'identità di Bianchi con $T = 0$, e fare
+\begin{equation}
+    \gamma^\nu R_{\mu\nu ab}\gamma^{ab}\epsilon = 0 \Longrightarrow R_{\mu\sigma}\gamma^\sigma \epsilon = 0 \Longrightarrow \gamma^\rho R_{\mu\sigma} \gamma^\sigma \epsilon = 0.
+\end{equation}
+Si suppone di avere $\epsilon'$ che obbedisce alla stessa equazione 
+\begin{equation}
+    \begin{cases}
+        \gamma^\rho \gamma^\sigma \epsilon R_{\mu\sigma} = 0 \\
+        \gamma^\rho \gamma^\sigma \epsilon' R_{\mu\sigma} = 0
+    \end{cases},
+\end{equation}
+allora 
+\begin{equation}
+    \begin{cases}
+        \b{\epsilon}'\gamma^\rho \gamma^\sigma \epsilon R_{\mu\sigma} = 0 \\
+        \b{\epsilon}\gamma^\rho \gamma^\sigma \epsilon' R_{\mu\sigma} = 0
+    \end{cases},
+\end{equation}
+dove la seconda si può riscrivere tramite un Majorana flip come 
+\begin{equation}
+    \b{\epsilon}'\gamma^\sigma\gamma^\rho \epsilon R_{\mu\sigma} = 0.
+\end{equation}
+Si può sommare adesso le due equazioni 
+\begin{equation}
+    g^{\rho\sigma}R_{\mu\sigma}\b{\epsilon}'\epsilon = 0 \Longrightarrow R^\rho_\sigma \b{\epsilon}'\epsilon = 0,
+\end{equation}
+se $\b{\epsilon}'\epsilon \neq 0$, allora $R^\rho_\sigma = 0$ che è l'equazione del moto. Se $R_{\mu\nu} = 0$, allora la metrica $g_{\mu\nu}$ è detta \emph{metrica Ricci-flat}. Se si suppone di essere in segnatura euclidea si ha $\b{\epsilon}'\epsilon > 0$, allora ho il teorema 
+\begin{equation}
+    \p_\mu \epsilon = 0 \Longrightarrow R_{\mu\nu} = 0,\quad \rem{condizione\,necessaria}.
+\end{equation}
+\begin{obs}
+    Questa è la condizione che descrive le (???).
+\end{obs}
+Se si ha invece segnatura lorentziana, allora $\b{\epsilon}'\epsilon \ngtr 0$ quindi il fatto di prima non è più vero.
+\begin{ex}
+    In $D = 4$, si ha che $ds^2 = 2M(u,x,y)\,du^2 + 2\,du\,dv + dx^2 + dy^2$, dove $\p_v$ è un vettori di Killing ma con $||\p_v|| = 0$:
+    \begin{enumerate}
+        \item $\exists \epsilon^{1,2} : \nabla_\mu\epsilon = 0,\, \forall \mu$, $g_{\mu\nu}$ sarebbe $1/2- BPS$;
+        \item $R_{\mu\nu} \neq 0$, allora $\b{\epsilon}'\epsilon = 0$ perché valga $R^\rho_\sigma \b{\epsilon}'\epsilon = 0$, portando a soluzioni ad onde piane parallele (PP-warped);
+        \item le equazioni del moto fissato $H$ (obbedisce ad ODE), quindi $R_{\mu\nu} = 0$ e si ottengono le equazioni armoniche nello spazio trasverso per $H$.
+    \end{enumerate}
+\end{ex}
+
+\section{Spazio di anti-deSitter}
+Si modificano adesso le equazioni di supersimmetria. Si passa da $\delta_\epsilon\psi_\mu = D_\mu\epsilon$ a 
+\begin{equation}
+    \h{D}_\mu\epsilon := D_\mu\epsilon - \frac{1}{2L}\gamma_\mu\epsilon
+\end{equation}
+con $L$ costante arbitraria. Si suppone di voler studiare $\h{D}_\mu\epsilon = 0$. Si calcola prima 
+\begin{equation}
+    \begin{split}
+        \comm{\h{D}_\mu}{\h{D}_\nu}\epsilon &= \comm{D_\mu}{D_\nu}\epsilon - \frac{1}{2L}(D_\mu\gamma_\nu - D_\nu\gamma_\mu)\epsilon + (0)\epsilon + \frac{1}{4L^2}\comm{\gamma_\mu}{\gamma_\nu}\epsilon \\
+        &= \frac{1}{4}R_{\mu\nu ab}^{(\omega)}\gamma^{ab}\epsilon - \frac{1}{2L}T^a_{\mu\nu}\gamma_a\epsilon + \frac{1}{2L^2}\gamma_{\mu\nu}\epsilon \\
+        &= 0.
+    \end{split}
+\end{equation}
+Si ricorda che i $\gamma_{\mu\nu}$ sono i generatori del gruppo di spin. 
+
+Come prima si vogliono trarre conclusioni eliminando $\epsilon$, si semplifica la trattazione considerando soluzioni bosoniche: $\psi_\mu = 0$ implica $T_{\mu\nu}^a = 0$.
+\begin{equation}
+    [R^{ab}_{\mu\nu} + \frac{1}{L^2}(e^a_\mu e^b_\nu - e^b_\mu e^a_\nu)]\gamma_{ab}\epsilon = 0.
+\end{equation}
+Ora si può ripetere il conto precedente e ottenere alla fine 
+\begin{equation}
+    \bigg(R_{\mu\nu} + \frac{D - 1}{L^2}g_{\mu\nu}\bigg)\b{\epsilon}'\epsilon = 0.
+\end{equation}
+Il risultato di integrabilità è dato dall'\emph{equazione spinoriale di Killing}
+\begin{equation}
+    D_\mu \epsilon = \frac{1}{2L}\gamma_\mu\epsilon,
+\end{equation}
+e se $\b{\epsilon}'\epsilon \neq 0$ allora si ha 
+\begin{equation}
+\label{eq: equazione di Einstein nel vuoto con costante cosmologica}
+    R_{\mu\nu} + \frac{D - 1}{L^2}g_{\mu\nu} = 0,
+\end{equation}
+che è l'equazione di Einstein nel vuoto con costante cosmologica. Si può trovare una lagrangiana la cui \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica} sia un'equazione del moto. Quindi, si va a definire lo spazio di anti-deSitter in modo che risolva \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica}.
+\begin{equation}
+    S_{HE} = \frac{1}{2k^2}\int d^Dx\,e(R - \Lambda).
+\end{equation}
+\begin{obs}
+    Solitamente c'è $2\Lambda$, in ogni caso è una costante che si può ridefinire. 
+\end{obs}
+Dalle variazioni si trova 
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = -\frac{1}{2}\Lambda g_{\mu\nu},
+\end{equation}
+di cui, se ne si considera la traccia, si trova 
+\begin{equation}
+    R = \frac{D}{D - 2}\Lambda,
+\end{equation}
+sostituendo si trova 
+\begin{equation}
+    R_{\mu\nu} = \frac{\Lambda}{D - 2}g_{\mu\nu}.
+\end{equation}
+Se si fa il confronto con \eqref{eq: equazione di Einstein nel vuoto con costante cosmologica} si trova che 
+\begin{equation}
+    \Lambda < 0,\quad D \neq \{1,2\}.
+\end{equation}
+\begin{obs}
+    Il caso $\Lambda > 0$ (spazio deSitter) è incompatibile con la supersimmetria. 
+\end{obs}
+Si tenta un'ipotesi di una lagrangiana per una  supergravità nello spazio di anti-deSitter 
+\begin{equation}
+    \S_{N = 1} = \frac{1}{2k^2}\int d^Dx\,e[(R - \b{\psi}_\mu \gamma^{\mu\nu\rho}\h{D}_\nu\psi_\rho) - \Lambda],
+\end{equation}
+dove si è messo $\h{D}_\nu$ poiché $\delta_\epsilon\psi_\mu = \h{D}_\mu\epsilon$. Si deve controllare che questa azione sia ancora invariante per supersimmetria (primo ordine = lineare). 
+\begin{equation}
+    \begin{split}
+        -\b{\psi}\gamma^{\mu\nu\rho}\h{D}_\nu\psi_\rho &= -\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \frac{1}{2L}\b{\psi}_\mu\gamma^{\mu\nu\rho}\gamma_\nu\psi_\rho \\
+        &= (\rem{number}) - \frac{D - 2}{2L}\b{\psi}_\mu\gamma^{\mu\nu\rho}\psi_\rho.
+    \end{split}
+\end{equation}
+Quindi alla fine si ha 
+\begin{equation}
+    \rem{HE} + \rem{RS} + \rem{gravitino\,mass\,term} + \rem{cosmological constant}.
+\end{equation}
+\begin{obs}
+    $m_\psi \propto L^{-1}$, mentre $\Lambda \propto L^{-2}$, le due non sono indipendenti.
+\end{obs}
+Dunque 
+\begin{equation}
+    S_{N = 1,\rem{AdS}} = \underbrace{S_{HE} + S_{RS}}_{vecchi\,contributi} + \underbrace{S_{m_\psi} + S_{\Lambda}}_{nuovi\,contributi}.
+\end{equation}
+\begin{equation}
+    \delta\psi_\mu = D_\mu\epsilon - \frac{1}{2L}\gamma_\mu \epsilon \equiv \delta\psi^{(old)} + \delta\psi^{(new)}.
+\end{equation}
+Si inizia a calcolare, la connessione è sempre il bilineare nei graviti solito:
+\begin{align}
+    \delta_e S &= \delta_e S_{HE} + \delta_e S_{RS} + \delta_e S_{m_\psi} + \delta_e S_\Lambda, \\
+    \delta_\psi S &= \delta_\psi S_{HE} + \delta_\psi S_{RS} + \delta_\psi S_{m_\psi} + \delta_\psi S_\Lambda, \\
+    \delta_{\b{\psi}} S &= \delta_{\b{\psi}} S_{HE} + \delta_{\b{\psi}} S_{RS} + \delta_{\b{\psi}} S_{m_\psi} + \delta_{\b{\psi}} S_\Lambda.
+\end{align}
+Si organizzano i calcoli in termini di potenze di $L$ ($L^0$, $L^{-1}$, $L^{-2}$) che è arbitrario, cioè ogni termine dell'espansione si deve annullare da se. Al leading order ($L^0$):
+\begin{equation}
+    \delta_e S_{HE} + \delta_e S_{RS} + \delta_\psi^{(odd)} S_{HE} + \delta_\psi^{(odd)} S_{RS} + \delta_{\b{\psi}}^{(odd)} S_{HE} + \delta_{\b{\psi}}^{(odd)} S_{RS} = 0.
+\end{equation}

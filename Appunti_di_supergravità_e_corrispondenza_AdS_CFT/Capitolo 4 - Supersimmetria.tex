@@ -1,0 +1,108 @@
+\chapter{Supersimmetria}
+La supersimmetria può essere sia globale che locale. Trasforma bosoni in fermioni, e viceversa. Un'idea è quella di estendere un'algebra di Lie ad una \emph{superalgebra}. Un altro punto di vista è dato dalla trattazione lagrangiana e il teorema di Noether. 
+
+La più semplice teoria supersimmetrica è quella che comprende una campo scalare complesso $Z$ e uno spinore di Majorana $\chi$. I due campi possono essere uniti in multipletti $(Z,\chi)$. Risulta conveniente anche introdurre un \emph{campo ausiliario} scalare e complesso $F$ che non ha dinamica, ossia le cui derivate non compaiono nella lagrangiana. Si considerano quindi multipletti $(Z,\chi,F)$, che si può vedere in componenti come $(Z,P_L\chi,F)$ e $(\b{Z},P_R\chi,\b{F})$. L'azione per una lagrangiana libera è 
+\begin{equation}
+    S_K = -\int d^4x\,(\p^\mu\b{Z}\p_\mu Z + \b{\chi}\sl{\p}P_L\chi - \b{F}F).
+\end{equation}
+Le trasformazioni di supersimmetria sono 
+\begin{equation}
+    \begin{cases}
+        \delta Z = \dfrac{1}{\sqrt{2}}\b{\epsilon}P_L\chi \\[2ex]
+        \delta P_L\chi = \dfrac{1}{\sqrt{2}}P_L(\sl{\p}Z + F)\epsilon \\[2ex]
+        \delta F = \dfrac{1}{\sqrt{2}}\b{\epsilon}\sl{\p}P_L\chi
+    \end{cases},
+\end{equation}
+dove $\epsilon$ è un parametro spinoriale di Majorana anti-commutante, che è costante dato che la simmetria è globale. Per la parte destra si hanno invece 
+\begin{equation}
+    \begin{cases}
+        \delta \b{Z} = \dfrac{1}{\sqrt{2}}\b{\epsilon}P_R\chi \\[2ex]
+        \delta P_R\chi = \dfrac{1}{\sqrt{2}}P_R(\sl{\p}\b{Z} + \b{F})\epsilon \\[2ex]
+        \delta \b{F} = \dfrac{1}{\sqrt{2}}\b{\epsilon}\sl{\p}P_R\chi
+    \end{cases}.
+\end{equation}
+\begin{notz}
+    $\b{Z}$ e $\b{F}$ sono complessi coniugati, mentre $\b{\epsilon}$ è un coniugato di Majorana.
+\end{notz}
+Si deve adesso derivare quanto vale $\delta\b{\chi}P_R \equiv \delta \chi^TCP_R$. Si parte da
+\begin{equation}
+    (\delta P_R\chi)^TC = \delta \chi^TP_R^TC = \delta \chi^TCC^{-1}P_R^TC,
+\end{equation} 
+da cui si trova 
+\begin{equation}
+    \delta \b{\chi}P_R = \frac{1}{\sqrt{2}}\b{\epsilon}(-\p\b{Z} + \b{F})P_R.
+\end{equation}
+La variazione totale dell'azione $S_K$ la si può scrivere come 
+\begin{equation}
+    \begin{split}
+        \sqrt{2}\delta S_K &= \sqrt{2}\delta_{P_L\epsilon} S_K + \sqrt{2}\delta_{P_R\epsilon} S_K \\
+        &= \int d^4x\,[-\p^\mu \b{Z}\p_\mu(\epsilon P_L\chi) + \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}P_L\chi \\
+        &- \b{\chi}P_R\sl{\p}(P_LF\epsilon) + F\b{\epsilon}P_L\sl{\p}\chi].
+    \end{split} 
+\end{equation}
+Adesso, dato che 
+\begin{equation}
+    \b{\epsilon}P_L\sl{\p}\chi = \epsilon^TCP_L\gamma^\mu\p_\mu\chi = \overline{P_L\epsilon}\gamma^\mu\p_\mu\chi = -\p_\mu\b{\chi}\gamma^\mu P_L\epsilon
+\end{equation}
+e che combinandolo con $\b{\chi}P_R\sl{\p}(P_LF\epsilon)$ si ottiene una derivata totale
+\begin{equation}
+    -\p_\mu(\b{\chi}\gamma^\mu P_LF\epsilon),
+\end{equation}
+si ha 
+\begin{equation}
+    \delta S_K = \int d^4x\,(\p_\mu \b{\epsilon}P_L\chi + \b{\epsilon}P_L\p_\mu\chi) + \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}P_L\chi).
+\end{equation}
+Sfruttando ora l'identità
+\begin{equation}
+    \b{\epsilon}P_L\sl{\p}\b{Z}\sl{\p}\chi = \b{\epsilon}P_L\gamma^\mu\gamma^\nu\p_\nu\chi\p_\mu\b{Z} = \b{\epsilon}P_L\p^\mu + \b{\epsilon}P_L\gamma^{\mu\nu}\p_\nu(\p_\mu \b{Z}\chi),
+\end{equation}
+dove si è tenuto conto che $\gamma^{\mu\nu}\p_\mu\p_\nu Z = 0$ per simmetria, si ha 
+\begin{equation}
+    \delta S_K = \int d^4x\,[-\p^\mu\b{Z}(\p_\mu\b{\epsilon}P_L\chi) + \b{\epsilon}P_L\gamma^{\mu\nu}\p_\nu(\p_\mu\chi)].
+\end{equation}
+Integrando adesso per parti il secondo termine 
+\begin{equation}
+    \begin{split}
+        \delta S_K &= \int d^4x\,[-\p_\mu\b{Z}(\p_\mu\b{\epsilon}P_L\chi) - (\p_\nu\b{\epsilon})P_L\gamma^{\mu\nu}\p_\mu\b{Z}\chi] \\
+        &= \int d^4x\, [\p_\nu\b{\epsilon}P_L\gamma^\nu\gamma^\mu\chi\p_\mu\b{Z}], 
+    \end{split}
+\end{equation}
+che effettivamente soddisfa $\delta S_K = 0$ in quanto $\epsilon$ è costante. Per determinare la corrente conservata si deve temporaneamente supporre che il parametro $\epsilon$ non sia costante, in questo modo, dopo la variazione, si trova che 
+\begin{equation}
+    j^\mu_K = \frac{1}{\sqrt{2}}(P_L\sl{\p}\b{Z}\gamma^\mu\chi + P_R\sl{\p}Z\gamma^\mu\chi),
+\end{equation}
+dove 
+\begin{equation}
+    (\p_\mu\b{\epsilon}P_L\sl{\p}\b{Z}\gamma^\mu\chi)^* = (\p_\mu\b{\epsilon})^cP_L^c\sl{\p}^cZ\gamma^{\mu c}\chi.
+\end{equation}
+Si noti che la corrente $j^\mu_K$ ha anche struttura di spinore data da $\chi$, quindi è uno spinore-vettore. Dalla legge di conservazione si trova che la carica conservata, detta \emph{supercarica}, $Q_K$ è uno spinore in quanto si è fissato un indice vettoriale di Lorentz. 
+
+\subsection{Termini di interazione supersimmetrici (WIP)}
+Questi termini sono sufficientemente liberi: $S = S_K + S_F + S_{\b{F}}$, dove 
+\begin{equation}
+    S_F = \int d^4x\,FW'(z) - \frac{1}{2}\b{\chi}P_L\chi W''(z),
+\end{equation}
+con $W(z)$ una funzione olomorfa che rappresenta un \emph{superpotenziale} al momento arbitrario. Le variazioni sono 
+\begin{equation}
+    \delta \b{\chi}P_L = \frac{\b{\epsilon}}{\sqrt{2}}(-\sl{\p} z + F)P_L,\quad \delta W' = W''\delta z,\quad \delta W'' = W'''\delta z.
+\end{equation}
+Facendo la variazione tutti i termini in $F$ si cancellano, rimane 
+\begin{equation}
+    S = \int d^4x\,[\b{\epsilon}\sl{\p}P_L\chi W'(z) - \frac{1}{2}W'''(z)\b{\chi}P_L\b{\epsilon}P_L\chi + \frac{1}{2}W''(z)(\b{\epsilon}P_R\sl{\p}z\chi - \b{\chi}P_L\sl{\p}z\epsilon)],
+\end{equation}
+dove il secondo termine si annulla dato che contiene tre spinori $\chi$, si avrà sempre il quadrato delle componenti (almeno) e i numeri di Grassmann, quindi è nullo in $D = 4$. Facendo un Majorana flip si ha 
+\begin{equation}
+    -\b{\chi}P_L\sl{\p}z\epsilon = \b{\epsilon}P_R\sl{\p}z\chi.
+\end{equation}
+Si calcola ora 
+\begin{equation}
+    \p_\mu(\b{\epsilon}\gamma^\mu W'P_L\chi) = \p_\mu(\b{\epsilon})\gamma^\mu W'P_L\chi + \b{\epsilon}\sl{\p} zW''P_L\chi + \b{\epsilon}\gamma^\mu W'P_L\p_\mu(\chi),
+\end{equation}
+quindi dato che 
+\begin{equation}
+    -\int d^4x\,\p_\mu(\b{\epsilon})\gamma^\mu W'P_L\chi = 0,
+\end{equation}
+si può trovare 
+\begin{equation}
+    j^\mu = j^\mu_K + [\gamma^\mu W'P_L\chi + (\gamma^\mu W'P_L\chi)^*].
+\end{equation}

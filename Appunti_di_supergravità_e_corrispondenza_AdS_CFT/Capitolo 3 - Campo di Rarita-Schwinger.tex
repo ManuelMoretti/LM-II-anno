@@ -1,0 +1,98 @@
+\chapter{Campo di Rarita-Schwinger}
+Il campo di Rarita-Schwinger è un campo avente un indice spinoriale e un indice di Lorentz, è chiamato per questo \emph{spinore-vettore} ed è denotato con
+\begin{equation}
+    \Psi_{\alpha\mu}(x) \equiv \Psi_\mu(x),
+\end{equation}
+dove si è soppresso l'indice spinoriale per semplicità. In dimensione $D$ arbitraria, il numero di componenti in linea di principio sono $2^{[D/2]}D$, dove con $[D/2]$ se ne intende la parte intera, che in generale sono complesse. L'azione di questo campo deve soddisfare le condizioni già viste per il campo di Dirac:
+\begin{enumerate}
+    \item la lagrangiana deve essere invariante;
+    \item l'azione deve essere reale;
+    \item deve essere di prim'ordine nelle derivate $\p_\mu$;
+\end{enumerate}  
+insieme ad un'altra condizione. Per capire quale, si parte dall'azione del campo vettoriale più semplice, quella di Maxwell
+\begin{equation}
+    S_{Maxwell} = -\frac{1}{4}\int d^Dx\,F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+dove $A_\mu$ è invariante per trasformazioni $A_\mu \to A_\mu + \p_\mu\Lambda$ con $\Lambda$ una funzione scalare. In generale, i gradi di libertà che soddisfano le equazioni del moto sono detti \emph{on-shell}, altrimenti sono detti \emph{off-shell}. Si fissano i gradi di libertà del campo $A_\mu$ tramite il gauge-fixing, in questo caso tramite il gauge di Coulomb $\p^iA_i = 0$. Dall'equazione del moto $\p^\mu F_{\mu\nu} = 0$ si separano 
+\begin{equation}
+    \begin{cases}
+        \p^\mu F_{\mu 0} = 0 \\
+        \p^\mu F_{\mu i} = 0
+    \end{cases},
+\end{equation}
+che esplicitamente diventano
+\begin{equation}
+    \begin{cases}
+        \p^i(\p_i A_0 - \p_0 A_i) = 0 \\
+        \p^0(\p_0 A_i - \p_i A_0) + \p^j(\p_j A_i - \p_i A_j) = 0
+    \end{cases},
+\end{equation}
+dove, considerando il gauge di Coulomb, dalla prima si trova che $\nabla^2 A_0 = 0$ che fissa $A_0 = 0$, con questo risultato dalla seconda si trova 
+\begin{equation}
+    \p^0\p_0 A_i + \p^j\p_j A_i \equiv \square A_i = 0,
+\end{equation}
+che è l'equazione dell'onda piana per il campo $A_i$. Il numero di gradi di libertà effettivo è $D - 2$ dove le due condizioni sono date dal gauge-fixing e dal fatto che $\v{k} \perp \v{A}$, ossia che $\v{k} \cdot \v{A} = 0$. 
+
+Per il campo di Rarita-Schwinger si definisce allora la trasformazione 
+\begin{equation}
+    \psi_\mu \to \psi_\mu + \p_\mu\epsilon(x),
+\end{equation}
+dove $\epsilon$ è un parametro locale spinoriale. La lagrangiana deve essere invariante sotto questa trasformazione e di conseguenza ciò si ripercuote sull'azione, determinando la condizione aggiuntiva prima accennata. Una possibile azione quindi è
+\begin{equation}
+    S_{RS} = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
+\end{equation}
+La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha 
+\begin{equation}
+    \begin{split}
+        \delta(\b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho) &= \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho + \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\p_\rho\epsilon \\
+        &= \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho \\
+        &= \p_\mu(\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho),
+    \end{split}
+\end{equation}
+dove si è usata l'anti-simmetria di $\gamma^{\mu\nu\rho}$; essendo una derivata totale non contribuisce all'azione. La variazione dell'azione è
+\begin{equation}
+    \begin{split}
+        \delta_{RS} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
+        &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho -\p_\nu\b{\Psi}_\mu\gamma^{\mu\nu\rho}\delta\Psi_\rho),
+    \end{split}
+\end{equation}
+dove si è integrato per parti in secondo termine per ottenere una derivata totale. Quindi, si ottengono le due equazioni del moto del tutto equivalenti
+\begin{equation}
+    \begin{cases}
+        \gamma^{\mu\nu\rho}\p_\nu\Psi_\rho = 0 \\
+        \p_\nu\b{\Psi}_\rho\gamma^{\mu\nu\rho} = 0
+    \end{cases}.
+\end{equation} 
+Le equazioni del moto possono essere riscritte in maniera equivalente come 
+\begin{equation}
+    \gamma^\mu(\p_\mu\psi_\nu - \p_\nu\psi_\mu) = 0.
+\end{equation}
+Per vederlo, servono alcune identità delle matrici $\gamma$, cioè 
+\begin{equation}
+    \gamma_\mu g^{\mu\nu\rho}\p_\nu\psi_\rho = 0,\quad \gamma^{\mu\nu\rho} = \gamma^{\mu}\gamma^{\nu\rho} - \eta^{\mu\nu}\gamma^\rho + \eta^{\mu\rho}\gamma^\nu.
+\end{equation}
+Si dimostra ora l'inverso... +CONTO D.O.F.
+
+\section{Elicità}
+L'elicità permette di classificare i campi massless:
+\begin{enumerate}
+    \item per $h = \pm 3/2$ si ha il campo di Rarita-Schwinger, ossia il \emph{gravitino};
+    \item per $h = \pm1$ si ha il campo di Maxwell, ossia il fotone;
+    \item per $h = \pm 1/2$ si ha il fermione di Weyl;
+    \item per $h = \pm 2$ si ha il campo metrico, ossia il \emph{gravitone}.
+\end{enumerate}
+\begin{obs}
+    In Fisica delle particelle quando si parla di spin si ha di fatto a che fare con le rappresentazioni massless del gruppo di Poincaré.
+\end{obs}
+\begin{obs}
+    Questi conteggi sono fatti assumendo come metrica $\eta_{\mu\nu}$, ma andrebbero rifatti per uno spazio non piatto. 
+\end{obs}
+All'azione di Rarita-Schwinger è possibile aggiungere un termine di massa 
+\begin{equation}
+    S_{RS} = -\int d^Dx\,\b{\psi}_\mu(\gamma^{\mu\nu\rho}\p_\nu - m\gamma^{\mu\rho})\psi_\rho,
+\end{equation}
+il quale rompe l'invarianza di gauge, come accade con l'equazione di Proca per il campo $A_\mu$ massivo, e il numero di gradi di libertà on-shell diventano in $D = 4$ pari a 
+\begin{equation}
+    N_{\rem{d.o.f}} = \frac{1}{2}(D - 2)2^{[D/2]} = 4,
+\end{equation}
+dove quattro sono in generale numeri complessi, ma sono reali per gli spinori di Majorana.
