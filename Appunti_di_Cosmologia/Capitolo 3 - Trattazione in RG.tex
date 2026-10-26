@@ -134,16 +134,16 @@ Si parte dal fatto che la densità è legata alla massa, e quest'ultima può ess
 \end{equation}
 Tuttavia, in Relatività parlare di volumi non è banale, in quanto essi rappresentano ipersuperfici tridimensionali dello spaziotempo valutate a tempo costante. Per generalizzare questo concetto a ipersuperfici tridimensionali generiche (non necessariamente a tempo costante), si può definire il flusso di una quantità $S^{\alpha\beta}$ attraverso l'elemento di volume ipersuperficiale covariante $d\Sigma_\mu$. In analogia con il caso tridimensionale, dove l'elemento d'area orientato è espresso tramite il prodotto esterno $\wedge$ come
 \begin{equation}
-    dS_i = \frac{1}{2} \varepsilon_{ijk}\,dx^j \wedge dx^k
+    dS_i = \frac{1}{2} \epsilon_{ijk}\,dx^j \wedge dx^k
 \end{equation}
 l'estensione a quattro dimensioni definisce l'elemento di volume ipersuperficiale a tre dimensioni $d\Sigma_\mu$ come
 \begin{equation}
-    d\Sigma_\mu = \frac{1}{3!} \varepsilon_{mu\nu\rho\sigma}\,dx^\nu \wedge dx^\rho \wedge dx^\sigma
+    d\Sigma_\mu = \frac{1}{3!} \epsilon_{mu\nu\rho\sigma}\,dx^\nu \wedge dx^\rho \wedge dx^\sigma
 \end{equation}
-dove $\varepsilon_{\mu\nu\rho\sigma}$ è il tensore completamente antisimmetrico di Levi-Civita. Imponendo che l'integrale sia uguale al quadrimomento, si ottiene la relazione generale
+dove $\epsilon_{\mu\nu\rho\sigma}$ è il tensore completamente antisimmetrico di Levi-Civita. Imponendo che l'integrale sia uguale al quadrimomento, si ottiene la relazione generale
 \begin{equation}
 \label{eq: quadrimomento in forma integrale}
-    q^\alpha = \frac{1}{3!} \int dx^\lambda dx^\mu dx^\nu \varepsilon_{\lambda\mu\nu\beta} S^{\alpha\beta} = \int d\Sigma_\beta\,S^{\alpha\beta}. 
+    q^\alpha = \frac{1}{3!} \int dx^\lambda dx^\mu dx^\nu \epsilon_{\lambda\mu\nu\beta} S^{\alpha\beta} = \int d\Sigma_\beta\,S^{\alpha\beta}. 
 \end{equation}
 Il fattore combinatorio $1/3!$ compensa le permutazioni dei differenziali.
 \begin{obs}
@@ -506,7 +506,7 @@ where we have first expressed, for a massive particle, the four-momentum $q^\mu 
 that is precisely $q^i$ carried along $v^j$. 
 
 \subsubsection{The multi-component Universe}
-The cosmological medium is, of course, not made of a single type of objects. In the beginning, we just considered galaxies, but we can now widen our perspective and include in the same picture stars and planets and gas—baryons, in general, as well as photons and neutrinos. The advantage of this kinetic-theory description is that, on the scales that we are considering, you can regard even a galaxy as an effective particle and write a phase-space distribution function for it. The derivation applies to any constituent that can be idealised as a localised object carrying a well-defined four-momentum and invariant mass. A galaxy, as an isolated composite object, still obeys the mass-shell constraint, where in this case the four-momentum is the sum of the four-momenta of all its microscopic constituents and the invariant mass of the whole galaxy includes its internal kinetic energy, binding energy, thermal energy, and so on and so forth. Each species $s$ of constituents of the universe is thus described by its own distribution function $f_s$, defined on the corresponding future mass shell $q^\mu q_\mu = -m^2c^4$. Geometrically, the full phase-space can be regarded as the disjoint union of the mass shells associated with the different species. Since the total four-momentum carried by the cosmic medium is the sum of the four-momenta carried by its different constituents (the four-momentum is a spacetime vector and thus is additive), their stress-energy contributions add linearly, thus 
+The cosmological medium is, of course, not made of a single type of objects. In the beginning, we just considered galaxies, but we can now widen our perspective and include in the same picture stars and planets and gas—baryons, in general, as well as photons and neutrinos. The advantage of this kinetic-theory description is that, on the scales that we are considering, you can regard even a galaxy as an effective particle and write a phase-space distribution function for it. The derivation applies to any constituent that can be idealised as a localised object carrying a well-defined four-momentum and invariant mass. A galaxy, as an isolated composite object, still obeys the mass-shell constraint, where in this case the four-momentum is the sum of the four-momenta of all its microscopic constituents and the invariant mass of the whole galaxy includes its internal kinetic energy, binding energy, thermal energy, and so on and so forth. Each species $s$ of constituents of the Universe is thus described by its own distribution function $f_s$, defined on the corresponding future mass shell $q^\mu q_\mu = -m^2c^4$. Geometrically, the full phase-space can be regarded as the disjoint union of the mass shells associated with the different species. Since the total four-momentum carried by the cosmic medium is the sum of the four-momenta carried by its different constituents (the four-momentum is a spacetime vector and thus is additive), their stress-energy contributions add linearly, thus 
 \begin{eqnarray}
     T^{\mu\nu} = \nsum_s T^{\mu\nu}_{(s)} = c\nsum_s \int d\Pi_s\,q^\mu q^\nu f_s.
 \end{eqnarray}
@@ -518,7 +518,7 @@ Consider now the stress-energy tensor expression in equation \eqref{eq: stress-e
 \begin{equation}
     q^iq^j = g^{ij}\frac{q^2}{3} + (q^iq^j - g^{ij}\frac{q^2}{3}),
 \end{equation}
-where we emphasised that $q^2 \equiv |q|^2 = g_{ij}q^iq^j$ with $g^{ij}$ the inverse spatial metric induced by $g_{\mu\nu}$ since the metric is block diagonal. Integrating over $d^3q$, the latter term vanishes because it is odd and trasverse in the $i$th and $j$th directions. The remaining term is 
+where we emphasised that $q^2 \equiv |q|^2 = g_{ij}q^iq^j$ with $g^{ij}$ the inverse spatial metric induced by $g_{\mu\nu}$ since the metric is block-diagonal. Integrating over $d^3q$, the latter term vanishes because it is odd and trasverse in the $i$th and $j$th directions. The remaining term is 
 \begin{equation}
     T^{ij} = g^{ij}\int \sqrt{-\det{g}}d^3q\,\frac{c^2q^2}{3E(q)}f(q;t),
 \end{equation}
@@ -546,6 +546,7 @@ On the opposite side of the spectrum we have photons, which are massless. Hence,
 \end{eqnarray}
 Henceforth, we shall therefore broadly categorise the species constituing the content of the Universe as ``matter'' and ``radiation'', labelled respectively as $s = \{m,r\}$, where the former group includes all species whose invariant mass $m$ is much larger than its momentum, and the latter all relativistic particles. Finally, the total stress-energy tensor is simply 
 \begin{equation}
+\label{eq: total stress-energy tensor}
     T^{\mu\nu} = 
     \begin{pmatrix}
         \b{\epsilon} & \v{0}^T \\
@@ -556,3 +557,112 @@ with the total energy density and isotropic pressure being
 \begin{equation}
     \b{\epsilon} = \nsum_s \b{\epsilon}_s,\quad \b{p} = \nsum_s \b{p}_s.
 \end{equation}
+
+\subsection{Comoving observers}
+In the previous discussion, we have obtained an expression for the stress-energy tensor in terms of the components of the four-momentum perfectly fit for general relativity. The interpretation of $T^{00}$ as the energy density and $T^{ij}$ as the isotropic pressure, though, leveraged the use of a local intertial frame, in which the four-momentum components assume their familiar special-relativistic interpretation. Therefore, we now clarify some concepts about observers and coordinate frames. through 
+
+In generale relativity, an observer is represented by a time-like worldline, with four-velocity $u^\mu = dx^\mu/d\lambda = -ic(du^\mu/ds)$, where we have chosen the proper time $i(ds/c)$ as an affine factor\footnote{We shall use $i(ds/c)$ to avoid ambiguity betweem the widely adopted notation of $\tau$ for the proper time and our use for the conformal time}. In an FLRW Universe there is a distinguished family of observers: the \emph{comoving observers}, namely those at rest with respect to the Hubble flow. In comoving coordinates, their spatial position remains constant, namely $x^i = \rem{costant}$, so that 
+\begin{equation}
+    u^\mu = 
+    \begin{pmatrix}
+        c \\
+        \bm{0}^T
+    \end{pmatrix}.
+\end{equation}
+Along the coordinates of the comoving observer, we have $dx^i = 0$, and therefore the FLRW line element reduces to $ds^2 = -c^2\,dt^2$, showing that the cosmic time is precisely the proper time measured by comoving observers. On top of being comoving, observer at rest with the Hubble flow are also freely falling, This means that their four-acceleration vanishes, resulting in the geodesic equation 
+\begin{equation}
+    \frac{D u^\mu}{D\lambda} = u^\alpha\nabla_\alpha u^\mu = 0.
+\end{equation}
+Therefore the fundamental comoving observers of an FLRW spacetime are themselves freely falling.
+\begin{obs}
+    Note that the converse is not true: an observer may move with a peculiar velocity relative to the
+Hubble flow and nevertheless be freely falling.
+\end{obs}
+As freely-falling observers, we can always construct a local inertial frame around a comoving observer. The observer then sees, locally, the laws of special relativity. The usual FLRW coordinates are not such a local inertial system: although a comoving observer has $x^i = \rem{constant}$, the FLRW metric still contains the time-dependent scale factor and has non-vanishing connection coefficients. The same comoving observer may therefore be described either in the global FLRW coordinates or in a local inertial frame erected along its worldline. But it is relative to the preferred family of comoving observers that we can define the homogeneous cosmological energy density and pressure.
+For instance, take the expression for the stress-energy tensor derived in equation \eqref{eq: stress-energy tensor in GR}: we can project it onto the
+four-velocity of comoving observers. Since $u_\mu = (-c, 0, 0, 0)$, we can construct the scalar quantity 
+\begin{equation}
+    \frac{1}{c^2}u^\mu u^\nu T_{\mu\nu} = \frac{1}{c^2}(-c)^2 T^{00} = \b{\epsilon}.
+\end{equation}
+We can also construct an object that projects a tensor onto hypersurfaces orthogonal to the four-velocity, that is 
+\begin{equation}
+\label{eq: projective operator}
+    \perp_{\mu\nu} := g_{\mu\nu} + \frac{1}{c^2}u_\mu u_\nu.
+\end{equation}
+By construct the operator in \eqref{eq: projective operator} in such that $\perp_{00} = \perp_{0i} = \perp_{i0} = 0$, therefore
+\begin{equation}
+    \perp_{ij} = g_{ij}.
+\end{equation}
+Indeed, it is pretty easy to se that $\perp_{\mu\nu} u^\mu = 0$ since $\perp_{00} = \perp_{0i} = \perp_{i0} = 0$. Thus, we obtain 
+\begin{equation}
+    \perp_{\mu\nu}T^{\mu\nu} = \perp_{ij}T^{ij} = g_{ij}T^{ij} = g_{ij}\b{p}g^{ij} = 3\b{p}.
+\end{equation}
+In other words, the projections of the stress-energy tensor along and orthogonal to the comoving four-velocity give, respectively, the energy density and, three times, the isotropic pressure.
+
+Summarising, the energy density and isotropic pressure are defined covariantly by projections of $T^{\mu\nu}$ relative to the comoving four-velocity and can therefore be evaluated in any coordinate system. Their physical interpretation, however, is most transparent in a local inertial frame adapted to a comoving observer. There, at the observer's position, the metric is Minkowskian and the particle four-momentum takes its familiar special-relativistic form, $E = q^0c$ and $\v{q} = q^i$. Correspondingly, for an isotropic medium, $T^{00} = \b{\epsilon}$, $T^{11} = T^{22} = T^{33} = \b{p}$, and the mixed time-space components vanish. 
+
+\section{Friedmann equations again}
+Since we have previously computed all the non-zero components of the Christoffel symbols for the FLRW metric, we can now evaluate the conservation equation $\nabla_\mu T^{\mu\nu} = 0$. We start from $\nu = i$. The contraction $\nabla_\mu T^{\mu i}$ tells us immediately that the only non-vanishing terms come from $\mu \neq 0$. However, the spatial part of the stress-energy tensor is proportional to the spatial metric, and the proportionality is time-dependent but not space-dependent; therefore,
+\begin{equation}
+    \nabla_\mu T^{\mu i} \equiv \nabla_j T^{ji} \propto \nabla_j g^{ij} = 0,
+\end{equation} 
+because we have chosen the Levi-Civita connection which is metric-compatible. This means that the spatial components of the conservation of the stress-energy tensor carry no dynamical information. Instead, for $\nu = 0$ we have 
+\begin{equation}
+    \begin{split}
+        0 &= \nabla_\mu T^{\mu 0} \\
+        &= \p_\mu T^{\mu 0} + \Gamma^\mu_{\mu\alpha}T^{\alpha 0} + \Gamma^0_{\mu\alpha} T^{\mu\alpha} \\
+        &= \p_0 T^{00} + \Gamma^i_{i0}T^{00} + \Gamma^0_{ij}T^{ij} \\
+        &= \frac{1}{c}\frac{d\b{\epsilon}}{dt} + \frac{\dot{a}}{ca}\delta^i_i\b{\epsilon} + \frac{\dot{a}}{ca}\delta^j_i\b{p}\delta^i_j.
+    \end{split}
+\end{equation}
+Hence, the conservation of the stress-energy tensor leads us to the cosmological continuity equation 
+\begin{equation}
+\label{eq: cosmological continuity equation in GR}
+    \dot{\b{\epsilon}} = -3H(\b{\epsilon} + \b{p}),
+\end{equation}
+which validates the previous result in \eqref{eq: equazione di continuità cosmologica} in the case of a matter-only Universe, namely the ``fluid of galaxies'' discussed before. In fact, in this scenario $\dot{\b{\epsilon}}_m = \b{\epsilon}_mc^2$ and $\b{p}_m = 0$, and equation \eqref{eq: cosmological continuity equation in GR} reduces exactly to \eqref{eq: equazione di continuità cosmologica}. In the case of radiation, instead, we obtain 
+\begin{equation}
+    \dot{\b{\epsilon}}_r = -4H\b{\epsilon}_r.
+\end{equation} 
+This allows us to solve for the evolution of tehe energy density of radiatino as a function of scale factor, remembering that $H \equiv a/\dot{a}$. Actually, we can consider both cases at once thanks to equation \eqref{eq: total stress-energy tensor} and we get 
+\begin{equation}
+    \b{\epsilon}_s(a) = \b{\epsilon}_{s,0}a^{-(1 + 3\omega_s)}.
+\end{equation}
+For matter, we have the familiar scaling of density with volume, which also implies $\bar{\epsilon}_m \simeq a^{-3}$, since for matter the energy is almost only due to the rest mass. Interestingly, for radiation instead we find a steeper dependence, $\bar{\epsilon}_r \simeq a^{-4}$. In hindsight, this can be easily understood by taking a massless particle like photons as an example. In their case, we have $E \equiv q c = h \nu = 2 \pi \hbar c / \lambda$, where $h$ and $\hbar$ are, respectively, the tout-court and reduced Planck constants, and $\lambda$ the wavelength of the photon. The energy density, then, gets three factors of $a$ due to the change in volume, plus an additional factor due to the presence of the wavelength at its denominator. One important note: the conservation of the stress-energy tensor is a statement about the whole energy content. Since $T^{\mu\nu} = \sum_s T_{(s)}^{\mu\nu}$, each separate species $s$ is conserved only as long as it does not exchange energy or momentum with others—namely, if it does not interact. In that case, we would have to take the effect of the interaction into account, which corresponds to a flux of stress-energy from one species to another. The interaction can be described by an energy-momentum current four-vector for each species, $I_{(s)}^\nu$, and $\nabla_\mu T_{(s)}^{\mu\nu} = I_{(s)}^\nu$; with $\sum_s I_{(s)}^\nu = 0$, so that, globally, $\sum_s \nabla_\mu T_{(s)}^{\mu\nu} = 0$. Since the contraction of the stress-energy tensor with the spatial components of the covariant derivative vanishes identically in a homogeneous and isotropic Universe, the only thing that can couple matter and radiation is $I_{(s)}^0$. Once we project it onto the comoving observer's four-velocity, $u_\nu I_{(s)}^\nu$ assumes the meaning of an energy transfer. In its presence, \eqref{eq: cosmological continuity equation in GR} would present an inhomogeneous term due to the change in energy density due to the energy transfer between matter and radiation.
+
+The standard working assumption is that the evolution of matter and radiation can be considered as decoupled, so that \eqref{eq: cosmological continuity equation in GR} translates into to two separate conservations equations for the two components. But how justified is this assumption? Although matter and radiation do interact, the associated net energy transfer is generally negligible for the homogeneous cosmological back-ground. Absorption, emission, photoionisation, recombination, Compton scattering, and similar processes may be crucial for the thermal and ionisation state of matter, but the energies involved are tiny compared with the rest-mass energy that dominates the matter density: for instance, the $\SI{13.6}{\eV}$ ionisation energy of hydrogen is only around $1.5 \times 10^{-8}$ of the proton rest-mass energy, $m_p c^2 \simeq \SI{938}{\MeV}$, while the thermal energy of a $\SI{e4}{\kelvin}$ gas is of order $\SI{1}{\eV}$ per particle, namely around $10^{-9}m_p c^2$. Moreover, much of the radiation absorbed by gas or dust is subsequently re-emitted, so that energy is largely redistributed rather than permanently transferred to matter. More energetic conversion processes do occur: over its main-sequence lifetime, a Sun-like star radiates an amount of energy corresponding to roughly $7 \times 10^{-4}$ of its mass, whereas a binary black-hole merger can radiate a few percent of the participating mass as gravitational waves. Such processes, however, involve only a small fraction of the total cosmic matter content and therefore do not appreciably alter its homogeneous background evolution. We may thus neglect the net energy-transfer term between the matter and radiation sectors and treat them, to excellent approximation, as separately conserved.
+
+The set of Einstein's field equations applied to the FLRW metric will result into two separate equations, one coming from the time-time component and one from the space-space ones. These are the two Friedmann equations 
+\begin{equation}
+\label{eq: first Friedmann equation in GR}
+    \bigg(\frac{\dot{a}}{a}\bigg)^2 = \frac{8\pi G}{3c^2}\b{\epsilon} - \frac{Kc^2}{a^2},
+\end{equation}
+\begin{equation}
+\label{eq: second Friedmann equation in GR}
+    \frac{\ddot{a}}{a} = -\frac{4\pi G}{3c^2}(\b{\epsilon} + 3\b{p}).
+\end{equation}
+Comparing these two equations just obtained with the previous results in \eqref{eq: prima equazione di Friedmann} and \eqref{eq: seconda equazione di Friedmann} in the case of a matter-only Universe, namely for $\b{\epsilon}_m = \b{\rho}c^2$ and $\b{p}_m = 0$, we can see that they match. In particular, the first Friedmann equation is exactly the same, but for the now insight about the geometrical meaning of the back-then integration constant $K$. In the other hand, the second Friedmann equation in \eqref{eq: second Friedmann equation in GR} now contains a new piece of information, namely that the pressure contributes to the acceleration of the Universe's expansion.
+
+\subsubsection{Cosmological constant}
+In any case, be its content just radiation or matter, or even matter and curvature, the Universe is very different from the static, immutable box of stars of the classical Newtonian theory, and this represented a conceptual problem for Einstein. It was as a solution to this problem that the cosmological constant $\Lambda$, was first introduced. Indeed, the two Friedmann equations \eqref{eq: first Friedmann equation in GR} and \eqref{eq: seconda equazione di Friedmann} are defined up to a constant, since $\nabla_{\lambda}g_{\mu\nu} \equiv 0$. In other words, Einstein's field equation is equivalent to
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
+\end{equation}
+where all quantities but $\Lambda$ are tensorial fields, namely functions of the spacetime coordinates $x^\alpha$. The resulting Friedmann equations then read
+\begin{equation}
+\label{eq: first Friedmann equation with cosmological constant}
+    \left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G}{3} \bar{\rho} - \frac{K c^2}{a^2} + \frac{\Lambda c^2}{3} ,
+\end{equation}
+\begin{equation}
+\label{eq: second Friedmann equation with cosmological constant}
+    \frac{\ddot{a}}{a} = -\frac{4\pi G}{3} (\b{\epsilon} + 3\bar{p}) + \frac{\Lambda c^2}{3} .
+\end{equation}
+Now, assuming a static Universe dominated by matter, that is $\dot{a} = \ddot{a} = 0$ and $\b{\epsilon} = \b{\epsilon}_{\rem{m}} = \bar{\rho}_{\rem{m}} c^2$ and $\bar{p} = \bar{p}_{\rem{m}} = 0$, from \eqref{eq: second Friedmann equation with cosmological constant} we find
+\begin{equation}
+    \Lambda_{\rem{E}} = 4\pi G \bar{\rho}_{\rem{m}} c^{-2} ,
+\end{equation}
+where the subscript ``E'' is introduced to emphasise that the indexed values obtained here just refer to Einstein's attempt at obtaining a static Universe. Once inserted into \eqref{eq: first Friedmann equation with cosmological constant} we get
+\begin{equation}
+    K_{\rem{E}} = 4\pi G \bar{\rho}_{\rem{m}} a_{\rem{E}}^2 c^{-2} ,
+\end{equation}
+where it is worth emphasising that, in such a static Universe, $a_{\rem{E}}$ is an overall normalisation of the Universe's curvature radius of the Universe. All quantities are positive, meaning that $K_{\rem{E}} > 0$, namely that the Universe is closed. However, it soon became clear that such a Universe is indeed static, but it is highly unstable, as the smallest fluctuations on $\bar{\rho}$ will make it either expand exponentially, or plunge into a Big Crunch. Einstein's cosmological constant was thus quickly disposed of, labelled by his creator as: ``My biggest blunder''. Irony of life, $\Lambda$ is currently one of the most important, even if not fully understood, constituents of the \emph{concordance cosmological model}, which as been named after it and cold dark matter as $\Lambda$CDM.

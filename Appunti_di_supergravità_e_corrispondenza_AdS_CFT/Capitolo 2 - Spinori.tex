@@ -1,19 +1,19 @@
 \chapter{Spinori}
-Ci si concentra ora sullo spazio di Minkowski 4-dimensionale e sul gruppo di Lorentz $\group{SO}{1,3}$. Se si guarda l'algebra associata $\alg{so}{1,3}$, si può dimostrare che questa è isomorfa alla somma diretta di due copie dell'algebra $\alg{so}{2}$ associata al gruppo $\group{SO}{2}$, ossia
+Le rappresentazioni di spin esistono per ogni dimensione $D$ dello spaziotempo. Per introdurle, ci si concentra sullo spazio di Minkowski 4-dimensionale $\bb{M}^4$. Il gruppo di Lorentz in quattro dimensioni è $\group{SO}{1,3}$, la cui algebra associata è $\alg{so}{1,3}$. Si può dimostrare che la complessificazione dell'algebra di Lorentz $\alg{so}{1,3}_{\bb{C}} \cong \alg{so}{1,3} \ot \bb{C} $ è isomorfa alla somma diretta di due copie della complessificazione dell'algebra $\alg{su}{2}$, cioè a $\alg{sl}{2,\bb{C}} \cong \alg{su}{2} \ot \bb{C}$, associata al gruppo $\group{SL}{2,\bb{C}}$, ovvero 
 \begin{equation}
-    \alg{so}{1,3} \cong \alg{so}{2} \op \alg{so}{2}.
+    \alg{so}{1,3}_{\bb{C}} \cong \alg{sl}{2,\bb{C}} \op \alg{sl}{2,\bb{C}}.
 \end{equation}
-I generatori dell'algebra si indicano tipicamente con $T_i$ e soddisfano la relazione di commutazione 
+I generatori di $\alg{su}{2}$ si indicano tipicamente con $T_i$ e soddisfano la relazione di commutazione 
 \begin{equation}
-    \comm{T_i}{T_j} = if_{ijk}T_k,
+    \comm{T_i}{T_j} = if_{ijk}T^k,
 \end{equation}
-dove le $f_{ijk}$ sono le costanti di strutture, che in questo caso coincidono con il simbolo di Levi-Civita $\epsilon_{ijk}$; quindi, più precisamente
+dove le $f_{ijk}$ sono le \emph{costanti di struttura}, che in questo caso coincidono con il simbolo di Levi-Civita $\epsilon_{ijk}$; quindi, più precisamente
 \begin{equation}
-    \comm{T_i}{T_j} = i\epsilon_{ijk}T_k.
+    \comm{T_i}{T_j} = i\epsilon_{ijk}T^k.
 \end{equation}
-Una possibile base dell'algebra di Lorentz si può scrivere tramite le matrici di Pauli $\sigma_i$, con le quali 
+Una possibile base dell'algebra di Lorentz si può scrivere tramite le matrici di Pauli $\sigma_i$, con le quali si definiscono 
 \begin{equation}
-    T_i = \frac{\sigma_i}{2},
+    T_i \equiv \frac{\sigma_i}{2},
 \end{equation}
 dove 
 \begin{equation}
@@ -33,71 +33,93 @@ dove
         0 & -1
     \end{pmatrix}.
 \end{equation}
-Le rappresentazioni di questo gruppo sono poi etichettate da un numero intero, o eventualmente semi-intero, indicato da $j \in \bb{Z}/2$ con cui si scrive la dimensione della rappresentazione $\rho$ data da
+Le rappresentazioni irriducibili di dimensione finita del gruppo $\group{SU}{2}$ sono poi etichettate da un numero intero o, eventualmente, semi-intero $j \in \bb{N}_0/2$ con cui si scrive la dimensione della rappresentazione $\rho$, data da
 \begin{equation}
     \dim{\rho} = 2j + 1.
 \end{equation}
-Tuttavia, dato l'algebra di $\group{SO}{1,3}$ è somma diretta di due algebre, saranno necessari due numeri $j$ e $j'$ per identificare una rappresentazione del gruppo. In particolare, le rappresentazioni di dimensione minore inequivalenti sono due: $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$; entrambe rappresentazioni 2-dimensionali. In generale, una rappresentazione si dice spinoriale se $j + j' \in \bb{Z}/2$. 
-
-Il prossimo passo è notare che esiste un omomorfismo tra $\group{SL}{2,\bb{C}}$ e $\group{SO}{1,3}$. Si definiscono quindi le matrici 
+Il fatto interessante è che l'algebra $\alg{sl}{2,\bb{C}}$ possiede relazioni di commutazione della stessa forma di quelle di $\alg{su}{2}$. Si possono pertanto etichettare con un numero $j \in \bb{N}_0/2$ anche le rappresentazioni di $\group{SL}{2,\bb{C}}$. Tuttavia, dato che $\alg{so}{1,3}_{\bb{C}}$ si decompone nella somma diretta di due algebre, sono necessari due numeri $j$ e $j'$ per identificare una rappresentazione del gruppo di Lorentz, le quali vengono appunto indicate con $\bm{(j,j')}$ e la cui dimensione è
 \begin{equation}
-    \sigma_\mu = (-\IM,\sigma_i),\quad \b{\sigma}_\mu = (\IM,\sigma_i),
+    \dim{\rho} = (2j + 1)(2j' + 1).
 \end{equation}
-che soddisfano le proprietà:
-\begin{enumerate}
-    \item $\sigma_\mu\b{\sigma}_\nu + \b{\sigma}_\mu\sigma_\nu = 2\eta_{\mu\nu}\IM$;
-    \item $\tr{(\sigma^\mu\b{\sigma}_\nu)} = 2\delta^\mu_\nu$.
-\end{enumerate}
-Ad ogni vettore, ad esempio alle coordinate $x^\mu$, si può associare una matrice $X$ definita come
+Le rappresentazioni $\bm{(j,j')}$ con $j + j'$ semi-intero ma non intero sono dette \emph{rappresentazioni di spin}, in quanto ammettono i fermioni\footnote{Più precisamente, le rappresentazioni per cui $j + j'\in \bb{N}_0$ corrispondono a rappresentazioni ordinarie di $\group{SO}{1,3}$, mentre quelle per cui $j + j'$ è semi-intero ma non intero sono rappresentazioni del suo doppio ricoprimento $\group{SL}{2,\bb{C}}$}, a differenza di quelle con $j + j' \in \bb{N}_0$. In particolare, le rappresentazioni di dimensione minore inequivalenti sono due: $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$; entrambe rappresentazioni 2-dimensionali. 
+
+Il prossimo passo consiste nell'omomorfismo tra $\group{SL}{2,\bb{C}}$ e $\group{SO}{1,3}$. Per farlo, ad ogni vettore $x^\mu$ si associa la matrice hermitiana $X$ così definita
 \begin{equation}
-    x^\mu \mapsto X := \sigma_\mu x^\mu = 
+    x^\mu \mapsto X := 
     \begin{pmatrix}
         x^0 + x^3 & x^1 - ix^2 \\
         x^1 + ix^2 & x^0 - x^3
-    \end{pmatrix}.
+    \end{pmatrix},
 \end{equation}
-Si vede poi che il determinante è $\det{X} = -x_\mu x^\mu$ e si può dimostrare che la matrice $X$ è hermitiana, ovvero che  $X = X^\dag$. Usando proprio quest'ultima proprietà, si può dimostrare anche che 
+il cui determinante è $\det{X} = -x_\mu x^\mu$, e si definiscono le matrici 
 \begin{equation}
-    x^\mu = \frac{1}{2}\tr{(\sigma^\mu X)}.
+    \sigma_\mu = (-\IM,\sigma_i),\quad \b{\sigma}_\mu \equiv \sigma^\mu = (\IM,\sigma_i),
 \end{equation}
-Si consideri quindi una matrice $A \in \group{SL}{2,\bb{C}}$, con questa si può definire la trasformazione 
+che soddisfano le proprietà:
+\begin{enumerate}
+    \item $\sigma_\mu\b{\sigma}_\nu + \sigma_\nu\b{\sigma}_\mu = 2\eta_{\mu\nu}\IM$;
+    \item $\tr{(\sigma^\mu\b{\sigma}_\nu)} = 2\delta^\mu_\nu$.
+\end{enumerate}
+La corrispondenza tra quadrivettori e matrici hermitiane è invertibile. Infatti, le componenti del quadrivettore si possono ricavare dalla matrice $X$ come 
+\begin{equation}
+\label{eq: corrispondenza quadrivettori e matrici hermitiane}
+    x^\mu = \frac{1}{2}\tr{(\sigma^\mu X)},\quad X := \b{\sigma}_\nu x^\nu.
+\end{equation}
+Si consideri quindi una matrice $A \in \group{SL}{2,\bb{C}}$. Con $A$ si può definire la trasformazione 
 \begin{equation}
     X \to X' = AXA^\dag : X'^\dag = X^\dag,\,\det{X} = \det{X'}.
 \end{equation}
-Questa è a tutti gli effetti una trasformazione di Lorentz. Si può quindi arrivare all'espressione dell'omomorfismo tra i gruppi $\group{SL}{2,\bb{C}}$ e $\group{SO}{1,3}$ di cui si parlava inizialmente
+Questa trasformazione induce una trasformazione lineare delle componenti del quadrivettore $x^{\mu\prime} \equiv \phi(A)^\mu_\nu x^\nu$, da cui, usando la proprietà \eqref{eq: corrispondenza quadrivettori e matrici hermitiane}, si trova che 
 \begin{equation}
-    (\Lambda^{-1})^\mu_\nu(A) = \frac{1}{2}\tr{(\sigma^\mu A\bb{\sigma}_\nu A^\dag)}.
+    \phi(A)^\mu_\nu = \frac{1}{2}\tr{(\sigma^\mu A\b{\sigma}_\nu A^\dag)}.
 \end{equation}
-Il fatto che sia un omomorfismo si può codificare con la relazione $\group{SO}{1,3} \cong \group{SL}{2,\bb{C}}/\bb{Z}_2$, con ciò si parla di $\group{SL}{2,\bb{C}}$ come il \emph{doppio ricoprimento} di $\group{SO}{1,3}$. Tipicamente, si indica il gruppo $\group{SO}{1,3}$ tramite la nozione di gruppo di spin, indicandolo con $\group{Spin}{1,3}$. In generale, in $D$ dimensioni $\group{Spin}{1,D}$ è il ricoprimento di $\group{SO}{1,D}$ se la segnatura è quella di Minkowski, mentre $\group{Spin}{D}$ è il ricoprimento di $\group{SO}{D}$ se la segnatura è quella di Euclide. 
+Dato che la trasformazione $X \to AXA^\dag$ preserva la norma di Minkowski $x^\mu \eta_{\mu\nu} x^\nu$, significa che è una trasformazione di Lorentz, per cui 
+\begin{eqnarray}
+\label{eq: omomorfismo tra SL(2,C) e SO(1,3)}
+    (\Lambda^{-1})^\mu_\nu = \phi(A)^\mu_\nu = \frac{1}{2}\tr{(\sigma^\mu A\bb{\sigma}_\nu A^\dag)}.
+\end{eqnarray} 
+In particolare, la mappa $\phi : A \to A' \equiv \phi(A)$ definisce un omomorfismo 
+\begin{equation}
+    \phi : \group{SL}{2,\bb{C}} \to \group{SO}{1,3}.
+\end{equation}
+Il nucleo dell'omomorfismo in \eqref{eq: omomorfismo tra SL(2,C) e SO(1,3)} è $\ker{\phi} = \{\IM, -\IM\}$, poiché entrambe inducono la stessa trasformazione. Chiaramente, $\ker{\phi} \cong \bb{Z}_2$ e, per il primo teorema di isomorfismo per i gruppi, si trova l'isomorfismo
+\begin{equation}
+    \group{SO}{1,3} \cong \group{SL}{2,\bb{C}}/\bb{Z}_2.
+\end{equation}
+Per questo, si dice che $\group{SL}{2,\bb{C}}$ è il \emph{doppio ricoprimento} del gruppo di Lorentz (ortocrono) $\group{SO}{1,3}$. Il gruppo di ricoprimento viene indicato tramite la nozione di \emph{gruppo di spin}, per cui $\group{Spin}{1,3} \cong \group{SL}{2,\bb{C}}$. Più in generale, in $D$ dimensioni, il gruppo di spin $\group{Spin}{1,D - 1}$ è il ricoprimento di $\group{SO}{1,D - 1}$ se la segnatura è quella di Minkowski, mentre $\group{Spin}{D}$ è il ricoprimento di $\group{SO}{D}$ se la segnatura è quella di Euclide. 
 
-Si torni adesso alle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$. Usando le relazioni
+Si introducono ora due matrici che si possono dimostrare essere i generatori dell'algebra di Lorentz $\alg{so}{1,3}$ nelle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$ rispettivamente. Tali matrici sono
 \begin{equation}
-    A\b{\sigma}_\mu A^\dag = (\Lambda^{-1})^\mu_\nu\b{\sigma}_\nu,\quad A^\dag \sigma_\mu A = (\Lambda^{-1})^\nu_\mu\sigma_\nu,
+    \sigma_{\mu\nu} = \dfrac{1}{4}(\sigma_\mu\b{\sigma}_\nu - \sigma_\nu\b{\sigma}_\mu),
 \end{equation}
-si può dimostrare che i generatori dell'algebra si possono scrivere come 
 \begin{equation}
-    \begin{cases}
-        \sigma_{\mu\nu} = \dfrac{1}{4}(\sigma_\mu\b{\sigma}_\nu - \sigma_\nu\b{\sigma}_\mu) \\[2ex]
-        \b{\sigma}_{\mu\nu} = \dfrac{1}{4}(\b{\sigma}_\mu\sigma_\nu - \b{\sigma}_\nu\sigma_\mu)
-    \end{cases},
+    \b{\sigma}_{\mu\nu} = \dfrac{1}{4}(\b{\sigma}_\mu\sigma_\nu - \b{\sigma}_\nu\sigma_\mu).
 \end{equation}
-con i quali si definiscono
+Con queste si possono quindi scrivere le trasformazioni di Lorentz finite come
 \begin{equation}
-    L(\lambda) := e^{\lambda^{\mu\nu}\sigma_{\mu\nu}/2},\quad \tilde{L}(\lambda) := e^{\lambda^{\mu\nu}\b{\sigma}_{\mu\nu}/2},
+\label{eq: trasformazione di Lorentz finita L}
+    L(\lambda) = e^{\lambda^{\mu\nu}\sigma_{\mu\nu}/2},
+\end{equation}
+\begin{equation}
+\label{eq: trasformazione di Lorentz finita L tilde}
+    \t{L}(\lambda) = e^{\lambda^{\mu\nu}\b{\sigma}_{\mu\nu}/2},
 \end{equation}
 dove $\lambda^{\mu\nu} = -\lambda^{\nu\mu}$ e, dato che $\sigma_{\mu\nu}^\dag = -\b{\sigma}_{\mu\nu}$, sono tali che
 \begin{equation}
     L(\lambda)^\dag = \tilde{L}(\lambda)^{-1}.
 \end{equation}
-Le $L(\lambda)$ e le $\tilde{L}(\lambda)$ consistono in una parametrizzazione delle matrici $A \in \group{SL}{2,\bb{C}}$. Si è così costruita la struttura che si desiderava: due parti che non trasformano simultaneamente associate a $\bm{(1/2,0)}$ per $L(\lambda)$ e a $\bm{(0,1/2)}$ per $\tilde{L}(\lambda)$. Sotto una trasformazione di Lorentz $x^\mu \to \Lambda^\mu_\nu x^\nu$ si hanno
+Le rappresentazioni matriciali $L(\lambda)$ ed $\t{L}(\lambda)$ di \eqref{eq: trasformazione di Lorentz finita L} ed \eqref{eq: trasformazione di Lorentz finita L tilde} sono direttamente in relazione con la mappa $X \to X' = AXA^\dag$. Per una trasformazione di Lorentz $\Lambda^{-1}$ legata ad $A \in \group{SL}{2,\bb{C}}$ dalla mappa \eqref{eq: omomorfismo tra SL(2,C) e SO(1,3)}, si può identificare $A \equiv L^{-1}$ ed $A^\dag \equiv \t{L}$. Questo si può dimostrare usando le relazioni $A\b{\sigma}_\mu A^\dag = (\Lambda^{-1})^\nu_\mu\b{\sigma}_\nu$ e $A^\dag \sigma_\mu A = (\Lambda^{-1})^\nu_\mu\sigma_\nu$.
+
+Questa costruzione permette di descrivere campi che trasformano secondo le due rappresentazioni considerate inizialmente. Si considerino quindi due campi $\Phi(x)$ e $\chi(x)$, appartenenti rispettivamente alle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$. Sotto una trasformazione di Lorentz $x^\mu \to x^{\prime\mu} \equiv \Lambda^\mu_\nu x^\nu$, le loro leggi di trasformazioni si possono scrivere come 
 \begin{equation}
     \Psi(x) \to \Psi'(x') \equiv L^{-1}(\lambda)\Psi(\Lambda x),
 \end{equation}
 \begin{equation}
     \chi(x) \to \chi'(x') \equiv \tilde{L}^{-1}(\lambda)\chi(\Lambda x).
 \end{equation}
-Gli spinori $\Psi$ e $\chi$ sono tipicamente indicati come \emph{spinori left} e \emph{spinori right} rispettivamente, mentre globalmente prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}.
+In generale, i campi come $\Psi$ e $\chi$ prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}. In particolare, gli spinori che trasformano come $\Phi(x)$ sono detti \emph{spinori left}, in quanto trasformano secondo la \emph{rappresentazione sinistrorsa} $\bm{(1/2,0)}$, mentre quelli che trasformano come $\chi(x)$ sono detti \emph{spinori right}, in quanto trasformano con la \emph{rappresentazione destrorsa} $\bm{(0,1/2)}$.
 
+\section{Equazione di Dirac}
 Si vogliono ora introdurre gli spinori di Dirac. Questi spinori esistono per qualsiasi dimensione dello spaziotempo, e permettono l'imposizione di condizioni di realtà. A tal proposito, in $D = 4$, si introducono matrici di Dirac
 \begin{equation}
     \gamma^\mu := 
