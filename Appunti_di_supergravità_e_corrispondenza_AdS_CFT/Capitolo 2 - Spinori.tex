@@ -131,17 +131,19 @@ dove, contestualmente, si sono introdotte le matrici quadrate $\gamma^\mu$, agen
 \label{eq: algebra di Clifford}
     \acomm{\gamma^\mu}{\gamma^\nu} \equiv \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}\IM_D.
 \end{equation}
-La condizione \eqref{eq: algebra di Clifford} definisce l'\emph{algebra di Clifford} per uno spaziotempo $D$-dimensionale, indicata con $\alg{Cliff}{D}$. In generale, spinori e matrici di Dirac si possono definire per ogni dimensione $D$; in particolare, le $\gamma^\mu$ in dimensione $D$ generica sono necessariamente complesse. Qui ci si concentra specialmente sul caso $D = 4$. 
+La condizione \eqref{eq: algebra di Clifford} definisce l'\emph{algebra di Clifford} per uno spaziotempo $D$-dimensionale, indicata con $\alg{Cliff}{D}$. Le $D$ matrici $\gamma^\mu$ sono i generatori dell'algebra di Clifford, una cui base consiste nella matrice identità insieme a tutti i prodotti indipendenti dei generatori. Per l'algebra di Clifford esiste una rappresentazione tramite matrici quadrate $2^{[D/2]}$-dimensionali, dove $[x]$ rappresenta l'intero più grande minore od uguale ad $x$. La rappresentazione è unica a meno di un'equivalenza per $D = 2m$, mentre per $D = 2m + 1$ le rappresentazioni inequivalenti sono due. Inoltre, è sempre possibile scegliere una rappresentazione dove le matrici $\gamma^i$ sono hermitiane, mentre $\gamma^0$ è anti-hermitiana. 
 
-Rappresentazioni equivalenti dell'algebra di Clifford descrivono la stessa fisica. Pertanto, le implicazioni fisiche dell'equazione del formalismo di Dirac deve risultare indipendente dalla scelta della rappresentazione. Effettivamente, gran parte della fisica può essere dedotta in una maniera indipendente dalla rappresentazione, ma una rappresentazione esplicita è conveniente per alcuni scopi. A tal proposito, si introduce la \emph{rappresentazione di Weyl} in $D = 4$ dove le matrici di Dirac $\gamma^\mu$ sono scritte in funzione delle matrici di Weyl sull'anti-diagonale, viste in equazione \eqref{eq: matrici di Weyl}, ossia 
+
+In generale, spinori e matrici di Dirac si possono definire per ogni dimensione $D$; in particolare, le $\gamma^\mu$ in dimensione $D$ generica sono necessariamente complesse. Qui ci si concentra specialmente sul caso $D = 4$. Rappresentazioni equivalenti dell'algebra di Clifford descrivono la stessa fisica. Pertanto, le implicazioni fisiche dell'equazione del formalismo di Dirac deve risultare indipendente dalla scelta della rappresentazione. Effettivamente, gran parte della fisica può essere dedotta in una maniera indipendente dalla rappresentazione, ma una rappresentazione esplicita è conveniente per alcuni scopi. A tal proposito, si introduce la \emph{rappresentazione di Weyl} in $D = 4$ dove le matrici di Dirac $\gamma^\mu$ sono scritte in funzione delle matrici di Weyl sull'anti-diagonale, viste in equazione \eqref{eq: matrici di Weyl}, ossia 
 \begin{equation}
+\label{eq: rappresentazione di Weyl per le matrici di Dirac}
     \gamma^\mu := 
     \begin{pmatrix}
         \OM_2 & \sigma^\mu \\
         \b{\sigma}^\mu & \OM_2
     \end{pmatrix},\quad \dim{\gamma^\mu} = 4.
 \end{equation}
-Ci sono rappresentazioni ``a blocchi'' sull'anti-diagonale di questo tipo per ogni dimensione $D$ pari. 
+Ci sono rappresentazioni ``anti-diagonali a blocchi'' di questo tipo per ogni dimensione $D$ pari. 
 
 Un fatto fondamentale riguardo all'algebra di Clifford in dimensione $D$ è che i commutatori 
 \begin{equation}
@@ -157,6 +159,7 @@ sono i generatori di una rappresentazione $2^{[D/2]}$-dimensionale dell'algebra 
 \end{equation}
 La rappresentazione 4-dimensionale dell'algebra $\alg{so}{1, 3}$ è quindi riducibile. In particolare, è la somma diretta delle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$ viste prima. Chiaramente, la riducibilità di $\Sigma^{\mu\nu}$ vale per qualsiasi scelta delle $\gamma^\mu$, dato che le matrici $\Sigma^{\mu\nu}$ sono equivalenti a quelle della rappresentazione di Weyl. In tutte le dimensioni pari, esiste una riduzione analoga alla somma diretta di una rappresentazione irriducibile $2^{[D/2] - 1}$-dimesionale di $\alg{so}{1, 3}$ insieme alla rappresentazione coniugata. In dimensione dispari, la rappresentazione data dalle $\Sigma^{\mu\nu}$ è irriducibile. Le trasformazioni proprie e finite di Lorentz sono rappresentate dalle matrici 
 \begin{equation}
+\label{eq: matrici trasformazioni di Lorentz finite proprie}
     L(\lambda) := e^{\lambda^{\mu\nu}\Sigma_{\mu\nu}} \in \group{Spin}{1,D - 1},
 \end{equation}
 e si ha che 
@@ -172,11 +175,6 @@ Da questo si può dedurre l'importante proprietà di covarianza di Lorentz dell'
     \Psi(x) \to \Psi'(x') = L(\lambda)^{-1}\Psi(\Lambda(\lambda) x)
 \end{equation}
 è una soluzione. 
-
-Si possono poi definire le matrici 
-\begin{equation}
-    \gamma'^\mu := S^{-1}\gamma^\mu S,\quad S \in \group{GL}{4,\bb{C}},
-\end{equation}
 \begin{ex}[rotazione di uno spinore]
     Considerando la particolare trasformazione $\lambda^{12} \equiv \theta \neq 0$, si ha 
     \begin{equation}
@@ -251,38 +249,56 @@ si ottengono le due equazioni del moto equivalenti
 \end{equation}
 
 \subsection{Spinori di Weyl in \texorpdfstring{$D$}{D} pari}
-...
-
-\section{Algebra di Clifford}
-... 
-
-Si torni in $D = 4$. Qui si ha 
+Tornando al caso $D = 2m$, dato che esiste una rappresentazione anti-diagonale a blocchi per ogni dimensione pari, lo stesso vale per tutte le dimensioni $D = 2m$ con due sotto-rappresentazioni irriducibili, ognuna di dimensione $2^{m - 1}$. Questo suggerisce che uno spinore di Dirac $\Psi(x)$ non è il campo covariante di Lorentz più semplice. In un certo senso questo è vero: si può definire uno spinore di Weyl $\psi(x)$ con $2^{m - 1}$ componenti che trasforma secondo 
 \begin{equation}
-    \Sigma^{\mu\nu} = 
-    \begin{pmatrix}
-        \sigma_{\mu\nu} & \OM_2 \\
-        \OM_2 & \b{\sigma}_{\mu\nu}
-    \end{pmatrix},
+    \psi(x) \to \psi'(x') \equiv L(\lambda)^{-1}\psi(\Lambda(\lambda)x),
 \end{equation}
-andando ad agire su $\Psi(x)$ le due componenti sono indipendenti,
+dove le $L(\lambda)$ sono definite come in \eqref{eq: matrici trasformazioni di Lorentz finite proprie}, ma ora per ogni dimensione pari. Si può anche definire un campo $\b{\chi}$ che trasforma secondo la rappresentazione coniugata, cioè come 
+\begin{equation}
+    \b{\chi} \to \b{\chi}'(x') \equiv \t{L}(\lambda)^{-1}\b{\chi}(\Lambda(\lambda)x),
+\end{equation}
+dove le $L(\lambda)$ sono definite di nuovo come in \eqref{eq: matrici trasformazioni di Lorentz finite proprie}. Per questi campi, valgono le \emph{equazioni di Weyl}
+\begin{align}
+\label{eq: equazioni di Weyl}
+    \b{\sigma}^{\mu\nu}\p_\mu\psi(x) &= 0, \\
+    \sigma^{\mu\nu}\p_\mu\b{\chi}(x) &= 0,
+\end{align}
+le quali, ammettendo soluzioni ad onda piana, descrivono particelle prive di massa, cioè ``massless''. Per scrivere un'azione per lo spinore di Weyl serve considerare $\psi(x)$ insieme al suo aggiunto $\psi(x)^\dag$, con i quali si può costruire una forma bilineare che trasforma come un vettore. L'azione per $\psi(x)$ è allora 
+\begin{equation}
+    S[\psi,\b{\psi}] = -\int d^Dx\,i\psi^\dag\b{\sigma}^\mu\p_\mu\psi,
+\end{equation}
+di cui ne esiste una versione analoga per $\b{\chi}(x)$. Si noti infine che non c'è modo di introdurre la massa usando un singolo spinore di Weyl; infatti, l'equazione 
+\begin{equation}
+    \b{\sigma}^\mu\p_\mu\psi(x) = m\psi(x)
+\end{equation}
+non è Lorentz-invariante. Invece, per descrivere particelle massive serve usare insieme $\psi(x)$ e $\b{\chi}$. Infatti, si può vedere che uno spinore di Dirac può essere scritto come 
 \begin{equation}
     \Psi(x) = 
     \begin{pmatrix}
-        \Psi(x) \\
-        \chi(x)
+        \psi(x) \\
+        \b{\chi}(x)
     \end{pmatrix},
 \end{equation}
-dove la componente left trasforma con $\sigma_{\mu\nu}$, mentre quella right con $\b{\sigma}_{\mu\nu}$. Tutto ciò è ripetibile in $D$ dimensioni, ottenendo la relazione
+il quale, se inserito nell'equazione di Dirac \eqref{eq: equazione di Dirac} nella rappresentazione di Weyl \eqref{eq: rappresentazione di Weyl per le matrici di Dirac}, permette di dimostrare che l'equazione \eqref{eq: equazione di Dirac} è equivalente alla coppia di equazioni 
 \begin{equation}
-    \underbrace{2^{D/2}}_{rappr.\,riducibile} = \underbrace{2^{D/2 - 1}}_{irrep} + \underbrace{2^{D/2 - 1}}_{irrep}.
+    \begin{cases}
+        \b{\sigma}^\mu\p_\mu\psi(x) = m\b{\chi}(x) \\
+        \sigma^\mu\p_\mu\b{\chi}(x) = m\psi(x)
+    \end{cases}.
 \end{equation}
 
-
-Si può infine dimostrare perché la dimensione della rappresentazione sia $2^{D/2}$. Si parte da $D = 2$, si devono trovare due matrici $\gamma^1$ e $\gamma^2$ tali che $\acomm{\gamma^1}{\gamma^2} = 0$ e che $(\gamma^1)^2 = (\gamma^2)^2 = \IM_4$. Una scelta possibile è
-\begin{equation}
-    \gamma^1 = \sigma_1,\quad \gamma^2 = \sigma_2,
-\end{equation}
-definendo $\alg{Cliff}{2}$. Per $D = 3$ si aggiunge $\gamma^3 = \sigma_3$, definendo $\alg{Cliff}{3}$. Per $D = 4$ però si deve ricorrere al prodotto tensoriale, o di Kronecker, definito da
+\section{Algebra di Clifford}
+L'obiettivo ora è discutere l'algebra di Clifford associata al gruppo di Lorentz in $D$ dimensioni. Si parte dalla costruzione esplicita e generale delle matrici $\gamma$ euclidee, le quali soddisfano la condizione \eqref{eq: algebra di Clifford} con $\eta_{\mu\nu}$ sostituita da $\delta_{\mu\nu}$. Quindi, si hanno
+\begin{gather}
+\label{eq: costruzione matrici di Dirac euclidee}
+    \gamma^1 = \sigma_1 \ot \IM \ot \cdots \ot \IM, \\
+    \gamma^2 = \sigma_2 \ot \IM \ot \cdots \ot \IM, \\
+    \gamma^3 = \sigma_3 \ot \sigma_1 \ot \IM \ot \cdots \ot \IM, \\
+    \gamma^4 = \sigma_3 \ot \sigma_2 \ot \IM \ot \cdots \ot \IM, \\
+    \gamma^5 = \sigma_3 \ot \sigma_3 \ot \sigma_1 \ot \IM \ot \cdots \ot \IM, \\
+    \gamma^6 = \sigma_3 \ot \sigma_3 \ot \sigma_2 \ot \IM \ot \cdots \ot \IM, 
+\end{gather}
+e così via, dove si è usato il prodotto tensoriale, o di Kronecker, definito da
 \begin{equation}
     A \ot B = 
     \begin{pmatrix}
@@ -291,43 +307,52 @@ definendo $\alg{Cliff}{2}$. Per $D = 3$ si aggiunge $\gamma^3 = \sigma_3$, defin
         A_{n1}B & \cdots & A_{nn}B
     \end{pmatrix},\quad \dim{(A \ot B)} = nm \times nm.
 \end{equation}
-Quindi, si scelgono
-\begin{equation}
-    \begin{cases}
-        \gamma^0 = \sigma_1 \ot \IM \\
-        \gamma^1 = \sigma_2 \ot \IM \\
-        \gamma^2 = \sigma_3 \ot \sigma_1 \\
-        \gamma^3 = \sigma_3 \ot \sigma_2
-    \end{cases}.
-\end{equation}
-Se $D = 2m$, allora $m$ corrisponde al numero di matrici che compaiono in ogni prodotto tensoriale, dove per costruire le matrici successive si usa un metodo iterativo che consiste nel costruire il prodotto tensoriale tra $\sigma_3$ e le matrici precedenti, ossia
-\begin{equation}
-    \begin{cases}
-        \gamma^1 = \sigma_1 \ot \IM \ot \cdots \ot \IM \\
-        \gamma^2 = \sigma_2 \ot \IM \ot \cdots \ot \IM \\
-        \gamma^3 = \sigma_3 \ot \sigma_1 \ot \IM \ot \cdots \ot \IM \\
-        \gamma^4 = \sigma_3 \ot \sigma_2 \ot \IM \ot \cdots \ot \IM \\
-        \gamma^5 = \sigma^3 \ot \gamma^3 \\
-        \gamma^6 = \sigma^3 \ot \gamma^4 \\
-        \vdots
-    \end{cases}.
-\end{equation}
-Dunque, la dimensione è $2^m = 2^{D/2}$. L'algebra di Clifford esiste sicuramente ed si costruisce in questo modo in dimensione pari. 
+Tutte queste matrici sono hermitiane, con il cui quadrato pari all'identità $\IM$ e mutuamente anti-commutanti. Assumendo $D = 2m$, sono necessari $m$ fattori in questa costruzione per ottenere $\gamma^\mu$ con $1 \le \mu \le D = 2m$. Pertanto, si ottiene una rappresentazione $2^{D/2}$-dimensionale. Dall'altra parte, nel caso in cui $D = 2m + 1$, è necessaria un'ulteriore matrice. Si sceglie allora $\gamma^{2m + 1}$ dalla lista di matrici elencata sopra, ma mantenendo solamente i primi $m$ fattori, in altre parole, eliminando una $\sigma_1$. In questo modo, la dimensione della rappresentazione non aumenta passando da $D = 2m$ a $D = 2m + 1$. Si può allora dire che la costruzione in \eqref{eq: costruzione matrici di Dirac euclidee} restituisce una rappresentazione di dimensione $2^{[D/2]}$. 
 
-Per costruire le matrici $\gamma^\mu$ in dimensione dispari $D = 2m + 1$; ad esempio, in $D = 7$ si definisce 
+Anche se le matrici $\gamma$ euclidee hanno applicazioni fisiche, si è qui interessati alla loro controparte lorentziana. Per ottenerle, si deve semplicemente scegliere una qualsiasi matrice tra quelle euclidee, moltiplicarla per $i$ e indicarla con $\gamma^0$ per la direzione ``time-like''. Questa matrice è anti-hermitiana e soddisfa $(\gamma^0)^2 = -\IM$. Conseguentemente, si rinominano le rimanenti $D - 1$ matrici così da ottenere l'insieme $\gamma^\mu$ con $\mu = 0,\dots, D - 1$. Le proprietà di hermiticità delle matrici $\gamma^\mu$ sono riassunte nella relazione 
 \begin{equation}
-    \gamma^7  = \sigma_3 \ot \sigma_3 \ot \sigma_3.
+\label{eq: hermiticità matrici di Dirac}
+    (\gamma^\mu)^\dag = \gamma^0\gamma^\mu\gamma^0.
 \end{equation}
-La dimensione continua ad essere $2^m \times 2^m$. 
+\'E fondamentale per la teoria di Dirac che la fisica degli spinori sia la medesima in ogni rappresentazione equivalente dell'algebra di Clifford. Quindi, si è di fatto interessati alle classi di rappresentazioni legate dalla coniugazione, cioé
+\begin{equation}
+    \gamma^{\prime\mu} = S\gamma^\mu S^{-1},
+\end{equation}
+dove le matrici $S$, dato che si considerano solo rappresentazioni hermitiane, devono essere unitarie. Date due rappresentazioni equivalenti, la matrice di trasformazione $S$ è unica a meno di un fattore di fase. A meno di questa coniugazione, esiste un'unica rappresentazione irriducibile dell'algebra di Clifford tramite matrici $2^m \times 2^m$ per $D = 2m$. Ogni altra rappresentazione è riducibile ed equivalente alla somma diretta di due copie della rappresentazione irriducibile più sopra. Si può sempre scegliere una rappresentazione irriducibile hermitiana, definita in modo da soddisfare \eqref{eq: hermiticità matrici di Dirac}. In dimensione dispari, esistono due rappresentazioni irriducibili inequivalenti che differiscono nel segno della matrice ``finale'' $\pm \gamma^{2m + 1}$. Le conseguenze fisiche sono indipendenti dalla particolare scelta della rappresentazione. 
+\begin{ex}[matrici di Dirac in $D = 2,3,4$]
+    In $D = 2$, si devono trovare due matrici $\gamma^1$ e $\gamma^2$ tali che $\acomm{\gamma^1}{\gamma^2} = 0$ e che $(\gamma^1)^2 = (\gamma^2)^2 = \IM_4$. Una scelta possibile è $\gamma^1 = \sigma_1$ e $\gamma^2 = \sigma_2$, definendo $\alg{Cliff}{2}$. Per $D = 3$ si deve aggiungere $\gamma^3 = \sigma_3$, definendo così $\alg{Cliff}{3}$. In $D = 4$ si scelgono invece
+    \begin{equation}
+        \begin{cases}
+            \gamma^0 = \sigma_1 \ot \IM \\
+            \gamma^1 = \sigma_2 \ot \IM \\
+            \gamma^2 = \sigma_3 \ot \sigma_1 \\
+            \gamma^3 = \sigma_3 \ot \sigma_2
+        \end{cases},
+    \end{equation}
+    ottenendo $\alg{Cliff}{4}$. 
+\end{ex}
+% Si torni in $D = 4$. Qui si ha 
+% \begin{equation}
+%     \Sigma^{\mu\nu} = 
+%     \begin{pmatrix}
+%         \sigma_{\mu\nu} & \OM_2 \\
+%         \OM_2 & \b{\sigma}_{\mu\nu}
+%     \end{pmatrix},
+% \end{equation}
+% andando ad agire su $\Psi(x)$ le due componenti sono indipendenti,
+% \begin{equation}
+%     \Psi(x) = 
+%     \begin{pmatrix}
+%         \Psi(x) \\
+%         \chi(x)
+%     \end{pmatrix},
+% \end{equation}
+% dove la componente left trasforma con $\sigma_{\mu\nu}$, mentre quella right con $\b{\sigma}_{\mu\nu}$. Tutto ciò è ripetibile in $D$ dimensioni, ottenendo la relazione
+% \begin{equation}
+%     \underbrace{2^{D/2}}_{rappr.\,riducibile} = \underbrace{2^{D/2 - 1}}_{irrep} + \underbrace{2^{D/2 - 1}}_{irrep}.
+% \end{equation}
 
-Si può passare dalla rappresentazione di Euclide a quella lorentziana con $\gamma^0 \equiv i\gamma^0$ tale che 
-\begin{equation}
-    (\gamma^0)^2 = -\IM,\quad (\gamma^0)^\dag = -\gamma^0,
-\end{equation}
-oppure più in generale che 
-\begin{equation}
-    (\gamma^\mu)^\dag = \gamma^0\gamma^\mu\gamma^0. 
-\end{equation}
+\subsection{Algebra di Clifford completa}
 In dimensioni pari esiste una sola rappresentazione irriducibile, mentre in dimensione dispari ne esistono due ma portano alla stessa algebra. L'algebra contiene $\{\IM,\gamma^\mu,\gamma^\mu\gamma^\nu,\gamma^\mu\gamma^\nu\gamma^\rho\}$, ma in realtà la definizione di algebra di Clifford permette di restringersi ad un insieme più piccolo; infatti
 \begin{equation}
     \begin{split}
