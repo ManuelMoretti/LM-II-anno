@@ -51,11 +51,12 @@ Il prossimo passo consiste nell'omomorfismo tra $\group{SL}{2,\bb{C}}$ e $\group
         x^1 + ix^2 & x^0 - x^3
     \end{pmatrix},
 \end{equation}
-il cui determinante è $\det{X} = -x_\mu x^\mu$, e si definiscono le matrici 
+il cui determinante è $\det{X} = -x_\mu x^\mu$, e si definiscono le matrici
 \begin{equation}
-    \sigma_\mu = (-\IM,\sigma_i),\quad \b{\sigma}_\mu \equiv \sigma^\mu = (\IM,\sigma_i),
+\label{eq: matrici di Weyl}
+    \sigma_\mu := (-\IM,\sigma_i),\quad \b{\sigma}_\mu \equiv \sigma^\mu := (\IM,\sigma_i),
 \end{equation}
-che soddisfano le proprietà:
+dette anche \emph{matrici di Weyl}, che soddisfano le proprietà:
 \begin{enumerate}
     \item $\sigma_\mu\b{\sigma}_\nu + \sigma_\nu\b{\sigma}_\mu = 2\eta_{\mu\nu}\IM$;
     \item $\tr{(\sigma^\mu\b{\sigma}_\nu)} = 2\delta^\mu_\nu$.
@@ -120,43 +121,63 @@ Questa costruzione permette di descrivere campi che trasformano secondo le due r
 In generale, i campi come $\Psi$ e $\chi$ prendono il nome di \emph{spinori di Weyl}, o \emph{spinori chirali}. In particolare, gli spinori che trasformano come $\Phi(x)$ sono detti \emph{spinori left}, in quanto trasformano secondo la \emph{rappresentazione sinistrorsa} $\bm{(1/2,0)}$, mentre quelli che trasformano come $\chi(x)$ sono detti \emph{spinori right}, in quanto trasformano con la \emph{rappresentazione destrorsa} $\bm{(0,1/2)}$.
 
 \section{Equazione di Dirac}
-Si vogliono ora introdurre gli spinori di Dirac. Questi spinori esistono per qualsiasi dimensione dello spaziotempo, e permettono l'imposizione di condizioni di realtà. A tal proposito, in $D = 4$, si introducono matrici di Dirac
+I campi spinoriali furono introdotti da Dirac per descrivere i fermioni. Questi campi soddisfano un'equazione del moto, che è l'equazione di Dirac
+\begin{equation}
+\label{eq: equazione di Dirac}
+    (\sl{\p} - m)\Psi(x) = 0,\quad \sl{\p} \equiv \gamma^\mu\p_\mu,
+\end{equation}
+dove, contestualmente, si sono introdotte le matrici quadrate $\gamma^\mu$, agenti sugli indici dello spinore $\Phi(x)$, che prendono il nome di \emph{matrici di Dirac}. In particolari, queste matrici soddisfano la relazione di anti-commutazione 
+\begin{equation}
+\label{eq: algebra di Clifford}
+    \acomm{\gamma^\mu}{\gamma^\nu} \equiv \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}\IM_D.
+\end{equation}
+La condizione \eqref{eq: algebra di Clifford} definisce l'\emph{algebra di Clifford} per uno spaziotempo $D$-dimensionale, indicata con $\alg{Cliff}{D}$. In generale, spinori e matrici di Dirac si possono definire per ogni dimensione $D$; in particolare, le $\gamma^\mu$ in dimensione $D$ generica sono necessariamente complesse. Qui ci si concentra specialmente sul caso $D = 4$. 
+
+Rappresentazioni equivalenti dell'algebra di Clifford descrivono la stessa fisica. Pertanto, le implicazioni fisiche dell'equazione del formalismo di Dirac deve risultare indipendente dalla scelta della rappresentazione. Effettivamente, gran parte della fisica può essere dedotta in una maniera indipendente dalla rappresentazione, ma una rappresentazione esplicita è conveniente per alcuni scopi. A tal proposito, si introduce la \emph{rappresentazione di Weyl} in $D = 4$ dove le matrici di Dirac $\gamma^\mu$ sono scritte in funzione delle matrici di Weyl sull'anti-diagonale, viste in equazione \eqref{eq: matrici di Weyl}, ossia 
 \begin{equation}
     \gamma^\mu := 
     \begin{pmatrix}
         \OM_2 & \sigma^\mu \\
         \b{\sigma}^\mu & \OM_2
-    \end{pmatrix},\quad \dim{\gamma^\mu} = 4,
+    \end{pmatrix},\quad \dim{\gamma^\mu} = 4.
 \end{equation}
-tali che 
+Ci sono rappresentazioni ``a blocchi'' sull'anti-diagonale di questo tipo per ogni dimensione $D$ pari. 
+
+Un fatto fondamentale riguardo all'algebra di Clifford in dimensione $D$ è che i commutatori 
 \begin{equation}
-    \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}\IM_4.
+    \Sigma^{\mu\nu} := \frac{1}{4}\comm{\gamma^\mu}{\gamma^\nu},
 \end{equation}
+sono i generatori di una rappresentazione $2^{[D/2]}$-dimensionale dell'algebra di Lie $\alg{so}{1, D - 1}$. Nella rappresentazione di Weyl, si può vedere che le $\Sigma^{\mu\nu}$ sono diagonali a blocchi con le matrici $\sigma^{\mu\nu}$ e $\b{\sigma}^{\mu\nu}$ come entrate, cioè
+\begin{equation}
+    \Sigma^{\mu\nu} = 
+    \begin{pmatrix}
+        \sigma^{\mu\nu} & \OM_2 \\
+        \OM_2 & \b{\sigma}^{\mu\nu}
+    \end{pmatrix}.
+\end{equation}
+La rappresentazione 4-dimensionale dell'algebra $\alg{so}{1, 3}$ è quindi riducibile. In particolare, è la somma diretta delle rappresentazioni $\bm{(1/2,0)}$ e $\bm{(0,1/2)}$ viste prima. Chiaramente, la riducibilità di $\Sigma^{\mu\nu}$ vale per qualsiasi scelta delle $\gamma^\mu$, dato che le matrici $\Sigma^{\mu\nu}$ sono equivalenti a quelle della rappresentazione di Weyl. In tutte le dimensioni pari, esiste una riduzione analoga alla somma diretta di una rappresentazione irriducibile $2^{[D/2] - 1}$-dimesionale di $\alg{so}{1, 3}$ insieme alla rappresentazione coniugata. In dimensione dispari, la rappresentazione data dalle $\Sigma^{\mu\nu}$ è irriducibile. Le trasformazioni proprie e finite di Lorentz sono rappresentate dalle matrici 
+\begin{equation}
+    L(\lambda) := e^{\lambda^{\mu\nu}\Sigma_{\mu\nu}} \in \group{Spin}{1,D - 1},
+\end{equation}
+e si ha che 
+\begin{equation}
+    L(\lambda)^{-1}\gamma^\mu L(\lambda) = \Lambda(\lambda)^\mu_\nu \gamma^\nu,
+\end{equation}
+che corrisponde esattamente ad una trasformazione di Lorentz
+\begin{equation}
+    \gamma^\mu \to \gamma^{\prime\mu} \equiv \Lambda(\lambda)^\mu_\nu \gamma^\nu = L(\lambda)^{-1}\gamma^\mu L(\lambda).
+\end{equation}
+Da questo si può dedurre l'importante proprietà di covarianza di Lorentz dell'equazione di Dirac: data qualsiasi soluzione $\Psi(x)$ anche 
+\begin{equation}
+    \Psi(x) \to \Psi'(x') = L(\lambda)^{-1}\Psi(\Lambda(\lambda) x)
+\end{equation}
+è una soluzione. 
+
 Si possono poi definire le matrici 
 \begin{equation}
     \gamma'^\mu := S^{-1}\gamma^\mu S,\quad S \in \group{GL}{4,\bb{C}},
 \end{equation}
-per le quali continua a valere la relazione precedente. Questa particolare relazione si anti-commutatore e si indica con
-\begin{equation}
-    \acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM_4,
-\end{equation}
-la quale, oltretutto, definisce l'algebra di Clifford per uno spaziotempo 4-dimensionale, indicata con $\alg{Cliff}{1,3}$. La definizione è poi estendibile a qualsiasi dimensione $D$ dello spaziotempo. Si definisce quindi la matrice
-\begin{equation}
-    \Sigma^{\mu\nu} := \frac{1}{4}\comm{\gamma^\mu}{\gamma^\nu},
-\end{equation}
-la quale soddisfa l'algebra di Lorentz, per cui
-\begin{equation}
-    L(\lambda) := e^{\lambda^{\mu\nu}\Sigma_{\mu\nu}} \in \group{Spin}{1,D - 1}.
-\end{equation}
-Le matrici $\gamma^\mu$ trasformano come un vettore di Lorentz 
-\begin{equation}
-    \gamma^\mu \to L(\lambda)^{-1}\gamma^\mu L(\lambda) = \Lambda(\lambda)^\mu_\nu \gamma^\nu.
-\end{equation}
-La dimensione delle rappresentazioni dell'algebra di Clifford è $2^{D/2} \times 2^{D/2}$. Dunque, si definisce lo spinore di Dirac 
-\begin{equation}
-    \Psi(x) \in \bb{C}^{2^{D/2}},\quad \Psi(x) \to \Psi'(x') = L(\lambda)^{-1}\Psi(\Lambda x).
-\end{equation}
-\begin{ex}(rotazione di uno spinore)
+\begin{ex}[rotazione di uno spinore]
     Considerando la particolare trasformazione $\lambda^{12} \equiv \theta \neq 0$, si ha 
     \begin{equation}
         L(\lambda) = e^{\theta\Sigma_{12}} = 1 + \theta\Sigma_{12},
@@ -171,6 +192,70 @@ La dimensione delle rappresentazioni dell'algebra di Clifford è $2^{D/2} \times
     \end{equation}
     da cui si vede che per $\theta = 2\pi$, si ottiene $-\IM$. 
 \end{ex}
+Per ricavare l'equazione \eqref{eq: equazione di Dirac}, si deve definire un'azione per il campo spinoriale. La sua scelta è limitata dalle condizioni:
+\begin{enumerate}
+    \item l'azione deve essere reale;
+    \item l'azione deve essere lineare nelle derivate;
+    \item l'azione deve essere un invariante di Lorentz.
+\end{enumerate}
+Un termine invariante lineare nelle derivate è $\gamma^\mu\p_\mu$. Per quanto riguarda il campo $\Psi$, questo deve comparire nell'espressione dell'azione attraverso un invariante di Lorentz. Per un primo tentativo, si nota che su $\bb{C}^4$ esiste un prodotto interno naturale dato da
+\begin{equation}
+    \Psi^\dag\Psi \in \bb{R}.
+\end{equation}
+Essendo uno scalare, si potrebbe pensare che $\Psi^\dag\Psi$ sia anche invariante di Lorentz; tuttavia, usando le trasformazioni
+\begin{equation}
+    \begin{cases}
+        \Psi \to \Psi' \equiv L^{-1}(\lambda)\Psi(\Lambda x) \\
+        \Psi^\dag \to \Psi'^\dag \equiv \Psi^\dag(\Lambda x)[L^{-1}(\lambda)]^\dag
+    \end{cases},
+\end{equation}
+si trova che $\Psi^\dag\Psi$ non è in effetti un invariante di Lorentz. Si può quindi assumere che l'invariante di Lorentz cercato sia un bilineare non-degenere della forma 
+\begin{equation}
+    \Psi^\dag\beta\Psi,
+\end{equation}
+dove $\beta$ è una matrice quadrata ed invertibile da determinare. L'invarianza di Lorentz richiede che 
+\begin{equation}
+\label{eq: condizione di L-invarianza su beta}
+    \Sigma_{\mu\nu}^\dag\beta + \beta\Sigma_{\mu\nu} = 0.
+\end{equation}
+Dato che si sta cercando una forma bilineare reale, si impone che $\beta$ sia una matrice hermitiana. Per quanto detto prima, $\beta$ sicuramente non può essere scelta come l'identità, anche perché, se così fosse, ciò implicherebbe che il gruppo di Lorentz sia compatto, quando in realtà è non-compatto. Tuttavia, si può verificare che la condizione \eqref{eq: condizione di L-invarianza su beta} è validata se si sceglie $\beta$ essere un qualsiasi multiplo di $\gamma^0$. Questa forma è valida in qualsiasi rappresentazione hermitiana ed è unica. Quindi, si hanno
+\begin{equation}
+    \beta\gamma_\mu\beta^{-1} = -(\gamma_\mu)^\dag,\quad \beta\Sigma_{\mu\nu}\beta^{-1} = -(\Sigma_{\mu\nu})^\dag.
+\end{equation}
+Tipicamente, si opera la scelta 
+\begin{equation}
+    \beta := i\gamma^0.
+\end{equation}
+Di conseguenza, si definisce l'\emph{aggiunto di Dirac} come 
+\begin{equation}
+    \b{\Psi} := \Psi^\dag \beta = i\Psi \gamma^0.
+\end{equation}
+La forma bilineare invariante cercata si può dunque scrivere come 
+\begin{equation}
+    \b{\Psi}\Psi.
+\end{equation}
+Si può finalmente definire l'azione per il campo di Dirac libero. Questa è
+\begin{equation}
+    S[\Psi,\b{\Psi}] = \int d^4x\,(m\b{\Psi}\Psi - \b{\Psi}\sl{\p}\Psi).
+\end{equation}
+Dal principio di minima azione applicato alla variazione 
+\begin{equation}
+    \delta S = \int d^4x\,[\delta\b{\Psi}(\sl{\p} - m)\Psi - (\p_\mu\b{\Psi}\gamma^\mu + \b{\Psi}m)\delta\Psi],
+\end{equation}
+si ottengono le due equazioni del moto equivalenti
+\begin{equation}
+    \begin{cases}
+        (\sl{\p} - m)\Psi = 0 \\
+        \b{\Psi}(\backv{\sl{\p}} - m) = 0
+    \end{cases},\quad \backv{\sl{\p}} \equiv \p_\mu\b{\Psi}\gamma^\mu.
+\end{equation}
+
+\subsection{Spinori di Weyl in \texorpdfstring{$D$}{D} pari}
+...
+
+\section{Algebra di Clifford}
+... 
+
 Si torni in $D = 4$. Qui si ha 
 \begin{equation}
     \Sigma^{\mu\nu} = 
@@ -192,47 +277,7 @@ dove la componente left trasforma con $\sigma_{\mu\nu}$, mentre quella right con
     \underbrace{2^{D/2}}_{rappr.\,riducibile} = \underbrace{2^{D/2 - 1}}_{irrep} + \underbrace{2^{D/2 - 1}}_{irrep}.
 \end{equation}
 
-Al campo spinoriale si deve poi dare una dinamica. L'equazione del moto è l'equazione di Dirac
-\begin{equation}
-\label{eq: equazione di Dirac}
-    (\sl{\p} - m)\Psi = 0,\quad \sl{\p} \equiv \gamma^\mu\p_\mu.
-\end{equation}
-Per ricavare l'equazione \eqref{eq: equazione di Dirac}, si deve definire un'azione per il campo spinoriale. In realtà, la scelta è molto limitata dalle condizioni:
-\begin{enumerate}
-    \item l'azione deve essere lineare nelle derivate;
-    \item l'azione deve essere reale;
-    \item l'azione deve essere un invariante di Lorentz.
-\end{enumerate}
-Un termine invariante lineare nelle derivate è $\gamma^\mu\p_\mu$, ma si deve introdurre anche il campo $\Psi$. Per farlo, si nota che su $\bb{C}^4$ esiste un prodotto interno naturale dato da
-\begin{equation}
-    \Psi^\dag\Psi \in \bb{R}.
-\end{equation}
-Essendo uno scalare, si potrebbe pensare che sia anche invariante di Lorentz; tuttavia, usando le trasformazioni
-\begin{equation}
-    \begin{cases}
-        \Psi \to \Psi' \equiv L^{-1}(\lambda)\Psi(\Lambda x) \\
-        \Psi^\dag \to \Psi'^\dag \equiv \Psi^\dag(\Lambda x)(L^{-1}(\lambda))^\dag
-    \end{cases},
-\end{equation}
-si trova che $\Psi^\dag\Psi$ non è un invariante di Lorentz. Usando però il fatto che, in generale, $\b{\Psi} \equiv \Psi^\dag\beta$ con $\beta \gamma^\mu \beta^{-1} = -(\gamma^\mu)^\dag$ è un invariante di Lorentz, si può costruire l'invariante 
-\begin{equation}
-    \b{\Psi} = \Psi^\dag i\gamma^0\Psi,
-\end{equation}
-dove si è scelto $\beta \equiv i\gamma^0$. L'azione ha dunque la forma
-\begin{equation}
-    S[\Psi,\b{\Psi}] = \int d^4x\,(m\b{\Psi}\Psi - \b{\Psi}\sl{\p}\Psi).
-\end{equation}
-Dal principio di minima azione applicato alla variazione 
-\begin{equation}
-    \delta S = \int d^4x\,[\delta\b{\Psi}(\sl{\p} - m)\Psi - (\p_\mu\b{\Psi}\gamma^\mu + \b{\Psi}m)\delta\Psi],
-\end{equation}
-si ottengono le due equazioni del moto equivalenti
-\begin{equation}
-    \begin{cases}
-        (\sl{\p} - m)\Psi = 0 \\
-        \b{\Psi}(\overset{\leftarrow}{\sl{\p}} - m) = 0
-    \end{cases},\quad \overset{\leftarrow}{\sl{\p}} \equiv \p_\mu\b{\Psi}\gamma^\mu.
-\end{equation}
+
 Si può infine dimostrare perché la dimensione della rappresentazione sia $2^{D/2}$. Si parte da $D = 2$, si devono trovare due matrici $\gamma^1$ e $\gamma^2$ tali che $\acomm{\gamma^1}{\gamma^2} = 0$ e che $(\gamma^1)^2 = (\gamma^2)^2 = \IM_4$. Una scelta possibile è
 \begin{equation}
     \gamma^1 = \sigma_1,\quad \gamma^2 = \sigma_2,
