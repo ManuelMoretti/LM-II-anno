@@ -353,49 +353,114 @@ dove le matrici $S$, dato che si considerano solo rappresentazioni hermitiane, d
 % \end{equation}
 
 \subsection{Algebra di Clifford completa}
-In dimensioni pari esiste una sola rappresentazione irriducibile, mentre in dimensione dispari ne esistono due ma portano alla stessa algebra. L'algebra contiene $\{\IM,\gamma^\mu,\gamma^\mu\gamma^\nu,\gamma^\mu\gamma^\nu\gamma^\rho\}$, ma in realtà la definizione di algebra di Clifford permette di restringersi ad un insieme più piccolo; infatti
+L'algebra di Clifford completa consiste nella matrice identità $\IM$, i $D$ generatori $\gamma$ e tutte le matrici indipendenti costruite come prodotti dei generatori. Dato che i prodotti simmetrici si riducono in prodotti contenenti un numero minore di matrici $\gamma$ a causa della condizione \eqref{eq: algebra di Clifford}, i nuovi elementi devono essere prodotti anti-simmetrici. Si definisce quindi 
+\begin{equation}
+\label{eq: anti-simmetrizzazione prodotti matrici gamma}
+    \gamma^{\mu_1\cdots\mu_r} = \gamma^{[\mu_1}\gamma^{\mu_2}\cdots\gamma^{\mu_r]}.
+\end{equation}
+Componenti non nulle di tensori si possono quindi scrivere come 
+\begin{equation}
+    \gamma^{\mu_1\cdots\mu_r} = \gamma^{\mu_1}\cdots\gamma^{\mu_r},\quad \mu_1 \neq \cdots \neq \mu_r.
+\end{equation}
+Tutte queste matrici sono a traccia nulle, a parte al rango minimo per $r = 0$, che corrisponde alla matrice identità, e al rango massimo per $r = D$, che è a traccia nulla solo per dimensioni $D$ pari. 
+
+Le teorie di supersimmetria e la supergravità emergono dal concetto di spin fermionico. Come ci si può aspettare, sono richieste proprietà intricate dell'algebra di Clifford per determinare le conseguenze fisiche di queste teorie di campo. Si riportano perciò nel seguito alcuni risultati utili riguardo alle matrici $\gamma$, validi sia in dimensione parti che in dimensione dispari. Si parte dalle possibili contrazioni delle matrici $\gamma$, due primi esempi sono 
+\begin{equation}
+    \gamma^\mu\gamma_\mu = D,\quad \gamma^{\mu\nu}\gamma_\nu = (D - 1)\gamma^\mu.
+\end{equation}
+La logica dietro seconda relazione, e quindi anche dietro alla prima, sta semplicemente nel fatto che l'indice $\nu$ assume tutti i valori eccetto $\mu$, risultando in $D - 1$ termini nella somma. Una logica simile spiega anche 
+\begin{equation}
+    \gamma^{\mu\nu\rho}\gamma_\rho = (D - 2)\gamma^{\mu\nu}.
+\end{equation}
+In generale, si dimostra 
+\begin{equation}
+\label{eq: contrazione generale matrici di Dirac}
+    \gamma^{\mu_1\cdots\mu_r\nu_1\cdots\nu_s}\gamma_{\nu_s\cdots \nu_1} = \frac{(D - r)!}{(D - r - s)!}\gamma^{\mu_1\cdots\mu_r}.
+\end{equation}
+Si noti che la seconda matrice a primo membro ha gli indice in ordine inverso, cosicché non compaia un segno meno. In generale, quindi, è molto utile conoscere la regola di inversione
+\begin{equation}
+    \gamma^{\nu_1\cdots\nu_r} = (-1)^{r(r - 1)/2}\gamma^{\nu_r\cdots\nu_1},
+\end{equation}
+dove il fattore a secondo membro è negativo per $r = 2,3 \mod 4$. 
+
+Anche senza contrarre gli indici, esistono alcune relazioni utili. Ad esempio, quando si deve calcolare un prodotto del tipo $\gamma^{\mu_1\mu_2}\gamma_{\nu_1\cdots\nu_D}$, si sa che i valori degli indici $\mu_1$ e $\mu_2$ compaiono nell'insieme di indici $\{\nu_i\}$. Ci sono $D$ possibilità per $\mu_2$, e dato che $\mu_1$ deve essere diverso, rimangono $D - 1$ possibilità per $\mu_1$. Di conseguenza, il risultato è 
+\begin{equation}
+    \gamma^{\mu_1\mu_2}\gamma_{\nu_1\cdots\nu_D} = D(D - 1)\delta^{\mu_1\mu_2}_{[\nu_1\nu_2}\gamma_{\nu_3\cdots\nu_D]},
+\end{equation}
+da cui si ottiene anche 
+\begin{equation}
+    \gamma^{\mu_1\mu_2}\gamma_{\nu_1\cdots\nu_D}\epsilon^{\nu_1\cdots\nu_D} = D(D - 1)\epsilon^{\mu_2\mu_1\nu_3\cdots\nu_D}\gamma_{\nu_3\cdots\nu_D}.
+\end{equation}
+
+Considerando il prodotto di matrici $\gamma$ senza contrazione degli indici, il caso più semplice è $\gamma^\mu\gamma^\nu$, il quale si può dimostrare essere 
 \begin{equation}
     \begin{split}
         \gamma^\mu\gamma^\nu &= \frac{1}{2}(\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu) + \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu) \\
         &= \eta^{\mu\nu} + \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu) \\
         &\equiv \eta^{\mu\nu} + \gamma^{[\mu}\gamma^{\nu]} \\
-        &\equiv \eta^{\mu\nu} + \gamma^{\mu\nu},
+        &\equiv \eta^{\mu\nu} + \gamma^{\mu\nu}.
     \end{split}
 \end{equation}
-dove si è definito
+Il risultato discende direttamente dalle definizioni: la parte antisimmetrica del prodotto è definita in \eqref{eq: anti-simmetrizzazione prodotti matrici gamma}, in particolare da 
 \begin{equation}
-    \gamma^{[\mu}\gamma^{\nu]} \equiv \gamma^{\mu\nu} \equiv \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu).
+    \gamma^{[\mu}\gamma^{\nu]} \equiv \gamma^{\mu\nu} \equiv \frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu),
 \end{equation}
-In generale quindi 
+mentre la parte simmetrica del prodotto è $\eta^{\mu\nu}$ per la condizione \eqref{eq: algebra di Clifford}. Questo illustra l'approccio generale: si scrive prima la matrice di Clifford totalmente anti-simmetrica che contiene tutti gli indici e poi si aggiungono i termini per tutte le possibili gli accoppiamenti degli indici. Un altro esempio è
 \begin{equation}
-    \gamma^{\mu_1\cdots\mu_r} = \gamma^{[\mu_1}\gamma^{\mu_2}\cdots\gamma^{\mu_r]}.
+    \gamma^{\mu\nu\rho}\gamma_{\sigma\tau} = \gamma^{\mu\nu\rho}_{\sigma\tau} + 6\gamma^{[\mu\nu}_{[tau}\delta^{\rho]}_{\sigma]} + 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]}.
 \end{equation}
-Si hanno inoltre 
+Considerando infine prodotti di matrici dove sono presenti indici contratti e non contratti, si può dimostrare in generale che 
 \begin{equation}
-    \gamma^\mu\gamma_\mu = D,
+    \gamma_\rho\gamma^{\mu_1\cdots\mu_r}\gamma^\rho = (-1)^r(D - 2r)\gamma^{\mu_1\cdots\mu_r}.
 \end{equation}
+% In dimensioni pari esiste una sola rappresentazione irriducibile, mentre in dimensione dispari ne esistono due ma portano alla stessa algebra. L'algebra contiene $\{\IM,\gamma^\mu,\gamma^\mu\gamma^\nu,\gamma^\mu\gamma^\nu\gamma^\rho\}$, ma in realtà la definizione di algebra di Clifford permette di restringersi ad un insieme più piccolo.
+
+Per molte ragioni può essere utile studiare l'elemento tensoriale di rango più alto dell'algebra di Clifford, dato che fornisce un legame tra dimensione pari e dimensione dispari ed è strettamente legato alla chiralità dei fermioni. Si definisce la matrice di chiralità
 \begin{equation}
-    \gamma_\nu\gamma^\mu\gamma^\nu = \gamma_\nu(2\eta^{\mu\nu} - \gamma^\nu\gamma^mu) = (2 - D)\gamma^\mu,
+\label{eq: matrice di chiralità}
+    \gamma_* := (-i)^{m + 1}\gamma^0\cdots \gamma^{D - 1},
 \end{equation}
+tale che $(\gamma_*)^2 = \IM$ per ogni dimensione pari, $\tr{(\gamma_*)} = n_+ - n_- = 0 = 0$, dove $n_+$ è il numero di autovalori positivi $+1$, mentre $n_-$ è quello di autovalori negativi $-1$ tali che $n_+ = n_- \equiv n$ e $n = 2^{m - 1}$, ed è hermitiana. Inoltre, si dimostra che $\acomm{\gamma_*}{\gamma^\mu} = 0$ e che $\comm{\gamma_*}{\gamma^{\mu\nu}} = 0$. Dato che $\gamma_*^2 = \IM$ e che $\tr{(\gamma_*)} = 0$, segue che si può scegliere una rappresentazione dove 
 \begin{equation}
-    \gamma^{\mu\nu}\gamma_\nu = ... = (D - 1)\gamma^\mu.
+    \gamma_* = 
+    \begin{pmatrix}
+        \IM_{2^{m - 1}} & \OM \\
+        \OM & -\IM_{2^{m - 1}}
+    \end{pmatrix}.
 \end{equation}
-Si definisce la matrice di chiralità
+Tramite la matrice di chiralità di possono anche definire i \emph{proiettori di chiralità} con i quali si possono ottenere gli spinori di Weyl $\psi(x)$ e $\b{\chi}(x)$ a partire da uno spinore di Dirac $\Psi(x)$. Questi sono definiti come 
 \begin{equation}
-    \gamma^* := (-i)^{m + 1}\gamma^0\cdots \gamma^{D - 1},
+\label{eq: proiettori di chiralità}
+    \begin{cases}
+        P_L := \dfrac{1}{2}(\IM + \gamma_*) \\[2ex]
+        P_R := \dfrac{1}{2}(\IM - \gamma_*)
+    \end{cases},
 \end{equation}
-tale che 
+per cui 
 \begin{equation}
-    (\gamma^*)^2 = \IM,\quad \acomm{\gamma^*}{\gamma^\mu} = 0,\quad \tr{(\gamma^*)} = n_+ - n_- = 0,
+    \begin{pmatrix}
+        \psi(x) \\
+        0
+    \end{pmatrix}
+    \equiv P_L\Psi(x),\quad 
+    \begin{pmatrix}
+        0 \\
+        \b{\chi}(x)
+    \end{pmatrix} 
+    \equiv P_R\Psi(x).
 \end{equation}
-dove $n_+$ è il numero di autovalori positivi $+1$, mentre $n_-$ è quello di autovalori negativi $-1$, di conseguenza $n_+ = n_- \equiv n$ e
+Si può dimostrare che le matrici in \eqref{eq: proiettori di chiralità} proiettano su sottospazi ortogonali, cioè che 
 \begin{equation}
-    n = 2^{m - 1}.
+    P_L^2 = P_L,\quad P_R^2 = P_R,\quad P_LP_R = P_RP_L = 0,
 \end{equation}
-Tramite la matrice di chiralità si può scrivere
+indipendentemente dalla rappresentazione dell'algebra di Clifford. 
+
+La matrice $\gamma_*$ risulta essere l'unico elemento di rango massimo... Tramite la matrice di chiralità si può scrivere
 \begin{equation}
     \gamma_{\mu_0\cdots\mu_D} = (i)^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma^*.
 \end{equation}
+
+
 La matrice di chiralità si può rappresentare come 
 \begin{equation}
     \gamma^* = 
