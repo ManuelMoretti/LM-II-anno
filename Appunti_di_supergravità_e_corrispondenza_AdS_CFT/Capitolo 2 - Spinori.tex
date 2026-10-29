@@ -226,6 +226,7 @@ Tipicamente, si opera la scelta
 \end{equation}
 Di conseguenza, si definisce l'\emph{aggiunto di Dirac} come 
 \begin{equation}
+\label{eq: aggiunto di Dirac}
     \b{\Psi} := \Psi^\dag \beta = i\Psi \gamma^0.
 \end{equation}
 La forma bilineare invariante cercata si può dunque scrivere come 
@@ -314,8 +315,9 @@ Anche se le matrici $\gamma$ euclidee hanno applicazioni fisiche, si è qui inte
 \label{eq: hermiticità matrici di Dirac}
     (\gamma^\mu)^\dag = \gamma^0\gamma^\mu\gamma^0.
 \end{equation}
-\'E fondamentale per la teoria di Dirac che la fisica degli spinori sia la medesima in ogni rappresentazione equivalente dell'algebra di Clifford. Quindi, si è di fatto interessati alle classi di rappresentazioni legate dalla coniugazione, cioé
+\'E fondamentale per la teoria di Dirac che la fisica degli spinori sia la medesima in ogni rappresentazione equivalente dell'algebra di Clifford. Quindi, si è di fatto interessati alle classi di rappresentazioni legate dalla coniugazione, cioè
 \begin{equation}
+\label{eq: matrici gamma legate da coniugazione}
     \gamma^{\prime\mu} = S\gamma^\mu S^{-1},
 \end{equation}
 dove le matrici $S$, dato che si considerano solo rappresentazioni hermitiane, devono essere unitarie. Date due rappresentazioni equivalenti, la matrice di trasformazione $S$ è unica a meno di un fattore di fase. A meno di questa coniugazione, esiste un'unica rappresentazione irriducibile dell'algebra di Clifford tramite matrici $2^m \times 2^m$ per $D = 2m$. Ogni altra rappresentazione è riducibile ed equivalente alla somma diretta di due copie della rappresentazione irriducibile più sopra. Si può sempre scegliere una rappresentazione irriducibile hermitiana, definita in modo da soddisfare \eqref{eq: hermiticità matrici di Dirac}. In dimensione dispari, esistono due rappresentazioni irriducibili inequivalenti che differiscono nel segno della matrice ``finale'' $\pm \gamma^{2m + 1}$. Le conseguenze fisiche sono indipendenti dalla particolare scelta della rappresentazione. 
@@ -447,7 +449,7 @@ tale che $(\gamma_*)^2 = \IM$ per ogni dimensione pari, $\tr{(\gamma_*)} = n_+ -
 \end{equation}
 La matrice di chiralità risulta essere l'unico elemento di rango massimo nella lista $\{\Gamma^A\}$. Per ogni ordine delle componenti $\mu_i$, si può scrivere 
 \begin{equation}
-    \gamma_{\mu_0\cdots\mu_D} = (i)^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma_*.
+    \gamma_{\mu_0\cdots\mu_D} = i^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma_*.
 \end{equation}
 Tramite la matrice di chiralità di possono anche definire i \emph{proiettori di chiralità} con i quali si possono ottenere gli spinori di Weyl $\psi(x)$ e $\b{\chi}(x)$ a partire da uno spinore di Dirac $\Psi(x)$. Questi sono definiti come 
 \begin{equation}
@@ -535,7 +537,7 @@ Nell'algebra di Clifford delle matrici $2^m \times 2^m$, sia per $D = 2m$ che pe
 \label{eq: condizione simmetrica matrici Cgamma}
     (C\Gamma^{(r)})^T = -t_r(C\Gamma^{(r)}),\quad t_r = \pm 1,
 \end{equation}
-dove $\Gamma^{(r)}$ e una matrice di rango $r$ in $\{\Gamma^A\}$. In particolare, se $t_r = +1$, la matrice $C\Gamma^{(r)}$ è simmetrica; se invece $t_r = -1$, è antisimmetrica. Per $r > 2$, i segni $t_r$ sono determinati da $t_0$ e $t_1$. Tramite le relazioni 
+dove $\Gamma^{(r)}$ e una matrice di rango $r$ in $\{\Gamma^A\}$. In particolare, se $t_r = +1$, la matrice $C\Gamma^{(r)}$ è simmetrica; se invece $t_r = -1$, è antisimmetrica. Per $r > 2$, i segni $t_r$ sono determinati da $t_0$ e $t_1$. Per i ranghi $r = 0$ e $r = 1$, da \eqref{eq: condizione simmetrica matrici Cgamma} si ottiene
 \begin{equation}
     C^T = -t_0C,\quad (\gamma^\mu)^T = t_0t_1C\gamma^\mu C^{-1},
 \end{equation}
@@ -554,22 +556,26 @@ Pertanto, da \eqref{eq: condizione simmetrica matrici Cgamma} si vede che $t_2 =
 \end{ex}
 Le matrici $C$ possono essere costruite esplicitamente mediante prodotti tensoriali di matrici di Pauli. Una possibile scelta è
 \begin{equation}
+\label{eq: definizione matrice C+}
     C_+=\sigma_1\otimes\sigma_2\otimes\sigma_1
     \otimes\sigma_2\otimes\cdots,
     \quad t_0t_1=+1,
 \end{equation}
 oppure
 \begin{equation}
+\label{eq: definizione matrice C-}
     C_-=\sigma_2\otimes\sigma_1\otimes\sigma_2
     \otimes\sigma_1\otimes\cdots,
     \quad t_0t_1=-1.
 \end{equation}
 La scelta dipende dalla dimensione dello spaziotempo $D$ e dalla rappresentazione delle matrici $\gamma$ adottata. Per dimensioni $D$ pari entrambe le scelte sono possibili e si può passare da una scelta all'altra rinominando $C$ con $C\gamma_*$, a meno di un fattore di fase di normalizzazione. Per dimensioni $D$ dispari, la scelta di $C$ è unica, di nuovo, a meno di un fattore di fase. Dato che si fa uso di rappresentazioni hermitiane, che soddisfano la condizione \eqref{eq: hermiticità matrici di Dirac}, la proprietà di simmetria di una matrice $\gamma$ determina anche quella della sua complessa coniugata. Per vederlo, si definisce $B$ in funzione di $C$ e $A$ come
 \begin{equation}
+\label{eq: definizione matrice B}
     B = it_0C\gamma^0 = t_0CA.
 \end{equation}
 Si può dimostrare poi che 
 \begin{equation}
+\label{eq: complesso coniugato gamma^*}
     (\gamma^\mu)^* = -t_0t_1B\gamma^\mu B^{-1},
 \end{equation}
 \begin{equation}
@@ -594,6 +600,11 @@ Con una scelta alternativa delle matrici di $B$ e $C$ si ottiene invece
     t_0 = +1,\quad t_1 = +1,\quad t_2 = -1,\quad t_3 = -1,\quad \dots\quad.
 \end{equation}
 Questi risultati mostrano che le proprietà di simmetria dei prodotti di matrici gamma dipendono dalla scelta degli operatori intreccianti e dalla dimensione dello spaziotempo.
+
+Le proprietà \eqref{eq: condizione simmetrica matrici Cgamma} e \eqref{eq: complesso coniugato gamma^*} valgono per la rappresentazione \eqref{eq: costruzione matrici di Dirac euclidee} usando le matrici \eqref{eq: definizione matrice C+}, \eqref{eq: definizione matrice C-} e \eqref{eq: definizione matrice B}. In un'altra rappresentazione, legata da \eqref{eq: matrici gamma legate da coniugazione}, le matrici $C$ e $B$ sono date da 
+\begin{equation}
+    C' = (S^{-1})^TCS^{-1},\quad B' = (S^{-1})^TBS^{-1}.
+\end{equation}
 
 % \subsubsection{Simmetrie delle matrici \texorpdfstring{$\gamma$}{gamma}}
 % Se $\b{\Psi} = \Psi^\dag\gamma^0$, si definisce $A = i\gamma^0$ tale che 
@@ -656,110 +667,140 @@ Questi risultati mostrano che le proprietà di simmetria dei prodotti di matrici
 % \end{equation}
 
 \section{Spinori in dimensione generica}
-In dimensione $D$ generica, si era definito lo spinore di Dirac $\b{\Psi}$ con il quale si possono costruire gli invarianti di Lorentz. Si definisce in particolare lo \emph{spinore di Majorana}
+In equazione \eqref{eq: aggiunto di Dirac} si è definito l'aggiunto di Dirac, nella quale definizione compariva il complesso coniugato dello spinore $\Psi(x)$, e lo si è usato per definire una forma bilineare invariante di Lorentz così da costruire un'azione per il campo spinoriale di Dirac. Si definisce adesso \emph{l'aggiunto di Majorana} per qualsiasi spinore $\lambda$ usando il suo trasposto e la matrice $C$ introdotta più sopra come 
 \begin{equation}
-    \b{\lambda} := \lambda^TC,
+\label{eq: aggiunto di Majorana}
+    \b{\lambda} := \lambda^TC.
 \end{equation}
-con il quale si possono costruire nuovi invarianti. Quindi, applicando $\b{\lambda}$ a $\chi$ si ha
+La forma bilineare $\b{\lambda}\chi = \lambda^TC\chi$ è un invariante di Lorentz. La variazione di $\b{\lambda}\chi$ sotto una trasformazione di Lorentz infinitesima può essere scomposta in
 \begin{equation}
-    \b{\lambda}\chi = \lambda^TC\chi,
+\delta(\b{\lambda}\chi) = (\delta\b{\lambda})\chi + \b{\lambda}\delta\chi,
 \end{equation}
-che trasforma come
+dove le singole variazioni risultano essere
 \begin{equation}
-    \delta(\b{\lambda}\chi) = (\delta\b{\lambda})\chi + \b{\lambda}\delta(\chi),
+    \delta\lambda^T = -\frac{1}{4}\lambda^T(\gamma_{\mu\nu})^T\lambda^{\mu\nu},\quad \delta\chi = -\frac{1}{4}\lambda^{\mu\nu}\gamma_{\mu\nu}\chi,
 \end{equation}
-dove
+per cui si ha 
 \begin{equation}
-    \delta\lambda^T = -\frac{1}{4}\chi^T(\gamma_{\mu\nu})^T\lambda^{\mu\nu},\quad \delta\chi = -\frac{1}{4}\lambda^{\mu\nu}\gamma_{\mu\nu}\chi,
-\end{equation}
-si ha 
-\begin{equation}
-    \delta(\b{\lambda}\chi) = -\frac{1}{4}\lambda^{\mu\nu}[\lambda^T(\gamma_{\mu\nu})^TC\chi + \lambda^TC\gamma_{\mu\nu}\chi] = 0,
+    \delta(\b{\lambda}\chi) = -\frac{1}{4}\lambda^{\mu\nu}[\lambda^T(\gamma_{\mu\nu})^TC\chi + \lambda^TC\gamma_{\mu\nu}\chi] = 0
 \end{equation}
 da cui si definiscono gli invarianti $\lambda^T(\gamma_{\mu\nu})^TC\chi$ e $\lambda^TC\gamma_{\mu\nu}\chi$.
 
-\paragraph{Variabili di Grassmann.} Le variabili di Grassmann sono definite in modo da essere anti-commutanti
+\paragraph{Numeri di Grassmann.} I numeri di Grassmann sono definiti come quantità che anti-commutano con altri numeri di Grassmann, ma sono tali da commutare con i numeri ordinari. Dati due numeri di Grassmann $\theta$ e $\eta$ ed un numero ordinario $x$, si hanno
 \begin{equation}
-    \theta\eta = -\eta\theta.
+    \begin{cases}
+        \theta\eta = -\eta\theta \\
+        \theta x = x\theta
+    \end{cases}.
 \end{equation}
-Sono nilpotenti $\theta^2 = 0$, per consistenza serve introdurre
+I numeri di Grassmann son nilpotenti, ossia
+il quadrato di un numero di Grassmann $\theta$ è nullo, cioè $\theta\theta = 0$. Considerando ancora i due numeri di Grassmann $\theta$ ed $\eta$, questi soddisfano la relazione
 \begin{equation}
     (\theta\eta)^* = \eta^*\theta^* = -\theta^*\eta^*.
 \end{equation}
-Una funzione $f(\theta)$ è una funzione lineare del tipo $f(\theta) = a + b\theta$, dove per distinguere le variabili di Grassmann dai numeri complessi ordinari, si chiamano questi \emph{c-numeri} dove la ``c'' sta per ``commutanti''. A meno che non sia specificato, gli spinori avranno sempre come componenti numeri di Grassmann. 
+Data una funzione lineare $f(\theta)$ del tipo $f(\theta) = a + b\theta$, per distinguere i numeri di Grassmann dai numeri complessi ordinari, si chiamano questi ultimi \emph{c-numeri} dove la ``c'' sta per ``commutanti''. A meno che non sia specificato diversamente, si assume nel seguito che le componenti degli spinori siano numeri anti-commutanti di Grassmann. Questo riflette l'importante relazione fisica tra lo spin e la statistica.
 
-Quindi, in $\b{\lambda}\gamma^\mu\chi$, si può scegliere al posto della matrice di Dirac una generica matrice $M \in \alg{Cliff}{1,D - 1}$. Si considera quindi il caso in cui 
+Usando la definizione \eqref{eq: aggiunto di Majorana} e la proprietà \eqref{eq: condizione simmetrica matrici Cgamma}, si ottiene l'utile relazione
 \begin{equation}
-    M = \gamma_{\mu_1\cdots\mu_r},\quad r \le D,
-\end{equation}
-pensandolo come un isomorfismo tra l'algebra di Clifford e i numeri di Grassmann. Esiste un'identità
-\begin{equation}
+\label{eq: Majorana flip}
     \b{\lambda}\gamma_{\mu_1\cdots\nu_r}\chi = t_r\b{\chi}\gamma_{\mu_1\cdots\mu_r}\lambda.
 \end{equation}
-Questa si può verificare ricordando che $s^T = s$ con $S \in \bb{C}$, per cui 
-\begin{equation}
-    \begin{split}
-        (\b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi)^T &= \b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi \\
-        &= -\chi^T(\gamma_{\mu_1\cdots\mu_r})^TC^T\lambda,
-    \end{split}
-\end{equation}
-dove il segno meno nasce dallo scambio effettivo tra $\chi$ e $\lambda$. Quindi, ricordando che $\Gamma(r) = \gamma_{\mu_1\cdots\mu_r}$, si ha 
-\begin{equation}
-    \b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi = t_0\chi^TC\gamma_{\mu_1\cdots\mu_r}\lambda.
-\end{equation}
-Questa identità è detta \emph{Majorana flip}. Se $\lambda = \chi$ e $t_r = -1$, allora la quantità $\b{\lambda}\gamma^{\mu\nu}\lambda$ si annulla in $D = 4$, ma in generale dipende dalla dimensione. 
+Il segno meno risultante dallo scambio dell'ordine dei degli spinori con numeri di Grassmann come componenti è stato incorporato. La proprietà di simmetria in \eqref{eq: Majorana flip} è valida per gli spinori di Dirac, ma l'applicazione principale in supergravità è legata ad un particolare tipo di spinori, cioè gli \emph{spinori di Majorana}. Per questo motivo, ci si riferisce alla relazione \eqref{eq: Majorana flip} con il nome di \emph{Majorana flip}. 
 
-Per cambiare di posto un numero di spinori maggiore di due sono necessarie delle accortezze. Per quattro spinori ad esempio, il caso più comune, si ha l'identità di Fierz: per $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$, si ha 
+Spesso si incontra il caso in cui il bilineare contiene il prodotto di singole matrici $\gamma$. In questi casi, si può dimostrare che per le \emph{dimensioni di Majorana} $D = 2,3,4\mod{8}$ si ha 
 \begin{equation}
-    (\b{\lambda}_1\lambda_2)(\b{\lambda_3}\lambda_4) = \nsum_A\frac{1}{2^m}\b{\lambda_1}\Gamma^A\lambda_4\b{\lambda_3}\Gamma^A\lambda_2,
+    \b{\lambda}\gamma^{\mu_1}\cdots\gamma^{\mu_p}\chi = (-1)^p\b{\chi}\gamma^{\mu_p}\cdots\gamma^{\mu_1}\lambda.
 \end{equation}
-dove
+Le relazioni precedenti implicano anche la seguente regola. Per qualsiasi relazioni tra spinori che includono le matrici $\gamma$, esiste una relazione di corrispondenza tra gli spinori barrati,
 \begin{equation}
-    \Gamma^A \in \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_D}\} \in \alg{Cliff}{2m}
+    \chi_{\mu_1\cdots\mu_r} = \gamma_{\mu_1\cdots\mu_r}\lambda \quad\Longrightarrow\quad \b{\chi}_{\mu_1\cdots\mu_r} = t_0t_r\b{\lambda}\gamma_{\mu_1\cdots\mu_r}.
 \end{equation}
-oppure 
+
+In dimensioni pari si definiscono le parti left e right degli spinori usando i proiettori \eqref{eq: proiettori di chiralità}. La definizione \eqref{eq: aggiunto di Majorana} implica che la chiralità dello spinore coniugato dipende da $t_0t_D$, e si ottiene 
 \begin{equation}
-    \Gamma^A \in \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_m}\} \in \alg{Cliff}{2m + 1}.
+    \chi = P_L\lambda \quad \longrightarrow \quad \b{\chi} = 
+    \begin{cases}
+        \b{\lambda}P_L, &D = 0,4,8,\dots \\
+        \b{\lambda}P_R, &D = 2,6,10,\dots 
+    \end{cases}.
 \end{equation}
+% Questa si può verificare ricordando che $s^T = s$ con $S \in \bb{C}$, per cui 
+% \begin{equation}
+%     \begin{split}
+%         (\b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi)^T &= \b{\lambda}\gamma_{\mu_1\cdots\mu_r}\chi \\
+%         &= -\chi^T(\gamma_{\mu_1\cdots\mu_r})^TC^T\lambda,
+%     \end{split}
+% \end{equation}
+% Se $\lambda = \chi$ e $t_r = -1$, allora la quantità $\b{\lambda}\gamma^{\mu\nu}\lambda$ si annulla in $D = 4$, ma in generale dipende dalla dimensione. 
+Per scambiare di posto un numero di spinori maggiore di due sono necessarie delle accortezze. Per un prodotto di quattro spinori ad esempio, il caso più comune, si può usare una forma dell'identità di Fierz. Siano $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ quattro spinori generici, l'identità di Fierz permette di scrivere
+\begin{equation}
+\label{eq: identità di Fierz 4 spinori}
+    (\b{\lambda}_1\lambda_2)(\b{\lambda}_3\lambda_4) = \nsum_A\frac{1}{2^m}\b{\lambda}_1\Gamma^A\lambda_4\b{\lambda}_3\Gamma^A\lambda_2,
+\end{equation}
+dove, in dimensione pari,
+\begin{equation}
+    \Gamma^A \in \{\Gamma^A\} = \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_D}\} \in \alg{Cliff}{2m}
+\end{equation}
+oppure, in dimensione dispari,
+\begin{equation}
+    \Gamma^A \in \{\Gamma^A\} = \{\IM,\gamma^\mu,\dots,\gamma^{\mu_1\cdots\mu_m}\} \in \alg{Cliff}{2m + 1}.
+\end{equation}
+La relazione \eqref{eq: identità di Fierz 4 spinori} può poi essere generalizzata per includere matrici generali $M$, $M'$ dell'algebra di Clifford. Quando gli spinori $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ non sono del tutto indipendenti, può spesso capire che alcuni termini della somma si annullino a causa di relazioni di simmetria come \eqref{eq: Majorana flip}. 
 
 \subsection{Coniugazione di carica}
-Prima di introdurre gli spinori di Majorana è necessario prima definire l'operazione di coniugazione di carica. Sia quindi $\lambda$ uno spinore di Dirac, si definisce la coniugazione di carica come
-\begin{equation}
-    \lambda^c := B^{-1}\lambda^*,
-\end{equation} 
-la quale trasforma secondo Lorentz. Facendone il coniugato di Majorana si ottiene
-\begin{equation}
-    \b{\lambda^c} = (B^{-1}\lambda^*)^TC = \lambda^\dag B^{-T}C.
-\end{equation}
-Si può dimostrare che $B^{-T} = -t_1B^{-1}$, con la quale 
-\begin{equation}
-    \b{\lambda^c} = -t_0t_1\lambda^\dag(i\gamma^0).
-\end{equation}
-Quindi, si vede come il coniugato di Majorana sia legato a quello di Dirac, manifestazione del fatto che $B$ e $C$ sono legate. 
+Fino ad ora non si è ancora discusso della complessa coniugazione dei campi spinoriali che si sta studiando. La complessa coniugazione è necessaria per verificare, ad esempio, che un termine nella lagrangiana comprendente dei bilineari di spinori sia hermitiano o meno. Tuttavia, la complessa coniugazione di un bilineare è un'operazione delicata dato che sono coinvolte le hermiticità della matrice $C$ in \eqref{eq: aggiunto di Majorana} e delle matrici $\gamma$. Pertanto, si introduce l'operazione di \emph{coniugazione di carica} più semplice da usare nei calcoli. Per ogni scalare, definito come una quantità i cui indici spinoriali sono totalmente contratti, la coniugazione di carica e la complessa coniugazione sono equivalenti. Dato che la lagrangiana è uno scalare, la coniugazione di carica può essere usata per manipolare i termini che la formano. 
 
-Sia ora $M \in \alg{Cliff}{D}$ e sia $M^c := B^{-1}M^*B$, per una matrice di Dirac $\gamma_\mu$ si ha in particolare che il coniugato di carica è
+Si definisce prima di tutto il \emph{coniugato di carica} di un generico spinore $\lambda$ come 
 \begin{equation}
-    (\gamma_\mu)^c = -t_0t_1\gamma_\mu.
+\label{eq: coniugato di carica}
+    \lambda^C := B^{-1}\lambda^*.
 \end{equation}
-Per la gamma chirale in particolare 
+Il coniugato di carica barrato di un generico spinore $\lambda$ è pertanto definito, usando \eqref{eq: aggiunto di Majorana} e \eqref{eq: definizione matrice B}, come\footnote{Facendo il coniugato di Majorana di \eqref{eq: coniugato di carica} si ha $\bigb{\lambda^C} = (B^{-1}\lambda^*)^TC = \lambda^\dag (B^{-1})^TC$, da cui, usando che $(B^{-1})^T = -t_1B^{-1}$, si trova \eqref{eq: aggiunto del coniugato di carica}.} 
 \begin{equation}
-    \gamma_*^c = (-1)^{(D/2) + 1}\gamma_*.
+\label{eq: aggiunto del coniugato di carica}
+    \bigb{\lambda^C} = (-t_0t_1)i\lambda^\dag\gamma^0.
 \end{equation}
-Si può poi calcolare che 
+\begin{obs}
+    Si noti che \eqref{eq: aggiunto del coniugato di carica} corrisponde all'aggiunto di Dirac definito in \eqref{eq: aggiunto di Dirac} a meno del fattore numerico $-t_0t_1$. Il significato di ciò sarà più chiaro quando si introdurranno gli spinori di Majorana. Si noti anche che $-t_0t_1 = 1$ in $D = \{2,3,4,10,11\}$.
+\end{obs}
+Il coniugato di carica di qualsiasi matrice $M \in \alg{Cliff}{D}$ di dimensione $2^m \times 2^m$ è definito come
 \begin{equation}
-    \begin{split}
-        (\b{\chi}M\lambda)^c = (\chi^TCM\lambda)^* &= (\chi_a(CM)_{ab}\lambda_b)^* \\
-        &= \lambda_b^*(CM)^*_{ab}\chi_a^* \\
-        &= \chi_a^*(CM)^*_{ab}\lambda_b^* \\
-        &= -\chi^TC^*M^*\lambda^* \\
-        &= i\chi^\dag\gamma^0 M^c \lambda^c,
-    \end{split}
+\label{eq: coniugato di carica matrice M di clifford generica}
+    M^C := B^{-1}M^*B.
 \end{equation}
-dove si sono usate la definizione di $M^c$, $C^* = -t_0C^{-1}$ e $B = it_0C\gamma^0$, per cui
+La coniugazione di carica non cambia l'ordine delle matrici, cioè $(MN)^C = M^CN^C$. Il tipo di matrici $M$ con cui si ha maggiormente a che fare sono le matrici $\gamma^\mu$, per cui sono particolarmente importanti le proprietà di coniugazione delle matrici generatrici $\gamma$, che sono 
 \begin{equation}
-    (\b{\chi}M\lambda)^c = -t_0t_1\b{\chi^c}M^c\lambda^c.
+    \gamma_\mu^C = B^{-1}\gamma_\mu^*B = -t_0t_1\gamma_\mu.
 \end{equation}
-Dunque, l'operazione di coniugazione di carica agisce come il complesso coniugato a meno di un segno. 
+In particolare, per la matrice di chiralità si ha
+\begin{equation}
+    \gamma_*^C = (-1)^{(D/2) + 1}\gamma_*.
+\end{equation}
+Con queste relazioni, si può derivare la regola per la complessa coniugazione di un bilineare spinoriale che include una matrice arbitraria $M$. Questa è 
+\begin{equation}
+\label{eq: coniugato di carica di un bilineare}
+    (\b{\chi}M\lambda)^* \equiv (\chi^TCM\lambda)^C = -t_0t_1\bigb{\chi^C}M^C\lambda^C.
+\end{equation}
+Una scambio nell'ordine dei campi fermionici è necessaria per la derivazione\footnote{+DERIVAZIONE}, ma non c'è nessuna variazione nell'ordine del risultato finale per il coniugato di carica di qualsiasi bilineare. Si può quindi considerare la relazione \eqref{eq: coniugato di carica di un bilineare} come la proprietà di coniugazione di carica appropriata quando il coniugato di uno spinore è definito come in \eqref{eq: aggiunto di Majorana}. 
+\begin{obs}
+    Si può dimostrare che per ogni spinore $(\lambda^C)^C = -t_1\lambda$, mentre per ogni matrice $(M^C)^C = M$.
+\end{obs}
+
+% Si calcola quindi
+% \begin{equation}
+%     \begin{split}
+%         (\b{\chi}M\lambda)^* \equiv (\chi^TCM\lambda)^C &= (\chi_a(CM)_{ab}\lambda_b)^* \\
+%         &= \lambda_b^*(CM)^*_{ab}\chi_a^* \\
+%         &= \chi_a^*(CM)^*_{ab}\lambda_b^* \\
+%         &= -\chi^TC^*M^*\lambda^* \\
+%         &= i\chi^\dag\gamma^0 M^C \lambda^C,
+%     \end{split}
+% \end{equation}
+% usando poi la definizione di $M^C$ in \eqref{eq: coniugato di carica matrice M di clifford generica} insieme alle relazioni $C^* = -t_0C^{-1}$ e $B = it_0C\gamma^0$, si ottiene la regola
+% \begin{equation}
+%     (\b{\chi}M\lambda)^* \equiv (\chi^TCM\lambda)^C = -t_0t_1\bigb{\chi^C}M^C\lambda^C.
+% \end{equation}
+% Dunque, l'operazione di coniugazione di carica agisce come il complesso coniugato a meno di un segno. 
 
 \section{Spinori di Majorana}
 Gli spinori di Dirac in generale hanno componenti complesse. Si vuole capire se è possibile imporre delle condizioni affinché le entrate siano invece reali. Una prima condizione che si potrebbe pensare di imporre è
