@@ -248,7 +248,7 @@ si ottengono le due equazioni del moto equivalenti
     \end{cases},\quad \backv{\sl{\p}} \equiv \p_\mu\b{\Psi}\gamma^\mu.
 \end{equation}
 
-\subsection{Spinori di Weyl in \texorpdfstring{$D$}{D} pari}
+\subsection{Spinori di Weyl in dimensione pari}
 Tornando al caso $D = 2m$, dato che esiste una rappresentazione anti-diagonale a blocchi per ogni dimensione pari, lo stesso vale per tutte le dimensioni $D = 2m$ con due sotto-rappresentazioni irriducibili, ognuna di dimensione $2^{m - 1}$. Questo suggerisce che uno spinore di Dirac $\Psi(x)$ non è il campo covariante di Lorentz più semplice. In un certo senso questo è vero: si può definire uno spinore di Weyl $\psi(x)$ con $2^{m - 1}$ componenti che trasforma secondo 
 \begin{equation}
     \psi(x) \to \psi'(x') \equiv L(\lambda)^{-1}\psi(\Lambda(\lambda)x),
@@ -379,6 +379,7 @@ In generale, si dimostra
 \end{equation}
 Si noti che la seconda matrice a primo membro ha gli indice in ordine inverso, cosicché non compaia un segno meno. In generale, quindi, è molto utile conoscere la regola di inversione
 \begin{equation}
+\label{eq: regola inversione indici matrici di Dirac}
     \gamma^{\nu_1\cdots\nu_r} = (-1)^{r(r - 1)/2}\gamma^{\nu_r\cdots\nu_1},
 \end{equation}
 dove il fattore a secondo membro è negativo per $r = 2,3 \mod 4$. 
@@ -415,6 +416,22 @@ Considerando infine prodotti di matrici dove sono presenti indici contratti e no
 \end{equation}
 % In dimensioni pari esiste una sola rappresentazione irriducibile, mentre in dimensione dispari ne esistono due ma portano alla stessa algebra. L'algebra contiene $\{\IM,\gamma^\mu,\gamma^\mu\gamma^\nu,\gamma^\mu\gamma^\nu\gamma^\rho\}$, ma in realtà la definizione di algebra di Clifford permette di restringersi ad un insieme più piccolo.
 
+\subsubsection{Base dell'algebra per \texorpdfstring{$D$}{D} pari}
+Ci si concentra ora sullo spaziotempo di dimensione $D$ pari e si costruisce una base ortogonale per l'algebra di Clifford. Successivamente, si potranno estendere i risultati per le dimensioni dispari. La base si indica con $\{\Gamma^A\}$ ed è
+\begin{equation}
+    \{\Gamma^A\} \equiv \{\IM,\gamma^\mu,\gamma^{\mu_1\mu_2},\gamma^{\mu_1\mu_2\mu_3},\dots,\gamma^{\mu_1\cdots\mu_D}\},
+\end{equation}
+dove i valori degli indici soddisfano la condizione $\mu_1 < \cdots < \mu_r$. Può essere utile definire anche la base di ordine inverso 
+\begin{equation}
+    \{\Gamma_A\} \equiv \{\IM,\gamma_\mu,\gamma_{\mu_2\mu_1},\gamma_{\mu_3\mu_2\mu_1},\dots,\mu_{\mu_D\cdots\mu_1}\}.
+\end{equation}
+Per \eqref{eq: regola inversione indici matrici di Dirac}, le matrici in $\{\Gamma^A\}$ e $\{\Gamma_A\}$ differiscono al più per un fattore di segno. La lista di matrici $\{\Gamma^A\}$ contiene $2^D$ matrici ortogonali in un'algebra di dimensione totale $2^D$. Pertanto, risulta essere una base dello spazio di matrici $M$ di dimensione $2^m \times 2^m$. Si può dimostrare poi che $\Gamma^A\Gamma^B = \pm \Gamma^C$, dove $\Gamma^C$ è un elemento della base i cui indici sono comuni a quelli di $A$ e $B$ con quelli comuni esclusi, e che 
+\begin{equation}
+    \tr{(\Gamma^A\Gamma_B)} = 2^m\delta^A_B.
+\end{equation}
+La conclusione che esiste un'unica rappresentazione dell'algebra di Clifford di dimensione $2^m$ è vera per ogni metrica pseudo-euclidea di segnatura $(p,q)$. Un altro fatto generale è che gli elementi di rango due $\gamma^{\mu\nu}$ dell'algebra di Clifford sono i generatori di una rappresentazione dell'algebra di Lie $\alg{so}{p, q}$ con $ p + q = D = 2m$ con una metrica di segnatura $(p, q)$. 
+
+\subsubsection{Matrice di chiralità}
 Per molte ragioni può essere utile studiare l'elemento tensoriale di rango più alto dell'algebra di Clifford, dato che fornisce un legame tra dimensione pari e dimensione dispari ed è strettamente legato alla chiralità dei fermioni. Si definisce la matrice di chiralità
 \begin{equation}
 \label{eq: matrice di chiralità}
@@ -427,6 +444,10 @@ tale che $(\gamma_*)^2 = \IM$ per ogni dimensione pari, $\tr{(\gamma_*)} = n_+ -
         \IM_{2^{m - 1}} & \OM \\
         \OM & -\IM_{2^{m - 1}}
     \end{pmatrix}.
+\end{equation}
+La matrice di chiralità risulta essere l'unico elemento di rango massimo nella lista $\{\Gamma^A\}$. Per ogni ordine delle componenti $\mu_i$, si può scrivere 
+\begin{equation}
+    \gamma_{\mu_0\cdots\mu_D} = (i)^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma_*.
 \end{equation}
 Tramite la matrice di chiralità di possono anche definire i \emph{proiettori di chiralità} con i quali si possono ottenere gli spinori di Weyl $\psi(x)$ e $\b{\chi}(x)$ a partire da uno spinore di Dirac $\Psi(x)$. Questi sono definiti come 
 \begin{equation}
@@ -449,93 +470,79 @@ per cui
     \end{pmatrix} 
     \equiv P_R\Psi(x).
 \end{equation}
-Si può dimostrare che le matrici in \eqref{eq: proiettori di chiralità} proiettano su sottospazi ortogonali, cioè che 
+Queste relazioni ovviamente non sono vere in generale, ma valgono solo nella rappresentazione di Weyl. Si può dimostrare che le matrici in \eqref{eq: proiettori di chiralità} proiettano su sottospazi ortogonali, cioè che 
 \begin{equation}
     P_L^2 = P_L,\quad P_R^2 = P_R,\quad P_LP_R = P_RP_L = 0,
 \end{equation}
 indipendentemente dalla rappresentazione dell'algebra di Clifford. 
 
-La matrice $\gamma_*$ risulta essere l'unico elemento di rango massimo... Tramite la matrice di chiralità si può scrivere
+\subsubsection{Base dell'algebra per \texorpdfstring{$D$}{D} dispari}
+Per definire una base per l'algebra di Clifford in dimensione $D = 2m + 1$ è sufficiente riorganizzare le matrici nell'algebra di Clifford per $D = 2m$. In particolare, si definiscono due insiemi di $2m + 1$ generatori aggiungendo l'elemento di rango massimo $\gamma_*$ come segue 
 \begin{equation}
-    \gamma_{\mu_0\cdots\mu_D} = (i)^{m + 1}\epsilon_{\mu_0\cdots\mu_D}\gamma^*.
+\label{eq: basi per algebra di Clifford in D dispari}
+    \gamma_\pm^\mu = \{\gamma^0,\gamma^1,\dots,\gamma^{2m - 1},\gamma^{2m} \equiv \pm\gamma_*\}.
 \end{equation}
+In questo modo si ottengono due insiemi di matrici, entrambi tali da soddisfare \eqref{eq: algebra di Clifford} per $D = 2m + 1$. I due insiemi $\{\gamma^\mu_+\}$ e $\{\gamma^\mu_-\}$ non sono equivalenti, ma portano a rappresentazioni equivalenti del gruppo di Lorentz. La differenza principale con il caso $D = 2m$ è che le matrici in $\{\Gamma^A\}$ non sono tutte indipendenti e formano quindi un insieme più che completo. In effetti, l'elemento di rango massimo di questa lista, che consiste nel prodotto di tutte le matrici $\gamma$, è, per \eqref{eq: basi per algebra di Clifford in D dispari}, un fattore di fase moltiplicato per la matrice identità. Più in generale, i settori di rango $r$ e di rango $D - r$ sono messi in relazione dalle relazioni di dualità 
+\begin{equation}
+    \gamma_\pm^{\mu_1\cdots\mu_r} = \pm\frac{i^{m + 1}}{(D - r)!}\epsilon^{\mu_1\cdots\mu_D}\gamma_{\pm\,\mu_D\cdots\mu_{r + 1}}.
+\end{equation}
+In dimensione pari si può trovare una relazione analoga
+\begin{equation}
+    \gamma^{\mu_1\cdots \mu_r}\gamma^* = -\frac{(-i)^{m + 1}}{(D - r)!}\epsilon^{\mu_r\cdots\mu_1\nu_1\cdots\nu_{D - r}}\gamma_{\nu_1\cdots \nu_{D - r}}.
+\end{equation}
+Pertanto, una base dell'algebra di Clifford in $D = 2m + 1$ dimensioni contiene le matrici in $\{\Gamma^A\}$ solo fino al rango $m$.
 
+% Si definisce allora
+% \begin{equation}
+%     \gamma^\mu = 
+%     \begin{pmatrix}
+%         \alpha^\mu & \sigma^\mu \\
+%         \b{\sigma}^\mu & \beta^\mu
+%     \end{pmatrix},
+% \end{equation}
+% dove, per la relazione dell'algebra di Clifford, si ha $\alpha^\mu = \beta^\mu = 0$ e 
+% \begin{equation}
+%     \sigma^\mu\b{\sigma}^\nu + \sigma^\nu\b{\sigma}^\mu = \acomm{\sigma^\mu}{\b{\sigma}^\nu} = 2\eta^{\mu\nu},
+% \end{equation}
+% dove si definiscono le matrici 
+% \begin{equation}
+%     \sigma^\mu = (\IM,\sigma^i),\quad \b{\sigma}^\mu = (-\IM,\sigma^i),
+% \end{equation}
+% con $\sigma^i$ la generalizzazione delle matrici di Pauli, in quattro dimensioni $\acomm{\sigma^i}{\sigma^j} = \delta^{ij}$. Tutto ciò vale nella base di Weyl. 
 
-La matrice di chiralità si può rappresentare come 
+\subsection{Simmetrie delle matrici \texorpdfstring{$\gamma$}{gamma}}
+Ricordando che il coniugato di Dirac è definito come $\b{\Psi} = \Psi^\dag\gamma^0$, si definisce $A := i\gamma^0$, tale che
 \begin{equation}
-    \gamma^* = 
-    \begin{pmatrix}
-        \IM_{2^{m - 1}} & \OM \\
-        \OM & \IM_{2^{m - 1}}
-    \end{pmatrix}.
+    A\gamma^\mu A^{-1} = -(\gamma^\mu)^\dag
+    \quad\Longleftrightarrow\quad
+    A\gamma^\mu=-(\gamma^\mu)^\dag A.
 \end{equation}
-Si definisce allora
-\begin{equation}
-    \gamma^\mu = 
-    \begin{pmatrix}
-        \alpha^\mu & \sigma^\mu \\
-        \b{\sigma}^\mu & \beta^\mu
-    \end{pmatrix},
-\end{equation}
-dove, per la relazione dell'algebra di Clifford, si ha $\alpha^\mu = \beta^\mu = 0$ e 
-\begin{equation}
-    \sigma^\mu\b{\sigma}^\nu + \sigma^\nu\b{\sigma}^\mu = \acomm{\sigma^\mu}{\b{\sigma}^\nu} = 2\eta^{\mu\nu},
-\end{equation}
-dove si definiscono le matrici 
-\begin{equation}
-    \sigma^\mu = (\IM,\sigma^i),\quad \b{\sigma}^\mu = (-\IM,\sigma^i),
-\end{equation}
-con $\sigma^i$ la generalizzazione delle matrici di Pauli, in quattro dimensioni $\acomm{\sigma^i}{\sigma^j} = \delta^{ij}$. Tutto ciò vale nella base di Weyl. Si definiscono poi i proiettori 
-\begin{equation}
-    P_L = \frac{1}{2}(\IM + \gamma^*),\quad P_R = \frac{1}{2}(\IM - \gamma^*),
-\end{equation}
-tali che 
-\begin{equation}
-    P_L^2 = P_L,\quad P_R^2 = P_R,\quad P_RP_L = P_LP_R = 0.
-\end{equation}
-Applicando il proiettore ad uno spinore di seleziona la componente corrispondente
-\begin{equation}
-    P_L\Psi = 
-    \begin{pmatrix}
-        \Psi \\
-        0
-    \end{pmatrix},\quad P_R\Psi = 
-    \begin{pmatrix}
-        0 \\
-        \chi
-    \end{pmatrix},
-\end{equation}
-relazioni che chiaramente non sono vere in ogni base ma solo in quella di Weyl. Si può dimostrare che
-\begin{equation}
-    \gamma^{\mu_1\cdots \mu_D}\gamma^* = -\frac{(-i)^{m + 1}}{(D - r)!}\epsilon^{\mu_r\cdots\mu_1\nu_1\cdots\nu_{D - r}}\gamma_{\nu_1\cdots \nu_{D - r}}.
-\end{equation}
-In $D = 2m + 1$,
-\begin{equation}
-    \gamma^\mu \in \{\gamma^0,\gamma^1,\dots,\gamma^{2m-1},\gamma^{2m} \equiv \gamma^*\}
-\end{equation}
-oppure 
-\begin{equation}
-    \gamma^\mu \in \{\gamma^0,\gamma^1,\dots,\gamma^{2m-1},\gamma^{2m} \equiv -\gamma^*\},
-\end{equation}
-che sono scelte non equivalenti, ma portano ad algebre equivalenti. 
-
-\paragraph{Intertwining operators.} Se $\b{\Psi} = \Psi^\dag\gamma^0$, si definisce $A = i\gamma^0$ tale che 
-\begin{equation}
-    A\gamma^\mu A^{-1} = -(\gamma^\mu)^\dag \quad\Longleftrightarrow\quad A\gamma^\mu = -(\gamma^\mu)^\dag A,
-\end{equation}
-con il quale quindi si passa da $\gamma$ ad $\gamma^\dag$. Si definisce poi $B$ come la mappa che permette di passare da $\gamma$ a $\gamma^*$ e con $C$ quella tra $\gamma$ e $\gamma^T$, come 
+La matrice $A$ permette quindi di mettere in relazione le matrici $\gamma^\mu$ con le loro aggiunte hermitiane. Si definiscono inoltre due matrici, $B$ e $C$, che permettono rispettivamente di mettere in relazione le matrici $\gamma^\mu$ con le loro coniugate complesse e con le loro trasposte, per cui
 \begin{equation}
     (\gamma^\mu)^* = -t_0t_1B\gamma^\mu B^{-1},
 \end{equation}
 \begin{equation}
     (\gamma^\mu)^T = +t_0t_1C\gamma^\mu C^{-1},
 \end{equation}
-dove $t_0 = t_1 = \pm 1$ e con $BB^\dag = CC^\dag = \IM$ e con $C^T = -t_0C$ o $C^* = -t_0C^{-1}$. Si definiscono quindi le $\Gamma^{(\nu)} \in \{\IM,\gamma^\mu,\gamma^{\mu\nu},\dots\}$, tale che 
+dove $t_0,t_1 = \pm 1$ e le matrici soddisfano le relazioni
 \begin{equation}
-    (C\Gamma^{(\nu)})^T = t_r{(C\Gamma^{(r)})},\quad t_r = \pm 1.
+    BB^\dag = CC^\dag = \bb{I},\quad C^T = -t_0C,\quad C^* = -t_0C^{-1}.
 \end{equation}
-Quindi, $t_r$ con $r > 2$, è fissato da $t_0$ e $t_1$. Ad esempio
+Le matrici $B$ e $C$ appartengono alla classe degli \emph{intertwining operators} poiché mettono in relazione rappresentazioni associate alle matrici $\gamma$ e alle loro trasformate.
+
+Nell'algebra di Clifford delle matrici $2^m \times 2^m$, sia per $D = 2m$ che per $D = 2m + 1$, si può distinguere tra matrici simmetriche ed anti-simmetriche, dove la proprietà di simmetria è definita nel modo seguente. Si consideri la famiglia di matrici $\{\Gamma^A\}$, applicando la matrice $C$ ad una matrice $\Gamma^A \in \{\Gamma^A\}$ si ottiene una matrice $C\Gamma^A$ che può essere simmetrica od anti-simmetrica, ma ciò dipende unicamente dal rango $r$ di $\Gamma^A$. Pertanto, si può scrivere 
 \begin{equation}
+\label{eq: condizione simmetrica matrici Cgamma}
+    (C\Gamma^{(r)})^T = -t_r(C\Gamma^{(r)}),\quad t_r = \pm 1,
+\end{equation}
+dove $\Gamma^{(r)}$ e una matrice di rango $r$ in $\{\Gamma^A\}$. In particolare, se $t_r = +1$, la matrice $C\Gamma^{(r)}$ è simmetrica; se invece $t_r = -1$, è antisimmetrica. Per $r > 2$, i segni $t_r$ sono determinati da $t_0$ e $t_1$. Tramite le relazioni 
+\begin{equation}
+    C^T = -t_0C,\quad (\gamma^\mu)^T = t_0t_1C\gamma^\mu C^{-1},
+\end{equation}
+si possono determinare le simmetrie di tutte le matrici $C\gamma^{\mu_1\cdots\mu_r}$ e quindi tutti i coefficienti $t_r$. Ad esempio, si trova che $r_2 = -t_0$, $t_3 = -t_1$ e che $t_{r + 4} = t_r$. In generale, i valori di $t_0$ e $t_1$, e quindi di tutti i $t_r$, dipendono dalla dimensione dello spaziotempo $D\mod{8}$ e dal rango $r\mod{4}$
+\begin{ex}
+    Per trovare $t_2$ si calcola
+    \begin{equation}
     \begin{split}
         (C\gamma^{\mu\nu})^T &= \frac{1}{2}(C\gamma^\mu\gamma^\nu - C\gamma^\nu\gamma^\mu) \\
         &= \frac{1}{2}[(\gamma^\nu)^T(\gamma^\mu)^T - (\gamma^\mu)^T(\gamma^\nu)^T]C^T \\
@@ -543,40 +550,112 @@ Quindi, $t_r$ con $r > 2$, è fissato da $t_0$ e $t_1$. Ad esempio
         &= t_0C\gamma^{\mu\nu}.
     \end{split}
 \end{equation}
-Da qui si trova che $t_2 = -t_0$, si può poi trovare che $t_3 = -t_1$, $t_{r + 4} = t_r$ e così via. Si può poi costruire esplicitamente una rappresentazione di $C$ come
+Pertanto, da \eqref{eq: condizione simmetrica matrici Cgamma} si vede che $t_2 = -t_0$.
+\end{ex}
+Le matrici $C$ possono essere costruite esplicitamente mediante prodotti tensoriali di matrici di Pauli. Una possibile scelta è
 \begin{equation}
-    C_+ = \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \cdots,\quad t_0t_1 = 1,
+    C_+=\sigma_1\otimes\sigma_2\otimes\sigma_1
+    \otimes\sigma_2\otimes\cdots,
+    \quad t_0t_1=+1,
 \end{equation}
-o
+oppure
 \begin{equation}
-    C_- = \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \cdots,\quad t_0t_1 = -1,
+    C_-=\sigma_2\otimes\sigma_1\otimes\sigma_2
+    \otimes\sigma_1\otimes\cdots,
+    \quad t_0t_1=-1.
 \end{equation}
-a differenza di $A = i\gamma^0$ che non dipende dalla segnatura. In modo simile, si ha che 
+La scelta dipende dalla dimensione dello spaziotempo $D$ e dalla rappresentazione delle matrici $\gamma$ adottata. Per dimensioni $D$ pari entrambe le scelte sono possibili e si può passare da una scelta all'altra rinominando $C$ con $C\gamma_*$, a meno di un fattore di fase di normalizzazione. Per dimensioni $D$ dispari, la scelta di $C$ è unica, di nuovo, a meno di un fattore di fase. Dato che si fa uso di rappresentazioni hermitiane, che soddisfano la condizione \eqref{eq: hermiticità matrici di Dirac}, la proprietà di simmetria di una matrice $\gamma$ determina anche quella della sua complessa coniugata. Per vederlo, si definisce $B$ in funzione di $C$ e $A$ come
 \begin{equation}
     B = it_0C\gamma^0 = t_0CA.
 \end{equation}
-Si dimostra 
+Si può dimostrare poi che 
 \begin{equation}
-    (\gamma^\mu)^\dag = (\gamma^T)^* = \cdots = -\gamma^0\gamma^\mu\gamma^0 = -A\gamma^\mu A^{-1}.
+    (\gamma^\mu)^* = -t_0t_1B\gamma^\mu B^{-1},
 \end{equation}
-Si dimostra
+\begin{equation}
+    (\gamma^\mu)^\dag = -A\gamma^\mu A^{-1}.
+\end{equation}
+Inoltre, utilizzando la definizione di $B$ e le proprietà di $C$, si ottiene
 \begin{equation}
     \begin{split}
-        B^*B &= -it_0C^*\gamma^*it_0C\gamma^0 \\
-        &= -t_0C^{-1}(\gamma^0)^*C\gamma^0 \\
-        &= -t_0C^{-1}B\gamma^0B^{-1}C\gamma^0(-t_0t_1) \\
-        &= t_1(C^{-1}B)\gamma^0(C^{-1}B)^{-1}\gamma^0 \\
-        &= -t_1.
+    B^*B &=-it_0C^*\gamma^0\,it_0C\gamma^0 \\
+    &= -t_0C^{-1}(\gamma^0)^2t_0C\gamma^0 \\
+    &= -t_0C^{-1}B\gamma^0B^{-1}C\gamma^0(-t_0t_1) \\
+    &= t_1(C^{-1}B)\gamma^0(C^{-1}B)^{-1}\gamma^0 \\
+    &= t_1\bb{I}.
     \end{split}
 \end{equation}
-In $D = 4$, da $B = \gamma^0\gamma^1\gamma^3$ e $C = i\gamma^3\gamma^1$ so ha $t_0 = 1$, allora $B = B^*$ e $BB^* = B^2 = \cdots = \IM$ e $t_1 = -1$, scegliendo quindi 
+In $ D = 4$, usando la rappresentazione di Weyl, si può scegliere $B = \gamma^0\gamma^1\gamma^3$, che risulta reale e simmetrica, implicando $C = i\gamma^3\gamma^1$. Per $t_0 = 1$ e $t_1 = -1$, si ottiene che $B = B^*$ e che $BB^* \equiv B^2 = \IM$. I segni associati ai prodotti anti-simmmetrizzati delle matrici $\gamma$ risultano quindi
 \begin{equation}
-    t_0 = 1,t_1 = -1,t_2 = -1,t_3 = 1,\dots,
+    t_0 = +1,\quad t_1 = -1,\quad t_2 = -1,\quad t_3 = 1,\quad \dots\quad.
 \end{equation}
-invece che
+Con una scelta alternativa delle matrici di $B$ e $C$ si ottiene invece
 \begin{equation}
-    t_0 = 1,t_1 = 1,t_2 = -1,t_3 = -1,\dots.
+    t_0 = +1,\quad t_1 = +1,\quad t_2 = -1,\quad t_3 = -1,\quad \dots\quad.
 \end{equation}
+Questi risultati mostrano che le proprietà di simmetria dei prodotti di matrici gamma dipendono dalla scelta degli operatori intreccianti e dalla dimensione dello spaziotempo.
+
+% \subsubsection{Simmetrie delle matrici \texorpdfstring{$\gamma$}{gamma}}
+% Se $\b{\Psi} = \Psi^\dag\gamma^0$, si definisce $A = i\gamma^0$ tale che 
+% \begin{equation}
+%     A\gamma^\mu A^{-1} = -(\gamma^\mu)^\dag \quad\Longleftrightarrow\quad A\gamma^\mu = -(\gamma^\mu)^\dag A,
+% \end{equation}
+% con il quale quindi si passa da $\gamma$ ad $\gamma^\dag$. Si definisce poi $B$ come la mappa che permette di passare da $\gamma$ a $\gamma^*$ e con $C$ quella tra $\gamma$ e $\gamma^T$, come 
+% \begin{equation}
+%     (\gamma^\mu)^* = -t_0t_1B\gamma^\mu B^{-1},
+% \end{equation}
+% \begin{equation}
+%     (\gamma^\mu)^T = +t_0t_1C\gamma^\mu C^{-1},
+% \end{equation}
+% dove $t_0 = t_1 = \pm 1$ e con $BB^\dag = CC^\dag = \IM$ e con $C^T = -t_0C$ o $C^* = -t_0C^{-1}$. Si definiscono quindi le $\Gamma^{(\nu)} \in \{\IM,\gamma^\mu,\gamma^{\mu\nu},\dots\}$, tale che 
+% \begin{equation}
+%     (C\Gamma^{(\nu)})^T = t_r{(C\Gamma^{(r)})},\quad t_r = \pm 1.
+% \end{equation}
+% Quindi, $t_r$ con $r > 2$, è fissato da $t_0$ e $t_1$. Ad esempio
+% \begin{equation}
+%     \begin{split}
+%         (C\gamma^{\mu\nu})^T &= \frac{1}{2}(C\gamma^\mu\gamma^\nu - C\gamma^\nu\gamma^\mu) \\
+%         &= \frac{1}{2}[(\gamma^\nu)^T(\gamma^\mu)^T - (\gamma^\mu)^T(\gamma^\nu)^T]C^T \\
+%         &= -\frac{t_0}{2}C(\gamma^\nu\gamma^\mu - \gamma^\mu\gamma^\nu) \\
+%         &= t_0C\gamma^{\mu\nu}.
+%     \end{split}
+% \end{equation}
+% Da qui si trova che $t_2 = -t_0$, si può poi trovare che $t_3 = -t_1$, $t_{r + 4} = t_r$ e così via. Si può poi costruire esplicitamente una rappresentazione di $C$ come
+% \begin{equation}
+%     C_+ = \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \cdots,\quad t_0t_1 = 1,
+% \end{equation}
+% o
+% \begin{equation}
+%     C_- = \sigma_2 \ot \sigma_1 \ot \sigma_2 \ot \sigma_1 \ot \cdots,\quad t_0t_1 = -1,
+% \end{equation}
+% a differenza di $A = i\gamma^0$ che non dipende dalla segnatura. In modo simile, si ha che 
+% \begin{equation}
+%     B = it_0C\gamma^0 = t_0CA.
+% \end{equation}
+% Si dimostra 
+% \begin{equation}
+%     (\gamma^\mu)^\dag = (\gamma^T)^* = \cdots = -\gamma^0\gamma^\mu\gamma^0 = -A\gamma^\mu A^{-1}.
+% \end{equation}
+% Si dimostra
+% \begin{equation}
+%     \begin{split}
+%         B^*B &= -it_0C^*\gamma^*it_0C\gamma^0 \\
+%         &= -t_0C^{-1}(\gamma^0)^*C\gamma^0 \\
+%         &= -t_0C^{-1}B\gamma^0B^{-1}C\gamma^0(-t_0t_1) \\
+%         &= t_1(C^{-1}B)\gamma^0(C^{-1}B)^{-1}\gamma^0 \\
+%         &= -t_1.
+%     \end{split}
+% \end{equation}
+% In $D = 4$, da $B = \gamma^0\gamma^1\gamma^3$ e $C = i\gamma^3\gamma^1$ so ha $t_0 = 1$, allora $B = B^*$ e $BB^* = B^2 = \cdots = \IM$ e $t_1 = -1$, scegliendo quindi 
+% \begin{equation}
+%     t_0 = 1,t_1 = -1,t_2 = -1,t_3 = 1,\dots,
+% \end{equation}
+% invece che
+% \begin{equation}
+%     t_0 = 1,t_1 = 1,t_2 = -1,t_3 = -1,\dots.
+% \end{equation}
+
+\section{Spinori in dimensione generica}
 In dimensione $D$ generica, si era definito lo spinore di Dirac $\b{\Psi}$ con il quale si possono costruire gli invarianti di Lorentz. Si definisce in particolare lo \emph{spinore di Majorana}
 \begin{equation}
     \b{\lambda} := \lambda^TC,
@@ -599,8 +678,7 @@ si ha
 \end{equation}
 da cui si definiscono gli invarianti $\lambda^T(\gamma_{\mu\nu})^TC\chi$ e $\lambda^TC\gamma_{\mu\nu}\chi$.
 
-\section{Variabili di Grassmann}
-Le variabili di Grassmann sono definite in modo da essere anti-commutanti
+\paragraph{Variabili di Grassmann.} Le variabili di Grassmann sono definite in modo da essere anti-commutanti
 \begin{equation}
     \theta\eta = -\eta\theta.
 \end{equation}
@@ -608,7 +686,7 @@ Sono nilpotenti $\theta^2 = 0$, per consistenza serve introdurre
 \begin{equation}
     (\theta\eta)^* = \eta^*\theta^* = -\theta^*\eta^*.
 \end{equation}
-Una funzione $f(\theta)$ è una funzione lineare del tipo $f(\theta) = a + b\theta$, dove per distinguere le variabili di Grassmann dai numeri complessi ordinari, si chiamano questi \emph{c-numeri} dove la ``c'' sta per \emph{commutanti}. A meno che non sia specificato, gli spinori avranno sempre come componenti numeri di Grassmann. 
+Una funzione $f(\theta)$ è una funzione lineare del tipo $f(\theta) = a + b\theta$, dove per distinguere le variabili di Grassmann dai numeri complessi ordinari, si chiamano questi \emph{c-numeri} dove la ``c'' sta per ``commutanti''. A meno che non sia specificato, gli spinori avranno sempre come componenti numeri di Grassmann. 
 
 Quindi, in $\b{\lambda}\gamma^\mu\chi$, si può scegliere al posto della matrice di Dirac una generica matrice $M \in \alg{Cliff}{1,D - 1}$. Si considera quindi il caso in cui 
 \begin{equation}
