@@ -665,4 +665,183 @@ where the subscript ``E'' is introduced to emphasise that the indexed values obt
 \begin{equation}
     K_{\rem{E}} = 4\pi G \bar{\rho}_{\rem{m}} a_{\rem{E}}^2 c^{-2} ,
 \end{equation}
-where it is worth emphasising that, in such a static Universe, $a_{\rem{E}}$ is an overall normalisation of the Universe's curvature radius of the Universe. All quantities are positive, meaning that $K_{\rem{E}} > 0$, namely that the Universe is closed. However, it soon became clear that such a Universe is indeed static, but it is highly unstable, as the smallest fluctuations on $\bar{\rho}$ will make it either expand exponentially, or plunge into a Big Crunch. Einstein's cosmological constant was thus quickly disposed of, labelled by his creator as: ``My biggest blunder''. Irony of life, $\Lambda$ is currently one of the most important, even if not fully understood, constituents of the \emph{concordance cosmological model}, which as been named after it and cold dark matter as $\Lambda$CDM.
+where it is worth emphasising that, in such a static Universe, $a_{\rem{E}}$ is an overall normalisation of the Universe's curvature radius of the Universe. All quantities are positive, meaning that $K_{\rem{E}} > 0$, namely that the Universe is closed. However, it soon became clear that such a Universe is indeed static, but it is highly unstable, as the smallest fluctuations on $\bar{\rho}$ will make it either expand exponentially, or plunge into a Big Crunch. Einstein's cosmological constant was thus quickly disposed of, labelled by his creator as: ``My biggest blunder''. Irony of life, $\Lambda$ is currently one of the most important, even if not fully understood, constituents of the \emph{concordance cosmological model}, which as been named after it and cold dark matter as the $\Lambda$CDM model.
+
+\subsection{Accelerated expansion}
+The measure of the Universe's expansion in done in the same way the Hubble law was proposed: we observe objects of which we can measure some kind of distance, tipically the luminosity distance $d_L$, and their redshift $\fan{Z}$. The only difference is that the distances are much larger, so that we can include a higher order term in the series expansion compared to Hubble's law. The objects observed as such distances are the SNeIa and the sources of gravitational waves. 
+
+As we just said, we start by considering an additional term in the series expansion of $a$ in the locale Universe
+\begin{equation}
+    a(t) \simeq 1 + H_0(t - t_0) + \frac{1}{2}\frac{d^2a}{dt}\bigg|_{a = 1}(t - t_0)^2.
+\end{equation}
+We define the \emph{deceleration parameter} as 
+\begin{equation}
+\label{eq: deceleration parameter}
+    q := -\frac{\ddot{a}}{aH^2},
+\end{equation}
+and with this we can write the previous expansion as
+\begin{equation}
+    a(t) \simeq 1 + H_0(t - t_0) - \frac{1}{2}H_0^2q_0(t - t_0)^2.
+\end{equation}
+Thus, $q_0$ will be the new parameter that we will have to find through a data fit. Now, we also expand the luminosity distance $d_L(\fan{Z})$ in terms of the redshift 
+\begin{equation}
+    d_L(\fan{Z}) \simeq (1 + \fan{Z})r(\fan{Z}) = (1 + \fan{Z})\chi(\fan{Z})\sinc{(\chi\sqrt{K})} \simeq (1 + \fan{Z})\chi(\fan{Z}).
+\end{equation}
+We now need to expand $\chi(\fan{Z})$. To do it we use the integral definition, obtaining
+\begin{equation}
+    \begin{split}
+        \chi(\fan{Z}) \simeq \int_0^{\fan{Z}}d\fan{Z}'\,\frac{c}{H(\fan{Z}')} &= c\int_0^{\fan{Z}}d\fan{Z}'\,\bigg[\frac{1}{H_0} - \frac{1}{H^2}\frac{dH}{d\fan{Z}'}\bigg|_{\fan{Z} = 0}\bigg] \\
+        &= \frac{c\fan{Z}}{H_0} - \frac{c\fan{Z}^2}{2H_0^2}\frac{dH}{d\fan{Z}}\bigg|_{\fan{Z} = 0}.
+    \end{split}
+\end{equation}
+The next step is to compute the derivative of $H(\fan{Z}) = \dot{a}/a$, this is 
+\begin{equation}
+    \frac{dH}{d\fan{Z}} = \frac{dH}{dt}\frac{dt}{da}\frac{da}{d\fan{Z}} = -\frac{\dot{H}}{\dot{a}}a^2 = \bigg(\frac{\ddot{a}}{a} - \frac{\dot{a}^2}{a^2}\bigg)\frac{a^2}{\dot{a}} = \dot{a}\bigg(1 - \frac{\ddot{a}}{aH^2}\bigg) = \dot{a}(1 + q).
+\end{equation}
+Thus, substituting this result in the previous expression of $\chi(\fan{Z})$ leads to 
+\begin{equation}
+    \chi(\fan{Z}) \simeq \frac{c}{H_0}\bigg[\fan{Z} - \frac{\fan{Z}}{2}(1 + q_0)\bigg].
+\end{equation}
+Therefore, the luminosity distance is 
+\begin{equation}
+\label{eq: cosmographic expansion}
+    d_L(\fan{Z}) = \frac{c\fan{Z}}{H_0} - \frac{c\fan{Z}^2}{2H_0}(1 + q_0) + \frac{c\fan{Z}^2}{H_0} = \frac{c\fan{Z}}{H_0} + \frac{c\fan{Z}^2}{2H_0}(1 - q_0).
+\end{equation}
+This expansion in equation \eqref{eq: cosmographic expansion} is called \emph{cosmographic expansion} and has the property to independent from the particular model chosen to describe the Universe. However, these days the data are analysed directly with the complete cosmological model to not lose terms of the expansion series. 
+
+When in the Nineties they started to do measures at large distances, the main result observed was that the deceleration parameter was not positive, which will suggest that the Universe is slowing down its expansion, but positive, which implies that the Universe is experiencing an accelerated expansion. The two main options to motive this unexpected result were two:
+\begin{enumerate}
+    \item violating the \emph{strong energy condition} (SEC) $\b{\rho} + 3\b{p} > 0$;
+    \item reintroducing the cosmological constant $\Lambda$ in the Eistein's field equation. 
+\end{enumerate} 
+The second option was the one followed, preserving the strong energy condition. Hence, we go back to said equation, that is 
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu},
+\end{equation}
+and we move the term including the cosmological constant in the right-hand side of the equation by interpreting it as a cosmological constant contribution to the stress-energy ternsor, thus defining 
+\begin{equation}
+    T^{(\Lambda)}_{\mu\nu} := -\frac{c^4}{8\pi G}\Lambda g_{\mu\nu},
+\end{equation}
+resulting in 
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = \frac{8\pi G}{c^4}(T_{\mu\nu} + T^{(\Lambda)}_{\mu\nu}). 
+\end{equation}
+This is done mainly for two reasons: in practice, is more convenient to consider $\Lambda$ in the same way as all the other sources; we would not understand the meaning of an additional term to the curvature. The components of $T_{\mu\nu}^{(\Lambda)}$ are 
+\begin{equation}
+    T_{00}^{(\Lambda)} = \frac{c^4}{8\pi G}\Lambda,\quad T_{ij}^{(\Lambda)} = -\frac{c^4}{8\pi G}\Lambda\prescript{(3)}{}{g_{ij}}.
+\end{equation}
+Interpreting the terms as an energy density and an isotropic pressure, namely confronting them to $T_{00} = \b{\epsilon}$ and $T_{ij} = \b{p}\prescript{(3)}{}{g_{ij}}$, we obtain 
+\begin{equation}
+    \b{\epsilon}_\Lambda = \frac{c^4}{8\pi G}\Lambda,\quad \b{p}_\Lambda = -\frac{c^4}{8\pi G}\Lambda = -\b{\epsilon}_\Lambda.
+\end{equation}
+Also note that the energy density is constant while the isotropic pressure is hegative, this ``fluid'' therefore is certanly something unusual, in fact this is what we tipically refer to as dark matter. We hence have found a new species with $w_\Lambda = -1$, reccaling that $\b{\rho}_s = \b{p}_sw_sc^2$. This implies that the graph representing the evolution of the abundancies as a function of the scale factor, still ignoring the curvature, can be updated to the one shown in figure \ref{fig: abundancies without curvature}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Immagini - Capitolo 3/abundancies without curvature.png}
+    \caption{density species' evolution, without including the curvature's contribution.}
+    \label{fig: abundancies without curvature}
+\end{figure}
+
+Talking about curvature, we can look back at the components of the Einstein's tensor, that were 
+\begin{equation}
+    \begin{cases}
+        G_{00} = \dfrac{3}{c^2}\bigg(\dfrac{\dot{a}^2}{a^2} + \frac{Kc^2}{a^2}\bigg) \\[2ex]
+        G_{ij} = -\dfrac{1}{c^2}\bigg(2\dfrac{\ddot{a}}{a} + \dfrac{\dot{a}^2}{a^2} + \frac{Kc^2}{a^2}\bigg)g_{ij}
+    \end{cases},
+\end{equation}
+and separate from the rest the contribution of the curvature by writing
+\begin{equation}
+    G_{\mu\nu} \equiv G_{\mu\nu}^{(K = 0)} + \Delta G_{\mu\nu}^{(K)},
+\end{equation}
+where 
+\begin{equation}
+    \Delta G_{\mu\nu}^{(K)} = \frac{1}{a^2}
+    \begin{pmatrix}
+        3K & 0 & 0 & 0 \\
+        0 & & & \\
+        0 & & -g_{ij} & \\
+        0 & & &
+    \end{pmatrix},
+\end{equation}
+and then defining a curvature contribution to the stress-energy tensor as 
+\begin{equation}
+    T^{(K)}_{\mu\nu} := -\frac{c^4}{8\pi G}\Delta G_{\mu\nu}^{(K)}.
+\end{equation}
+From this, in a way analogous to what we did for $T^{(\Lambda)}_{\mu\nu}$, we find 
+\begin{equation}
+    \b{\epsilon}_K = -\frac{c^4}{8\pi G}\frac{3K}{a^2},\quad \b{p}_K = -\frac{\b{\epsilon}_K}{3}.
+\end{equation}
+We can now write alle the contribution to $H^2$ explicitely, namely
+\begin{equation}
+    H^2 = \frac{8\pi G}{3c^2}\b{\epsilon}_r + \frac{8\pi G}{3c^2}\b{\epsilon}_m + \frac{8\pi G}{3c^2}\b{\epsilon}_K + \frac{8\pi G}{3c^2}\b{\epsilon}_\Lambda.
+\end{equation}
+Using also the definition of critical density $\rho_c = 3H_0^2/8\pi G$, seen in equation \eqref{eq: densità critica}, we can rewrite as
+\begin{equation}
+    H^2 = H_0^2\bigg(\frac{\b{\epsilon}_r}{\b{\epsilon}_c} + \frac{\b{\epsilon}_m}{\b{\epsilon}_c} + \frac{\b{\epsilon}_K}{\b{\epsilon}_c} + \frac{\b{\epsilon}_\Lambda}{\b{\epsilon}_c}\bigg).
+\end{equation}
+Moreover, we can define the abundance $\Omega_s$ of the singular species $s$ as 
+\begin{equation}
+\label{eq: abundance of a species}
+    \Omega_s := \frac{\b{\epsilon}_s(a)}{\b{\epsilon}_c},\quad s = \{r,m,K,\Lambda\}.
+\end{equation}
+The energy densities evolve in time by following power laws, they are 
+\begin{equation}
+    \begin{cases}
+        \b{\epsilon}_r(a) = \b{\epsilon}_{r,0}a^{-4} \\
+        \b{\epsilon}_m(a) = \b{\epsilon}_{m,0}a^{-3} \\
+        \b{\epsilon}_K(a) = \b{\epsilon}_{K,0}a^{-2} \\
+        \b{\epsilon}_\Lambda(a) = \b{\epsilon}_{\Lambda,0}
+    \end{cases}.
+\end{equation}
+The estimates for abundancies as of today are 
+\begin{equation}
+    \begin{cases}
+        \Omega_{r,0} \simeq 9 \times 10^{-5} \\
+        \Omega_{m,0} \simeq 0.3 \\
+        \Omega_{K,0} \simeq 0 \\
+        \Omega_{\Lambda,0} \simeq 0.7
+    \end{cases}.
+\end{equation}
+Having introduced the curvature's constribution, we can update for a final time the graphs shown in \ref{fig: abundancies without curvature} to the one in +REF +GRAPH. Moreover, we can see that the Universe most of the time can be described by a succession of eras dominated by a single component, meaning species, space out by eras of equivalence: 
+\begin{enumerate}
+    \item the matter-radiation equivalence where $\b{\epsilon}_r(a_{MR}) = \b{\epsilon}_m(a_{MR})$;
+    \item the $\Lambda$-matter equivalence where $\b{\epsilon}_m(a_{\Lambda M}) = \b{\epsilon}_\Lambda$.
+\end{enumerate}
+For the first equivalnce era we can write 
+\begin{equation}
+    \b{\epsilon}_r(a_{MR}) = \frac{\b{\epsilon}_{r,0}a_{MR}^{-4}}{\rho_{c,0}c^2} = \frac{\b{\epsilon}_{m,0}a_{MR}^{-3}}{\rho_{c,0}c^2} = \b{\epsilon}_m(a_{MR}),
+\end{equation}
+from where we find 
+\begin{equation}
+    a_{MR} = \frac{\Omega_{r,0}}{\Omega_{m,0}} \simeq 3 \times 10^{-5}.
+\end{equation}
+In a similar fashion, for the second equivalnce era, we can obtain
+\begin{equation}
+    a_{\Lambda M} = \sqrt[3]{\frac{\Omega_{m,0}}{\Omega_{\Lambda,0}}} \simeq 0.75.
+\end{equation}
+This last result means that until the time when the Universe occupied three quarters of the volume that now occupies, matter drove its expansion. A similar thing can be said for the previous result: until the time when the Universe's volume was $3 \times 10^{-5}$ times the volume that occupies today, the expansion was driven mainly by radiation. 
+
+In addition, we can determine the temporal evolution of the scale factor $a_\Lambda$ for a Universe where $\Lambda$ dominates its expansion: starting from
+\begin{equation}
+    \frac{\dot{a}^2}{a^2} = \frac{\Lambda}{3} = \frac{8\pi G}{3}\b{\rho}_\Lambda = H_0^2\Omega_{\Lambda,0},
+\end{equation}
+we can solve for $a \equiv a_\Lambda(t)$ and get
+\begin{equation}
+    a_\Lambda(t) \propto \exp{(\sqrt{\Omega_{\Lambda,0}}H_0t)}.
+\end{equation}
+The same process can be followed for the other components. Summarising, the eras of the Universe can be denoted as 
+\begin{enumerate}
+    \item \emph{radiation dominated}, where $a(t) \simeq t^{1/2}$;
+    \item \emph{matter dominated}, where $a(t) \simeq t^{2/3}$ and that describes a so-called \emph{Einstein-De Sitter Universe};
+    \item \emph{curvature dominated}, where $a(t) \simeq \sqrt{-K}t$ and that describes a so-called \emph{Milne Universe};
+    \item $\Lambda$-\emph{dominated}, where $a(t) \simeq \exp{(\sqrt{\Omega_{\Lambda,0}}H_0t)}$ and that describes a so-called \emph{De Sitter Universe};
+\end{enumerate}
+The $\Lambda$-dominated Universe is the one in which we live today. 
+
+\section{Inhomogeneous Universe}
+The cosmological principle is really useful to simplify calculations, however, at the end of the day, it clashes with our understanding of the Universe since we can clearly see that it is not homogeneous: there are galaxies, clusters, and voids that do not fill the Universe in an homogeneous way. Therefore, we drop the assumption that the Universe is homogeneous and we try to find a metric which describes such a Universe. Of course, the new metric should reduce to the FRLW metric if we go back to the full cosmological principle. The most general metric for an inhomogeneous Universe is 
+\begin{equation}
+\label{eq: general form inhomogeneous Universe metric }
+    ds^2 = -c^2\,dt^2 + R(t,r)(d\theta^2 + \sin^2\theta\,d\theta^2) + X(t,r)\,dr^2,
+\end{equation}
+where the functions $X(t,r)$ and $R(t,r)$ depend on the position and are yet to be determined. We can already see that we can get back the FRLW metric from \eqref{eq: general form inhomogeneous Universe metric } by simply imposing $R(t,r) \equiv a(t)r$ and $X(t,r) \equiv a(t)/\sqrt{1 - Kr^2}$.
