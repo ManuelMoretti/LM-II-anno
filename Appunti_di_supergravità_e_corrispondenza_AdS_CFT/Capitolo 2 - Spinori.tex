@@ -235,11 +235,11 @@ La forma bilineare invariante cercata si può dunque scrivere come
 \end{equation}
 Si può finalmente definire l'azione per il campo di Dirac libero. Questa è
 \begin{equation}
-    S[\Psi,\b{\Psi}] = \int d^4x\,(m\b{\Psi}\Psi - \b{\Psi}\sl{\p}\Psi).
+    S_D[\Psi] = \int d^4x\,(m\b{\Psi}\Psi - \b{\Psi}\sl{\p}\Psi).
 \end{equation}
 Dal principio di minima azione applicato alla variazione 
 \begin{equation}
-    \delta S = \int d^4x\,[\delta\b{\Psi}(\sl{\p} - m)\Psi - (\p_\mu\b{\Psi}\gamma^\mu + \b{\Psi}m)\delta\Psi],
+    \delta S_D = \int d^4x\,[\delta\b{\Psi}(\sl{\p} - m)\Psi - (\p_\mu\b{\Psi}\gamma^\mu + \b{\Psi}m)\delta\Psi],
 \end{equation}
 si ottengono le due equazioni del moto equivalenti
 \begin{equation}
@@ -591,7 +591,7 @@ Inoltre, utilizzando la definizione di $B$ e le proprietà di $C$, si ottiene
     &= t_1\bb{I}.
     \end{split}
 \end{equation}
-In $ D = 4$, usando la rappresentazione di Weyl, si può scegliere $B = \gamma^0\gamma^1\gamma^3$, che risulta reale e simmetrica, implicando $C = i\gamma^3\gamma^1$. Per $t_0 = 1$ e $t_1 = -1$, si ottiene che $B = B^*$ e che $BB^* \equiv B^2 = \IM$. I segni associati ai prodotti anti-simmmetrizzati delle matrici $\gamma$ risultano quindi
+In $ D = 4$, usando la rappresentazione di Weyl, si può scegliere $B = \gamma^0\gamma^1\gamma^3$, che risulta reale e simmetrica, implicando $C = i\gamma^3\gamma^1$. Per $t_0 = 1$ e $t_1 = -1$, si ottiene che $B = B^*$ e che $BB^* \equiv B^2 = \IM$. I segni associati ai prodotti anti-simmetrizzati delle matrici $\gamma$ risultano quindi
 \begin{equation}
     t_0 = +1,\quad t_1 = -1,\quad t_2 = -1,\quad t_3 = 1,\quad \dots\quad.
 \end{equation}
@@ -770,10 +770,12 @@ Il coniugato di carica di qualsiasi matrice $M \in \alg{Cliff}{D}$ di dimensione
 \end{equation}
 La coniugazione di carica non cambia l'ordine delle matrici, cioè $(MN)^C = M^CN^C$. Il tipo di matrici $M$ con cui si ha maggiormente a che fare sono le matrici $\gamma^\mu$, per cui sono particolarmente importanti le proprietà di coniugazione delle matrici generatrici $\gamma$, che sono 
 \begin{equation}
+\label{eq: coniugato di carica matrice gamma}
     \gamma_\mu^C = B^{-1}\gamma_\mu^*B = -t_0t_1\gamma_\mu.
 \end{equation}
 In particolare, per la matrice di chiralità si ha
 \begin{equation}
+\label{eq: coniugato di carica matrice di chiralità}
     \gamma_*^C = (-1)^{(D/2) + 1}\gamma_*.
 \end{equation}
 Con queste relazioni, si può derivare la regola per la complessa coniugazione di un bilineare spinoriale che include una matrice arbitraria $M$. Questa è 
@@ -803,132 +805,141 @@ Una scambio nell'ordine dei campi fermionici è necessaria per la derivazione\fo
 % Dunque, l'operazione di coniugazione di carica agisce come il complesso coniugato a meno di un segno. 
 
 \section{Spinori di Majorana}
-Gli spinori di Dirac in generale hanno componenti complesse. Si vuole capire se è possibile imporre delle condizioni affinché le entrate siano invece reali. Una prima condizione che si potrebbe pensare di imporre è
-\begin{equation}
-    f - f^* = 0,
-\end{equation}
-dove $f$ è una qualsiasi funzione, così da avere $\Psi = \Psi^*$. Tuttavia, così facendo lo spinore non soddisfa le trasformazioni di Lorentz. Uno spinore che invece soddisfa la condizione di realtà delle componenti e le trasformazioni di Lorentz è il coniugato di carica
-\begin{equation}
-    \Psi^c = B^{-1}\Psi^*,
-\end{equation}
-con il quale si può imporre che $\Psi = \Psi^c$, equivalente a chiedere $\Psi^* = B\Psi$. Infatti, da $\Psi^* = B\Psi$ si ha 
-\begin{equation}
-    \Psi = B^*\Psi^* = B^*B\Psi,
-\end{equation}
-da cui si deve richiedere che $B^*B = \IM$, ma allora $t_1 = -1$. Possibile solo in alcune dimensioni, $D = 2,3,4 \mod{8}$, dove si ha che il coniugato di Majorana corrisponde all'aggiunto di Dirac, per cui 
-\begin{equation}
-    \b{\Psi^c} = \Psi^\dag A.
-\end{equation}
-\begin{obs}
-    Ci sono rappresentazioni dove le matrici $C$ sono completamente reali (\emph{really-real representations}). Quando non esistono gli spinori di Majorana, si può introdurre una condizione pseudo-majorana. 
-\end{obs}
-Solo in dimensione $D = 2\mod{8}$ esistono gli spinori di Majorana che sono anche spinori di Weyl, detti \emph{spinori di Majorana-Weyl}. Per $D = 4$, non si può avere oggetti di questo tipo, ma si può avere o uno o l'altro caso, sia quindi $\Psi$ uno spinore di Majorana, in tal caso
-\begin{equation}
-    \Psi = (P_L + P_R)\Psi = P_L\Psi + P_R\Psi,
-\end{equation}
-dove $P_L\Psi$ e $P_R\Psi$ sono singolarmente spinori di Weyl, anche se la loro somma è uno spinore di Majorana. Si può vedere in particolare che 
-\begin{equation}
-    (P_L\Psi)^c = P_L^c\Psi^c = P_L^c\Psi = \frac{1}{2}(\IM + \gamma_*^c)\Psi,
-\end{equation}
-dove 
-\begin{equation}
-    \gamma_*^c = B^{-1}\gamma_*^*B = -\gamma_*,
-\end{equation}
-per cui
-\begin{equation}
-    P_L^c = \frac{1}{2}(\IM - \gamma_*) \equiv P_R,
-\end{equation}
-dunque 
-\begin{equation}
-    (P_L\Psi)^c = P_R\Psi,
-\end{equation}
-e ovviamente
-\begin{equation}
-    P_L\Psi = (P_R\Psi)^c.
-\end{equation}
-Quindi, la coniugazione di carica permette di passare da uno spinore all'altro, confermando la natura di spinore di Weyl dei singoli spinori. 
+Il concetto di supersimmetria è strettamente legato al trattamento relativistico per lo spin di una particella. In effetti, i parametri di trasformazione $\epsilon_\alpha$ sono spinori. Per questo è ragionevole supporre che le più semplici teorie di campo supersimmetriche in ogni dimensione spaziotemporale $D$ siano basate sugli spinori più semplici che sono compatibili con l'invarianza sotto il gruppo di Lorentz $\group{SO}{1, D - 1}$. In dimensioni pari $D = 2m$, si è già visto che gli spinori di Weyl, invece che gli spinori di Dirac, trasformano in maniera irriducibile sotto trasformazioni di Lorentz. Uno spinore di Weyl hanno $2^{m - 1}$ componenti complesse, mentre uno spinore di Dirac ha $2^m$ componenti complesse. Gli spinori di Weyl possono essere ottenuti applicando i proiettori di chiralità ad uno spinore di Dirac.
 
-L'azione di Dirac era stata definita come 
+Si introducono adesso gli \emph{spinori di Majorana}, cioè spinori di Dirac che soddisfano una condizione di realtà addizionale. Questa condizione riduce il numero di componenti indipendenti di un fattore due. Pertanto, come gli spinori di Weyl, uno spinore di Majorana ha metà dei gradi di libertà e può essere visto come più fondamentale rispetto ad uno spinore di Dirac complesso. In termini fisici, le proprietà delle particelle descritti dagli spinori di Majorana sono simili a quelle descritte dagli spinori di Dirac, a parte il fatto che le particelle e le anti-particelle sono identiche. Gli stati di spin degli spinori di Majorana massivi e massless trasformano secondo rappresentazioni di $\group{SO}{D - 1}$ e $\group{SO}{D - 2}$ rispettivamente. 
+
+I risultati ottenuti in precedenza con la coniugazione di carica, suggeriscono che sia possibile imporre la condizione di realtà 
 \begin{equation}
-    S_{Dirac} = -\int d^4x\,\b{\Psi}(\sl{\p} - m)\Psi,
+\label{eq: condizione di realtà spinore di Majorana}
+    \Psi = \Psi^C = B^{-1}\Psi,
 \end{equation}
-ma se $\Psi$ è uno spinore di Majorana la forma dell'azione non cambia dato che coniugato di Majorana corrisponde all'aggiunto di Dirac; quindi semplicemente
+ovvero 
 \begin{equation}
-    S_{Majorana} = -\frac{1}{2}\int d^4x\,\b{\Psi}(\sl{\p} - m)\Psi.
+\label{eq: condizione di realtà spinore di Majorana (II forma)}
+    \Psi^* = B\Psi,
 \end{equation}
-Tuttavia, si deve controllare se gli invarianti in $S_{Majorana}$ sono effettivamente tali. Se si suppone che i campi siano commutati, il Majorana flip restituisce che 
+su uno spinore. Si può dimostrare che entrambi i lati della relazione \eqref{eq: condizione di realtà spinore di Majorana} trasformi nella stessa maniera sotto trasformazioni di Lorentz in qualsiasi dimensione $D$. Pertanto, la suddetta condizione è compatibile con la simmetria di Lorentz. Infatti, la condizione \eqref{eq: condizione di realtà spinore di Majorana} è la condizione definite degli spinori di Majorana. 
+
+Tuttavia, c'è un'importante e sottile condizione di consistenza che limita in quali dimensioni gli spinori di Majorana possono esistere. Si consideri il complesso coniugato della relazione \eqref{eq: condizione di realtà spinore di Majorana (II forma)} e la si usi per ottenere $\Psi = B^*B\Psi$. Da questo si vede immediatamente come la condizione di realtà valga unicamente quando $B^*B = \IM$, ma questo accade solamente quando $t_1 = -1$. I due possibili valori $t_0 = \pm1$ vanno considerati. Partendo dal caso $t_0 = 1$, si può vedere che questo vale per le dimensioni $D = 2,3,4\mod{8}$ nelle quali gli spinori che soddisfano \eqref{eq: condizione di realtà spinore di Majorana} spinori di Majorana. Non a caso a queste dimensioni si era riferito con il nome di dimensioni di Majorana. Inoltre, da \eqref{eq: aggiunto del coniugato di carica} si vede che se $t_0 = 1$ e $t_1 = -1$, l'aggiunto di Dirac \eqref{eq: aggiunto di Dirac} e l'aggiunto di Majorana \eqref{eq: aggiunto di Majorana} coincidono per gli spinori di Majorana. Esistono poi particolari rappresentazioni delle matrici $\gamma$ che sono esplicitamente reali, talvolta chiamate \emph{really-real representations}. In $D = 4$, un esempio di rappresentazione really-real è data da
 \begin{equation}
-    \b{\Psi}\Psi = -\b{\Psi}\Psi,
+    \gamma^0 = 
+    \begin{pmatrix}
+        \OM & \IM \\
+        -\IM & \OM
+    \end{pmatrix} = i\sigma_2 \ot \IM,\quad \gamma^1 = 
+    \begin{pmatrix}
+        \IM & \OM \\
+        \OM & -\IM
+    \end{pmatrix} = \sigma_3 \ot \IM,
 \end{equation}
-rendendo quindi il termine di massa in $S_{Majorana}$ nullo. Anche se questo di per se non sarebbe un problema dato che basterebbe richiedere che $m = 0$, il fatto è che anche il termine cinetico si annulla se i campi sono commutanti; infatti
 \begin{equation}
-    \b{\Psi}\gamma^\mu\p_\mu\Psi = \p_\mu\b{\Psi}\gamma^\mu\Psi\quad\Longrightarrow\quad \b{\Psi}\gamma^\mu\p_\mu\Psi = \frac{1}{2}\p_\mu(\b{\Psi}\gamma\Psi),
+    \gamma^2 = 
+    \begin{pmatrix}
+        \OM & \sigma_1 \\
+        \sigma_1 & \OM
+    \end{pmatrix} = \sigma_1 \ot \sigma_1,\quad \gamma^3 = 
+    \begin{pmatrix}
+        \OM & \sigma_3 \\
+        \sigma_3 & \OM
+    \end{pmatrix} = \sigma_1 \ot \sigma_3.
 \end{equation}
-che essendo un termine di bordo non contribuisce all'azione. In sintesi, se i campi sono commutanti l'azione è nulla, invece se questi anti-commutano, allora l'azione non si annulla e sono presenti sia il termine cinetico che quello di massa. Calcolando la variazione $\delta S$, si ha 
+Si noti che le matrici $\gamma^i$ sono simmetriche, mentre $\gamma^0$ è anti-simmetrica. Questo è richiesto dall'hermiticità in qualsiasi rappresentazione. In queste rappresentazioni, \eqref{eq: complesso coniugato gamma^*} implica che $B = \IM$, a meno di una fase. La relazione \eqref{eq: definizione matrice B} implica invece che $C = i\gamma^0$. Inoltre, una spinore di Majorana è really-real dato che \eqref{eq: condizione di realtà spinore di Majorana} si riduce a $\Psi^* = \Psi$. Le rappresentazioni really-real possono essere talvolta convenienti ma la fisica degli spinori di Majorana è la medesima in ogni rappresentazione dell'algebra di Clifford, sostituendo la complessa coniugazione con la coniugazione di carica. 
+
+Quando $t_0 = -1$, e vale ancora $t_1 = -1$, gli spinori che soddisfano \eqref{eq: condizione di realtà spinore di Majorana} sono detti \emph{pseudo-spinori di Majorana}. Questi sono particolarmente rilevanti in $D = 8$ e $D = 9$, ma in queste dimensioni non esistono rappresentazioni really-real; invece, esistono rappresentazioni dell'algebra di Clifford dove le matrici $\gamma$ sono immaginarie, cioè soddisfano $(\gamma^\mu)^* = -\gamma^\mu$. In qualsiasi rappresentazione, \eqref{eq: coniugato di carica di un bilineare} e \eqref{eq: coniugato di carica matrice gamma} continuano a valere per $t_0 = t_1 = -1$. Questo implica che le proprietà di realtà dei bilineari sono differenti da quelle degli spinori di Majorana. Anche se queste differenze sono significative, la proprietà fondamentale che uno spinore complesso può essere ridotto ad uno reale continua a valere, pertanto si è soliti in letteratura non distinguere tra spinori e pseudo-spinori di Majorana. 
+
+Si possono adesso considerare gli (pseudo-)spinori di Majorana in dimensione pari $D = 0,2,4\mod{8}$. Si può dimostrare usando \eqref{eq: coniugato di carica matrice di chiralità} che questi casi sono leggermente differenti tra di loro. Per $D = 2\mod{8}$ si ha che $(\gamma_*\Psi)^C = \gamma_*\Psi^C$. Pertanto, le due condizioni
 \begin{equation}
-    \b{\Psi}\delta\Psi = \delta\b{\Psi}\Psi
+\label{eq: condizioni spinore Majorana-Weyl}
+    \Psi^C = \Psi,\quad \P_{L,R}\Psi = \Psi,
 \end{equation}
-e una relazione simile con le $\gamma^\mu$ incluse, per cui 
+che definiscono rispettivamente uno spinore di Majorana e uno spinore di Weyl, sono compatibili. In maniera equivalente, si osserva che le proiezioni chirali di uno spinore di Majorana $\Psi$ soddisfano 
 \begin{equation}
-    \delta S = -\int d^4x\,\delta\b{\Psi}(\gamma^\mu\p_\mu - m)\Psi,
+\label{eq: proiezioni chirali spinore di Majorana}
+    (P_L\Psi)^C = P_L\Psi,\quad (P_R\Psi)^C = P_R\Psi.
 \end{equation}
-da cui si ricava che lo spinore di Majorana soddisfa l'equazione di Dirac
+Quindi, le proiezioni chirali di uno spinore di Majorana sono a loro volta spinori di Majorana. Ciascuna proiezione chirale soddisfa \eqref{eq: condizioni spinore Majorana-Weyl} e prende il nome di \emph{spinore di Majorana-Weyl}. Questo tipo di spinori hanno $2^{m - 1}$ componenti reali indipendenti in dimensione $D = 2m = 2\mod{8}$ e sono gli spinori ``più fondamentali'' disponibili in queste dimensioni. Nono sorprende perciò il fatto che le teorie di supergravità e superstringhe in $D = 10$ siano basate sugli spinori di Majorana-Weyl.
+
+Per $D = 4\mod{4}$ dimensioni si ha che $(\gamma_*\Psi)^C = -\gamma_*\Psi^C$, per cui le equazioni \eqref{eq: proiezioni chirali spinore di Majorana} sono sostituite dalle relazioni 
 \begin{equation}
-    (\sl{\p} - m)\Psi = 0.
+    (P_L\Psi)^C = P_R\Psi,\quad (P_R\Psi)^C = P_L\Psi.
 \end{equation}
-Inoltre, si può scrivere l'azione di Majorana in funzione degli spinori di Weyl, 
+Queste equazioni affermano che le componenti left e right di uno spinore di Majorana sono legate dalla coniugazione di carica. Una diretta conseguenza di ciò è che, per ogni espressione che comprende le proiezioni left $P_L\Psi$ di uno spinore di Majorana $\Psi$, la corrispondente espressione per $P_R\Psi$ segue dalla complessa coniugazione. Ovviamente esistono spinori di Weyl che sono proiezioni chirali $P_{L,R}\Psi$ di uno spinore di Dirac $\Psi$, ma questi non possono soddisfare la condizione di Majorana dato che per i fermioni di Majorana $(P_{L,R}\Psi)^C = P_{R,L}\Psi$. 
+
+\subsection{Azione di Majorana}
+L'azione di Dirac per il campo spinoriale di Dirac $\Psi$, era stata definita come 
+\begin{equation}
+\label{eq: azione di Dirac}
+    S_D[\Psi] = -\int d^Dx\,\b{\Psi}(\sl{\p} - m)\Psi.
+\end{equation}
+Se però lo spinore di $\Psi$ è uno spinore di Majorana, in $D = 2,3,4\mod{8}$ si può definire un prototipo di azione di Majorana. Gli spinori di Majorana e quelli di Dirac trasformano nello stesso modo sotto trasformazioni di Lorentz, ma gli spinori di Majorana hanno la metà dei gradi di libertà degli spinori di Dirac. Pertanto, è sufficiente scrivere
+\begin{equation}
+\label{eq: azione di Majorana}
+    S_M[\Psi] = -\frac{1}{2}\int d^Dx\,\b{\Psi}(\sl{\p} - m)\Psi.
+\end{equation}
+In questo modo si presenta immediatamente una sottigliezza a causa delle simmetrie delle matrici $C$ e $C\gamma^\mu$. Usando \eqref{eq: aggiunto di Majorana}, si può vedere che il termine di massa e quello cinetico sono proporzionali a $\Psi^TC\Psi$ e $\Psi^TC\sl{p}\Psi$. Supponendo che le componenti di $\Psi$ siano convenzionali numeri commutanti, dato che $C$ è anti-simmetrica, il termine di massa svanirebbe, similmente, dato che $C\gamma^\mu$ è simmetrica, svanirebbe anche il termine cinetico. Con questa supposizione si troverebbe quindi un'azione per il campo di Majorana identicamente nulla, implicando che questo non ha dinamica. Per ripristinare la dinamica, è necessario assumere che i campi di Majorana siano variabili anti-commutanti di Grassmann (fatto che è sempre assunto a meno non sia specificato diversamente). 
+
+Le variazioni dei campi devono soddisfare la condizione di Majorana \eqref{eq: condizione di realtà spinore di Majorana}, per cui $\delta\Psi$ e $\delta\b{\Psi}$ sono legate dalla relazione $\b{\Psi}\delta\Psi = \delta\b{\Psi}\Psi$. Inizialmente, $\delta S[\Psi]$ contiene due termini, tuttavia dopo un Majorana flip ed un'integrazione per parti, si può vedere che i due termini sono uguali, per cui la variazione dell'azione può essere scritta come 
+\begin{equation}
+    \delta S_M = -\int d^Dx\,\delta\b{\Psi}(\gamma^\mu\p_\mu - m)\Psi.
+\end{equation}
+Pertanto, imponendo $\delta S_M[\Psi] = 0$, si trova che lo spinore di Majorana soddisfa l'equazione di Dirac convenzionale \eqref{eq: equazione di Dirac}. Questo fatto non comporta una sorpresa, ma è un esempio di una più generale regola riguardo alle variazioni delle azioni degli spinori di Majorana: se l'integrazione per parti è possibile, allora è sufficiente variare $\b{\Psi}$ e moltiplicare per due in modo da tenere in conto anche la variazione di $\Psi$. 
+
+Nelle dimensioni pari $D = 0,2,4\mod{8}$, sia gli spinori di Majorana che gli spinori di Weyl esistono ed entrambi possono essere ragionevolmente considerati più fondamentale degli spinori di Dirac. Infatti, entrambi i campi descrivono la medesima fisica. Concentrandosi su $D = 4$, l'azione \eqref{eq: azione di Majorana} può essere riscritta come 
 \begin{equation}
     \begin{split}
-        S_{Majorana} &= -\frac{1}{2}\int d^4x\,\b{\Psi}(\sl{\p} - m)(P_L + P_R)\Psi \\
+        S_M[\Psi] &= -\frac{1}{2}\int d^4x\,\b{\Psi}(\sl{\p} - m)(P_L + P_R)\Psi \\
         &= -\frac{1}{2}\int d^4x\,\Psi^TC(P_L + P_R)(\sl{\p} - m)(P_L + P_R)\Psi \\
-        &= -\frac{1}{2}\int d^4x\,[2\b{\Psi}\Psi\gamma^\mu\p_\mu P_L\Psi - m\b{\Psi}P_L\Psi - m\b{\Psi}P_R\Psi] \\
-        &\equiv S[P_L\Psi,(P_L\Psi)^c].
+        &= -\int d^4x\,\bigg[\b{\Psi}\sl{\p}P_L\Psi  - \frac{1}{2}m\b{\Psi}P_L\Psi - \frac{1}{2}m\b{\Psi}P_R\Psi \bigg] \\
+        &\equiv S_M[P_L\Psi,(P_L\Psi)^C],
     \end{split}
 \end{equation}
+dove nel terzo passaggio si è applicato un Majorana flip ed integrato per parti. 
 
-\subsection{Simmetrie}
+Riassumendo, ogni teoria di campo di uno spinore di Majorana $\Psi$ può essere riscritta in termini di uno spinore di Weyl $P_L\Psi$ e il suo complesso coniugato. Viceversa, ogni teoria che coinvolge il campo chirale $\chi = P_L\chi$ e il suo coniugato di carica $\chi^C = P_R\chi^C$ può essere riespressa come un'equazione di Majorana se si definisce il campo di Majorana $\Psi = P_L\chi + P_R\chi^C$. Le teorie supersimmetriche in $D = 4$ sono formulate in entrambe le descrizioni in letteratura. 
+
+\subsection{Simmetrie \texorpdfstring{$\group{U}{1}$}{U(1)} di uno spinore di Majorana}
 Sia $\Psi$ uno spinore di Dirac. Non è molto difficile dimostrare che se si applica la trasformazione 
 \begin{equation}
     \Psi \to \Psi' \equiv e^{i\theta}\Psi,\quad \theta \in \bb{R},
 \end{equation}
-l'azione è invariante. Questa trasformazione è un esempio di simmetria interna globale, in particolare una simmetria del gruppo $U(1)$. Se invece lo spinore $\Psi$ è uno spinore di Majorana, la trasformazione precedente non vede l'azione rimanere invariante, si può però operare la trasformazione
+l'azione di Dirac \eqref{eq: azione di Dirac} è invariante. Questa trasformazione è un esempio di simmetria interna globale, in particolare è una simmetria del gruppo $\group{U}{1}$. Se invece lo spinore $\Psi$ è uno spinore di Majorana, la trasformazione precedente non vede l'azione rimanere invariante. Tuttavia, dato che $(i\gamma_*)^C = i\gamma_*$, la \emph{trasformazione chirale}
 \begin{equation}
     \Psi \to \Psi' \equiv e^{i\theta\gamma_*}\Psi,
 \end{equation}
-che conserva la condizione di Majorana,
+che conserva la condizione di Majorana. Infatti, si ha
 \begin{equation}
-    B^{-1}\Psi^* \to B^{-1}e^{-i\theta\gamma_*^*}\Psi^* = B^{-1}e^{-i\theta\gamma_*^*}BB^{-1}\Psi^*,
+    B^{-1}\Psi^* \to B^{-1}(\Psi')^* \equiv B^{-1}e^{-i\theta\gamma_*^*}\Psi^* = B^{-1}e^{-i\theta\gamma_*^*}B\Psi,
 \end{equation}
-se $BB^{-1} = \IM$.
-% DA VEDERE
-% da cui, se $BB^{-1} = \IM$, si ha
-% \begin{equation}
-%     B^{-1}e^{-i\theta\gamma_*^*}B = \IM.
-% \end{equation}
-Si vede che 
+dove espandendo la trasformazione infinitesima 
 \begin{equation}
     \begin{split}
-        B^{-1}e^{-i\theta\gamma_*^*} &= B^{-1}[\IM - i\theta\gamma_*^* + \frac{1}{2}(-i)^2\theta^2(\gamma_*^*)^2 + \cdots] \\
+        B^{-1}e^{-i\theta\gamma_*^*}B &= B^{-1}\bigg[\IM - i\theta\gamma_*^* + \frac{1}{2}(-i)^2\theta^2(\gamma_*^*)^2 + \cdots\bigg]B \\
+        &= \IM + i\theta\gamma_* - \frac{1}{2}\theta^2\gamma_*^2 + \cdots \\
         &= e^{i\theta\gamma_*},
     \end{split}
 \end{equation}
-dove si è usato che $(\gamma_*^*)^2 = \gamma_*^*BB^{-1}\gamma_*^*$ e per ogni scambio di $\theta$ con $\gamma_*$ c'è un segno. Si può far vedere che lo spinore $\b{\Psi}$ invece trasforma come 
+dove si è usato che $B^{-1}\gamma_*^*B = -\gamma_*$. Per cui effettivamente
 \begin{equation}
-    \b{\Psi} \equiv \Psi^TC \to \Psi^Te^{i\theta\gamma_*^T}C = \Psi^TCC^{-1}e^{i\theta\gamma_*^T}C = \b{\Psi}e^{i\theta\gamma_*}.
+    B^{-1}\Psi^* = \Psi \to B^{-1}(\Psi')^* \equiv B^{-1}e^{-i\theta\gamma_*^*}B\Psi = e^{i\theta\gamma_*}\Psi = \Psi'.
 \end{equation}
-Per quanto riguarda $\b{\Psi}\Psi$ invece, si può far vedere che non è invariante sotto tale trasformazione dato che gli esponenziali non si eliminano. Ponendo $m = 0$, il fattore cinetico diventa invece
+Si può far vedere che lo spinore $\b{\Psi}$ invece trasforma come 
 \begin{equation}
-    \b{\Psi}\gamma^\mu\p_\mu\Psi \to \b{\Psi}e^{i\theta\gamma_*}\gamma^\mu e^{i\theta\gamma_*}\p_\mu\Psi,
+    \b{\Psi} \equiv \Psi^TC \to \b{\Psi}' \equiv \Psi^Te^{i\theta\gamma_*^T}C = \Psi^TCC^{-1}e^{i\theta\gamma_*^T}C = \b{\Psi}e^{i\theta\gamma_*},
 \end{equation}
-ma se $\acomm{\gamma_*}{\gamma^\mu} = 0$, allora espandendo gli esponenziali e scambiando la $\gamma_*$, si ha 
+usando $C^{-1}\gamma_*^TC = \gamma_*$. Per quanto riguarda $\b{\Psi}\Psi$ invece, si può far vedere che non è invariante sotto tale trasformazione dato che il termine di massa rompe la simmetria. Ponendo quindi $m = 0$, il fattore cinetico diventa invece
 \begin{equation}
-    \b{\Psi}\gamma^\mu\p_\mu\Psi \to \b{\Psi}e^{i\theta\gamma_*}e^{-i\theta\gamma_*}\sl{\p}\Psi = \b{\Psi}\sl{\p}\Psi,
+    \b{\Psi}\gamma^\mu\p_\mu\Psi \to \b{\Psi}'\gamma^\mu\p_\mu\Psi' \equiv \b{\Psi}e^{i\theta\gamma_*}\gamma^\mu e^{i\theta\gamma_*}\p_\mu\Psi,
 \end{equation}
-che risulta quindi essere invariante. Da qui si giustifica la necessità di porre $m = 0$ nell'azione di Majorana. La corrente conservata è
+da cui usando $\acomm{\gamma_*}{\gamma^\mu} = 0$, si trova effettivamente
+\begin{equation}
+    \b{\Psi}\gamma^\mu\p_\mu\Psi \to '\gamma^\mu\p_\mu\Psi' \equiv \b{\Psi}e^{i\theta\gamma_*}e^{-i\theta\gamma_*}\sl{\p}\Psi = \b{\Psi}\gamma^\mu\p_\mu\Psi,
+\end{equation}
+e cioè che il termine cinetico è invariante, almeno per $m = 0$. Da qui si giustifica la necessità di porre $m = 0$ nell'azione di Majorana. La corrente conservata associata a questa simmetria è
 \begin{equation}
     J^\mu_* = \frac{1}{2}\b{\Psi}\gamma^\mu\gamma_*\Psi,
 \end{equation}
-la quale soddisfa 
+la quale soddisfa la legge di conservazione
 \begin{equation}
     \p_\mu J^\mu_* = -im\b{\Psi}\gamma_*\Psi,
 \end{equation}
