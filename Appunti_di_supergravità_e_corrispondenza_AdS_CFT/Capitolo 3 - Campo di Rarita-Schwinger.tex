@@ -1,47 +1,53 @@
 \chapter{Campo di Rarita-Schwinger}
-Il campo di Rarita-Schwinger è un campo avente un indice spinoriale e un indice di Lorentz, è chiamato per questo \emph{spinore-vettore} ed è denotato con
+Si comincia adesso a mettere insieme gli ingredienti della supergravità studiando il campo con spin $3/2$. La supergravità è la teoria di gauge della supersimmetria (SUSY) globale. La proprietà principale è che il parametro di supersimmetria globale è uno spinore costante $\epsilon_\alpha$. In supergravità, questo diventa una funzione generale delle coordinate spaziotemporali $\epsilon_\alpha(x)$. Il campo di gauge associato è uno spinore-vettore $\Psi_{\mu\alpha}(x)$. Questo campo, insieme alla particella corrispondente, ha assunto il nome di \emph{gravitino}. 
+
+Le teorie di supergravità contengono necessariamente il \emph{multipletto di gauge}, cioè l'insieme di campi richiesti per determinare la simmetria in una teoria interagente consistente, e possono contenere \emph{multipletti di materia}, cioè gli insiemi di campi su cui la supersimmetria globale è realizzata. Il multipletto di gauge contiene il campo gravitazionale, uno o più spinori-vettori e talvolta altri campi. Questa struttura è derivata dalle rappresentazioni dell'algebra di supersimmetria. Per ora ci si concentra sul limite libero, dove i vari campi non interagiscono, e si possono perciò considerare separatamente. In particolare, si considera $\Psi_\mu(x)$, omettendo l'indice spinoriale $\alpha$, come un campo non interagente, soggetto alla trasformazione di gauge 
 \begin{equation}
-    \Psi_{\alpha\mu}(x) \equiv \Psi_\mu(x),
+\label{eq: trasformazione di gauge campo R-S}
+    \Psi_\mu(x) \to \Psi_\mu(x) + \p_\mu\epsilon(x).
 \end{equation}
-dove si è soppresso l'indice spinoriale per semplicità. In dimensione $D$ arbitraria, il numero di componenti in linea di principio sono $2^{[D/2]}D$, dove con $[D/2]$ se ne intende la parte intera, che in generale sono complesse. L'azione di questo campo deve soddisfare le condizioni già viste per il campo di Dirac:
+Inoltre, si assume che $\Psi_\mu(x)$ e $\epsilon(x)$ siano spinori complessi con $2^{[D/2]}$ componenti in dimensione $D$. Questo è lecito per una teoria non interagente, ma le teorie interagenti di supergravità sono più restrittive per quanto riguarda il tipo di spinori permesso in una data dimensione dello spaziotempo (e tali teorie esistono solo per $D \le 11$). Per queste teorie è richiesto utilizzare gli spinori di Majorana e/o di Weyl e il numero di componenti $2^{[D/2]}$ deve essere calibrato in modo da essere in accordo con il numero di componenti di ciascuno tipo di spinore. 
+
+Il fatto che il campo di gauge $\Psi_\mu(x)$ sia un campo con un indice in più del parametro di gauge $\epsilon(x)$ è consistente con quanto si vede nel caso dell'Elettromagnetismo. Inoltre, proprio come in quel caso, la derivata anti-simmetrica $\p_\mu\Psi_\nu - \p_\nu\Psi_\mu$ è un invariante di gauge. Una differenza importante si palesa perché ora si deve cercare un'equazione d'onda invariante di gauge del primo ordine per il campo fermionico. \'E conveniente partire dall'azione, questa deve essere:
 \begin{enumerate}
-    \item la lagrangiana deve essere invariante;
-    \item l'azione deve essere reale;
-    \item deve essere di prim'ordine nelle derivate $\p_\mu$;
-\end{enumerate}  
-insieme ad un'altra condizione. Per capire quale, si parte dall'azione del campo vettoriale più semplice, quella di Maxwell
+    \item reale;
+    \item hermitiana;
+    \item di prim'ordine nelle derivate $\p_\mu$;
+    \item invariante di Lorentz;
+    \item invariante di gauge sotto la trasformazione \eqref{eq: trasformazione di gauge campo R-S} e la trasformazione simultanea di $\b{\Psi}_\mu$.
+\end{enumerate} 
+Per capire il perché della condizione sull'invarianza di gauge, si considera l'azione del campo vettoriale più semplice, quella per il campo di Maxwell
 \begin{equation}
-    S_{Maxwell} = -\frac{1}{4}\int d^Dx\,F_{\mu\nu}F^{\mu\nu},
+    S_M[A_\mu]= -\frac{1}{4}\int d^Dx\,F_{\mu\nu}F^{\mu\nu},
 \end{equation}
-dove $A_\mu$ è invariante per trasformazioni $A_\mu \to A_\mu + \p_\mu\Lambda$ con $\Lambda$ una funzione scalare. In generale, i gradi di libertà che soddisfano le equazioni del moto sono detti \emph{on-shell}, altrimenti sono detti \emph{off-shell}. Si fissano i gradi di libertà del campo $A_\mu$ tramite il gauge-fixing, in questo caso tramite il gauge di Coulomb $\p^iA_i = 0$. Dall'equazione del moto $\p^\mu F_{\mu\nu} = 0$ si separano 
+dove $A_\mu$ è invariante per trasformazioni $A_\mu(x) \to A_\mu(x) + \p_\mu\Lambda(x)$ con $\Lambda(x)$ una funzione scalare. Si fissano i gradi di libertà del campo $A_\mu$ tramite il gauge-fixing, in questo caso si impone il gauge di Coulomb $\p^iA_i = 0$. Da $S_M[A_\mu]$ deriva l'equaazione del moto $\p^\mu F_{\mu\nu} = 0$, che può essere separata in 
 \begin{equation}
     \begin{cases}
         \p^\mu F_{\mu 0} = 0 \\
         \p^\mu F_{\mu i} = 0
     \end{cases},
 \end{equation}
-che esplicitamente diventano
+ossia, usando la definizione $F_{\mu\nu} = \p_\mu A_\nu - \p_\nu A_\mu$, in
 \begin{equation}
     \begin{cases}
         \p^i(\p_i A_0 - \p_0 A_i) = 0 \\
         \p^0(\p_0 A_i - \p_i A_0) + \p^j(\p_j A_i - \p_i A_j) = 0
-    \end{cases},
+    \end{cases}.
 \end{equation}
-dove, considerando il gauge di Coulomb, dalla prima si trova che $\nabla^2 A_0 = 0$ che fissa $A_0 = 0$, con questo risultato dalla seconda si trova 
+Dato che ci si trova nel gauge di Coulomb, dalla componente temporale dell'equazione del moto si trova che $\nabla^2 A_0 = 0$, che fissa $A_0 = 0$. Usando questo risultato, dalla componente spaziale dell'equazione del moto si trova 
 \begin{equation}
     \p^0\p_0 A_i + \p^j\p_j A_i \equiv \square A_i = 0,
 \end{equation}
-che è l'equazione dell'onda piana per il campo $A_i$. Il numero di gradi di libertà effettivo è $D - 2$ dove le due condizioni sono date dal gauge-fixing e dal fatto che $\v{k} \perp \v{A}$, ossia che $\v{k} \cdot \v{A} = 0$. 
+che corrisponde all'equazione di d'Alembert per il campo $A_i$. Il numero di gradi di libertà è quindi $D - 2$, dove le due condizioni sono date dal gauge-fixing e dal fatto che $\v{k} \perp \v{A}$, ossia che $\v{k} \cdot \v{A} = 0$. La trasformazione di gauge \eqref{eq: trasformazione di gauge campo R-S} è quindi definita a partire da quella definita per il campo $A_\mu$. In generale, i gradi di libertà che soddisfano le equazioni del moto sono detti \emph{on-shell}, altrimenti sono detti \emph{off-shell}.
 
-Per il campo di Rarita-Schwinger si definisce allora la trasformazione 
+Dunque, l'azione per il campo $\Psi_\mu$ massless, cioè il gravitino, è l'\emph{azione di Rarita-Schwinger} 
 \begin{equation}
-    \psi_\mu \to \psi_\mu + \p_\mu\epsilon(x),
+\label{eq: azione di Rarita-Schwinger (massless)}
+    S_{RS}[\Psi_\mu] = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
 \end{equation}
-dove $\epsilon$ è un parametro locale spinoriale. La lagrangiana deve essere invariante sotto questa trasformazione e di conseguenza ciò si ripercuote sull'azione, determinando la condizione aggiuntiva prima accennata. Una possibile azione quindi è
-\begin{equation}
-    S_{RS} = -\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho.
-\end{equation}
-La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha 
+Per questo motivo, il campo $\Psi_\mu$ è anche chiamato \emph{campo di Rarita-Schwinger}.
+
+Per verificare che l'azione \eqref{eq: azione di Rarita-Schwinger (massless)} sia invariante sotto la trasformazione \eqref{eq: trasformazione di gauge campo R-S}, usando la definizione \eqref{eq: aggiunto di Majorana}, si calcola la variazione
 \begin{equation}
     \begin{split}
         \delta(\b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho) &= \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho + \p_\mu\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\p_\rho\epsilon \\
@@ -49,50 +55,84 @@ La sua invarianza si può verificare, se $\b{Psi}_\mu = \psi_\mu^TC$, si ha
         &= \p_\mu(\b{\epsilon}\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho),
     \end{split}
 \end{equation}
-dove si è usata l'anti-simmetria di $\gamma^{\mu\nu\rho}$; essendo una derivata totale non contribuisce all'azione. La variazione dell'azione è
+dove si è usata l'anti-simmetria di $\gamma^{\mu\nu\rho}$, la quale risulta corrispondere ad una derivata totale e pertanto non contribuisce all'azione. 
+
+Invece, per ricavare le corrispondenti equazioni del moto, si calcola la variazione dell'azione
 \begin{equation}
     \begin{split}
-        \delta_{RS} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
-        &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho -\p_\nu\b{\Psi}_\mu\gamma^{\mu\nu\rho}\delta\Psi_\rho),
+        \delta S_{RS} &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\delta\Psi_\rho) \\
+        &= -\int d^Dx (\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\p_\nu\Psi_\rho - \p_\nu\b{\Psi}_\mu\gamma^{\mu\nu\rho}\delta\Psi_\rho),
     \end{split}
 \end{equation}
-dove si è integrato per parti in secondo termine per ottenere una derivata totale. Quindi, si ottengono le due equazioni del moto del tutto equivalenti
+dove si è integrato per parti in secondo termine per ottenere una derivata totale. Quindi, imponendo $\delta S_{RS} = 0$, si ottengono le seguenti due equazioni del moto del tutto equivalenti
 \begin{equation}
+\label{eq: equazione del moto campo RS}
     \begin{cases}
         \gamma^{\mu\nu\rho}\p_\nu\Psi_\rho = 0 \\
         \p_\nu\b{\Psi}_\rho\gamma^{\mu\nu\rho} = 0
     \end{cases}.
 \end{equation} 
-Le equazioni del moto possono essere riscritte in maniera equivalente come 
+Queste equazioni possono essere riscritte a loro volta in maniera equivalente, ma con una forma nettamente più compatta, come 
 \begin{equation}
+\label{eq: equazione del moto campo RS (forma alternativa)}
     \gamma^\mu(\p_\mu\psi_\nu - \p_\nu\psi_\mu) = 0.
 \end{equation}
-Per vederlo, servono alcune identità delle matrici $\gamma$, cioè 
-\begin{equation}
-    \gamma_\mu g^{\mu\nu\rho}\p_\nu\psi_\rho = 0,\quad \gamma^{\mu\nu\rho} = \gamma^{\mu}\gamma^{\nu\rho} - \eta^{\mu\nu}\gamma^\rho + \eta^{\mu\rho}\gamma^\nu.
-\end{equation}
-Si dimostra ora l'inverso... +CONTO D.O.F.
+Per vederlo\footnote{Tutti questi calcoli e considerazioni sono fatti assumendo come metrica $\eta_{\mu\nu}$, ma andrebbero rifatti per uno spazio non piatto.}, servono è necessario ricordare l'identità $\gamma_\mu\gamma^{\mu\nu\rho} = (D - 2)\gamma^{\nu\rho}$, che implica $\gamma^{\nu\rho}\p_\nu\Psi_\rho = 0$ in dimensione $D > 2$; inoltre, si usa $\gamma^{\mu\nu\rho} = \gamma^\mu\gamma^{\nu\rho} - 2\eta^{\mu[\nu}\gamma^{\rho]}$.
 
-\section{Elicità}
-L'elicità permette di classificare i campi massless:
+Si prova ora a contare il numero di gradi di libertà on-shell per il campo di Rarita-Schwinger $\Psi_\mu$. Per farlo, si deve fissare il gauge, per cui si impone la condizione non-covariante
+\begin{equation}
+\label{eq: condizione di gauge campo RS}
+    \gamma^i\Psi_i = 0,
+\end{equation}
+la quale svolge lo stesso ruolo della condizione del gauge di Coulomb per il campo di Maxwell. Considerando le equazioni del moto \eqref{eq: equazione del moto campo RS (forma alternativa)}, la componente temporale e la componente spaziale sono 
+\begin{equation}
+    \begin{cases}
+        \gamma^i\p_i\Psi_0 - \p_0\gamma^i\Psi_i = 0 \\
+        (\gamma \cdot \p)\Psi_i - \p_i(\gamma \cdot \Psi) = 0
+    \end{cases}.
+\end{equation}
+Usando la condizione di gauge \eqref{eq: condizione di gauge campo RS}, si può vedere che $\nabla^2\Psi_0 = 0$, per cui $\Psi_0 = 0$ in maniera analoga a quanto visto per il campo $A_\mu$. Le componenti spaziali invece soddisfano l'equazione di Dirac 
+\begin{equation}
+\label{eq: equazione del moto campo RS (gauge Coulomb)}
+    (\gamma \cdot \p)\Psi_i = 0,
+\end{equation}
+che un'equazione di evoluzione temporale. Tuttavia, c'è un vincolo addizionale dato da $\p^i\Psi_i = 0$, ottenuto contraendo \eqref{eq: equazione del moto campo RS (gauge Coulomb)} con $\gamma^i$. Dunque, dalla condizione di gauge e dall'equazione del moto, si trovano i $3 \times 2^{[D/2]}$ vincoli indipendenti 
+\begin{equation}
+    \begin{cases}
+        \gamma^i\Psi_i(\v{x},0) = 0 \\
+        \Psi_0(\v{x},0) = 0 \\
+        \p^i\Psi_i(\v{x},0) = 0
+    \end{cases}.
+\end{equation} 
+Questi vincoli implicando che ci sono sono $(D - 3)2^{[D/2]}$ componenti di $\Psi_i$ che devono essere specificate. Le derivate temporali sono già determinate dall'equazione di Dirac \eqref{eq: equazione del moto campo RS (gauge Coulomb)}, per cui il campo di gauge Rarita-Schwinger ci sono $(D - 3)2^{[D/2]}$ gradi di libertà classici nello spazio di Minkowski $D$-dimensionale. I gradi di libertà on-shell sono metà di questi ultimi, per cui 
+\begin{equation}
+    N_{\rem{d.o.f}}^{(on)} = \frac{1}{2}(D - 3)2^{[D/2]}.
+\end{equation}
+Invece, i gradi di libertà off-shell sono 
+\begin{equation}
+    N_{\rem{d.o.f}}^{(off)} = (D - 1)2^{[D/2]}.
+\end{equation}
+
+\paragraph{Elicità.} In generale, i campi possono essere classificati introducendo il concetto di \emph{elicità}, indicata tipicamente con $h$, definita come l'autovalore della componente del momento angolare nella direzione del moto. In particolare, per le particelle massless con spin\footnote{In Fisica delle particelle quando si parla di spin, si ha di fatto a che fare con le rappresentazioni massless del gruppo di Poincaré.} $s$, i due stati di elicità hanno autovalori $\pm s$; invece, per le particelle massive di spin $s$, gli autovalori di elicità, indicati con $\lambda$, variano a passi interi da $\lambda = s$ a $\lambda= -s$. Ad esempio:
 \begin{enumerate}
-    \item per $h = \pm 3/2$ si ha il campo di Rarita-Schwinger, ossia il \emph{gravitino};
-    \item per $h = \pm1$ si ha il campo di Maxwell, ossia il fotone;
-    \item per $h = \pm 1/2$ si ha il fermione di Weyl;
-    \item per $h = \pm 2$ si ha il campo metrico, ossia il \emph{gravitone}.
+    \item a $h = \pm 3/2$ corrisponde il campo di Rarita-Schwinger;
+    \item a $h = \pm1$ corrisponde il campo di Maxwell;
+    \item a $h = \pm 1/2$ corrisponde il campo di Weyl;
+    \item per $h = \pm 2$ è associato un tensore simmetrico $h_{\mu\nu}(x)$, che risulta descrivere il \emph{gravitone} nello spazio di Minkowski.
 \end{enumerate}
-\begin{obs}
-    In Fisica delle particelle quando si parla di spin si ha di fatto a che fare con le rappresentazioni massless del gruppo di Poincaré.
-\end{obs}
-\begin{obs}
-    Questi conteggi sono fatti assumendo come metrica $\eta_{\mu\nu}$, ma andrebbero rifatti per uno spazio non piatto. 
-\end{obs}
-All'azione di Rarita-Schwinger è possibile aggiungere un termine di massa 
+L'elicità può anche essere utile per contare il numero di gradi di libertà on-shell ed off-shell, in particolare: 
+\begin{enumerate}
+    \item il numero di gradi di libertà on-shell coincide con il numero di stati di elicità;
+    \item il numero di gradi di libertà off-shell corrisponde alla differenza tra il numero di componenti del campo e il numero di trasformazioni di gauge. 
+\end{enumerate}
+
+Infine, per il campo di Rarita-Schwinger in dimensioni $D = 2m + 1$, è possibile definire un'azione che contiene un termine di massa. Questa è l'azione per il gravitino massivo
 \begin{equation}
-    S_{RS} = -\int d^Dx\,\b{\psi}_\mu(\gamma^{\mu\nu\rho}\p_\nu - m\gamma^{\mu\rho})\psi_\rho,
+\label{eq: azione di Rarita-Schwinger (massivo)}
+    S_{RS}[\Psi_\mu] = -\int d^Dx\,\b{\Psi}_\mu(\gamma^{\mu\nu\rho}\p_\nu - m\gamma^{\mu\rho})\Psi_\rho.
 \end{equation}
-il quale rompe l'invarianza di gauge, come accade con l'equazione di Proca per il campo $A_\mu$ massivo, e il numero di gradi di libertà on-shell diventano in $D = 4$ pari a 
+Tuttavia, l'aggiunta del termine di massa rompe l'invarianza di gauge, esattamente come accade nell'equazione di Proca per il campo di Maxwell $A_\mu$ massivo. Ora, il campo $\Psi_\mu$ con $2^{[D/2]}D$ gradi di libertà contiene $(D - 2)2^{[D/2]}$ gradi di libertà classici indipendenti e pertanto $2^{[D/2]}(D - 2)/2$ stati fisici on-shell. Pertanto, in $D = 4$ il numero di gradi di libertà on-shell diventano pari a 
 \begin{equation}
-    N_{\rem{d.o.f}} = \frac{1}{2}(D - 2)2^{[D/2]} = 4,
+    N_{\rem{d.o.f}}^{(on)} = \frac{1}{2}(D - 2)2^{[D/2]} = 4,
 \end{equation}
-dove quattro sono in generale numeri complessi, ma sono reali per gli spinori di Majorana.
+Si noti che questo è lo stesso risultato che si ottiene per un gravitino massless in $D + 1$ dimensioni. 
