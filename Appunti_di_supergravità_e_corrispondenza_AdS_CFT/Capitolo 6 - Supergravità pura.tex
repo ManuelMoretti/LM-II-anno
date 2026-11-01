@@ -444,3 +444,172 @@ Si organizzano i calcoli in termini di potenze di $L$ ($L^0$, $L^{-1}$, $L^{-2}$
 \begin{equation}
     \delta_e S_{HE} + \delta_e S_{RS} + \delta_\psi^{(odd)} S_{HE} + \delta_\psi^{(odd)} S_{RS} + \delta_{\b{\psi}}^{(odd)} S_{HE} + \delta_{\b{\psi}}^{(odd)} S_{RS} = 0.
 \end{equation}
+
+---
+
+Dagli spinori di Killing, indipendentemente dalla loro forma, informazioni sulla geometria. Ad esempio, si può dimostrare l'esistenza dei vettori di Killing 
+\begin{equation}
+    \nabla_\nu(\b{\epsilon}\gamma_\mu\epsilon') = \nabla_\nu\b{\epsilon}\gamma_\mu\epsilon' + \b{\epsilon}\gamma_\mu\nabla_\nu\epsilon' = 0,
+\end{equation}
+da cui si ha che $\nabla_{[\nu}K_{\mu]} = 0$ con $K_\mu \equiv \b{\epsilon}\gamma_\mu\epsilon$, permettendo di trovare i vettori di Killing. 
+
+---
+
+Per l'azione di Rarita-Schwinger $S_{RS} \propto \int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\h{D}_\nu\psi_\rho$, si è visto che l'integrando è un invariante di gauge, da cui si deduce che il numero di gradi di libertà è pari a due in $D = 4$. Aggiungendo il termine di massa $-m\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu$, si rompe l'invarianza di gauge. Tuttavia, si definisce la derivata covariante
+\begin{equation}
+    \t{D}_\mu := \nabla_\mu + \frac{m}{D - 2}\gamma_\mu,
+\end{equation}
+che coincide con $\h{D}_\mu$ per $m = -(D - 2)/2L$. Con questa derivata si può scrivere 
+\begin{equation}
+    S_{RS} \propto \int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\t{D}_\nu\Psi_\rho
+\end{equation}
+che è gauge invariante per $\Psi_\mu \to \Psi_\mu + \t{D}_\mu\epsilon$. Usando l'identità generale $\comm{\nabla_\mu}{\nabla_\rho} = R_{\mu\nu ab}\gamma^{ab}\epsilon/4$, sostituendo il tensore di Ricci nello spazio di anti-De Sitter, si ha che 
+\begin{equation}
+    \comm{\nabla_\mu}{\nabla_\rho} = -\frac{1}{2L}\gamma_{\mu\rho}\epsilon,
+\end{equation}
+che si annulla per $m = -(D - 2)/2L$., implicando la restaurazione dell'invarianza di gauge rotta con il termine di massa. Infatti
+\begin{equation}
+    \begin{split}
+        \delta_{gauge}S_{RS} &\propto \int d^Dx\,\delta\b{\Psi}_\mu\gamma^{\mu\nu\rho}\t{D}_\nu\Psi_\rho + 2\int d^Dx\,\b{\Psi}_\mu\gamma^{\mu\nu\rho}\t{D}_\nu\t{D}_\rho\epsilon \\
+        &\propto \int d^Dx\,\b{\Psi}\gamma^{\mu\nu\rho}\t{D}_{[\mu}\t{D}_{\rho]}\epsilon,
+    \end{split}
+\end{equation}
+che si annulla se $\comm{\t{D}_\mu}{\t{D}_\nu} = 0$. 
+
+I tre ordini di grandezza $L^0$, $L^{-1}$ ed $L^{-2}$ devono essere invarianti sotto supersimmetria in maniera indipendente. Si parte dall'ordine $L^{-2}$, questo contiene 
+\begin{equation}
+    \delta_eS_\Lambda + \delta_\Psi^{(new)}S_m + \delta_\Psi^{(old)}S_\Lambda +\delta_{\b{\Psi}}^{(new)}S_m +\delta_{\b{\Psi}}^{(old)}S_\Lambda \equiv \delta S^{(2)}.
+\end{equation}
+Quindi, il primo contributo è
+\begin{equation}
+    \delta_eS_\Lambda = \frac{1}{2k^2}\int d^Dx\,\frac{e}{2}\b{\epsilon}\gamma^\rho\psi_\rho(-\Lambda).
+\end{equation}
+Raggruppando il primo e il quarto contributo, si ha 
+\begin{equation}
+    \delta_\Psi^{(new)}S_m + \delta_{\b{\Psi}}^{(new)}S_m = \frac{m}{2k^2}\int d^Dx\,e\bigg(\delta^{(new)}\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu + \b{\Psi}_\mu\gamma^{\mu\nu}\delta^{(new)}\Psi_\nu\bigg),
+\end{equation}
+dove le singole variazioni sono
+\begin{equation}
+    \delta^{(new)}\b{\Psi}_\mu = \frac{1}{2L}\b{\epsilon}\gamma_\mu,\quad \delta^{(new)}\Psi_\nu = -\frac{1}{2L}\gamma_\nu\epsilon.
+\end{equation}
+Dopo avere sostituto le singole variazioni, nel primo e nel secondo termine serve usare rispettivamente le identità
+\begin{equation}
+    \gamma_\mu\gamma^{\mu\nu} = (D - 1)\gamma^\nu,\quad \gamma^{\mu\nu}\gamma_\nu = (D - 1)\gamma^\mu,
+\end{equation}
+che insieme ad un Majorana flip, permettono di ottenere
+\begin{equation}
+    \begin{split}
+        \delta_\Psi^{(new)}S_m + \delta_{\b{\Psi}}^{(new)}S_m &= \int d^Dx\,\frac{m}{2k^2}\frac{1}{2L}(D - 1)(\b{\epsilon}\gamma^\nu\Psi_\nu - \b{\Psi}_\mu\gamma^\mu\epsilon) \\
+        &= \int d^Dx\,\frac{m}{2k^2}\frac{1}{2L}(D - 1)2\b{\epsilon}\gamma^\mu\Psi_\mu.
+    \end{split}
+\end{equation}
+Dunque, il contributo a questo ordine è 
+\begin{equation}
+    \delta S^{(2)} \supset -\frac{\Lambda}{4k^2} + \frac{m(D - 1)}{m^2L} = 0,\quad \forall D.
+\end{equation}
+Si passa ora all'ordine $L^{-1}$. In questo caso i contributi sono 
+\begin{equation}
+    \delta S^{(1)} \equiv \delta_eS_m + \delta_{\Psi}^{(new)}S_{RS} + \delta_{\b{\Psi}}^{(new)}S_{RS} + \delta_\Psi^{(old)}S_m + \delta_{\b{\Psi}}^{(old)}S_m.
+\end{equation}
+Il primo contributo è
+\begin{equation}
+    \begin{split}
+        \delta_eS_m &= \frac{m}{2k^2}\int d^Dx\,e\bigg(\frac{1}{2}\b{\epsilon}\gamma^\mu\Psi_\rho\b{\Psi}_\mu\gamma^\mu\Psi_\nu - \frac{1}{2}\b{\epsilon}\gamma^\mu\Psi_a\b{\Psi}_\mu\gamma^{a\nu}\Psi_b \\
+        &- \frac{1}{2}\b{\epsilon}\gamma^\nu\Psi_b\b{\Psi}_\mu\gamma^{\mu b}\Psi_\nu\bigg),
+    \end{split}
+\end{equation}
+dove, effettuando un Majorana flip sul terzo addendo nell'integrale e rinominando gli indici in maniera opportuna, si può vedere che questo è uguale al secondo addendo. Raggruppando il secondo e il terzo contributo, si ha 
+\begin{equation}
+    \begin{split}
+        \delta_{\Psi}^{(new)}S_{RS} + \delta_{\b{\Psi}}^{(new)}S_{RS} &= -\frac{1}{2k^2}\frac{1}{2L}\int d^Dx\,e[-\b{\Psi}_\mu\gamma^{\mu\nu\rho}D_\nu(\gamma_\rho\epsilon) \\
+        &+ \b{\epsilon}\gamma_\mu\gamma^{\mu\nu\rho}D_\nu\Psi_\rho].
+    \end{split}
+\end{equation}
+Di questo contributo, si può riscrivere prima $D_\nu(\gamma_\rho\epsilon) = (D_\nu\gamma_\rho)\epsilon + \gamma_\rho D_\nu\epsilon$, dove $D_\nu\gamma_\rho$ contiene la torsione $T_{\nu\rho}^\lambda\gamma_\lambda\epsilon$, e poi notare che il secondo addendo nell'integrale è una traccia sul primo indice. Per cui, si ha 
+\begin{equation}
+    \begin{split}
+        \delta_{\Psi}^{(new)}S_{RS} + \delta_{\b{\Psi}}^{(new)}S_{RS} &= -\frac{1}{2k^2}\frac{1}{2L}\int d^Dx\,e\bigg[-(D - 2)\b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\epsilon \\
+        &+ (D - 2)\b{\epsilon}\gamma^{\mu\nu}D_\mu\Psi_\nu - \frac{1}{2}\b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda\epsilon T_{\nu\rho}^\lambda\bigg].
+    \end{split}
+\end{equation}
+L'ultimo contributo a questo ordine è 
+\begin{equation}
+    \begin{split}
+        \delta_\Psi^{(old)}S_m + \delta_{\b{\Psi}}^{(old)}S_m &= \frac{m}{2k^2}\int d^Dx\,(D_\mu\b{\epsilon}\gamma^{\mu\nu}\Psi_\nu + \b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\epsilon) \\
+        &= \frac{1}{2k^2}\frac{(D - 2)}{2L}\int d^Dx\,e\bigg(-D_\mu\b{\epsilon}\gamma^{\mu\nu}\Psi_\nu - \b{\epsilon}\gamma^{\mu\nu}D_\mu\Psi_\nu \\
+        &+ \frac{1}{2}\frac{1}{D - 2}\b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda \epsilon T_{\nu\rho}^\lambda\bigg).
+    \end{split}
+\end{equation}
+\begin{obs}
+    Si noti che il termine $\b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\epsilon$ di $\delta_\Psi^{(old)}S_m + \delta_{\b{\Psi}}^{(old)}S_m$ si cancella con il termine $-(D - 2)\b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\epsilon$ di $\delta_{\Psi}^{(new)}S_{RS} + \delta_{\b{\Psi}}^{(new)}S_{RS}$ per $m = -(D - 2)/2L$. 
+\end{obs}
+Si considera adesso la derivata
+\begin{equation}
+    \begin{split}
+        D_\mu(\b{\epsilon}\gamma^{\mu\nu}\Psi_\nu) &= (D_\mu\b{\epsilon})\gamma^{\mu\nu}\Psi_\nu + \b{\epsilon}\gamma^{\mu\nu}(D_\mu\Psi_\nu) + \b{\epsilon}(D_\mu\gamma^{\mu\nu})\Psi_\nu,
+    \end{split}
+\end{equation}
+dove
+\begin{equation}
+    D_\mu\gamma^{\mu\nu} = -\Gamma^\mu_{\nu\lambda}\gamma^{\lambda\nu} - \frac{1}{2}T^\nu_{\mu\lambda}\gamma^{\mu\lambda} \equiv (1) + (2).
+\end{equation}
+La stessa derivata può essere scritta come
+\begin{equation}
+    D_\mu V^\mu = -\Gamma_{\mu\rho}^\mu V^\rho + \nabla_\mu V^\mu \equiv (3) + (4),
+\end{equation}
+notando che $V^\mu \equiv \b{\epsilon}\gamma^{\mu\nu}\Psi_\nu$. Si può ora facilmente vedere che i termini $(1)$ e $(3)$ si cancellano a vicenda, per cui con i termini rimanenti si ha
+\begin{equation}
+    \begin{split}
+        -D_\mu\b{\epsilon}\gamma^{\mu\nu}\Psi_\nu - \b{\epsilon}\gamma^{\mu\nu}D_\mu\Psi_\nu &= -\frac{1}{2}T_{\mu\lambda}\b{\epsilon}\gamma^{\mu\lambda}\Psi_\nu - \nabla_\mu(\b{\epsilon}\gamma^{\mu\nu}\Psi_\nu) \\
+        &= -\frac{1}{2}T_{\mu\lambda}\b{\epsilon}\gamma^{\mu\lambda}\Psi_\nu - T^\nu_{\nu\mu}\b{\epsilon}\gamma^{\mu\rho}\Psi_\rho.
+    \end{split}
+\end{equation}
+Tuttavia, guardando ora la forma del contributo $\delta_eS_m$, si nota che questo non contiene esplicitamente termini di torsione, si noti anche che 
+\begin{equation}
+    T_{\mu\rho}^\lambda \supset \b{\Psi}_\nu\gamma^{\lambda}\Psi_\rho,\quad \delta_eS_m \supset \b{\Psi}_\mu\gamma^{\rho\nu}\Psi_\nu.
+\end{equation}
+Per permettere la comparazione dei contributi, si deve usare l'identità di Fierz in due occasioni separate. La prima identità usa $\lambda_1 \equiv \gamma^{\mu\nu\rho}\Psi_\mu$, $\lambda_2 \equiv \Psi_\nu$ e $\lambda_3 \equiv \Psi_\rho$, con la quale, insieme ad un opportuno Majorana flip, si ha 
+\begin{equation}
+    \begin{split}
+        \b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda\epsilon T_{\nu\rho}^\lambda &= \frac{1}{2}\b{\epsilon}\gamma^\lambda\Psi_\rho\b{\Psi}_\mu\acomm{\gamma^{\mu\nu\rho}}{\gamma_\lambda}\Psi_\nu \\
+        &= \b{\epsilon}\gamma^\rho\Psi_\rho\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu - 2\b{\epsilon}\gamma^\mu\Psi_\rho\b{\Psi}_\mu\gamma^{\rho\nu}\Psi_\nu,
+    \end{split}
+\end{equation}
+dove si è usato $\acomm{\gamma^{\mu\nu\rho}}{\gamma_\lambda} = 6\delta_\lambda^{[\mu}\gamma^{\nu\rho]}$, cioè esattamente dei termini del tipo contenuti in $\delta_eS_m$. Usando adesso di nuovo l'identità di Fierz con $\lambda_1 \equiv \Psi_\mu$, $\lambda_2 \equiv \Psi_\nu$ e $\lambda_3 \equiv \Psi_\rho$, si ha che 
+\begin{equation}
+    \gamma_\lambda\Psi_{[\mu}\b{\Psi}_\nu\gamma^\lambda\Psi_{\rho]} = 0,
+\end{equation}
+la quale moltiplicata per $(\b{\epsilon}\gamma^{\mu\nu\rho})$ restituisce
+\begin{equation}
+    \b{\Psi}_\mu\gamma_\lambda\gamma^{\mu\nu\rho}\b{\Psi}_\nu\gamma^\lambda\Psi_\rho = 0.
+\end{equation}
+Quindi, usando la prima identità di Fierz e l'equazione appena trovata, si ottiene 
+\begin{equation}
+    \b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda\epsilon T^\lambda_{\nu\rho} = -4\bigg(\frac{1}{2}T_{\mu\lambda}^\nu\b{\epsilon}\gamma^{\mu\lambda}\Psi_\nu + T_{\nu\mu}^\nu\b{\epsilon}\gamma^{\mu\rho}\Psi_\rho\bigg).
+\end{equation}
+In questo modo, si è mostrato che tutti i termini di ogni contributo possono essere scritti in termini della forma $\b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda\epsilon T^\lambda_{\nu\rho}$. Quindi, alla fine 
+\begin{equation}
+    \delta_{\Psi}^{(new)}S_{RS} + \delta_{\b{\Psi}}^{(new)}S_{RS} = \frac{D - 2}{4k^2L}\int d^Dx\,\frac{e}{2}\b{\Psi}_\mu\gamma^{\mu\nu\rho}\gamma_\lambda\epsilon T^\lambda_{\nu\rho}\bigg(-\frac{1}{2} + \frac{1}{D - 2}\bigg).
+\end{equation}
+Dunque, effettivamente $\delta S^{(1)} = 0$ in $D = 4$, per cui la supergravità esiste in uno spazio di anti-De Sitter.
+
+\section{Anti-De Sitter in dimensioni varie}
+Lo spazio di anti-De Sitter si era introdotto con l'equazione
+\begin{equation}
+    R_{\mu\nu}  - \frac{D - 1}{L^2}g_{\mu\nu} = 0,
+\end{equation}
+o anche con la relazione
+\begin{equation}
+    D_\mu\epsilon = \frac{1}{2L}\gamma_\mu\epsilon,
+\end{equation}
+le quali in realtà sono legate dato che la seconda equazione è la variazione in supersimmetria della prima. L'\emph{equazione di Killing} è 
+\begin{equation}
+\label{eq: equazione di Killing}
+    \nabla_{(\mu}K_{\nu)} = 0,
+\end{equation}
+dove i vettori di Killing generano il diffeomorfismo che lascia invariata la metrica, la quale nello spazio di Minkowski $D$-dimensionale diventa 
+\begin{equation}
+    \p_\mu K_\nu + \p_\nu K_\mu = 0,
+\end{equation}
+da cui si trova la condizione di integrabilità $\p_\rho\p_\nu K_\mu = 0$. Le componenti $K_\mu$ sono allora esprimibili tramite una combinazione lineare $K_\mu = a_\mu + b_{\mu\nu}x^\nu$, ma se $K_\mu$ deve soddisfare l'equazione di Killing \eqref{eq: equazione di Killing} il tensore $b_{\mu\nu}$ deve essere anti-simmetrico, cioè $b_{\mu\nu} = -b{\nu\mu}$. Perciò, si hanno $D + (D - 1)/2$ parametri liberi, che in $D = 4$ corrispondono a dieci. I vettori di Killing formano un'algebra e quindi un gruppo, questo è il gruppo di Poincaré, dove una base per le traslazioni è data da $p_\mu = \p_\mu$ mentre una base per le trasformazioni di Lorentz è data da $L_{\mu\nu} = x_\mu\p_\nu - x_\nu\p_\mu$.
+
