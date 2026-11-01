@@ -611,5 +611,210 @@ dove i vettori di Killing generano il diffeomorfismo che lascia invariata la met
 \begin{equation}
     \p_\mu K_\nu + \p_\nu K_\mu = 0,
 \end{equation}
-da cui si trova la condizione di integrabilità $\p_\rho\p_\nu K_\mu = 0$. Le componenti $K_\mu$ sono allora esprimibili tramite una combinazione lineare $K_\mu = a_\mu + b_{\mu\nu}x^\nu$, ma se $K_\mu$ deve soddisfare l'equazione di Killing \eqref{eq: equazione di Killing} il tensore $b_{\mu\nu}$ deve essere anti-simmetrico, cioè $b_{\mu\nu} = -b{\nu\mu}$. Perciò, si hanno $D + (D - 1)/2$ parametri liberi, che in $D = 4$ corrispondono a dieci. I vettori di Killing formano un'algebra e quindi un gruppo, questo è il gruppo di Poincaré, dove una base per le traslazioni è data da $p_\mu = \p_\mu$ mentre una base per le trasformazioni di Lorentz è data da $L_{\mu\nu} = x_\mu\p_\nu - x_\nu\p_\mu$.
+da cui si trova la condizione di integrabilità $\p_\rho\p_\nu K_\mu = 0$. Le componenti $K_\mu$ sono allora esprimibili tramite una combinazione lineare $K_\mu = a_\mu + b_{\mu\nu}x^\nu$, ma se $K_\mu$ deve soddisfare l'equazione di Killing \eqref{eq: equazione di Killing} il tensore $b_{\mu\nu}$ deve essere anti-simmetrico, cioè $b_{\mu\nu} = -b_{\nu\mu}$. Perciò, si hanno $D + (D - 1)/2$ parametri liberi, che in $D = 4$ corrispondono a dieci. I vettori di Killing formano un'algebra e quindi un gruppo, questo è il gruppo di Poincaré, dove una base per le traslazioni è data da $p_\mu = \p_\mu$ mentre una base per le trasformazioni di Lorentz è data da $L_{\mu\nu} = x_\mu\p_\nu - x_\nu\p_\mu$.
 
+Lo spazio euclideo ha $D(D - 1)/2$ vettori di Killing, di cui $D$ descrivono le traslazioni, mentre $(D - 1)/2$ descrivono le rotazioni, che insieme generano le isometrie di $S^{D - 1}$, ossia il gruppo $\group{SO}{D}$. Proprio come $\bb{R}^D$, la sfera $\bb{S}^D$ ha $D(D + 1)/2$ isometrie. Le isometrie di $\bb{R}^D$ vengono trasferite sulla sfera senza le traslazioni perché la sfera rompe queste trasformazioni. Tutti questi spazi sono \emph{spazi massimalmente simmetrici}, cioè che possiedono il massimo numero di vettori di Killing. Da $\nabla_\mu K_\nu = -\nabla_\nu K_\mu$, si definisce 
+\begin{equation}
+    A_{\mu\nu\rho} := \nabla_\mu\nabla_\nu K_\rho = -A_{\mu\rho\nu},
+\end{equation}
+da cui si trova che 
+\begin{equation}
+    A_[\mu\nu\rho] - A_{\nu\mu\rho} = R_{\rho\sigma\mu\nu}K^\sigma \quad\Longrightarrow\quad A_[\mu\nu\rho] + A_{\nu\rho\mu} = R_{\rho\sigma\mu\nu}K^\sigma.
+\end{equation}
+Usando la prima identità di Bianchi, si trova quindi che 
+\begin{equation}
+    \nabla_\mu\nabla_\nu K_\rho = R_{\rho\mu\nu\rho}K^\sigma.
+\end{equation}
+Lungo una curva parametrizzata da $x^\mu(t)$ si hanno
+\begin{equation}
+    \frac{dK_\rho}{dt} = \dot{x}^\mu\p_\mu K_\rho = \dot{x}^\mu(L_{\mu\rho} + \Gamma^\lambda_{\mu\rho}K_\lambda),
+\end{equation}
+\begin{equation}
+    \frac{dL_{\nu\rho}}{dt} = \dot{x}^\mu(R_{\sigma\mu\nu\rho}K^\sigma + \Gamma_{\mu\nu}^\lambda L_{\lambda\rho} + \Gamma^\lambda_{\mu\rho}L_{\nu\lambda}).
+\end{equation}
+Si considerano allora il vettore $(K_\rho,L_{\nu\rho})$ e la sua derivazione temporale. Da qui si ottiene un sistema chiuso, infatti nella seconda equazione compaiono i vettori di Killing, per cui se si fissa il valore in un punto viene fissato ovunque: $K_\rho$ ha $D$ gradi di libertà, mentre $L_{\nu\rho}$ ha $D(D - 1)/2$ gradi di libertà, per cui il numero massimo di vettori di Killing è 
+\begin{equation}
+    \frac{D(D + 1)}{2}.
+\end{equation}
+Quindi, lo $\bb{R}^D$ e lo spazio di Minkowski $D$-dimensionale sono massimalmente simmetrici.
+
+Se si considera una sfera in $\bb{R}^D$ si ha $x^2 + y^2 + z^2 = 1$ in $D = 1$. In principio si hanno tre traslazioni e tre rotazioni, ma le traslazioni vengono rotte dalla sfera, quindi si rimane con solo tre rotazioni che formano il gruppo $\group{SO}{3}$. La sfera però continua ad essere massimalmente simmetrica perché è vero che si hanno tre simmetrie, ma si è in dimensione $D = 2$, per cui $(2 \times 3)/2 = 3$ e la sfera è massimalmente simmetrica. In generale, questo vale per $\bb{S}^D$. 
+
+Adesso ci si chiede se esiste una versione della sfera nello spazio di Minkowski $D$-dimensionale, ossia se esiste uno spazio massimalmente simmetrico a curvatura positiva in $\bb{M}^D \equiv \bb{R}^{1,D}$. La metrica per $\bb{R}^{1,D}$ è 
+\begin{equation}
+    ds^2 = -dx_0^2 + \sum_{i=1}^D dx_i^2,
+\end{equation}
+da cui si ricava l'\emph{equazione di De Sitter}
+\begin{equation}
+    -x_0^2 + \sum_{i=1}^D x_i^2 = L^2.
+\end{equation}
+L'equazione però rompe le simmetrie e preserva solo le trasformazioni di Lorentz.
+\begin{equation}
+    \frac{(D + 1)(D + 2)}{2} \sim \group{Poincare}{D + 1}\quad\longrightarrow\quad \frac{D(D + 1)}{2} \sim \group{SO}{1, D}.
+\end{equation}
+Se si ha uno spazio massimalmente simmetrico vale che 
+\begin{equation}
+    R_{\mu\nu\rho\sigma} = K(g_{\mu\rho}g_{\nu\sigma} - g_{\mu\sigma}g_{\nu\rho}),
+\end{equation}
+da cui, facendone la traccia, si trovano 
+\begin{equation}
+    R_{\mu\nu} = K(D - 1)g_{\mu\nu},
+\end{equation}
+e di conseguenza
+\begin{equation}
+    R = KD(D - 1),
+\end{equation}
+cioè il segno della costante $K$ è determinato dal segno dello scalare di Ricci. Ci si chiede ora se esistono massimalmente simmetrici con curvatura negativa. Per $\bb{R}^{2,D - 1}$ con segnatura $(-1,1,\dots,1,-1)$ la metrica 
+\begin{equation}
+    ds^2 = -dx_0^2 + \sum_{i=1}^{D - 1}dx_i^2 - dx_D^2,
+\end{equation}
+da cui si ricava l'\emph{equazione di embedding}
+\begin{equation}
+    -x_0^2 + \sum_{i=1}^{D - 1}x_i^2 - x_D^2 = -L^2,
+\end{equation}
+che descrive un'iperboloide, e quindi lo spazio di anti-De Sitter, rompendo Poincaré e lasciando solo $\group{SO}{2, D - 1}$. Se si opera una rotazione di Wick in una delle due coordinate temporali si ottiene uno spazio iperbolico; infatti, con $x_D \to ix_D$ si trova isometria $\group{SO}{1,D}$ come per lo spazio di De Sitter.
+\begin{table}[h]
+    \centering 
+    \begin{tabular}{|ccc|}
+        \hline
+        Lorentz & Euclide & curvatura \\ \hline
+        $\bb{M}^D$ & $\bb{R}^D$ & $K = 0$ \\
+        $\mathbbm{d}\bb{S}^D$ & $\bb{S}^D$ & $K > 0$ \\
+        $\bb{A}\mathbbm{d}\bb{S}^D$ & $\bb{H}^D$ & $K < 0$ \\
+        \hline
+    \end{tabular}
+    \label{tab: spazi e curvature}
+    \caption{spazi e curvature}
+\end{table}
+
+\subsection{Coordinate in anti-De Sitter}
+Per lo spazio di anti-De Sitter si sono già viste le coordinate date da $ds^2 = -dx_0^2 + \sum_{i=1}^{D - 1}dx_i^2 - dx_D^2$. D'altronde, può risultare conveniente però introdurre anche nuovi sistemi di coordinate. Le \emph{coordinate globali} sono definite da 
+\begin{equation}
+    \begin{cases}
+        x_0 = L\cosh{(\rho)}\cos{(\tau)}, &\rho \in [0,\infty) \\
+        x_D = L\cosh{(\rho)}\sin{(\tau)}, &\tau \in [0,2\pi] \\
+        x_i = L\sinh{(\rho)}\omega_i
+    \end{cases},\quad \sum_{i=1}^{D - 1}\omega_i = 1,
+\end{equation}
+dove $\rho$ è la coordinata radiale, $\tau$ è la coordinata periodica, mentre $\omega_i$ sono le coordinate che si potrebbero usare sulla sfera $\bb{S}^{D - 1}$. 
+
+\paragraph{Coordinate cilindriche.} Le \emph{coordinate cilindriche} sono definite da 
+\begin{equation}
+    \cosh{\rho} = \frac{1}{\cos{\theta}},\quad \theta \in [0,2\pi].
+\end{equation}
+La metrica diventa
+\begin{equation}
+    ds^2 = \frac{L^2}{\cos^2{\theta}}\bigg(-d\tau^2 + d\theta^2 + \sin^2{\theta}\,d\Omega^2_{D - 2}),
+\end{equation}
+dove per $\theta \to 0$ si ha il centro di anti-De Sitter, mentre per $\theta \to \pi/2$ si trova il suo bordo.
+
+\paragraph{Coordinate raggio.} Le \emph{coordinate raggio} sono definite da 
+\begin{equation}
+    \cosh^2{\rho} = 1 + \frac{r^2}{L^2},\quad r \equiv r(\rho).
+\end{equation}
+La metrica diventa 
+\begin{equation}
+    ds^2 = -\bigg(1 + \frac{r^2}{L^2}\bigg)\,d\tau^2 + \bigg(1 + \frac{r^2}{L^2}\bigg)^{-1}\,dr^2 + r^2\,d\Omega_{D - 2}^2.
+\end{equation}
+
+Fin'ora tutti i sistemi di coordinate sono sistemi di coordinate globali.
+
+\paragraph{Poincaré patch.} La \emph{Poincaré patch} è definita come 
+\begin{equation}
+    \begin{cases}
+        x_0 = \dfrac{1}{2u}\bigg[1 + u^2\bigg(L^2 + \v{x} - t^2\bigg)\bigg] \\[2ex]
+        x_D = Lut \\
+        x_i = LUx_i \\[2ex]
+        x_{D - 1} = \dfrac{1}{2u}\bigg[1 - u^2\bigg(L^2 - \v{x} + t^2\bigg)\bigg]
+    \end{cases},\quad i = 1,\dots, D - 2.
+\end{equation}
+La metrica diventa 
+\begin{equation}
+    ds^2 = L^2\bigg[\frac{du^2}{u^2} + u^2\bigg(-dt^2 + d\v{x}^2)\bigg],
+\end{equation}
+dove per $u \to 0$ si ha l'\emph{orizzonte degli eventi} in quanto la norma del vettore temporale va a zero. Questo implica che l'iperboloide viene coperto solo per metà, richiedendo quindi un'estensione oltre l'orizzonte degli eventi. Si può scegliere si cambiare $u$, mentre il bordo è conveniente lasciarlo $\bb{M}^{D - 1}$. Con $u := 1/z$, la metrica diventa 
+\begin{equation}
+    ds^2 = \frac{L^2}{z^2}(dz^2 - dt^2 + d\v{x}^2),
+\end{equation}
+dove per $z \to 0$ ci si avvicina al bordo, mentre per $z \to \infty$ ci si avvicina all'orizzonte. Oppure, con $u := e^{r/L}/L$, la metrica diventa 
+\begin{equation}
+\label{eq: metrica AdS (u esponziale)}
+    ds^2 = dr^2 + e^{2r/L}(-dt^2 + d\v{x}^2),\quad r \in \bb{R}.
+\end{equation}
+
+\subsection{Spinori in anti-De Sitter}
+Considerando $(D_\mu - \gamma_\mu/2L)\epsilon = 0$, si sceglie la metrica \eqref{eq: metrica AdS (u esponziale)} e il riferimento 
+\begin{equation}
+    \begin{cases}
+        e^{\h{\mu}} = e^{r/L}\,dx^\mu \\
+        e^{\h{r}} = dr
+    \end{cases},\quad \mu = 0,\dots, D - 2.
+\end{equation}
+Si sfruttano ora le equazioni di Cartan per ricavare lo scalare di Ricci
+\begin{equation}
+    \omega^{\h{\mu}\h{\nu}} = -\omega^{\h{\nu}\h{\mu}} = \frac{1}{L}e^{\h{\mu}}\quad\Longrightarrow\quad \omega^{\h{\mu}\h{\nu}} = 0,
+\end{equation}
+\begin{equation}
+    \rho^{ab} = -\frac{1}{L^2}(e^a \wedge e^b),\quad a,b = \{\h{a},\h{b}\},
+\end{equation}
+dove con $\h{\mu}$ e $\h{\nu}$ si sono indicati gli indici piatti. Pertanto, si ha 
+\begin{equation}
+    R_{\mu\nu ab} = -\frac{1}{L^2}(e_{a\mu}e_{b\nu} - e_{a\nu}e_{b\mu}),
+\end{equation}
+la quale, in questo forma, garantisce che lo spazio sia massimalmente simmetrico. Inoltre, si nota che 
+\begin{equation}
+    D_r = \p_r + \frac{1}{4}\omega^{ab}_r\gamma_{ab} = \p_r,
+\end{equation}
+dato che $\omega^{ab}_r$ non ha dipendenza da $e^{\h{r}}$, e quindi non contiene $dr$, e che 
+\begin{equation}
+    D_\mu = \p_\mu + \frac{1}{4}\omega^{ab}_\mu\gamma_{ab} = \p_\mu + \frac{2e^{r/L}}{4L}\gamma_{\h{\mu}\h{\nu}} = \p_\mu + \frac{1}{2L}\gamma_{\h{\mu}}\gamma_{\h{r}},
+\end{equation}
+dove il fattore due nel second termine del secondo passaggio è dovuto al fatto che si ha sia $\omega^{\h{\mu}\h{r}}$ che $\omega^{\h{r}\h{\mu}}$ a contribuire, risultando però nello stesso risultato. Si devono allora risolvere le seguenti equazioni 
+\begin{equation}
+    \begin{cases}
+        \bigg(\p_r - \dfrac{1}{2L}\gamma_r\bigg)\epsilon = 0 \\[2ex] 
+        \bigg(\p_\mu + \dfrac{1}{2L}\gamma_\mu\gamma_{\h{r}} - \frac{1}{2L}\gamma_\mu\bigg)\epsilon = 0
+    \end{cases}.
+\end{equation}
+Per farlo, si considera l'ansatz 
+\begin{equation}
+    \gamma_r\eta_\pm = \pm\eta_\pm,
+\end{equation}
+dove gli $\eta_\pm$ sono spinori costanti. Il quale porta alle soluzioni
+\begin{equation}
+    \begin{cases}
+        \epsilon_+ = e^{r/2L}\eta_+ \\[2ex]
+        \epsilon_- = \bigg(e^{-r/2L} + \dfrac{1}{L}e^{r/2L}x^\mu\gamma_{\h{\mu}}\bigg)\eta_-
+    \end{cases}.
+\end{equation} 
+\begin{obs}
+    Il vincolo su $\eta_\pm$ dimezza i gradi di libertà, per cui i gradi di libertà si $\epsilon_+$ e $\epsilon_-$ restituiscono $2^{[D/2]}$, che corrisponde al numero massimo di spinori indipendenti, risultando in uno spazio massimalmente simmetrico.
+\end{obs}
+\begin{obs}
+    Si verifica brevemente che $\epsilon_+$ sia effettivamente soluzione:
+    \begin{equation}
+    \begin{cases}
+        \bigg(\p_r - \dfrac{1}{2L}\gamma_r\bigg)\epsilon_+ = \bigg(\dfrac{1}{2L} - \dfrac{1}{2L}\bigg)\eta_+ = 0 \\[2ex] 
+        \bigg(\p_\mu + \dfrac{1}{2L}\gamma_\mu\gamma_{\h{r}} - \dfrac{1}{2L}\gamma_\mu\bigg)\epsilon_+ = \bigg[0 + \dfrac{1}{2L}\gamma_\mu(1 - 1)\bigg]\eta_+e^{r/2L} = 0
+    \end{cases}.
+\end{equation}
+\end{obs}
+
+\subsection{Relazione tra i vettori e spinori di Killing}
+Sia $K_\nu = \b{\epsilon}'\gamma_\nu\epsilon$ un vettore di Killing. Si intende calcolare 
+\begin{equation}
+    \nabla_\mu K_\nu = -\frac{1}{2L}\b{\epsilon}'\gamma_\nu\epsilon + \frac{1}{2L}\b{\epsilon}'\gamma_\nu\gamma_\mu\epsilon = -\frac{1}{L}\b{\epsilon}'\gamma_{\mu\nu}\epsilon,
+\end{equation}
+dove si è usata la regola di Leibniz. Si hanno così più informazioni 
+\begin{equation}
+    \nabla_{(\mu}K_{\nu)} = 0,\quad (dK)_{\mu\nu} = 2\p_{[\mu}K_{\nu]} = 2\nabla_{[\mu}K_{\nu]}.
+\end{equation}
+Sapendo che in un'algebra $\comm{v_1}{v_2} = \Lie_{v_1}v_2 \to v_3$, se si considerano due spinori di Killing $\epsilon'$ ed $\epsilon$ si può trovare un vettore di Killing $K$ tale che $\b{\epsilon}'\gamma_\mu\epsilon \to K_\mu$. Ci si chiede quindi se esista un modo per ottenere uno spinore di Killing $\epsilon'$ partendo da $\epsilon$ e $K_\mu$. Si estende la derivata di Lie agli spinori definendo la \emph{derivata di Kosmann}
+\begin{equation}
+    \Lie_K\Psi := K^\mu\nabla_\mu\Psi + \frac{1}{4}(\nabla_\mu K_\nu)\gamma^{\mu\nu}\Psi,
+\end{equation}
+con $K$ vettore di Killing e $\Psi$ spinore arbitrario, la quale soddisfa la regola di Leibniz (merito del termine correttivo) e 
+\begin{equation}
+    \comm{\Lie_v}{\Lie_w}\Psi = \Lie_{\comm{v}{w}}\Psi.
+\end{equation}
+Se $\Lie_K\epsilon \neq 0$, allora lo spinore è carico e ho una R-simmetria. 
