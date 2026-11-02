@@ -817,4 +817,256 @@ con $K$ vettore di Killing e $\Psi$ spinore arbitrario, la quale soddisfa la reg
 \begin{equation}
     \comm{\Lie_v}{\Lie_w}\Psi = \Lie_{\comm{v}{w}}\Psi.
 \end{equation}
-Se $\Lie_K\epsilon \neq 0$, allora lo spinore è carico e ho una R-simmetria. 
+Se $\Lie_K\epsilon \neq 0$, allora lo spinore è carico e si ha una R-simmetria. 
+
+I vettori di Killing conformi sono definiti da 
+\begin{equation}
+    \Lie_X\eta = 2\sigma\eta \quad\Leftrightarrow\quad \p_\mu X_\nu + \p_\nu X^\mu = 2\sigma\eta^{\mu\nu}.
+\end{equation}
+Sostituendo $\sigma = (1/D)\p_\rho X^\rho$ e $L = 1$, si ha 
+\begin{equation}
+    \p_\mu\p_\nu X_\rho = \eta_{\nu\rho}\p_\mu\sigma + \eta_{\mu\rho}\p_\nu\sigma - \eta_{\mu\nu}\p_\rho\sigma,
+\end{equation}
+da cui, facendone la traccia, si vede che $\sigma$ deve essere tale da soddisfare $\square\sigma = 0$. Pertanto, $\sigma$ si può esprimere come 
+\begin{equation}
+    \sigma(X) = \lambda + 2b_\mu X^\mu.
+\end{equation}
+Sostituendo questa in $\sigma = (1/D)\p_\rho X^\rho$ si trova 
+\begin{equation}
+    X_\rho = a_\rho + B_{\mu\nu}X^\nu + 2(b \cdot X)X_\rho - X^2b_\rho,\quad b \cdot X \equiv b_\nu X^\nu.
+\end{equation}
+Sostituendo a sua volta questa nell'equazione iniziale si trova che
+\begin{equation}
+    B_{\mu\nu} + B_{\nu\mu} = 2\lambda\eta_{\mu\nu},    
+\end{equation}
+da cui 
+\begin{equation}
+    B_{\mu\nu} = \lambda\eta_{\mu\nu} + \omega_{\mu\nu},\quad \omega_{\mu\nu} = -\omega_{\nu\mu}.
+\end{equation}
+Dunque, si trova la generalizzazione dei vettori di Killing
+\begin{equation}
+    X^\mu = a^\mu + \omega^\mu_\nu X^\nu + \lambda X^\mu + 2(b\cdot X)X^\mu - X^2b^\mu.
+\end{equation}
+I generatori sono:
+\begin{enumerate}
+    \item $D$ per le traslazioni, dati da $P_\mu = \p_\mu$;
+    \item $D(D - 1)/2$ per le trasformazioni di Lorentz, dati da $M_{\mu\nu} = x_\mu\p_\nu - x_\nu\p_\mu$;
+    \item $1$ per le dilatazioni, dato da $D = x^\rho\p_\rho$;
+    \item $D$ per le trasformazioni conformi, dati da $K_\mu = 2x_\mu x^\rho\p_\rho + x^2\p_\mu$. 
+\end{enumerate}
+Per un totale di $(D + 1)(D + 2)/2$ generatori, i quali soddisfano l'algebra di Lie 
+\begin{equation}
+    \begin{cases}
+        \comm{M_{\mu\nu}}{P_\rho} = \eta_{\nu\rho}P_\mu \\
+        \comm{M_{\mu\nu}}{M_{\rho\sigma}} = \cdots \\
+        \comm{D}{P_\mu} = -P_\mu \\
+        \comm{D}{K_\mu} = K_\mu \\
+        \comm{P_\mu}{K_\nu} = 2\eta_{\mu\nu}D - 2M_{\mu\nu}
+    \end{cases}.
+\end{equation}
+Si definiscono ora 
+\begin{equation}
+    J_{\mu\nu} := M_{\mu\nu},\quad J_{\mu u} := \frac{P_\mu + K_\mu}{2},\quad J_{\mu v} := \frac{P_\mu - K_\mu}{2},\quad J_{vu} := D,
+\end{equation}
+che può essere vista in forma matriciale come definire 
+\begin{equation}
+    J := 
+    \begin{pmatrix}
+        D & P + K \\
+        P - K & M
+    \end{pmatrix}.
+\end{equation}
+Queste definizioni permettono di vedere che i generatori in $J$ corrispondono ai generatori di $\group{SO}{2,D} \supset \group{Poincare}{1,D - 1} \supset \group{SO}{1,D - 1}$.
+
+\section{Anti-De Sitter in \texorpdfstring{$D = 2$}{D = 2}}
+Si è già visto che gli spinori soddisfano un'equazione di anti-De Sitter, in dimensione pari però se ne può scrivere anche un'altra 
+\begin{equation}
+    D_\mu\epsilon = \frac{1}{2L}\gamma_*\gamma_\mu\epsilon,\quad D = 2m.
+\end{equation}
+Usando l'ansatz $\gamma_*\gamma_\nu\theta_\pm = \mp i\theta_\pm$, si trovano le soluzioni
+\begin{equation}
+    \begin{cases}
+        \epsilon_+ = e^{r/2L}\theta_+ \\[2ex]
+        \epsilon_- = \bigg(-e^{r/2L} + \dfrac{i}{L}\gamma_*e^{r/2L}X^\mu\gamma_\rho\bigg)\theta_-
+    \end{cases}
+\end{equation}
+In $D = 2$, si possono scegliere esplicitamente $\gamma_0 \equiv \sigma_1$, $\gamma_{\h{r}} \equiv \sigma_2$, $\gamma_* \equiv \sigma_3$, quindi gli autovettori sono 
+\begin{equation}
+    \theta_+ =
+    \begin{pmatrix}
+        1 \\
+        -i
+    \end{pmatrix},\quad 
+    \theta_- = 
+    \begin{pmatrix}
+        -1 \\
+        -i
+    \end{pmatrix},
+\end{equation}
+e di conseguenza si hanno le soluzioni
+\begin{equation}
+    \begin{cases}
+        \epsilon_+ = e^{r/2L}
+        \begin{pmatrix}
+            1 \\
+            -i    
+        \end{pmatrix} \\
+        \epsilon_- = \bigg(e^{-r/2L} + \dfrac{i}{L}e^{r/2L}\sigma_3 ti\sigma_2\bigg)
+        \begin{pmatrix}
+            -1 \\
+            -i
+        \end{pmatrix}
+    \end{cases}.
+\end{equation}
+Ponendo $e^{\h{r}} \equiv \rho$ ed $L = 1$, si ricorda che per uno spinore di Majorana $\Psi$, l'operazione di aggiunto di Majorana e quella di aggiunto di Dirac coincidono. Tuttavia, per i bilineari $\Psi M \chi$ non è necessariamente così, infatti ce n'è di due tipi: quelli tipo-Majorana e quelli tipo-Dirac. Tuttavia, alla fine si può dimostrare che gli spinori in $\bb{A}\mathbbm{d}\bb{S}_2$ sono di Majorana. Per farlo, si definiscono le matrici 
+\begin{equation}
+    A := \sigma_1,\quad B := \sigma_3,\quad C := i\sigma_2,
+\end{equation}
+con le quali si può dimostrare che $\epsilon_\pm^* = B\epsilon_\pm$. Tra tutti i bilineari, se ne considerano tre 
+\begin{equation}
+    2P^\mu \equiv \b{\epsilon}_+\gamma^\mu\gamma_*\epsilon_+,\quad 2D^\mu \equiv \b{\epsilon}_+\gamma^\mu\gamma_*\epsilon_-,\quad -4K^\mu \equiv \b{\epsilon}_-\gamma^\mu\gamma_*\epsilon_-.
+\end{equation}
+Indicando $i,j \equiv \{+,-\}$, si calcola, usando la regola di Leibniz e l'equazione di Killing, che
+\begin{equation}
+    \begin{split}
+        \nabla_\mu(\b{\epsilon}_i\gamma^\mu\gamma_*\epsilon_j) &= -\frac{i}{2}\b{\epsilon}_i\gamma_\mu\gamma_*\gamma_\nu\gamma_*\epsilon_j + \frac{i}{2}\b{\epsilon}_i\gamma_\nu\gamma_*\gamma_\mu\gamma_*\epsilon_j \\
+        &= i\b{\epsilon}_i\gamma_{\mu\nu}\epsilon_j,
+    \end{split}
+\end{equation}
+da cui si vede che $\nabla_{(\nu}(\b{\epsilon}_i\gamma^\mu\gamma_*\epsilon_j)_{\nu)} = 0$. \'E plausibile pensare che $P^\mu$, $D^\mu$ e $K^\mu$ sono i tre vettori di Killing di $\bb{A}\mathbbm{d}\bb{S}_2$. Per verificarlo, si possono calcolare esplicitamente le componenti per $\mu = 0$ e $\mu = \rho$, ottenendo
+\begin{equation}
+    P = \p_t,\quad D = t\p_t - \rho\p_\rho,\quad K = -\frac{1}{2}(t^2 + \rho^{-2})\p_t + t\rho\p_\rho.
+\end{equation} 
+L'ultimo passo sarebbe verificare che questi soddisfino l'algebra di Lie 
+\begin{equation}
+    \begin{cases}
+        \comm{D}{P} = -P \\
+        \comm{D}{K} = K \\
+        \comm{P}{K} = -D
+    \end{cases}.
+\end{equation}
+In $D = 2$, questa algebra è isomorfa all'algebra simplettica $\alg{sp}{2,\bb{R}}$ e all'algebra $\alg{su}{1,1}$. In particolare, l'algebra simplettica è definita dalle matrici $M$ tali che 
+\begin{equation}
+    MJM^T = J = 
+    \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{pmatrix},
+\end{equation}
+che in generale, per $\alg{sp}{2N,\bb{R}}$, si hanno 
+\begin{equation}
+    J = 
+    \begin{pmatrix}
+        \OM_N & \IM_N \\
+        -\IM_N & \OM_N
+    \end{pmatrix}.
+\end{equation}
+Una base dell'algebra $\alg{sp}{2,\bb{R}}$ è definita dalle matrici 
+\begin{equation}
+    a = 
+    \begin{pmatrix}
+        1 & 0 \\
+        0 & -1    
+    \end{pmatrix},\quad b = 
+    \begin{pmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{pmatrix},\quad c = 
+    \begin{pmatrix}
+        0 & 0 \\
+        1 & 0
+    \end{pmatrix},
+\end{equation}
+che obbediscono alle regole di commutazione 
+\begin{equation}
+    \begin{cases}
+        \comm{a}{b} = 2b \\
+        \comm{a}{c} = -2c \\
+        \comm{b}{c} = 2a
+    \end{cases},
+\end{equation}
+da cui si hanno le corrispondenze $a \leftrightarrow 2D$, $b \leftrightarrow K$ e $c \leftrightarrow 2P$, che formano un isomorfismo. Le isometrie di $\bb{A}\mathbbm{d}\bb{S}_2$, rispetto allo spazio di Minkowski 1-dimensionale, corrispondono al gruppo conforme $\group{SO}{2,1}$. Per trovare agli spinori, si usa la derivata di Kosmann. Dati $\epsilon_+$ e $\epsilon_-$ spinori e $P$, $D$ e $K$ vettori di Killing, si calcolano 
+\begin{equation}
+    \begin{cases}
+        \Lie_P\epsilon_+ = 0 \\[2ex]
+        \Lie_D\epsilon_+ = -\dfrac{1}{2}\epsilon_+ \\[2ex]
+        \Lie_K\epsilon_+ = -\dfrac{1}{2}\epsilon_- \\[2ex]
+    \end{cases},\quad
+    \begin{cases}
+        \Lie_P\epsilon_- = \epsilon_+ \\[2ex]
+        \Lie_D\epsilon_- = \dfrac{1}{2}\epsilon_- \\[2ex]
+        \Lie_K\epsilon_- = 0
+    \end{cases}.
+\end{equation}
+Si può ora promuovere l'algebra di Lie ad una superalgebra con le sostituzioni $\epsilon_+ \mapsto Q$ e $\epsilon_- \mapsto -S$, cosicché
+\begin{equation}
+    \begin{cases}
+        \Lie_v\epsilon_+ \mapsto \comm{v}{Q} \\
+        \Lie_v\epsilon_- \mapsto \comm{v}{S} \\
+        \b{\epsilon}_+\gamma^\mu\gamma_*\epsilon-\p_\mu \mapsto i\acomm{Q}{S}
+    \end{cases},
+\end{equation}
+definendo la superalgebra con
+\begin{equation}
+    \begin{cases}
+        \acomm{Q}{Q} = 2iP \\[2ex]
+        \vdots \\[2ex]
+        \comm{D}{Q} = -\dfrac{1}{2}Q \\[2ex]
+        \comm{P}{Q} = 0
+    \end{cases}.
+\end{equation}
+Questa superalgebra ha come sotto-algebra bosonica $\alg{so}{1,D}$. Questa è indicata con $\alg{Osp}{1|2}$, dove ``$1$'' indica il numero di supercariche, mentre ``$2$'' si riferisce alla dimensione. In generale, $\alg{Osp}{N|2} \supset \alg{so}{2,1} \op \alg{o}{N}$, dove $\alg{o}{N}$ è responsabile della R-simmetria. Le superalgebra vengono anche dette \emph{algebre estese}.
+
+\section{Supergravità non-minimale}
+Ci si concentra sul caso $D = 4$. Gli ingredienti minimali sono $e_a^\mu$ e lo spinore di Majorana $\Psi_\mu$. Si deve ora aggiungere altri campi fermionici, compensati da altrettante campi bosonici. Quindi, da $\Psi_\mu$ si passa a $\Psi_\mu^i$ dove $i = 1,\dots,\NSC$ con $\NSC$ che indica il numero di gravitini presenti, in $D = 4$ il limite è $\NSC_{max} = 8$. Si potrebbe pensare di fare la stessa cosa per i vielbein; tuttavia, se così si facesse le cose si complicherebbero alquanto, ci sono invece altre due strade:
+\begin{enumerate}
+    \item introdurre dei campi scalari;
+    \item introdurre il campo di Maxwell $A_\mu$.
+\end{enumerate}
+La strada che si segue qui è la seconda, attuando, per semplicità, la scelta di imporre $\NSC = 2$. Due gravitini $\Psi_\mu^1$ e $\Psi_\mu^2$ sono equivalenti ad uno spinore di Dirac definito come la combinazione $\Psi_\mu^1 + i\Psi_\mu^2$. Si è già visto che il campo di Dirac è invariante per trasformazioni del gruppo $\group{U}{1}$. Per rendere questa simmetria globale una simmetria locale, si promuove $\p_\mu \mapsto \p_\mu - iA_\mu$, questo processo è detto \emph{gauging}. Promuovendo allora $\Psi$ and un campo di Dirac, l'azione continua ad essere la medesima
+\begin{equation}
+    S = \frac{1}{2k^2}\int d^4x\,e\bigg(R - \b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\Psi_\rho - \frac{1}{L}\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu + \frac{\sigma}{2L^2}\bigg).
+\end{equation}
+Con questa promozione a spinore di Dirac, la connessione di spin diventa 
+\begin{equation}
+    D_\mu = \nabla_\mu = \p_\mu + \frac{1}{4}\omega^{ab}_\mu\gamma_{ab},
+\end{equation}
+con 
+\begin{equation}
+    \omega_{\mu ab} = \omega_{\mu ab}'e' - \frac{1}{4}\Re{(\b{\Psi}_\mu\gamma_b\Psi_a + \cdots + \cdots)}.
+\end{equation}
+Per introdurre la simmetria di $\group{U}{1}$ si deve poi promuovere $D_\mu \mapsto \t{D}_\mu = \nabla_\mu + igA_\mu$. La simmetria di cui si sta facendo il gauging è una R-simmetria, questa è una \emph{gauged supergravity}. Si deve ora aggiungere il termine cinetico del campo di gauge, così da avere 
+\begin{equation}
+    S = \frac{1}{2k^2}\int d^4x\,e\bigg(R - \b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\Psi_\rho - \frac{1}{L}\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu + \frac{\sigma}{2L^2} - F_{\mu\nu}F^{\mu\nu}\bigg).
+\end{equation}
+Affinché l'azione scritta fin'ora sia supersimmetrica si deve aggiungere il termine 
+\begin{equation}
+    -\frac{i}{4}(F_{\mu\nu} + \h{F}_{\mu\nu})\b{\Psi}_\rho\gamma_{[\mu}\gamma^{\rho\sigma}\gamma_{\nu]}\Psi_\sigma,
+\end{equation}
+dove 
+\begin{equation}
+    \h{F}_{\mu\nu} := F_{\mu\nu} + \frac{1}{2}\Im{(\b{\Psi}_\mu\Psi_\nu)}.
+\end{equation}
+Le variazioni dei campi sono 
+\begin{equation}
+    \begin{cases}
+        \delta e_\mu^a = \dfrac{1}{2}\Re{(\b{\epsilon}\gamma^a\Psi_\mu)} \\[2ex]
+        \delta A_\mu = \dfrac{1}{2}\Im{(\b{\epsilon}\Psi_\mu)} \\[2ex]
+        \delta \Psi_\mu = \bigg(\t{D}_\mu - \dfrac{1}{2L}\gamma_\mu + \dfrac{i}{4}\h{F}_{\nu\rho}\gamma^{\nu\rho}\gamma_\mu\bigg)\epsilon
+    \end{cases}.
+\end{equation}
+Dunque, l'azione per la supergravità gauged in $\NSC = 2$ è
+\begin{equation}
+    \begin{split}
+        S &= \frac{1}{2k^2}\int d^4x\,e\bigg(R - \b{\Psi}_\mu\gamma^{\mu\nu}D_\nu\Psi_\rho - \frac{1}{L}\b{\Psi}_\mu\gamma^{\mu\nu}\Psi_\nu + \frac{\sigma}{2L^2} \\
+        &- F_{\mu\nu}\h{F}^{\mu\nu} -\frac{i}{4}(F_{\mu\nu} + \h{F}_{\mu\nu})\b{\Psi}_\rho\gamma_{[\mu}\gamma^{\rho\sigma}\gamma_{\nu]}\Psi_\sigma\bigg).
+    \end{split}
+\end{equation}
+Imponendo $\Psi_\mu \equiv 0$ con l'intento di cercare soluzioni di tipo bosonico, si trova l'azione di Einstein--Maxwell--anti-De Sitter
+\begin{equation}
+    S_{EMAdS} = \frac{1}{2k^2}\int d^4x\,e\bigg(R + \frac{\sigma}{2L^2} - F_{\mu\nu}F^{\mu\nu}\bigg),
+\end{equation}
+che ha una forma evidentemente più semplice da trattare.
+
+
+
