@@ -1,17 +1,31 @@
 \chapter{Formalismo di I e II ordine}
-Si riconsideri l'azione di Hilbert-Einstein
+Si discutono e comparano ora le formulazioni di primo e secondo ordine della dinamica gravitazionale. La configurazione più familiare è il formalismo del secondo ordine dove il tensore metrico, o il vielbein, è la variabile dinamica che descrive la gravità. Se sono presenti fermioni, si deve usare il vielbein. Il tensore di curvatura e le derivate covarianti sono costruite a partire dalla connessione torsion-free $\Gamma^\rho_{\mu\nu}(g)$ e $\omega_{\mu ab}(e)$. Il fatto che il formalismo sia di ``secondo ordine'' è dovuto al fatto che l'equazione di campo gravitazionale è un'equazione di secondo ordine nelle derivate di $g_{\mu\nu}$ o di $e^a_{\mu\nu}$. 
+
+Nel formalismo di primo ordine, o di Palatini, si parte da un'azione in cui $e^a_{\mu\nu}$ e $\omega_{\mu ab}$ sono variabili indipendenti, da cui si trovano delle equazioni di Eulero-Lagrange di primo ordine nelle derivate. In assenza di materia, la soluzione dell'equazione di campo di $\omega_{\mu ab}$ semplicemente pone $\omega_{\mu ab} = \omega_{\mu ab}(e)$. Quando il risultato è sostituito nell'equazione di campo per $e^a_{\mu\nu}$, si ritrova l'equazione di Einstein convenzionale, esattamente come accade nel formalismo di secondo ordine per i vielbein. Quando la gravità è accoppiata con i campo spinoriali, l'equazione di campo di $\omega_{\mu ab}$ contiene termini bilineari negli spinori, e la sua soluzione è $\omega_{\mu ab} = \omega_{\mu ab}(e) + K_{\mu ab}$, con il tensore di contorsione determinato come un'espressione bilineare nei campi spinoriali. Quando il risultato $\omega_{\mu ab} = \omega_{\mu ab}(e) + K_{\mu ab}$ è sostituito in altre equazioni di campo, si trova che l'effetto totale della torsione si sarebbe potuto nel formalismo di secondo ordine aggiungendo un termine quartico fermionico all'azione. Ci si potrebbe chiedere allora perché introdurre la complicazione che coinvolge la torsione quando gli effetti fisici possono essere descritti in maniera più convenzionale. La risposta sta nel fatto che per dimostrare che una teoria di supergravità è invariante sotto supersimmetria locale si semplifica nettamente osservando che i termini quartici nel gravitino possono essere riorganizzati nella connessione $\omega_{\mu ab} = \omega_{\mu ab}(e) + K_{\mu ab}$.
+
+\section{Formalismo di II ordine e bosoni}
+Si richiama in primo luogo la trattazione convenzionale dell'accoppiamento tra gravità e materia bosonica. Si considera il caso più semplice di campi di materia: un campo scalare $\phi(x)$ e un campo di gauge abeliano con potenziale di gauge $A_\mu(x)$ e campo di forza $F_{\mu\nu} = \p_\mu A_\nu - \p_\nu A_\mu$. L'azione è del sistema accoppiato è la somma dell'azione di Hilbert-Einstein e dell'azione di materia, per cui 
 \begin{equation}
-    S_{HE} = \frac{1}{2k_D^2}\int d^Dx\,\sqrt{-\det{g}}R,\quad k_D^2 \equiv 8\pi G_D,
+\label{eq: azione HE + campo scalare}
+    S[g_{\mu\nu},\phi,A_\mu] = \int d^Dx\,\sqrt{-\det{g}}\bigg(\frac{1}{2k^2}R + \Lag_M\bigg),
 \end{equation}
-e si consideri il suo accoppiamento con un'azione di materia data da 
+dove l'azione di Hilbert-Einstein è 
 \begin{equation}
-    S_M = \int d^Dx\,\sqrt{-\det{g}}\Lag,
+    S_{HE}[g_{\mu\nu}] = \frac{1}{2k_D^2}\int d^Dx\,\sqrt{-\det{g}}R,\quad k_D^2 \equiv 8\pi G_D,
 \end{equation}
-dove, ad esempio, per il campo scalare la lagrangiana è
+mentre l'azione di materia è $S_M[\phi] = \int d^Dx\,\sqrt{-\det{g}}\Lag_M(\phi)$ con la lagrangiana del campo scalare 
 \begin{equation}
-    \Lag = -\frac{1}{2}\nabla_\mu\phi\nabla^\mu\phi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+    \Lag_M(\phi) = -\frac{1}{2}\nabla_\mu\phi\nabla^\mu\phi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
-Applicando il principio di minima azione all'azione risultante $S \equiv S_{HE} + S_M$, si trovano le equazioni di Maxwell e l'equazione di Einstein 
+La lagrangiana del campo di materia $\Lag_M$ si può ottenere dalla lagrangiana cinetica per il campo scalare nello spazio di Minkowski tramite la prescrizione di \emph{accoppiamento minimale}, che consiste nel seguente insieme di regole:
+\begin{enumerate}
+    \item rimpiazzare la metrica di Minkowski $\eta_{\mu\nu}$ con il tensore metrico $g_{\mu\nu}(x)$;
+    \item rimpiazzare ogni derivata $\p_\mu$ con la sua controparte covariante $\nabla_\mu$ con connessione $\Gamma^\rho_{\mu\nu}$;
+    \item usare la forma volume in \eqref{eq: forma volume}.
+\end{enumerate}
+Queste regole includono il principio di equivalenza e il principio di covarianza generale. La lagrangiana trasforma come uno scalare sotto trasformazioni di coordinate, per cui l'azione di materia è invariante. Per gli scalari, non è necessaria la connessione dato che $\p_\mu\phi = \nabla_\mu \phi$, e lo stesso vale per il campo di gauge, dato che $F_{\mu\nu}$ si può scrivere come $F_{\mu\nu} = \nabla_\mu A_\nu - \nabla_\nu A_\mu$. I simboli di Christoffel si cancellano per simmetria.
+
+Le equazioni del moto si ottengono dal principio di minima azione; in particolare, imponendo che l'azione \eqref{eq: azione HE + campo scalare} sia stazionaria rispetto alle variazioni dei tre campi indipendenti. Queste sono 
 \begin{equation}
     \begin{cases}
         \square\phi = 0 \\
@@ -19,178 +33,218 @@ Applicando il principio di minima azione all'azione risultante $S \equiv S_{HE} 
         R_{\mu\nu} - \dfrac{1}{2}g_{\mu\nu}R = k_D^2T_{\mu\nu}
     \end{cases},
 \end{equation}
-con $T_{\mu\nu} = \p_\mu\phi\p_\nu\phi - g_{\mu\nu}\Lag$, il quale soddisfa l'equazione di conservazione $\nabla^\mu T_{\mu\nu} = 0$ generalizzando il teorema di Noether.
+cioè proprio le equazioni di Maxwell e l'equazione di Einstein, con $T_{\mu\nu} = \p_\mu\phi\p_\nu\phi - g_{\mu\nu}\Lag_M$. Dato che il tensore di Einstein è conservato, l'equazione di campo è consistente solo se $\nabla^\mu T_{\mu\nu} = 0$, ovvero solo se il tensore energia-impulso è conservato. Nello spazio di Minkowski, questa legge di conservazione deriva dal teorema di Noether per le traslazioni spaziotemporali globali. Quindi, $\nabla^\mu T_{\mu\nu} = 0$ in questo caso si può vedere come generalizzazione covariante di tale teorema. 
 
-Si considerino ora i campi spinoriali, partendo dal suo caso più semplice, cioè il campo spinoriale di Dirac, avente azione
+\section{Formalismo di II ordine e fermioni}
+Si studia ora il caso più semplice di accoppiamento tra fermioni e gravità. I campi in gioco sono il vielbein $e^a_\mu(x)$ ed un campo di Dirac $\Psi(x)$. L'azione del sistema è la somma tra l'azione di Hilbert-Einstein e l'azione di Dirac, cioè
 \begin{equation}
-    S_D = -\int d^Dx\,\b{\psi}\sl{\p}\psi,
+\label{eq: azione HE + spinore di Dirac}
+    S \equiv S_{HE} + S_D = \int d^Dx\,e\bigg(\frac{1}{2k^2}e_a^{\mu}e_b^{\nu}R_{\mu\nu}^{ab} - \frac{1}{2}\b{\Psi}\nabla_\mu\gamma^\mu\Psi + \frac{1}{2}\b{\Psi}\leftcd\Psi\bigg).
 \end{equation}
-dove $\b{\psi}$ indica l'operazione di coniugato di Majorana. Si definiscono ora le matrici $\gamma^\mu(x^\mu) \mapsto e_a^\mu(x^\mu)\gamma^a$, dove le $\gamma^a$ sono le matrici che definiscono $\alg{Cliff}{D}$. Di conseguenza
+Le matrici $\gamma^\mu$ che compaiono nell'azione \eqref{eq: azione HE + spinore di Dirac} sono l'estensione delle matrici di Dirac allo spaziotempo curvo, infatti sono definite come $\gamma^\mu(x) = e^\mu_a(x)\gamma^a$, dove le $\gamma^a \in \alg{Cliff}{D}$ sono matrici numeriche, mentre le $\gamma^\mu(x)$ contengono il vielbein. Con queste, si definiscono anche le derivate covarianti 
 \begin{equation}
-    \p_\mu \mapsto \nabla_\mu\psi = \p_\mu\psi + \frac{1}{4}\omega_\mu^{ab}\gamma_{ab}\psi,
+\label{eq: derivata covariante spinore di Dirac}
+    \nabla_\mu\Psi = D_\mu\Psi = \bigg(\p_\mu + \frac{1}{4}\omega_\mu^{ab}\gamma_{ab}\bigg)\Psi,
 \end{equation}
-quindi, moltiplicando a destra per $C$ la seguente equazione,
 \begin{equation}
-    \nabla_\mu\psi^T = \p_\mu\psi^T + \frac{1}{4}\omega_\mu^{ab}\psi^T(\gamma_{ab})^T,
+    \b{\Psi}\leftcd_\mu = \b{\Psi}\leftLd_\mu = \b{\Psi}\bigg(\leftd_\mu - \frac{1}{4}\omega_\mu^{ab}\gamma_{ab}\bigg).
 \end{equation}
-si ottiene 
+La derivata $\b{\Psi}\leftcd$ si deriva da $\nabla_\mu\Psi$ considerandone l'aggiunto di Majorana; infatti,
 \begin{equation}
+\label{eq: derivata covariante sinistra spinore di Dirac}
     \begin{split}
-        \nabla\b{\psi} &= \p_\mu\b{\psi} + \frac{1}{4}\omega_\mu^{ab}\b{\psi}C^{-1}(\gamma_{ab})^TC \\
-        &= \p_\mu\b{\psi} - \frac{1}{4}\omega_\mu^{ab}\b{\psi}\gamma_{ab} \\
-        &\equiv \b{\psi}\leftcd_\mu.
+        \nabla_\mu\b{\Psi} &= \p_\mu\b{\Psi} + \frac{1}{4}\omega_\mu^{ab}\b{\Psi}C^{-1}(\gamma_{ab})^TC \\
+        &= \p_\mu\b{\Psi} - \frac{1}{4}\omega_\mu^{ab}\b{\Psi}\gamma_{ab} \\
+        &\equiv \b{\Psi}\leftcd_\mu.
     \end{split}
 \end{equation}
-Nel caso di $\b{\psi}\psi$, uno scalare, si ha che 
+\begin{obs}
+    Si ricordi che la derivata covariante $\nabla_\mu$ e la derivata di Lorentz $D_\mu$ coincidono per uno spinore di Dirac, ma lo stesso non si può dire per un campo come il gravitino $\Psi_\mu$.
+\end{obs}
+\begin{obs}
+    L'azione fermionica in \eqref{eq: azione HE + spinore di Dirac}, nel formalismo di secondo ordine, differisce dalla versione covariante di \eqref{eq: azione di Dirac} per una derivata totale. 
+\end{obs}
+La procedura per rendere covarianti le matrici di Dirac-Clifford comincia con l'osservare che l'algebra di Clifford è strettamente legata alle proprietà degli spinori sulla varietà spaziotemporale e, pertanto, è definita in termini dei vielbein. I generatori sono le matrici costanti $\gamma^a$ che soddisfano \eqref{eq: algebra di Clifford}. Tramite i vielbein si possono scrivere, ad esempio, le trasformazioni
 \begin{equation}
-    \p_\mu(\b{\psi}\psi) = \nabla_\mu(\b{\psi}\psi) = (\nabla\b{\psi})\psi + \b{\psi}(\nabla\psi).
+    \gamma_\mu = e_{a\mu}\gamma^a,\quad \gamma^\mu = e_a^\mu\gamma^a = g^{\mu\nu}\gamma_\nu.
 \end{equation}
-Le matrici $\gamma^\mu_{rs}$ trasformano come un bilineare $\beta_{rs} = \b{\psi}_r\psi_s$ ($\beta = \psi \ot \b{\psi}$) e la sua derivata è 
+Quindi, $\gamma_\mu$ trasforma come un vettore covariante sotto trasformazioni di coordinate. Tuttavia, anche possiede indici di riga e colonna spinoriali (soppressi), pertanto è più precisamente un \emph{bispinore}. L'archetipo di bispinore è il prodotto $\Psi_r\b{\Psi}_s$, insieme al suo aggiunto, dove gli indici $r$ ed $s$ sono indici spinoriali. La derivata covariante del bispinore $\beta_{rs} = \b{\Psi}_r\Psi_s$ è definita come 
 \begin{equation}
-    \nabla_\mu\beta = (\nabla_\mu\psi)\b{\psi} + \psi\nabla_\mu\b{\psi} = \p_\mu\beta + \frac{1}{4}\omega_\mu^{ab}\comm{\gamma_{ab}}{\beta}.
+    \nabla_\mu\beta_{rs} = (\nabla_\mu\Psi_s)\b{\Psi}_r + \Psi_s\nabla_\mu\b{\Psi}_r = \p_\mu \beta_{rs} + \frac{1}{4}\omega_\mu^{ab}\comm{\gamma_{ab}}{\beta_{rs}}.
 \end{equation}
-Nel caso in cui $\beta_{rs} \equiv \gamma^\mu_{rs}$ si ha 
+Nel caso in cui $\beta_{rs} \equiv \gamma_{\mu rs} \equiv \gamma_\mu$, si ha 
 \begin{equation}
-    \nabla_\mu\gamma_\nu = \p_\mu\gamma_\nu + \frac{1}{4}\comm{\gamma_{ab}}{\gamma_\nu}\omega_\mu^{ab} - \Gamma_{\mu\nu}^\rho\gamma_\rho,
+    \nabla_\mu\gamma_\nu = \p_\mu\gamma_\nu + \frac{1}{4}\comm{\gamma_{ab}}{\gamma_\nu}\omega_\mu^{ab} - \Gamma_{\mu\nu}^\rho\gamma_\rho.
 \end{equation}
-dove posso sostituire $\gamma_\nu = e_{a\nu}\gamma^a$ con $e_{a\nu} = \eta_{ab}e^a_\nu$, per cui 
+Usando poi la relazione vista prima $\gamma_\nu = e_{a\nu}\gamma^a$ con $e_{a\nu} = \eta_{ab}e^a_\nu$, si può calcolare che
 \begin{equation}
     \frac{1}{2}\comm{\gamma_{ab}}{\gamma_c} = \gamma_a\eta_{bc} - \gamma_b\eta_{ac},
 \end{equation}
-quindi 
+portando all'espressione 
 \begin{equation}
-    \nabla_\mu\gamma_\nu = \gamma^a(\p_\mu e_{a\nu} + \omega_\mu^{ab}e_{b\nu} - \Gamma^\rho_{\mu\nu}e_{a\rho}),
+    \nabla_\mu\gamma_\nu = \gamma^a(\p_\mu e_{a\nu} + \omega_\mu^{ab}e_{b\nu} - \Gamma^\rho_{\mu\nu}e_{a\rho}).
 \end{equation}
-dunque 
+Usando infine il vielbein postulate \eqref{eq: vielbein postulate (versione esplicita)}, si può dimostrare che 
 \begin{equation}
-    \nabla_\mu\gamma_\nu = 0,
+\label{eq: derivata covariante matrice gamma curva}
+    \nabla_\mu\gamma_\nu = 0.
 \end{equation}
-o più in generale 
+Questo risultato implica che la derivata covariante commuta con l'operazione di moltiplicazione per un matrice $\gamma$. Ad esempio, se $\Psi(x)$ è uno spinore di Dirac, vale che $\nabla_\mu(\gamma_\nu\Psi) = \gamma_\nu\nabla_\mu\Psi$. Inoltre, il risultato in \eqref{eq: derivata covariante matrice gamma curva} vale per ogni connessione affine, con o senza torsione, premesso che si usi la derivata covariante totale, e si può estendere a
 \begin{equation}
-    \nabla_\mu\gamma_{\mu_1\cdots\mu_r} = 0.
+    \nabla_\mu\gamma_{\mu_1\cdots\mu_r} = 0
 \end{equation}
 
-Invece dello scalare $\b{\psi}\psi$, si può avere in generale un bilineare $\b{\psi}\gamma_{\mu_1\cdots\mu_r}\psi$, che sono le componenti di una $r$-forma differenziale (eventualmente anche con spinori diversi), per il quale
+Si ritorni ora all'azione \eqref{eq: azione HE + spinore di Dirac}. L'equazione del moto fermionica che si deriva da essa è l'equazione di Dirac covariante massless, cioè
 \begin{equation}
-    \nabla_\mu(\b{\psi}\gamma_{\mu_1\cdots\mu_r}\chi) = (\nabla_\mu\b{\psi})\gamma_{\mu_1\cdots\mu_r}\chi + \b{\psi}\gamma_{\mu_1\cdots\mu_r}\nabla_\mu\chi. 
+    \sl{\nabla}\Psi(x) = 0,\quad \sl{\nabla} \equiv \gamma^\mu\nabla_\mu.
 \end{equation}
-Si consideri ora l'accoppiamento tra un vielbein $e_a^\mu$ e un campo di Dirac $\psi$, e si trovino le equazioni del moto. L'azione è data da 
-\begin{equation}
-    S = S_{HE} + S_D = \int d^Dx\,e\bigg(\frac{1}{2k^2}e_a^{\mu}e_b^{\nu}R_{\mu\nu}^{ab} - \frac{1}{2}\b{\psi}\sl{\nabla}\psi + \frac{1}{2}\b{\psi}\leftcd\psi\bigg)
-\end{equation}
-e si consideri il caso massless per cui $\sl{\nabla}\psi = 0$, mentre la variazione rispetto al vielbein è 
-\begin{equation}
-    \delta_e S = -ee_a^\mu\delta e^{a\mu},
-\end{equation}
-per cui 
+Si dimostra ora che la variazione $\delta_\omega S_{HE}$ è nulla. Per farlo, si parte dalla variazione totale dell'azione di Hilbert-Einstein
 \begin{equation}
     \delta S_{HE} = \frac{1}{2k^2}\int d^Dx\,e[(2e^{b\nu}R_{\mu\nu ab})\delta e^{a\mu} + e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab}],
 \end{equation}
-dove si deve calcolare la variazione del tensore di Riemann 
+dove il tensore di curvatura è 
 \begin{equation}
     R_{\mu\nu ab} = \p_\mu\omega_{\nu ab} - \p_\nu \omega_{\mu ab} + \omega_{\mu ac}\omega^c_{\nu b} - \omega_{\nu ac}\omega^c_{\mu b}.
 \end{equation}
-Quindi, da
+Ricordando adesso che 
 \begin{equation}
-    e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(D_\mu\delta_{\nu ab} - D_{\mu}\delta\omega_{\mu ab}) = e^{a\mu}e^{b\nu}(2D_{[\mu}\omega_{\nu]ab}), 
+    \delta_\omega R_{\mu\nu ab} = D_\mu\delta_{\nu ab} - D_{\mu}\delta\omega_{\mu ab},
 \end{equation}
-usando il fatto che la torsione è nulla, e quindi $\Gamma^\rho_{\mu\nu} = \Gamma^{\rho}_{\nu\mu}$, si può sostituire $D_\mu \to \nabla_\mu$, ottenendo 
+si può prima verificare che 
 \begin{equation}
-    e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(\nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab}),
+    e^{a\mu}e^{b\nu}\delta_\omega R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(D_\mu\delta_{\nu ab} - D_{\mu}\delta\omega_{\mu ab}) = e^{a\mu}e^{b\nu}(2D_{[\mu}\omega_{\nu]ab}), 
 \end{equation}
-ossia che questo è una derivata totale e pertanto non contribuisce alla variazione dell'azione. Si deve fare attenzione che in generale questo non è vero perché la torsione può non essere nulla. Quindi, si ha 
+poi, usando il fatto che $\Gamma^\rho_{\mu\nu} = \Gamma^{\rho}_{\nu\mu}$ essendo nulla la torsione, si può sostituire $D_\mu$ con la derivata covariante $\nabla_\mu$, ottenendo 
+\begin{equation}
+    e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab} = e^{a\mu}e^{b\nu}(\nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab}).
+\end{equation}
+Dunque, la variazione $\delta_\omega R_{\mu\nu ab}$ è proporzionale ad una derivata totale che integrata quindi risulta in un contributo nullo alla variazione $\delta S_{HE}$. Quindi, $\delta S_{HE}$ si riduce a
 \begin{equation}
     \delta S_{HE} = \frac{1}{2k^2}\int d^Dx\,(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\delta e^{a\mu}.
 \end{equation}
-Si espliciti adesso 
+\begin{obs}
+    Si deve fare attenzione che in generale questo non è vero perché la torsione può non essere nulla.
+\end{obs}
+Si esplicita ora l'azione $S_D$ in maniera da rendere più evidente la dipendenza dal vielbein e dalla connessione di spin, quindi si ha
 \begin{equation}
     \begin{split}
         S_D &= \frac{1}{2}\int d^Dx\,e\bigg(-\b{\psi}\gamma_a\p_\mu\psi e^{a\mu} + \p_\mu\b{\psi}\gamma_a\psi e^{a\mu} \\
         &-\frac{1}{4}\b{\psi}\gamma_a\gamma_{bc}\omega_\mu^{ab}e^{a\mu} - \frac{1}{4}\b{\psi}\gamma_a\gamma_{bc}\psi\omega_\mu^{ab}e^{a\mu}\bigg)
-    \end{split},
+    \end{split}.
 \end{equation}
-considerandone la variazione si considera il termine 
+In questo modo, si può vedere che la variazione di $S_D$ è data da 
 \begin{equation}
-    e\bigg(-\frac{1}{4}\b{\psi}\acomm{\gamma^\mu}{\gamma^{ab}}\psi\delta\omega_{\mu ab}) = e\bigg(-\frac{1}{4}\b{\psi}2\gamma^{\mu ab}\psi\delta\omega_{[\mu ab]}).
+    \delta S_D = \int d^Dx\,e\bigg(-\frac{1}{2}\b{\Psi}\gamma_{[a}\nabla_{\mu]}\Psi\delta e^{a\mu} - \frac{1}{8}\b{\Psi}\acomm{\gamma^\mu}{\gamma^{ab}}\Psi\delta\omega_{\mu ab}\bigg),
 \end{equation}
-Usando la formula di Cartan, si ha 
+dove si è escluso un termine proporzionale alla lagrangiana fermionica dato che si assume che $\sl{\nabla}\Psi(x) = 0$. Si considera quindi l'ultimo termine che coinvolge la variazione $\delta\omega_{\mu ab}$. Se integrato per parti, questo termine contribuisce al tensore energia-impulso. Questo termine si può scrivere intanto come 
 \begin{equation}
-    \delta(de^a + \omega_b^a \wedge e^b) = 0,\quad e^a = e^a_\mu dx^\mu,\,\omega^a_b = \omega^a_{\mu b}dx^\mu,
+    -\frac{1}{8}\b{\Psi}\acomm{\gamma^\mu}{\gamma^{ab}}\Psi\delta\omega_{\mu ab} = -\frac{1}{4}\b{\Psi}\gamma^{\mu\nu\rho}\Psi e^a_\nu e^b_\rho\delta\omega_{[\mu ab]}.
 \end{equation}
-da cui 
+Poi, considerando la variazione della seconda equazione di struttura di Cartan \eqref{eq: prima formula di struttura di Cartan}, si ha 
 \begin{equation}
-    D_{[\mu}\delta e^a_{\nu]} + \delta\omega^{ab}_{[\mu}e_{\nu]b} = 0,
+    \delta(de^a + \omega_b^a \wedge e^b) = 0,\quad e^a \equiv e^a_\mu dx^\mu,\,\omega^a_b \equiv \omega^a_{\mu b}dx^\mu,
 \end{equation}
-e anti-simmetrizzando su tutti e tre gli indici 
+da cui si trova che 
 \begin{equation}
-    D_{[\mu}\delta e_{a\nu]} = -\delta\omega_{\mu a\nu},
+    D_{[\mu}\delta e^a_{\nu]} + \delta\omega^{ab}_{[\mu}e_{\nu]b} = D_{[\mu}\delta e_{a\nu]} + \delta\omega_{[\mu a\nu]} = 0.
 \end{equation}
-per cui 
-\begin{eqnarray}
-    -e\bigg(-\frac{1}{4}\acomm{\gamma^\mu}{\gamma^\nu}\psi D_\mu\delta_{a\nu}\bigg) = \nabla_\mu\delta_{a\nu},
-\end{eqnarray}
-integrando per parti 
+Quindi, con quest'ultima espressione, il termine in questione diventa 
 \begin{equation}
-    2\frac{e}{4}\nabla_\mu(\b{\psi}\gamma^{\mu a\nu}\psi)\delta e_{a\nu},
+    -\frac{1}{4}\b{\Psi}\gamma^{\mu\nu\rho}\Psi e^a_\nu e^b_\rho\delta\omega_{[\mu ab]} = \frac{1}{4}\b{\Psi}\gamma^{\mu\nu\rho}\Psi e^b_\rho D_{[\mu} \delta e_{\nu b]}.
 \end{equation}
-si deve ora usare che $e_{a\mu}e^{a\nu} = \delta^\mu_\nu$, per cui
+Il prossimo passo è integrare il termine appena ottenuto per parti, includendo il cambio di segno che questo comporta alla variazione $\delta S_D$. Per farlo, si usa la proprietà distributiva della $\nabla_\mu$, che può essere sostituita banalmente alla $D_\mu$, l'equazione di Dirac $\sl{\nabla}\Psi(x) = 0$ e la proprietà $\gamma_\mu \gamma^{a\nu} = \gamma^{ab}_\mu + 2\delta_\mu^{[a}\gamma^{\nu]}$, ottenendo alla fine il contributo 
 \begin{equation}
-    \delta(e_{a\mu}e^{a\nu}) = \delta(\delta^\nu_\mu) = 0 \quad\Rightarrow\quad \delta e_{a\nu} \propto -\delta e^{a\nu},
+    \frac{1}{2}(\b{\Psi}\gamma_{[b}\nabla_{\rho]}\Psi - \nabla_{[\rho}\b{\Psi}\gamma_{b]}\Psi)\delta e^{b\rho},
 \end{equation}
-quindi 
-\begin{equation}
-    \frac{e}{2}\nabla_\mu(\b{\psi}\gamma^{\mu a \nu}\psi)(-e_{a\mu}e_{b\nu}\delta e^{a\nu}).
-\end{equation}
-Usando la regola di Leibniz e che $\gamma_\mu\gamma^{a\nu} = \gamma^{a\nu}_\mu + 2\delta_\mu^{[a}\gamma^{\nu]}$, si vuole scrivere 
-\begin{equation}
-    (\nabla^\mu\b{\psi})\gamma_{\mu}^{a\nu} + \b{\psi}\gamma_\mu^{a\nu}\nabla_\mu\psi
-\end{equation}
-in modo da ritrovare le equazioni di Dirac e avere $\sl{\nabla}\psi = 0$, avendo solo i contributi dei vielbein, cioè il contributo è
-\begin{equation}
-    \frac{1}{2}\int d^Dx\,(-\nabla_{[\rho}\b{\psi}\gamma_{b]}\psi + \b{\psi}\gamma_{[b}\nabla_{\rho]}\psi)\delta e^{b\rho}-
-\end{equation}
-Il risultato dunque è 
+dove si è anche usato il fatto che $e_{a\rho}\delta^a_\nu = -e_{b\rho}e^b_\mu\delta e^\mu_a e^a_\nu = -g_{\rho\mu}e^a_\nu\delta e^\mu_a$. Dunque, la variazione totale risulta essere 
 \begin{equation}
     \begin{split}
         \delta S &= \int d^Dx\,e\bigg[\frac{1}{k^2}\bigg(e^{b\nu}R_{\mu\nu ab} - \frac{1}{2}e_{a\mu}R\bigg) \\
-        &- \frac{1}{2}(\b{\psi}\gamma_{[a}\nabla_{\mu]})\psi - \nabla_{[\mu}\b{\psi}\gamma_{a]}\psi\bigg]\delta e^{a\mu},
+        &- \frac{1}{2}\bigg(\b{\Psi}\gamma_{[a}\nabla_{\mu]}\Psi - \nabla_{[\mu}\b{\Psi}\gamma_{a]}\Psi\bigg)\bigg]\delta e^{a\mu}.
     \end{split}
 \end{equation}
-dove le equazioni del moto sono contenute nelle parentesi quadre. 
+Applicando il principio di minima azione con la condizione $e^a_\nu(\delta S/\delta e^{a\mu}) = 0$, si ottiene l'equazione di Einstein nella forma 
+\begin{equation}
+    R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R = \frac{k^2}{2}\b{\Psi}\bigg(\b{\Psi}\gamma_{[a}\nabla_{\mu]}\Psi - \nabla_{[\mu}\b{\Psi}\gamma_{a]}\Psi\bigg).
+\end{equation}
 
-Nel caso con torsione diversa da zero, il punto di partenza è il medesimo $S = S_{HE} + S_D$, ma ora i campi indipendenti sono $e^a_\mu$, $\omega_\mu^{ab}$ e $\psi$. Come prima, nel formalismo del primo ordine, anche $\delta_eS = 0$. La logica è simile ma ora c'è anche $\delta_\omega S$, per cui 
+%% PASSAGGI DI QUESTO CONTO FATTI A LEZIONE
+% La variazione rispetto al vielbein è 
+% \begin{equation}
+%     \delta_e S = -ee_a^\mu\delta e^{a\mu}.
+% \end{equation}
+% per cui 
+% \begin{eqnarray}
+%     -e\bigg(-\frac{1}{4}\b{\Psi}\acomm{\gamma^\mu}{\gamma^\nu}\Psi D_\mu\delta e_{a\nu}\bigg) = \nabla_\mu\delta e_{a\nu},
+% \end{eqnarray}
+% integrando per parti 
+% \begin{equation}
+%     2\frac{e}{4}\nabla_\mu(\b{\psi}\gamma^{\mu a\nu}\psi)\delta e_{a\nu},
+% \end{equation}
+% si deve ora usare che $e_{a\mu}e^{a\nu} = \delta^\mu_\nu$, per cui
+% \begin{equation}
+%     \delta(e_{a\mu}e^{a\nu}) = \delta(\delta^\nu_\mu) = 0 \quad\Rightarrow\quad \delta e_{a\nu} \propto -\delta e^{a\nu},
+% \end{equation}
+% quindi 
+% \begin{equation}
+%     \frac{e}{2}\nabla_\mu(\b{\psi}\gamma^{\mu a \nu}\psi)(-e_{a\mu}e_{b\nu}\delta e^{a\nu}).
+% \end{equation}
+% Usando la regola di Leibniz e che $\gamma_\mu\gamma^{a\nu} = \gamma^{a\nu}_\mu + 2\delta_\mu^{[a}\gamma^{\nu]}$, si vuole scrivere 
+% \begin{equation}
+%     (\nabla^\mu\b{\psi})\gamma_{\mu}^{a\nu} + \b{\psi}\gamma_\mu^{a\nu}\nabla_\mu\psi
+% \end{equation}
+% in modo da ritrovare le equazioni di Dirac e avere $\sl{\nabla}\psi = 0$, avendo solo i contributi dei vielbein, cioè il contributo è
+% \begin{equation}
+%     \frac{1}{2}\int d^Dx\,(-\nabla_{[\rho}\b{\psi}\gamma_{b]}\psi + \b{\psi}\gamma_{[b}\nabla_{\rho]}\psi)\delta e^{b\rho}
+% \end{equation}
+% Il risultato dunque è 
+% \begin{equation}
+%     \begin{split}
+%         \delta S &= \int d^Dx\,e\bigg[\frac{1}{k^2}\bigg(e^{b\nu}R_{\mu\nu ab} - \frac{1}{2}e_{a\mu}R\bigg) \\
+%         &- \frac{1}{2}(\b{\psi}\gamma_{[a}\nabla_{\mu]})\psi - \nabla_{[\mu}\b{\psi}\gamma_{a]}\psi\bigg]\delta e^{a\mu},
+%     \end{split}
+% \end{equation}
+% dove le equazioni del moto sono contenute nelle parentesi quadre. 
+
+\section{Formalismo di I ordine e fermioni}
+Si descrive ora il formalismo di primo ordine per l'accoppiamento tra gravità e fermioni. Come detto più sopra, il vielbein e la connessione di spin compaiono come variabili indipendenti al primo ordine. L'equazione di campo di $\omega_{\mu ab}$ può quindi essere risolta fornendo una connessione con torsione non nulla $\omega_{\mu ab} = \omega_{\mu ab}(g) + K_{\mu ab}$. Il tensore di contorsione è un bilineare nei fermioni. Si possono continuare ad usare l'azione \eqref{eq: azione HE + spinore di Dirac} e le derivate \eqref{eq: derivata covariante spinore di Dirac} e \eqref{eq: derivata covariante sinistra spinore di Dirac}, ricordando che la connessione $\omega_\mu^{ab}$ è un quantità indipendente e che il tensore di curvatura $R_{\mu\nu}^{ab}$ è costruito a parte da essa. Quindi, la variazione dell'azione da cui si parte è 
 \begin{equation}
-    \delta_\omega S = \int d^Dx\,e\bigg[\frac{1}{2k^2}e^{a\mu}e^{b\nu}(D_\mu\delta_{\nu ab} - D_\nu\delta\omega_{\mu ab}) - \frac{1}{4}\b{\psi}\gamma^{\mu ab}\psi\delta\omega_{\mu ab}\bigg],
+    \delta_\omega S = \int d^Dx\,e\bigg[\frac{1}{2k^2}e^{a\mu}e^{b\nu}(D_\mu\delta\omega_{\nu ab} - D_\nu\delta\omega_{\mu ab}) - \frac{1}{4}\b{\Psi}\gamma^{\mu ab}\Psi\delta\omega_{\mu ab}\bigg],
 \end{equation}
-dove 
-\begin{equation}
-    D_\mu\delta_{\nu ab} - D_\nu\delta\omega_{\mu ab} = \nabla_\mu\delta\omega_{\nu ab} + \Gamma^\rho_{\mu\nu}\omega_{\rho ab} - \Gamma^\rho_{\nu\mu}\omega_{\rho ab} = 2\nabla_{[\mu}\omega_{\nu]ab} + T^\rho_{\mu\nu}\delta_{\rho ab}.
-\end{equation}
-Il termine $D_{\mu}\delta\omega_{\mu ab} - D_\nu\delta\omega_{\mu ab}$ non contribuisce alla variazione dell'azione se la torsione è nulla. Altrimenti, lo stesso termine si può riscrivere in questo modo 
-\begin{equation}
-    D_{\mu}\delta\omega_{ab} - D_\nu\delta\omega_{ab} = \nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab} + T^\rho_{\mu\nu}\delta\omega_{\rho ab}. 
-\end{equation}
-Quindi, adesso la variazione è 
+dove $\delta_e S = 0$ grazie al vielbein postulate che permette di commutare le derivate covarianti con i vielbein risultando in un termine di derivata totale nell'integrale d'azione, e dove si può riscrivere
 \begin{equation}
     \begin{split}
-        \delta_\omega S &= \frac{1}{2k^2}\int d^Dx\,(2T^\rho_{\rho\mu}e^{a\mu}e^{b\nu}\delta\omega_{\nu ab} + T^\rho_{\mu\nu}e^{a\mu}e^{b\nu}\delta\omega_{\rho ab}) \\
-        &= \frac{1}{2k^2}\int d^Dx\,e\delta\omega^{ab}_\nu(T^\rho_{\rho a}e^\nu_b - T^\rho_{\rho b}e^\nu_a + T^\nu_{ab}),
+        D_\mu\delta\omega_{\nu ab} - D_\nu\delta\omega_{\mu ab} &= \nabla_\mu\delta\omega_{\nu ab} + \Gamma^\rho_{\mu\nu}\delta\omega_{\rho ab} - \nabla_\nu\delta\omega_{\mu ab} - \Gamma^\rho_{\nu\mu}\delta\omega_{\rho ab} \\
+        &= \nabla_\mu\delta\omega_{\nu ab} - \nabla_\nu\delta\omega_{\mu ab} + T^\rho_{\mu\nu}\delta\omega_{\rho ab} \\
+        &= 2\nabla_{[\mu}\omega_{\nu]ab} + T^\rho_{\mu\nu}\delta\omega_{\rho ab}.
     \end{split}
 \end{equation}
-con cui si ricavano le equazioni del moto 
+Quindi, adesso la variazione dell'azione di Hilbert-Einstein è 
 \begin{equation}
-    \bigg(-\frac{1}{4}\b{\psi}\gamma^\mu_{ab}\psi\delta\omega_{\mu ab}\bigg)(T^\rho_{\rho a}e^\nu_b - T^\rho_{\rho b}e^\nu_a + T^\nu_{ab}) = 0.
+    \begin{split}
+        \delta_\omega S_{HE} &= \frac{1}{2k^2}\int d^Dx\,e(2T^\rho_{\rho\mu}e^{a\mu}e^{b\nu}\delta\omega_{\nu ab} + T^\rho_{\mu\nu}e^{a\mu}e^{b\nu}\delta\omega_{\rho ab}) \\
+        &= \frac{1}{2k^2}\int d^Dx\,e(T^\rho_{\rho a}e^\nu_b - T^\rho_{\rho b}e^\nu_a + T^\nu_{ab})\delta\omega^{ab}_\nu.
+    \end{split}
 \end{equation}
-Di questa se ne considera la traccia rispetto, ad esempio, all'indice $\mu$ moltiplicando per $e^a_\nu$, ottenendo 
+Quindi, la variazione dell'azione completa è 
 \begin{equation}
-    T^\rho_{\rho b} - DT^\rho_{\rho b} + T^\rho_{\rho b} = 0,
+    \delta_\omega S = \int d^Dx\,e\bigg[\frac{1}{2k^2}(T^\rho_{\rho a}e^\mu_b - T^\rho_{\rho b}e^\mu_a + T^\mu_{ab}) - \frac{1}{4}\b{\Psi}\gamma^{\mu ab}\Psi\bigg]\delta\omega_{\mu ab}
 \end{equation}
-da cui si deduce che $T^\rho_{\rho b} = 0$ assumendo che $D \neq 2$. Quindi, si ha 
+Da quest'ultima espressione, si ricavano le equazioni del moto
 \begin{equation}
-    T_{ab}^\nu = \frac{k^2}{2}\b{\psi}\gamma_{ab}^\nu\psi = -2K^\nu_{ab},
+    T^\rho_{\rho a}e^\mu_b - T^\rho_{\rho b}e^\mu_a + T^\mu_{ab} = \frac{k^2}{2}\b{\Psi}\gamma^\mu_{ab}\Psi.
 \end{equation}
-da cui si trova 
+Dato che la traccia del secondo membro dell'equazione del moto si annulla, allora anche la traccia del membro sinistro si deve annullare, per cui
 \begin{equation}
-    \omega_\mu^{ab} = \omega_\mu^{ab}(e) - \frac{k^2}{4}\b{\psi}\gamma^{ab}_\mu\psi,
+    T^\rho_{\rho b} - DT^\rho_{\rho b} + T^\rho_{\rho b} = (2 - D)T^\rho_{\rho b} = 0,
 \end{equation}
-che va sostituita in tutte le equazioni dove compare $\omega_\mu^{ab}$ ottenendo alla fine equazioni diverse da quelle che si otterrebbero espandendo al secondo ordine nei campi. 
+da cui si deduce che $T^\rho_{\rho b} = 0$ assumendo che $D \neq 2$. Quindi, l'equazione del moto trovata prima diventa
+\begin{equation}
+    T_{ab}^\nu = \frac{k^2}{2}\b{\Psi}\gamma_{ab}^\nu\Psi = -2K^\nu_{ab},
+\end{equation}
+da cui si trova l'espressione per la connessione di spin
+\begin{equation}
+    \omega_\mu^{ab} = \omega_\mu^{ab}(e) - \frac{k^2}{4}\b{\Psi}\gamma^{ab}_\mu\Psi.
+\end{equation}
+%% COMMENTO DA VERIFICARE
+% che va sostituita in tutte le equazioni dove compare $\omega_\mu^{ab}$ ottenendo alla fine equazioni diverse da quelle che si otterrebbero espandendo al secondo ordine nei campi. 
