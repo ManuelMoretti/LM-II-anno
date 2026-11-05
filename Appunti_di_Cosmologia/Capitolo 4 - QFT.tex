@@ -1,0 +1,161 @@
+\chapter{QFT (WIP)}
+We now make some basic recalls of Quantum Field Theory. The main objects are the fields $\phi(x)$, which are functions of the spacetime coordinates $x^\mu$, and can be of different nature. The main different between kinds of fields is how they transform under coordinate transformations. With them, we can write a Lagrangian, more precisely a Lagrangian density, $\Lag(\phi,\p\phi)$ whose dependent on the fields, of course, and their derivatives $\p_\mu\phi(x)$. The Lagrangian needs to be invariant under general coordinate transformations, therefore it is constructed from \emph{invariants}, that have precisely this property. The integral of the Lagrangian over spacetime is the action $S$. To write a consistent action, we need to impose some conditions on the Lagrangian:
+\begin{enumerate}
+    \item it must be quadratic in the fields;
+    \item it must have the lowest number of derivatives;
+    \item it must be Lorentz-covariant.
+\end{enumerate}
+We now look at some examples of fields which will be important for the following discussions.
+
+\subsubsection{Scalar field}
+The simplest example of field is the \emph{scalar field} $\phi(x)$. The Lagrangian for this kind of field is 
+\begin{equation}
+    \Lag = X\p_\mu\phi\p^\mu\phi + Y\phi^2.
+\end{equation}
+Using the Euler-Lagrange equations, we can find the equations of motion for the scalar field to be 
+\begin{equation}
+    (X\square - Y)\phi(x) = 0.
+\end{equation}
+Through a Fourier transform, the field can be expressed as 
+\begin{equation}
+    \phi(t,\v{x}) = \int \frac{d^3k}{(2\pi)^3}e^{i(\v{k} \cdot \v{x})}\t{\phi}(t,\v{p}),
+\end{equation}
+where $\t{\phi}(t,\v{p})$ is the scalar field in \emph{momentum space}, or in \emph{Fourier space}. The equation of motion can be then written as 
+\begin{equation}
+    \p_0^2\t{\phi}(t,\v{p}) + \omega_k^2\t{\phi}(t,\v{p}) = 0,\quad \omega_k^2 \equiv c^2k^2 - \frac{Y}{X}c^2,
+\end{equation}
+which is just the equation of a harmonic oscillator with pulse $\omega_k$. From Quantum Mechanics, we already know that $E = \hbar\omega$ and that $\v{q} = \hbar\v{k}$, so using them with the mass-shell condition $E^2 = q^2c^2 + m^2c^4$, we can identify 
+\begin{equation}
+    \frac{Y}{X} = -\frac{m^2c^2}{\hbar^2}.
+\end{equation}
+Hence, the equation of motion written before become the so-called \emph{Klein-Gordon equation}
+\begin{equation}
+    \bigg(\square + \frac{m^2c^2}{\hbar^2}\bigg)\t{\phi}(t,\v{p}) = 0.
+\end{equation}
+\begin{obs}
+    Until 2012 with the discovery of the Higgs boson, the scalar field did not have an example in nature, being just a mathematical artefact.
+\end{obs}
+
+\subsubsection{Vector field} 
+The most familiar example of vector field is $A_\mu$ that appears in Electromagnetism. Maxwell equations, in covariant form, are 
+\begin{equation}
+    \begin{cases}
+        \p_\mu F^{\mu\nu} = 0 \\
+        \p_{[\lambda}F_{\mu\nu]} = 0
+    \end{cases},
+\end{equation}
+where $F_{\mu\nu} = \p_\mu A_\nu - \p_\nu A_\mu$ is a \emph{field strength}, with $A^\mu = (\Phi/c,A^i)$ where $\Phi$ is the \emph{scalar potential}, typically $\Phi \equiv A^0$, and $A^i$ is the \emph{vector potential}. Anyway, here we can start to see some differences with respect to the scalar field case. By looking at the Maxwell equations, we can see that $A^\mu$ does not appear ``by itself'', but only in terms of its derivates. Therefore, $A^\mu$ is not uniquely defined, but under transformation $A^\mu \to A^{\prime\mu} \equiv A^\mu + \p^\mu\lambda(x)$, where $\lambda(x)$ is a scalar function, Maxwell equations are invariant, or in other words $F_{\mu\nu} \to F'_{\mu\nu} \equiv F_{\mu\nu}$. This is really important because when we try to write a Lagrangian for this field we cannot use $A^\mu A_\mu$ as we did for the scalar field since this is not invariant, which implies that also the Lagrangian would not be invariant. Thus, for what we said before, we can assume that the Lagrangian contains instead $F_{\mu\nu}F^{\mu\nu}$, which is indeed invariant; that is 
+\begin{equation}
+    \Lag = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+The equations of motion that we derive from this are 
+\begin{equation}
+    \square A^\mu = \p^\mu(\p_\nu A^\nu).
+\end{equation}
+Because of the invariance of the Maxwell equations under the $A^\mu \to A^{\prime\mu} \equiv A^\mu + \p^\mu\lambda(x)$ transformation, we can impose a \emph{gauge condition} which removes one degree of freedom. There are many choices for such a condition, but we use the \emph{Lorenz gauge condition}, that is 
+\begin{equation}
+\label{eq: Lorenz gauge condition}
+    \p_\mu A^\mu = 0.
+\end{equation}
+In this way, the equations of motion become simply
+\begin{equation}
+    \square A^\mu = 0.
+\end{equation}
+In momentum space, this can be written as 
+\begin{equation}
+    \p_0^2\t{A}^\mu(t,\v{k}) + c^2k^2\t{A}^\mu(t,\v{k}) = 0.
+\end{equation}
+The solution can be then be expressed as 
+\begin{equation}
+    \t{A}^\mu(t,\v{k}) = \epsilon^{\mu}(x)e^{-i\omega_kt},\quad \omega_k^2 = c^2k^2.
+\end{equation}
+Because of this, the gauge condition \eqref{eq: Lorenz gauge condition} is equivalent to asking $\epsilon_\mu k^\mu = 0$, which implies that the fields $A^\mu$ and $k^\mu$ are orthogonal to each other. However, there is more. The Lorenz gauge condition does not remove completely the gauge freedom; in fact, after a transformation $A^\mu \to A^{\prime\mu} \equiv A^\mu + \p^\mu\lambda(x)$, the Lorenz gauge condition becomes 
+\begin{equation}
+    \p_\mu A^{\prime\mu} = \p_\mu A^\mu + \square\lambda(x) = 0,
+\end{equation}
+and since $\p_\mu A^\mu = 0$, we can maintain the Lorenz gauge condition if and only if $\square \lambda(x) = 0$. This is what is called the \emph{residual gauge freedom}. This condition removes another degree of freedom, lowering them from four to two removing the non-physical degrees of freedom, while the remaining two are the physical ones, that can be interpreted as the polarization states of the photon. 
+
+\subsubsection{Spinor field}
+There are a lot of examples for spinor fields, but the most famous one is maybe the electron. Anyway, a spinor field is often indicated as $\Psi^A(x)$ where the index $A$, although $A = 0,\dots,3$, it is not a Lorentz index, instead is a spinor index. A spinor transforms under a Lorentz transformation as 
+\begin{equation}
+    \Psi^A \to \Psi^{\prime A} \equiv S(\Lambda)^A_B\Psi^B.
+\end{equation}
+We can also define the \emph{adjoint spinor} $\b{\Psi}^A$, which transforms as 
+\begin{equation}
+    \b{\Psi}_A \to \b{\Psi}^{\prime}_A \equiv \b{\Psi}_BS(\Lambda)^B_A.
+\end{equation}
+Therefore, it is clear that $\b{\Psi}_A\Psi^A$ is invariant under Lorentz transformations. Hence, the Lagrangian can be written as 
+\begin{equation}
+    \Lag = Xi\b{\Psi}_B\sl{\p}_A^B\Psi^B - Y\b{\Psi}_A\Psi^A,\quad \sl{\p} \equiv \gamma^\mu\p_\mu,
+\end{equation}
+where $\gamma^\mu$ are the Dirac matrices, which satisfy the Clifford algebra $\acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM$. Using the Euler-Lagrange equations with respect to the adjoint spinor, we can derive the equations of motion for the ordinary spinor 
+\begin{equation}
+    (Xi\sl{\p}^A_B- Y\delta^A_B)\Psi^B = 0.
+\end{equation}
+In the Fourier space we have 
+\begin{equation}
+    \{X[\omega t(\gamma^0)^A_B - k_i(\gamma^i)^A_B] - \hbar Y\delta^A_B\}\t{\Psi}^B = 0.
+\end{equation}
+Defining the matrix $M^A_B \equiv X[\omega t(\gamma^0)^A_B - k_i(\gamma^i)^A_B]$ and noting that $\delta^A_B \equiv \IM$,  we can write the equation of motion as 
+\begin{equation}
+    (M_B^A - \hbar Y\IM)\t{\Psi}^B = 0.
+\end{equation}
+Multiplying this last equation of the left with $(M_B^A + \hbar Y\IM)$ we find 
+\begin{equation}
+    (M_B^A - \hbar Y\IM)(M_B^A - \hbar Y\IM)\t{\Psi}^B = [(M_B^A)^2 - (\hbar Y)^2\IM]\Psi^B = 0.
+\end{equation}
+Using the Clifford algebra $\acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM$, we have 
+\begin{equation}
+    (M_B^A)^2 = X^2\gamma^\mu\gamma^\nu p_\mu p_\nu = X^2p_\mu p^\mu \IM.
+\end{equation}
+Thus, we remain with 
+\begin{equation}
+    [X^2p_\mu p^\mu - (\hbar Y)^2]\t{\Psi} = 0.
+\end{equation}
+For non-trivial solutions, we need to impose 
+\begin{equation}
+    p_\mu p^\mu = \frac{\hbar^2Y^2}{X^2},
+\end{equation}
+from which we find, comparing it with the relativistic relation $p_\mu p^\mu = m^2c^2$, that 
+\begin{equation}
+    \frac{X}{Y} = \frac{\hbar}{mc}.
+\end{equation}
+Hence, the equation of motion  equations of motion written before become the so-called \emph{Dirac equation}
+\begin{equation}
+    \bigg(\frac{i\hbar}{mc}\sl{\p}_B^A - \IM\bigg)\Psi^B = 0.
+\end{equation}
+
+Regarding the spinor field we can say more. If we perform a \emph{local transformation}, which is a transformation that is dependent on the spacetime coordinates, defined as 
+\begin{equation}
+    \Psi^A \to \Psi^{\prime A} \equiv \Psi^Ae^{i\theta(x)},\quad \b{\Psi}^A \to \b{\Psi}^{\prime A} \equiv \b{\Psi}^Ae^{-i\theta(x)}.
+\end{equation}
+The product $\b{\Psi}_A\Psi^A$ is still invariant; however, the derivative of the spinor field is not, in fact 
+\begin{equation}
+    \p_\mu \Psi^A \to \p_\mu\Psi^{\prime A} \equiv \p_\mu(e^{i\theta(x)}\Psi^A) = e^{i\theta(x)}[\p_\mu + i(\p_\mu\theta)]\Psi^A,
+\end{equation}
+which indeed breaks the Lagrangian invariance. To preserve the invariance, we need to redefine the derivative operation as 
+\begin{eqnarray}
+    D_\mu := \p_\mu - B_\mu,\quad B_\mu \to B_\mu' \equiv B_\mu + i\p_\mu\theta(x),
+\end{eqnarray}
+which is exactly what we did when we defined the covariant derivative previously. Thus, we have 
+\begin{equation}
+    D_\mu\Psi^A \to (D_\mu\Psi^A)e^{i\theta(x)}.
+\end{equation}
+The transformation with which we defined the covariant derivative has the same form of the transformation of $A_\mu$ that leaves invariant Maxwell equations. Hence, if we set $\lambda(x) \equiv (Q/\hbar)\theta(x)$, we just need to replace
+\begin{equation}
+    B_\mu = \frac{iQ}{\hbar}A_\mu,
+\end{equation}
+where $Q$ is the charge of the spinor. The covariant derivative then becomes 
+\begin{equation}
+    D_\mu = \p_\mu - \frac{iQ}{\hbar}A_\mu.
+\end{equation}
+In this way we have a locally gauge-invariant theory that describes the interaction between vector fields and spinor fields, and so, for examples, between photons and electrons. The Lagrangian is 
+\begin{equation}
+    \Lag = \b{\Psi}[i\gamma^\mu(\hbar\p_\mu - iQA_\mu) - mc]\Psi.
+\end{equation}
+
+We can also give to $D_{\mu}$ a geometric meaning. To see this, we compute the commutator between derivatives, which results in
+\begin{equation}
+    \comm{D_\mu}{D_\nu}\Psi^A = -\frac{iQ}{\hbar}F_{\mu\nu}\Psi^A,
+\end{equation}
+where the Riemann curvature tensor describes the curvature associated with the spacetime connection. By analogy, the field strength $F_{\mu\nu}$ represents the curvature associated with the gauge connection $A_{\mu}$, while $D_{\mu}$ is the corresponding gauge-covariant derivative acting on fields in the internal space.
