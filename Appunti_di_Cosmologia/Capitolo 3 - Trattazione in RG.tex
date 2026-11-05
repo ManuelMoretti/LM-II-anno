@@ -845,3 +845,109 @@ The cosmological principle is really useful to simplify calculations, however, a
     ds^2 = -c^2\,dt^2 + R(t,r)(d\theta^2 + \sin^2\theta\,d\theta^2) + X(t,r)\,dr^2,
 \end{equation}
 where the functions $X(t,r)$ and $R(t,r)$ depend on the position and are yet to be determined. We can already see that we can get back the FRLW metric from \eqref{eq: general form inhomogeneous Universe metric } by simply imposing $R(t,r) \equiv a(t)r$ and $X(t,r) \equiv a(t)/\sqrt{1 - Kr^2}$.
+
+We can still use Einstien's equations, where $T^{\mu\nu}$ still has the form $T^{\mu\nu} = \diag{(\b{\epsilon}_{\rem{loc}},\b{p}_{\rem{loc}}g^{ij})}$, where the subscript ``loc'' stands for ``local'' inhomogeneity. For curvature we cannot say anything yet. The fact that $T^{0i}$ is zero becomes a contraint on $G^{\mu\nu}$ that sets $G^{0i} = 0$. The function $X(t,r)$ tells us how matter is distributed as a function of $r$ and $t$. The components $G^{02}$ and $G^{03}$ for spherical symmetry are zero, and $G^{01} = 0$ is a new constraint that implies 
+\begin{equation}
+    \frac{\p\dot{R}}{\p r} - \frac{\dot{X}}{X}\frac{\p R}{\p r} = \frac{\p}{\p t}\bigg(\frac{\p_r R}{X}\bigg) = 0,
+\end{equation}
+therefore, integrating over time, the $X(t,r)$ function can be said to be
+\begin{equation}
+    X(t,r) = \frac{\p_r R}{f(r)} = \frac{\p_r R}{\sqrt{1 - Kr^2 + F(r)}}.
+\end{equation}
+The local metric tensor is 
+\begin{equation}
+    g_{\mu\nu,\rem{loc}} = \diag{\bigg(-1,\frac{\p_r R}{\sqrt{1 - Kr^2 + F(r)}},R^2,R^2\sin^2{\theta}\bigg)}.
+\end{equation}
+The form is very similar to the FRLW metric \eqref{eq: metrica FLRW}. The first Friedmann equation came from $u_\mu u_\nu G^{\mu\nu}$, that is
+\begin{equation}
+\label{eq: I Friedmann equation (inhomogeneous space)}
+    \frac{\dot{R}^2}{R^2} = \frac{8\pi G}{3c^2}\epsilon_{\rem{loc}} + \frac{Fc^2}{r^2},
+\end{equation}
+which has the same form of the one obtained from the FRLW metric; more precisely, by comparing \eqref{eq: prima equazione di Friedmann} and \eqref{eq: I Friedmann equation (inhomogeneous space)} we can define 
+\begin{equation}
+    a_{\rem{loc}} := \frac{R}{r},\quad \frac{\dot{a}_{\rem{loc}}}{a_{\rem{loc}}} = \frac{\dot{R}_{\rem{loc}}}{R_{\rem{loc}}} := H_{\rem{loc}}.
+\end{equation}
+Also, we can define 
+\begin{equation}
+    K_{\rem{loc}} := -\frac{F}{r^2}. 
+\end{equation}
+
+We now focus on studying how this inhomogeneity evolves with time. We already saw solutions to equation \eqref{eq: I Friedmann equation (inhomogeneous space)}: we study evolution through different domination periods. 
+\paragraph{Radiadiation domination.} In the radiation dominated era, we have that $\b{\epsilon}_{m,\rem{loc}} \equiv \b{\epsilon}_r$, which implies that $\b{\epsilon}_{\rem{loc}} \simeq \b{\epsilon}_r$. The right-hand side is the same as before, so $H_{\rem{loc}} \simeq H$ and $a_{\rem{loc}} \simeq a$. We call the initial stage deep in radiation domination $t_i$, such that $H_{\rem{loc}}(t_i) - H(t_i) = 0$, so that 
+\begin{multline}
+    \sum_{s=\{r,K,\Lambda\}}\frac{8\pi G}{3c^2}\b{\epsilon}_{s,\rem{loc}}(t_i) + \frac{8\pi G}{3}\b{\rho}_{m,\rem{loc}}(t_i) - \frac{K_{\rem{loc}}c^2}{a^2_{\rem{loc}(t_i)}} + {}\\
+    - \sum_{s=\{r,K,\Lambda\}}\frac{8\pi G}{3c^2}\b{\epsilon}_{s}(t_i) - \frac{8\pi G}{3}\b{\rho}_{m}(t_i) = 0.
+\end{multline}
+Therefore 
+\begin{equation}
+    \frac{8\pi G}{3}\b{\rho}_{m}(t_i) = \frac{8\pi G}{3}\b{\rho}_{m,\rem{loc}}(t_i) - \frac{K_{\rem{loc}}c^2}{a^2_{\rem{loc}(t_i)}}.
+\end{equation}
+There are two different scenarios:
+\begin{enumerate}
+    \item if $\b{\rho}_{m,\rem{loc}} > \b{\rho}_m$, then $K_{\rem{loc}} > 0$ and we have a local curvature excess, or \emph{under-density};
+    \item if $\b{\rho}_{m,\rem{loc}} < \b{\rho}_m$, then $K_{\rem{loc}} < 0$ and we have a local curvature defect, or \emph{over-density}.
+\end{enumerate}
+During radiation domination local quantities evolves as global quantities.
+
+\paragraph{Matter domination.} Here the right-hand side is different. As time goes on, deviation becomes more significant. At a certain point, also $K_{\rem{loc}}c^2/a^2_{\rem{loc}}$ becomes relevant, depending on local density. The local distribution evolves like a separated Unvierse. So if there is an over-density, it evolves more slowly than the global Universe one and we have a Big Crunch; if insted we have an under-density, it evolves faster that the global Unvierse and becomes less and less dense. So, equation \eqref{eq: I Friedmann equation (inhomogeneous space)} can be written as 
+\begin{equation}
+    \frac{1}{2}\dot{R}^2 - \frac{GM(rR)}{R} = \xi,
+\end{equation}
+where the first term of the left-hand side corresponds to the kinetic energy of a particle per unit mass and where we have defined 
+\begin{equation}
+    M(rR) = \frac{4\pi R^3}{3},\quad \xi \equiv \frac{Fc^2}{2r^2}R^2,
+\end{equation}
+with $\xi$ the total energy per unit mass. There are again two scenrios:
+\begin{enumerate}
+    \item $K_{\rem{loc}} \le 0$ if and only if $\xi \ge 0$, which implies that $\dot{R}^2 > 0$ and so that the patch continues expanding;
+    \item $K_{\rem{loc}} > 0$ if and only if $\xi < 0$, which implies that $\dot{R}^2$ can vanish at $R_{\rem{TAR}} = -GM/\xi$, called the \emph{turn around radius}.  
+\end{enumerate}
+In the second case the the system is gravitationally bound, hence it can eventually recollapse on itself. This is just a local departure from homogeneity of the global Universe, but thanks to inhomogeneity and gravity we can have local bound states. Talking about bound states, also Electromagnetism and Quantum Chromodynamics (QCD) have them:
+\begin{enumerate}
+    \item in Electromagnetism the bound states are very similar at ordinary scales since we have fro gravity $G \simeq \SI{6.67e-11}{\newton\meter\squared\per\kilogram\squared}$ and for Electromagnetism $1/4\pi\epsilon_0 \simeq \SI{8.89e9}{\newton\meter\squared\per\coulomb\squared}$, also at leading order 
+    \begin{equation}
+        U_{\rem{EM}}^{(d)} \simeq -\frac{\alpha_{\rem{EM}}\hbar c}{d},\quad \alpha_{\rem{EM}} = \frac{e^2}{4\pi \epsilon_0\hbar c} \simeq \frac{1}{137};
+    \end{equation}
+    \item In QCD, in terms of bound states, we can just use Corwell potential
+    \begin{equation}
+        U_{\rem{QCD}}(d) \simeq -\frac{4\hbar c}{3d}\alpha_\rem{s} + 6d,
+    \end{equation}
+    where $\alpha_\rem{s}(d) \in [0.2,0.5]$ and the $6d$ term is the string tension, even though at small distances the first term dominates;
+    \item In gravity, the potential can be written as $U_\rem{G} \simeq -\alpha_\rem{G}\hbar c/d$, where $\alpha_\rem{G} = Gm_1m_2/\hbar c$.
+\end{enumerate}
+At microscopic level, gravity is several orders weaker than the other forces, for example the coupling constant $\alpha_\rem{G}$ between two protons is $\alpha_\rem{G} \simeq 5.9 \times 10^{-39}$. The other forces yet create bound states which are neutral among themselves, whilst gravity cannot be screened and is always attractive. 
+
+There are other possible interactions, such as dipole-dipole interaction, which goes like $d^{-3}$, or the van der Waals interaction, which goes like $d^{-4}$. This residual forces give rise and are at the same time due to molecules. Another example is the nuclear interaction that is responsible for the creation of nuclei and therefore atoms. The nuclear potential can be parametrized as 
+\begin{equation}
+    U_{\rem{N}}(d) \simeq -\alpha_N\frac{\hbar}{d}\exp{\bigg(-\frac{m_\pi\hbar d}{c}\bigg)},\quad \alpha_\rem{N} \in [0.1,1].
+\end{equation}
+We can then think of a picture which at different scales have to account the oberved phenomena (???). We have balance between kinetic and potential enrgy. As the Universe expands, its constituents will tend to create bound states less often. Also, kinetic energy enhances with time. We saw it for a particle sat in cmoving frame, where its kinetic energy is given by $H$ (rationalized). For peculiar velocity
+\begin{equation}
+    \frac{dq^2}{dt} = \dot{g}_{ij}q^iq^j + 2g_{ij}\frac{dq^i}{dt}q^j.
+\end{equation}
+Since we are using the FLRW metric, we have 
+\begin{equation}
+    \dot{g}_{ij} = \frac{d}{dt}(\alpha^2\gamma_{ij}) = 2a\dot{a}\gamma_{ij} + a^2\dot{a}_{ij} = 2H\gamma_{ij} + a^2\p_k\gamma_{ij}\frac{dx^k}{dt}.
+\end{equation}
+Also we can write 
+\begin{equation}
+    \begin{split}
+        \dot{q}^i = \frac{dq^2}{d\lambda}\frac{d\lambda}{dt} = \frac{c}{u^0}(-\Gamma^i_{\mu\nu}q^\mu q^\nu) = -\frac{c}{u^0}\bigg(\Gamma^i_{jk}q^jq^k + 2\Gamma^i_{0j}q^0q^j\bigg).
+    \end{split}
+\end{equation}
+Now, we can see that 
+\begin{eqnarray}
+    \frac{c}{u^0}q^k = \frac{dx^k}{dt},\quad \Gamma^i_{0j} = \frac{\dot{a}}{ca}\delta^i_j,
+\end{eqnarray}
+that can be combined with the second term of $\dot{g}_{ij}$ to have $\prescript{(3)}{}{\nabla_k\gamma_ij} = 0$. Thus, we have the followgin differential equation 
+\begin{equation}
+    \frac{dq^2}{dt} = 2Hq^2 - 4Hq^2 + 0 = -2Hq^2,
+\end{equation}
+which, by integrating it by part, results in 
+\begin{equation}
+    |\v{q}| \simeq a^{-1}.
+\end{equation}
+The kinetic energy of the constituents become smaller, which must be considered with energy potential which diminishes at distance grows. For radiation, $E \simeq qc$, thus $E \simeq a^{-1}$, while for matter $E_K \simeq q^2/2m$, thus $E_K \simeq a^{-2}$. 
+
+
+
