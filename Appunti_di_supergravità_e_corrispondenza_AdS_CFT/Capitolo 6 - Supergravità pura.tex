@@ -1066,7 +1066,126 @@ Imponendo $\Psi_\mu \equiv 0$ con l'intento di cercare soluzioni di tipo bosonic
 \begin{equation}
     S_{EMAdS} = \frac{1}{2k^2}\int d^4x\,e\bigg(R + \frac{\sigma}{2L^2} - F_{\mu\nu}F^{\mu\nu}\bigg),
 \end{equation}
-che ha una forma evidentemente più semplice da trattare.
+che ha una forma evidentemente più semplice da trattare. Le equazioni del moto sono 
+\begin{equation}
+    \begin{cases}
+        R_{\mu\nu} + \dfrac{3}{L}g_{\mu\nu} = 2\bigg(F^\rho_\mu F_{\nu\rho} - \dfrac{1}{4}F^2g_{\mu\nu}\bigg) \\
+        d*F = 0 \\
+        dF = 0
+    \end{cases}.
+\end{equation}
+Nel limite in cui $L \to \infty$, o equivalentemente $\Lambda \to 0$, ottengo la teoria ungauged dove $m_\psi \to 0$ e anche accoppiamento di gauge se ne va. In questo caso anti-De Sitter non è più una soluzione, ma lo è Minkowski. L'equazione di supersimmetria è 
+\begin{equation}
+    \delta\Psi_\mu = \bigg(\nabla_\mu + \frac{i}{L}A_\mu - \frac{1}{2L}\gamma_\mu + \frac{i}{4}F_{\nu\rho}\gamma^{\nu\rho}\gamma_\mu)\epsilon = 0,
+\end{equation}
+da cui si definisce la \emph{superderivata covariante} 
+\begin{equation}
+\label{eq: superderivata covariante}
+    D_\mu := \nabla_\mu + \frac{i}{L}A_\mu - \frac{1}{2L}\gamma_\mu + \frac{i}{4}F_{\nu\rho}\gamma^{\nu\rho}\gamma_\mu.
+\end{equation}
+Una soluzione è quella di anti-De Sitter dove $A_\mu = 0$. 
 
+\subsubsection{Classificazione delle soluzioni}
+Si è interessati particolarmente alle soluzioni che siano buchi neri e asintoticamente di anti-De Sitter. Si parte assumendo simmetria sferica 
+\begin{equation}
+    ds^2 = -e^{2A(r)}\,dt^2 + e^{2B(r)}\,dr^2 + e^{2C(r)}(d\theta^2 + \sin^2{(\theta)}\,d\phi^2).
+\end{equation}
+Si assume anche che le traslazioni temporali siano una simmetria $\to$ $\p_t$ di Killing ma si ha dipendenza dal tempo (???). Si hanno dei diffeomorfismi $r = r(R)$ senza mescolare $t$ con la parte angolare, questo permette di fissare una delle tre funzioni a $e^{2C(r)} = R^2$, mentre le altre due funzioni rimangono arbitrarie di $R$. Rinominando $R \mapsto r$ si trova 
+\begin{equation}
+    ds^2 = -e^{2A(r)}\,dt^2 + r^{2B(r)}\,dr^2 + r^2(d\theta^2 + \sin^2{(\theta)}\,d\phi^2).
+\end{equation} 
+Ora si deve calcolare il tensore di Riemann e inserirlo nell equazioni del moto. Si assume per ora che $F = 0$, per cui 
+\begin{equation}
+    \begin{split}
+        R_{\mu\nu} = -\frac{(D - 1)}{L^2}g_{\mu\nu}&\quad\Rightarrow\quad A(r) = -B(r) \\
+        &\quad\Rightarrow\quad e^{2A(r)} = 1 + \frac{r^2}{L^2} - \bigg(\frac{r_*}{r}\bigg)^{D - 1}.
+    \end{split}
+\end{equation}
+\begin{obs}
+    Nel limite in cui $r \to \infty$, si ritrova la metrica di anti-De Sitter, anche se $r_* = 0$. Nel limite $L \to \infty$ invece si ritrova la metrica di Schwarzschild.
+\end{obs}
+Ci si chiede ora se la soluzione sia anche supersimmetrica. Per farlo la si sostituisce nell'equazione per $\delta\Psi_\mu$ e si verifica se $r_* = 0$, ovvero se l'unica soluzione è anti-De Sitter stesso ma senza buco nero. 
 
+Si tenta ora a considerare $F \neq 0$ e mantenere lo stesso ansatz sulla metrica, aggiungendone però uno sulla forma di $F$, questo è $F_{tr} = f(r)$. Questo implica che sia invariante sotto trasformazioni del gruppo $\group{SO}{3}$ e le traslazioni temporali, equivalente a chiedere $\Lie_K F = 0$. Si sostituisce $F$ nell'equazione del moto assieme alla metrica e si trova che $A(r) = -B(r)$ e anche che 
+\begin{equation}
+    e^{2A(r)} = 1 + \frac{r^2}{L^2} - \frac{m}{r^{D - 2}} + \frac{q^2}{r^{2D - 6}},\quad f(r) = -\sqrt{\frac{(D - 2)(D - 3)}{2}}\frac{9}{r^{D - 2}}.
+\end{equation}
+\begin{obs}
+    In $D = 4$ si ha $f(r) \simeq r^{-2}$ cioè come un potenziale dato da un carica $q$. $M \simeq m$ è la massa del buco nero, $Q \simeq q$ è la carica del buco nero.
+\end{obs}
+Se si sostituisce in $\delta \Psi_\mu = 0$ e si trova una famiglia a 1-parametro di soluzioni, si ha $m = 2q$ (tipico comportamento delle soluzioni supersimmetriche) e la relazione BPS. Per $r \to \infty$ si trova sempre anti-De Sitter, mentre l'orizzonte è quello di Schwarzschild. Si riscrive la funzione come 
+\begin{equation}
+    e^{2A(r)} = \bigg(1 - \frac{q}{r^{D - 2}}\bigg)^2 + \frac{r^2}{L^2}. 
+\end{equation}
+Se si manda $r \to 0$ si vede singolarità, cioè si perde l'orizzonte, che è dove la funzione $e^{2A(r)}$ si annulla. Si vuole evitare questo, si vuole l'orizzonte.
 
+Se si trascura il secondo termine si ritorna ad avere l'orizzonte. Per $L \to \infty$ in $D = 4$, si ha 
+\begin{equation}
+    e^{2A(r)} = 1 - \frac{m}{r} + \frac{q^2}{L^2} = 0 \to r_\pm = \frac{m \pm \sqrt{m^2 - 4q^2}}{2}, 
+\end{equation}
+ovvero si hanno due orizzonti. Nel limite supersimmetrico, $r_+ = r_-$  e i due orizzonti si sovrappongono in $r_\pm = m/2$ (\emph{external horizon}). Si guarda ora cosa accade nelle vicinanze di questo orizzonte (diverso da Schwarzschild)
+\begin{equation}
+    ds^2 = -\bigg(1 - \frac{q}{r}\bigg)^2\,dt^2 + \frac{1}{(1 - q/r)^2}\,dr^2 + r^2\,d\Omega_2^2,\quad F = \frac{q}{r^2}\,(dr \wedge dt).
+\end{equation} 
+Se si riscrive $r = R + q$ si trova che 
+\begin{equation}
+    1 - \frac{q}{r} = \frac{1}{1 + q/R} = \frac{1}{H(r)},
+\end{equation}
+allora 
+\begin{equation}
+\label{eq: metrica ???}
+    ds^2 = -\frac{1}{H^2}\,dt^2 + H^2(dR^2 + R^2\,d\Omega_2^2),\quad F = \frac{q}{R^2H^2}(dR \wedge dt),\,A = \frac{dt}{H},
+\end{equation}
+più il gauge. L'orizzonte ora sta ad $R = 0$ e si è anche trovato un spazio euclideo piatto. Per $R \to \infty$ si ha $H \to 1$ e si trova Minkowski (perché si è con $\Lambda = 0$), si ha quindi un buco nero estremale asintoticamente piatto, cioè all'infinito va come Minkowski. $A$ è puro gauge e quindi si può mettere a zero. Per $R \to 0$ si ha $H(r) \simeq q/R$, allora 
+\begin{equation}
+    ds^2 = -\frac{R^2}{q^2}\,dt^2 + \frac{q^2}{R^2}\,dR^2 + q^2\,d\Omega_2^2,\quad A \to \frac{R}{q}\,dt,
+\end{equation}
+dove $q^2\,d\Omega_2^2$ è la metrica della sfera $S^2$. Se si definisce $z = q^2/R$, allora 
+\begin{equation}
+    ds^2 = q^2\bigg(\frac{-dt^2 + dz^2}{z^2}\bigg) + q^2\,d\Omega_2^2.
+\end{equation}
+Lo spazio vicino all'orizzonte pertanto è $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$ con $q$ raggio sia di anti-De Sitter che della sfera. Pertanto, localmente $\group{SO}{2,1} \ot \group{SO}{3}$. 
+\begin{obs}
+    $H(r) = 1 + q/R$ dove $1$ è una costante arbitraria di integrazione, scelta così per comodità. Si potrebbe scegliere la costante di integrazione nulla, cosicché $H(r) = q/R$. La soluzione $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$ che prima era un'approssimazione al leading order ora è esatta, ed è la \emph{soluzione di Robertson-Bertotto}. Inoltre, è massimalmente supersimmetrica.
+\end{obs}
+Quindi \eqref{eq: metrica ???} la si pensa come un'interpolazione tra Minkowski e $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$. Per vedere che la soluzione di Robertson-Bertotto ha simmetria prima discussa $\group{SO}{2,1} \ot \group{SO}{3}$, si considera che $\Lie_VF$ con $F = (q/z^2)(dt \wedge dz)$, la quale è nulla per $\group{SO}{3}$ in quanto è indipendente da $\theta$ e da $\phi$, ed è nulla per P,D,K isometrie di anti-De Sitter 2-dimensionale. 
+
+Buchi neri supersimmetrici che sono asintoticamente anti-De Sitter esistono se si introducono i buchi neri rotanti. Una soluzione con quasi queste caratteristiche è 
+\begin{equation}
+    ds^2 = -\bigg(\frac{r}{L} - \frac{L}{2r}\bigg)^2\,dt^2 + \frac{1}{\bigg(\frac{r}{L} - \frac{L}{2r}\bigg)^2}\,dr^2 + r^2\,ds^2(\bb{H}^2),
+\end{equation}
+dove 
+\begin{equation}
+    F = \frac{L}{2}\frac{dx \wedge dy}{y^2},\quad ds^2(\bb{H}^2) = \frac{dx^2 + dy^2}{y^2}.
+\end{equation}
+Per $r \to \infty$ si ha $r/L - L/2r \to r/L$ e allora la metrica non conformamente piatta 
+\begin{equation}
+    ds^2 = L^2\bigg[\frac{dr^2}{r^2} + \frac{r^2}{L^2}\bigg(-\frac{dt^2}{L^2} + ds^2(\bb{H}^2)\bigg)\bigg]
+\end{equation}
+Le asintotic locally AdS sono quelle che interessano al momento. 
+\begin{obs}
+    Conformamente piatta significa che la metrica può essere scritta come piatta moltiplicata per un fattore conforme. 
+\end{obs}
+Si ha orizzonte per $r_*^2 = L^2/2$, cioè quando il termine che moltiplica $dt^2$ si annulla. Se si scrive $r = r_* + R$ e $z = L^2/2R$, allora per $r \to r_*$ si ha 
+\begin{equation}
+    ds^2 = \frac{L^2}{4}\bigg(\frac{-dt^2 + dz^2}{z^2}\bigg) + \frac{L^2}{2}ds^2(\bb{H}^2) \to \bb{A}\mathbbm{d}\bb{S} \times \bb{H}^2.
+\end{equation}
+Quindi è un buco nero estremale supersimmetrico asintotic locally AdS, il problema è la geoemtria dell'orizzonte. Questa è non-compatta (spazio iperbolico). Si può ovviare a questo problema facendo un quoziente: $\bb{H}^2/\Gamma = \Sigma_g$ superficie di Riemann con $g$ genus e $g > 1$ ($g = 0$ è la sfera, $g = 1$ il toro e così via). 
+\begin{obs}
+    Per $g \ge 2$ la metrica è sempre localmente iperbolica. $\Gamma$ è un sottogruppo delle isometrie di $\bb{H}^2$, $\Gamma \subset \group{SL}{2,\bb{C}}$.
+\end{obs}
+
+\section{Supergravità in \texorpdfstring{$D = 11$}{D = 11}}
+Si contano i gradi di libertà di $e^a_\mu$ e $\Psi_\mu$, per farlo si considera una perturbazione attorno a Minkowski:
+\begin{equation}
+    \#dof(e^a_\mu) = \frac{D(D - 3)}{2} = \frac{D(D - 1)}{2} - (D - 1) - 1,
+\end{equation}
+dove il primo termine è relativo alla metrica spaziale simmetria, il secondo per $\p^i h_{ij} = 0$ e il terzo per $h_{ii} = 0$;
+\begin{equation}
+    \#dof(\Psi_\mu) = \frac{1}{2}(D - 3)2^{[D/2]},
+\end{equation}
+dove $1/2$ è dovuto al fatto che l'equazione è del primo ordine mentre $D - 3$ sono i gradi di libertà di gauge di Rarita-Schwinger. In $D = 11$ si trova che 
+\begin{equation}
+    \#dof(e^a_\mu) = 44,\quad \#dof(\Psi_\mu) = 128.
+\end{equation}
+In $D = 11$ si può imporre anche la condizione di Majorana e avere i 128 gradi di libertà reali. Si devono matchare gli 84 gradi di libertà mancanti. Si spera di trovarli bosonici senza dover aggiungere fermioni, campi di gauge (9 dof), $p$-forme con $p > 1$. Spero di trovare una $p$-forma con 84 dof on-shell, uso una 3-forma. 
