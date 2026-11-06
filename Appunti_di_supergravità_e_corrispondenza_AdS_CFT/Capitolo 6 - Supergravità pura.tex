@@ -1,15 +1,14 @@
 \chapter{Supergravità pura}
-La \emph{supergravità pura} è la teoria di supergravità più semplice, talvolta chiamata anche \emph{supergravità minimale}, dato che, almeno in $D = 4$, gli unici due campi sono la metrica, cioè il vielbein $e_\mu^a$, e il gravitino, cioè il campo di Rarita-Schwinger $\psi_\mu$. Esistono anche altre teorie che estendono la teoria minimale, dette appunto \emph{supergravità estese}, che includono le seguenti aggiunte:
-\begin{enumerate}
-    \item l'introduzione della costante cosmologica $\Lambda$;
-    \item l'estensione a dimensioni $D > 4$;
-    \item l'inclusione di più copie del gravitino $\psi_\mu^I$, $I = \{1,\dots,\fan{N}\}$.
-\end{enumerate}
-Per ogni dimensione esiste ovviamente un numero minimo per $\fan{N}$, il fatto meno ovvio è che esiste anche un numero massimo $\fan{N}_{max}$. Ad esempio, per $D = 4$ si ha $\fan{N}_{max} = 8$. Le teorie di supergravità con $\fan{N} = \fan{N}_{max}$ sono dette \emph{supergravità massimali}. 
+Nei capitoli precedenti, si sono discusse le idee e le implementazioni dell'invarianza di Lorentz, dello spin relativistico, dei principi di gauge, della supersimmetria globale e della geometria dello spaziotempo. Si vuole ora studiare come questi elementi si combinano nella supergravità. L'idea fondamentale è che la supersimmetria vale localmente in una teoria di supergravità. L'azione è invariante sotto trasformazioni supersimmetriche dove i parametri spinoriali $\epsilon(x)$ sono funzioni arbitrarie delle coordinate spaziotemporali. L'algebra della supersimmetria coinvolgerà quindi i parametri di traslazione $\b{\epsilon}_1\gamma^\mu\epsilon_2$, i quali devono essere pensati come diffeomorfismi. Pertanto, la supersimmetria locale richiede la gravità. Il ``contrario'' è anche vero. IN ogni teoria supersimmetria che include la gravità, la supersimmetria deve essere realizzata localmente. La ragione è che uno spinore costante $\epsilon$ non è compatibile con le simmetrie richieste da una teoria di gravità che include i fermioni. L'estensione $\epsilon \mapsto \epsilon(x)$ è necessaria.
+
+Una teoria di supergravità è una teoria di campo non lineare, e quindi interagente, che necessariamente contiene il multipletto di gauge o di gravità insieme a, eventualmente, altri multipletti di materia della sottostante algebra globale supersimmetrica. Il multipletto di gauge consiste nel vielbein $e^a_\mu(x)$ che descrive il gravitone, più uno specifico numero $\NSC$ di spinori-vettori $\Psi_\mu^i(x)$ con $i = 1,\dots,\NSC$, i cui quanti sono i gravitini, i corrispettivi supersimmetrici dei gravitoni. Nel caso fondamentale della supergravità $\NSC = 1$ in $D = 4$, detta anche \emph{supergravità minimale}, il multipletto di gauge consiste nel gravitone ed un singolo spinore di Majorana, cioè di un singolo gravitino. In tutti gli altri casi, che prendono il nome di \emph{teorie di supergravità estese}, sia per $\NSC \ge 2$ in $D = 4$ che per $\NSC \ge 1$ in $D \ge 5$, sono necessari campi addizionali nel multipletto di gauge. Inoltre, le teorie estese possono anche eventualmente includere la costante cosmologica $\Lambda$. 
+
+Le teoria di supergravità esistono per $D \le 11$. Per ogni dimensione $D$, è richiesto uno specifico tipo di spinore. Per $D = 4$, queste teorie esistono per $\NSC = 1,\dots,8$. Oltre questi limiti, la supersimmetria locale fallisce e le equazioni classiche del moto sono inconsistenti. Le teorie di supergravità dove $\NSC$ assume il valore massimo possibile sono dette \emph{teorie di supergravità massimali}.
 \begin{obs}
-    Un esempio importante di supergravità massimale è per $D = 11$ dove esistono gli spinori di Majorana e la teoria minimale coincide con quella massimale, implicando che esiste un'unica teoria di supergravità in $D = 11$. Un altro esempio importante è per $D = 10$ dove esistono gli spinori di Majorana-Weyl permettendo due possibili teorie di supergravità: le \emph{teorie di tipo I} con $\fan{N} = 1$ e le \emph{teorie di tipo II} con $\fan{N} = 2$; queste sono particolarmente importanti dato il loro legame con la Teoria delle Stringhe. 
+    Un esempio importante di supergravità massimale si ha per $D = 11$, dove esistono gli spinori di Majorana e la teoria minimale, cioè con $\NSC = 1$, coincide con quella massimale, implicando quindi che esiste un'unica teoria di supergravità in $D = 11$. Un altro esempio importante è per $D = 10$ dove esistono gli spinori di Majorana-Weyl, permettendo quindi due possibili teorie di supergravità: le \emph{teorie di tipo I} con $\fan{N} = 1$ e le \emph{teorie di tipo II} con $\fan{N} = 2$; entrambe sono particolarmente importanti dato il loro legame con la Teoria delle Stringhe. 
 \end{obs}
 
+\section{Supergravità minimale}
 Ci si concentra ora sulla teoria minimale in $D = 4$ e $\fan{N} = 1$. L'azione da cui si parte è $S = S_{HE} + S_{RS}$, dove
 \begin{equation}
     S_{HE} = \frac{1}{2k^2}\int d^Dx\,ee^{a\mu}e^{b\nu}R_{\mu\nu},    
@@ -1148,7 +1147,7 @@ Lo spazio vicino all'orizzonte pertanto è $\bb{A}\mathbbm{d}\bb{S} \times \bb{S
 \begin{obs}
     $H(r) = 1 + q/R$ dove $1$ è una costante arbitraria di integrazione, scelta così per comodità. Si potrebbe scegliere la costante di integrazione nulla, cosicché $H(r) = q/R$. La soluzione $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$ che prima era un'approssimazione al leading order ora è esatta, ed è la \emph{soluzione di Robertson-Bertotto}. Inoltre, è massimalmente supersimmetrica.
 \end{obs}
-Quindi \eqref{eq: metrica ???} la si pensa come un'interpolazione tra Minkowski e $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$. Per vedere che la soluzione di Robertson-Bertotto ha simmetria prima discussa $\group{SO}{2,1} \ot \group{SO}{3}$, si considera che $\Lie_VF$ con $F = (q/z^2)(dt \wedge dz)$, la quale è nulla per $\group{SO}{3}$ in quanto è indipendente da $\theta$ e da $\phi$, ed è nulla per P,D,K isometrie di anti-De Sitter 2-dimensionale. 
+Quindi \eqref{eq: metrica ???} la si pensa come un'interpolazione tra Minkowski e $\bb{A}\mathbbm{d}\bb{S} \times \bb{S}^2$. Per vedere che la soluzione di Robertson-Bertotto ha simmetria prima discussa $\group{SO}{2,1} \ot \group{SO}{3}$, si considera che $\Lie_VF$ con $F = (q/z^2)(dt \wedge dz)$, la quale è nulla per $\group{SO}{3}$ in quanto è indipendente da $\theta$ e da $\phi$, ed è nulla per P, D, K isometrie di anti-De Sitter 2-dimensionale. 
 
 Buchi neri supersimmetrici che sono asintoticamente anti-De Sitter esistono se si introducono i buchi neri rotanti. Una soluzione con quasi queste caratteristiche è 
 \begin{equation}
@@ -1170,7 +1169,7 @@ Si ha orizzonte per $r_*^2 = L^2/2$, cioè quando il termine che moltiplica $dt^
 \begin{equation}
     ds^2 = \frac{L^2}{4}\bigg(\frac{-dt^2 + dz^2}{z^2}\bigg) + \frac{L^2}{2}ds^2(\bb{H}^2) \to \bb{A}\mathbbm{d}\bb{S} \times \bb{H}^2.
 \end{equation}
-Quindi è un buco nero estremale supersimmetrico asintotic locally AdS, il problema è la geoemtria dell'orizzonte. Questa è non-compatta (spazio iperbolico). Si può ovviare a questo problema facendo un quoziente: $\bb{H}^2/\Gamma = \Sigma_g$ superficie di Riemann con $g$ genus e $g > 1$ ($g = 0$ è la sfera, $g = 1$ il toro e così via). 
+Quindi è un buco nero estremale supersimmetrico asintotic locally AdS, il problema è la geeomtria dell'orizzonte. Questa è non-compatta (spazio iperbolico). Si può ovviare a questo problema facendo un quoziente: $\bb{H}^2/\Gamma = \Sigma_g$ superficie di Riemann con $g$ genus e $g > 1$ ($g = 0$ è la sfera, $g = 1$ il toro e così via). 
 \begin{obs}
     Per $g \ge 2$ la metrica è sempre localmente iperbolica. $\Gamma$ è un sottogruppo delle isometrie di $\bb{H}^2$, $\Gamma \subset \group{SL}{2,\bb{C}}$.
 \end{obs}
