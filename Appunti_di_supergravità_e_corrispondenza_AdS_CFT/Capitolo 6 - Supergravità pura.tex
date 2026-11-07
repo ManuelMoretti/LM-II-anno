@@ -8,32 +8,49 @@ Le teoria di supergravità esistono per $D \le 11$. Per ogni dimensione $D$, è 
     Un esempio importante di supergravità massimale si ha per $D = 11$, dove esistono gli spinori di Majorana e la teoria minimale, cioè con $\NSC = 1$, coincide con quella massimale, implicando quindi che esiste un'unica teoria di supergravità in $D = 11$. Un altro esempio importante è per $D = 10$ dove esistono gli spinori di Majorana-Weyl, permettendo quindi due possibili teorie di supergravità: le \emph{teorie di tipo I} con $\fan{N} = 1$ e le \emph{teorie di tipo II} con $\fan{N} = 2$; entrambe sono particolarmente importanti dato il loro legame con la Teoria delle Stringhe. 
 \end{obs}
 
-\section{Supergravità minimale}
-Ci si concentra ora sulla teoria minimale in $D = 4$ e $\fan{N} = 1$. L'azione da cui si parte è $S = S_{HE} + S_{RS}$, dove
+Nel seguito ci si concentra chiaramente sulla teoria minimale $\fan{N} = 1$ in $D = 4$, dato che i suoi termini sono rilevanti in tutte le teorie di supergravità. Tuttavia, i primi passaggi per la dimostrazione della supersimmetria locale sono universali, cioè sono validi in qualsiasi dimensione $D$.
+
+\section{Parte universale della supergravità}
+L'azione che si studia in questa sezione nella somma delle azioni di Hilbert-Einstein per la gravità nel formalismo del secondo ordine e l'estensione dell'azione del gravitino libero \eqref{eq: azione di Rarita-Schwinger (massless)} invariante sotto trasformazioni di Lorentz e diffeomorfismi. Questa azione è moltiplicata per un fattore $1/2$ dato che si lavora con un gravitino di Majorana e riscalata da un fattore $1/k^2$ per comodità\footnote{La derivazione che si presenta qua usa le proprietà di trasposizione delle matrici $\gamma$ (in particolare con $t_3 = 1$) e le proprietà di realtà strettamente valide per gli spinori di Majorana in $D = 2, 4, 8\mod{8}$}. L'azione è $S = S_{HE} + S_{RS}$ con 
 \begin{equation}
-    S_{HE} = \frac{1}{2k^2}\int d^Dx\,ee^{a\mu}e^{b\nu}R_{\mu\nu},    
+    S_{HE} = \frac{1}{2k^2}\int d^Dx\,e\,e^{a\mu}e^{b\nu}R_{\mu\nu},    
 \end{equation}
 \begin{equation}
-    S_{RS} = -\frac{1}{2k^2}\int d^Dx\,e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho.
+    S_{RS} = -\frac{1}{2k^2}\int d^Dx\,e\,\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho.
 \end{equation}
-Le variazioni, che ora non sono arbitrarie, sono 
+La derivata covariante del gravitino è data da 
 \begin{equation}
-    \delta e_\mu^a = \frac{1}{2}\b{\epsilon}\gamma^a\psi_\mu,\quad \delta\psi_\mu = \nabla_\mu\epsilon,
+    D_\mu\psi_\rho = \p_\mu\psi_\rho + \frac{1}{4}\omega_{\mu ab}\gamma^{ab}\psi_\rho.
 \end{equation}
-dove $\epsilon = \epsilon(x)$ è uno spinore di Majorana anti-commutante. Inoltre, usando la proprietà $\det{M} = \exp{\tr{(\log{M})}}$ dove $M$ è tale che $MM^{-1} = \IM$, si hanno 
+In questa sezione viene usata esclusivamente la connessione di spin torsion-free $\omega_{\nu ab}(e)$. Non è necessario includere i simboli di Christoffel $\Gamma^{\sigma}_{\nu\rho}(g)\psi_\rho$ nella derivata covariante del gravitino dato che la connessione di Levi-Civita è simmetrica, e il termine si annulla nell'azione $S_{RS}$ dato che $\gamma^{\mu\nu\rho}$ è anti-simmetrico. Le regole di trasformazione, che ora non sono arbitrarie, possono essere postulate essere
 \begin{equation}
-    \delta e^{b\rho} = -\frac{1}{2}\b{\epsilon}\psi^b,\quad \delta e = \frac{e}{2}\gamma^\rho\psi_\rho.
+    \begin{cases}
+        \delta e_\mu^a = \dfrac{1}{2}\b{\epsilon}\gamma^a\psi_\mu \\[2ex]
+        \delta\psi_\mu = D_\mu\epsilon(x)
+    \end{cases}.
 \end{equation}
-Quindi, la variazione dell'azione di Hilbert-Einstein è
+Il gravitino è il campo di gauge della supersimmetria locale, quindi è naturale postulare la sua regola di trasformazione come una generalizzazione allo spazio curvo di \eqref{eq: trasformazione di gauge campo R-S}. Per il vielbein, la regola di trasformazione appena postulata è la forma più semplice consistente con la struttura tensoriale richiesta e con la struttura di Bose-Einstein della supersimmetria\footnote{La possibile regola di trasformazione $\delta e^a_\mu \propto \b{\epsilon}\gamma_\mu\psi^a$ può essere dimostrata essere incompatibile con la supersimmetria locale.}. Inoltre, usando la proprietà $\det{M} = \exp{\tr{(\log{M})}}$ dove $M$ è una matrice tale che $MM^{-1} = \IM$, si deducono le trasformazioni 
+\begin{equation}
+    \delta e^\mu_a = -\frac{1}{2}\b{\epsilon}\gamma^\mu\psi_a,\quad \delta e = \frac{1}{2}e(\b{\epsilon}\gamma^\rho\psi_\rho).
+\end{equation}
+\begin{obs}
+    L'azione e le regole di trasformazione più sopra non è tutta la storia nemmeno per $\NSC = 1$ in $D = 4$, ma possono essere completate incorporando il formalismo del primo ordine in presenza di torsione. Per tutte le altre teorie, si devono anche aggiungere i termini che descrivono gli altri campo nel multipletto di gauge. La variazione dell'azione $S_D$ consiste nei termini lineari in $\psi_\mu$ provenienti dalla variazione del vielbein di $S_{HE}$ e dalla variazione del gravitino in $S_D$, mentre i termini cubici provengono dalla variazione dei campi di $S_D$. I termini lineari sono universali e si può dimostrare che questi svaniscono, come si vede nel seguito.
+\end{obs}
+Gli elementi fondamentali della dimostrazione sono l'algebra di Clifford delle matrici $\gamma$ che fanno da fondamento per la trattazione relativistica dello spin e alcune identità della geometria differenziale. Più avanti sarà utile anche l'identità di Fierz, che porta con sé l'anti-commutatività dei fermioni. Proprio per questa interazione la supergravità può esistere.
+
+Quindi, seguendo i calcoli eseguiti per determinare i termini gravitazionali di \eqref{eq: variazione azione H-E per vielbein (formalismo II ordine)}, la variazione dell'azione di Hilbert-Einstein
 \begin{equation}
     \begin{split}
-        \delta S_{HE} &= -\frac{1}{2k^2}\int d^Dx\,e(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\bigg(-\frac{1}{2}\b{\epsilon}\gamma^\mu\psi^a\bigg) \\
+        \delta S_{HE} &= \frac{1}{2k^2}\int d^Dx\,\{[2e(\delta e^{a\mu})e^{b\nu} + (\delta e)e^{a\mu}e^{b\nu}]R_{\mu\nu ab} + e\,e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab}\} \\
+        &= -\frac{1}{2k^2}\int d^Dx\,e(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\bigg(-\frac{1}{2}\b{\epsilon}\gamma^\mu\psi^a\bigg) \\
         &= -\frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^\mu\psi^\nu,
     \end{split} 
 \end{equation}
-dove nell'ultimo passaggio si è fatto in modo da rendere manifesto il tensore di Einstein $G_{\mu\nu}$. 
+dove la simmetria del tensore di Riemann $R_{\mu\nu ab} = R_{\nu\mu ba}$ porta ad un fattore due nella prima riga e dove nell'ultimo passaggio si è fatto in modo da rendere manifesto il tensore di Einstein $G_{\mu\nu}$. Nella seconda riga dove si sono inserite le variazioni rispetto al gravitino si osserva poi che il termine $\delta R_{\mu\nu ab}$ risulta in una derivata covariante totale, il cui integrale si annulla. 
 
-Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato piuttosto veloce, non si può dire lo stesso per quella di Rarita-Schwinger. Il punto di partenza è 
+---DA QUI---
+
+Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato piuttosto veloce, non si può dire lo stesso per quella di Rarita-Schwinger. Si usa il formalismo del secondo ordine, per cui l'integrazione per parti è valida ed è quindi sufficiente variare rispetto a $\b{\psi}_\mu$ e moltiplicare per due. Il punto di partenza è 
 \begin{equation}
     \begin{split}
         \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,(\delta e\b{\psi}_\mu \gamma^{\mu\nu\rho}D_\nu\psi_\rho + e\delta\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
@@ -46,7 +63,7 @@ dove si è prima considerato solo il primo ordine e infine si è integrato per p
 \begin{equation}
     \begin{split}
         (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho = -t_3\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\mu &= -\delta\b{\psi}_\mu\gamma^{\rho\nu\mu}D_\nu\psi_\rho \\
-        &= \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_rho,
+        &= \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho,
     \end{split}
 \end{equation}
 risultando quindi identico al primo. Pertanto, la variazione diventa 
@@ -100,7 +117,7 @@ dove $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\t
 \end{equation}
 Dunque, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$.
 
-\section{Lezione 19.10}
+\section{Formalismo di ordine 1.5 (lezione 19.10)}
 +PRIMA PARTE.
 
 Il tensore $T_{ab}^\nu = (1/2)\b{\psi}_a\gamma^\nu\psi_b$ determina la torsione, e quindi $\omega_{ab}^\nu$, mentre la contorsione è
@@ -115,7 +132,10 @@ dove il termine $\Lag_{quartic}$ contiene tutti i termini quartici nei campi $\p
 \begin{equation}
     \delta S = \int d^4x\,\bigg(\frac{\delta S}{\delta e}\delta_e S + \frac{\delta S}{\delta \psi}\delta_\psi S + \frac{\delta S}{\delta \omega}\delta_\omega S\bigg),
 \end{equation}
-dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. Si calcola, sapendo che $\gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d$, che 
+dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. 
+
+\subsection{SUSY locale della supergravità minimale}
+Si calcola, sapendo che $\gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d$, che 
 \begin{equation}
     e\gamma^{\mu\nu\rho} = -i\epsilon^{\mu\nu\rho\sigma}\gamma_*\gamma_\sigma,
 \end{equation}
@@ -350,7 +370,7 @@ Se si ha invece segnatura lorentziana, allora $\b{\epsilon}'\epsilon \ngtr 0$ qu
     \end{enumerate}
 \end{ex}
 
-\section{Spazio di anti-deSitter}
+\section{Supergravità di anti-De Sitter}
 Si modificano adesso le equazioni di supersimmetria. Si passa da $\delta_\epsilon\psi_\mu = D_\mu\epsilon$ a 
 \begin{equation}
     \h{D}_\mu\epsilon := D_\mu\epsilon - \frac{1}{2L}\gamma_\mu\epsilon
@@ -672,7 +692,7 @@ da cui si ricava l'\emph{equazione di embedding}
     -x_0^2 + \sum_{i=1}^{D - 1}x_i^2 - x_D^2 = -L^2,
 \end{equation}
 che descrive un'iperboloide, e quindi lo spazio di anti-De Sitter, rompendo Poincaré e lasciando solo $\group{SO}{2, D - 1}$. Se si opera una rotazione di Wick in una delle due coordinate temporali si ottiene uno spazio iperbolico; infatti, con $x_D \to ix_D$ si trova isometria $\group{SO}{1,D}$ come per lo spazio di De Sitter.
-\begin{table}[h]
+\begin{table}[ht]
     \centering 
     \begin{tabular}{|ccc|}
         \hline
@@ -1173,18 +1193,3 @@ Quindi è un buco nero estremale supersimmetrico asintotic locally AdS, il probl
 \begin{obs}
     Per $g \ge 2$ la metrica è sempre localmente iperbolica. $\Gamma$ è un sottogruppo delle isometrie di $\bb{H}^2$, $\Gamma \subset \group{SL}{2,\bb{C}}$.
 \end{obs}
-
-\section{Supergravità in \texorpdfstring{$D = 11$}{D = 11}}
-Si contano i gradi di libertà di $e^a_\mu$ e $\Psi_\mu$, per farlo si considera una perturbazione attorno a Minkowski:
-\begin{equation}
-    \#dof(e^a_\mu) = \frac{D(D - 3)}{2} = \frac{D(D - 1)}{2} - (D - 1) - 1,
-\end{equation}
-dove il primo termine è relativo alla metrica spaziale simmetria, il secondo per $\p^i h_{ij} = 0$ e il terzo per $h_{ii} = 0$;
-\begin{equation}
-    \#dof(\Psi_\mu) = \frac{1}{2}(D - 3)2^{[D/2]},
-\end{equation}
-dove $1/2$ è dovuto al fatto che l'equazione è del primo ordine mentre $D - 3$ sono i gradi di libertà di gauge di Rarita-Schwinger. In $D = 11$ si trova che 
-\begin{equation}
-    \#dof(e^a_\mu) = 44,\quad \#dof(\Psi_\mu) = 128.
-\end{equation}
-In $D = 11$ si può imporre anche la condizione di Majorana e avere i 128 gradi di libertà reali. Si devono matchare gli 84 gradi di libertà mancanti. Si spera di trovarli bosonici senza dover aggiungere fermioni, campi di gauge (9 dof), $p$-forme con $p > 1$. Spero di trovare una $p$-forma con 84 dof on-shell, uso una 3-forma. 
