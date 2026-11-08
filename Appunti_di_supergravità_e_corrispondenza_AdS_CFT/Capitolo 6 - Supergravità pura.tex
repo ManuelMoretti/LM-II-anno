@@ -24,6 +24,7 @@ La derivata covariante del gravitino è data da
 \end{equation}
 In questa sezione viene usata esclusivamente la connessione di spin torsion-free $\omega_{\nu ab}(e)$. Non è necessario includere i simboli di Christoffel $\Gamma^{\sigma}_{\nu\rho}(g)\psi_\rho$ nella derivata covariante del gravitino dato che la connessione di Levi-Civita è simmetrica, e il termine si annulla nell'azione $S_{RS}$ dato che $\gamma^{\mu\nu\rho}$ è anti-simmetrico. Le regole di trasformazione, che ora non sono arbitrarie, possono essere postulate essere
 \begin{equation}
+\label{eq: regole trasformazione SG vielbein + gravitino}
     \begin{cases}
         \delta e_\mu^a = \dfrac{1}{2}\b{\epsilon}\gamma^a\psi_\mu \\[2ex]
         \delta\psi_\mu = D_\mu\epsilon(x)
@@ -40,6 +41,7 @@ Gli elementi fondamentali della dimostrazione sono l'algebra di Clifford delle m
 
 Quindi, seguendo i calcoli eseguiti per determinare i termini gravitazionali di \eqref{eq: variazione azione H-E per vielbein (formalismo II ordine)}, la variazione dell'azione di Hilbert-Einstein
 \begin{equation}
+\label{eq: variazione azione HE SG (II ordine)}
     \begin{split}
         \delta S_{HE} &= \frac{1}{2k^2}\int d^Dx\,\{[2e(\delta e^{a\mu})e^{b\nu} + (\delta e)e^{a\mu}e^{b\nu}]R_{\mu\nu ab} + e\,e^{a\mu}e^{b\nu}\delta R_{\mu\nu ab}\} \\
         &= -\frac{1}{2k^2}\int d^Dx\,e(2e^{b\nu}R_{\mu\nu ab} - e_{a\mu}R)\bigg(-\frac{1}{2}\b{\epsilon}\gamma^\mu\psi^a\bigg) \\
@@ -48,13 +50,11 @@ Quindi, seguendo i calcoli eseguiti per determinare i termini gravitazionali di 
 \end{equation}
 dove la simmetria del tensore di Riemann $R_{\mu\nu ab} = R_{\nu\mu ba}$ porta ad un fattore due nella prima riga e dove nell'ultimo passaggio si è fatto in modo da rendere manifesto il tensore di Einstein $G_{\mu\nu}$. Nella seconda riga dove si sono inserite le variazioni rispetto al gravitino si osserva poi che il termine $\delta R_{\mu\nu ab}$ risulta in una derivata covariante totale, il cui integrale si annulla. 
 
----DA QUI---
-
 Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato piuttosto veloce, non si può dire lo stesso per quella di Rarita-Schwinger. Si usa il formalismo del secondo ordine, per cui l'integrazione per parti è valida ed è quindi sufficiente variare rispetto a $\b{\psi}_\mu$ e moltiplicare per due. Il punto di partenza è 
 \begin{equation}
     \begin{split}
-        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,(\delta e\b{\psi}_\mu \gamma^{\mu\nu\rho}D_\nu\psi_\rho + e\delta\b{\psi}\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
-        &+ e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho + (???)\delta e^{a\mu}) \\
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,[(\delta e)\b{\psi}_\mu \gamma^{\mu\nu\rho}D_\nu\psi_\rho + e(\delta\b{\psi}_\mu)\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
+        &+ e\b{\psi}\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho + (???)\delta e^{a\mu}] \\
         &\simeq -\frac{1}{2k^2}\int d^Dx\,e(\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\delta\psi_\rho) \\
         &= \int d^Dx\,e[\delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho - (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho],
     \end{split}
@@ -62,222 +62,275 @@ Anche se il calcolo della variazione dell'azione di Hilbert-Einstein è stato pi
 dove si è prima considerato solo il primo ordine e infine si è integrato per parti. Il secondo termine si può riscrivere tramite un Majorana flip come 
 \begin{equation}
     \begin{split}
-        (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho = -t_3\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\mu &= -\delta\b{\psi}_\mu\gamma^{\rho\nu\mu}D_\nu\psi_\rho \\
-        &= \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho,
+        (D_\nu\b{\psi}_\mu)\gamma^{\mu\nu\rho}\delta\psi_\rho = -t_3\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\mu = -\delta\b{\psi}_\mu\gamma^{\rho\nu\mu}D_\nu\psi_\rho = \delta\b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho,
     \end{split}
 \end{equation}
 risultando quindi identico al primo. Pertanto, la variazione diventa 
 \begin{equation}
     \begin{split}
-        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,2e\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\rho \\
-        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}\nabla_\mu\nabla_\nu\psi_\rho \\
-        &= \frac{1}{k^2}\int d^Dx\,e\b{\epsilon}\gamma^{\mu\nu\rho}D_{[\mu}D_{\nu]}\psi_\rho.
+        \delta S_{RS} &= -\frac{1}{2k^2}\int d^Dx\,2(e\delta\b{\psi}_\rho\gamma^{\mu\nu\rho}D_\nu\psi_\rho) \\
+        &= \frac{1}{k^2}\int d^Dx\,e\,\b{\epsilon}\gamma^{\mu\nu\rho}\nabla_\mu\nabla_\nu\psi_\rho \\
+        &= \frac{1}{k^2}\int d^Dx\,e\,\b{\epsilon}\gamma^{\mu\nu\rho}D_{[\mu}D_{\nu]}\psi_\rho.
     \end{split}
 \end{equation}
-Quello che si deve adesso calcolare ora è $\comm{D_\mu}{D_\nu}\psi_\rho$, per farlo si può però passare da $\comm{\nabla_\mu}{\nabla_\nu}\chi$ dove $\chi$ è uno spinore di Dirac, senza quindi considerare l'indice di Lorentz. Quindi, si parte da 
+Quello che si deve adesso calcolare è il commutatore $\comm{D_\mu}{D_\nu}\psi_\rho$. Per farlo si può passare dal calcolo di $\comm{\nabla_\mu}{\nabla_\nu}\chi$ dove $\chi$ è uno spinore di Dirac, permettendo quindi di non considerare l'indice di Lorentz. Si parte allora calcolando 
 \begin{equation}
     \begin{split}
         D_\mu D_\nu \chi &= \p_\mu\p_\nu \chi + \frac{1}{4}(\omega_\mu^{ab}\gamma_{ab}\p_\nu\chi + \omega_\nu^{ab}\gamma_{ab}\p_\mu\chi) \\
         &+ \frac{1}{4}\p_\mu\omega_\nu^{ab}\gamma_{ab}\chi + \frac{1}{16}\omega_\mu^{cd}\omega_\nu^{ab}\gamma_{cd}\gamma_{ab}\chi,
     \end{split}
 \end{equation}
-con cui si può calcolare 
+con cui si può determinare il commutatore
 \begin{equation}
     \begin{split}
         (D_\mu D_\nu - D_\nu D_\mu)\chi &= \frac{1}{4}(\p_\mu\omega_\nu^{ab} - \p_\nu\omega^{ab})\gamma_{ab}\chi \\
-        &= \frac{1}{8}\bigg[\omega_{[\mu}^{cd}\omega_{\nu]}^{ab}\frac{1}{2}\bigg(\gamma_{cd}\gamma_{ab} - \gamma_{ab}\gamma_{cd}\bigg)\bigg],
+        &= \frac{1}{8}\bigg[\omega_{[\mu}^{cd}\omega_{\nu]}^{ab}\frac{1}{2}\bigg(\gamma_{cd}\gamma_{ab} - \gamma_{ab}\gamma_{cd}\bigg)\bigg].
     \end{split}
 \end{equation}
-dove si può sostituire 
+Sostituendo in quest'ultima espressione la relazione 
 \begin{equation}
     \comm{\gamma_{cd}}{\gamma^{ab}} = -8\delta_{[c}^{[a}\gamma^{b]}_{d]} = \frac{1}{4}(\omega_{\mu ab}\omega^c_{\nu b} - \omega_{\nu av}\omega^c_{\mu b}),
 \end{equation}
-così da ottenere
+si ottiene
 \begin{equation}
     \comm{D_\mu}{D_\nu}\chi = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\chi,
 \end{equation}
-e di conseguenza 
+e dunque di conseguenza si trova il risultato cercato
 \begin{equation}
+\label{eq: commutatore derivate covarianti (gravitino)}
     \comm{D_\mu}{D_\nu}\psi_\rho = \frac{1}{4}R_{\mu\nu ab}\gamma^{ab}\psi_\rho.
 \end{equation}
-Quindi, usando questo risultato nell'espressione precedente di $\delta S_{RS}$ si ottiene 
+Quindi, usando il risultato \eqref{eq: commutatore derivate covarianti (gravitino)} nell'espressione precedente della variazione $\delta S_{RS}$, si ottiene 
 \begin{equation}
     \begin{split}
-        \delta S_{RS} &= \frac{1}{k^2}\int d^Dx\, \frac{e}{8}\b{\epsilon}\gamma^{\mu\nu\rho}\gamma_{\sigma\tau}R_{\mu\nu}^{\sigma\tau}\psi_\rho \\
-        &= \frac{1}{k^2}\int d^Dx\,\frac{e}{8}\b{\epsilon}(4\gamma^\mu R_\mu^\rho - 2\gamma^\rho R)\psi_\rho,
+        \delta S_{RS} = \frac{1}{8k^2}\int d^Dx\,e\,\b{\epsilon}\gamma^{\mu\nu\rho}\gamma_{\sigma\tau}R_{\mu\nu}^{\sigma\tau}\psi_\rho = \frac{1}{8k^2}\int d^Dx\,e\,\b{\epsilon}(4\gamma^\mu R_\mu^\rho - 2\gamma^\rho R)\psi_\rho,
     \end{split}
 \end{equation}
 dove si è usato che 
 \begin{equation}
+\label{eq: proprietà matrici gamma (5 indici)}
     \gamma^{\mu\nu\rho}\gamma_{\sigma\tau} = \gamma^{\mu\nu\rho}_{\sigma\tau} + 6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} + 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 6\gamma^{[\mu}\delta^{\nu}_{[\tau}\delta^{\rho]}_{\sigma]},
 \end{equation}
-dove $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 0$ per l'identità di Bianchi. Quindi, finalmente si ottiene che la variazione dell'azione di Rarita-Schwinger è
+con $\gamma^{\mu\nu\rho}_{\sigma\tau} = 0$ in $D = 4$ e $6\gamma^{[\mu\nu}_{[\tau}\delta^{\rho]}_{\sigma]} = 0$ per l'identità di Bianchi in assenza di torsione. Dunque, finalmente si ottiene che la variazione dell'azione di Rarita-Schwinger è
 \begin{equation}
     \delta S_{RS} = \frac{1}{2k^2}\int d^Dx\,e\bigg(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\bigg)\b{\epsilon}\gamma^{\mu}\psi^\nu \equiv -\delta S_{HE}.
 \end{equation}
-Dunque, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$.
+Pertanto, senza considerare i termini di quarto ordine nei campi, si ottiene effettivamente che $\delta S = 0$. Questo implica che la supersimmetria locale vale all'ordine lineare nei campi $\psi_\mu$ per ogni dimensione\footnote{Restrizioni sulla dimensione compaiono se la supersimmetria viene richiesta ad ordini successivi a quello lineare} $D$.
 
-\section{Formalismo di ordine 1.5 (lezione 19.10)}
-+PRIMA PARTE.
+\section{Supergravità al primo ordine}
+Oltre l'ordine lineare diventa complesso imporre la supersimmetria per ogni teoria di supergravità. Risulta percioò molto utile riconoscere semplificazioni che portano ad una riorganizzazione dei termini conveniente. Una semplificazione importante è l'espressione l'azione e le regole di trasformazione nel formalismo del primo ordine. Si continua a lavorare con l'azione $S = S_{HE} + S_{RS}$ della sezione precedente in $D$ dimensioni, ma si considera la connessione di spin $\omega_{\mu ab}$ come una variabile indipendente. Non c'è nessun termine che contiene i simboli di Christoffel in $S_{RS}$, dato che la sua inclusione sarebbe inconsistente con la supersimmetria locale\footnote{Si noti che un termine di questo tipo è permesso dall'invarianza sotto diffeomorfismi dato che la parte antisimmetrica di $\Gamma^\rho_{\mu\nu}$ è proporzionale al tensore di torsione.}.
 
-Il tensore $T_{ab}^\nu = (1/2)\b{\psi}_a\gamma^\nu\psi_b$ determina la torsione, e quindi $\omega_{ab}^\nu$, mentre la contorsione è
+Come discusso in precedenza, nel formalismo del primo ordine le equazioni del moto per la connessione di spin possono essere risolte per ottenere una connessione con torsione. Questo risultato può essere poi sostiuito nell'azione per ottenere l'equivalente fisico della teoria con una connessione priva di torsione e termini espliciti a quattro fermioni nel formalismo del secondo ordine. Si segue quindi questo processo per l'azione di supergravità della sezione precedente $S = S_{HE} + S_{RS}$, utilizzando la variazione della connessione \eqref{eq: variazione azione HE (I ordine)} di $S_{HE}$. Per $S_{RS}$ si ottiene 
 \begin{equation}
-    K_{\mu\nu\rho} = \frac{1}{4}\b{\psi}_\mu\gamma_\rho\psi_\nu - \psi_\nu\gamma_\mu\psi_\rho + \b{\psi}_\rho\gamma_\nu\psi_\mu.
+    \delta S_{RS} = -\frac{1}{8k^2}\int d^Dx\,e\,(\b{\psi}_\mu\gamma^{\mu\nu\rho}\gamma_{ab}\psi_\rho)\delta\omega^{ab}_\nu.
 \end{equation}
-Ora si sa che $\omega_\mu^{ab}(e^a_\mu,\psi_\mu) = \omega_\mu^{ab}(e) + K_\mu^{ab}(e_\mu^a,\psi_\mu)$, per cui l'azione è diversa da quella già vista
-\begin{multline}
-    S_{HE}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) + S_{RS}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) = \\ = S + \frac{1}{2k^2}\int d^4x\,e[R(e) - \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \Lag_{quartic}],
-\end{multline}
-dove il termine $\Lag_{quartic}$ contiene tutti i termini quartici nei campi $\psi_\mu$. La variazione di $\psi_\mu$ è $\delta\psi_\mu = \p_\mu\epsilon + (1/4)\omega_\mu^{ab}\gamma_{abc}$, per cui 
+La relazione dell'algebra di Clifford necessaria per semplificare questo bilineare è sempre \eqref{eq: proprietà matrici gamma (5 indici)}. Contiene matrici $\gamma$ di rango uno, tre e cinque. Lavorando con spinori di Majorana in $D = 2,3,4,10,11$, gli spinori di rango tre sono simmetrici. Quindi, i termini di rango tre si annullano a causa dell'antisimmetria degli indici $\mu$ e $\rho$ del gravitino. Si ottiene allora 
 \begin{equation}
-    \delta S = \int d^4x\,\bigg(\frac{\delta S}{\delta e}\delta_e S + \frac{\delta S}{\delta \psi}\delta_\psi S + \frac{\delta S}{\delta \omega}\delta_\omega S\bigg),
+    \b{\psi}_\mu\gamma^{\mu\nu\rho}\gamma_{ab}\psi_\rho = \b{\psi}_\mu(\gamma^{\mu\nu\rho}_{ab} + 6\gamma^{[\mu}e^\nu_{[b}e^{[\rho}_{a]})\psi_\rho.
 \end{equation}
-dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. 
+Usando poi \eqref{eq: variazione azione HE (I ordine)} si può vedere che $\delta S = 0$. La struttura della traccia nei due termini coincide esattamente, quindi l'unica soluzione per la torsione è 
+\begin{equation}
+\label{eq: torsione supergravità (I ordine)}
+    T^\nu_{ab} = \frac{1}{2}\b{\psi}_a\gamma^\nu\psi_b + \frac{1}{4}\b{\psi}_\mu\gamma^{\mu\nu\rho}_{ab}\psi_\rho. 
+\end{equation}
+Il tensore di rango cinque $\gamma^{\mu\nu\rho}_{ab}$ è una delle complicazioni della supergravità per $D \ge 5$, ma per $D = 4$ si annulla banalmente. L'espressione ottenuta in \eqref{eq: torsione supergravità (I ordine)} può essere sostituita nell'azione iniziale $S = S_{HE} + S_{RS}$ per ottenere l'azione di secondo ordine in $D = 4$ della supergravità
+\begin{equation}
+\label{eq: azione SG di secondo ordine in D = 4}
+    S = \frac{1}{2k^2}\int d^4x\,e\,[R(e) - \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \Lag_{\rem{SG},\rem{torsion}}],
+\end{equation}
+dove 
+\begin{equation}
+    \Lag_{\rem{SG},\rem{torsion}} = -\frac{1}{16}[(\b{\psi}^\rho\gamma^\mu\psi^\nu)(\b{\psi}_\rho\gamma_\mu\psi_\nu) - 4(\b{\psi}_\mu\gamma \cdot \psi)(\b{\psi}^\mu\gamma \cdot \psi)],
+\end{equation}
+con la curvatura $R(e)$ e la derivata covariante del gravitino che contengono la connessione torsion-free 
+\begin{equation}
+    D_\nu\psi_\rho = \p_\nu\psi_\rho + \frac{1}{4}\omega_{\nu ab}(e)\gamma^{ab}\psi_\rho.
+\end{equation}
+La teoria espressa da quest'ultima azione contiene termini per lo scattering dei gravitini. I loro effetti fisici sono necessari per la consistenza della teoria, che altrimenti non obbedisce la richiesta di supersimmetria locale. Questo significa che l'azione \eqref{eq: azione SG di secondo ordine in D = 4} è invariante sotto le regole di trasformazione \eqref{eq: regole trasformazione SG vielbein + gravitino} con la connessione
+\begin{equation}
+\label{eq: connessione di spin SG (I ordine)}
+    \omega_{\mu ab} = \omega_{\mu ab}(e) + K_{\mu ab},
+\end{equation}
+dove 
+\begin{equation}
+\label{eq: tensore di contorsione SG (I ordine)}
+    K_{\mu\nu\rho} = -\frac{1}{4}(\b{\psi}_\mu\gamma_\rho\psi_\nu - \b{\psi}_\nu\gamma_\mu\psi_\rho + \b{\psi}_\rho\gamma_\nu\psi_\mu).
+\end{equation}
 
-\subsection{SUSY locale della supergravità minimale}
-Si calcola, sapendo che $\gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d$, che 
+%% (lezione 19.10)
+\section{Formalismo di ordine 1.5}
+Si deve ora dimostrare l'invarianza sotto le regole di trasformazione \eqref{eq: regole trasformazione SG vielbein + gravitino} con la connessione \eqref{eq: connessione di spin SG (I ordine)} e il tensore di controsione \eqref{eq: tensore di contorsione SG (I ordine)}. Per farlo, si osserva prima di tutto che la variazione dell'azione contiene termine che sono di primo, terzo e quinto ordine nel campo di Rarita-Schwinger. Questi sono indipendenti e devono annullarsi separatamente. Dati i grandi problemi computazionali che si incontrano con il termine di ordine cinque nel gravitino, il trattamento più semplice della supergravità usa un formalismo intermedio tra quello del primo ordine e quello del secondo ordine. Per questo motivo, questo nuovo formalismo è chiamato \emph{formalismo di ordine 1.5} (1.5-order formalism), applicabile alle teorie di supergravità in qualsiasi dimensione. 
+
+Di fatto si sta lavorando con il formalismo del secondo ordine dato che ci sono solo due campi indipendenti: $e^a_\mu$ e $\psi_\mu$. Tuttavia, dato che la lagrangiana del secondo ordine è ottenuta sostituendo $\omega$ da \eqref{eq: connessione di spin SG (I ordine)} nell'azione del primo ordine, è possibile semplificare la dimostrazione dell'invarianza mantenendo il raggruppamento dei termini orginale. Per vederelo in maniera più concreta, si considera un'azione che sia un funzionale nelle tre variabili $S[e,\omega,\psi]$. Per calcolare la sua variazione si utilizza la regola della catena, per cui 
 \begin{equation}
-    e\gamma^{\mu\nu\rho} = -i\epsilon^{\mu\nu\rho\sigma}\gamma_*\gamma_\sigma,
+    \delta S[e,\omega(e) + K,\psi] = \int d^Dx\,\bigg[\frac{\delta S}{\delta e}\delta e + \frac{\delta S}{\delta \omega}\delta(\omega(e) + K) + \frac{\delta S}{\delta \psi}\delta\psi\bigg].
 \end{equation}
-cosicché 
+La variazione $\delta(\omega(e) + K)$ dovrebbe essere calcolata usando \eqref{eq: connessione di spin SG (I ordine)} e \eqref{eq: regole trasformazione SG vielbein + gravitino}. Tuttavia, non c'è bisogno di questo calcolo in quanto $\delta S/\delta \omega = 0$ data l'espressione della connessione di spin in \eqref{eq: connessione di spin SG (I ordine)}. Quindi, nel formalismo di ordine 1.5, si possono trascurare tutte le variazioni $\delta\omega$ per stabilire la supersimmetria locale. Si può quindi riassumere la prescrizione per $\delta S$ nel formalismo di ordine 1.5 come segue:
+\begin{enumerate}
+    \item usare l'azione $S[e,\omega,\psi]$ nel formalismo del primo ordine e le regole di trasformazione $\delta e$ e $\delta\psi$ con la connessione $\omega$ non specificata;
+    \item ignorare la variazione della connessione e calcolare 
+    \begin{equation}
+        \delta S = \int d^Dx\,\bigg[\frac{\delta S}{\delta e}\delta e + \frac{\delta S}{\delta \psi}\delta\psi\bigg];    
+    \end{equation}
+    \item sostituire $\omega$ da \eqref{eq: connessione di spin SG (I ordine)} nel risultato, il quale deve annullarsi per consistenza di una teoria di supergravità.
+\end{enumerate} 
+
+%% APPUNTI DELLA LEZIONE
+% Ora si sa che $\omega_\mu^{ab}(e^a_\mu,\psi_\mu) = \omega_\mu^{ab}(e) + K_\mu^{ab}(e_\mu^a,\psi_\mu)$, per cui l'azione è diversa da quella già vista
+% \begin{multline}
+%     S_{HE}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) + S_{RS}(\omega_\mu^{ab},e_\mu^a,\psi_\mu) = \\ = S + \frac{1}{2k^2}\int d^4x\,e[R(e) - \b{\psi}_\mu\gamma^{\mu\nu\rho}D_\nu\psi_\rho + \Lag_{quartic}],
+% \end{multline}
+% dove il termine $\Lag_{quartic}$ contiene tutti i termini quartici nei campi $\psi_\mu$. La variazione di $\psi_\mu$ è $\delta\psi_\mu = \p_\mu\epsilon + (1/4)\omega_\mu^{ab}\gamma_{abc}$, per cui 
+% \begin{equation}
+%     \delta S = \int d^4x\,\bigg(\frac{\delta S}{\delta e}\delta_e S + \frac{\delta S}{\delta \psi}\delta_\psi S + \frac{\delta S}{\delta \omega}\delta_\omega S\bigg),
+% \end{equation}
+% dove $\delta S/\delta \omega = 0$ perché il termine na\"ive non dipende da omega. Questo prende il nome di \emph{formalismo di ordine 1.5}. 
+
+\subsection{Supersimmetria della supergravità minimale}
+Si usa adesso il formalismo di ordine 1.5 per dimostrare che la supergravità $\NSC = 1$ in $D = 4$ è una teoria di gauge consistente, invariante sotto le regole di trasformazione \eqref{eq: regole trasformazione SG vielbein + gravitino} e \eqref{eq: connessione di spin SG (I ordine)} con $\epsilon(x)$ arbitrario. Dato che la dimostrazione è specifica per $D = 4$, per semplificare l'azione di Rarita-Schwinger si introduce l'elemento di rango massimo dell'algebra di Clifford $\gamma_* = i\gamma_0\gamma_1\gamma_2\gamma_3$. Con questo si possono riesprimere le matrici di Clifford di rango tre come 
 \begin{equation}
-    S_{RS} = \int d^4x\,\frac{i}{2k^2}\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_\nu\psi_\rho.
+    \gamma^{abc} = -i\epsilon^{abcd}\gamma_*\gamma_d,\quad \gamma^{\mu\nu\rho} = -ie^{-1}\epsilon^{\mu\nu\rho\sigma}\gamma_*\gamma_\sigma.
 \end{equation}
-Si devono calcolare le variazioni che compaiono in 
+La prima relazione vale localmente e la seconda, che è quella necessaria adesso, nella base coordinata dello spaziotempo. Con queste relazioni, si può riscrivere l'azione di Rarita-Schwinger come 
 \begin{equation}
-    \delta S = \delta_e S_{EH} + \delta_e S_{RS} + \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS},
+    S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_\nu\psi_\rho.
 \end{equation}
-dove si è già trovato 
+Il vantaggio di questa forma è che variazione $\delta e$ è necessaria solo in $\gamma_\sigma$ invece che in quattro posizioni in $e\,\gamma^{\mu\nu\rho}$. Si può ignorare la variazione $\delta\omega$ di $R_{\mu\nu ab}$ nel formalismo di ordine 1.5. Quindi, si devono considerare i quattro termini
 \begin{equation}
-    \delta_e S_{HE} = \frac{1}{2k^2}\int d^4x\, eG_{\mu\nu}\b{\epsilon}\gamma^\mu\cdots(???),
+    \delta S = \delta_e S_{HE} + \delta_e S_{RS} + \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS},
 \end{equation}
+dove il primo termine è la variazione dell'azione di gravità, il secondo è dovuta alla variazione del vielbein di $S_{RS}$, mentre il terzo e il quarto sono le variazioni di $\psi$ e $\b{\psi}$ rispettivamente. Si devono ottenere le variazioni di $\psi$ e $\b{\psi}$ separatamente perché l'integrazione per parti deve essere fatta con attenzione. Infatti, si incontrano molte sottigliezze a causa della connessione con torsione. 
+
+Il tensore di Ricci con torsione non è simmetrico, ma è possibile vedere che l'espressione \eqref{eq: variazione azione HE SG (II ordine)} è ancora valida, e la si scrive come
 \begin{equation}
-    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_a D_\nu\psi_\rho\b{\epsilon}\gamma^a\psi_\sigma.
+    \delta_e S_{HE} = \frac{1}{2k^2}\int d^4x\, e\bigg[R_{\mu\nu}(\omega) - \frac{1}{2}g_{\mu\nu}R(\omega)\bigg](-\b{\epsilon}\gamma^\mu\psi^\nu).
 \end{equation}
-Adesso 
+La variazione dell'azione di Rarita-Schwinger rispetto al vielbein contiene la variazione di $\gamma_\sigma$, ossia 
 \begin{equation}
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}(\b{\epsilon}\gamma^a\psi_\sigma)(\b{\psi}_\mu\gamma_*\gamma_a D_\nu\psi_\rho).
+\end{equation}
+La variazione della medesima azione rispetto a $\psi$ è data invece da
+\begin{equation}
+\label{eq: variazione azione RS per psi}
     \delta_\psi S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_\sigma D_{[\nu}D_{\rho]}\epsilon,
 \end{equation}
-mentre 
+mentre quella rispetto a $\b{\psi}$ da
 \begin{equation}
-    \delta_{\b{\psi}} S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}D_\nu\b{\psi}_\rho\gamma_*\gamma_\sigma\delta\psi_\mu,
+    \delta_{\b{\psi}} S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}D_\nu\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon,
 \end{equation}
-dove si è effettuato un Majorana flip con $t_3 = 1$ e $\delta \psi_\mu = D_\mu\epsilon$. Per integrare parti si considera che 
+dove si è effettuato un Majorana flip con $t_3 = 1$ e $\delta \psi_\mu = D_\mu\epsilon(x)$. Il termine contenuto in $\delta_{\b{\psi}} S_{RS}$ può essere integrato per parti. Si calcola prima la derivata totale
 \begin{equation}
     \begin{split}
         D_\nu(\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon) &= (D_\nu\b{\psi}_\rho)\gamma_*\gamma_\sigma D_\mu\epsilon + \b{\psi}_\rho\gamma_*(D_\nu \gamma_\sigma)D_\mu\epsilon \\
-        &+ \b{\psi}_\rho\gamma_*\gamma_\sigma D_\nu D_\mu\epsilon,
+        &+ \b{\psi}_\rho\gamma_*\gamma_\sigma D_\nu D_\mu\epsilon.
     \end{split}
 \end{equation}
-che moltiplicata per $\epsilon^{\mu\nu\rho\sigma}$ restituisce 
+Sapendo poi che $\nabla_\mu\gamma_\rho = 0$ e che $\nabla_\nu\gamma_\rho = D_\nu\gamma_\rho - \Gamma^\sigma_{\nu\rho}\gamma_\sigma$, si può scrivere $D_{[\nu}\gamma_{\sigma]} = \Gamma^\rho_{[\nu\sigma]}\gamma_\rho$. Infine si nota che $\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon \equiv V^\nu$ per cui $D_\nu V^\nu = \p_\nu V^\nu$. Qunidi, si ottiene la variazione 
 \begin{equation}
-    \epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_\sigma D_\mu\epsilon \equiv V^\nu,
+\label{eq: variazione azione RS per psi barra}
+    \begin{split}
+        \delta_{\b{\psi}}S_{RS} &= -\frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*[(D_\nu\gamma_\sigma)D_\mu\epsilon + \gamma_\sigma  D_\nu D_\mu\epsilon] \\
+        &= \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\bigg[\frac{1}{8}\gamma_\sigma\gamma^{ab}R_{\mu\nu ab}(\omega)\epsilon - \frac{1}{2}T^a_{\nu\sigma}\gamma_a D_\mu\epsilon\bigg].
+    \end{split}  
 \end{equation}
-per cui $D_\nu V^\nu = \p_\nu V^\nu$. Quindi, sapendo che $\nabla_\mu\gamma_\rho = 0$ e che 
-\begin{equation}
-    \nabla_\nu\gamma_\rho = D_\nu\gamma_\rho - \Gamma^\sigma_{\nu\rho}\psi_\sigma,
-\end{equation}
-si ha 
-\begin{equation}
-    D_{[\nu}\gamma_{\sigma]} = \Gamma^\rho_{[\nu\sigma]}\gamma_\rho.
-\end{equation}
-Dunque, si ha 
+Osservando quindi che i termini in $R(\omega)$ di \eqref{eq: variazione azione RS per psi} e \eqref{eq: variazione azione RS per psi barra} sono uguali, si ottiene 
 \begin{equation}
     \begin{split}
-        \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS} = \frac{1}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(\frac{1}{4}\b{\psi}_\rho\gamma_*\gamma^{ab}\epsilon R_{\mu\nu ab} - \frac{1}{2}\psi_\rho\gamma_*\gamma_a D_\mu\epsilon T^a_{\mu\sigma}\bigg).
+        \delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS} = \frac{i}{2k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\bigg[\frac{1}{4}\gamma_\sigma\gamma^{ab}\epsilon R_{\mu\nu ab}(\omega) - \frac{1}{2}T^a_{\mu\sigma}\gamma_a D_\mu\epsilon\bigg].
     \end{split}
 \end{equation}
-Si vuole ora riscrivere questo come la somma di due contributi usando che 
+Il termine in $R(\omega)$ ottenuto in quest'ultima equazione si può manipolare utilizzando la proprietà
 \begin{equation}
-    \gamma_\sigma \gamma^{ab} = \frac{1}{2}\underbrace{\comm{\gamma_\sigma}{\gamma^{ab}}}_{=2\delta_\sigma^{[a}\gamma^{b]}\,(2)} + \frac{1}{2}\underbrace{\acomm{\gamma_\sigma}{\gamma^{ab}}}_{=ie^d_\sigma\epsilon^{ab}_{cd}\gamma_*\gamma^c\,(1)},
+    \gamma_\sigma \gamma^{ab} = \frac{1}{2}\underbrace{\comm{\gamma_\sigma}{\gamma^{ab}}}_{=(2)} + \frac{1}{2}\underbrace{\acomm{\gamma_\sigma}{\gamma^{ab}}}_{=(1)} = \frac{1}{2}(2\delta_\sigma^{[a}\gamma^{b]}) + \frac{1}{2}(ie^d_\sigma\epsilon^{ab}_{cd}\gamma_*\gamma^c).
 \end{equation}
-sostituendo si trovano due integrali 
+Da $\acomm{\gamma_\sigma}{\gamma^{ab}}$ si trova il termine 
 \begin{equation}
     \begin{split}
-        (1) &= -\frac{1}{8k^2}\epsilon^{\mu\nu\rho\sigma}\epsilon_{abcd}e^d_\sigma R^{ab}_{\mu\nu}\b{\psi}_\rho\gamma^c\epsilon \\
-        &= -\frac{e}{2k^2}G_{\mu\nu}\b{\psi}^\nu\gamma^\mu\epsilon \\
-        &= - \delta S_{HE},
+        \frac{i}{8k^2}\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*(ie^d_\sigma\epsilon^{ab}_{cd}\gamma_*\gamma^c)\epsilon R_{\mu\nu ab}(\omega) &= -\frac{1}{8k^2}\epsilon^{\mu\nu\rho\sigma}\epsilon_{abcd}e^d_\sigma R^{ab}_{\mu\nu}(\omega)\b{\psi}_\rho\gamma^c\epsilon \\
+        &= -\frac{1}{2k^2}e\bigg[R_{\mu\nu}(\omega) -\frac{1}{2}g_{\mu\nu}R(\omega)\bigg]\b{\psi}^\nu\gamma^\mu\epsilon \\
+        &= -\delta S_{HE}.
     \end{split}
 \end{equation}
-per cui 
+Da $\comm{\gamma_\sigma}{\gamma^{ab}}$ si trova invece il termine
+% \begin{equation}
+%     \delta S = \delta_e S_{HE} + (\delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS})\_{\rem{without\,(1)}},
+% \end{equation} 
 \begin{equation}
-    \delta S = \delta_e S_{HE} + (\delta_\psi S_{RS} + \delta_{\b{\psi}}S_{RS})\_{\rem{without\,(1)}},
+    \begin{split}
+        \frac{i}{8k^2}\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*(2\delta_\sigma^{[a}\gamma^{b]})\epsilon R_{\mu\nu ab}(\omega) &= -\frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}R_{\mu\nu\sigma b}\b{\psi}_\rho\gamma_*\gamma^b\epsilon.
+    \end{split}
 \end{equation}
-quindi 
+Ricordando le due equazioni di struttura di Cartan \eqref{eq: prima formula di struttura di Cartan} e \eqref{eq: seconda formula di struttura di Cartan}, cioè 
 \begin{equation}
-    (2) = -\frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}R_{\mu\nu\sigma b}\b{\psi}_\rho\gamma_*\gamma^b\epsilon.
+    \begin{cases}
+        de^a + \omega_b^a \wedge e^b = T^a \\ 
+        d\omega^{ab} + \omega^a_c \wedge \omega^{cb} = \rho^{ab}  
+    \end{cases},
 \end{equation}
-La prima e la seconda equazione di struttura di Cartan sono 
-\begin{equation}
-    de^a + \omega_b^a \wedge e^b = T^a,
-\end{equation}
-\begin{equation}
-    d\omega^{ab} + \omega^a_c \wedge \omega^{cb} = \rho^{ab}.
-\end{equation}
-Se la torsione è nulla, allora si trova la prima identità di Bianchi 
-\begin{equation}
-    \rho^a_b \wedge e^b = 0.
-\end{equation}
-Invece, se la torsione non è nulla, si ha 
+se la torsione è nulla, allora si trova la prima identità di Bianchi $\rho^a_b \wedge e^b = 0$. Altrimenti, se la torsione non è nulla, si ha 
 \begin{equation}
     d\omega^a_b \wedge e^b - \omega^a_b \wedge de^b = dT^a,
 \end{equation}
-e usando le due formule di struttura di Cartan, si ha 
+Usando le due formule di struttura di Cartan, si può scrivere 
 \begin{equation}
     \rho^a_b \wedge e^b = dT^a + \omega^a_b \wedge T^a,
 \end{equation}
-da cui 
+da cui si ottiene
 \begin{equation}
-    \rho^a_b = \frac{1}{2}R^a_{b\mu\nu}dx^\mu \wedge dx^\nu,
+    \rho^a_b = \frac{1}{2}R^a_{b\mu\nu}\,dx^\mu \wedge dx^\nu.
 \end{equation}
-quindi 
+Di conseguenza, si trova che  
 \begin{equation}
     R^a_{[\mu\nu\rho]} = -D_{[\mu}T^a_{\nu\rho]}.
 \end{equation}
-Dunque, si può scrivere 
+Dunque, si può scrivere che la variazione $\delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS}$ è
 \begin{equation}
     \begin{split}
-        \delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS} &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\bigg(D_\mu T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_b\epsilon \\
-        &+ T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu\epsilon) \\
-        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu(T^b_{\nu\sigma}\epsilon)
+        \delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS} &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}(D_\mu T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_b\epsilon + T^b_{\nu\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu\epsilon) \\
+        &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_bD_\mu(T^b_{\nu\sigma}\epsilon).
     \end{split}
 \end{equation}
-e 
+Inoltre, includendo anche la variazione $\delta S_{HE}$ si ha
+\begin{multline}
+    \delta S_{HE} + \delta_\psi S_{RS} + \delta_{\b{\psi}} S_{RS} = \\ = -\frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_*\gamma_b[T^b_{\nu\sigma}D_\mu\epsilon + (D_\mu T^b_{\nu\sigma})\epsilon].
+\end{multline}
+Adesso si ritorna alla variazione rispetto al vielbein
 \begin{equation}
-    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\mu\gamma_*\gamma_aD_\nu\psi\b{\epsilon}\gamma^a\psi_\sigma.
+    \delta_e S_{RS} = \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}(\b{\psi}_\mu\gamma_*\gamma_aD_\nu\psi_\rho)(\b{\epsilon}\gamma^a\psi_\sigma).
 \end{equation}
-Ricordando che $T^b_{\nu\sigma} = (1/2)\b{\psi}_\nu\gamma^b\psi_\sigma$, per avere la forma del primo uguale a quella del secondo, o viceversa, si deve usare una delle identità di Fierz
+Ricordando che il tensore di torsinoe è $T^b_{\nu\sigma} = (1/2)\b{\psi}_\nu\gamma^b\psi_\sigma$, per poter confrontare le due variazioni, si deve usare una delle identità di Fierz
 \begin{equation}
     \lambda_4\gamma_\mu \lambda_{[1}\b{\lambda}_2\gamma^\mu\lambda_{3]} = 0,
 \end{equation}
-dove $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ sono spinori. In questo caso 
+dove $\lambda_1$, $\lambda_2$, $\lambda_3$ e $\lambda_4$ sono spinori; in questo caso si operano le scelte
 \begin{equation}
-    \lambda_1 = \psi_\sigma,\quad \lambda_2 = \psi_\mu,\quad \lambda_3 = \gamma_*D_\nu\psi_\rho,\quad \lambda_4 = \b{\epsilon}.
+    \lambda_1 \equiv \psi_\sigma,\quad \lambda_2 \equiv \psi_\mu,\quad \lambda_3 \equiv \gamma_*D_\nu\psi_\rho,\quad \lambda_4 \equiv \b{\epsilon}.
 \end{equation}
-Usando poi che $D_\nu\b{\psi}_\rho\gamma_*\gamma^\lambda\psi_\sigma = \b{\psi}_\sigma\gamma_*\gamma^\lambda D_\nu\psi_\rho$ tramite Majorana flip, l'identità di Fierz è
+Usando poi che $D_\nu\b{\psi}_\rho\gamma_*\gamma^\lambda\psi_\sigma = \b{\psi}_\sigma\gamma_*\gamma^\lambda D_\nu\psi_\rho$ tramite un Majorana flip, l'identità di Fierz si può scrivere come
 \begin{equation}
     \b{\epsilon}(\gamma_\lambda\gamma_* D_\nu\psi_\rho)(\b{\psi}_{[\sigma}\gamma^\lambda\psi_{\mu]}) = -2\b{\epsilon}(\gamma^\lambda\psi_{[\sigma})(\b{\psi}_{\mu]}\gamma^\lambda\gamma_* D_\nu\psi_\rho).
 \end{equation}
-Quindi 
+Quindi, la variazione completa può essere scritta come
 \begin{equation}
     \begin{split}
         \delta S &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + \b{\epsilon}\gamma_a\gamma_*\p_\nu\psi_\rho T^a_{\sigma\mu}] \\
         &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}[-\b{\psi}_\rho\gamma_a\gamma_*D_\mu(T^a_{\nu\sigma}\epsilon) + D_\nu\b{\psi}_\rho\gamma_a\gamma_*\b{\epsilon}T^a_{\sigma\mu}],
     \end{split}
 \end{equation}
-dove si è effettuato un Majorana flip nel secondo termine con $t_3 = 1$. Dunque, sapendo che $D_\mu\gamma_a = 0$, si ha 
+dove si è effettuato un Majorana flip nel secondo termine con $t_3 = 1$. Dunque, ricordando che $D_\mu\gamma_a = 0$, si ottiene finalmente che 
 \begin{equation}
     \begin{split}
-        \delta S &= \frac{i}{4k^2}\epsilon^{\mu\nu\rho\sigma}D_\nu(\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
-        &= \frac{i}{4k^2}D_\nu(\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
-        &= \frac{i}{4k^2}\int d^4x\,D_\nu V^\nu \\
+        \delta S &= \frac{i}{4k^2}\int d^4x\,\epsilon^{\mu\nu\rho\sigma}D_\nu(\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &= \frac{i}{4k^2}\int d^4x\,D_\nu(\epsilon^{\mu\nu\rho\sigma}\b{\psi}_\rho\gamma_a\gamma_*\epsilon T^a_{\sigma\mu}) \\
+        &\equiv \frac{i}{4k^2}\int d^4x\,D_\nu V^\nu \\
         &= \frac{i}{4k^2}\int d^4x\,\p_\nu V^\nu \\
         &= 0.
     \end{split}
 \end{equation}
-Dunque, si è dimostrato che $\delta S_{RS} + \delta S_{HE} = 0$. 
+Si è pertanto dimostrato che effettivamente $\delta S_{RS} + \delta S_{HE} = 0$, ovvero che la supergravità $\NSC = 1$ in $D = 4$ è localmente supersimmetria e perciò consistente come una teoria classica del gravitone e del gravitino.
 
 \section{Soluzioni supersimmetriche (22.10)}
+-- DA QUI --
 Si considerano $e^a_\mu + (\rem{bosonic\,fields})$ e $\psi_\mu + (\rem{fermionic\,fields})$. Le variazioni generali sono
 \begin{equation}
     \begin{cases}
