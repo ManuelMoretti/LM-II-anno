@@ -1,4 +1,4 @@
-\chapter{QFT (WIP)}
+\chapter{Basic concepts of QFT}
 We now make some basic recalls of Quantum Field Theory. The main objects are the fields $\phi(x)$, which are functions of the spacetime coordinates $x^\mu$, and can be of different nature. The main different between kinds of fields is how they transform under coordinate transformations. With them, we can write a Lagrangian, more precisely a Lagrangian density, $\Lag(\phi,\p\phi)$ whose dependent on the fields, of course, and their derivatives $\p_\mu\phi(x)$. The Lagrangian needs to be invariant under general coordinate transformations, therefore it is constructed from \emph{invariants}, that have precisely this property. The integral of the Lagrangian over spacetime is the action $S$. To write a consistent action, we need to impose some conditions on the Lagrangian:
 \begin{enumerate}
     \item it must be quadratic in the fields;
@@ -151,7 +151,7 @@ where $Q$ is the charge of the spinor. The covariant derivative then becomes
 \end{equation}
 In this way we have a locally gauge-invariant theory that describes the interaction between vector fields and spinor fields, and so, for examples, between photons and electrons. The Lagrangian is 
 \begin{equation}
-    \Lag = \b{\Psi}[i\gamma^\mu(\hbar\p_\mu - iQA_\mu) - mc]\Psi.
+    \Lag = \b{\Psi}[i\gamma^\mu(\hbar\p_\mu - iQA_\mu) - mc^2]\Psi.
 \end{equation}
 
 We can also give to $D_{\mu}$ a geometric meaning. To see this, we compute the commutator between derivatives, which results in
@@ -159,3 +159,5 @@ We can also give to $D_{\mu}$ a geometric meaning. To see this, we compute the c
     \comm{D_\mu}{D_\nu}\Psi^A = -\frac{iQ}{\hbar}F_{\mu\nu}\Psi^A,
 \end{equation}
 where the Riemann curvature tensor describes the curvature associated with the spacetime connection. By analogy, the field strength $F_{\mu\nu}$ represents the curvature associated with the gauge connection $A_{\mu}$, while $D_{\mu}$ is the corresponding gauge-covariant derivative acting on fields in the internal space.
+
+More general, non-Abelian gauge symmetries lead to the Yang-Mills theories underlying the other fundamental interactions. We shall not go into details: the key point is that quantised gauge fields provide the mediators of interactions. The Standard Model organises these interactions according to the combined action of the Lie groups $\group{SU}{3}_C \times \group{SU}{2}_L \times \group{U}{1}_Y$. Its matter fields consist of quarks and leptons arranged in three generations. The $\group{SU}{3}_C$ sector describes the strong interaction and contains eight gluon fields. The electroweak sector $\group{SU}{2}_L \times \group{U}{1}_Y$ leads to the photon and to the $W^\pm$ and $Z$ bosons. Unlike the photon, the weak bosons are massive: their masses originate from the coupling to the non-zero vacuum value of the Higgs field, not from inserting an explicit gauge-breaking vector mass term in the fundamental action.
