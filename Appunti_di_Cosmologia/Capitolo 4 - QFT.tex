@@ -212,4 +212,29 @@ where $\Xi$ is the number of microscopic configurations compatible with the macr
 Then, if $N_i$ particles occupy these cells, $N_i = fG_i$. The problem now is to find how many different microscopic ways we can arrange $N_i$ particles among $G_i$ states.
 
 \subsection{Fermionic and bosonic distributions}
-...
+We start discussing fermions since they have the constraint given by Pauli's exclusion principle which tells us that a given one-particle state can contain either one or no fermion. Therefore, distributing $N_i$ in $G_i$ states is equivalent to counting how many $N_i$ states are occupied out of the $G_i$ available. The number of possibilities is then just the binomial coefficient
+\begin{equation}
+    \Xi_{\rem{FD}} = 
+    \begin{pmatrix}
+        G_i \\
+        N_i    
+    \end{pmatrix} = \frac{G_i!}{N_i!(G_i - N_i)!}.
+\end{equation}
+Thus, the entropy is 
+\begin{equation}
+    \begin{split}
+        S_{\rem{FD}} &= k_B[\ln{(G_i!)} - \ln{(N_i!)} - \ln{(G_i - N_i)!}] \\
+        &\simeq -k_BG_i[f\ln{(f)} - (1 - f)\ln{(1 - f)}],
+    \end{split}
+\end{equation}
+where we have used Stirling's approximation for the logarithm of a factorial $\ln{n!} \simeq n\ln{(n)} - n$ for $n \gg 1$. Also, in the continuous limit $\Delta^3 \mapsto d^3$, hence 
+\begin{equation}
+    S{f_{\rem{FD}}} = -\frac{g_sK_B}{(2\pi\hbar)^3}\int d^3x_p\,d^3q\,[f_{\rem{FD}}\ln{(f_{\rem{FD}})} + (1 - f_{\rem{FD}})\ln{(1 - f_{\rem{FD}})}],
+\end{equation}
+where we emphasise that it is not a general formula, but it holds for fermions which obey the Fermi-Dirac distribution, hence the ``FD'' subscript.
+
+Thermodynamic equilibrium is the realsised by the distribution function that maximises entropy. At equilibrium, the first law of Thermodynamics relates infinitesimal variations of internal energy, entropy, volume, and particle number through 
+\begin{equation}
+    dU = T\,dS - p\,dV +\mu\,dN,
+\end{equation}
+where $T$ is the temperature and $\mu$ is the chemical potential. To find said distribution function...
