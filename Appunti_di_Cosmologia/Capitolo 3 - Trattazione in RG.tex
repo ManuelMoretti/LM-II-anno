@@ -50,7 +50,7 @@ Invece, l'oggetto a tre indici $\Gamma^{\rho}_{\mu\nu}$ è necessario affinché 
 \begin{equation}
     \Gamma^{\mu}_{\nu\rho} = \frac{1}{2}g^{\mu\sigma}(\p_\nu g_{\rho\sigma} + \p_\rho g_{\sigma\nu} - \p_\sigma g_{\nu\rho}).
 \end{equation}
-Avendo definito la derivata covariante, si può introdurre il concetto di \emph{trasporto parallelo} su una varietà. Con questo si intende la sitauzione in cui la derivata covariante di un tensore di rango generico lungo una curva è nulla, ovvero che 
+Avendo definito la derivata covariante, si introduce il concetto di \emph{trasporto parallelo} su una varietà. Con questo si intende la sitauzione in cui la derivata covariante di un tensore di rango generico lungo una curva è nulla, ovvero che 
 \begin{equation}
     \frac{D}{D\lambda}T^{\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} \equiv \frac{dx^\sigma}{d\lambda}\nabla_\sigma T^{\mu_1\cdots\mu_n}_{\nu_1\cdots\nu_m} = 0,
 \end{equation} 
@@ -163,7 +163,7 @@ Il primo integrale è esteso su un volume tridimensionale e restituisce l'energi
         &+ \int dx^0 dx^1 dx^3 S^{i2} + \int dx^0 dx^1 dx^2 S^{i3}.
     \end{split}
 \end{equation}
-Il primo integrale restituisce una componente del momento lineare, quindi $S^{i0}$ è una densità di momento. Gli altri termini $S^{ij}$ integrati sullo spaziotempo rappresentano un flusso di momento, ossia una generalizzazione della pressione: una forza applicata su una superficie integrata nel tempo fornisce infatti un impulso. In Meccanica calssica, $S^{ij}$ è tensore degli sforzi.
+Il primo integrale restituisce una componente del momento lineare, quindi $S^{i0}$ è una densità di momento. Tutti gli altri termini $S^{ij}$ integrati sullo spaziotempo rappresentano un flusso di momento, ossia una generalizzazione della pressione: una forza applicata su una superficie integrata nel tempo fornisce infatti un impulso. In Meccanica calssica, $S^{ij}$ è tensore degli sforzi.
 \begin{obs}
     Questa definizione euristica del tensore $S^{\alpha\beta}$ è stata ricavata da considerazioni in relatività speciale, dove è sempre possibile definire ipersuperfici arbitrariamente grandi con una coordinata costante. In relatività generale la struttura geometrica globale non è così semplice e richiede maggiore cautela. Tuttavia, per i nostri scopi, faremo bastare l'intuizione fisica fin qui sviluppata.
 \end{obs}
@@ -337,7 +337,7 @@ Per determinare la relazione tra $L_o$ ed $L_e$, si considera che
 \begin{equation}
     L = \frac{E_\gamma}{\Delta t},\quad E_\gamma = \hbar\nu,
 \end{equation}
-dove $\Delta t$ è la distanza temporale tra un fotone e l'altro. Tuttavia, la lunghezza d'onda dei fotoni viene anch'essa riscalata con $\lambda_e = a(t)\lambda_o$, perdendo di conseguenza energia
+dove $\Delta t$ è la distanza temporale tra un fotone e l'altro. D'altra parte, la lunghezza d'onda dei fotoni viene anch'essa riscalata con $\lambda_e = a(t)\lambda_o$, perdendo di conseguenza energia
 \begin{equation}
     E_e = \frac{E_o}{a(t)}.
 \end{equation}
@@ -522,7 +522,7 @@ where we emphasised that $q^2 \equiv |q|^2 = g_{ij}q^iq^j$ with $g^{ij}$ the inv
 \begin{equation}
     T^{ij} = g^{ij}\int \sqrt{-\det{g}}d^3q\,\frac{c^2q^2}{3E(q)}f(q;t),
 \end{equation}
-which is precisely the isotropic pressure $\b{p}$. In the homogeneous and isotropic scenario, every constituent of the Universe separately contributes an isotropic energy density and pressure, namely
+which is precisely the isotropic pressure $\b{p}$. In the homogeneous and isotropic scenario, every constituent of the Universe separately contributes with an isotropic energy density and pressure, namely
 \begin{equation}
 \label{eq: energy density in GR}
     \b{\epsilon}_s(t) = \int d^3q\sqrt{-\det{g}}\,E_s(q)f_s(q;t),
@@ -606,7 +606,7 @@ Since we have previously computed all the non-zero components of the Christoffel
 \begin{equation}
     \nabla_\mu T^{\mu i} \equiv \nabla_j T^{ji} \propto \nabla_j g^{ij} = 0,
 \end{equation} 
-because we have chosen the Levi-Civita connection which is metric-compatible. This means that the spatial components of the conservation of the stress-energy tensor carry no dynamical information. Instead, for $\nu = 0$ we have 
+because we have chosen the Levi-Civita connection which we recall it is metric-compatible. This means that the spatial components of the conservation of the stress-energy tensor carry no dynamical information. Instead, for $\nu = 0$ we have 
 \begin{equation}
     \begin{split}
         0 &= \nabla_\mu T^{\mu 0} \\

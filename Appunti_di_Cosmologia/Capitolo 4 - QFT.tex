@@ -88,7 +88,7 @@ Therefore, it is clear that $\b{\Psi}_A\Psi^A$ is invariant under Lorentz transf
 \begin{equation}
     \Lag = Xi\b{\Psi}_B\sl{\p}_A^B\Psi^B - Y\b{\Psi}_A\Psi^A,\quad \sl{\p} \equiv \gamma^\mu\p_\mu,
 \end{equation}
-where $\gamma^\mu$ are the Dirac matrices, which satisfy the Clifford algebra $\acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM$. Using the Euler-Lagrange equations with respect to the adjoint spinor, we can derive the equations of motion for the ordinary spinor 
+where $\gamma^\mu$ are the Dirac matrices, which satisfy the Clifford algebra defined by the anti-commutation relation $\acomm{\gamma^\mu}{\gamma^\nu} = 2\eta^{\mu\nu}\IM$. Using the Euler-Lagrange equations with respect to the adjoint spinor, we can derive the equations of motion for the ordinary spinor 
 \begin{equation}
     (Xi\sl{\p}^A_B- Y\delta^A_B)\Psi^B = 0.
 \end{equation}
@@ -160,9 +160,9 @@ We can also give to $D_{\mu}$ a geometric meaning. To see this, we compute the c
 \end{equation}
 where the Riemann curvature tensor describes the curvature associated with the spacetime connection. By analogy, the field strength $F_{\mu\nu}$ represents the curvature associated with the gauge connection $A_{\mu}$, while $D_{\mu}$ is the corresponding gauge-covariant derivative acting on fields in the internal space.
 
-More general, non-Abelian gauge symmetries lead to the Yang-Mills theories underlying the other fundamental interactions. We shall not go into details: the key point is that quantised gauge fields provide the mediators of interactions. The Standard Model organises these interactions according to the combined action of the Lie groups $\group{SU}{3}_C \times \group{SU}{2}_L \times \group{U}{1}_Y$. Its matter fields consist of quarks and leptons arranged in three generations. The $\group{SU}{3}_C$ sector describes the strong interaction and contains eight gluon fields. The electroweak sector $\group{SU}{2}_L \times \group{U}{1}_Y$ leads to the photon and to the $W^\pm$ and $Z$ bosons. Unlike the photon, the weak bosons are massive: their masses originate from the coupling to the non-zero vacuum value of the Higgs field, not from inserting an explicit gauge-breaking vector mass term in the fundamental action.
+More generally, non-Abelian gauge symmetries lead to the Yang-Mills theories underlying the other fundamental interactions. We shall not go into details: the key point is that quantised gauge fields provide the mediators of interactions. The Standard Model organises these interactions according to the combined action of the Lie groups $\group{SU}{3}_C \times \group{SU}{2}_L \times \group{U}{1}_Y$. Its matter fields consist of quarks and leptons arranged in three generations. The $\group{SU}{3}_C$ sector describes the strong interaction and contains eight gluon fields. The electroweak sector $\group{SU}{2}_L \times \group{U}{1}_Y$ leads to the photon and to the $W^\pm$ and $Z$ bosons. Unlike the photon, the weak bosons are massive: their masses originate from the coupling to the non-zero vacuum value of the Higgs field, not from inserting an explicit gauge-breaking vector mass term in the fundamental action.
 
-\section{Interactions}
+\section{Distribution functions}
 To use this microscopic picture in Cosmology, we need a quantitative measure of how frequently interactions occur. The Lagrangian of an interactive theory can be factorised in the sum of the free Lagrangian $\Lag_0$ and the interactive Lagrangian $\Lag_{\rem{int}}$. The free Lagrangian specifies the propagation of the particles and their dispersion relations. The interactive part instead describes the scattering, decay, annihilation, and creation of particles. When a perturbative description of the theory is possible, its contributions can be organized using Feynman's diagrams, which are a computational representation of terms in an expansion of a \emph{transition amplitude}, not literal particle trajectories.
 
 For a generic process $A + B \to C + D$, we denote the amplitude as $\amp^{AB}_{CD}$. The relevant probabilty is the given by its moduli $|\amp^{AB}_{CD}|$. Combining this with the phase-space of the final particles and the incoming flux produces the interaction \emph{cross-section} denoted as $\sigma^{AB}_{CD}$. Thus QFT proves the microscopic quantity $\sigma(E)$ needed to describe interactions between actual populations of particles as a funtion of the energy $E$ of the process, For example, in processes governed by a dimensionaless cuìoupling $\alpha$ and a single characteristic relativistic energy $E$m dimensional reasoning often gives $\sigma(E) \simeq \alpha^2E^{-2}c^2\hbar^2$, however masses, long-rage forces, and afftional dynamical states can change this estimate.  
@@ -174,8 +174,7 @@ Noe consider a particle $A$ moving through a population of particles $B$, with n
 
 Interaction rates tell us how many interactions happen per unit of time, for a certain kind of particle and interaction. In Cosmology, we have antoher time scale that we need to consider, that is the expansion rate $H$. This gives us a cosmological criteria: when $\Gamma \gg H$, many interactions can take place in a Hubble time; while when $\Gamma \ll H$, that particular process is inefficient on a cosmological time scale. This comparison alone will not guarantee that a bound state will form, but it tells us whether the microscopic interactions can keep the pace with the cosmological expansion. We have already seen that the Universe's expansion affects the particles' momenta since $|\v{q}| \simeq a^{-1}$, and consequently their energy $E(q)$. To determine $\Gamma$ as a function of cosmic time, we must know how many particels are present and how their momenta are distributed. 
 
-\subsection{Distribution functions}
-It is more useful here to consider a dimensionless distribution function, factoring out the phase-space units. In particular, when we expanded the fields as plain waves we had wavenumbers $\v{k} = 2\pi\v{n}/L$ where $L$ was the physical size of the volume $V = L^3$, with $n_i \in \bb{Z}$ for each spatial direction $i$. Since for quantum particles, $\v{q} =\hbar \v{k}$, the momentum-space spacing is $2\pi\hbar$, which leads to reascaling $d^3q \mapsto d^3q/(2\pi\hbar)^3$. Moreover, quantum particles also come in different \emph{multiplicity}, in other words they have different degrees of freedom, for example spin states. Denoting the multiplicity for particles of type $s$ as $g_s$, we can write the number of quanta of the given type in an infinitesimal mass-shell volume element as 
+It is more useful here to consider a dimensionless distribution function, factoring out the phase-space units. In particular, when we expanded the fields as plain waves we had wavenumbers $\v{k} = 2\pi\v{n}/L$ where $L$ was the physical size of the volume $V = L^3$, with $n_i \in \bb{Z}$ for each spatial direction $i$. Since for quantum particles, $\v{q} =\hbar \v{k}$, the momentum-space spacing is $2\pi\hbar$, which leads to rescaling $d^3q \mapsto d^3q/(2\pi\hbar)^3$. Moreover, quantum particles also come in different \emph{multiplicity}, in other words they have different degrees of freedom, for example spin states. Denoting the multiplicity for particles of type $s$ as $g_s$, we can write the number of quanta of the given type in an infinitesimal mass-shell volume element as 
 \begin{equation}
     dN_s = \frac{g_s}{(2\pi\hbar)^3}f_s(\v{x}_p,\v{q};t)\,d^3x_p\,d^3.
 \end{equation}
@@ -229,12 +228,51 @@ Thus, the entropy is
 \end{equation}
 where we have used Stirling's approximation for the logarithm of a factorial $\ln{n!} \simeq n\ln{(n)} - n$ for $n \gg 1$. Also, in the continuous limit $\Delta^3 \mapsto d^3$, hence 
 \begin{equation}
-    S{f_{\rem{FD}}} = -\frac{g_sK_B}{(2\pi\hbar)^3}\int d^3x_p\,d^3q\,[f_{\rem{FD}}\ln{(f_{\rem{FD}})} + (1 - f_{\rem{FD}})\ln{(1 - f_{\rem{FD}})}],
+    S[f_{\rem{FD}}] = -\frac{g_sK_B}{(2\pi\hbar)^3}\int d^3x_p\,d^3q\,[f_{\rem{FD}}\ln{(f_{\rem{FD}})} + (1 - f_{\rem{FD}})\ln{(1 - f_{\rem{FD}})}],
 \end{equation}
-where we emphasise that it is not a general formula, but it holds for fermions which obey the Fermi-Dirac distribution, hence the ``FD'' subscript.
+where we emphasise this is not a general formula, but it holds for fermions which obey the Fermi-Dirac distribution, hence the ``FD'' subscript.
 
 Thermodynamic equilibrium is the realsised by the distribution function that maximises entropy. At equilibrium, the first law of Thermodynamics relates infinitesimal variations of internal energy, entropy, volume, and particle number through 
 \begin{equation}
-    dU = T\,dS - p\,dV +\mu\,dN,
+    dU = T\,dS - p\,dV + \mu\,dN,
 \end{equation}
 where $T$ is the temperature and $\mu$ is the chemical potential. To find said distribution function...
+
+\section{Multi-component system (WIP)}
+For a joint system of particle species that are in equilibrium by themselves, the total internal energy and the total entropy are given by simply $U = \sum_sU_s$ and $S = \sum_sS_s$. Using the first law of Thermodynamics, we have that the total entropy is related to thermodynamical quantities through
+\begin{equation}
+    dS = \nsum_s\bigg(\frac{dU_s}{T_s} + \frac{\b{p}_s}{T_s}\,dV - \frac{\mu_s}{T_s}\,dN_s\bigg).
+\end{equation}
+We can consider the $dV$ term negligible since the rate of expansion and contraction of the volume is irrilevant compared to the rate of interactions that occur in the system. The only way to  have exchange of energy and momenta between species while keeping entropy at a maximum is that the temperature $T_s$ is the same for all the species.
+
+Consider the scattering process $A + B \to A + B$. To keep entropy at a maximum, it is required that $dU_A = -dU_B$, this implies that 
+\begin{equation}
+    dS = \bigg(\frac{1}{T_A} - \frac{1}{T_B}\bigg)dU_A = 0,
+\end{equation}
+if and only if $T_A = T_B$ since $dU$ can be positive or negative. Consider now a scattering process that changes the particle's species, so for example $A + B \to C + D$. To have thermodynamical equilibrium, now it is also required that $\mu_A + \mu_B = \mu_C + \mu_D$, so that they are in chemical equilibrium, in addition to being in thermodynamical equilibrium. 
+
+Recall that the energy density of every species evolves in time with \eqref{eq: cosmological continuity equation in GR}, and this also holds for the total energy density. Moreover, multiplying by the volume $V$ equation \eqref{eq: cosmological continuity equation in GR} and noting that 
+\begin{equation}
+    \frac{d\ln{V}}{dt} = 3H,
+\end{equation}
+we can see that $3HV = \dot{V}$ and write 
+\begin{equation}
+    \frac{d\b{U}}{dt} + \b{p}\frac{dV}{dt} = 0,\quad d\b{U} \equiv \b{\epsilon}V,
+\end{equation}
+which implies that 
+\begin{equation}
+    d\b{U} + \b{p}\,dV = 0.
+\end{equation}
+Therefore, the total entropy is 
+\begin{equation}
+    dS = \nsum_s\frac{\mu_s}{T_s}\,dN_s.
+\end{equation}
+This means that for a collection of particles that are in thermodynamical equilibrium the expansion is adiabatic. Moreover, the entropy is constant and we can write it as the entropy density $s$ times the volume $V$, namely $S = sV$, thus $s \propto a^{-3}$. Then, considering again the first law of Thermodynamics, written as 
+\begin{equation}
+    d\b{U} = T\,dS - \b{p}\,dV + \mu\,d\b{N},
+\end{equation}
+takes us to 
+\begin{equation}
+    \b{\epsilon} = Ts - \b{p} + \nsum_s \b{\mu}_s\b{n}_s.
+\end{equation}
+... 
