@@ -12,3 +12,201 @@ dove $1/2$ è dovuto al fatto che l'equazione è del primo ordine mentre $D - 3$
     \#dof(e^a_\mu) = 44,\quad \#dof(\Psi_\mu) = 128.
 \end{equation}
 In $D = 11$ si può imporre anche la condizione di Majorana e avere i 128 gradi di libertà reali. Si devono matchare gli 84 gradi di libertà mancanti. Si spera di trovarli bosonici senza dover aggiungere fermioni, campi di gauge (9 dof), $p$-forme con $p > 1$. Spero di trovare una $p$-forma con 84 dof on-shell, uso una 3-forma. 
+
+La $p$-forma è 
+\begin{equation}
+    S_p = -\frac{1}{2(p + 1)}\int d^Dx\, \sqrt{-g}F^{\mu_1\cdots\mu_p}F_{\mu_1\cdots\mu_p},
+\end{equation}
+con $d*F = 0$ e $dF = 0$. $A_{\mu_1\cdots\mu_p}$ ha 
+\begin{equation}
+    \frac{D(D - 1)(D - 2)\cdots}{p!} = \frac{D!}{p!(D - p)!} = 
+    \begin{pmatrix}
+        D \\
+        p
+    \end{pmatrix}
+\end{equation}
+componenti indipendenti. Per $p=1$ si ha una $0$-forma $\Lambda^{(0)}$, per $p=2$ si hanno $D(D - 1)/2$ componenti della matrice simmetrica, se si fa invarianza di gauge $A \to A + d\Lambda^{(1)}$ si devono sottrarre $D$ componenti, ma è ancora overcounting dato che $\Lambda^{(1)} = d\Lambda^{(0)}$, quindi si deve togliere $D - 1$, per cui si hanno 
+\begin{equation}
+    \frac{D(D - 1)}{2} - (D - 1)
+\end{equation}
+componenti indipendenti. In generale il processo si ripete, per induzione è possibile dimostrare che 
+\begin{equation}
+    \begin{pmatrix}
+        D \\
+        p
+    \end{pmatrix} -
+    \begin{pmatrix}
+        D \\
+        p - 1
+    \end{pmatrix} +
+    \begin{pmatrix}
+        D \\
+        p - 2
+    \end{pmatrix}
+    - \cdots = 
+    \begin{pmatrix}
+        D - 1 \\
+        p
+    \end{pmatrix}.
+\end{equation}
+Si fissa il gauge con il gauge di Coulomb come per le equazioni di Maxwell $\p^iA_{i\mu_1\cdots\mu_{p-1}}$. La metrica è quella costante $g_{\mu\nu} \equiv \eta_{\mu\nu}$ e le equazioni del moto sono 
+\begin{equation}
+    \begin{cases}
+        \p^\mu F_{\mu0i_1\cdots i_{p - 1}} = 0 \\
+        \p^\mu F_{\mu i_1\cdots i_p} = 0
+    \end{cases}.
+\end{equation}
+Usando la condizione di gauge fixing nella prima equazione si trova che la parte temporale non è propagante 
+\begin{equation}
+    \p^i\p_i A_{0i_1\cdots i_p} = 0\quad\Rightarrow\quad A_{0i_1\cdots i_p} = 0.
+\end{equation}
+Sostituendo questa nella seconda equazione si ottiene 
+\begin{equation}
+    \square A_{i_1\cdots i_p} = 0.
+\end{equation}
+Scrivendo il gauge fixing nello spazio dei momenti $k^i\epsilon_{ii_1\cdots i_p} = 0$, si ha che $k^i \perp \epsilon_i$. Scegliendo $\v{k} = (0,\cdots,1)$, si hanno 
+\begin{equation}
+    \begin{pmatrix}
+        D - 2 \\
+        p - 1
+    \end{pmatrix}
+\end{equation}
+valori. Questi si devono sottrarre a $\begin{pmatrix}
+    D - 1 \\
+    p
+\end{pmatrix}$ ottenendo 
+    \begin{equation}
+        \begin{pmatrix}
+        D - 1 \\
+        p
+    \end{pmatrix} - 
+    \begin{pmatrix}
+        D - 2 \\
+        p - 1
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        D - 2 \\
+        p
+    \end{pmatrix},
+\end{equation}
+che per $D = 1$ restituisce 
+\begin{equation}
+    \begin{pmatrix}
+        9 \\
+        p
+    \end{pmatrix} = 84 \quad\Longleftrightarrow\quad p = 3.
+\end{equation}
+Quindi, si una $3$-forma ci dà questi 84 gradi di libertà per la supergravità in $D = 11$. L'azione è della forma 
+\begin{equation}
+    S = \frac{1}{2k^2}\int d^{11}x\,(R - \b{\Psi}_\mu\gamma^{\mu\nu\rho}D_\nu\Psi_\rho - \frac{1}{24}F^{\mu\nu\rho\sigma}F_{\mu\nu\rho\sigma} + t.c),
+\end{equation}
+dove t.c. sta per i termini correttivi necessari per mantenere la supersimmetria. Le variazioni sono 
+\begin{equation}
+    \begin{cases}
+        \delta e^a_\mu = \dfrac{1}{2}\b{\epsilon}\gamma^a\Psi_\mu \\
+        \delta\Psi_\mu = [D_\mu + ?]\epsilon \\
+        \delta A_{\mu\nu\rho} = C\b{\epsilon}\gamma_{[\mu\nu}\Psi_{\rho]},
+    \end{cases}
+\end{equation}
+dove con ? si indicano dei termini da determinare, anche $C$ è un coefficiente da determinare. L'azione completa è 
+\begin{equation}
+    \begin{split}
+        S &= \frac{1}{2k^2}\int d^{11}x\,[R - \b{\Psi}_\mu\gamma^{\mu\nu\rho}D_\nu\Psi_\rho - \frac{1}{24}F^{\mu\nu\rho\sigma}F_{\mu\nu\rho\sigma} \\
+        &- \frac{\sqrt{2}}{192}\b{\Psi}_\nu(\gamma^{\alpha\beta\gamma\delta\nu\rho} + 12\gamma^{\alpha\beta}g^{\mu\nu}g^{\delta\rho})\Psi_\rho(F_{\alpha\beta\gamma\delta} + \h{F}_{\alpha\beta\gamma\delta})] \\
+        &- \frac{\sqrt{2}}{192}\int F \wedge F \wedge A,
+    \end{split}
+\end{equation}
+dove $\h{F}_{\mu\nu\rho\sigma} = F_{\mu\nu\rho\sigma} + (3\sqrt{2}/2)\b{\psi}_{[\mu}\gamma_{\nu\rho}\psi_{\sigma]}$, e con 
+\begin{equation}
+    \omega_{\mu ab} = \omega_{\mu ab}(e) - \frac{1}{4}(\b{\psi}_\mu\gamma_b\psi_a - \b{\psi}_a\gamma_\mu\psi_b + \b{\psi}_b\gamma_a\psi_\mu) + \frac{1}{8}\b{\psi}_\nu\gamma^{\nu\rho}_{\mu ab}\psi_\rho,
+\end{equation}
+dove 
+\begin{equation}
+    \h{\omega}_{\mu ab} = \omega_{\mu ab} - \frac{1}{8}\b{\psi}_\nu\gamma^{\nu\rho}_{\mu ab}\psi_\rho.
+\end{equation}
+Il motivo di queste definizioni è dovuto al fatto che le equazioni si scrivono in maniera naturale in termini di $\h{F}$ e $\h{\omega}$. Ad esempio, l'equazione del gravitino è 
+\begin{equation}
+    0 = \gamma^{\mu\nu\rho}D_\nu(\h{\omega})\psi_\rho + \frac{\sqrt{2}}{288}\gamma^{\mu\nu\rho}(\gamma^{\alpha\beta\gamma\delta}_\nu - 8\gamma^{\beta\gamma\delta}\delta^a_\nu)\psi_\rho\h{F}_{\alpha\beta\gamma\delta}.
+\end{equation}
+Il coefficiente $C$ vale $C = -3\sqrt{2}/4$ e i termini da determinare portano a
+\begin{equation}
+    \delta\psi_\mu = \bigg[D_\mu(\h{\omega}) + \frac{\sqrt{2}}{288}(\gamma^{\alpha\beta\gamma\delta}_\mu - 8\gamma^{\beta\gamma\delta}\delta^a_\mu)\psi_\rho\h{F}_{\alpha\beta\gamma\delta}\bigg]\epsilon.
+\end{equation}
+Se si pone $\psi_\mu = 0$, l'azione diventa 
+\begin{equation}
+    S = \frac{1}{2k^2}\int d^{11}x\,\bigg(R - \frac{1}{48}G^{\mu\nu\rho\sigma}G_{\mu\nu\rho\sigma}\bigg) - \frac{1}{12k^2}\int G \wedge G \wedge C,
+\end{equation}
+dove si definisce $C_{\mu\nu\rho} = \sqrt{2}A_{\mu\nu\rho}$ e $G = dC$, l'ultimo termine dell'azione esiste solo in dimensioni dispari e non dipende dalla metrica, ma solo dalla topologia della varietà di integrazione, per questo è detto termine topologico, o anche termine di Chern-Simmons. Non è un termine necessario ma è richiesto per la supersimmetria. Dal primo termine dell'azione, tralasciando il termine di Einstein, si possono derivare le equazioni di Maxwell $d*G = 0$, mentre dal termine topologico si ottiene la seconda parte di queste equazioni con una variazione
+\begin{equation}
+    d*G + \frac{1}{2} G \wedge G = 0.
+\end{equation}
+Il fatto che il termine di Chern-Simmons dipende da $C$ lo rende interessante. In dimensione dispari, il termine più semplice 
+\begin{equation}
+    \int_M F \wedge A \xrightarrow{A \to A + d\Lambda} \int F \wedge A + \int F \wedge d\Lambda,
+\end{equation}
+dove il secondo termine è nullo se la varietà non ha bordo. Su varietà compatte son invarianti di gauge, altrimenti non è ovvio che sia nulla (???). 
+
+Dato $V^\mu = \b{\epsilon}\gamma^\mu\b{\epsilon}$, si hanno le soluzioni: $\Lie_Vg = 0$; o $\Lie_VG = 0$. 
+
+Si introducono due forme differenziali
+\begin{equation}
+    \Omega_{\mu\nu} := \b{\epsilon}\gamma_{\mu\nu}\epsilon,\quad \Sigma_{\mu\nu\rho\sigma\tau} := \b{\epsilon}\gamma_{\mu\nu\rho\sigma\tau}\epsilon.
+\end{equation}
+Si considera la parte anti-simmetrica e si ottengono delle condizioni
+\begin{equation}
+    \begin{cases}
+        d\Omega = i_VG \\
+        d\Sigma = i_V*G - \Omega \wedge G \\
+        dV = \dfrac{2}{3}i_\Omega G + \dfrac{1}{3}i_\Sigma *G
+    \end{cases}.
+\end{equation}
+A queste devono obbedire tutte le soluzioni supersimmetriche. Vale però anche il viceversa, per cui è una condizione necessaria e sufficiente. 
+\begin{equation}
+    \begin{cases}
+        d\Omega = i_VG \\
+        d\Sigma = i_V*G - \Omega \wedge G \\
+        dV = \dfrac{2}{3}i_\Omega G + \dfrac{1}{3}i_\Sigma *G
+    \end{cases}\quad \Leftrightarrow \quad \t{D}_\mu\epsilon = 0.
+\end{equation}
+\begin{equation}
+    \begin{split}
+        \Lag_VG = 0 &\Rightarrow (di_V + i_Vd)G = di_VG = dd\Omega = 0 \\
+        \Lag_V*G = 0 &\Rightarrow (di_V + i_Vd)*G = di_V*G +i_vd*G \\
+        &= d(d\Sigma + \Omega \wedge G) + i_V(-\frac{1}{2}G \wedge G) = i_vG\wedge G - i_vG\wedge G = 0.
+    \end{split}
+\end{equation}
+Una classe di soluzioni a cui si può essere interessanti è per $M_{1,10} = M_{ext} \times M_{int}$ dove $g_{1,10} = \diag{(g_{ext}, g_{int})}$. L'obiettivo è vedere che $M_{ext} = \bb{R}^{1,3}$. L'idea era la compattificazione spontanea, quindi che la metrica esterna fosse quella di Minkowski, mentre lo spazio interno, non visibile direttamente, influenza lo spazio esterno. Però $M_{ext} = dS$ con $\Lambda > 0$. Oppure, si può scegliere $M_{ext} = AdS_4$ che anche compatibile con la supersimmetria invece che $dS$, però non è la scelta non è ovvia fisicamente, a meno che non si sappia prima della corrispondenza AdS/CFT. 
+
+L'esempio più semplice di spazio compatto è il toro $T^7 = S^1 \times \cdots S^1$, che soddisfa la supersimmetria. Si possono cercare soluzioni $AdS_D \times M_{(11 - D)}$ con la supersimmetria motivata dalla corrispondenza AdS/CFT per $D = 2,\dots,7$. 
+
+Concentrandosi su $AdS_4$, dove l'ansatz per la soluzione è il più semplice. Si deve capire la fisica di una 3-forma. Dato $A_\mu$ in $D = 4$, si sa che questo si accoppia ad una particella con un certa worldline $\Gamma$ con azione 
+\begin{equation}
+    S = -m\int d\tau\sqrt{-g_{\mu\nu}\frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau}} + q\int d\tau\,\frac{dx^\mu}{d\tau}A_\mu (-> \int_\Gamma A).
+\end{equation}
+Rimanendo in $D = 4$, si consideri il campo duale $*F = \t{F}$, tale che $d(*\t{F}) = 0$ e $\t{F} = d\t{A}$ con $\t{A}$ una 1-forma. Quindi, $\t{A}$ si accoppia con un'altra particella con carica magnetica (monopolo magnetico). Lo stesso ragionamento si applica con una 2-forma $C_{\mu\nu}$ a cui viene associato un worldsheet. Per una 3-forma si ha un worldvolume. Per cui:
+\begin{enumerate}
+    \item 0-brana = particella;
+    \item 1-brana = stringa;
+    \item 2-brana = membrana.
+\end{enumerate}
+In generale, si ha una $p$-brana e un worldvolume. L'azione è una generalizzazione di quella precedente, per una $p$-brana si ha 
+\begin{equation}
+    \begin{split}
+        S_{p-brana} &= -m_p\int d\xi_0\cdots d\xi_p\,\sqrt{-\det{G_{ab}}} \\
+        &+ q_p\int d\xi_0\cdots d\xi_p\,\frac{dx^{\mu_1}}{d\xi_0}\cdots \frac{dx^{\mu_{p+1}}}{d\xi_p}C_{\mu_1\cdots\mu_{p+1}} \\
+        &= -m_p\int d\xi_0\cdots d\xi_p\,\sqrt{-\det{G_{ab}}} + \int_\Sigma C,
+    \end{split} 
+\end{equation}
+dove 
+\begin{equation}
+    G_{ab} = g_{\mu\nu}\frac{dx^\mu}{d\xi_a}\frac{dx^\nu}{d\xi_b}.
+\end{equation}
+Tornando a $D = 11$ e $p = 2$. La forma $C_{\mu\nu\rho}$ implica l'esistenza di una 2-brana (M2-brana), il duale magnetico si definisce a partire dalle equazioni di Maxwell
+\begin{eqnarray}
+    d*G + G \wedge G = 0,
+\end{eqnarray}
+per cui si definisce $\t{G} = *G + \frac{1}{2} G \wedge C$, tale che 
+\begin{equation}
+    d\t{G} = 0 \Rightarrow \t{G} = d\t{C},
+\end{equation}
+con $d\t{C}$ il duale magnetico, un potenziale 6-forma. La sua esistenza implica l'esistenza di una M5-brana. 
