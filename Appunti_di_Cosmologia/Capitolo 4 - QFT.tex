@@ -1,5 +1,8 @@
-\chapter{Basic concepts of QFT}
-We now make some basic recalls of Quantum Field Theory. The main objects are the fields $\phi(x)$, which are functions of the spacetime coordinates $x^\mu$, and can be of different nature. The main different between kinds of fields is how they transform under coordinate transformations. With them, we can write a Lagrangian, more precisely a Lagrangian density, $\Lag(\phi,\p\phi)$ whose dependent on the fields, of course, and their derivatives $\p_\mu\phi(x)$. The Lagrangian needs to be invariant under general coordinate transformations, therefore it is constructed from \emph{invariants}, that have precisely this property. The integral of the Lagrangian over spacetime is the action $S$. To write a consistent action, we need to impose some conditions on the Lagrangian:
+\chapter{Hot Big Bang model}
+Until now, we have studied what happens at macroscopic scales by observing the evolution of the scale factors. Thus, we now go in the opposite direction by studying the microscopic scales at which fundamental particles live and interact, and how they behave in an evolving Universe and how they contribute to its expansion. To be more precise, we are particularly interested in the very early stages of the Universe's life. 
+
+\section{Basic concepts of Quantum Field Theory}
+We now make some basic recalls of Quantum Field Theory (QFT). The main objects are the fields $\phi(x)$, which are functions of the spacetime coordinates $x^\mu$, and can be of different nature. The main different between kinds of fields is how they transform under coordinate transformations. With them, we can write a Lagrangian, more precisely a Lagrangian density, $\Lag(\phi,\p\phi)$ whose dependent on the fields, of course, and their derivatives $\p_\mu\phi(x)$. The Lagrangian needs to be invariant under general coordinate transformations, therefore it is constructed from \emph{invariants}, that have precisely this property. The integral of the Lagrangian over spacetime is the action $S$. To write a consistent action, we need to impose some conditions on the Lagrangian:
 \begin{enumerate}
     \item it must be quadratic in the fields;
     \item it must have the lowest number of derivatives;
@@ -160,10 +163,10 @@ We can also give to $D_{\mu}$ a geometric meaning. To see this, we compute the c
 \end{equation}
 where the Riemann curvature tensor describes the curvature associated with the spacetime connection. By analogy, the field strength $F_{\mu\nu}$ represents the curvature associated with the gauge connection $A_{\mu}$, while $D_{\mu}$ is the corresponding gauge-covariant derivative acting on fields in the internal space.
 
-More generally, non-Abelian gauge symmetries lead to the Yang-Mills theories underlying the other fundamental interactions. We shall not go into details: the key point is that quantised gauge fields provide the mediators of interactions. The Standard Model organises these interactions according to the combined action of the Lie groups $\group{SU}{3}_C \times \group{SU}{2}_L \times \group{U}{1}_Y$. Its matter fields consist of quarks and leptons arranged in three generations. The $\group{SU}{3}_C$ sector describes the strong interaction and contains eight gluon fields. The electroweak sector $\group{SU}{2}_L \times \group{U}{1}_Y$ leads to the photon and to the $W^\pm$ and $Z$ bosons. Unlike the photon, the weak bosons are massive: their masses originate from the coupling to the non-zero vacuum value of the Higgs field, not from inserting an explicit gauge-breaking vector mass term in the fundamental action.
+More generally, non-Abelian gauge symmetries lead to the Yang-Mills theories underlying the other fundamental interactions. We shall not go into details: the key point is that quantized gauge fields provide the mediators of interactions. The Standard Model organizes these interactions according to the combined action of the Lie groups $\group{SU}{3}_C \times \group{SU}{2}_L \times \group{U}{1}_Y$. Its matter fields consist of quarks and leptons arranged in three generations. The $\group{SU}{3}_C$ sector describes the strong interaction and contains eight gluon fields. The electroweak sector $\group{SU}{2}_L \times \group{U}{1}_Y$ leads to the photon and to the $W^\pm$ and $Z$ bosons. Unlike the photon, the weak bosons are massive: their masses originate from the coupling to the non-zero vacuum value of the Higgs field, not from inserting an explicit gauge-breaking vector mass term in the fundamental action.
 
 \section{Distribution functions}
-To use this microscopic picture in Cosmology, we need a quantitative measure of how frequently interactions occur. The Lagrangian of an interactive theory can be factorised in the sum of the free Lagrangian $\Lag_0$ and the interactive Lagrangian $\Lag_{\rem{int}}$. The free Lagrangian specifies the propagation of the particles and their dispersion relations. The interactive part instead describes the scattering, decay, annihilation, and creation of particles. When a perturbative description of the theory is possible, its contributions can be organised using Feynman's diagrams, which are a computational representation of terms in an expansion of a \emph{transition amplitude}, not literal particle trajectories.
+To use this microscopic picture in Cosmology, we need a quantitative measure of how frequently interactions occur. The Lagrangian of an interactive theory can be factorized in the sum of the free Lagrangian $\Lag_0$ and the interactive Lagrangian $\Lag_{\rem{int}}$. The free Lagrangian specifies the propagation of the particles and their dispersion relations. The interactive part instead describes the scattering, decay, annihilation, and creation of particles. When a perturbative description of the theory is possible, its contributions can be organized using Feynman's diagrams, which are a computational representation of terms in an expansion of a \emph{transition amplitude}, not literal particle trajectories.
 
 For a generic process $A + B \to C + D$, we denote the amplitude as $\amp^{AB}_{CD}$. The relevant probability is the given by its moduli $|\amp^{AB}_{CD}|$. Combining this with the phase-space of the final particles and the incoming flux produces the interaction \emph{cross-section} denoted as $\sigma^{AB}_{CD}$. Thus, QFT proves the microscopic quantity $\sigma(E)$ needed to describe interactions between actual populations of particles as a function of the energy $E$ of the process, For example, in processes governed by a dimensionless coupling $\alpha$ and a single characteristic relativistic energy $E$m dimensional reasoning often gives $\sigma(E) \simeq \alpha^2E^{-2}c^2\hbar^2$, however masses, long-rage forces, and afftional dynamical states can change this estimate.  
 
@@ -176,31 +179,36 @@ Interaction rates tell us how many interactions happen per unit of time, for a c
 
 It is more useful here to consider a dimensionless distribution function, factoring out the phase-space units. In particular, when we expanded the fields as plain waves we had wavenumbers $\v{k} = 2\pi\v{n}/L$ where $L$ was the physical size of the volume $V = L^3$, with $n_i \in \bb{Z}$ for each spatial direction $i$. Since for quantum particles, $\v{q} =\hbar \v{k}$, the momentum-space spacing is $2\pi\hbar$, which leads to rescaling $d^3q \mapsto d^3q/(2\pi\hbar)^3$. Moreover, quantum particles also come in different \emph{multiplicity}, in other words they have different degrees of freedom, for example spin states. Denoting the multiplicity for particles of type $s$ as $g_s$, we can write the number of quanta of the given type in an infinitesimal mass-shell volume element as 
 \begin{equation}
-    dN_s = \frac{g_s}{(2\pi\hbar)^3}f_s(\v{x}_p,\v{q};t)\,d^3x_p\,d^3.
+    dN_s = \frac{g_s}{(2\pi\hbar)^3}f_s(\v{x}_p,\v{q};t)\,d^3x_p\,d^3q.
 \end{equation}
 In these units, the distribution function now defines the mean occupation number per one-particle state. The number density of particles of type $s$ is then given by 
 \begin{equation}
+\label{eq: number density of particles of type s}
     n_s(\v{x}_p) = \frac{g_s}{(2\pi\hbar)^3}\int d^3q\,f_s(\v{x}_p,\v{q}),
 \end{equation} 
 and therefore, integrating over the volume, we have the total number of particles 
 \begin{equation}
+\label{eq: number of particles of type s}
     N_s = \int_V d^3x_p\,n_s(\v{x}_p).
 \end{equation}
 The total energy will be simply given by the sum of the energy of each particle $E_s(q) = \sqrt{m_s^2c^4 + q^2c^2}$, where $m_s^2$ is the mass of the particle of the $s$th species and $q \equiv |\v{q}|$. Hence, the energy density is 
 \begin{equation}
+\label{eq: energy density of particles of type s}
     \epsilon_s(\v{x}_p) = \frac{g_s}{(2\pi\hbar)^3}\int d^3q\,f_s(\v{x}_p,q)\,E_s(q),
 \end{equation}
 and the mean \emph{internal energy} inside the volume is 
 \begin{equation}
+\label{eq: internal energy density of particles of type s}
     U_s = \int d^3x_p\,\epsilon_s(\v{x}_p).
 \end{equation}
 In the end, we can also find the pressure to be 
 \begin{equation}
+\label{eq: pressure of particles of type s}
     p_s(\v{x}_p) = \frac{g_s}{(2\pi\hbar)^3}\int d^3q\,\frac{q^2c^2}{3E_s(q)}f_s(\v{x}_p,q).
 \end{equation}
-All of these relations however do not determine the distribution function $f_s(\v{x}_p,q)$. The way to retrieve it is to realise that we are describing a large number of particles, but we are only interested in their collective, macroscopic behaviour. 
+All of these relations however do not determine the distribution function $f_s(\v{x}_p,q)$. The way to retrieve it is to realize that we are describing a large number of particles, but we are only interested in their collective, macroscopic behaviour. 
 
-Consider first an isolated system which contains a single species of particles. The total energy and particle number are therefore conserved, but the particles can continuously rearrange themselves among the available microscopic states. The essential observation of statistical mechanics is that not all macroscopic distributions correspond to the same number of microscopic arrangements. The most probable distribution is the one that can be realised in the greatest number of ways. This leads us to the concept of entropy. Entropy can be defined in a number of ways, but the most fundamental one might be the Boltzmann's statistical entropy 
+Consider first an isolated system which contains a single species of particles. The total energy and particle number are therefore conserved, but the particles can continuously rearrange themselves among the available microscopic states. The essential observation of statistical mechanics is that not all macroscopic distributions correspond to the same number of microscopic arrangements. The most probable distribution is the one that can be realized in the greatest number of ways. This leads us to the concept of entropy. Entropy can be defined in a number of ways, but the most fundamental one might be the Boltzmann's statistical entropy 
 \begin{equation}
     S = k_B\ln{\Xi},
 \end{equation}
@@ -208,7 +216,7 @@ where $\Xi$ is the number of microscopic configurations compatible with the macr
 \begin{equation}
     G_i = \frac{g}{(2\pi\hbar)^3}\Delta^3x_{p,i}\Delta^3q_{i}.
 \end{equation} 
-Then, if $N_i$ particles occupy these cells, $N_i = fG_i$. The problem now is to find how many different microscopic ways we can arrange $N_i$ particles among $G_i$ states.
+Then, if $N_i$ particles occupy these cells, $N_i = fG_i$. The problem now is to find how many distinguishable microscopic ways we can arrange $N_i$ particles among $G_i$ states.
 
 \subsection{Fermionic and bosonic distributions}
 We start discussing fermions since they have the constraint given by Pauli's exclusion principle which tells us that a given one-particle state can contain either one or no fermion. Therefore, distributing $N_i$ in $G_i$ states is equivalent to counting how many $N_i$ states are occupied out of the $G_i$ available. The number of possibilities is then just the binomial coefficient
@@ -230,13 +238,143 @@ where we have used Stirling's approximation for the logarithm of a factorial $\l
 \begin{equation}
     S[f_{\rem{FD}}] = -\frac{g_sK_B}{(2\pi\hbar)^3}\int d^3x_p\,d^3q\,[f_{\rem{FD}}\ln{(f_{\rem{FD}})} + (1 - f_{\rem{FD}})\ln{(1 - f_{\rem{FD}})}],
 \end{equation}
-where we emphasise this is not a general formula, but it holds for fermions which obey the Fermi-Dirac distribution, hence the ``FD'' subscript.
+where we emphasize this is not a general formula, but it holds for fermions which obey the Fermi-Dirac distribution, hence the ``FD'' subscript.
 
-Thermodynamic equilibrium is the realised by the distribution function that maximises entropy. At equilibrium, the first law of Thermodynamics relates infinitesimal variations of internal energy, entropy, volume, and particle number through 
+Thermodynamic equilibrium is the realized by the distribution function that maximizes entropy. At equilibrium, the first law of Thermodynamics relates infinitesimal variations of internal energy, entropy, volume, and particle number through 
 \begin{equation}
+\label{eq: first law of Thermodynamics}
     dU = T\,dS - p\,dV + \mu\,dN,
 \end{equation}
-where $T$ is the temperature and $\mu$ is the chemical potential. To find said distribution function...
+where $T$ is the temperature and $\mu$ is the chemical potential.  Since we are seeking precisely the equilibrium distribution, we can impose this relation on the corresponding statistical functionals. Using \eqref{eq: first law of Thermodynamics}, we can impose the stationarity condition $\delta(U - TS + pV - \mu N_i)|_{\rem{eq}} = 0$, which implies 
+\begin{equation}
+    \delta S = \frac{1}{T}\delta U + \frac{p}{T}\delta V - \frac{\mu}{T}\delta N_i,
+\end{equation}
+hence 
+\begin{multline}
+    -\frac{g k_B}{(2\pi\hbar)^3}\int d^3x_p\,d^3q\,[\ln{(f_{\rem{FD}})} - \ln{(1 - f_{\rem{FD}})}]\delta f_{\rem{FD}} = \\
+     = \frac{g}{T(2\pi\hbar)^3}\int d^3x_p\,d^3q\,(E - \mu)\delta f_{\rem{FD}},
+\end{multline}
+where we have noticed that the volume does not depend on the distribution function, whereas the number of particles and internal energy within $V$ do. 
+
+Since the variations are arbitrary, by solving for $f_{\rem{FD}}$ we eventually obtain the \emph{Fermi-Dirac distribution}
+\begin{equation}
+\label{eq: Fermi-Dirac distribution}
+    f_{\rem{FD}} = \frac{1}{e^{(E - \mu)/k_BT} + 1}.
+\end{equation}
+An analogous reasoning, but for the combinatorics, can be made for bosons, leading us to the \emph{Bose-Einstein distribution}
+\begin{equation}
+\label{eq: Bose-Einstein distribution}
+    f_{\rem{BE}} = \frac{1}{e^{(E - \mu)/k_BT} - 1}.
+\end{equation}
+Then, when the mean occupation number is very small, namely when $f = N_i/G_i \ll 1$, multiple occupation of an individual quantum state is negligible and the counting simplifies to $\Xi_{\rem{MB}} \simeq G_i^N/N_i!$. This corresponds to the \emph{Maxwell-Boltzmann distribution}
+\begin{equation}
+\label{eq: Maxwell-Boltzmann distribution}
+    f_{\rem{MB}} = e^{-(E - \mu)/k_BT}.
+\end{equation}
+Note that this is valid in general. As long as we work in the reference frame of the system, the
+particle energy depend only on momentum via the mass-shell, whereas different regions
+can be in local thermodynamic equilibrium, with different temperatures and chemical potentials. In a homogeneous Universe however, $f_s(\v{x}_p,\v{q}) \equiv \b{f}_s(q)$. This implies that we can write $\b{N}_s = V\b{n}_s$ and $\b{U}_s = V\b{\epsilon}_s$. Furthermore, the momentum-space integrals can be simplified with $d^3q \mapsto (4\pi q^2)dq$. Hence, \eqref{eq: number density of particles of type s}, \eqref{eq: energy density of particles of type s}, and \eqref{eq: pressure of particles of type s} can be written as 
+\begin{equation}
+\label{eq: number density of particles of type s (HU)}
+    \b{n}_s(T) = \frac{g_s}{2\pi^2\hbar^3}\int_0^\infty dq\,\frac{q^2}{e^{[E_s(q) - \mu_s]/k_BT} \pm 1},
+\end{equation}
+\begin{equation}
+\label{eq: energy density of particles of type s (HU)}
+    \b{\epsilon}_s(T) = \frac{g_s}{2\pi^2\hbar^3}\int_0^\infty dq\,\frac{q^2E_s(q)}{e^{[E_s(q) - \mu_s]/k_BT} \pm 1},
+\end{equation}
+\begin{equation}
+\label{eq: pressure of particles of type s (HU)}
+    \b{p}_s(T) = \frac{g_s}{2\pi^2\hbar^3}\int_0^\infty dq\,\frac{q^4c^2}{3E_s(q)(e^{[E_s(q) - \mu_s]/k_BT} \pm 1)}.
+\end{equation}
+Performing the change of variables $X_s = m_sc^2/k_BT$, $W_s = \mu_s/k_BT$, and $Y = qc/k_BT$, we can write the first two relations like 
+\begin{equation}
+    \b{n}_s(T) = \frac{k_B^3}{2\pi^2\hbar^3c^3}g_sT^3I_\pm(X_s,W_s),
+\end{equation}
+\begin{equation}
+    \b{\epsilon}_s(T) = \frac{k_B^4}{2\pi^2\hbar^3c^3}g_sT^4J_\pm(X_s,W_s),
+\end{equation}
+where we have also defined the integral functions 
+\begin{equation}
+\label{eq: I+- integral function}
+    I_\pm(X_s,W_s) \equiv \int_0^\infty dY\,\frac{Y^2}{\exp{\{\sqrt{X_s^2 + Y^2} - W_s\}} \pm 1},
+\end{equation}
+\begin{equation}
+\label{eq: J+- integral function}
+    J_\pm(X_s,W_s) \equiv \int_0^\infty dY\,\frac{Y^2\sqrt{X_s^2 + Y^2}}{\exp{\{\sqrt{X_s^2 + Y^2} - W_s\}} \pm 1},
+\end{equation}
+where the subscript ``$+$'' refers to fermions, while ``$-$'' refers for bosons.
+
+\subsubsection{Non-relativistic particles}
+In the non-relativistic limit, the momentum is smaller than the rest mass. This means that the factor $\pm1$ that appears in the distribution functions \eqref{eq: Fermi-Dirac distribution} and \eqref{eq: Bose-Einstein distribution} is negligible compared to the exponential, therefore both of them reduce to the Maxwell-Boltzmann distribution function \eqref{eq: Maxwell-Boltzmann distribution}. Moreover, if the momentum is small, we can expand in Taylor series the argument of the exponential around $Y^2 = 0$, at the second order of expansion we have $\sqrt{X^2_s + Y^2} = X_s + Y^2/(2X_s) + o(Y^4)$. Hence, the integral functions become 
+\begin{equation}
+    I_\pm(X_s,W_s) \simeq  e^{W_s - X_s}\int_0^\infty dY\,e^{-Y^2/(2X_s)}Y^2,
+\end{equation}
+\begin{equation}
+    J_\pm(X_s,W_s) \simeq  e^{W_s - X_s}\int_0^\infty dY\,e^{-Y^2/(2X_s)}Y^2\bigg(x_s + \frac{Y^2}{2X_s}\bigg).
+\end{equation}
+Setting $A equiv 1/(2X_s)$, we remain with Gaussian integrals that can be computed, they are 
+\begin{equation}
+    \int_0^\infty dY\,Y^2e^{-AY^2} = -\frac{d}{dA}\int_0^\infty dY\,e^{-AY^2} = -\frac{d}{dA}\bigg(\frac{1}{2}\sqrt{\frac{\pi}{A}}) = \frac{\sqrt{\pi}}{4}A^{-3/2},
+\end{equation}
+\begin{equation}
+    \int_0^\infty dY\,Y^4e^{-AY^2} = -\frac{d^2}{dA^2}\int_0^\infty dY\,e^{-AY^2} = -\frac{d^2}{dA^2}\bigg(\frac{1}{2}\sqrt{\frac{\pi}{A}}) = \frac{3\sqrt{\pi}}{8}A^{-5/2}.
+\end{equation}
+Hence, we have 
+\begin{equation}
+\label{eq: number density of particles of type s (HU + NRL)}
+    \b{n}_s(T) = g_s\lambda_s^{-3}\exp{\bigg\{-\frac{m_sc^2 - \mu_s}{k_BT}\bigg\}},
+\end{equation}
+\begin{equation}
+\label{eq: energy density of particles of type s (HU + NRL)}
+    \b{\epsilon}_s(T) = n_s(T)m_sc^2 + \frac{3}{2}n_s(T)k_BT.
+\end{equation}
+We have also defined the quantity $\lambda_s$, which is called the \emph{thermal de Broglie wavelength} for particles of species $s$, as 
+\begin{equation}
+    \lambda_s \equiv \hbar\sqrt{\frac{2\pi}{m_sk_BT}}.
+\end{equation}
+These relations give us valuable insight on the behaviour of the particle gas of species $s$ in the non-relativistic limit. In equation \eqref{eq: number density of particles of type s (HU + NRL)}, we see that, if $k_BT > m_sc^2$, non-relativistic particles scale as a power law in temperature $T^{3/2}$, meaning that the higher the temperature, the denser number of particles in the volume. At lower temperatures, if the number of particles is somewhat conserved, it is usually the chemical potential that balances out the energy in the exponential, keeping the number density approximately constant. Oppositely, if no process preserves particle number, the number density becomes exponentially suppressed.
+
+Concerning the energy density, the Taylor expansion for small momenta clearly shows us
+two regimes: the lowest-energy one, where $E_s \simeq m_sc^2$; and a small correction, proportional to $q^2/(2 m_s)$. In equation \eqref{eq: energy density of particles of type s (HU + NRL)}, this corresponds, again, to having: a regime for $k_BT \ll m_sc^2$, where the energy density is just rest-mass energy weighted by the number density of particles; and another regime, for $k_BT > m_sc^2$, where the energy density is mainly due to the particle mean kinetic energy.
+
+Finally, we recall the expression of the pressure in \eqref{eq: pressure of particles of type s}. The Taylor expansion for the small momenta give $Y^2/\sqrt{X_s^2 + Y^2} = Y^2/X_s + o(Y^3)$, thus 
+\begin{equation}
+\label{eq: pressure of particles of type s (HU + NRL)}
+    \b{p}_s(T) = 0 + \b{n}_s(T)k_BT.
+\end{equation}
+In other words, the lowest-energy limit corresponds to zero pressure, like we already derived for matter. Then, when $k_BT > m_sc^2$, we find the equation of the perfect gas $pV = k_BNT$.
+
+\subsubsection{Ultra-relativistic particles}
+In the ultra-relativistic limit, the particles rest mass is either zero, or it is negligible compared to the momentum, namely $E(q) \simeq qc$. On the other hand, chemical potentials are determined by the conserved charges and the reactions maintaining chemical equilibrium. Reactions that changes the number of photons enforce $\mu_\gamma = 0$, while the tiny asymmetry between particles and antiparticles (assuming a similarly small lepton asymmetry) allows us to take $|\mu_s| \ll k_BT$ for electrons, positrons, and neutrinos. Therefore, in this regime $X_s \simeq W_s \ll Y$, and we can derive the scaling relations
+\begin{equation}
+    \b{n}_s(T) = \frac{k_B^3}{2\pi^2\hbar^3c^3}g_sT^3I_\pm(0,0),
+\end{equation}
+\begin{equation}
+    \b{\epsilon}_s(T) = \frac{k_B^4}{2\pi^2\hbar^3c^3}g_sT^4J_\pm(0,0),
+\end{equation}
+\begin{equation}
+    \b{p}_s(T) = \frac{1}{3}\b{\epsilon}_s(T).
+\end{equation}
+The integral functions $I_\pm(0,0)$ and $J_\pm(0,0)$ are in fact special cases of the integral 
+\begin{equation}
+    \int_0^\infty dx\,\frac{x^\alpha}{e^x + \beta} = \bigg(1 + \frac{1 + \beta}{2^{\alpha + 1}}\bigg)\alpha!\zeta(\alpha + 1),\quad \beta = \pm 1,\,\alpha \in \bb{N}_0,
+\end{equation}
+and where $\zeta(x)$ is the \emph{Riemann zeta function}. Hence, we have 
+\begin{equation}
+    \b{n}_s(T) = \frac{\zeta(3)k_B^3}{\pi^2\hbar^3c^3}g_sT^3\times 
+    \begin{cases}
+        1, &s \equiv \rem{BE} \\
+        3/2, &s \equiv \rem{FD}
+    \end{cases},
+\end{equation}
+\begin{equation}
+    \b{\epsilon}_s(T) = \frac{\pi^2k_B^4}{30\hbar^3c^3}g_sT^4\times 
+    \begin{cases}
+        1, &s \equiv \rem{BE} \\
+        7/8, &s \equiv \rem{FD}
+    \end{cases},
+\end{equation}
+where we have used that $\zeta(4) = \pi^4/90$, while $\zeta(3) \simeq 1.2021$. 
 
 \section{Multi-component system (WIP)}
 For a joint system of particle species that are in equilibrium by themselves, the total internal energy and the total entropy are given by simply $U = \sum_sU_s$ and $S = \sum_sS_s$. Using the first law of Thermodynamics, we have that the total entropy is related to thermodynamical quantities through
@@ -267,7 +405,7 @@ Therefore, the total entropy is
 \begin{equation}
     dS = \nsum_s\frac{\mu_s}{T_s}\,dN_s.
 \end{equation}
-This means that for a collection of particles that are in thermodynamical equilibrium the expansion is adiabatic. Moreover, the entropy is constant and we can write it as the entropy density $s$ times the volume $V$, namely $S = sV$, thus $s \propto a^{-3}$. Then, considering again the first law of Thermodynamics, written as 
+This means that for a collection of particles that are in thermodynamical equilibrium the expansion is adiabatic. Moreover, the entropy is constant, thus we can write it as the entropy density $s$ times the volume $V$, namely $S = sV$, thus $s \propto a^{-3}$. Then, considering again the first law of Thermodynamics, written as 
 \begin{equation}
     d\b{U} = T\,dS - \b{p}\,dV + \mu\,d\b{N},
 \end{equation}
