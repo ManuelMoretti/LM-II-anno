@@ -369,4 +369,332 @@ Esistono gli spinori di Majorana-Weyl con 16 componenti reali. Quindi, la superg
 
 \end{tikzpicture}
 \end{center}
-Ci si concentra sull'operazione di ``reduction''.
+Ci si concentra sull'operazione di ``reduction''. Questa operazione permette di passare dalla supergravità in $D = 11$ alla supergravità di tipo IIA. Lo spettro della teoria era suddiviso in questo modo 
+\begin{equation}
+    \begin{cases}
+        \psi_\mu \to 128_{\rem{F}} \\
+        g_{\mu\nu} \to 84_{\rem{B}} \\
+        C_{\mu\nu\rho} \to 84_{\rem{B}}
+    \end{cases}.
+\end{equation}
+La varietà è 11-dimensionale $M_{11} = M_{10} \times S$, dove $M_{10} \equiv \bb{R}^{1,9}$. Tipicamente, $S$ viene indicata con il nome di \emph{undicesima direzione}. Per la 3-forma si ha
+\begin{equation}
+    C_{\mu\nu\rho} \to 
+    \begin{cases}
+        C_{ijk} \equiv A_{ijk}^{(3)} \\
+        C_{ijm} \equiv B_{ij}
+    \end{cases},
+\end{equation}
+mentre per la metrica si ha
+\begin{equation}
+    g_{\mu\nu} \to 
+    \begin{cases}
+        g_{ij} \\
+        g_{11\,11} \equiv e^{\phi} \\
+        g_{11\,i} \equiv A_i^{(1)}
+    \end{cases}.
+\end{equation}
+I campi $A$ sono campi di Ramond-Ramond, mentre gli altri fatto parte del settore di Navier-Schwarz, come accade in teoria delle stringhe. La 3-forma si accoppia ad una D2-brana mentre il suo duale con un a D4-brana, invece per la metrica e il suo duale si hanno una D0-brana e una D6-brana. I campi NS-NS si accoppiano invece con la stringa fondamentale $F1$. Per il campo di Rarita-Schwinger si ha 
+\begin{equation}
+    \psi_\mu \to 
+    \begin{cases}
+        \psi_i \\
+        (\psi_{11}^L,\psi_{11}^R) \equiv (\lambda^L,\lambda^R)
+    \end{cases},
+\end{equation}
+dove $\psi_i$ in $D = 10$ ha 32 componenti, ma in realtà questo è diviso in componenti left e right con $\psi_i^L$ e $\psi_i^R$, che sono spinori-vettori di Rarita-Schwinger, mentre $\lambda^L$ e $\lambda^R$ sono spinori di Majorana-Weyl. Si ricordano le relazioni per i gradi di libertà 
+\begin{equation}
+    g_{\mu\nu} \mapsto \frac{D(D - 1)}{2},\quad \psi_\mu^{(Majorana)} \mapsto \frac{1}{2}(D - 2)2^{[D/2]},
+\end{equation}
+\begin{equation}
+    A^{(p + 1)} \mapsto 
+    \begin{pmatrix}
+        D - 2 \\
+        p + 1    
+    \end{pmatrix},\quad  
+    \lambda^{(Majorana)} \mapsto \frac{1}{2}2^{[D/2]}.
+\end{equation}
+Quindi, i gradi di libertà sono riorganizzati in questo modo: quelli bosonici sono suddivisi in 
+\begin{enumerate}
+    \item $g_{ij}$ con $35_B$;
+    \item $A^{(3)}_{ijk}$ con $56_B$;
+    \item $B_{ij}$ con $28_B$;
+    \item $A_i^{(1)}$ con $8_B$;
+    \item $e^{i\phi}$ con $1_B$;
+\end{enumerate}
+mentre quelli fermionici in 
+\begin{enumerate}
+    \item $(\lambda^L,\lambda^R)$ con $(8_F,8_F)$;
+    \item $(\psi_i^L,\psi_i^R)$ con $(56_F,56_F)$.
+\end{enumerate}
+Si devono ora però scegliere 64 gradi di libertà, sia per il settore bosonico che per quello fermionico, dato che la supergravità di tipo I non è massimale. Per il settore bosonico si scelgono $\psi_i^L$ e $\lambda^L$, mentre per quello fermionico si scelgono $B_{ij}$, $g_{ij}$, $A_i^{(1)}$ e $e^{i\phi}$. I fermioni $\lambda^L$ e $\lambda^R$ sono detti \emph{dilatini} dato che sono i partner del campo $\phi$, detto invece \emph{dilatone}. Quindi, la supergravità in $D = 10$ di tipo I ha come spettro $\{g_{ij},B_{ij},\psi_i^L,\psi_i^R,e^{i\phi}\}$. 
+
+Per costruire la supergravità di tipo II si deve raddoppiare il numero di spinori mantenendo la stessa chiralità, per cui $\psi_i^L \mapsto (\psi_{1,i}^L,\psi_{2,i}^L)$, e lo stesso per i dilatini $\lambda^L \mapsto (\lambda_1^L,\lambda_2^L)$. Si può allora eseguire la complessificazione 
+\begin{equation}
+    \begin{cases}
+        \psi_{1,i}^L + i\psi_{2,i}^L \equiv \psi_i^L \\
+        \lambda^L_1 + i\lambda_2^L \equiv \lambda^L
+    \end{cases}.
+\end{equation}
+Si potrebbe pensare di fare la medesima cosa per il settore bosonico, tuttavia per la metrica significherebbe definire una seconda metrica $f_{ij}$ in modo da definire $g_{ij} + if_{ij}$, ma si preferisce avere un'unica metrica. Si nota quindi che una 0-forma si accoppia ad una D$(-1)$-brana, cioè ad un \emph{istantone}. Il duale magnetico sarebbe una D7-brana. Per la 2-forma si hanno invece una D1-brana e una D5-brana. Si nota che non c'è una D3-brana tra queste. 
+\begin{equation}
+    \begin{cases}
+        \phi + iA^{(0)} \mapsto D(-1)-brana \overset{duale}{\mapsto} D7-brana \\
+        B_{\mu\nu} + iA_{\mu\nu}^{(2)} \mapsto D1-brana \overset{duale}{\mapsto} D5-brana
+    \end{cases},
+\end{equation}
+dove le prime due delle due righe sono di tipo ``elettrico'', mentre le seconde due sono di tipo ``magnetico''. Per avere una D3-forma servirebbe una 4-forma $A_{\mu\nu\rho\sigma}^{(4)}$, ma questa avrebbe $70_B$, però si nota che $70_B = 35_B \times 2$. Si può allora dimezzare i gradi di libertà, ma si può fare solo per una 4-forma in $D = 10$. Infatti, in questa dimensione è possibile avere $F_5 = *F_5$, detta proprietà di \emph{self-duality}., avendo così effettivamente metà dei gradi di libertà. 
+
+Tuttavia, qui si parte dall'ansatz sulla metrica 
+\begin{equation}
+    ds_{11}^2 = e^{(-2/3)\phi(x^i)}\,ds^2_{st} + e^{(4/3)\phi}(ds + A_1(x^i))^2,
+\end{equation}
+dove $ds^2_{st}$ è la metrica di stinga. La decomposizione della 3-forma quindi è 
+\begin{equation}
+    C = A_3 + B \wedge dz \mapsto G = dC' = F_4 + dB \wedge dz,
+\end{equation}
+dove $F_4 = dA_4$ e $dB \equiv H$, con $B$ talvolta chiamato campo di Kalb-Ramond, o semplicemente $B$-field. Si può definire $\t{F}_4 = F_4 - G \wedge A_1$, così da avere 
+\begin{equation}
+    G = \t{F}_4 + H \wedge A_1 + H \wedge dz = \t{F}_4 + H \wedge (dz \wedge A_1),
+\end{equation}
+che contiene proprio il termine della metrica. Chiaramente, valgono le identità di Bianchi
+\begin{equation}
+    \begin{cases}
+        dH = 0 \\
+        dF_2 = dF_4 = 0
+    \end{cases},
+\end{equation}
+da cui segue l'identità di Bianchi generalizzata 
+\begin{equation}
+    d\t{F}_4 = -H \wedge (-dA_1) = H \wedge F_2.
+\end{equation}
+Un termine che si può facilmente calcolare è il termine di Chern-Simmons, che è indipendente dalla metrica, questo è 
+\begin{equation}
+    \begin{split}
+        -\frac{1}{2k_{11}^2}\int G \wedge G \wedge C &\propto \int (F_4 + H\,dz) \wedge (F_4 + H \wedge dz) \wedge (A_3 + B \wedge dz) \\
+        &= \int (F_4 \wedge F_4 \wedge B \wedge dz) + 2(A_3 \wedge F_4 \wedge H \wedge dz) \\
+        &= 3\int F_4 \wedge B \wedge dz,
+    \end{split}
+\end{equation}
+dove nell'ultimo passaggio si è integrato per parti. I campi $\phi$ ed $A_1$ non devono dipendere da $z$ affinché l'operazione di riduzione sia possibile, per cui questa è equivalente a richiedere $\p/\p z$ vettore di Killing, cioè che 
+\begin{equation}
+    \Lie_{\p/\p z}\phi = \Lie_{\p/\p z}g^{st} = \Lie_{\p/\p z}A_1 = 0\quad \Rightarrow \quad \Lie_{\p/\p z}B = 0.
+\end{equation}
+Quindi, il termine di Chern-Simmons diventa 
+\begin{equation}
+    \int G \wedge G \wedge C = 3\int_{S_z'}dz\int_{M_{10}} F_4 \wedge F_4 \wedge B,
+\end{equation}
+dove si include il fattore $\beta = 2\pi l_{\rem{P}}g_s^{2/3}$, con $g_s$ la costante di accoppiamento di stringa. Inoltre, da $\beta^2 = k_{11}^2/k_{10}^2$, si ha che 
+\begin{equation}
+    k_{10}^2 = \frac{1}{2}\frac{(2\pi)^7l_{\rem{P}}^8}{g_s^{2/3}}.
+\end{equation}
+Gli altri termini sono 
+\begin{equation}
+    \int dz\,d^{10}x\,\sqrt{g}R,\quad \int dz\,d^{10}x\, \sqrt{g}G^2.
+\end{equation}
+Il risultato finale per l'azione della supergravità di tipo IIA è 
+\begin{equation}
+    \begin{split}
+        S_{\rem{IIA}} &= \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}e^{-2\phi}[R + 4(\p\phi)^2] \\
+        &-\frac{1}{4k_{10}^2}\int e^{-2\phi}H \wedge (*H) + F_2 \wedge (*F_2) + \t{F}_4 \wedge (*\t{F}_4) \\
+        & -\frac{1}{4k_{10}^2}\int B \wedge F_4 \wedge F_4.
+    \end{split}
+\end{equation}
+Si noti che il termine $e^{-2\phi}R(g^{10}_{st})$ non è il solito termine di Hilbert-Einstein, ma può essere rimosso tramite un riscalamento portando a termini aggiuntivi nell'azione. L'azione che si ottiene è l'azione della supergravità di tipo IIA nell'\emph{Einstein-frame}. L'azione della supergravità di tipo I invece è 
+\begin{equation}
+    S_{\rem{I}} = \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}e^{-2\phi}[R + 4(\p\phi)^2] - \frac{1}{4k_{10}^2}\int d^{10}x\,e^{-2\phi}[H \wedge (*H)].
+\end{equation}
+Le variazioni in $D = 11$ per $\psi_i = 0$ e $\lambda = 0$ sono 
+\begin{equation}
+    \delta\lambda = \bigg[\Gamma^i\p_i \phi - \frac{1}{12}H_{ijk}\Gamma^{ijk}\Gamma_{11} - \frac{1}{8}\bigg(3(F_2)_{ij}\Gamma^{ij} - \frac{1}{12}(\t{F}_4)_{ijkl}\Gamma^{ijkl}\bigg)\bigg]\epsilon,
+\end{equation}
+\begin{equation}
+    \delta\psi_i = \bigg[\nabla_i - \frac{1}{8}H_{ijk}\Gamma^{ijk}\Gamma_{11} - \frac{1}{8}\bigg(\frac{1}{2}(F_2)_{jk}\Gamma^{jk}\Gamma_{11} - \frac{1}{24}(\t{F}_4)_{jklm}\Gamma^{jklm}\Gamma_i\bigg)\bigg]\epsilon,
+\end{equation}
+dove lo spinore $\epsilon$ è di Majorana ma non di Weyl. Definendo $\t{\omega}_i := \omega_i - (1/2)H_i\Gamma^{ijk}$ (a che serve ???). La metrica dell'Einstein-frame è 
+\begin{equation}
+    ds_\rem{E.f.}^2 = e^{-\phi/2}ds_{st}^2,
+\end{equation}
+per cui l'azione della supergravità di tipo IIA diventa 
+\begin{equation}
+    \begin{split}
+        S_{\rem{IIA}}^{(\rem{E.f.})} &= \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}\bigg[R - \frac{1}{2}(\p\phi)^2 - \frac{1}{12}e^{-\phi}H^2 \\
+        &- \frac{1}{4}e^{(3/2)\phi}F_2^2 - \frac{1}{48}e^{\phi/2}\t{F}_4^2\bigg] + \rem{Chern-Simmons\,term}.
+    \end{split}
+\end{equation}
+Inoltre, la parte costante del dilatone è $\vmedio{e^{\phi}} = g_s$, per cui il termine di Hilbert-Einstein è 
+\begin{equation}
+    \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}e^{-2\phi}R = \frac{1}{(2\pi)^7l_s^8g_s^2}\int d^{10}x\,\sqrt{-g}e^{-2\phi}R,
+\end{equation}
+dove $\vmedio{e^{-2\phi}} = 1$ e con $l_s \equiv \sqrt{\alpha'}$, tale che $l_{\rem{P}} = l_sg_s^{1/3}$.
+
+Per ottenere la supergravità di tipo IIB si dovrebbe seguire l'approccio formale della teoria delle stringhe, ma qui si segue quello che consiste nella derivazione partendo dalla supergravità di tipo I. Per questa teoria ci sono due aspetti:
+\begin{enumerate}
+    \item c'è un problema con $F_5$. Infatti, la relazione $F_5 = *F_5$ implica che $F_5^2 \simeq F_5 \wedge (*F_5) = F_5 \wedge F_5 = 0$, ovvero che non esiste un termine cinetico general covariante. Un modo per evitare il problema è imporre la self-duality solo dopo aver derivate le equazioni del moto (esistono anche altri metodi ma tendono a rompere alcune simmetrie)
+    \item si ha una supersimmetria globale, che la supergravità di tipo IIA non ha, detta \emph{S-duality}.
+\end{enumerate}
+L'azione della supergravità di tipo IIB è 
+\begin{equation}
+    \begin{split}
+        S_{\rem{IIB}} &= \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}e^{-2\phi}[R + 4(\p\phi)^2] \\
+        &-\frac{1}{4k_{10}^2}\int e^{-2\phi} H \wedge (*H) + F_1 \wedge (*F_1) + \t{F_3} \wedge (*\t{F}_3) + \t{F}_5 \wedge (*\t{F}_5) \\
+        &-\frac{1}{4k_{10}^2}\int H \wedge \wedge F_3 \wedge A_4,
+    \end{split}
+\end{equation}
+dove 
+\begin{equation}
+    \t{F}_5 := F_5 - \frac{1}{2}H \wedge A_2 + \frac{1}{3}F_3 \wedge B,\quad \t{F}_3 := F_3 - HA_0.
+\end{equation}
+Nell'Einstein-frame, definendo $\tau := A_0 + ie^{-\phi}$, si può definire $G_3 := F_3 - \tau H$, con i quali si può scrivere l'azione di tipo IIB come 
+\begin{equation}
+    \begin{split}
+        S_{rem{IIB}}^{(\rem{E.f.})} &= \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}\bigg[R - \frac{\p_\mu\tau\p^\mu\t{\tau}}{2\Im{(\tau)}^2} - \frac{G_3 \wedge (*\b{G}_3)}{2\Im{(\tau)}} - \frac{1}{2}\t{F}_5 \wedge (*\t{F}_5)\bigg] \\
+        &+\frac{1}{8ik_{10}^2}\int \frac{A_4 \wedge G_3 \wedge \b{G}_3}{\Im{(\tau)}}.
+    \end{split}
+\end{equation}
+Le trasformazioni della S-duality sono 
+\begin{equation}
+    \begin{cases}
+        g_{\mu\nu}^{\rem{E.f.}} \mapsto g_{\mu\nu}^{\rem{E.f.}} \\[2ex]
+        A_4 \mapsto A_4 \\[2ex]
+        \tau \mapsto \dfrac{\alpha\tau + \beta}{\gamma\tau + \delta} \\[2ex]
+        \begin{pmatrix}
+            A_ 2 \\
+            B
+        \end{pmatrix} \mapsto 
+        \begin{pmatrix}
+            \alpha & \beta \\
+            \gamma & \delta 
+        \end{pmatrix}
+        \begin{pmatrix}
+            A_2 \\
+            B
+        \end{pmatrix}
+    \end{cases},
+\end{equation}
+dove la penultima è una trasformazione di M\"obius con 
+\begin{equation}
+    \begin{pmatrix}
+        \alpha & \beta \\
+        \gamma & \delta 
+    \end{pmatrix} \in \group{SL}{2,\bb{R}},
+\end{equation}
+mentre l'ultima equivale alla trasformazione 
+\begin{equation}
+    G_3 \mapsto \frac{G_3}{\gamma\tau + \delta}.
+\end{equation}
+
+Si introducono adesso 
+\begin{equation}
+    \begin{cases}
+        G := -ie^{\phi/2}G_3 \\[2ex]
+        P := \dfrac{1}{2}(d\phi + ie^{i\phi}A_0) \\[2ex]
+        Q := -\dfrac{1}{2}e^{\phi}A_0
+    \end{cases},
+\end{equation}
+per cui le variazioni sono 
+\begin{equation}
+    \delta \lambda = i\Gamma^\mu P_\mu \epsilon^C + \frac{i}{24}\Gamma^{\mu\nu\rho}G_{\mu\nu\rho}\epsilon,
+\end{equation}
+\begin{equation}
+    \begin{split}
+        \delta\psi_\mu &= \nabla\epsilon - \frac{i}{2}Q_\mu\epsilon - \frac{1}{96}(\Gamma^{\mu_1\mu_2\mu_3}_\mu - 9\Gamma^{\mu_1\mu_2}\delta_\mu^{\mu_3})G_{\mu_1\mu_2\mu_3}\epsilon^C \\
+        &+ \frac{i}{192}\Gamma^{\mu_1\mu_2\mu_3\mu_4}(F_5)_{\mu\mu_1\mu_2\mu_3\mu_4}\epsilon.
+    \end{split}
+\end{equation}
+L'obiettivo adesso è trovare una soluzione per tutte le D-brane. Per farlo si nota che per la D5-brana ponendo $H = F_1 = F_5 = 0$, tutti gli oggetti si accoppiano allora alla metrica e al dilatone, in modo da ottenere la relazione di supersimmetria. Questo può essere fatto in generale, da cui si deduce che in tutte le soluzioni delle D-brane si avrà sempre una field strength, la metrica e il dilatone. Si può quindi definire il set $\{\phi,g_{\mu\nu},F_n\}$ con $n = \{2,4\}$ per tipo IIA e $n = \{1,3,5\}$ per tipo IIB, con cui si possono scrivere tutte le soluzioni di D-brane. 
+\begin{obs}
+    Per $n = 0$ si ha la \emph{massive type IIA supergravity}, dove $F_0$ si accoppia alle D8-brane.
+\end{obs}
+L'azione efficace delle D$p$-brane è 
+\begin{equation}
+    S_{n} = \frac{1}{2k_{10}^2}\int d^{10}x\,\sqrt{-g}\bigg[R - \frac{1}{2}(\p\phi)^2 - \frac{1}{2n!}e^{a_n\phi}F_n^2\bigg],
+\end{equation}
+con $a_n = (5 - n)/2$ e dove per $F_5$ si deve aggiungere un fattore $1/2$ per compensare la self-duality. Nella versione più semplice della S-duality, $\phi \mapsto -\phi$, per cui 
+\begin{equation}
+    \rem{NS5} : 
+    \begin{cases}
+        a_3 = 1 \mapsto -a_3 = -1 \\
+        F_3 \mapsto H
+    \end{cases},\quad \rem{M2,\,M5} : 
+    \begin{cases}
+        \phi \mapsto 0 \\
+        d^{10}x \mapsto d^{11}x \\
+        n = 4
+    \end{cases}.
+\end{equation}
+(???). Si dividono le D-brane in elettriche e magnetiche:
+\begin{enumerate}
+    \item le elettriche sono D0, D1, D2 e D3, e si accoppiano a $A_{p + 1} \mapsto F_{p + 2}$, da cui $n = p + 2$;
+    \item le magnetiche sono D4, D5, D6 e D7, e si accoppiano a $\t{A}_{p + 1} \mapsto \t{F}_{p + 2} = *\t{F}_{8 - p}$, da cui $n = 8 - p$. 
+\end{enumerate}
+Adesso, da $S_n$ si derivano le equazioni del moto, omettendo i calcoli, si nota che si sono due tipi di soluzioni: estremali e non-estremali; esattamente come accade per il buco nero di R-N. Qulle estremali soddisfano le equazioni del moto e la supersimmetria, ma qui si è interessati a quelle non-estremali. 
+
+Si consideri la metrica 
+\begin{equation}
+    ds_{st}^2 = H_p(r)^{-1/2}(\underbrace{-dt^2 + dx_1^2 + \cdots + dx_p^2}_{\equiv \bb{R}^{1,9}}) + H_p(r)^{1/2}(\underbrace{dr^2 + r^2\,d\Omega^2_{8 - p}}_{\equiv \bb{R}^{9 - p}}).
+\end{equation}
+Si hanno poi 
+\begin{equation}
+    \begin{cases}
+        e^{\phi} = H_p(r)^{(3 - p)/4} \\
+        A_{0\cdots p} = H_(r)^{-1} - 1
+    \end{cases},
+\end{equation}
+dove per $p = 0,\dots,3$ si hanno i potenziali elettrici, altrimenti quelli magnetici. Inoltre 
+\begin{equation}
+    \begin{cases}
+        F_5 = (1 + *)dA_4 \\[2ex]
+        H_p(r) = 1 + \dfrac{L^{7 - p}}{r^{7 - p}}
+    \end{cases},
+\end{equation}
+dove $L^{7 - p}/r^{7 - p}$ permette di avere $H_p(r)$ armonica nello spazio trasverso $\bb{R}^{9 - p}$. Tuttavia, l'espressione di $H_p(r)$ non vale per $p = 7$, in questo caso 
+\begin{equation}
+    H_7(r) = -(\rem{costante})\log{r},
+\end{equation}
+che non diventa mai Minkowski. L'intuizione è che la D7-brana sia un filo a cui si può girare attorno (???). 
+\begin{obs}
+    La supergravità di tipo IIB con la S-duality è il punto di partenza per la F-teoria, con la quale $H_7(r)$ è legata. 
+\end{obs}
+Si impone ora che 
+\begin{equation}
+    \frac{1}{(2\pi l_s)^{7 - p}g_s}\int_{S^{8 - p}}*F_{p + 2} = N \in \bb{N},
+\end{equation}
+la quale fissa $L^{7 - p}$ al valore 
+\begin{equation}
+    L^{7 - p} = (2\pi)^{p - 2}d_pl_s^{7 - p}g_sN,
+\end{equation}
+dove $d_p$ è una costante che dipende da $p$. In generale, le soluzioni per $r \to 0$ sono singolari, questo corrisponde intuitivamente ad una delta di Dirac delle $N$ D-brane sovrapposte. In questo limite near-horizion, non si ottiene $AdS_{p + 2} \times S^{8 - p}$. Invece, si può vedere, studiando il comportamento del dilatone $e^\phi$, che una possibile soluzioen può essere 
+\begin{equation}
+    e^\phi \mapsto (r^{7 - p})^{(3 - p)/5},
+\end{equation}
+che per $p = \{0,1,2\}$ tende ad infinto, per $p = \{4,5,6\}$ tende a zero, mentre per $p = 3$ rimane costante. Questo fa intendere che $p = 3$ è un valore particolare, per cui lo sono anche le D3-brane. Per $p = 3$, si ha anche 
+\begin{equation}
+    L^4 = \frac{(2\pi)^4g_s(\alpha')^2}{4\rem{Vol}(S^5)}N = 4\pi g_s(\alpha')^2N.
+\end{equation}
+\begin{obs}
+    La 5-sfera può essere sostituita con una superficie compatta più generale.
+\end{obs}
+Per la D3-brana, $H_3(r) \mapsto L^4/r^4$ e $e^\phi = g_s$, per cui la metrica diventa 
+\begin{equation}
+    ds_{st}^2 = \frac{r^2}{L^2}(-dt^2 + d\v{x}^2) + L^2\bigg(\frac{dr^2}{r^2} + d\Omega_5^2\bigg).
+\end{equation}
+Ridefinendo $r = L^2R$, si ha 
+\begin{equation}
+    ds_{st}^2 = L^2[ds^2(AdS_5) + ds^2(S^5)].
+\end{equation}
+Dato poi $A_{0123} = -r^4/2L^4$ si ha 
+\begin{equation}
+    F_5 = -2L^4[\rem{Vol}(AdS_5) + \rem{Vol}(S^5)],
+\end{equation}
+che soddisfa $F_5 = *F_5$. Quindi, riassumendo, la soluzione è $AdS_5 \times S^5$ con raggi uguali ad $L$ ed $N$ unità di flusso $F_5$. Questa è una soluzione massimalmente supersimmetrica(nel limite near-horizon). Per ottenere altre soluzioni di anti-De Sitter, si deve rinunciare alla varietà interna sferica, per cui in generale si ha $AdS_d \times M_{10 - d}$ se si è in $D = 10$.
+
+Ad ogni modo, per il momento si rimane su $AdS_5 \times S^5$ e si ricalcano i ragionamenti di Maldacena per la corrispondenza AdS/CFT e sulla soluzione della D3-brana. L'idea è interpretare fisicamente il limite per $r \to 0$. Le quantità fisiche sono $\alpha'$, $g_s$ ed $N$. Si definisce la coordinata con unità di lunghezza 
+\begin{equation}
+    U := \frac{r}{\alpha'} \equiv -\frac{r}{l_s^2},
+\end{equation}
+e si consideri, per $U$ e $g_s$ fissato, il limite $r \to 0$ e $\alpha' \to 0$. Si deve ricordare che la teoria delle stringhe si può approssimare alla supergravità se $\alpha'$ e $g_s$ sono piccoli, permettendo un'espansione in serie di Taylor:
+\begin{enumerate}
+    \item con $\alpha'$ ci si distacca dal termine di Hilbert-Einstein con delle correzioni in $\alpha'$;
+    \item con $g_s$ piccolo si possono trascurare i loop di stringa.
+\end{enumerate}
